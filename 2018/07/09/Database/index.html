@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            数据库基本知识 | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",Database">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="数据库基本知识 | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="Database"> 
+
+    
+        <meta property="article:published_time" content="Mon Jul 09 2018 17:36:03 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Jul 02 2018 16:16:24 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="数据库基本知识 | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/07/09/Database/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/07/09/Database/index.html",
+    "headline": "数据库基本知识",
+    "datePublished": "Mon Jul 09 2018 17:36:03 GMT+0800",
+    "dateModified": "Mon Jul 02 2018 16:16:24 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Database",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据视图"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据抽象"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据抽象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实例与模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">实例与模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据模式"><span class="post-toc-number">4.</span> <span class="post-toc-text">数据模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库语言："><span class="post-toc-number">5.</span> <span class="post-toc-text">数据库语言：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关系数据库"><span class="post-toc-number">6.</span> <span class="post-toc-text">关系数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据库设计"><span class="post-toc-number">7.</span> <span class="post-toc-text">数据库设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体—联系模型"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">实体—联系模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关系模型"><span class="post-toc-number">8.</span> <span class="post-toc-text">关系模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-关系数据库的结构"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">1.关系数据库的结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-数据库模式"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">2.数据库模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-码（key）"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">3.码（key）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-模式图"><span class="post-toc-number">9.</span> <span class="post-toc-text">4.模式图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-关系运算"><span class="post-toc-number">10.</span> <span class="post-toc-text">5.关系运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL数据定义"><span class="post-toc-number"></span> <span class="post-toc-text">SQL数据定义</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-基本类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.基本类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-自然连接"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.自然连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-视图（view"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.视图（view)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-事务（transaction）"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.事务（transaction）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-完整性约束"><span class="post-toc-number">5.</span> <span class="post-toc-text">4.完整性约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-单个关系上的约束"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1.单个关系上的约束</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#形式化关系查询语言"><span class="post-toc-number"></span> <span class="post-toc-text">形式化关系查询语言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-选择运算"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.选择运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-投影运算"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.投影运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、内联接（典型的联接运算，使用像-或-lt-gt-之类的比较运算符）。"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1、内联接（典型的联接运算，使用像 = 或 &lt;&gt; 之类的比较运算符）。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、外联接"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2、外联接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、交叉联接"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3、交叉联接</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#聚集函数（aggregate-function）"><span class="post-toc-number">3.</span> <span class="post-toc-text">聚集函数（aggregate function）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库管理系统（Database-Management-System-DBMS）"><span class="post-toc-number"></span> <span class="post-toc-text">数据库管理系统（Database Management System,DBMS）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关系模型（relational-model）"><span class="post-toc-number"></span> <span class="post-toc-text">关系模型（relational model）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务"><span class="post-toc-number"></span> <span class="post-toc-text">事务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务的原子性和持久性"><span class="post-toc-number"></span> <span class="post-toc-text">事务的原子性和持久性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务持久性"><span class="post-toc-number"></span> <span class="post-toc-text">事务持久性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#并发控制"><span class="post-toc-number"></span> <span class="post-toc-text">并发控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-基于锁的协议"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.基于锁的协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#锁的授予"><span class="post-toc-number"></span> <span class="post-toc-text">锁的授予</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两阶段封锁协议"><span class="post-toc-number">1.</span> <span class="post-toc-text">两阶段封锁协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可恢复调度与不可恢复调度"><span class="post-toc-number">2.</span> <span class="post-toc-text">可恢复调度与不可恢复调度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#级联回滚和无级联回滚"><span class="post-toc-number">3.</span> <span class="post-toc-text">级联回滚和无级联回滚</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#封锁的实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">封锁的实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#死锁处理"><span class="post-toc-number">5.</span> <span class="post-toc-text">死锁处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#恢复系统"><span class="post-toc-number"></span> <span class="post-toc-text">恢复系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-故障分类"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.故障分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据访问"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复与原子性"><span class="post-toc-number">3.</span> <span class="post-toc-text">恢复与原子性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-日志记录"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 日志记录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-数据库修改"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 数据库修改</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-事务提交"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.事务提交</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-检查点"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.检查点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#恢复算法"><span class="post-toc-number">4.</span> <span class="post-toc-text">恢复算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-事务回滚"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. 事务回滚</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-系统崩溃后的恢复"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2. 系统崩溃后的恢复</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分布式系统"><span class="post-toc-number"></span> <span class="post-toc-text">分布式系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">实现问题</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                数据库基本知识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>7月 09, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aO3LDMAwFQN//0kmbRs7DR7TGs6wyMsfmqiAQAK+fr14vPDw8PDw8PDy8h/Fe8br8umD/3ydXn75/np8NDw8P7wzvn6s2Pu7VD1/9SvLiymfDw8PDO8hLDvc+VMzZC9+Ah4eH93hekgpXgw0eHh7et/J6RYfefjw8PLxn8pJ/+KuFht5r+litBQ8PDy/m5U2m838f7e/h4eHhBbzySFMrJORJ9nzh4eHh3c3LL+I8nLzfsxUY8PDw8D7F2xoO6IWW6hmaKTUeHh7eKq9XjKgeJQ8G1WZYFPfw8PDwVnnV6z5KalsjWb0kHg8PD+9TvLw8MUmvJ6NayWvFw8PDewIvLy5US67R4OlWrQUPDw9vlVdtPvVGBPJCRrUxVu7v4eHh4S3xesFgUpDtJevNyQg8PDy8G3h5Uz/5dKGg0BplwMPDwzvP66XL1RdUOGgxBcfDw8M7w+ulsNWR02ohIylSLExG4OHh4a3WOSel2Py4eeE4T8rx8PDw7ub12v/JzklSnqfXeHh4eOd5efM+T50nwaOXuOPh4eGd5+WpcD4EULjKWyWM8kwZHh4e3g28qL0Uj0lV9yTIUX8PDw8P72Zer+Ra3ZOXQpJRLTw8PLwzvOqaNKjmBYv3qTkeHh7eGV7vUs73zIu/a0NXeHh4eKu8JBjkh+4ViKuB4fK14uHh4R3kVS/o6lBUtbzbHOrCw8PDezCvWnqYPz8aGPDw8PBWedUGVV6qmLS+8PDw8M7zqofLU+Q8bMzBeHh4eGd41RLAvNE1Hym4pb+Hh4eHF/C+b+Hh4eHh4eHh4T1g/QJ8l13JTZ2LJAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Database/">Database</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=数据库基本知识&url=http://yoursite.com/2018/07/09/Database/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=数据库基本知识&url=http://yoursite.com/2018/07/09/Database/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/09/Database/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/09/Database/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=数据库基本知识&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/07/09/Database/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="数据视图"><a href="#数据视图" class="headerlink" title="数据视图"></a>数据视图</h3><p>数据库系统的一个主要目的是给用户提供数据的抽象视图，即系统隐藏关于数据存储和维护的某些细节。</p>
+<h3 id="数据抽象"><a href="#数据抽象" class="headerlink" title="数据抽象"></a>数据抽象</h3><p>系统开发人员可以通过以下几个层次上的抽象来对用户屏蔽复杂性：</p>
+<ul>
+<li><strong>物理层（physical level）：</strong>最底层次的抽象，描述数据实际上是怎样存储的。物理层详细描述复杂的底层数据结构</li>
+<li><strong>逻辑层（logical level）：</strong>比物理层稍高的抽象，描述数据库中存储什么数据以及这些数据存在什么关系。这样逻辑层就通过少量简单的结构描述了整个数据库。【注：<strong>物理数据独立性：</strong>逻辑层不必知道物理层相关的复杂结构】</li>
+<li><strong>视图层（view level）：</strong>最高层次的抽象，只描述整个数据库的某个部分，由于许多用户并不需要关心数据库中的所有信息，而只需访问数据库的一部分。视图层抽象正是为了使这样的用户与系统的交互更简单。</li>
+</ul>
+<h3 id="实例与模式"><a href="#实例与模式" class="headerlink" title="实例与模式"></a>实例与模式</h3><p>特定时刻存储在数据库中的信息的集合，称为数据库的一个<strong>实例（instance）</strong>。数据库的总体设计称为数据库<strong>模式（schema）</strong>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-b6fe8236fa41eeb0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>根据不同的抽象层次，数据库系统可以分为几种不同的模式：</p>
+<ul>
+<li><strong>物理模式（physical schema）：</strong>在物理层描述描述数据库的设计</li>
+<li><strong>逻辑模式（logical schema）：</strong>在逻辑层描述数据库的设计</li>
+<li><strong>子模式（subschema）：</strong>它描述了数据库的不同视图</li>
+</ul>
+<h3 id="数据模式"><a href="#数据模式" class="headerlink" title="数据模式"></a>数据模式</h3><p>数据库结构的基础是<strong>数据模型（data model）</strong>。数据模型是一个描述数据、数据联系、数据语义以及一致性约束的概念工具的集合。数据模型提供了一种描述物理层、逻辑层以及视图层数据库设计的方式</p>
+<p>数据模型可以划分为四类：</p>
+<ul>
+<li><strong>关系模型（relational model）：</strong>关系模型用表的集合来表示数据和数据间的联系。每个表有多个列，每列有唯一的列名。关系模型时基于记录的模型的一种。</li>
+<li><strong>实体—联系模型（entity-relationship model）：</strong>实体—联系（E—R）数据模型基于对现实世界的这样一种认识：现实世界由一组称作实体的基本对象以及这些对象的联系构成。实体是现实世界中可区别其他对象的一件“时间”或一个“对象”</li>
+<li><strong>基于对象的数据模型（object-based data model）：</strong>面向对象的数据模型可以看成是E-R模型增加了封装、方法（函数）和对象标识等概念后的扩展。对象—关系数据模型结合面向对象的数据模型和关系数据模型的特征</li>
+<li><strong>半结构化数据模型（semistructured data model）：</strong>半结构化数据模型允许相同的数据项含有不同属性集的数据定义。这和早先提到的数据模型形成了对比：在那些数据模型中所有某些特定类型的数据项必须有相同的属性集。XML被广泛地用来表示半结构化数据</li>
+</ul>
+<p>【注】网状数据模型（network data model）和层次数据模型（hierarchical data model）先于关系数据模型出现。</p>
+<h3 id="数据库语言："><a href="#数据库语言：" class="headerlink" title="数据库语言："></a>数据库语言：</h3><ul>
+<li><strong>数据操作语言（Data-Manipulation Language，DML）：</strong>使得用户可以访问或操作那些按照某些适当的数据模型组织起来的数据</li>
+<li><strong>数据定义语言（Data-Definition Language，DDL）：</strong>用于说明数据库模式。<strong>数据库系统所使用的存储结构和访问方式是通过一系列特殊的DDL语句来说明的，这些特殊的DDL称作数据存储与定义语言</strong>。这些语句定义了数据库模式的实现细节，而这些细节对用户而言，通常是不可见的。<br>存储在数据库中的数据值必须满足某些<strong>一致性约束（consistency constraint）</strong>。</li>
+<li><strong>域约束（domain constraint）：</strong>每个属性都必须对应于一个所有可能取值构成的域。声明一种属性属于某种具体的域就相当于约束它可以取得值。</li>
+<li><strong>参照完整性（referential integrity）：</strong>一个关系中给定属性集上的取值也在另一关系的某一属性集的取值中出现</li>
+<li><strong>断言（assertion）：</strong>一个断言就是数据库需要时刻满足某一条件。【域约束和参照完整性是断言的特殊形式】</li>
+<li><strong>授权（authorization）：</strong>可以对用户加以区别，对于不停地用户在数据库中不同数值上允许不同的访问类型。<ul>
+<li><strong>读权限（read authorization）：</strong>允许读但不能修改数据</li>
+<li><strong>插入权限（insert authorization）：</strong>允许插入新数据，但不允许修改已有数据</li>
+<li><strong>更新权限（update authorization）：</strong>允许修改，但不能删除数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h3><p>关系数据库基于关系模型，使用一系列表来表达数据以及这些数据之间的联系</p>
+<p>关系模型时基于记录的模型的一个实例。基于记录的模型的来源是由于数据库的结构是几种固定格式的记录。每个表包含一种特定类型的记录。<strong>每种记录类型定义为固定数目的字段或属性。表的列对应于记录类型的属性</strong>。</p>
+<h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><h4 id="实体—联系模型"><a href="#实体—联系模型" class="headerlink" title="实体—联系模型"></a>实体—联系模型</h4><p>实体—联系模型（E-R）使用一组称为实体的基本对象，以及这些对象间的联系。<strong>实体是显示世界中可区别与其他对象的一件“事情”或者一个“物体”</strong>。</p>
+<p>数据库中实体通过<strong>属性（attribute）</strong>集合来描述。<strong>联系（relationship）</strong>是几个实体之间的关联。</p>
+<p>同一类型的所有实体的集合称作<strong>实体集（entity set）</strong>，同一类型的所有联系得集合称作<strong>联系集合（relationship set）</strong>。</p>
+<p>数据库的总体逻辑结构（模式）可以用<strong>实体—联系图（entity-relationship diagram，E-R图）</strong>进行图形化表示。画这种图最常用的方法之一是采用<strong>统一建模语言（Unified Modeling Language，UML）</strong>。E-R图表示如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-fd61a2d9d0beeb5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h3><h4 id="1-关系数据库的结构"><a href="#1-关系数据库的结构" class="headerlink" title="1.关系数据库的结构"></a>1.关系数据库的结构</h4><p><strong>关系数据库由表的集合构成</strong>，每个表有唯一的名字。</p>
+<p>表中一行代表一组值之间的一种联系。在数学术语中，<strong>元组（tuple）</strong>只是一组值的序列（或列表）。在n个值之间的一种联系可以在数学上可以在用关于这些值的一个<strong>n元组（n-tuple）</strong>来表示。换言之，n元组就是一个有n个值的元组，它对应于表中的一行</p>
+<p>在关系模型中，<strong>关系用来指代表，而元组用来指代行，属性指代的是表中的列</strong>。</p>
+<p><strong>关系实例（relation instance）：</strong>表示一个关系的特定实例，即所包含的一组特定的行</p>
+<p>对于关系的每个属性，都存在一个允许取值的集合，称为该属性的<strong>域（domain）</strong>。</p>
+<p><strong>【注】：</strong> <strong>空（null）</strong>值是一个特殊的值，表示值未知或者不存在。</p>
+<h4 id="2-数据库模式"><a href="#2-数据库模式" class="headerlink" title="2.数据库模式"></a>2.数据库模式</h4><p><strong>数据库模式（database schema）与数据库实例（database instance）的区别：</strong>前者是数据库的逻辑设计，后者是给定时刻数据库中数据的一个快照。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a866a5fd512ba105.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="3-码（key）"><a href="#3-码（key）" class="headerlink" title="3.码（key）"></a>3.码（key）</h4><p>一个元组的属性值必须是能够唯一区分元组的，即一个关系中没有两个元组在所有属性上的取值都相同。</p>
+<p><strong>超码（superkey）：</strong>是一个或多个属性的集合，这些属性的集合可以使我们在一个关系中唯一地表示一个元组。【注：超码中可能包含无关紧要的属性】</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e346aeed68fcb417.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如果K是一个超码，那么K的任意超集也是超码。<br><strong>候选码（candidate key）：</strong>它们的任意真子集都不能成为超码，这样的最小超码称为候选码<br>【注：A ⊇ B，则 A 集是 B 的超集，也就是说 B 的所有元素 A 里都有，但 A 里的元素 B 就未必有。】</p>
+<p><strong>主码（primary key）：</strong>代表数据库设计者选中的、主要用来在一个关系中区分不同元组的候选码。【注：码（无论是主码、候选码还是超码）是整个关系的一种性质，而不是单个元组的性质。码的指定代表了被建模的事物在现实世界中约束】</p>
+<p>主码应该选择那些值从不或极少变化的属性。习惯将一个关系的主码属性列在其他属性前面。</p>
+<p>一个关系模式（<code>r1</code>）可能在它的属性中包含另一个关系模式（<code>r2</code>）的主码。这个属性在<code>r1</code>上称作参照<code>r2</code>的<strong>外码（foreign key）</strong>。关系<code>r1</code>也称为外码依赖的<strong>参照关系（referencing relation）</strong>，<code>r2</code>叫做外码的<strong>参照关系（referenced relation）</strong>。</p>
+<p><strong>参照完整性（referential integrity constraint）：</strong>要求参照关系中任意元组在特定属性上的取值必然等于被参照关系中某个元组在特定属性上的取值。</p>
+<h3 id="4-模式图"><a href="#4-模式图" class="headerlink" title="4.模式图"></a>4.模式图</h3><p>一个含有主码和外码依赖的数据库模式可以用<strong>模式图（schema diagram）</strong>来表示。</p>
+<p>处外码约束之外，模式图没有显示表示出参照完整性约束</p>
+<h3 id="5-关系运算"><a href="#5-关系运算" class="headerlink" title="5.关系运算"></a>5.关系运算</h3><p><strong>连接运算：</strong>把分别来自两个关系的元组对合并成单个元组。</p>
+<p><strong>笛卡尔积运算：</strong>从两个关系中合并元组，但不同于连接运算，其结果包含来自两个关系元组的所有对，无论它们的属性值是否匹配。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-39e44a86c11f7617.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="SQL数据定义"><a href="#SQL数据定义" class="headerlink" title="SQL数据定义"></a>SQL数据定义</h2><p>数据库中的关系集合必须由数据定义语言（DDL）指定给系统。SQL不仅能定义一组关系，还能够定义每个关系的信息：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6507375c6d438105.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-基本类型"><a href="#1-基本类型" class="headerlink" title="1.基本类型"></a>1.基本类型</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-7f3bd159d7443d9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>每种类型都可能包含一个被称作为空值的特殊值。空值表示一个缺失的值，该值可能存在但并不为人所知，或者可能根本不存在。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-de16c31422d16e1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="2-自然连接"><a href="#2-自然连接" class="headerlink" title="2.自然连接"></a>2.自然连接</h3><p><strong>自然连接（natural join）</strong>运算 作用于两个关系，并产生一个关系作为结果。不同于两个关系上的笛卡尔积，它将第一个关系的每个元组与第二个关系的所有元组都进行连接；自然连接只考虑那些在两个关系模式中都出现的属性上取值相同的元组对。</p>
+<h3 id="3-视图（view"><a href="#3-视图（view" class="headerlink" title="3.视图（view)"></a>3.视图（view)</h3><p><strong>视图其实就是一条查询sql语句，用于显示一个或多个表或其他视图中的相关数据</strong>。视图将一个查询的结果作为一个表来使用，因此视图可以被看作是存储的查询或一个虚拟表，与真实表不同，视图不会要求分配存储空间，视图中也不会包含实际的数据。视图只是定义了一个查询，视图中的数据是从基表中获取，这些数据在视图被引用时动态的生成。由于视图基于数据库中的其他对象，因此一个视图只需要占用数据字典中保存其定义的空间，而无需额外的存储空间，并且基表的变化会导致视图相应的改变。</p>
+<h3 id="4-事务（transaction）"><a href="#4-事务（transaction）" class="headerlink" title="4.事务（transaction）"></a>4.事务（transaction）</h3><p>事务由查询和（或）更新语句的序列组成。SQL标准规定当一条SQL语句被执行，就隐式地开始了一个事务。下列SQL语句之一会结束一个事务：</p>
+<ul>
+<li><strong>Commit work：</strong>提交当前事务，也就是将事务所做的更新在数据库中持久保存。在事务被提交后，一个新的事务自动开始。</li>
+<li><strong>Rollback work：</strong>回滚当前事务，即撤销该事务中所有SQL语句对数据库的更新。这样，数据库就恢复到执行该事务第一条语句之前的状。</li>
+</ul>
+<p>当在事务执行过程中检测到错误时，事务回滚是有用的。在某种意义上，事务提交就像对编辑文档的变化存盘，而回滚就像不保存变化退出编辑。一旦某事务执行了commit work，它的影响就不能用rollback work来撤销了。数据库系统保证在发生诸如某条SQL语句错误、断电、系统崩溃这些故障的情况下，如果一个事务还没有完成commit work，其影响将被回滚。在断电和系统奔溃的情况下，回滚会在系统重启之后执行。</p>
+<h3 id="4-完整性约束"><a href="#4-完整性约束" class="headerlink" title="4.完整性约束"></a>4.完整性约束</h3><p>完整性约束保证授权用户对数据库所做的修改不会破坏数据的一致性。因此，完整性约束防止的是对数据的意外破坏。</p>
+<h4 id="1-单个关系上的约束"><a href="#1-单个关系上的约束" class="headerlink" title="1.单个关系上的约束"></a>1.单个关系上的约束</h4><p><code>create table</code>命令可以定义关系表，还可以包括完整性约束语句。除了主码约束之外，还有许多其他地方包括在<code>create table</code>命令中的约束。允许的完整性约束包括：</p>
+<ul>
+<li>not unll：禁止在属性上插入空值</li>
+<li>unique</li>
+<li>check(&lt;谓词&gt;)</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-83bac77c1a69e86e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="形式化关系查询语言"><a href="#形式化关系查询语言" class="headerlink" title="形式化关系查询语言"></a>形式化关系查询语言</h2><h3 id="1-选择运算"><a href="#1-选择运算" class="headerlink" title="1.选择运算"></a>1.选择运算</h3><p><img src="http://upload-images.jianshu.io/upload_images/1351548-c5d7027e63ce6330.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="2-投影运算"><a href="#2-投影运算" class="headerlink" title="2.投影运算"></a>2.投影运算</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-fdd73aaa666529c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="1、内联接（典型的联接运算，使用像-或-lt-gt-之类的比较运算符）。"><a href="#1、内联接（典型的联接运算，使用像-或-lt-gt-之类的比较运算符）。" class="headerlink" title="1、内联接（典型的联接运算，使用像 = 或 &lt;&gt; 之类的比较运算符）。"></a>1、内联接（典型的联接运算，使用像 = 或 &lt;&gt; 之类的比较运算符）。</h4><p>包括相等联接和自然联接。内联接使用比较运算符根据每个表共有的列的值匹配两个表中的行。例如，检索 students和courses表中学生标识号相同的所有行。</p>
+<h4 id="2、外联接"><a href="#2、外联接" class="headerlink" title="2、外联接"></a>2、外联接</h4><p>外联接可以是左向外联接、右向外联接或完整外部联接。在 FROM子句中指定外联接时，可以由下列几组关键字中的一组指定：</p>
+<ul>
+<li><strong>LEFT JOIN</strong>或<strong>LEFT OUTER JOIN</strong><br>左向外联接的结果集包括 LEFT OUTER子句中指定的左表的所有行，而不仅仅是联接列所匹配的行。如果左表的某行在右表中没有匹配行，则在相关联的结果集行中右表的所有选择列表列均为空值。<ul>
+<li><strong>RIGHT JOIN</strong> 或 <strong>RIGHT OUTER JOIN</strong><br>右向外联接是左向外联接的反向联接。将返回右表的所有行。如果右表的某行在左表中没有匹配行，则将为左表返回空值。</li>
+<li><strong>FULL JOIN </strong>或 <strong>FULL OUTER JOIN</strong><br>完整外部联接返回左表和右表中的所有行。当某行在另一个表中没有匹配行时，则另一个表的选择列表列包含空值。如果表之间有匹配行，则整个结果集行包含基表的数据值。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3、交叉联接"><a href="#3、交叉联接" class="headerlink" title="3、交叉联接"></a>3、交叉联接</h4><p>交叉联接返回左表中的所有行，左表中的每一行与右表中的所有行组合。交叉联接也称作笛卡尔积。</p>
+<p>FROM 子句中的表或视图可通过内联接或完整外部联接按任意顺序指定；但是，用左或右向外联接指定表或视图时，表或视图的顺序很重要。有关使用左或右向外联接排列表的更多信息，请参见使用外联接。</p>
+<h3 id="聚集函数（aggregate-function）"><a href="#聚集函数（aggregate-function）" class="headerlink" title="聚集函数（aggregate function）"></a>聚集函数（aggregate function）</h3><p>聚集函数输入值的一个汇集，将单一值作为结果返回。</p>
+<p>使用聚集函数对其进行操作的汇集中，一个值可以出现多次，值出现的顺序是无关紧要的。这样的汇集称为<strong>多重集（multiset）</strong>。集合（set）是多重集的特例，其中每个值都只出现一次。</p>
+<h2 id="数据库管理系统（Database-Management-System-DBMS）"><a href="#数据库管理系统（Database-Management-System-DBMS）" class="headerlink" title="数据库管理系统（Database Management System,DBMS）"></a>数据库管理系统（Database Management System,DBMS）</h2><p>数据库管理系统是位于用户与OS之间的一层数据管理软件。其主要功能：</p>
+<ul>
+<li><strong>数据定义功能</strong><br>DBMS提供数据定义语言（Dta Definition Language，DDL），用户通过它可以方便地对数据库中的数据对象进行定义</li>
+<li><strong>数据组织、存储和管理</strong><br>DBMS要分类组织、存储和管理各种数据，包括数据字典、用户数据、数据的存取路径等</li>
+<li><strong>数据操纵功能</strong><br>DBMS提供数据操纵语言（Data Manipulation Language，DML），用户可以使用DML操纵数据，实现对数据库的基本操作，例如查询、插入、删除和修改等</li>
+<li><strong>数据库的事物管理和运行管理</strong><br>数据库在建立、运用和维护时，由数据库管理系统统一管理、统一控制，以保证数据的安全性、完整性、多用户对数据的并发使用及发生故障后的系统恢复</li>
+<li><strong>数据库的建立和维护功能</strong><br>包括：数据库初始数据的输入、转换功能，数据的转储、恢复功能，数据库的重组织功能和性能监视、分析功能等。这些功能通常是由一些实用程序或管理工具完成的</li>
+<li><strong>其他功能</strong><ul>
+<li>DBMS与网络中其他软件系统的通信功能</li>
+<li>一个DBMS与另一个DBMS或文件系统的数据转换功能</li>
+<li>异构数据库之间的互访和互操作功能</li>
+</ul>
+</li>
+</ul>
+<h2 id="关系模型（relational-model）"><a href="#关系模型（relational-model）" class="headerlink" title="关系模型（relational model）"></a>关系模型（relational model）</h2><p><strong>关系 （relation）：</strong> 一个关系对应通常说的一张表<br><strong>元祖（tuple）：</strong>表中的一行即为一个元组</p>
+<p><strong>属性（attribute）：</strong>表中的一列即为一个属性。给每一个属性起一个名称即属性名<br><strong>码（key）：</strong>也称为码键。表中的某个属性组，它可以唯一确定一个元组<br><strong>域（domain）：</strong>属性的取值范围<br><strong>分量：</strong>元组中的一个属性值<br><strong>关系模式：</strong>关系的描述一般表述为：关系名(属性1，属性2，…,属性n)</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-45a95bb768ce6ae3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>构成大一逻辑工作单元的操作集合称为事务。即使有故障，数据库系统也必须保证事务的正确执行——要么执行整个事务，又要么属于该事务的操作一个也不执行。</p>
+<p>事务是访问并可能更新各种数据项的一个<strong>程序执行单元（unit）</strong>。事务用形如<code>begin transaction</code>和<code>end transaction</code>语句（或函数调用）来界定。</p>
+<p>ACID特性：</p>
+<ul>
+<li><strong>原子性：</strong>事务的所有操作在数据库中要么全部正确反映出来，要么完全不反映</li>
+<li><strong>一致性：</strong>隔离执行事务时（换言之，在没有其他事务并发执行的情况下）保持数据库的一致性</li>
+<li><strong>隔离性：</strong>尽管多个事务可能并发执行，但系统保证，对于任何一对事务<code>Ti</code>和<code>Tj</code>，在<code>Ti</code>看来，<code>Tj</code>要么在<code>Ti</code>开始之前已经完成执行，要么在<code>Ti</code>完成之后执行。因此，每个事务都感觉不到事务中有其他事务在并发执行</li>
+<li><strong>持久性：</strong>一个事务成功完成之后，它对数据库的改变必须是永久的（即使出现系统故障）</li>
+</ul>
+<h2 id="事务的原子性和持久性"><a href="#事务的原子性和持久性" class="headerlink" title="事务的原子性和持久性"></a>事务的原子性和持久性</h2><p>事务并非总能成功地执行完成，称该事务<strong>中止（aborted）</strong>了。如果要确保原子性，中止事务必须对数据库的状态不造成影响。因此，中止事务对数据库所做过的任何改变必须撤销。一旦中止事务造成的变更被撤销，就称事务已<strong>回滚（roll back）</strong>。恢复机制负责管理事务中止。典型的方法是维护一个<strong>日志（log）</strong>。每个事务对数据库的修改都首先会记录到日志中。</p>
+<p>成功完成执行的事务称为已<strong>提交（commited）</strong>。一个对数据库进行过更新的已提交事务时数据库进入一个新的一致状态（即使出现系统故障，这个状态也必须保持）。</p>
+<p>一旦一个事务已提交，便不能通过中止来撤销其造成的影响。撤销已提交事务所造成的影响的唯一方法是执行一个<strong>补偿事务（compensating transaction）</strong>。</p>
+<p>事务必须处于以下状态之一：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e180cc22fcf5c8aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注】</strong></p>
+<ul>
+<li>只有在事务已经进入提交状态后，才说事务已提交</li>
+<li>仅当事务已进入中止状态，才说事务已中止</li>
+<li>如果事务是提交或中止的，称为已经结束的（terminated）</li>
+</ul>
+<p>事务从活动状态开始，当事务完成它的最后一条语句就进入了<strong>部分提交状态</strong>。此时，事务已经完成执行，但由于实际输出可能仍临时驻留在主存中，因此一个硬件故障可能阻止其成功完成，于是事务仍可能不得不中止。</p>
+<p>接着数据库系统往磁盘上写入足够的信息，确保即使出现故障时事务所做的更新也可能在系统重启后重新创建，当最后一条这样的信息写完后，事务就进入提交状态。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c56ff6110252f3d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>系统判定事务不能继续正常执行后（例如，由于硬件或逻辑错误），事务就进入<strong>失败状态</strong>。这种事务必须回滚。这样，事务就进入<strong>中止状态</strong>。此时，系统有两种选择：</p>
+<ul>
+<li><strong>重启（restart）事务</strong>，但仅当引起事务中止的硬件错误或不是由事务的内部逻辑所产生的软件错误时。重启的事务被看成是一个新事务。</li>
+<li><strong>杀死（kill）事务</strong>，这样做通常是由于事务的内部逻辑造成的错误，只有重写应用应用程序才能改正，或者由于输入错误，或所需数据在数据库中没有找到。<h2 id="事务持久性"><a href="#事务持久性" class="headerlink" title="事务持久性"></a>事务持久性</h2>事务处理系统通常允许多个事务并发地执行。数据库必须控制事务之间的交互，以防止它们破坏数据库的一致性。系统通过<strong>并发控制机制</strong>的一系列机制来保证这一点。</li>
+</ul>
+<p>当数据库系统并发地执行多个事务时，相应的调度不必是串行的。若有两个并发执行的事务，操作系统可能先选择其中的一个事务执行一小段时间，然后切换上下文，执行第二个事务一段时间，接着又切换回第一个事务执行一段时间，如此下去。在多个事务的情形下，所有事务共享CPU时间。</p>
+<h2 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h2><h3 id="1-基于锁的协议"><a href="#1-基于锁的协议" class="headerlink" title="1.基于锁的协议"></a>1.基于锁的协议</h3><p>确保隔离性的方法之一就是要求对数据项以互斥的方式进行访问。实现该需求最常用的方法是：只允许事务访问当前该事务持有锁的数据项。</p>
+<p>常见的锁：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d65079fa0539a2fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>要求每个事务都要根据自己将对数据项Q进行的操作类型<strong>申请（request）</strong>适当的锁。该事务将请求发送给并发控制管理器。事务只有在并发控制管理器<strong>授予（grant）</strong>所需锁之后才能进行其操作。这两种锁类型的使用可以让多个事务读取一个数据项但是限制同时只能有一个事务进行写操作。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e4eff53a010ed0ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>要使用一个数据项，事务Ti必须首先给该数据项加锁。如果该数据项已经被另一个事务加上了不相容类型的锁，则在所有其他事务持有的不相容类型锁被释放之前，并发控制管理器不会授予锁。因此Ti只好等待，直到所有 其他事务持有的不相容类型的锁被释放。</p>
+<p><strong>【注】</strong></p>
+<ol>
+<li><strong>相容：</strong>令A与B代表任意的锁类型，假设事务<code>Ti</code>请求对数据项Q加A类型锁，而事务<code>Tj</code>当前在数据项Q上拥有B类型锁。尽管数据项Q上存在B类型锁，如果事务Ti可以立即获得数据项Q上的锁，则说A类型的锁与B类型的锁是<strong>相容的（compatible）</strong>。</li>
+</ol>
+<ul>
+<li>一个事务只要还在访问数据项，它就必须拥有该数据项上的锁。此外，让事务对数据项作最后一次访问后，立即释放该数据项上的锁也未必是可去的，因为有可能不能保证可串行性。</li>
+</ul>
+<p>将要求在系统中的每一个事务遵从称为<strong>封锁协议（locking protocol）</strong>的一组规则，这些规则规定事务何时对数据项进行加锁、解锁。封锁协议限制了可能的调度数目。这些调度组成的集合是所有可能的可串行化调度的一个真子集。</p>
+<h2 id="锁的授予"><a href="#锁的授予" class="headerlink" title="锁的授予"></a>锁的授予</h2><p>当事务申请对一个数据项加某一类型的锁，且没有其他事务在该数据项上加了与此类型相冲突的锁，则可以授予锁。</p>
+<h3 id="两阶段封锁协议"><a href="#两阶段封锁协议" class="headerlink" title="两阶段封锁协议"></a>两阶段封锁协议</h3><p>保证可串行性的一个协议是<strong>两阶段封锁协议（two-phase locking protocol）</strong>。该协议要求两个事务分两个阶段提出加锁和解锁申请。</p>
+<ul>
+<li><strong>增长阶段（growing phase）：</strong>事务可以获得锁，但不能释放锁。</li>
+<li><strong>缩减阶段（shrinking phase）：</strong>事务可以释放锁，但不能获得新锁。</li>
+</ul>
+<p>最初，事务处于增长阶段，事务根据需要获得锁。一旦该事务释放了锁，它就进入缩减阶段，并且不能在发出加锁请求。</p>
+<p>对于任何事务，在调度中该事务获得其最后加锁的位置（增长阶段结束点）称为事务的<strong>封锁点（lock point）</strong>。这样，多个事务根据可以根据它们的封锁点进行排序。实际上，这个顺序就是事务的一个可串行化顺序。</p>
+<p>对于一次调度其中涉及的相关事务，无论是什么原因，如果事务<code>Ti</code>失败了，为保证事务的原子性我们必须撤消该事务对数据库造成的影响，即将事务<code>Ti</code>回滚。同时由于系统中事务的并发执行，还必须确保那些依赖于<code>Ti</code>的任何事务<code>Tj</code>(即<code>Tj</code>读取了由<code>Ti</code>所写的数据)也必须同时撤消掉（即回滚掉）。</p>
+<h3 id="可恢复调度与不可恢复调度"><a href="#可恢复调度与不可恢复调度" class="headerlink" title="可恢复调度与不可恢复调度"></a>可恢复调度与不可恢复调度</h3><p>如图所示，事务<code>T7</code>读取了事务<code>T6</code>所写的数据A，如果事务<code>T6</code>发生故障而回滚，就有可能引起<code>T7</code>的回滚，因此事务<code>T6</code>必须在<code>T7</code>提交之前进行提交，才能保证调度中事务是可恢复的。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-06fd24af4dd10f3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>对于可恢复调度，我们可以假设事务<code>T7</code>先提交，而事务<code>T6</code>后提交，事务<code>T6</code>在提交的过程中发生了故障，这时候事务<code>T6</code>可以回滚，而事务<code>T7</code>已经提交成为结束的事务，因此无法回滚，这势必造成调度中的事务无法恢复，因此事务<code>T6</code>必须先于事务<code>T7</code>提交，才能保证数据库在执行事务出现中断时，可以会滚到数据库 原来的状态。</p>
+<p>由上可以看出，对于每对事务<code>Ti</code>和<code>Tj</code>，如果<code>Tj</code>读取了由<code>Ti</code>所写的数据项，则<code>Ti</code>应先于<code>Tj</code>提交。我们把这样的调度称为可恢复调度。相反，如果在调度中，<code>Tj</code>读取了<code>Ti</code>写入的值，而且先于<code>Ti</code>执行提交操作，那么这个调度室不可恢复的。</p>
+<h3 id="级联回滚和无级联回滚"><a href="#级联回滚和无级联回滚" class="headerlink" title="级联回滚和无级联回滚"></a>级联回滚和无级联回滚</h3><p>例如，有两个人（两个事务<code>Ti</code>和<code>Tj</code>），一个 好人(<code>Tj</code>)，一个坏人(<code>Ti</code>)，坏人(<code>Ti</code>)在某个人家里偷了钱(<code>Ti</code>执行读取操作)，并将其收入囊中（<code>Ti</code>执行写操作），然后坏人将偷来的钱给好人花（<code>Tj</code>读取了<code>Ti</code>写入的数据项“偷的钱”），最后这个盗窃案被破获了（事务在执行中出现中断），坏人进了监狱（<code>Ti</code>开始回滚），好人也同样被逮捕了（<code>Tj</code>也开始回滚）。可以看出，好人受到了坏人的影响（两个事务之间产生了级联）。因此他们都会出现回滚。</p>
+<p>对于非级联回滚，可以简单的说他们之间没有相互产生“写”操作的影响。科学的解释如下：</p>
+<blockquote>
+<p>因一个事务故障导致一系列事务回滚的现象称为级联回滚，系统应该避免级联回滚。例如下图所示，事务<code>T9</code>读取了事务<code>T8</code>写的数据A，事务<code>T10</code>读取了事务<code>T9</code>写的数据A，如果调度10的指令已经执行完事务<code>T10</code>的<code>read(A)</code>，而这时事务<code>T8</code>发生了故障必须回滚，势必引起事务<code>T9</code>和<code>T10</code>的回滚。</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a9c6683527d48d55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>级联回滚需要撤消大量的工作，所以，在数据库设计的时候要尽量避免级联回滚。</p>
+<p>为了避免调度中事务的级联回滚，对于每对事务<code>Ti</code>和<code>Tj</code>，如果<code>Tj</code>读取了由<code>Ti</code>所写的数据项，则<code>Ti</code>必须在<code>Tj</code>读取之前提交。</p>
+<p>级联回滚可以通过将两端封锁协议改为<strong>严格两端封锁协议（strict two-phase locking protocol）</strong>。加以避免。这个协议除了要求封锁是两段以外，还要求事务持有的所有排他锁必须在事务提交后方可释放。这个要求保证未提交事务所写的任何数据在该事务提交之前以排他锁方式加锁，防止其他事务读这些数据。</p>
+<p>另一个两段封锁协议的变体是<strong>强两段封锁协议（rigorous two-phase locking protocol）</strong>，它提交之前不得释放任何锁。</p>
+<p>对于下面两个事务：<br><img src="https://upload-images.jianshu.io/upload_images/1351548-b0963caef6a3c701.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c793bbe98416f76a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>以上观察提示我们对之前的两阶段封锁协议加以修改，使之允许<strong>锁转换（lock conversion）</strong>。将提供一种将共享锁升级为排他锁，以及将排他锁降级为共享锁的机制。</p>
+<ul>
+<li><strong>升级（upgrade）：</strong>表示从共享到排他的转变</li>
+<li><strong>降级（downgrade）：</strong>表示从排他到共享的转变</li>
+</ul>
+<p>锁转换不能随意进行。锁升级只能发生在增长阶段，而锁降级只能发生在降级阶段。</p>
+<h3 id="封锁的实现"><a href="#封锁的实现" class="headerlink" title="封锁的实现"></a>封锁的实现</h3><p><strong>锁管理器（lock manager）</strong>可以实现为一个过程，它从事务接受消息并反馈消息。<strong>锁管理器过程针对锁请求消息返回授予消息，或者要求事务回滚的消息（发生死锁时）</strong>。解锁消息只需要得到一个确认回答，但可能引发其他等待事务的授予锁消息。</p>
+<p>锁管理器使用以下的数据结构：锁管理器为目前已加锁的每个数据项维护一个链表，每一个请求为链表中一条记录，按请求到达的顺序排序。它使用一个以数据名为索引的散列表来查找链表中的数据项。这个表叫做<strong>锁表（lock table）</strong>。一个数据项的链表中记每一条记录表示由哪个事务提出的请求，以及它请求什么类型的锁，该记录还表示该请求是否已授予锁。</p>
+<p>锁管理器这样处理请求：</p>
+<ul>
+<li>当一条锁请求消息到达时，如果相应数据项的链表存在，在该链表末尾增加一个记录；否则，新建一个仅包含该请求记录的链表。<ul>
+<li>在当前没有加锁的数据项上总是授予第一次加锁请求，但当事务向已被加锁的数据项申请加锁时，只有当请求与当前持有的锁相容，并且所有的先前的请求都已授予锁的条件下，锁管理器才为该请求授予锁；否则，该请求只好等待。</li>
+</ul>
+</li>
+<li>当锁管理器收到一个事务的解锁消息时，它将与该事务相对应的数据项链表中的记录删除，然后检查随后的记录。如果有，就看该请求能否被授权。如果能，锁管理器授权该请求并处理其后记录，如果还有，类似地一个接一个地处理。</li>
+<li>如果一个事务中止，锁管理器删除该事务产生的正在等待加锁的所有请求。一旦数据库系统采取适当动作撤销该事务，该中止事务持有的所有锁将被释放 。</li>
+</ul>
+<p>这个算法保证了锁请求无饿死现象，因为在先前接受到的请求正在等待加锁时，后来者不可能获得授权。</p>
+<h3 id="死锁处理"><a href="#死锁处理" class="headerlink" title="死锁处理"></a>死锁处理</h3><p>如果存在一个事务集，该集合中的每个事务在等待该集合中的另一个事务，则称系统处于死锁状态。处理死锁问题采用两种方法：</p>
+<ul>
+<li><strong>死锁预防（deadlock prevention）：</strong>保证系统永不进入死锁状态。</li>
+</ul>
+<ol>
+<li>通过对加锁请求进行排序或要求同时获得所有的锁来保证不会发生循环等待<ul>
+<li>最简单的机制要求每个事务在开始之前封锁它的所有数据项。此外，要么一次全部封锁要么全不封锁。缺点：（1）在事务开始前通常很难预知哪些数据项需要封锁。（2）数据项使用率可能很低，因为许多数据项可能封锁很长时间却用不到</li>
+<li>对所有的数据项强加一个次序，同时要求事务只能按次序规定的顺序封锁数据项。</li>
+</ul>
+</li>
+<li>每当等待有可能导致死锁时，进行事务回滚而不是等待加锁</li>
+</ol>
+<ul>
+<li>死锁检测（deadlock detection）与死锁恢复（deadlock recovery）：检查系统状态的算法周期性地激活，判断有无死锁发生。如果发生死锁，则系统必须试着从死锁从恢复。为实现这一点，系统必须：（1）维护当前将数据项分配给事务的有关信息，以及任何尚未解决的数据项请求信息（2）提供一个使用这些信息判断系统是否进入死锁状态的算法（3）当检测算法判定存在死锁时，从死锁中恢复<ul>
+<li>当且仅当等待图包含环时，系统中存在存在死锁。在该环中的每个事务称为<strong>死锁状态</strong>。要检测死锁，系统需要维护等待图，并周期性地激活一个在等待图中搜索环的算法。</li>
+<li>从死锁中恢复：当一个检测算法存在死锁时，系统必须从死锁中恢复（rocover）。解除死锁最通常的做法是：回滚一个或多个事务。需要采取三个步骤：<ul>
+<li><strong>选择牺牲者：</strong>给定出图死锁状态的事务集，为解除死锁，必须决定回滚哪一个事务以打破死锁。应使事务回滚带来的代价最小</li>
+<li><strong>回滚：</strong>一旦决定了要回滚那个事务，就需要决定事务事务回滚多远。（1）彻底回滚（total rollback） ：中止该事务，然后重新开始（2）部分回滚（partial rollback）：事务只回滚到可以解决死锁处。这种回滚要求系统维护所有正在运行事务的额外状态信息。更确切地说，需要记录锁的申请/授予序列和事务执行的更新</li>
+<li><strong>饿死：</strong>在系统中，如果选择牺牲者主要基于代价因素，有可能同一事务总是被选为牺牲者。这样该事务不能完成其指定任务，就会发生饿死（starvation）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="恢复系统"><a href="#恢复系统" class="headerlink" title="恢复系统"></a>恢复系统</h2><p><strong>恢复机制（recovery scheme）</strong>将数据库恢复到故障发生前的一致的状态，还必须提供<strong>高可用性（high availability）</strong>，即：它必须将数据库崩溃后不能使用的时间缩短到最短。</p>
+<h3 id="1-故障分类"><a href="#1-故障分类" class="headerlink" title="1.故障分类"></a>1.故障分类</h3><ul>
+<li><strong>事务故障(transaction failure）：</strong><ul>
+<li><strong>逻辑错误（logical error）：</strong>事务由于某些内部条件（如非法输入、找不到数据、溢出或超出资源限制）而无法继续正常执行。</li>
+<li><strong>系统错误（system error）：</strong>系统进入一种不良状态（如死锁），结果事务无法继续正常执行，但该事务可以在以后的某个时间重新执行。</li>
+</ul>
+</li>
+<li><strong>事务故障(transaction failure）：</strong>硬件故障，或者是数据库软件或操作系统的漏洞，导致易失性存储器内容的丢失，并使得事务处理停止。而非易失性存储器仍完好无损。硬件错误和软件漏洞致使系统中止，而不破坏非易失性存储器内容的假设称为故障-停止假设（fail-stop assumption）。设计良好的系统在硬件和软件层有大量的内部检查，一旦有错误发生就会将系统停止。</li>
+<li><strong>磁盘故障(disk failure）：</strong>在数据传送过程中由于磁头损坏或故障造成磁盘块上的内容丢失。其他磁盘上的数据拷贝，或者三级介质（如DVD或磁带）上的归档备份可用于从这种故障中恢复。</li>
+</ul>
+<p>要确定系统如何从故障中恢复，首先需要确定用于存储数据的设备故障方式。其次必须考虑这些故障方式对数据库内容有什么影响。然后就可以提出在故障发生后仍保证数据库一致性以及事务的原子性的算法，这些算法称为恢复算法，由两部分组成：</p>
+<ul>
+<li>在正常事务处理时采取措施，保证有足够的信息可用于故障恢复。</li>
+<li>故障发生后采取措施，将数据库内容恢复到某个保证数据库一致性、事务原子性及持久性的状态。</li>
+</ul>
+<h3 id="数据访问"><a href="#数据访问" class="headerlink" title="数据访问"></a>数据访问</h3><p>数据库系统常驻于非易失性存储器（通常为磁盘），在任何时间都只有数据库的部分内容在主存中。数据库分成为块（block）的定长存储单位。块是磁盘数据传送的单位，可能包含多个数据项。</p>
+<p>事务由磁盘向主存输入信息，然后再将信息输出回磁盘。输入和输出操作以块为单位完成。位于磁盘上的块称为<strong>物理块（physical block）</strong>，临时位于主存的块称为<strong>缓冲块（buffer block）</strong>。内存中用于临时存放块的区域称为<strong>磁盘缓冲区（disk buffer）</strong>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-303b2bfc03b8f60f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>缓冲块最终写到磁盘，要么是因为缓冲区管理器出于其他用途需要内存空间，要么是因为数据库系统希望将B的变化反映到磁盘上。如果数据库系统发执行<code>output(B)</code>，则称数据库系统对缓冲块B进行<strong>强制输出（force-output）</strong>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8a25859ff0718c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="恢复与原子性"><a href="#恢复与原子性" class="headerlink" title="恢复与原子性"></a>恢复与原子性</h3><p>为达到保持原子性的目标，必须在修改数据库本身之前，首先向稳定存储器输出信息，描述要做的修改。这种信息能帮助确保已提交事务所做的所有修改都反映到数据库中（或者在故障后的恢复过程中反映到数据库中）。这种信息还能确保中止事务所做的任何修改都不会持久存在于数据库中。</p>
+<h4 id="1-日志记录"><a href="#1-日志记录" class="headerlink" title="1. 日志记录"></a>1. 日志记录</h4><p>使用最为广泛的记录数据库修改的结构就是<strong>日志（log）</strong>。日志是日志记录（log record）的序列，它记录数据库中的所有更新活动。</p>
+<p><strong>更新日志记录（update log record）</strong>描述一次数据库写操作，其具有如下几个字段：</p>
+<ul>
+<li><strong>事务标识（transaction identifier）：</strong>是执行write操作的事务的唯一标识</li>
+<li><strong>数据项标识（data-item identifier）：</strong>是所写数据项的唯一标识。通常是数据项在磁盘上的位置，包括数据项所驻留的块的块标识和块内偏移量</li>
+<li><strong>旧值（old value）：</strong>是数据项的写前值</li>
+<li><strong>新值（new value）：</strong>是数据项的写后值<br>如下是一些日志记录类型：</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6afb1382eefcb47a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>每次事务执行写操作时，必须在数据库修改前建立该次写操作的日志记录并把它加到日志中。一旦日志记录已存在，就可以根据需要将修改输出到数据库中。并且能够撤销已经输出到数据库中的修改，这就是利用日志记录中的旧值字段来做的。</p>
+<p>为了从系统故障个磁盘故障中恢复时能使用日志记录，日记必须存放在稳定存储器中。</p>
+<h4 id="2-数据库修改"><a href="#2-数据库修改" class="headerlink" title="2. 数据库修改"></a>2. 数据库修改</h4><p>日志记录使得系统在事务必须中止的情况下能能够对事务所做的修改进行撤销；并且在事务已经提交单在修改已存放到磁盘上的数据库中之前系统崩溃的情况下能够对事务所做的修改进行重做。</p>
+<p>如果一个事务执行了对磁盘缓冲区或磁盘自身的更新，就说这个事务修改了数据库；而对事务在主存中自己私有的部分进行的更新不算数据库修改。如果一个事务知道它提交时都没有修改数据库，就称其采取了<strong>延迟修改（deferred-modification）</strong>技术。如果数据库修改在事务仍然活跃的发生，就称它采用了<strong>立即修改（immediate-modification）</strong>技术。延迟修改所付出的开销是，事务需要创建更新过的所有的数据项的本地拷贝；而且如果一个事务读它更新过的数据项，它必须从自己的本地拷贝中读。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6438e6bc171eb1c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="3-事务提交"><a href="#3-事务提交" class="headerlink" title="3.事务提交"></a>3.事务提交</h4><p>当一个事务commit日志记录——这是该事务的最后一个日志记录——输出到稳定存储器后，就称这个事务<strong>提交（commit）</strong>。这时所有更早的日志都已经输出到稳定存储器中。故日志中就有足够的信息来保证，即使发生了系统崩溃，事务所做的更新也可以重做。如果系统崩溃发生在日志记录<code>&lt;Ti commit&gt;</code>输出到稳定存储器之前，事务<code>Ti</code>将回滚。这样，包含commit日志记录的块的输出就是单个原子动作，它导致一个事务的提交</p>
+<p>使用日志，系统可以对付任何故障，只要它不导致非易失性存储器中信息的丢失。恢复系统使用两个恢复过程，它们都利用日志来找到每个事务<code>Ti</code>更新过的数据项的集合，以及它们各自的旧值和新值。</p>
+<ul>
+<li><code>redo(Ti)</code>:将事务<code>Ti</code>更新过的所有数据项的值都设置为新值<ul>
+<li>通过redo来执行更新的顺序十分重要；当从系统崩溃中恢复时，如果对一个特定数据项的多个更新的执行顺序不同于它们原来的执行顺序，那么该数据项的最终状态将是一个错误的值。大多数的恢复算法，都没有把每个事务的重做分别执行，而是对日志进行一次扫描，在扫描过程中每遇到一个redo日志记录就执行redo动作。这种方法能够确保保持更新的顺序，并且效率更高，因为仅需要整体读一遍日志，而不是对每个事务读一遍日志。</li>
+</ul>
+</li>
+<li><code>undo(Ti)</code>:将事务<code>Ti</code>更新过的所有数据项的值都恢复成旧值<ul>
+<li>undo操作不仅将数据项恢复成它的旧值，而且作为撤销过程的一个部分，还写日志记录来记下所执行的更新。这些日志记录是特殊的redo-only日志记录，因为它们不需要包含所更新的数据项的旧值</li>
+<li>当对于事务<code>Ti</code>的undo操作完成后，它写一个<code>&lt;Ti abort&gt;</code>日志记录，表明撤销完成了。对于每一个事务，<code>undo(Ti)</code>只执行一次，如果在正常的处理中该事务回滚，或者在系统崩溃后的恢复中既没有发现事务<code>Ti</code>的commit记录，也没有发现事务<code>Ti</code>的abort记录。其结果是，在日志记录中每一个事务最终或者有一条commit记录，或者有一条abort记录。</li>
+</ul>
+</li>
+</ul>
+<p>发生系统崩溃之后，系统查阅日志以确定为保证原子性需要对哪些事务进行重做，哪些事务进行撤销。</p>
+<ul>
+<li>如果日志包括<code>&lt;Ti start&gt;</code>记录，但不包括<code>&lt;Ti commit&gt;</code>，也不包括<code>&lt;Ti abort&gt;</code>记录，则需要对事务Ti进行撤销</li>
+<li>如果日志包括<code>&lt;Ti start&gt;</code>记录，以及<code>&lt;Ti commit&gt;</code>或<code>&lt;Ti abort&gt;</code>记录，需要对事务Ti进行重做。</li>
+</ul>
+<h4 id="4-检查点"><a href="#4-检查点" class="headerlink" title="4.检查点"></a>4.检查点</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-2c5a25291fb0c76e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>一种简单的检查点为：（a）在执行检查点操作的过程中不允许执行任何更新 （b）在执行检查点的过程中将所有更新过的缓冲块都输出到磁盘</p>
+<p>检查点的执行过程为：</p>
+<ol>
+<li>将当前位于主存的所有日志记录输出到稳定存储器</li>
+<li>将所有修改的缓冲块输出到磁盘</li>
+<li>将一个日志记录<code>&lt;checkpoint L&gt;</code>输出到稳定存储器，其中L是执行检查点是正活跃的事务的列表</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-497b858ae54d1e7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注意】：</strong><br>要找出事务集合<code>T</code>和确实<code>T</code>中的每个事务是否有commit或abort记录出现在日志中，只需要检查日志中从最后一条<code>checkpoint</code>日志记录开始的部分。</p>
+<h3 id="恢复算法"><a href="#恢复算法" class="headerlink" title="恢复算法"></a>恢复算法</h3><h4 id="1-事务回滚"><a href="#1-事务回滚" class="headerlink" title="1. 事务回滚"></a>1. 事务回滚</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-ad9a14c1923deee8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2-系统崩溃后的恢复"><a href="#2-系统崩溃后的恢复" class="headerlink" title="2. 系统崩溃后的恢复"></a>2. 系统崩溃后的恢复</h4><p>崩溃发生后当数据库重启时，恢复动作分两阶段进行：</p>
+<ul>
+<li>在重做阶段，系统通过从最后一个检查点开始，正向地扫描日志来重放所有事务的更新。重放的日志记录包括在系统崩溃之前已回滚的事务的日志记录，以及在系统崩溃发生时还没有提交的事务的日志记录。这个阶段还确定能够在系统崩溃发生时未完成，因此必须回滚事务。这样的未完成事务或者在检查点时是活跃的，因此会出现在检查点记录的事务列表中，或者是在检查点之后开始的。</li>
+<li><img src="https://upload-images.jianshu.io/upload_images/1351548-2fcdc9fb4c8d140e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h2 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h2><p>在分布式数据库系统（distributed database system）中，数据库存储在几台计算机中。分布式数据库中的计算机之间通过诸如高速私有网络或者因特网那样的通信媒介相互通信。它们不共享主存储器或磁盘。分布式系统中的计算机在规模和功能上是不变的。</p>
+<p>对于分布式系统中的计算机有多种不同的称呼，例如<strong>站点（site）</strong>或<strong>结点（node）</strong>。如今主要采用站点以强调这些系统的物理分布。</p>
+<p><strong>无共享并行数据库与分布式数据库之间的主要区别在于：</strong>在分布式数据库系统中，将事务区分为局部事务和全局事务。局部事务（local transaction）是仅访问在发起事务的那个站点上的数据的事务。全局事务（global transaction）或者访问发起事务的站点之外的某个站点上的数据，或者访问几个不停站点上的数据</p>
+<p>分布式数据库的优点：</p>
+<ul>
+<li><strong>数据共享（sharing data）：</strong>建立分布式数据库的主要优点是，它提供了一个环境使一个站点上的用户可以访问存放在其他站点上的数据。</li>
+<li><strong>自治性（autonomy）：</strong>通过手机开分布的方式来共享数据的主要优点在于，每个站点可以对本地存储的数据保持一定程度的控制。在集中式系统中，中心站点的数据库管理员对数据库进行控制。在分布式数据库中，有一个全局数据库管理员负责整个系统。有一部分责任被委派给每个站点的本地数据库管理员。每个管理员可有不同程度的局部自治。</li>
+<li><strong>可用性（availability）：</strong>在分布式系统中，如果一个站点发生故障，其他站点还能继续运行。如果数据项在几个站点上进行了复制（replicate），需要某个特定数据项的事务可以在这几个站点的任何一个上找到该数据项。于是，一个站点的故障不一定意味着整个系统停止运转。</li>
+</ul>
+<p>系统必须检测到一个站点发生故障，并需要采取适当的动作来从故障中恢复。系统不能在使用故障点的服务。最后，当故障点恢复了或者修复好了，还需要有一定的机制来将它平滑地重新集成到系统中。</p>
+<h3 id="实现问题"><a href="#实现问题" class="headerlink" title="实现问题"></a>实现问题</h3><p>在构建分布式数据库系统时，事务的原子性是个重要问题。如果一个事务在两个站点上运行，其很可能在一个站点上提交而在另一个站点上中止，导致不一致状态。两阶段提交（Two-Phase Commit，2PC）协议可以确保这种情况不会出现。</p>
+<p>2PC的基本思想是：每个站点将事务执行到部分提交状态，然会将提交权交给一个单独的协调站点，事务这一时刻在该站点上称为处于准备状态。仅当该事务在执行它的站点上均到达准备状态时，协调站点才决定提交该事务。否则，协调站点会决定终止该事务。每个执行该事务的站点必须遵循协调站点的决定。如果当事务处于准备状态时一个站点发生故障，当该站点从故障状态恢复时它必须处于一个状态——提交或中止该事务，这取决于协调站点的决定。</p>
+<p>分布式数据库的另一个问题是：并发控制。由于一个事务可以访问在几个站点上的数据项，因此这几个站点上的事务管理器可能需要协调以实现并发控制。如果用到锁，则可以在包含被访问数据项的站点上局部地执行封锁，然而可能会发生设计由多个站点发起的事务的死锁。所以死锁检测必须跨越第一个站点。分布式数据库中更容易发生故障，因此不仅仅是计算机可能出现故障，而且通信链路也可能发生故障。当故障发生时，数据项的赋值是数据库继续运转的关键。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/07/09/Linux ABI/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/09/Compiler/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">4</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
