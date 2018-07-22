@@ -37,6 +37,8 @@
     
     <title>
         
+            C++点点滴滴（中） | 
+        
         Azurery
     </title>
 
@@ -47,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",C++">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -229,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Azurery">
+    <meta property="og:title" content="C++点点滴滴（中） | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    
+    <meta property="og:article:tag" content="C++"> 
 
     
         <meta property="article:published_time" content="Sat Jul 21 2018 17:20:01 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Jul 21 2018 17:20:01 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Jul 22 2018 17:43:40 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Azurery">
+    <meta name="twitter:title" content="C++点点滴滴（中） | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -261,9 +263,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html",
-    "headline": "",
+    "headline": "C++点点滴滴（中）",
     "datePublished": "Sat Jul 21 2018 17:20:01 GMT+0800",
-    "dateModified": "Sat Jul 21 2018 17:20:01 GMT+0800",
+    "dateModified": "Sun Jul 22 2018 17:43:40 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -281,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "",
+    "keywords": ",C++",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -341,6 +343,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -370,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                
+                C++点点滴滴（中）
             </p>
         </div>
 
@@ -419,6 +430,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a>
+    </ul>
+    
 
     <!-- Share -->
     <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -432,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=C++点点滴滴（中）&url=http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=C++点点滴滴（中）&url=http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -471,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=C++点点滴滴（中）&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -489,7 +509,76 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h2 id="std-bind"><a href="#std-bind" class="headerlink" title="std::bind"></a><code>std::bind</code></h2><p>定义在<code>&lt;functional&gt;</code>，其原型为：</p>
+<pre><code class="cpp">template&lt; class F, class... Args &gt;
+/*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+
+template&lt; class R, class F, class... Args &gt;
+/*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+</code></pre>
+<p>为<code>f</code>生成的forwarding call wrapper。调用这个wrapper就如同调用<code>f</code>，其中一些参数绑定到<code>args</code>上。</p>
+<p>其中，<code>f</code>是callable object（function object, pointer to function, reference to function, pointer to member function, or pointer to data member），一些参数将会与之进行绑定。<code>args</code>则是需要进行绑定的参数列表。未进行绑定的参数则由占位符<code>_1, _2, _3...</code>代替。</p>
+<p>例子：</p>
+<pre><code class="cpp">void f(int n1, int n2, int n3, const int&amp; n4, int n5) {
+    std::cout&lt;&lt; n1 &lt;&lt; &#39; &#39;&lt;&lt; n2 &lt;&lt; &#39; &#39; &lt;&lt; n3 &lt;&lt; &#39; &#39; &lt;&lt; n4 &lt;&lt; &#39; &#39; &lt;&lt; n5 &lt;&lt; std::endl;
+}
+
+int g(int n1) { return n1; }
+
+struct Foo {
+    void print_sum(int n1, int n2) {
+        std::cout&lt;&lt; n1+n2 &lt;&lt;std::endl;
+    }
+    int data = 10;
+};
+
+int main() {
+    int n = 7;
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+    n = 10;
+    f1(1, 2, 1001);
+    /// 2 1 42 10 7
+
+    // 相当于调用f(12, g(12), 12, 4, 5)
+    auto f2 = std::bind(f, std::placeholders::_3, std::bind(g, std::placeholders::_3), 
+                std::placeholders::_3, 4, 5);
+    f2(10, 11, 12);
+    /// 12 12 12 4 5
+
+    // bind to a pointer to member function
+    Foo foo;
+    auto f3 = std::bind(&amp;Foo::print_sum, &amp;foo, 95, std::placeholders::_1);
+    f3(5);
+    /// 100
+
+    // bind to a pointer to data member
+    auto f4 = std::bind(&amp;Foo::data, std::placeholders::_1);
+    std::cout &lt;&lt; f4(foo) &lt;&lt; std::endl;
+    // 10
+
+    // smart pointer可以用来调用members of the referenced objects
+    std::cout &lt;&lt; f4(std::make_shared&lt;Foo&gt;(foo)) &lt;&lt;&#39;\n&#39;
+                &lt;&lt; f4(std::make_shared&lt;Foo&gt;(foo)) &lt;&lt;std::endl;
+    // 10
+    // 10
+}    
+</code></pre>
+<h4 id="std-ref-or-std-cref"><a href="#std-ref-or-std-cref" class="headerlink" title="std::ref or std::cref"></a><code>std::ref</code> or <code>std::cref</code></h4><p>定义在<code>&lt;functional&gt;</code>，两者是用于生成<code>std::reference_wrapper</code>的helper function。</p>
+<h2 id="bind的基本原理"><a href="#bind的基本原理" class="headerlink" title="bind的基本原理"></a><code>bind</code>的基本原理</h2><p><code>bind</code>实际上采用的是延迟计算（lazy evalution）的思想，即<strong>将可调用对象保存起来，然后在需要的时候再调用</strong>。</p>
+<p>要实现一个<code>bind</code>需要解决两个问题：</p>
+<ul>
+<li>保存可调用对象及其形参</li>
+<li>如何实现调用</li>
+</ul>
+<h3 id="保存可调用对象及其形参"><a href="#保存可调用对象及其形参" class="headerlink" title="保存可调用对象及其形参"></a>保存可调用对象及其形参</h3><p>首先要解决的问题是：如何将可调用对象保存起来，以便在后面调用。<strong>要保存可调用对象，需要保存两个东西，一个是可调用对象的实例，另一个是可调用对象的形参。</strong></p>
+<p>保存可调用对象的实例比较简单，因为在进行<code>bind</code>时，需要直接传入这个可调用对象，所以可以将其作为一个成员变量（member variable）即可。而保存可调用对象的形参相对麻烦一点，因为形参是变参，不能直接将变参作为成员变量。如果要保存变参的话，需要使用<code>tuple</code>。</p>
+<h3 id="实现调用"><a href="#实现调用" class="headerlink" title="实现调用"></a>实现调用</h3><p><code>bind</code>的形参是变参，可以是<code>0</code>个，也可能是多个（大部分情况下是占位符，还有可能占位符和实参都有）。正是由于<code>bind</code>绑定的灵活性，导致在调用的时候需要找出哪些是占位符，哪些是实参。如果某个一参数是实参便不处理，如果是占位符，就需要将这个占位符替换为对应的实参。</p>
+<p>比如我们绑定了一个三元函数：<code>auto f = bind(&amp;func, _1, 2, _2);</code>。调用为：<code>f(1,3);</code>。一共三个参数，一个实参，两个占位符，调用时传入了两个实参，这时就需要将占位符<code>_1</code>替换为实参<code>1</code>，占位符<code>_2</code>替换为实参<code>3</code>。<strong>占位符的替换需要按照调用实参的顺序来替换，如果调用时的实参个数比占位符要多，则忽略多余的实参</strong>。<br>　　<br>调用的实参会先被转换为<code>tuple</code>，以便接下来替换占位符时，可以选取合适的实参。</p>
+<h2 id="bind实现的关键技术"><a href="#bind实现的关键技术" class="headerlink" title="bind实现的关键技术"></a><code>bind</code>实现的关键技术</h2><h3 id="将tuple展开为变参"><a href="#将tuple展开为变参" class="headerlink" title="将tuple展开为变参"></a>将<code>tuple</code>展开为变参</h3><p>在绑定可调用对象时，将可调用对象的形参（可能含占位符）保存起来（保存到<code>tuple</code>中）。到了调用阶段，需要反过来将<code>tuple</code>展开为可变参数，因为这个可变参数才是可调用对象的形参，否则就无法实现调用了。</p>
+<p>需要借助于一个整形序列（integer sequence）来将<code>tuple</code>变为可变参数。在展开<code>tuple</code>的过程中，还需要根据占位符来选择合适实参，即占位符要替换为调用实参。</p>
+<h3 id="根据占位符来选择合适的实参"><a href="#根据占位符来选择合适的实参" class="headerlink" title="根据占位符来选择合适的实参"></a>根据占位符来选择合适的实参</h3><p>此处比较关键，因为<code>tuple</code>中可能含有占位符。在展开<code>tuple</code>时，如果发现某个元素类型为占位符，则从由调用实参生成的<code>tuple</code>中取出一个实参，用来作为变参的一个参数；当某个类型不为占位符时，则直接从绑定时生成的形参<code>tuple</code>中取出参数，用来作为变参的一个参数。最终<code>tuple</code>被展开为一个变参列表，列表中没有占位符，全是实参，就可以实现调用。</p>
+<p><strong>【注意】：</strong>在替换占位符时，需要通过占位符的模板参数<code>I</code>来从<code>tuple</code>中选择合适的参数，因为占位符<code>place_holder&lt;I&gt;</code>的实例<code>_1</code>实际上<code>place_holder&lt;1&gt;</code>， 占位符实例<code>_2</code>实际上是<code>place_holder&lt;2&gt;</code>，所以可以根据占位符的模板参数来获取其顺序。</p>
+
         
     
 
