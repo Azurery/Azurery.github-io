@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Sat Jul 21 2018 17:20:01 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Jul 25 2018 09:21:02 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Jul 25 2018 18:56:52 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html",
     "headline": "C++点点滴滴（中）",
     "datePublished": "Sat Jul 21 2018 17:20:01 GMT+0800",
-    "dateModified": "Wed Jul 25 2018 09:21:02 GMT+0800",
+    "dateModified": "Wed Jul 25 2018 18:56:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17中，可以使用std-shared-ptr管理动态数组。"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">C++ 17中，可以使用std::shared_ptr管理动态数组。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过std-tuple来实现函数调用"><span class="post-toc-number">5.</span> <span class="post-toc-text">通过std::tuple来实现函数调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型擦除（type-erasure）"><span class="post-toc-number">6.</span> <span class="post-toc-text">类型擦除（type erasure）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-通过多态来擦除类型"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 通过多态来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-通过模板来擦除类型"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 通过模板来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-通过某种通用类型来擦除类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4. 通过某种通用类型来擦除类型</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -883,6 +883,18 @@ typename std::enable_if&lt;std::extent&lt;T&gt;::value != 0,
 //      {x:0 y:0 z:0}
 </code></pre>
 <p>实现思路：如果不是数组，则直接创建<code>unique_ptr</code>；如果是数组的话，先判断是否为定长数组，如果为定长数组，则编译不通过；如果是非定长数组，则获取数组中的元素类型，再根据传入的参数<code>size</code>创建动态数组的<code>unique_ptr</code>（<code>extent&lt;T&gt;::value</code>用来获取数组的长度，如果获取值为<code>0</code>，则说明不是定长数组）。</p>
+<h3 id="C-17中，可以使用std-shared-ptr管理动态数组。"><a href="#C-17中，可以使用std-shared-ptr管理动态数组。" class="headerlink" title="C++ 17中，可以使用std::shared_ptr管理动态数组。"></a>C++ 17中，可以使用<code>std::shared_ptr</code>管理动态数组。</h3><p>其中，<code>std::shared_ptr</code>的template parameter需要使用<code>T[N]</code>或者<code>T[]</code>。使用烦那个是：</p>
+<pre><code class="cpp">std::shared_ptr&lt;int[]&gt; ptr(new int[10]);
+</code></pre>
+<blockquote>
+<p><code>template&lt;class Y&gt; explicit shared_ptr(Y* p);</code><br>Requires: <code>Y</code> shall be a complete type. The expression <code>delete[] p</code>, when T is an array type, or <code>delete p</code>, when <code>T</code> is not an array type, shall have well-defined behavior, and shall not throw exceptions.<br>…<br>Remarks: When <code>T</code> is an array type, this constructor shall not participate in overload resolution unless the expression <code>delete[] p</code> is well-formed and either <code>T</code> is <code>U[N]</code> and <code>Y(*)[N]</code> is convertible to <code>T*</code>, or <code>T</code> is  <code>U[]</code> and <code>Y(*)[]</code> is convertible to <code>T*</code>. …</p>
+</blockquote>
+<p>为了支持上述操作，成员类型<code>element_type</code>将被定义为：</p>
+<pre><code class="cpp">using element_type = remove_extent&lt;T&gt;;
+</code></pre>
+<p>此外，还可以通过使用<code>operator[]</code>来访问数组中的元素：</p>
+<pre><code class="cpp">element_type&amp; operator[](ptrdiff_t i) const;
+</code></pre>
 <h3 id="shared-ptr和unique-ptr指定删除器方式不同"><a href="#shared-ptr和unique-ptr指定删除器方式不同" class="headerlink" title="shared_ptr和unique_ptr指定删除器方式不同"></a><code>shared_ptr</code>和<code>unique_ptr</code>指定删除器方式不同</h3><pre><code class="cpp">std:: shared_ptr&lt;int&gt; ptr(new int(1), [](int*p){delete p;}); //ok
 std::unique_ptr&lt;int&gt; ptr(new int(1), [](int*p){delete p;});  //error
 </code></pre>
@@ -940,12 +952,83 @@ GUARD(p); //安全
 <p>或者使用<code>std::unique_ptr</code>：</p>
 <pre><code class="cpp">#define GUARD(P) std::unique_ptr&lt;void, void(*)(int*)&gt; p##p(p, [](void*p){ GetHandle()-&gt;Release(p);});
 </code></pre>
-<p><strong>【注意】：</strong></p>
+<p><strong>【注意】：</strong><code>#</code>与<code>##</code>运算符</p>
+<ul>
+<li><code>#</code>将后面的宏参数进行字符串操作（即将后面的参数用双引号引起来）</li>
+<li><code>##</code>用于连接。</li>
+</ul>
+<p>例子：</p>
+<pre><code class="cpp">#define PRINT(NAME) printf(&quot;token&quot;#NAME&quot;=%d\n&quot;, token##NAME)
+
+PRINT(9);
+</code></pre>
+<p>宏展开为：<code>printf(&quot;token&quot;#9&quot;=%d\n&quot;,token##9);</code>。<code>#9</code>即为<code>&quot;9&quot;</code>，<code>token##9</code>即为：<code>token9</code>。整个为：<code>printf(&quot;token&quot;&quot;9&quot;&quot;=%d\n&quot;,token9);</code><br>所以输出：<code>token9=9;</code></p>
 <h3 id="std-default-delete"><a href="#std-default-delete" class="headerlink" title="std::default_delete"></a><code>std::default_delete</code></h3><p>定义在<code>&lt;memory&gt;</code>，其原型为：</p>
 <pre><code class="cpp">template&lt; class T &gt; struct default_delete; //使用delete删除分配的单个对象的内存
 template&lt; class T &gt; struct default_delete&lt;T[]&gt;; //此特化版本用delete[]来删除数组
 </code></pre>
 <p><code>std::default_delete</code>是在用户没有指定删除器的情况下，<code>std::unique_ptr</code>（对<code>std::shared_ptr</code>也适用）所采用的的默认删除策略。</p>
+<h2 id="通过std-tuple来实现函数调用"><a href="#通过std-tuple来实现函数调用" class="headerlink" title="通过std::tuple来实现函数调用"></a>通过<code>std::tuple</code>来实现函数调用</h2><pre><code class="cpp">template&lt;int...&gt;
+struct index_tuple {};
+
+template&lt;int N, int... Indices&gt;
+struct make_index : make_index&lt;N-1, N-1, Indices...&gt; {};
+
+template&lt;int... Indices&gt;
+struct make_index&lt;0, Indices...&gt; {
+    typedef index_tuple&lt;Indices...&gt; type;
+};
+
+template&lt;typename Func, int... Indices, typename... Args&gt;
+void call_helper(Func func, index_tuple&lt;Indices...&gt;, 
+            const std::tuple&lt;Args...&gt;&amp; tup) {
+    func(std::get&lt;Indices&gt;(tup)...);
+}
+
+template&lt;typename Func, typename... Args&gt;
+void call(Func func, const std::tuple&lt;Args...&gt;&amp; tup) {
+    call_helper(func, typename make_index&lt;sizeof...(Args)&gt;::type(), tup);
+}
+
+int func(int a, int b) {
+    std::cout&lt;&lt; a+b &lt;&lt;std::endl;        
+}
+
+int main() {
+    std::tuple&lt;int, int&gt; tup = std::make_tuple(1,2);
+
+    call&lt;int(int,int), int&gt;(func, tup);
+}
+</code></pre>
+<h2 id="类型擦除（type-erasure）"><a href="#类型擦除（type-erasure）" class="headerlink" title="类型擦除（type erasure）"></a>类型擦除（type erasure）</h2><p><strong>类型擦除就是将原有类型消除或者隐藏</strong>。需要擦除类型的原因：很多时候并不关心具体类型是什么或者根本就不需要这个类型。</p>
+<p>C++中类型擦除方式主要有：</p>
+<ol>
+<li>通过多态来擦除类型</li>
+<li>通过模板来擦除类型</li>
+<li>通过某种容器来擦除类型</li>
+<li>通过某种通用类型来擦除类型</li>
+<li>通过闭包来擦除类型</li>
+</ol>
+<h3 id="1-通过多态来擦除类型"><a href="#1-通过多态来擦除类型" class="headerlink" title="1. 通过多态来擦除类型"></a>1. 通过多态来擦除类型</h3><p>这种方式比较常见，通过将派生类型（derived type）隐式转换成基类型（base type），再通过基类去多态地调用行为。</p>
+<p>在这种情况下，不用关心派生类的具体类型，而只需要以一种统一的方式去做不同的事情即可。所以把派生类型转成基类型隐藏起来，这样不仅仅可以多态调用，还使程序具有良好的可扩展性。</p>
+<p>然而这种方式仅仅是部分的类型擦除，因为基类型仍然存在。此外，这种类型擦除的方式还必须得以继承的方式方式进行，而且继承使得两个对象强烈地耦合在一起。所以，通过多态来擦除类型的方式有较多局限性。</p>
+<h3 id="2-通过模板来擦除类型"><a href="#2-通过模板来擦除类型" class="headerlink" title="2. 通过模板来擦除类型"></a>2. 通过模板来擦除类型</h3><p>通过模板来擦除类型，本质上是把不同类型的共同行为进行抽象。这时，不同类型彼此之间不再需要通过继承（强耦合的方式）去获得共同的行为，而仅仅是通过模板就能获取共同行为，降低了不同类型之间的耦合，是一种很好的类型擦除方式。</p>
+<p>然而，第二种方式虽然降低了对象间的耦合，但是还有一个问题没解决：<strong>基本类型始终需要指定，并没有消除基本类型</strong>。例如，不可能把一个<code>T</code>本身作为容器元素，而必须在容器初始化时就要到<code>T</code>的具体类型。而C++并没有像C#和Java中的<code>object</code>类型，是所有类型的基类。但可以用<code>boost.variant</code>类型来把各种不同的类型包起来，从而可以获得一种统一的类型，而且不同类型的对象间没有耦合关系，它仅仅是一个类型的容器。</p>
+<pre><code class="cpp">struct blob {
+    std::string pBuf;
+    int size;
+};
+
+    typedef boost::variant&lt;double, int, std::string, blob&gt; Value;
+    std::vector&lt;Value&gt; ivec;
+    ivec.push_back(10);
+    ivec.push_back(&quot;c++&quot;);
+    ivec.push_back(1.1);
+    ivec.push_back({&quot;java&quot;, 4});
+</code></pre>
+<p>上面的代码擦除了不同类型，使得不同的类型都可以放到一个容器中。通过<code>get&lt;T&gt;(Value)</code>便可以获取对应类型的值。</p>
+<p>这种方式是通过某种容器把类型包起来，从而达到类型擦除的目的。它的缺点是这个通用的类型必须事先定义好，只能容纳声明的那些类型，增加一种新类型就不行了。</p>
+<h3 id="4-通过某种通用类型来擦除类型"><a href="#4-通过某种通用类型来擦除类型" class="headerlink" title="4. 通过某种通用类型来擦除类型"></a>4. 通过某种通用类型来擦除类型</h3><p>通过这种方式可以消除之前的缺点，其类似于C#和Java中的<code>object</code>类型。这种通用类型是通过<code>boost.any</code>实现的，它不需要预先定义类型，不同类型都可以转成<code>any</code>。</p>
 
         
     
