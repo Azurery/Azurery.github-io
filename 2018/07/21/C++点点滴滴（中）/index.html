@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Sat Jul 21 2018 17:20:01 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Jul 22 2018 17:43:40 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Jul 25 2018 09:21:02 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html",
     "headline": "C++点点滴滴（中）",
     "datePublished": "Sat Jul 21 2018 17:20:01 GMT+0800",
-    "dateModified": "Sun Jul 22 2018 17:43:40 GMT+0800",
+    "dateModified": "Wed Jul 25 2018 09:21:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -578,6 +578,374 @@ int main() {
 <p>需要借助于一个整形序列（integer sequence）来将<code>tuple</code>变为可变参数。在展开<code>tuple</code>的过程中，还需要根据占位符来选择合适实参，即占位符要替换为调用实参。</p>
 <h3 id="根据占位符来选择合适的实参"><a href="#根据占位符来选择合适的实参" class="headerlink" title="根据占位符来选择合适的实参"></a>根据占位符来选择合适的实参</h3><p>此处比较关键，因为<code>tuple</code>中可能含有占位符。在展开<code>tuple</code>时，如果发现某个元素类型为占位符，则从由调用实参生成的<code>tuple</code>中取出一个实参，用来作为变参的一个参数；当某个类型不为占位符时，则直接从绑定时生成的形参<code>tuple</code>中取出参数，用来作为变参的一个参数。最终<code>tuple</code>被展开为一个变参列表，列表中没有占位符，全是实参，就可以实现调用。</p>
 <p><strong>【注意】：</strong>在替换占位符时，需要通过占位符的模板参数<code>I</code>来从<code>tuple</code>中选择合适的参数，因为占位符<code>place_holder&lt;I&gt;</code>的实例<code>_1</code>实际上<code>place_holder&lt;1&gt;</code>， 占位符实例<code>_2</code>实际上是<code>place_holder&lt;2&gt;</code>，所以可以根据占位符的模板参数来获取其顺序。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><pre><code class="cpp">/// 借助整形序列来将tuple变为可变参数
+/// 定义一个整形序列index_sequence
+template&lt;int...&gt;
+struct index_sequence {};
+
+/// 通过继承的方式，将参数包展开
+template&lt;int N, int...Indices&gt;
+struct make_index : make_index&lt;N-1, N-1, Indices...&gt; {};
+
+/*
+make_index&lt;1,2,3&gt;::type的展开过程：
+
+    make_index&lt;3&gt; : make_index&lt;2, 2&gt;{ }
+    make_index&lt;2, 2&gt; : make_index&lt;1, 1, 2&gt;{ }
+    make_index&lt;1, 1, 2&gt; : make_index&lt;0, 0, 1, 2&gt; {
+        typedef index_sequence&lt;0, 1, 2&gt; type;
+    }
+*/
+template&lt;int...Indices&gt;
+struct make_index&lt;0, Indices...&gt; {
+    typedef index_sequence&lt;Indices...&gt; type;
+};
+
+template&lt;int I&gt;
+struct place_holder {};
+
+place_holder&lt;1&gt; _1;    
+place_holder&lt;2&gt; _2;    
+place_holder&lt;3&gt; _3;    
+place_holder&lt;4&gt; _4;    
+place_holder&lt;5&gt; _5;    
+place_holder&lt;6&gt; _6;    
+place_holder&lt;7&gt; _7;    
+place_holder&lt;8&gt; _8;    
+place_holder&lt;9&gt; _9;    
+place_holder&lt;10&gt; _10;        
+
+/// template&lt; class F, class... Args &gt;
+/// /*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+
+/// template&lt; class R, class F, class... Args &gt;
+/// /*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+
+///成员类型result_type
+// 1) 若F是指向函数或指向成员函数的指针，则result_type为F。
+//    若F是具有嵌套typedef result_type的class type，则result_type为F::result_type 。
+//      否则不定义result_type。
+// 2) result_type直接为R 。
+
+/// result type traits
+template&lt;typename T&gt;
+struct result_traits : result_traits&lt;decltype(&amp;T::operator())&gt; {};
+
+template&lt;typename T&gt;
+struct result_traits&lt;T*&gt; : result_traits&lt;T&gt; {};
+
+// 1）function pointer  
+template&lt;typename Ret, typename...Args&gt;
+struct result_traits&lt;Ret(*)(Args...)&gt; { typedef Ret type; };
+
+// 1）member function
+template&lt;typename Ret, typename Cls, typename...Args&gt;
+struct result_traits&lt;Ret(Cls::*)(Args...)&gt; { typedef Ret type; };
+
+/// 如果类型不是占位符，则直接从tuple中取出（实际上是直接将此类型forwarding）
+template&lt;typename T, typename Tuple&gt;
+inline auto select(T&amp;&amp; val, Tuple&amp;) -&gt; 
+    typename std::add_rvalue_reference&lt;decltype(std::declval&lt;T&gt;())&gt;::type {
+        return std::forward&lt;T&gt;(val);
+}
+
+/// 如果类型是占位符，则需要根据占位符选择实参（实参一开始就被放入tuple中，直接根据index选取即可）
+/// _1实际上为place_holder&lt;1&gt;。根据place_holder的模板参数I，从tuple中选择参数
+/// 在tuple中，index从0开始，所以要获取place_holder&lt;I&gt;占位符的参数，则应在tuple中使用std::get&lt;I-1&gt;(tp)
+template&lt;int I, typename Tuple&gt;
+inline auto select(place_holder&lt;I&gt;&amp;, Tuple&amp; tp) -&gt; 
+                decltype(std::get&lt;I-1&gt;(tp)) {
+    return std::get&lt;I-1&gt;(tp);
+}
+
+// 判断T是否为一个pointer，但不能检测是否为成员指针或者成员函数指针
+template&lt;typename T&gt;
+struct is_pointer_noref : 
+    std::is_pointer&lt;
+        typename std::remove_reference&lt;T&gt;::type
+    &gt; {};
+
+// 判断T是否为一个non-static member function pointer（且不是*&amp;这种类型）
+template&lt;typename T&gt;
+struct is_member_function_noref :
+    std::is_member_function_pointer&lt;    
+        typename std::remove_reference&lt;T&gt;::type
+    &gt; {};
+
+/// 根据不同callable object，将调用不同的invoke函数
+//callable object：
+//  1. function object
+//  2. pointer to function
+//  3. reference to function
+//  4. pointer to member function
+//  5. pointer to data member(先不考虑)
+
+/// 2. pointer to function（函数指针）
+/// ===&gt; Func是一个指向对象或者函数的pointer
+template&lt;typename Ret, typename Func, typename...Args&gt;
+inline typename std::enable_if&lt;
+    is_pointer_noref&lt;Func&gt;::value, 
+    Ret&gt;::type invoke(Func&amp;&amp; f, Args&amp;&amp;...args) {
+        return (*std::forward&lt;Func&gt;(f))(std::forward&lt;Args&gt;(args)...);
+        //    (*f)(args...)
+}
+
+/// pointer to function（）
+/// ===&gt; Func是一个指向函数或者对象的pointer，
+///         第一个实参是一个member function pointer
+template&lt;typename Ret, typename Func, typename Arg1, typename...Args&gt;
+inline typename std::enable_if&lt;
+    is_member_function_noref&lt;Func&gt;::value &amp;&amp; 
+        is_pointer_noref&lt;Arg1&gt;::value,
+    Ret&gt;::type  invoke(Func&amp;&amp; f, Arg1&amp;&amp; ptr, Args...args) {
+        return (std::forward&lt;Arg1&gt;(ptr)-&gt; 
+            *std::forward&lt;Func&gt;(f))(std::forward&lt;Args&gt;(args)...);
+        /// (ptr-&gt;*f)(args...)
+}     
+
+/// 4. pointer to member function
+/// ===&gt; 不是一个指向对象或者函数的pointer，而是一个member function pointer
+template&lt;typename Ret, typename Func, typename Arg1, typename...Args&gt;
+inline typename std::enable_if&lt;
+    is_member_function_noref&lt;Func&gt;::value &amp;&amp; 
+        !is_pointer_noref&lt;Arg1&gt;::value,
+    Ret&gt;::type invoke(Func&amp;&amp; f, Arg1 obj, Args...args) {
+        return (std::forward&lt;Arg&gt;(obj).
+            *std::forward&lt;Func&gt;(f))(std::forward&lt;Args&gt;(args)...);
+        // (obj.*f)(args...)
+}
+
+/// 既不是pointer，也不是member function，则只能是
+template&lt;typename Ret, typename Func, typename...Args&gt;
+inline typename std::enable_if&lt;
+    !is_pointer_noref&lt;Func&gt;::value &amp;&amp; 
+        !is_member_function_noref&lt;Func&gt;::value,
+    Ret&gt;::type invoke(Func&amp;&amp; f, Args...args) {
+        return std::forward&lt;Func&gt;(f)(std::forward&lt;Args&gt;(args)...);
+        // f(args...)
+}
+
+template&lt;typename Func, typename...Args&gt;
+struct bind_t {
+    // 获取callable object的type
+    typedef typename std::decay&lt;Func&gt;::type callable_type;
+    // 将所有的参数类型都压入tuple中
+    typedef std::tuple&lt;typename std::decay&lt;Args&gt;::type...&gt; argument_type;
+    typedef typename result_traits&lt;callable_type&gt;::type result_type;
+public:
+    template&lt;typename T, typename...BindArgs&gt;
+    bind_t(Func&amp; f, BindArgs&amp;...args) : m_func(f) , m_args(args...) {}
+
+    // move ctor
+    template&lt;typename Func, typename...BindArgs&gt;
+    bind_t(Func&amp;&amp; f, BindArgs&amp;&amp;...args) : 
+        m_func(std::move(f)) , m_args(std::move(args)...) {}
+
+    /// call：根据传入的每一个实参，去一一对应相应的形参
+    // std::tuple_size：获取传入的实参的数量
+    // make_index：对传入的实参进行编号
+    // forward_as_tuple：将callable object中的形参压入tuple中    
+    template&lt;typename...CallableArgs&gt;
+    result_type operator()(CallableArgs&amp;&amp;...cal_args) {
+        return call(typename make_index&lt;std::tuple_size&lt;
+                        argument_type&gt;::value
+                    &gt;::type(),
+                    std::forward_as_tuple(std::forward&lt;CallableArgs&gt;(cal_args)...));
+        // template &lt;typename... Types&gt; 
+        // tuple&lt;Types&amp;&amp;...&gt; forward_as_tuple(Types&amp;&amp;... elements) {
+        //         return tuple&lt;Types&amp;&amp;...&gt;(std::forward&lt;Types&gt;(elements)...);
+        // }
+    }
+
+    template&lt;int...Indices, typename ArgumentTuple&gt;
+    result_type call(index_sequence&lt;Indices...&gt; in, ArgumentTuple arg_tp) {
+        return invoke&lt;result_type&gt;(m_func, 
+            select(std::get&lt;Indices&gt;(m_args), arg_tp)...);
+        // select函数根据获取得到的index，从tuple中获取得到对应的参数
+    }
+
+private:
+    callable_type m_func;
+    argument_type m_args;
+};
+
+template&lt;typename Func, typename...Args&gt;
+inline bind_t&lt;Func, Args...&gt; bind(Func&amp;&amp; f, Args&amp;&amp;...args) {
+    return bind_t&lt;Func, Args...&gt;(std::forward&lt;Func&gt;(f), 
+            std::forward&lt;Args&gt;(args)...);
+}
+
+template&lt;typename Func, typename...Args&gt;
+inline bind_t&lt;Func, Args...&gt; bind(Func&amp; f, Args&amp;...args) {
+    return bind_t&lt;Func, Args...&gt;(f, args...);
+}
+</code></pre>
+<h3 id="std-is-member-function-pointer"><a href="#std-is-member-function-pointer" class="headerlink" title="std::is_member_function_pointer"></a><code>std::is_member_function_pointer</code></h3><p>用于检查<code>T</code>是否是一个non-static member function pointer。如果是，则返回一个member constant value：<code>true</code>。</p>
+<p>可能实现：</p>
+<pre><code class="cpp">template&lt;typename T&gt;
+struct is_member_function_pointer_helper : std::false_type {};
+
+template&lt;typename T, typename Cls&gt;
+struct is_member_function_pointer_helper&lt;T Cls::*&gt; : std::is_function&lt;T&gt; {};
+
+template&lt;typename T&gt;
+struct is_member_function_pointer : is_member_function_pointer_helper&lt;
+                    typename std::remove_cv&lt;T&gt;::type&gt;&gt; {};
+</code></pre>
+<p>例子：</p>
+<pre><code class="cpp">public:
+    void member() {}
+};
+
+int main() {
+    static_assert(std::is_member_function_pointer&lt;
+                        decltype(&amp;A::member)&gt;::value,
+                  &quot;A::member is not a memeber function.&quot;);
+}    
+</code></pre>
+<h3 id="pointer-reference"><a href="#pointer-reference" class="headerlink" title="pointer reference"></a>pointer reference</h3><pre><code class="cpp">int* m = new int(5);
+    int* ptr = m;
+    //ptr=new int(6);
+    int*&amp; ptr_ref = ptr;
+    ptr_ref=new int(6);
+
+    std::cout&lt;&lt; &quot;m=&quot; &lt;&lt; *m &lt;&lt;std::endl;
+    std::cout&lt;&lt; &quot;ptr=&quot;&lt;&lt; *ptr &lt;&lt;std::endl;
+    std::cout&lt;&lt; &quot;ptr_ref=&quot; &lt;&lt; *(&amp;(*ptr_ref)) &lt;&lt; std::endl;
+</code></pre>
+<p>改变<code>ptr</code>的值，将改变<code>ptr_ref</code>的值，而<code>m</code>的值不会发生改变（改变<code>ptr_ref</code>的值的效果一样）。</p>
+<p><a href="https://stackoverflow.com/a/37722942/5383517" target="_blank" rel="noopener">Pointer to reference</a></p>
+<h2 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2><h3 id="C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><a href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持" class="headerlink" title="C++17之前，shared_ptr不支持动态数组，而unique_ptr支持"></a>C++17之前，<code>shared_ptr</code>不支持动态数组，而<code>unique_ptr</code>支持</h3><pre><code class="cpp">std::unique_ptr&lt;int[]&gt; uptr(new int[10]);    //ok
+std::shared_ptr&lt;int[]&gt; sptr(new int[10]);    //error
+</code></pre>
+<p>如果试图通过<code>std::shared_ptr</code>来创建动态数组，则需要显式指定删除器（deleter）。例如：</p>
+<pre><code class="cpp">std::shared_ptr&lt;int&gt; p(new int[10], [](int* p){delete[] p;}); //指定delete[]
+</code></pre>
+<p>此外，可以用<code>std::default_delete</code>作为删除器：</p>
+<pre><code class="cpp">std::shared_ptr&lt;int&gt; p(new int[10], std::default_delete&lt;int[]&gt;);
+</code></pre>
+<p>对此，可以封装一个<code>make_shared_array</code>方法让<code>shared_ptr</code>支持动态数组：</p>
+<pre><code class="cpp">template&lt;typename T&gt;
+std::shared_ptr&lt;T&gt; make_shared_array(size_t size) {
+    return std::shared_ptr&lt;T&gt;(new T[size], std::default_delete&lt;T[]&gt;());
+}
+int main() {
+    std::shared_ptr&lt;int&gt; ptr = make_shared_array&lt;int&gt;(10);
+}
+</code></pre>
+<p><code>std::unique_ptr</code>缺少一个类似于<code>make_shared</code>的<code>make_unique</code>方法（c++14已经加入了<code>make_unique</code>）。其实要实现一个make_unique方法是比较简单的：</p>
+<pre><code class="cpp">namespace impl {
+// 支持普通指针
+template&lt;typename T, typename...Args&gt;
+inline typename std::enable_if&lt;!std::is_array&lt;T&gt;::value,
+            std::unique_ptr&lt;T&gt;&gt;::type make_unique(Args&amp;&amp;...args) {
+    return std::unique_ptr&lt;T&gt;(new T(std::forward&lt;Args&gt;(args)...));
+} 
+
+// 支持动态数组。对于动态数组，std::extent的值将为0
+template&lt;typename T&gt;
+typename std::enable_if&lt;std::is_array&lt;T&gt;::value &amp;&amp;
+                            std::extent&lt;T&gt;::value == 0,
+            std::unique_ptr&lt;T&gt;&gt;::type make_unique(size_t size) {
+    typedef typename std::remove_extent&lt;T&gt;::type U;
+    return std::unique_ptr&lt;T&gt;(new U[size]);
+}
+
+// 排除定长数组的情况
+template&lt;typename T, typename...Args&gt;
+typename std::enable_if&lt;std::extent&lt;T&gt;::value != 0,
+            void&gt;::type make_unique(Args&amp;&amp;...) = delete;
+}
+</code></pre>
+<p>测试：</p>
+<pre><code class="cpp">int main() {
+    // Use the default constructor.
+    std::unique_ptr&lt;Vec3&gt; v1 = impl::make_unique&lt;Vec3&gt;();
+    // Use the constructor that matches these arguments
+    std::unique_ptr&lt;Vec3&gt; v2 = impl::make_unique&lt;Vec3&gt;(0, 1, 2);
+    // Create a unique_ptr to an array of 5 elements
+    std::unique_ptr&lt;Vec3[]&gt; v3 = impl::make_unique&lt;Vec3[]&gt;(5);
+
+    std::cout &lt;&lt; &quot;make_unique&lt;Vec3&gt;():      &quot; &lt;&lt; *v1 &lt;&lt; &#39;\n&#39;
+              &lt;&lt; &quot;make_unique&lt;Vec3&gt;(0,1,2): &quot; &lt;&lt; *v2 &lt;&lt; &#39;\n&#39;
+              &lt;&lt; &quot;make_unique&lt;Vec3[]&gt;(5):   &quot; &lt;&lt; &#39;\n&#39;;
+    for (int i = 0; i &lt; 5; i++) {
+        std::cout &lt;&lt; &quot;     &quot; &lt;&lt; v3[i] &lt;&lt; &#39;\n&#39;;
+    }
+}
+// make_unique&lt;Vec3&gt;():      {x:0 y:0 z:0}
+// make_unique&lt;Vec3&gt;(0,1,2): {x:0 y:1 z:2}
+// make_unique&lt;Vec3[]&gt;(5):
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+</code></pre>
+<p>实现思路：如果不是数组，则直接创建<code>unique_ptr</code>；如果是数组的话，先判断是否为定长数组，如果为定长数组，则编译不通过；如果是非定长数组，则获取数组中的元素类型，再根据传入的参数<code>size</code>创建动态数组的<code>unique_ptr</code>（<code>extent&lt;T&gt;::value</code>用来获取数组的长度，如果获取值为<code>0</code>，则说明不是定长数组）。</p>
+<h3 id="shared-ptr和unique-ptr指定删除器方式不同"><a href="#shared-ptr和unique-ptr指定删除器方式不同" class="headerlink" title="shared_ptr和unique_ptr指定删除器方式不同"></a><code>shared_ptr</code>和<code>unique_ptr</code>指定删除器方式不同</h3><pre><code class="cpp">std:: shared_ptr&lt;int&gt; ptr(new int(1), [](int*p){delete p;}); //ok
+std::unique_ptr&lt;int&gt; ptr(new int(1), [](int*p){delete p;});  //error
+</code></pre>
+<p><code>std::unique_ptr</code>指定删除器的时候，需要确定删除器的类型，所以不能直接像<code>shared_ptr</code>那样指定删除器，可以这样写：</p>
+<pre><code class="cpp">std::unique_ptr&lt;int, void(*)(int*)&gt; ptr(new int(1), [](int*p){delete p;});
+</code></pre>
+<p>这种写法在lambda没有捕获变量的情况下是正确的，如果捕获了变量则会编译报错：</p>
+<pre><code class="cpp">std::unique_ptr&lt;int, void(*)(int*)&gt; ptr(new int(1), [&amp;](int*p){delete p;}); //错误，因为捕获了变量
+</code></pre>
+<p>lambda捕获变量后，<code>unique_ptr</code>报错的原因：<strong>lambda在没有捕获变量的情况下，是可以直接转换为函数指针的，捕获了就不能转换为函数指针</strong>。</p>
+<p>如果希望<code>unique_ptr</code>的删除器支持lambda，可以这样写：</p>
+<pre><code class="cpp">std::unique_ptr&lt;int, std::function&lt;void(int*)&gt;&gt; ptr(new int(1), [&amp;](int*p){delete p;});
+</code></pre>
+<p>此外，还可以自定义<code>unique_ptr</code>的删除器。例如：</p>
+<pre><code class="cpp">struct deleter {
+    void operator()(int* p) {
+        std::cout&lt;&lt; &quot;delete&quot; &lt;&lt;std::endl;
+        delete p;
+    }
+};
+
+int main() {
+    std::unique_ptr&lt;int, deleter&gt; p(new int(1));
+}
+</code></pre>
+<p>智能指针可以很方便的管理当前程序库动态分配的内存，还可以用来管理第三方库分配的内存。<strong>第三方库分配的内存一般需要通过第三方库提供的释放接口才能释放，由于第三方库返回出来的指针一般都是原始指针，如果用完之后没有调用第三方库的释放接口，就很容易造成内存泄露</strong>。比如下面的代码：</p>
+<pre><code class="cpp">void* p = GetHandle()-&gt;Create();
+//do something…
+GetHandle()-&gt;Release(p);
+</code></pre>
+<p>这段代码可能存在风险，在使用第三方库分配的内存过程中，可能忘记调用<code>Release</code>接口，可能中间不小心返回了，还有可能中间发生了异常，导致无法调用<code>Release</code>接口。这时可以用智能指针去管理第三方库的内存，只要出了作用域内存就会自动释放，不用显式地去调用释放接口，不用担心中途返回或者发生异常导致无法调用释放接口的问题。</p>
+<pre><code class="cpp">void* p = GetHandle()-&gt;Create();
+std::shared_ptr&lt;void&gt; sp(p, [this](void*p){ GetHandle()-&gt;Release(p);});
+</code></pre>
+<p>上面这段代码就可以保证，在任何时候都能正确释放第三方库分配的内存。虽然能解决问题，但还是有些繁琐，因为每个第三方库分配内存的地方都要调用这段代码。所以可以将这段代码提炼出来，作为一个公共函数，简化调用。</p>
+<pre><code class="cpp">std::shared_ptr&lt;void&gt;  Guard(void* p) {
+    return std::shared_ptr&lt;void&gt; sp(p, [this](void*p){ GetHandle()-&gt;Release(p);});
+}
+void* p = GetHandle()-&gt;Create();
+auto sp = Guard(p);
+//do something…
+</code></pre>
+<p>上面的代码通过<code>Guard</code>函数做了简化，用起来比较方便，但仍然不够安全，因为有可能使用者可能会这样写：</p>
+<pre><code class="cpp">void* p = GetHandle()-&gt;Create();
+Guard(p); //危险，这句结束之后p就被释放了
+//do something…
+</code></pre>
+<p>这样写是有问题的，会导致访问野指针，因为<code>Guard(p);</code>是一个rvalue，如果不赋值给它一个指针的话，<code>Guard(p);</code>这句结束之后，就会释放，从而导致<code>p</code>提前释放了，后面就会访问野指针的内容。</p>
+<p><code>auto sp = Guard(p);</code>需要一个赋值操作，忘记赋值则会导致指针提前释放，所以这种写法仍然不够安全。可以定义一个宏来解决这个问题：</p>
+<pre><code class="cpp">#define GUARD(P) std::shared_ptr&lt;void&gt; p##p(p, [](void*p){ GetHandle()-&gt;Release(p);});
+
+void* p = GetHandle()-&gt;Create();
+GUARD(p); //安全
+</code></pre>
+<p>或者使用<code>std::unique_ptr</code>：</p>
+<pre><code class="cpp">#define GUARD(P) std::unique_ptr&lt;void, void(*)(int*)&gt; p##p(p, [](void*p){ GetHandle()-&gt;Release(p);});
+</code></pre>
+<p><strong>【注意】：</strong></p>
+<h3 id="std-default-delete"><a href="#std-default-delete" class="headerlink" title="std::default_delete"></a><code>std::default_delete</code></h3><p>定义在<code>&lt;memory&gt;</code>，其原型为：</p>
+<pre><code class="cpp">template&lt; class T &gt; struct default_delete; //使用delete删除分配的单个对象的内存
+template&lt; class T &gt; struct default_delete&lt;T[]&gt;; //此特化版本用delete[]来删除数组
+</code></pre>
+<p><code>std::default_delete</code>是在用户没有指定删除器的情况下，<code>std::unique_ptr</code>（对<code>std::shared_ptr</code>也适用）所采用的的默认删除策略。</p>
 
         
     
