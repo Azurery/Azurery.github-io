@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Mon Jul 09 2018 17:36:03 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Jul 23 2018 21:27:45 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Aug 21 2018 11:42:59 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/09/C++点点滴滴（上）/index.html",
     "headline": "C++点点滴滴（上）",
     "datePublished": "Mon Jul 09 2018 17:36:03 GMT+0800",
-    "dateModified": "Mon Jul 23 2018 21:27:45 GMT+0800",
+    "dateModified": "Tue Aug 21 2018 11:42:59 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -3757,6 +3757,11 @@ struct function_traits&lt;std::function&lt;T(Args...)&gt;&gt; :
     template &lt;typename RetrurnType, typename ClassType, typename...Args&gt; \
     struct function_traits&lt;RetrurnType(ClassType::*)(Args...) __VA_ARGS__&gt;： \
             function_traits&lt;RetrurnType(Args...)&gt;{}; \
+
+FUNCTION_TRAITS()
+FUNCTION_TRAITS(const)
+FUNCTION_TRAITS(volatile)
+FUNCTION_TRAITS(const volatile)
 
 /// function object
 template &lt;typename Callable&gt;
