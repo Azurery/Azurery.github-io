@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Sat Jul 21 2018 17:20:01 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Aug 21 2018 11:43:05 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Aug 30 2018 10:23:18 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html",
     "headline": "C++点点滴滴（中）",
     "datePublished": "Sat Jul 21 2018 17:20:01 GMT+0800",
-    "dateModified": "Tue Aug 21 2018 11:43:05 GMT+0800",
+    "dateModified": "Thu Aug 30 2018 10:23:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17中，可以使用std-shared-ptr管理动态数组。"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">C++ 17中，可以使用std::shared_ptr管理动态数组。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过std-tuple来实现函数调用"><span class="post-toc-number">5.</span> <span class="post-toc-text">通过std::tuple来实现函数调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型擦除（type-erasure）"><span class="post-toc-number">6.</span> <span class="post-toc-text">类型擦除（type erasure）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-通过多态来擦除类型"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 通过多态来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-通过模板来擦除类型"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 通过模板来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-通过某种通用类型来擦除类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4. 通过某种通用类型来擦除类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现any"><span class="post-toc-number">7.</span> <span class="post-toc-text">实现any</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strtod"><span class="post-toc-number">8.</span> <span class="post-toc-text">strtod</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17中，可以使用std-shared-ptr管理动态数组。"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">C++ 17中，可以使用std::shared_ptr管理动态数组。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过std-tuple来实现函数调用"><span class="post-toc-number">5.</span> <span class="post-toc-text">通过std::tuple来实现函数调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型擦除（type-erasure）"><span class="post-toc-number">6.</span> <span class="post-toc-text">类型擦除（type erasure）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-通过多态来擦除类型"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 通过多态来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-通过模板来擦除类型"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 通过模板来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-通过某种通用类型来擦除类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4. 通过某种通用类型来擦除类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现any"><span class="post-toc-number">7.</span> <span class="post-toc-text">实现any</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strtod"><span class="post-toc-number">8.</span> <span class="post-toc-text">strtod</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Imcomplete-types（非完整类型）"><span class="post-toc-number">9.</span> <span class="post-toc-text">Imcomplete types（非完整类型）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fprintf"><span class="post-toc-number">10.</span> <span class="post-toc-text">fprintf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Standard-Predefined-Macros"><span class="post-toc-number">11.</span> <span class="post-toc-text">Standard Predefined Macros</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FILE"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">__FILE__</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LINE"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">__LINE__</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DATE-amp-TIME"><span class="post-toc-number">12.</span> <span class="post-toc-text">__DATE__ &amp; __TIME__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC"><span class="post-toc-number">13.</span> <span class="post-toc-text">__STDC__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC-VERSION"><span class="post-toc-number">14.</span> <span class="post-toc-text">__STDC_VERSION__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cplusplus"><span class="post-toc-number">15.</span> <span class="post-toc-text">__cplusplus</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ASSEMBLER"><span class="post-toc-number">16.</span> <span class="post-toc-text">__ASSEMBLER__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#macro的技巧"><span class="post-toc-number">17.</span> <span class="post-toc-text">macro的技巧</span></a></li></ol>
     </ul>
     
 
@@ -1118,6 +1118,75 @@ private:
 <pre><code class="cpp">double strtod( const char* str, const** str_end);
 </code></pre>
 <p>把参数<code>str</code>所指向的字符串转换为一个浮点数（类型为<code>double</code>型）。如果<code>str_end</code>不为空，则指向转换中最后一个字符后的字符的指针会存储在<code>str_end</code>引用的位置。</p>
+<h2 id="Imcomplete-types（非完整类型）"><a href="#Imcomplete-types（非完整类型）" class="headerlink" title="Imcomplete types（非完整类型）"></a>Imcomplete types（非完整类型）</h2><p>这是一种缺乏足够信息来判断object大小的object type，一个imcomplete type在translation union的某些阶段可能是completed。</p>
+<p>满足以下条件之一的类型是imcomplete：</p>
+<ul>
+<li>void</li>
+<li>未知大小的array type（但在之后的declaration中指定其大小之后便是completed）</li>
+<li>未知具体content的struct或union（但在相同作用域之后的declaration中，以相同的struc或者union来定义其content时，便是completed）</li>
+</ul>
+<h2 id="fprintf"><a href="#fprintf" class="headerlink" title="fprintf()"></a><code>fprintf()</code></h2><pre><code class="cpp">int fprintf( FILE *stream, const char *format, [ argument ]...);
+</code></pre>
+<p>其中，<code>stream</code>为<code>stdin</code>、<code>stdout</code>或<code>stderr</code>。<br><code>fprintf()</code>函数根据指定的<code>format</code>发送信息(参数)到由<code>stream</code>指定的文件（即，传送格式化输出到一个文件中）。</p>
+<p><code>fprintf()</code>只能和<code>printf()</code>一样工作。<code>fprintf()</code>的返回值是输出的字符数，发生错误时返回一个负值。</p>
+<h2 id="Standard-Predefined-Macros"><a href="#Standard-Predefined-Macros" class="headerlink" title="Standard Predefined Macros"></a>Standard Predefined Macros</h2><h3 id="FILE"><a href="#FILE" class="headerlink" title="__FILE__"></a><code>__FILE__</code></h3><p>此宏<strong>以C字符串常量的形式扩展为当前输入文件的名称</strong>。 这是preprocessor所打开文件的路径，而不是<code>#include</code>中指定的short name或input file name argument。 例如，<code>/usr/local/include /myheader.h</code>是此宏的一种possible expansion。</p>
+<h3 id="LINE"><a href="#LINE" class="headerlink" title="__LINE__"></a><code>__LINE__</code></h3><p>此宏<strong>以十进制整数常量（decimal integer constant）的形式扩展为当前输入行号</strong>。 虽然称之为预定义的宏，但它是一个非常奇怪的宏，因为它的“定义”随着每一行新的源代码行的变化而变化。</p>
+<p><strong>【注】</strong>：<code>__FILE__</code>和<code>__LINE__</code>可用于报告程序检测到inconsistency时，或者当检测到source line的inconsistency时，生成错误信息。例如：</p>
+<pre><code class="cpp">fprintf(stderr, &quot;Internal error:  &quot;
+                      &quot;negative string length &quot;
+                      &quot;%d at %s, line %d. &quot;,
+            length, __FILE__, __LINE__);
+</code></pre>
+<h2 id="DATE-amp-TIME"><a href="#DATE-amp-TIME" class="headerlink" title="__DATE__ &amp; __TIME__"></a><code>__DATE__</code> &amp; <code>__TIME__</code></h2><pre><code class="cpp">printf(&quot;%s&quot;,__DATE__);    
+</code></pre>
+<h2 id="STDC"><a href="#STDC" class="headerlink" title="__STDC__"></a><code>__STDC__</code></h2><p>一般情况下，此宏扩展为常量<code>1</code>，表示此编译器符合ISO Standard C。如果GNU CPP同GCC以外的编译器一起使用，则结果就一定是这样。但是，除非使用<code>-traditional-cpp</code>选项，否则预处理器将始终conforms to the standard。</p>
+<p>如果使用<code>-traditional-cpp</code>选项，则不定义此宏。</p>
+<p>在某些主机上，系统编译器使用不同的convention，其中<code>__STDC__</code>通常为<code>0</code>，但如果用户自行指定其严格符合C标准，则为<code>1</code>。 处理系统头文件时，CPP遵循host convention（主机约定），但在处理用户文件时，<code>__STDC__</code>始终为<code>1</code>。</p>
+<h2 id="STDC-VERSION"><a href="#STDC-VERSION" class="headerlink" title="__STDC_VERSION__"></a><code>__STDC_VERSION__</code></h2><p>此宏是C标准的version number，它是一个long integer constant，形式为<code>yyyymmL</code>。其中，<code>yyyy</code>和<code>mm</code>代表Standard的年份和月份。它表明了编译器所遵循的C Standard。同<code>__STDC__</code>一样，除非连同GNU CPP和GCC一起使用，否则this is not necessarily accurate for the entire implementation。</p>
+<blockquote>
+<p>The value <code>199409L</code> signifies the <code>1989</code> C standard as amended in <code>1994</code>, which is the current default; the value <code>199901L</code> signifies the <code>1999</code> revision of the C standard; the value <code>201112L</code> signifies the <code>2011</code> revision of the C standard; the value <code>201710L</code> signifies the <code>2017</code> revision of the C standard (which is otherwise identical to the <code>2011</code> version apart from correction of defects).This macro is not defined if the <code>-traditional-cpp</code> option is used</p>
+</blockquote>
+<h2 id="cplusplus"><a href="#cplusplus" class="headerlink" title="__cplusplus"></a><code>__cplusplus</code></h2><p>此宏用于C++编译器，可以使用<code>__cplusplus</code>来检测一个header是否能够被当前所使用的C/C++编译器编译。它和<code>__STDC_VERSION__</code>类似。</p>
+<blockquote>
+<p>Depending on the language standard selected, the value of the macro is <code>199711L</code> for the <code>1998</code> C++ standard, <code>201103L</code> for the <code>2011</code> C++ standard, <code>201402L</code> for the <code>2014</code> C++ standard, <code>201703L</code> for the <code>2017</code> C++ standard, or an unspecified value strictly larger than <code>201703L</code> for the experimental languages enabled by <code>-std=c++2a</code>and <code>-std=gnu++2a</code>.</p>
+</blockquote>
+<h2 id="ASSEMBLER"><a href="#ASSEMBLER" class="headerlink" title="__ASSEMBLER__"></a><code>__ASSEMBLER__</code></h2><blockquote>
+<p>This macro is defined with value <code>1</code> when preprocessing assembly language.</p>
+</blockquote>
+<h2 id="macro的技巧"><a href="#macro的技巧" class="headerlink" title="macro的技巧"></a>macro的技巧</h2><p>如果宏里有多过一个语句（statement），就需要用<code>do { /*...*/ } while(0)</code>包裹成单个语句，否则就会出现问题：</p>
+<pre><code class="cpp">#define M() a(); b()
+if (cond)
+    M();
+else
+    c();
+
+/* 预处理后 */
+
+if (cond)
+    a(); b(); /* b(); 在 if 之外     */
+else          /* &lt;- else 缺乏对应 if */
+    c();
+</code></pre>
+<p>只用 <code>{ }</code>也不行：</p>
+<pre><code class="cpp">#define M() { a(); b(); }
+
+/* 预处理后 */
+
+if (cond)
+    { a(); b(); }; /* 最后的分号代表 if 语句结束 */
+else               /* else 缺乏对应 if */
+    c();
+</code></pre>
+<p>用<code>do while</code>就行了：</p>
+<pre><code class="cpp">#define M() do { a(); b(); } while(0)
+
+/* 预处理后 */
+
+if (cond)
+    do { a(); b(); } while(0);
+else
+    c();
+</code></pre>
 
         
     
@@ -1137,6 +1206,14 @@ private:
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/08/23/Compiler（中）/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -1236,7 +1313,7 @@ private:
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1268,7 +1345,7 @@ private:
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">5</span>
+                <span class="sidebar-badge">9</span>
             </a>
         </li>
         
