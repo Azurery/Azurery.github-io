@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Thu Sep 20 2018 09:11:05 GMT+0800" />
-        <meta property="article:modified_time" content="Thu Sep 20 2018 21:14:33 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Sep 21 2018 22:02:39 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/20/LevelDB/index.html",
     "headline": "LevelDB源码解析",
     "datePublished": "Thu Sep 20 2018 09:11:05 GMT+0800",
-    "dateModified": "Thu Sep 20 2018 21:14:33 GMT+0800",
+    "dateModified": "Fri Sep 21 2018 22:02:39 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Slice"><span class="post-toc-number">1.</span> <span class="post-toc-text">Slice</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Status"><span class="post-toc-number">2.</span> <span class="post-toc-text">Status</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内存池Arena"><span class="post-toc-number">3.</span> <span class="post-toc-text">内存池Arena</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Skiplist"><span class="post-toc-number">4.</span> <span class="post-toc-text">Skiplist</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存屏障（memory-barrier）"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">内存屏障（memory barrier）</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Slice"><span class="post-toc-number">1.</span> <span class="post-toc-text">Slice</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Status"><span class="post-toc-number">2.</span> <span class="post-toc-text">Status</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内存池Arena"><span class="post-toc-number">3.</span> <span class="post-toc-text">内存池Arena</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#data-block"><span class="post-toc-number">4.</span> <span class="post-toc-text">data block</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#整形数据存储"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">整形数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#fixed转换"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">fixed转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#varient"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">varient</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#leveldb键的形式"><span class="post-toc-number">5.</span> <span class="post-toc-text">leveldb键的形式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-internalkey，其格式为："><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1. internalkey，其格式为：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Skiplist"><span class="post-toc-number">6.</span> <span class="post-toc-text">Skiplist</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">搜索</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">插入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存屏障（memory-barrier）"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">内存屏障（memory barrier）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#skiplist结点"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">skiplist结点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#skiplist具体实现"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">skiplist具体实现</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -839,8 +839,149 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
 </code></pre>
 <p>  最终，可以得到<code>Arena</code>的模型：</p>
 <p>  <img src="https://upload-images.jianshu.io/upload_images/1351548-e1474dc87633534a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="data-block"><a href="#data-block" class="headerlink" title="data block"></a>data block</h2><p>leveldb作为一个key-value数据库，它并没有将数据存放在内存之中，而是把数据存放在磁盘之中。</p>
+<p><strong>leveldb存放数据的流程</strong></p>
+<ol>
+<li>首先需要将数据写入<code>log</code>文件（<code>log</code>文件主要用处：防止在断电时，内存中的数据会丢失，数据可以从<code>log</code>文件中恢复），接着指定一块内存用于写数据（这块内存称之为<code>MemTable</code>），当占用的内存到达阈值之后（<code>options</code>属性中的<code>write_buffer_size</code>的大小，默认为<code>4&lt;&lt;20</code>），就将这块内存转换为只读的（read-only，这块只读内存称为<code>Immutable MemTable</code>），并且<code>log</code>文件也会生成一个新的<code>log</code>文件</li>
+<li>与此同时，开辟一块新的内存（<code>MemTable</code>）来进行继续写数据</li>
+<li>然后异步地将<code>Immutable MemTable</code>的数据添加到磁盘之中（即持久化到磁盘中）</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-551f36e5aca8df30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="整形数据存储"><a href="#整形数据存储" class="headerlink" title="整形数据存储"></a>整形数据存储</h3><p>leveldb多有数据都是字符从事，即使是整形也会被转换为字符型进行存储。这样做的目的是为了减少内存空间的使用。例如，有一个<code>int</code>型数据，小于<code>128</code>，存储为整型时，将占用<code>4</code>个字节；而存储为字符型时，只需要<code>1</code>个字节即可。</p>
+<p>leveldb共有两种整型和字符型数据转换，一种是<code>fixed</code>，一种是<code>variant</code>。</p>
+<h4 id="fixed转换"><a href="#fixed转换" class="headerlink" title="fixed转换"></a><code>fixed</code>转换</h4><p>直接将<code>int</code>的每一个字节直接存入字符数组中。</p>
+<pre><code class="cpp">//编码（整型——&gt;字符串）
+void EncodeFixed32(char* buf, uint32_t value) {
+//如果是小端，直接进行copy
+  if (port::kLittleEndian) {
+    memcpy(buf, &amp;value, sizeof(value));
+  } else {
+//如果是大端，则需要一个字节一个字节的进行copy
+    buf[0] = value &amp; 0xff;             //得到第一个字节（低8位）
+    buf[1] = (value &gt;&gt; 8) &amp; 0xff;
+    buf[2] = (value &gt;&gt; 16) &amp; 0xff;
+    buf[3] = (value &gt;&gt; 24) &amp; 0xff;
+  }
+}
+
+//解码（字符串——&gt;整型）
+inline uint32_t DecodeFixed32(const char* ptr) {
+  if (port::kLittleEndian) {
+    // Load the raw bytes
+    uint32_t result;
+    memcpy(&amp;result, ptr, sizeof(result));  // gcc optimizes this to a plain load
+    return result;
+  } else {
+    return ((static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[0])))
+        | (static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[1])) &lt;&lt; 8)
+        | (static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[2])) &lt;&lt; 16)
+        | (static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[3])) &lt;&lt; 24));
+  }
+}
+
+inline uint64_t DecodeFixed64(const char* ptr) {
+  if (port::kLittleEndian) {
+    // Load the raw bytes
+    uint64_t result;
+    memcpy(&amp;result, ptr, sizeof(result));  // gcc optimizes this to a plain load
+    return result;
+  } else {
+    uint64_t lo = DecodeFixed32(ptr);
+    uint64_t hi = DecodeFixed32(ptr + 4);
+    return (hi &lt;&lt; 32) | lo;
+  }
+}
+</code></pre>
+<h4 id="varient"><a href="#varient" class="headerlink" title="varient"></a>varient</h4><p>这种转换是将一个字节分为两部分，前<code>7</code>个字节用于存储数据，第<code>8</code>个字节用于表示高位是否还有数据：</p>
+<pre><code class="cpp">char* EncodeVarint32(char* dst, uint32_t v) {
+  // Operate on characters as unsigneds
+  unsigned char* ptr = reinterpret_cast&lt;unsigned char*&gt;(dst);
+//128 ===&gt; 1000 0000  
+  static const int B = 128;
+//如果v&lt;128，则将v的低7位copy到ptr，ptr第8位为0，表示高位没有数据
+if (v &lt; (1&lt;&lt;7)) {
+    *(ptr++) = v;
+//v的低7位copy到ptr，ptr的第8位为1，表示高位还有数据
+//在将v的高7位copy到(ptr+1)的低7位，(ptr+1)的第8位为0，表示高位没有数据了
+  } else if (v &lt; (1&lt;&lt;14)) {
+    *(ptr++) = v | B;
+    *(ptr++) = v&gt;&gt;7;
+  } else if (v &lt; (1&lt;&lt;21)) {
+    *(ptr++) = v | B;
+    *(ptr++) = (v&gt;&gt;7) | B;
+    *(ptr++) = v&gt;&gt;14;
+  } else if (v &lt; (1&lt;&lt;28)) {
+    *(ptr++) = v | B;
+    *(ptr++) = (v&gt;&gt;7) | B;
+    *(ptr++) = (v&gt;&gt;14) | B;
+    *(ptr++) = v&gt;&gt;21;
+  } else {
+    *(ptr++) = v | B;
+    *(ptr++) = (v&gt;&gt;7) | B;
+    *(ptr++) = (v&gt;&gt;14) | B;
+    *(ptr++) = (v&gt;&gt;21) | B;
+    *(ptr++) = v&gt;&gt;28;
+  }
+  return reinterpret_cast&lt;char*&gt;(ptr);
+}
+
+const char* GetVarint32PtrFallback(const char* p,
+                                   const char* limit,
+                                   uint32_t* value) {
+  uint32_t result = 0;
+  for (uint32_t shift = 0; shift &lt;= 28 &amp;&amp; p &lt; limit; shift += 7) {
+  //取出p字符串当前的第一个字节
+    uint32_t byte = *(reinterpret_cast&lt;const unsigned char*&gt;(p));
+    p++;
+//判断第8位是否为1，如果为1，说明高位还有数据，则继续循环
+    if (byte &amp; 128) {
+      // More bytes are present
+//每7位移动一次，分别向result的7位进行赋值
+      result |= ((byte &amp; 127) &lt;&lt; shift);
+    } else {
+      result |= (byte &lt;&lt; shift);
+      *value = result;
+      return reinterpret_cast&lt;const char*&gt;(p);
+    }
+  }
+  return nullptr;
+}
+</code></pre>
+<p>在解析<code>variant</code>时，需要首先取出字符数组的每一个字节，先判断该字节是否大于<code>128</code>。如果其小于<code>128</code>，则直接取出该字节的低<code>7</code>位，赋值给<code>result</code>的低<code>7</code>位。而如果该字节大于<code>128</code>，则说明还有第二个字节，则取出第二个字节，得到其低<code>7</code>位，然后左移<code>7</code>位，然后赋值给<code>result</code>的<code>8~14</code>位，后续亦是如此。</p>
+<h2 id="leveldb键的形式"><a href="#leveldb键的形式" class="headerlink" title="leveldb键的形式"></a>leveldb键的形式</h2><h3 id="1-internalkey，其格式为："><a href="#1-internalkey，其格式为：" class="headerlink" title="1. internalkey，其格式为："></a>1. <code>internalkey</code>，其格式为：</h3><pre><code class="cpp">| user key | sequence number | type |
+internal_key_size = key_size + 8
+</code></pre>
 <h2 id="Skiplist"><a href="#Skiplist" class="headerlink" title="Skiplist"></a>Skiplist</h2><p>LevelDB在内存中存储数据的区域称为<code>memtable</code>，它的底层是通过跳跃表skiplist实现的。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c95a055a7c115b32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>跳跃表的性质：</strong></p>
+<ul>
+<li>由多层结构组成</li>
+<li>每一层都是一个有序链表，排列顺序为由高层到低层，都至少包含两个链表结点，分别是最前面的head结点和后面的nil结点</li>
+<li>最底层的链表包含了所有的元素</li>
+<li>如果一个元素出现在某一层链表之中，那么在该层之下的链表也全都会出现（即上一层元素是当前层元素的子集）</li>
+<li>链表中的每个结点都包含两个指针，一个指向同一层的下一个链表结点，另一个指向下一层的同一个链表结点</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-3de4b15599425806.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>由上图可以看出，该skiplist一共有4层，最上面的一层就是最高层（level 3），最下面的一层就是最底层（level 0），然后每一列中的链表结点中的值都是相同的，它们之间用指针进行连接。此外，跳跃表的层数与结构中最高结点的高度是相同的。在理想情况下，跳跃表结构中的第一层存在所有结点，第二层只有一半的结点，而且是均匀间隔，第三层存在<code>1/4</code>的结点且均匀分布…由此类推，可得知理想的层数就是<code>logN</code>。</p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>基本原理：<strong>从最高层的链表结点开始，如果比当前结点大，但比当前层（cur）的下一个结点（next）小，那么就往下一层（down）寻找，即和当前层的下一层（down）结点的下一个（next）结点进行比较，以此类推，一直找到最底层的一个结点（即<code>p-&gt;down==nil</code>）。如果找到，就返回，否则返回空。</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-fb77f38874e0d32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>伪代码实现：</p>
+<pre><code class="cpp">Search(x) {
+  p=top;
+  while(true) {
+    while(x &gt; p-&gt;next-&gt;key)
+      p = p-&gt;next;
+    if(p-&gt;down == nil)
+      return p-&gt;next;
+    p = p-&gt;down;
+  }
+}
+</code></pre>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p>在插入之前，需要确定插入的层数。一般有两种方法：</p>
+<ul>
+<li>抛硬币。只要得到的是正面就累加，直到遇到反面才停止，最后记录正面的次数，并将其作为要添加的新元素的层。</li>
+<li>进行概率统计。先给定一个概率<code>p</code>，产生一个<code>0</code>到<code>1</code>之间的随机数，如果这个随机数小于<code>p</code>，则将高度加<code>1</code>，直到产生的随机数大于概率<code>p</code>才停止。根据结论，可知当概率为<code>1/2</code>或者<code>1/4</code>的时候，整体的性能会比较好（当<code>p=1/2</code>时，也就是抛硬币的方法）。</li>
+</ul>
+<p>当确定好要插入元素的层数之后，只需要将元素都插入到从最底层到第k层即可。</p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>在各层中找到包含指定值的结点，然后将结点从链表中删除即可。如果删除以后只剩下头、尾两个结点，则直接删除这一层。</p>
 <h3 id="内存屏障（memory-barrier）"><a href="#内存屏障（memory-barrier）" class="headerlink" title="内存屏障（memory barrier）"></a>内存屏障（memory barrier）</h3><p>内存屏障类<code>AtomPointer</code>（即原子操作）的实现为：</p>
 <pre><code class="cpp">class AtomicPointer {
  private:
@@ -862,6 +1003,131 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
 };
 </code></pre>
 <p><strong>内存屏障主要用处就是保证内存数据和处理器寄存器和缓存数据一致性。</strong>因为当某个处理器上改变某个变量<code>x</code>时，那么其他处理器上的<code>x</code>的副本都必须失效，否则将会读取错误值。</p>
+<h3 id="skiplist结点"><a href="#skiplist结点" class="headerlink" title="skiplist结点"></a>skiplist结点</h3><pre><code class="cpp">template&lt;typename Key, class Comparator&gt;
+struct SkipList&lt;Key,Comparator&gt;::Node {
+  explicit Node(const Key&amp; k) : key(k) { }
+
+  Key const key;
+
+  // Accessors/mutators for links.  Wrapped in methods so we can
+  // add the appropriate barriers as necessary.
+  Node* Next(int n) {
+    assert(n &gt;= 0);
+    // Use an &#39;acquire load&#39; so that we observe a fully initialized
+    // version of the returned Node.
+    return reinterpret_cast&lt;Node*&gt;(next_[n].Acquire_Load());
+  }
+  void SetNext(int n, Node* x) {
+    assert(n &gt;= 0);
+    // Use a &#39;release store&#39; so that anybody who reads through this
+    // pointer observes a fully initialized version of the inserted node.
+    next_[n].Release_Store(x);
+  }
+
+  // No-barrier variants that can be safely used in a few locations.
+  Node* NoBarrier_Next(int n) {
+    assert(n &gt;= 0);
+    return reinterpret_cast&lt;Node*&gt;(next_[n].NoBarrier_Load());
+  }
+  void NoBarrier_SetNext(int n, Node* x) {
+    assert(n &gt;= 0);
+    next_[n].NoBarrier_Store(x);
+  }
+
+ private:
+  // Array of length equal to the node height.  next_[0] is lowest level link.
+//用于表示结点的层数
+  port::AtomicPointer next_[1];
+};
+</code></pre>
+<h3 id="skiplist具体实现"><a href="#skiplist具体实现" class="headerlink" title="skiplist具体实现"></a>skiplist具体实现</h3><p>skiplist成员变量的如下：</p>
+<pre><code class="cpp"> private:
+ //定义skiplist链表结点的最大的高度
+  enum { kMaxHeight = 12 };
+
+  // Immutable after construction
+  Comparator const compare_;
+//内存池，从memtable传来，用于构造skiplist结点
+  Arena* const arena_;    // Arena used for allocations of nodes
+
+//skiplist头结点
+  Node* const head_;
+
+  // Modified only by Insert().  Read racily by readers, but stale
+  // values are ok.
+  port::AtomicPointer max_height_;   // Height of the entire list
+
+  // Read/written only by Insert().
+//在插入结点时，随机化处该结点的插入层
+  Random rnd_;
+</code></pre>
+<p>其构造函数为：</p>
+<pre><code class="cpp">//其中，cmp和arena_都由调用者传入，head_头结点的key初始化为0，高度初始化为链表的高度上限12。max_height初始化为1，并将每一层头结点下一个结点设置为NULL（即设置尾结点，初始化之后每一层就头、尾两个结点）
+template&lt;typename Key, class Comparator&gt;
+SkipList&lt;Key,Comparator&gt;::SkipList(Comparator cmp, Arena* arena)
+    : compare_(cmp),
+      arena_(arena),
+      head_(NewNode(0 /* any key will do */, kMaxHeight)),
+      max_height_(reinterpret_cast&lt;void*&gt;(1)),
+      rnd_(0xdeadbeef) {
+  for (int i = 0; i &lt; kMaxHeight; i++) {
+    head_-&gt;SetNext(i, nullptr);
+  }
+}
+</code></pre>
+<p>skiplist用于分配一个新结点的<code>NewNode</code>：</p>
+<pre><code class="cpp">template&lt;typename Key, class Comparator&gt;
+typename SkipList&lt;Key,Comparator&gt;::Node*
+SkipList&lt;Key,Comparator&gt;::NewNode(const Key&amp; key, int height) {
+//直接从内存池中进行分配。
+//sizeof(port::AtomicPointer) * (height - 1)是为了兼容性变长数组声明为 port::AtomicPointer next_[1]（也可以用next[0]，但是有些编译器不支持）  
+//由于Node自身已经占用了一个，所以只需要在添加（height-1）个即可。如果是next[0]的话，就不能减1了
+  char* mem = arena_-&gt;AllocateAligned(
+      sizeof(Node) + sizeof(port::AtomicPointer) * (height - 1));
+  return new (mem) Node(key);
+}
+</code></pre>
+<p>在进行插入结点时，需要先随机化处一个插入高度<code>height</code>，接着 再找到此结点的前<code>height</code>个结点，然后进行插入：</p>
+<pre><code class="cpp">template&lt;typename Key, class Comparator&gt;
+void SkipList&lt;Key,Comparator&gt;::Insert(const Key&amp; key) {
+  // TODO(opt): We can use a barrier-free variant of FindGreaterOrEqual()
+  // here since Insert() is externally synchronized
+//kMaxHeight个前结点，因为还不知道插入结点的高度，所以先设置为最大值12
+  Node* prev[kMaxHeight];
+//查找键值为key的结点的前GetMaxHeight()个结点
+  Node* x = FindGreaterOrEqual(key, prev);
+
+ //不允许重复插入
+  assert(x == nullptr || !Equal(key, x-&gt;key));
+
+//随机化一个结点高度
+  int height = RandomHeight();
+//如果需要插入结点的高度大于最高结点的的高度，则高出部分的前结点都将成为头结点
+  if (height &gt; GetMaxHeight()) {
+    for (int i = GetMaxHeight(); i &lt; height; i++) {
+      prev[i] = head_;
+    }
+    //fprintf(stderr, &quot;Change height from %d to %d\n&quot;, max_height_, height);
+
+    // It is ok to mutate max_height_ without any synchronization
+    // with concurrent readers.  A concurrent reader that observes
+    // the new value of max_height_ will see either the old value of
+    // new level pointers from head_ (nullptr), or a new value set in
+    // the loop below.  In the former case the reader will
+    // immediately drop to the next level since nullptr sorts after all
+    // keys.  In the latter case the reader will use the new node.
+    max_height_.NoBarrier_Store(reinterpret_cast&lt;void*&gt;(height));
+  }
+
+  x = NewNode(key, height);
+  for (int i = 0; i &lt; height; i++) {
+    // NoBarrier_SetNext() suffices since we will add a barrier when
+    // we publish a pointer to &quot;x&quot; in prev[i].
+    x-&gt;NoBarrier_SetNext(i, prev[i]-&gt;NoBarrier_Next(i));
+    prev[i]-&gt;SetNext(i, x);
+  }
+}
+</code></pre>
 
         
     
@@ -881,6 +1147,14 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/09/20/CMake学习/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -980,7 +1254,7 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1012,7 +1286,7 @@ char* Arena::AllocateNewBlock(size_t block_bytes) {
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">11</span>
             </a>
         </li>
         

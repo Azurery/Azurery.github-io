@@ -37,7 +37,7 @@
     
     <title>
         
-            timeline | 
+            CMake学习 | 
         
         Azurery
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",其他">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -98,6 +98,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -228,15 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="timeline | Azurery">
+    <meta property="og:title" content="CMake学习 | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    
+    <meta property="og:article:tag" content="其他"> 
 
+    
+        <meta property="article:published_time" content="Thu Sep 20 2018 21:22:31 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Sep 21 2018 22:02:34 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="timeline | Azurery">
+    <meta name="twitter:title" content="CMake学习 | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -244,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/timeline/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/20/CMake学习/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/20/CMake学习/index.html",
+    "headline": "CMake学习",
+    "datePublished": "Thu Sep 20 2018 21:22:31 GMT+0800",
+    "dateModified": "Fri Sep 21 2018 22:02:34 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",其他",
+    "description": "蒟蒻一枚",
+}
+</script>
 
 
     
@@ -286,684 +322,295 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Windows平台下"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Windows平台下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在linux平台下"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">在linux平台下</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多个源文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个源文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-同一个目录，多个源文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 同一个目录，多个源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-多个目录，多个源文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 多个目录，多个源文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义编译选项"><span class="post-toc-number">3.</span> <span class="post-toc-text">自定义编译选项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-修改CMakeLists-txt文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 修改CMakeLists.txt文件</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Single Timeline Page -->
-    <style>
-	.md-container {
-		width: 90%;
-		max-width: 1170px;
-		margin: 0 auto;
-	}
-	.md-container::after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-	#md-timeline {
-		position: relative;
-		padding: 2em 0;
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-	@media screen and (max-device-width:480px){
-		#md-timeline {
-			margin-top: 6em;
-		}
-	}
-	#md-timeline::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 18px;
-		height: 100%;
-		width: 2px;
-		background: #d7e4ed;
-	}
-	.md-timeline-title {
-		font-size: 20px;
-		line-height: 24px;
-	}
-	.md-timeline-content a {
-		text-decoration: none;
-	}
-	.md-timeline-info {
-		height: 20px;
-		width: 100%;
-		margin: 10px 0px;
-	}
-	.md-timeline-info-span {
-		float: right;
-		margin-right: 10px;
-		text-align: right;
-	}
-	.md-timeline-excerpt {
-	    	clear: right; 
-	}
-	@media only screen and (min-width: 1170px) {
-		#md-timeline {
-			margin-top: 3em;
-			margin-bottom: 3em;
-		}
-		#md-timeline::before {
-			left: 50%;
-			margin-left: -2px;
-		}
-	}
-	.md-timeline-block {
-		position: relative;
-		margin: 2em 0;
-	}
-	.md-timeline-block:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-block:first-child {
-		margin-top: 0;
-	}
-	.md-timeline-block:last-child {
-		margin-bottom: 0;
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-block {
-			margin: 4em 0;
-		}
-		.md-timeline-block:first-child {
-			margin-top: 0;
-		}
-		.md-timeline-block:last-child {
-			margin-bottom: 0;
-		}
-	}
-	.md-timeline-date {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 60px;
-		height: 40px;
-		border-radius: box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-	}
-	.md-timeline-date.blue {
-		background: #0D395F;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-date {
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -30px;
-			/* Force Hardware Acceleration in WebKit */
-			-webkit-transform: translateZ(0);
-			-webkit-backface-visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-1 0.6s;
-			-moz-animation: md-bounce-1 0.6s;
-			animation: md-bounce-1 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-		}
-	}
-	@-moz-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-moz-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: scale(1.2);
-		}
-		100% {
-			-moz-transform: scale(1);
-		}
-	}
-	@keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-			-moz-transform: scale(0.5);
-			-ms-transform: scale(0.5);
-			-o-transform: scale(0.5);
-			transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-			-moz-transform: scale(1.2);
-			-ms-transform: scale(1.2);
-			-o-transform: scale(1.2);
-			transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-			-moz-transform: scale(1);
-			-ms-transform: scale(1);
-			-o-transform: scale(1);
-			transform: scale(1);
-		}
-	}
-	.md-timeline-content {
-		position: relative;
-		margin-left: 60px;
-		background: white;
-		padding: 1em;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	.md-timeline-content:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-content h2 {
-		color: #303e49;
-	}
-	.md-timeline-content p, .md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-	.md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		display: inline-block;
-	}
-	.md-timeline-content p {
-		margin: 1em 0;
-		line-height: 1.6;
-	}
-	.md-timeline-content .md-read-more {
-		float: right;
-		padding: .8em 1em;
-		background: #acb7c0;
-		color: white;
-		border-radius: 0.25em;
-	}
-	.md-date {
-		color: white;
-		text-align: center;
-	}
-	.no-touch .md-timeline-content .md-read-more:hover {
-		background-color: #bac4cb;
-	}
-	.md-timeline-content::before {
-		content: '';
-		position: absolute;
-		top: 16px;
-		right: 100%;
-		height: 0;
-		width: 0;
-		border: 7px solid transparent;
-		border-right: 7px solid white;
-	}
-	@media only screen and (min-width: 768px) {
-		.md-timeline-content h2 {
-			font-size: 20px;
-			font-size: 1.25rem;
-		}
-		.md-timeline-content p {
-			font-size: 16px;
-			font-size: 1rem;
-		}
-		.md-timeline-content .md-read-more {
-			font-size: 14px;
-			font-size: 0.875rem;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-date {
-			text-align: center;
-			margin-top: 10px;
-			line-height: 20px;
-		}
-		.md-timeline-content {
-			margin-left: 0;
-			padding: 1.6em;
-			width: 45%;
-		}
-		.md-timeline-content::before {
-			top: 24px;
-			left: 100%;
-			border-color: transparent;
-			border-left-color: white;
-		}
-		.md-timeline-content .md-read-more {
-			float: left;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content {
-			float: right;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content::before {
-			top: 24px;
-			left: auto;
-			right: 100%;
-			border-color: transparent;
-			border-right-color: white;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content .md-read-more {
-			float: right;
-		}
-		.cssanimations .md-timeline-content.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-content.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-2 0.6s;
-			-moz-animation: md-bounce-2 0.6s;
-			animation: md-bounce-2 0.6s;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		/* inverse bounce effect on even content blocks */
-		.cssanimations .md-timeline-block:nth-child(even) .md-timeline-content.bounce-in {
-			-webkit-animation: md-bounce-2-inverse 0.6s;
-			-moz-animation: md-bounce-2-inverse 0.6s;
-			animation: md-bounce-2-inverse 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-			-moz-transform: translateX(-100px);
-			-ms-transform: translateX(-100px);
-			-o-transform: translateX(-100px);
-			transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-			-moz-transform: translateX(20px);
-			-ms-transform: translateX(20px);
-			-o-transform: translateX(20px);
-			transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-	@-webkit-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(-20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-			-moz-transform: translateX(100px);
-			-ms-transform: translateX(100px);
-			-o-transform: translateX(100px);
-			transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-			-moz-transform: translateX(-20px);
-			-ms-transform: translateX(-20px);
-			-o-transform: translateX(-20px);
-			transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-</style>
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-<section id="md-timeline" class="md-container">
-   	   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">9月 20 2018</div>
-                		</div>
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/09/20/CMake学习/">CMake学习</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/其他/">其他</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">9月 20 2018</div>
-                		</div>
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/09/20/LevelDB/">LevelDB源码解析</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/数据库/">数据库</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							Slice
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">8月 31 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/08/31/Unicode三三两两/">Unicode的三三两两</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/C/">C++</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							Un...
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">8月 30 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/08/30/杂谈/">杂谈</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/C/">C++</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							自己长期以来，在开发软件的时候总是感觉找不着北，甚有如履薄冰之感。在拜读了miloyip大大的
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">8月 24 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/08/24/LLVM知识点/">LLVM的一些知识点</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/C/">C++</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">8月 23 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/08/23/Compiler（中）/">编译原理 （中）</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/compiler/">compiler</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 21 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/21/C++点点滴滴（中）/">C++点点滴滴（中）</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/C/">C++</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 09 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/09/Linux ABI/">System V的ABI的Function Calling Sequence（函数调用顺序）</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/Linux/">Linux</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 09 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/09/Database/">数据库基本知识</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/Database/">Database</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							数据视图
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 09 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/09/Compiler（上）/">编译原理 （上）</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/compiler/">compiler</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							语法分析树
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 09 2018</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2018/07/09/C++点点滴滴（上）/">C++点点滴滴（上）</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/C/">C++</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   			   	  		
-   	</section>
-
-<script type="text/ls-javascript" id="page-timeline-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                CMake学习
+            </p>
+        </div>
 
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>9月 20, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3awW7CMBAEUP7/p9trpQqYWSdOQM8nRN3g50O8Gu/j56vHAw8PDw8PDw8P72a8RzzePPTPnP/zk7++/j5fGx4eHt4eXr70lW/y5y+tDQ8PD28j79kLN/mcL3d2hCRrw8PDw7szr11ozsbDw8P7Vl7CePac2Qbh4eHh3ZOXR7RJYZ0/50ZZCx4eHl7Myy+Z9n/eer+Hh4eHF/Da0V50JUufXZs9/UU8PDy8k3n5izg/TtqZbXjxZkPx8PDwTubNIoCkLSA/Htpjo4hx8fDw8E7j5WVxGxPkB0ZeuL/ZSjw8PLztvLY1Kn+V54V1Xu7j4eHh7eflzU/JyzrZrLa5Kt8OPDw8vJ28WTBxVCGez4+OKDw8PLztvDY8bZc1C38TGB4eHt61vPZCa9aMtX5I4OHh4V3Fy4OGoyLatr2gODzw8PDwTubNwtZ2I9rw93UpX7er4uHh4R3KW2+QSi6x2jmHNV3h4eHhncxrWwra0DYvx1fm4+Hh4e3kzV7cbXCQX6fleDw8PLxrecniWmryX3koPEyp8fDw8A7lrRfTbeDbBhnFtRweHh7eRl57MCRXZckVVx4ZR0cFHh4e3kZeUmTnBXF7wVbHtXh4eHgX8drRtljNGhRWfhcPDw/vbN4sQm0jjHx+ezGGh4eHdxWvPQzyi668UG4PhqLpCg8PD+803myhs9K5Lb7z7cDDw8P7FN56ONsGwXh4eHifxWuDjLxwXym78fDw8PbzkjCiLYtnl2HtTDw8PLz9vFkEsDLy7VtqusLDw8M7gfd9Aw8PDw8PDw8P7wbjF16fr1vMgIniAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/其他/">其他</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CMake学习&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="什么是CMake"><a href="#什么是CMake" class="headerlink" title="什么是CMake"></a>什么是CMake</h2><p>如果软件想跨平台，必须要保证能够在不同平台编译。但现在存在各种不同的make工具，就得为每一种标准写一次Makefile。</p>
+<p>CMake就是为了针对上述这种问题所设计的工具：它首先允许开发者编写一种平台无关的CMakeLists.txt文件来指定整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化Makefile和工程文件，如Unix的Makefile或者Windows的Visual Studio工程，从而做到<strong>write once，run everywhere</strong>。</p>
+<h3 id="1-Windows平台下"><a href="#1-Windows平台下" class="headerlink" title="1. Windows平台下"></a>1. Windows平台下</h3><p>在Windows下，需要在设置编译器的时候，gcc和g++后面要加上.exe。需要在CMakeLists.txt所在的目录下，运行如下命令：</p>
+<pre><code class="cpp">cmake -G &quot;MinGW Makefiles&quot; .
+</code></pre>
+<p><strong>【注】：</strong>在上面的命令的最后一行的这个<code>.</code>不能丢，代表的是当前路径。</p>
+<p>此外，在MinGW路径下的<code>make</code>叫<code>mingw32-make.exe</code>，在运行的时候，需要使用的命令为：</p>
+<pre><code class="cpp">mingw32-make
+</code></pre>
+<p>此外，在CMakeLists.txt中需要设置为：</p>
+<pre><code class="makefile"># CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+# 项目信息
+project (Demo1)
+# 指定生成目标
+add_executable(Demo main.cc)
+
+set(CMAKE_C_COMPLIER D:/Software/Programming/MinGW/bin/gcc.exe #设置C编译器
+set(CMAKE_CXX_COMPLIER D:/Software/Programming/MinGW/bin/g++.exe) #设置C++编译器
+</code></pre>
+<p>上述出现的一些命令：</p>
+<ol>
+<li><code>cmake_mimimum_required</code>：指定运行此配置文件所需的CMake的最低版本</li>
+<li><code>project</code>：参数值<code>Demo</code>，该命令表示项目的名称是<code>Demo</code></li>
+<li><code>add_executable</code>：将名为<code>main.cc</code>的源文件编译成一个名为<code>Demo</code>的可执行文件</li>
+</ol>
+<h3 id="在linux平台下"><a href="#在linux平台下" class="headerlink" title="在linux平台下"></a>在linux平台下</h3><p>在当前目录下执行<code>cmake .</code>，得到Makefile后再使用<code>make</code>命令编译得到<code>Demo</code>可执行文件。</p>
+<h2 id="多个源文件"><a href="#多个源文件" class="headerlink" title="多个源文件"></a>多个源文件</h2><h3 id="1-同一个目录，多个源文件"><a href="#1-同一个目录，多个源文件" class="headerlink" title="1. 同一个目录，多个源文件"></a>1. 同一个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-a12804b0d76ccd3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在这种情况下，可以在<code>add_executable</code>命令中增加多个源文件。虽然这么写没问题，但当源文件过多时，就需要把所以源文件的名字都加进去，这就是很繁琐的工作。比较简单的方法是：<strong>使用<code>aux_source_directory</code>命令，该命令会查找指定目录下的所有源文件，然后将结果存进指定变量名。</strong>其语法如下：</p>
+<pre><code class="makefile">aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
+</code></pre>
+<p>所以，可以修改CMakeLists.txt：</p>
+<pre><code class="makefile"># 查找当前目录下的所有源文件
+# 并将名称保存到 DIR_SRCS 变量
+aux_source_directory(. DIR_SRCS)
+
+# 指定生成目标
+add_executable(Demo ${DIR_SRCS})
+</code></pre>
+<p>这样，CMake会将当前目录的所有源文件的文件名赋值给变量<code>DIR_SRCS</code>，再指示变量<code>DIR_SRCS</code>中的源文件需要编译成一个名为<code>Demo</code>的可执行文件。</p>
+<h3 id="2-多个目录，多个源文件"><a href="#2-多个目录，多个源文件" class="headerlink" title="2. 多个目录，多个源文件"></a>2. 多个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-81de8f0fe4e3fad1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这种情况，需要分别在项目的根目录<code>Demo3</code>和<code>math</code>目录里各编写一个CMakeLists.txt文件。为了方便起见，可以先将<code>math</code>目录下的文件编译成静态库，再由<code>main</code>函数进行调用。</p>
+<ul>
+<li>使用命令<code>add_subdirectory</code>指明此项目包含一个子目录<code>math</code>，这样<code>math</code>目录下的CMakeLists.txt文件和源代码将会被处理。</li>
+<li>使用命令<code>target_link_libraries</code>指明可执行文件<code>main</code>需要链接一个名为<code>MathFunctions</code>的链接库。</li>
+</ul>
+<p>根目录中的CMakeLists.txt为：</p>
+<pre><code class="makefile">cmake_minimum_required (VERSION 2.8）
+
+# 项目信息
+project (Demo3)
+
+aux_source_directory (. DIR_SRCS)
+
+# 添加math子目录
+add_subdirectory(math)
+
+add_executable(Demo main.cc)
+
+# 添加链接库
+target_link_libraries(Demo MathFunctions)
+</code></pre>
+<h2 id="自定义编译选项"><a href="#自定义编译选项" class="headerlink" title="自定义编译选项"></a>自定义编译选项</h2><p>CMake 允许为项目增加编译选项，从而可以根据用户的环境和需求选择最合适的编译方案。例如，可以将<code>MathFunctions</code>库设置为可选的库，如果该选项为<code>ON</code>，则就使用该库定义的数学函数来进行计算，否则就调用标准库中的数学函数库。</p>
+<h3 id="1-修改CMakeLists-txt文件"><a href="#1-修改CMakeLists-txt文件" class="headerlink" title="1. 修改CMakeLists.txt文件"></a>1. 修改CMakeLists.txt文件</h3><p>需要在项目的最高层的CMakeLists.txt文件中添加该选项：</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/20/LevelDB/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -1149,6 +796,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -1306,6 +961,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1318,6 +977,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
