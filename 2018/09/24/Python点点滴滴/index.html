@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Mon Sep 24 2018 11:12:20 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Sep 28 2018 14:34:07 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Oct 06 2018 17:56:32 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/24/Python点点滴滴/index.html",
     "headline": "Python点点滴滴",
     "datePublished": "Mon Sep 24 2018 11:12:20 GMT+0800",
-    "dateModified": "Fri Sep 28 2018 14:34:07 GMT+0800",
+    "dateModified": "Sat Oct 06 2018 17:56:32 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yield关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">yield关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OderdedDict的popitem-last-True"><span class="post-toc-number">2.</span> <span class="post-toc-text">OderdedDict的popitem(last=True)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#repr-与-str-的区别："><span class="post-toc-number">4.</span> <span class="post-toc-text">__repr__与__str__的区别：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#getattr"><span class="post-toc-number">5.</span> <span class="post-toc-text">__getattr__</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yield关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">yield关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OderdedDict的popitem-last-True"><span class="post-toc-number">2.</span> <span class="post-toc-text">OderdedDict的popitem(last=True)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#repr-与-str-的区别："><span class="post-toc-number">4.</span> <span class="post-toc-text">__repr__与__str__的区别：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#getattr"><span class="post-toc-number">5.</span> <span class="post-toc-text">__getattr__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#staticmethod"><span class="post-toc-number">6.</span> <span class="post-toc-text">staticmethod()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IO模块"><span class="post-toc-number">7.</span> <span class="post-toc-text">IO模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、I-O类层次结构"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">1、I/O类层次结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断Python的版本"><span class="post-toc-number">8.</span> <span class="post-toc-text">判断Python的版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#str-VS-unicode"><span class="post-toc-number">9.</span> <span class="post-toc-text">__str__ VS  __unicode__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bytes与str之间的异同"><span class="post-toc-number">10.</span> <span class="post-toc-text">bytes与str之间的异同</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#self"><span class="post-toc-number">11.</span> <span class="post-toc-text">self</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#u-U-quot-quot"><span class="post-toc-number">12.</span> <span class="post-toc-text">u/U&quot;&quot;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate"><span class="post-toc-number">13.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#callable"><span class="post-toc-number">14.</span> <span class="post-toc-text">callable()</span></a></li></ol>
     </ul>
     
 
@@ -521,13 +521,22 @@
 <h2 id="OderdedDict的popitem-last-True"><a href="#OderdedDict的popitem-last-True" class="headerlink" title="OderdedDict的popitem(last=True)"></a><code>OderdedDict</code>的<code>popitem(last=True)</code></h2><p><code>last</code>为<code>True</code>时，表示<code>LIFO</code>，即堆栈；反之为<code>FIFO</code>，即队列。</p>
 <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><ul>
 <li><code>\d</code>：可以匹配数字</li>
+<li><code>\D</code>：匹配任意非数字</li>
 <li><code>\w</code>：可以匹配一个字母或者数字</li>
-<li><code>.</code>：可以匹配任意字符</li>
+<li><code>\W</code>：匹配非字母数字及下划线</li>
+<li><code>\s</code>：匹配任意空白字符，等价<code>[\t\n\r\f]</code></li>
+<li><code>\S</code>：匹配任意非空字符</li>
+<li><code>\A</code>：匹配字符串开始</li>
+<li><code>\Z</code>：匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串</li>
+<li><code>\z</code>：匹配字符串结束</li>
+<li><code>\b</code>：匹配一个单词边界，也就是指单词和空格间的位置。例如，<code>er\b</code>可以匹配<code>never</code>中的<code>er</code>，但不能匹配<code>verb</code>中的<code>er</code></li>
+<li><code>\B</code>：    匹配非单词边界。<code>er\B</code>能匹配<code>verb</code>中的<code>er</code>，但不能匹配<code>never</code>中的<code>er</code></li>
+<li><code>.</code>：可以匹配任意字符（<code>0</code>个或者多个）</li>
 <li><code>*</code>：表示任意个字符（包括<code>0</code>个）</li>
-<li><code>+</code>：表示至少一个字符</li>
-<li><code>?</code>：表示<code>0</code>或<code>1</code>个字符</li>
+<li><code>+</code>：表示至少一个字符（<code>1</code>个或者多个）</li>
+<li><code>?</code>：表示<code>0</code>或<code>1</code>个字符（匹配<code>0</code>个或者<code>1</code>个由前面的正则表达式定义的片段，非贪婪方式）</li>
 <li><code>{n}</code>：表示<code>n</code>个字符</li>
-<li><code>{n,m}</code>：表示<code>n~m</code>个字符</li>
+<li><code>{n,m}</code>：表示<code>n~m</code>个字符。例如，<code>0{2,}</code>表示至少匹配<code>2</code>个<code>o</code>，即它不能匹配<code>Bob</code>中的<code>o</code>，但能够匹配<code>foooooood</code>中的所有<code>o</code>。</li>
 <li><code>[]</code>表示范围<ul>
 <li><code>[0-9a-zA-Z\_]</code>：可以匹配到一个数字、字母或者下划线</li>
 <li><code>[0-9a-zA-Z\_]+</code>：可以匹配到至少由一个数字、字母或者下划线组成的字符串，例如<code>_num10</code></li>
@@ -535,6 +544,8 @@
 <li><code>[a-zA-Z\_][0-9a-zA-Z\_]{0,19}</code>：相比上面，更加精确地限制了变量的长度为<code>1-20</code>个字符</li>
 </ul>
 </li>
+<li><code>[^...]</code>：表示不再<code>[]</code>中的字符</li>
+<li></li>
 <li><code>A|B</code>：表示可以匹配<code>A</code>或<code>B</code>。例如，<code>(P|p)ython</code>可以匹配<code>Python</code>或者<code>python</code></li>
 <li><code>^</code>：表示行的开头。例如，<code>^\d</code>表示必须以数字开头</li>
 <li><code>$</code>：表示行的结束。例如，<code>\d$</code>表示必须以数字结束</li>
@@ -553,6 +564,12 @@
 <li><code>__repr__</code>用于所有其他环境中：用于交互模式下，提示回应以及<code>__repr__</code>函数。如果没有使用<code>__str__</code>，会使用<code>print</code>和<code>str</code>。它通常应该返回一个编码字符串，可以用来重建对象，或者给开发者详细的显示。</li>
 </ul>
 <p>如果先要所有环境下都同一显示的话，可以重构<code>__repr__</code>方法；当我们想在不同环境下，支持不同的显示，例如终端用户显示使用<code>__str__</code>，而程序员在开发期间则使用底层的<code>__repr__</code>来显示，实际上<code>__str__</code>只是覆盖了<code>__repr__</code>，已得到更加友好的用户显示。</p>
+<p>在进行格式化输出时，<code>%r</code>与<code>%s</code>的区别就好比<code>repr()</code>函数处理对象与<code>str()</code>函数处理对象的差别：</p>
+<ul>
+<li><code>%s</code>====&gt; <code>str()</code>：比较智能</li>
+<li><code>%r</code>====&gt;<code>repr()</code>：处理较为简单和直接；</li>
+</ul>
+<p>对于<code>{!r}</code>这个符号只是在<code>format()</code>之中才有用，其实就是<code>%r</code>。</p>
 <h2 id="getattr"><a href="#getattr" class="headerlink" title="__getattr__"></a><code>__getattr__</code></h2><p>作用：如果属性查找（attribute lookup）在实例以及对应的类中（通过<code>__dict__</code>）失败，那么会调用到类的<code>__getattr__</code>函数。如果没有定义这个函数，就会抛出<code>AttributeError</code>异常。由此可见，<code>__getattr__</code>一定是作用于属性查找的最后一步。</p>
 <p>例子：</p>
 <pre><code class="python">class ObjectDict(dict):
@@ -570,6 +587,50 @@ if __name__==&#39;__main__&#39;:
     print(od.d,od.d.a)
 </code></pre>
 <p>对于上述代码，实现了<code>__getattr__</code>之后，就可以像访问属性一样来访问<code>ObjectDict</code>中的键值对。如果没有实现它，就会报<code>AttributeError: &#39;ObjectDict&#39; object has no attribute &#39;d&#39;</code>错误。这实际上可以把一个类的所有属性和方法调用全部动态化处理了，不需要任何特殊手段。</p>
+<h2 id="staticmethod"><a href="#staticmethod" class="headerlink" title="staticmethod()"></a><code>staticmethod()</code></h2><p>返回函数的静态方法，该方法不强制要求传递参数。类可以不用实例化，就可以直接通过<code>class_name.method_name()</code>进行调用。当然，也可以实例化汇总后调用。</p>
+<h2 id="IO模块"><a href="#IO模块" class="headerlink" title="IO模块"></a><code>IO</code>模块</h2><p>Python的<code>IO</code>模块主要用于处理三种类型的<code>I/O</code>：文本<code>I/O</code>、二进制<code>I/O</code>以及原始<code>I/O</code>。这些都是通用类型，各种后备设备科使用其中的每一种类型，所以这些类型的具体对象称为<strong>文件对象（或者流）</strong>。</p>
+<p>每个具体的流对象都具有各种功能，它可以允许任意的随机访问；向前或者向后寻找任何位置或者只允许顺序访问，如套接字或者pipe的情况。</p>
+<h3 id="1、I-O类层次结构"><a href="#1、I-O类层次结构" class="headerlink" title="1、I/O类层次结构"></a>1、<code>I/O</code>类层次结构</h3><ul>
+<li><code>I/O</code> inheritance structure的顶部是抽象基类<code>IOBase</code>，<strong>它定义了流的基本接口，但基本不提供实现，让子类进行继承具体实现。默认实现只是表明一个文件是否为可读、可写或者可寻址（seek）</strong>它支持iterator protocol，这意味着可以迭代<code>IOBase</code>对象，从而在一个stream中yielding the lines。根据stream是二进制流（yielding bytes）还是文本流（yielding character strings），lines的定义也略有不同。<ul>
+<li>对于二进制文件，行终止符（line terminator）总是<code>b\n</code></li>
+<li>对于文本文件，<code>open()</code>的换行参数（newline argument）可以用于选择line terminator </li>
+</ul>
+</li>
+<li><code>RawIOBase</code>继承自<code>IOBase</code>，<strong>它是raw binary I/O的基类，没有public constructor，主要提供了对底层OS设备或者API的访问（low-level），并且不会将其封装在high-level primitives中）</strong>。它的子类为机器文件系统中的文件提供接口。</li>
+<li><code>BufferedIOBase</code>继承自<code>IOBase</code>，它是支持某些缓冲区的binary stream的基类，没有公共的构造器。和<code>RawIOBase</code>的区别在于：<code>read()</code>，<code>readinto()</code>和<code>write()</code>会尽可能(分别)地多读所请求的输入或者尽可能地输出所有给定的输出，但以牺牲多个系统调用为代价。<strong>【注】：</strong>典型的<code>BufferedIOBase</code>实现不应该从<code>RawIOBase</code>类继承然后实现，而是应该wrap一个<code>RawIOBase</code>。</li>
+<li><code>TextIOBase</code>继承自<code>IOBase</code>，它是text streams的基类，此类为stream I/O提供基于character和lines的接口。没有提供<code>readinto()</code>方法，因为Python的字符串是不可变的。</li>
+<li><code>StringIO</code>是一个in-memory stream for text I/O。在调用<code>close()</code>方法时，将丢弃text buffer。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c915715b88a18f27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="判断Python的版本"><a href="#判断Python的版本" class="headerlink" title="判断Python的版本"></a>判断Python的版本</h2><p>可以使用<code>sys.version_info</code>。因为<code>version_info</code>是一个<code>tuple</code>,其构成为<code>(major,minor,micro,releaselevel,serial)</code>。<br>Python 2.0版本的<code>version_info</code>为：<code>(2, 0, 0, &#39;final&#39;, 0)</code>。或者，可以通过索引来获取各个component，例如，<code>sys.version_info[0]==sys.version_info.major</code>。</p>
+<h2 id="str-VS-unicode"><a href="#str-VS-unicode" class="headerlink" title="__str__ VS  __unicode__"></a><code>__str__</code> VS  <code>__unicode__</code></h2><p><code>__str__</code>一般是旧式方法，用于返回<code>bytes</code>。而<code>__unicode__</code>是新式方法，但更加利好，用于返回<code>characters</code>。虽然名字令人有点儿困惑，但在<code>2.x</code>中，出于兼容性的考虑，还是需要坚持使用<code>__str__</code>。通常，应该将所有字符串格式设置在<code>__unicode__</code>之中，并创建一个<code>__str__</code>包装方法：</p>
+<pre><code class="python">def __str__(self):
+    return unicode(self).encode(&#39;utf-8&#39;)
+</code></pre>
+<h2 id="bytes与str之间的异同"><a href="#bytes与str之间的异同" class="headerlink" title="bytes与str之间的异同"></a><code>bytes</code>与<code>str</code>之间的异同</h2><p><code>bytes</code>是一种比特流，它的存在形式是<code>010101111111</code>这样。无论是在编程或者进行阅读，肯定不会有人直接阅读这种比特流，他必须有一个编码方式，使得其变为有意义的比特流，而不是一堆晦涩难懂的二进制组合。因为编码方式的不同，对这个比特流的解读也不一样，会给实际使用造成很大困扰。</p>
+<p>例如：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e41f63ab3c30cab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>从上述代码，可以得知，<code>s</code>是一个<code>str</code>（即字符串类型）。Python的内置函数<code>bytes()</code>可以将字符串<code>str</code>转换为<code>bytes</code>类型。而<code>b</code>实际上是一串二进制组合，为了在IDE中让编程人员相对直接地观察，其被表现为<code>b&#39;\xe4\xb8\xad\xe6\x96\x87&#39;</code>这种形式。<strong>在使用内置函数<code>bytes()</code>时，需要明确<code>encoding</code>参数，不可省略。</strong></p>
+<p>在字符串类<code>str</code>中有一个<code>encode()</code>方法，实现<strong>从字符串到比特流的编码</strong>过程；而<code>bytes</code>类型拥有<code>decode()</code>方法，实现<code>从比特流向字符串解码</code>过程。这两者几乎拥有一样的函数列表，最大的区别就是上面的两个方法。</p>
+<p>本质而言，字符串在磁盘上的保存形式也是二进制组合，也需要编码解码。</p>
+<p>两者区别的总结：</p>
+<ul>
+<li>在将<code>str</code>（字符串）存入磁盘和从磁盘读取字符串的过程中，Python会自动地帮我们完成编码和解码的工作，我们不需要关心它的过程。</li>
+<li>使用<code>bytes</code>类型，实质上是告诉Python，不需要它帮我们自动地完成编码和解码的工作，而是我们自己手动进行，并指定编码格式。</li>
+<li>Python已经严格区分了<code>bytes</code>和<code>str</code>两种数据类型，我们不能在需要<code>bytes</code>类型参数的时候使用<code>str</code>参数，反之亦然。</li>
+<li>在<code>bytes</code>和<code>str</code>的互相转换过程中，实际就是编码解码的过程，必须显式地指定编码格式。</li>
+</ul>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a><code>self</code></h2><p><code>self</code>名称不是必须的，而且在Python中，<code>self</code>并不是关键字，将其定义成其他名字都可，但约定俗成（为了和其他编程语言同一，减少理解难度）。其次，<code>self</code>指的是<strong>类实例对象本身，而不是类本身</strong>。因为如果是指向类本身，那么当创建多个类实例时，<code>self</code>就无法判断指向的是哪一个实例。</p>
+<h2 id="u-U-quot-quot"><a href="#u-U-quot-quot" class="headerlink" title="u/U&quot;&quot;"></a><code>u/U&quot;&quot;</code></h2><p>其表示unicode字符串，可以对字符串进行unicode编码。一般，英文字符在使用各种不同编码的情况下，依旧可以正常解析，所以一般不带<code>u</code>。但中文就必须需要编码，否则在编码转换时就会出现乱码。</p>
+<h2 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate()"></a><code>enumerate()</code></h2><p>用于将一个Iterable（可遍历）的数据对象（如<code>list</code>、<code>tuple</code>或者<code>str</code>）组合成一个索引序列，同时列出数据和数据下标，一般用在<code>for</code>循环中。</p>
+<p>函数原型：</p>
+<pre><code class="python">enumerate(sequence, [start=0])
+</code></pre>
+<p>其中，<code>sequence</code>表示一个序列、迭代器或者其他支持迭代的对象；<code>start</code>表示下标起始位置。返回<code>enumerate</code>（枚举）对象。</p>
+<h2 id="callable"><a href="#callable" class="headerlink" title="callable()"></a><code>callable()</code></h2><ul>
+<li>用于检查一个对象是否是可调用的（<strong>可被调用指的是对象能否使用<code>()</code>括号的方法调用</strong>）。</li>
+<li>可调用对象，在实际调用也可能调用失败；但是不可调用对象，调用肯定不成功。</li>
+<li>类对象都是可被调用对象，类的实例对象是否可调用对象，取决于类是否定义了<code>__call__</code>方法。</li>
+</ul>
 
         
     
