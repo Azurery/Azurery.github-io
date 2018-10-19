@@ -37,7 +37,7 @@
     
     <title>
         
-            CMake学习 | 
+            libjpeg的使用 | 
         
         Azurery
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content=",其他">
+    <meta name="keywords" content=",CV">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CMake学习 | Azurery">
+    <meta property="og:title" content="libjpeg的使用 | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    <meta property="og:article:tag" content="其他"> 
+    <meta property="og:article:tag" content="CV"> 
 
     
-        <meta property="article:published_time" content="Thu Sep 20 2018 21:22:31 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Sep 21 2018 22:23:06 GMT+0800" />
+        <meta property="article:published_time" content="Fri Oct 12 2018 11:11:41 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Oct 19 2018 11:22:12 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="CMake学习 | Azurery">
+    <meta name="twitter:title" content="libjpeg的使用 | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/20/CMake学习/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/12/libjpeg学习/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/20/CMake学习/index.html",
-    "headline": "CMake学习",
-    "datePublished": "Thu Sep 20 2018 21:22:31 GMT+0800",
-    "dateModified": "Fri Sep 21 2018 22:23:06 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/12/libjpeg学习/index.html",
+    "headline": "libjpeg的使用",
+    "datePublished": "Fri Oct 12 2018 11:11:41 GMT+0800",
+    "dateModified": "Fri Oct 19 2018 11:22:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",其他",
+    "keywords": ",CV",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Windows平台下"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Windows平台下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在linux平台下"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">在linux平台下</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多个源文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个源文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-同一个目录，多个源文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 同一个目录，多个源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-多个目录，多个源文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 多个目录，多个源文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义编译选项"><span class="post-toc-number">3.</span> <span class="post-toc-text">自定义编译选项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-修改CMakeLists-txt文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 修改CMakeLists.txt文件</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-设置出错处理函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 设置出错处理函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-初始化解码对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 初始化解码对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-初始化源数据"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 初始化源数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-读取jpeg文件的头信息"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 读取jpeg文件的头信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置解码参数"><span class="post-toc-number">5.</span> <span class="post-toc-text">设置解码参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-开始解码"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 开始解码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-读取解码数据"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. 读取解码数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-结束解码"><span class="post-toc-number">8.</span> <span class="post-toc-text">8. 结束解码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-释放解码对象"><span class="post-toc-number">9.</span> <span class="post-toc-text">9. 释放解码对象</span></a></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                CMake学习
+                libjpeg的使用
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Magicmanoooo</strong>
-        <span>9月 20, 2018</span>
+        <span>10月 12, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -422,7 +422,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3awW7CMBAEUP7/p9trpQqYWSdOQM8nRN3g50O8Gu/j56vHAw8PDw8PDw8P72a8RzzePPTPnP/zk7++/j5fGx4eHt4eXr70lW/y5y+tDQ8PD28j79kLN/mcL3d2hCRrw8PDw7szr11ozsbDw8P7Vl7CePac2Qbh4eHh3ZOXR7RJYZ0/50ZZCx4eHl7Myy+Z9n/eer+Hh4eHF/Da0V50JUufXZs9/UU8PDy8k3n5izg/TtqZbXjxZkPx8PDwTubNIoCkLSA/Htpjo4hx8fDw8E7j5WVxGxPkB0ZeuL/ZSjw8PLztvLY1Kn+V54V1Xu7j4eHh7eflzU/JyzrZrLa5Kt8OPDw8vJ28WTBxVCGez4+OKDw8PLztvDY8bZc1C38TGB4eHt61vPZCa9aMtX5I4OHh4V3Fy4OGoyLatr2gODzw8PDwTubNwtZ2I9rw93UpX7er4uHh4R3KW2+QSi6x2jmHNV3h4eHhncxrWwra0DYvx1fm4+Hh4e3kzV7cbXCQX6fleDw8PLxrecniWmryX3koPEyp8fDw8A7lrRfTbeDbBhnFtRweHh7eRl57MCRXZckVVx4ZR0cFHh4e3kZeUmTnBXF7wVbHtXh4eHgX8drRtljNGhRWfhcPDw/vbN4sQm0jjHx+ezGGh4eHdxWvPQzyi668UG4PhqLpCg8PD+803myhs9K5Lb7z7cDDw8P7FN56ONsGwXh4eHifxWuDjLxwXym78fDw8PbzkjCiLYtnl2HtTDw8PLz9vFkEsDLy7VtqusLDw8M7gfd9Aw8PDw8PDw8P7wbjF16fr1vMgIniAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaklEQVR42u3aQXLCMAwF0Nz/0u0FmvAlOyLNPK8YGLBfFpKQdfy8eh14eHh4eHh4eHgP4x3xOvvWHxucvH/2abJL4Wx4eHh4I7wPofaS0XsE+e9Xv4uHh4c3yTs77tnr6y0TcL5XcjY8PDy8J/Ou30keysq+eHh4eO/gJaX2dSsBDw8P7z/ykj/8OabXwO2V73h4eHjzvPySaf716P0eHh4eXsArjzQVg3jeksiTwYcT4uHh4d3MywPxroJ75dIrOg8eHh7ezbxq46AX1nsppNq8wMPDw/sur1fm5kE8+bSKx8PDw5vh5cVu7wKsWmQnKQEPDw/vu7y8BZAH996QVu8kUUmNh4eHdwOvWrauNC9WxlWjVISHh4d3M2/X9X/1oqtajhdaxnh4eHg383qBuxriV9JD3vzFw8PDm+GtFL7VYaz80qsKxsPDw5vkVcNutQHRK9yv2xPNoSs8PDy8TbxqiE8eSi9tXKeQDUNXeHh4eJt4u9JDsn0S4vOhq3KvBQ8PD28rb+U6PymFc/Z6wxcPDw/vbl61LZunjeSqLEkw5YYIHh4e3givlx7yo/cSQPPX8PDw8AZ5vYI4vxLrFdN5kY2Hh4f3Ld5Kwqg2FJK9kisxPDw8vEledSWBPg/ovbHU5kwZHh4e3ibeEa8V6go4v3jDw8PDm+RVk0FeHN+XGJaaEXh4eHibeNUA3RsyyAe5tg1d4eHh4T2Alw8B9BJDdXABDw8P7/m8asmbDA3krZAPV254eHh4g7x8lKrXJqiW3fnDwsPDw5vn9Uadem2Fa2rvEeDh4eFN8t638PDw8PDw8PDwHrB+Ab/yNQDlYQ+fAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -436,7 +436,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/其他/">其他</a>
+        <a class="post_tag-link" href="/tags/CV/">CV</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=libjpeg的使用&url=http://yoursite.com/2018/10/12/libjpeg学习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=libjpeg的使用&url=http://yoursite.com/2018/10/12/libjpeg学习/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/12/libjpeg学习/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/12/libjpeg学习/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CMake学习&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=libjpeg的使用&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/10/12/libjpeg学习/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -509,92 +509,91 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="什么是CMake"><a href="#什么是CMake" class="headerlink" title="什么是CMake"></a>什么是CMake</h2><p>如果软件想跨平台，必须要保证能够在不同平台编译。但现在存在各种不同的make工具，就得为每一种标准写一次Makefile。</p>
-<p>CMake就是为了针对上述这种问题所设计的工具：它首先允许开发者编写一种平台无关的CMakeLists.txt文件来指定整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化Makefile和工程文件，如Unix的Makefile或者Windows的Visual Studio工程，从而做到<strong>write once，run everywhere</strong>。</p>
-<h3 id="1-Windows平台下"><a href="#1-Windows平台下" class="headerlink" title="1. Windows平台下"></a>1. Windows平台下</h3><p>在Windows下，需要在设置编译器的时候，gcc和g++后面要加上.exe。需要在CMakeLists.txt所在的目录下，运行如下命令：</p>
-<pre><code class="cpp">cmake -G &quot;MinGW Makefiles&quot; .
+        <p>libjpeg是一个完全使用C语言编写的library，包含了一些主要部件：JPEG解码、JPEG编码以及其他的JPEG功能实现。</p>
+<p>使用libjpeg库在解码jpeg数据的时候，最重要的数据结构是<code>struct jpeg_decompress_struct</code>，一般变量定义为<code>cinfo</code>变量，<strong>该变量保存着jpeg数据的详细信息，也保存着解码之后输出数据的详细信息</strong>。一般情况下，每次调用libjpeg库的API的时候，都需要将这个变量作为第一个参数传入。此外，用户也可以通过修改该变量来修改libjpeg的行为，例如：输出数据格式、libjpeg库可用的最大内存等。</p>
+<h2 id="1-设置出错处理函数"><a href="#1-设置出错处理函数" class="headerlink" title="1. 设置出错处理函数"></a>1. 设置出错处理函数</h2><p>在使用libjpeg库的时候难免会产生错误，所以在使用libjpeg解码之前，首先要做好错误处理。在libjpeg库之中，实现了默认错误处理函数，当错误发生时，例如：如果内存不足，则默认错误处理函数将会调用<code>exit</code>函数结束整个进程。这对于用户来说，这样的特性并不是很合适，不过libjpeg提供了接口让用户可以注册自定义错误处理函数。</p>
+<p>C语言虽然没有C++的异常处理机制，但是提供了<code>setjmp</code>和<code>longjmp</code>机制来实现类似的功能。</p>
+<p>例子：</p>
+<pre><code class="cpp">  /* We set up the normal JPEG error routines, then override error_exit. */
+  cinfo.err = jpeg_std_error(&amp;jerr.pub);
+  jerr.pub.error_exit = my_error_exit;
+  /* Establish the setjmp return context for my_error_exit to use. */
+  if (setjmp(jerr.setjmp_buffer)) {
+    /* If we get here, the JPEG code has signaled an error.
+     * We need to clean up the JPEG object, close the input file, and return.
+     */
+    jpeg_destroy_decompress(&amp;cinfo);
+    fclose(infile);
+    return 0;
+  }
 </code></pre>
-<p><strong>【注】：</strong>在上面的命令的最后一行的这个<code>.</code>不能丢，代表的是当前路径。</p>
-<p>此外，在MinGW路径下的<code>make</code>叫<code>mingw32-make.exe</code>，在运行的时候，需要使用的命令为：</p>
-<pre><code class="cpp">mingw32-make
+<p>上述代码的重点在于，用户向libjpeg注册了一个<code>my_error_exit</code>回调函数。当发生错误的时候，该回调函数将会被调用。然后调用<code>setjmp</code>函数，设置一个返回点。这样，在<code>my_error_exit</code>回调函数处理完错误信息之后，就可以调用<code>longjmp</code>函数返回到这里，在这个返回点进行资源的释放。</p>
+<p>其中，<code>my_error_exit</code>回调函数的实现为：</p>
+<pre><code class="cpp">/*
+ * Here&#39;s the routine that will replace the standard error_exit method:
+ */
+
+METHODDEF(void)
+my_error_exit (j_common_ptr cinfo)
+{
+  /* cinfo-&gt;err really points to a my_error_mgr struct, so coerce pointer */
+  my_error_ptr myerr = (my_error_ptr) cinfo-&gt;err;
+
+  /* Always display the message. */
+  /* We could postpone this until after returning, if we chose. */
+  (*cinfo-&gt;err-&gt;output_message) (cinfo);
+
+  /* Return control to the setjmp point */
+  longjmp(myerr-&gt;setjmp_buffer, 1);
+}
 </code></pre>
-<p>此外，在CMakeLists.txt中需要设置为：</p>
-<pre><code class="makefile"># CMake 最低版本号要求
-cmake_minimum_required (VERSION 2.8)
-# 项目信息
-project (Demo1)
-# 指定生成目标
-add_executable(Demo main.cc)
-
-set(CMAKE_C_COMPLIER D:/Software/Programming/MinGW/bin/gcc.exe #设置C编译器
-set(CMAKE_CXX_COMPLIER D:/Software/Programming/MinGW/bin/g++.exe) #设置C++编译器
+<p>可以通过检查<code>cinfo-&gt;err-&gt;msg_code</code>的值来判断错误类型，进行相应的处理。在此例中，只是简单地打印一个错误信息。最后调用<code>longjmp</code>跳转到<code>setjmp</code>调用的地方。</p>
+<h2 id="2-初始化解码对象"><a href="#2-初始化解码对象" class="headerlink" title="2. 初始化解码对象"></a>2. 初始化解码对象</h2><p>要使用libjpeg解码jpeg数据，这一步很重要。</p>
+<pre><code class="cpp">/* Now we can initialize the JPEG decompression object. */
+  jpeg_create_decompress(&amp;cinfo);
 </code></pre>
-<p>上述出现的一些命令：</p>
-<ol>
-<li><code>cmake_mimimum_required</code>：指定运行此配置文件所需的CMake的最低版本</li>
-<li><code>project</code>：参数值<code>Demo</code>，该命令表示项目的名称是<code>Demo</code></li>
-<li><code>add_executable</code>：将名为<code>main.cc</code>的源文件编译成一个名为<code>Demo</code>的可执行文件</li>
-</ol>
-<h3 id="在linux平台下"><a href="#在linux平台下" class="headerlink" title="在linux平台下"></a>在linux平台下</h3><p>在当前目录下执行<code>cmake .</code>，得到Makefile后再使用<code>make</code>命令编译得到<code>Demo</code>可执行文件。</p>
-<h2 id="多个源文件"><a href="#多个源文件" class="headerlink" title="多个源文件"></a>多个源文件</h2><h3 id="1-同一个目录，多个源文件"><a href="#1-同一个目录，多个源文件" class="headerlink" title="1. 同一个目录，多个源文件"></a>1. 同一个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-a12804b0d76ccd3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>在这种情况下，可以在<code>add_executable</code>命令中增加多个源文件。虽然这么写没问题，但当源文件过多时，就需要把所以源文件的名字都加进去，这就是很繁琐的工作。比较简单的方法是：<strong>使用<code>aux_source_directory</code>命令，该命令会查找指定目录下的所有源文件，然后将结果存进指定变量名。</strong>其语法如下：</p>
-<pre><code class="makefile">aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
+<p>在这一步之后，如果解码结束或者解码出错之后，需要调用<code>jpeg_destroy_decompress()</code>来销毁解码对象，否则将会导致内存。</p>
+<h2 id="3-初始化源数据"><a href="#3-初始化源数据" class="headerlink" title="3. 初始化源数据"></a>3. 初始化源数据</h2><pre><code class="cpp">  /* Step 2: specify data source (eg, a file) */
+  jpeg_stdio_src(&amp;cinfo, infile);
 </code></pre>
-<p>所以，可以修改CMakeLists.txt：</p>
-<pre><code class="makefile"># 查找当前目录下的所有源文件
-# 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(. DIR_SRCS)
-
-# 指定生成目标
-add_executable(Demo ${DIR_SRCS})
+<p><strong>【注】：</strong>libjpeg只支持文件类型的输入，其他的类型（例如，内存数据、网络数据等）却不支持。</p>
+<h2 id="4-读取jpeg文件的头信息"><a href="#4-读取jpeg文件的头信息" class="headerlink" title="4. 读取jpeg文件的头信息"></a>4. 读取jpeg文件的头信息</h2><pre><code class="cpp">/* Step 3: read file parameters with jpeg_read_header() */
+  (void) jpeg_read_header(&amp;cinfo, TRUE);
 </code></pre>
-<p>这样，CMake会将当前目录的所有源文件的文件名赋值给变量<code>DIR_SRCS</code>，再指示变量<code>DIR_SRCS</code>中的源文件需要编译成一个名为<code>Demo</code>的可执行文件。</p>
-<h3 id="2-多个目录，多个源文件"><a href="#2-多个目录，多个源文件" class="headerlink" title="2. 多个目录，多个源文件"></a>2. 多个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-81de8f0fe4e3fad1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>这种情况，需要分别在项目的根目录<code>Demo3</code>和<code>math</code>目录里各编写一个CMakeLists.txt文件。为了方便起见，可以先将<code>math</code>目录下的文件编译成静态库，再由<code>main</code>函数进行调用。</p>
-<ul>
-<li>使用命令<code>add_subdirectory</code>指明此项目包含一个子目录<code>math</code>，这样<code>math</code>目录下的CMakeLists.txt文件和源代码将会被处理。</li>
-<li>使用命令<code>target_link_libraries</code>指明可执行文件<code>main</code>需要链接一个名为<code>MathFunctions</code>的链接库。</li>
-</ul>
-<p>根目录中的CMakeLists.txt为：</p>
-<pre><code class="makefile">cmake_minimum_required (VERSION 2.8）
-
-# 项目信息
-project (Demo3)
-
-aux_source_directory (. DIR_SRCS)
-
-# 添加math子目录
-add_subdirectory(math)
-
-add_executable(Demo main.cc)
-
-# 添加链接库
-target_link_libraries(Demo MathFunctions)
+<p>这一步和初始化解码对象一样，是必须调用的。</p>
+<h2 id="设置解码参数"><a href="#设置解码参数" class="headerlink" title="设置解码参数"></a>设置解码参数</h2><p>这一步在许多情况下都十分重要，例如设置输出格式、设置scale（缩放）等功能，这些功能都需要在这一步设置。参数设置通过修改上一步的得到的<code>cinfo</code>的值来实现。</p>
+<p>一些常用的字段：<br><strong><code>out_color_space</code>：</strong>输出的颜色格式，其定义为：</p>
+<pre><code class="cpp">
 </code></pre>
-<h2 id="自定义编译选项"><a href="#自定义编译选项" class="headerlink" title="自定义编译选项"></a>自定义编译选项</h2><p>CMake 允许为项目增加编译选项，从而可以根据用户的环境和需求选择最合适的编译方案。例如，可以将<code>MathFunctions</code>库设置为可选的库，如果该选项为<code>ON</code>，则就使用该库定义的数学函数来进行计算，否则就调用标准库中的数学函数库。</p>
-<h3 id="1-修改CMakeLists-txt文件"><a href="#1-修改CMakeLists-txt文件" class="headerlink" title="1. 修改CMakeLists.txt文件"></a>1. 修改CMakeLists.txt文件</h3><p>需要在项目的最高层的CMakeLists.txt文件中添加该选项：</p>
-<pre><code class="makefile"># CMake最低版本号要求
-cmake_minumum_required (VERSION 2.8)
-
-# 项目信息
-project (Demo)
-
-# 加入一个配置头文件，用于处理CMake对源码的设置
-configure_file (
-    &quot;${PROJECT_SOURCE_DIR}/config.h.in&quot;
-    &quot;${PROJECT_BINARY_DIR}/config.h&quot;
-    )
-
-# 是否使用自己的MathFunctions库
-option (USE_MYMATH
-                &quot;Use provided math implemetation&quot; ON
-                )
-
-# 是否加入MathFunctions库
-if (USE_MYMATH)
-    include_directoris (&quot;${PROJECT_SOURCE_DIR}/math&quot;)
-    add
+<p><strong><code>scale_num</code>，<code>scale_denom</code>：</strong>因为实际的显示设备千变万化，用户可能需要根据实际情况对输出数据进行一些缩放才能够显示。libjpeg支持对输出数据进行缩放（scale），这个变量就是用来设置缩放的参数。目前libjpeg支持<code>1/2</code>，<code>1/4</code>，<code>1/8</code>三种缩放。</p>
+<p><strong><code>mem</code>：</strong>可以指定内存管理相关的内容，比如分配和释放内存，指定libjpeg可以使用的最大内存。默认情况下，不同的平台下面都有一个libjpeg默认最大可用内存值（参考<code>jmemxxxx.c</code>文件中的<code>DEFAULT_MAX_MEM</code>，了解不同平台的默认最大内存值）。通过修改<code>mem-&gt;pub.max_memory_to_use</code>的值，库的使用者可以自定义libjpeg可以使用的最大内存值。</p>
+<h2 id="6-开始解码"><a href="#6-开始解码" class="headerlink" title="6. 开始解码"></a>6. 开始解码</h2><p>经过之前的参数设置，便可以开始解码。</p>
+<pre><code class="cpp">  /* Step 5: Start decompressor */
+  (void) jpeg_start_decompress(&amp;cinfo);
 </code></pre>
+<h2 id="7-读取解码数据"><a href="#7-读取解码数据" class="headerlink" title="7. 读取解码数据"></a>7. 读取解码数据</h2><pre><code class="cpp">  /* Here we use the library&#39;s state variable cinfo.output_scanline as the
+   * loop counter, so that we don&#39;t have to keep track ourselves.
+   */
+  while (cinfo.output_scanline &lt; cinfo.output_height) {
+    /* jpeg_read_scanlines expects an array of pointers to scanlines.
+     * Here the array is only one element long, but you could ask for
+     * more than one scanline at a time if that&#39;s more convenient.
+     */
+    (void) jpeg_read_scanlines(&amp;cinfo, buffer, 1);
+    /* Assume put_scanline_someplace wants a pointer and sample count. */
+    put_scanline_someplace(buffer[0], row_stride);
+  }
+</code></pre>
+<p><strong>【注】：</strong>虽然函数<code>jpeg_read_scanlines</code>可以指定一次读多少行，但是目前该函数还是只能支持一次只读<code>1</code>行。</p>
+<h2 id="8-结束解码"><a href="#8-结束解码" class="headerlink" title="8. 结束解码"></a>8. 结束解码</h2><pre><code class="cpp">  /* Step 7: Finish decompression */
+  (void) jpeg_finish_decompress(&amp;cinfo);
+</code></pre>
+<h2 id="9-释放解码对象"><a href="#9-释放解码对象" class="headerlink" title="9. 释放解码对象"></a>9. 释放解码对象</h2><pre><code class="cpp">  /* Step 8: Release JPEG decompression object */
+
+  /* This is an important step since it will release a good deal of memory. */
+  jpeg_destroy_decompress(&amp;cinfo);
+</code></pre>
+<p>至此，一个jpeg数据就已经解析完成了。</p>
 
         
     
@@ -615,7 +614,7 @@ if (USE_MYMATH)
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/24/Python点点滴滴/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/10/19/Opencv/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -629,7 +628,7 @@ if (USE_MYMATH)
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/20/LevelDB/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/24/Python点点滴滴/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Sat Jul 21 2018 17:20:01 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Oct 06 2018 17:56:07 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Oct 19 2018 17:04:11 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/21/C++点点滴滴（中）/index.html",
     "headline": "C++点点滴滴（中）",
     "datePublished": "Sat Jul 21 2018 17:20:01 GMT+0800",
-    "dateModified": "Sat Oct 06 2018 17:56:07 GMT+0800",
+    "dateModified": "Fri Oct 19 2018 17:04:11 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17中，可以使用std-shared-ptr管理动态数组。"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">C++ 17中，可以使用std::shared_ptr管理动态数组。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过std-tuple来实现函数调用"><span class="post-toc-number">5.</span> <span class="post-toc-text">通过std::tuple来实现函数调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型擦除（type-erasure）"><span class="post-toc-number">6.</span> <span class="post-toc-text">类型擦除（type erasure）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-通过多态来擦除类型"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 通过多态来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-通过模板来擦除类型"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 通过模板来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-通过某种通用类型来擦除类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4. 通过某种通用类型来擦除类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现any"><span class="post-toc-number">7.</span> <span class="post-toc-text">实现any</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strtod"><span class="post-toc-number">8.</span> <span class="post-toc-text">strtod</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Imcomplete-types（非完整类型）"><span class="post-toc-number">9.</span> <span class="post-toc-text">Imcomplete types（非完整类型）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fprintf"><span class="post-toc-number">10.</span> <span class="post-toc-text">fprintf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Standard-Predefined-Macros"><span class="post-toc-number">11.</span> <span class="post-toc-text">Standard Predefined Macros</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FILE"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">__FILE__</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LINE"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">__LINE__</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DATE-amp-TIME"><span class="post-toc-number">12.</span> <span class="post-toc-text">__DATE__ &amp; __TIME__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC"><span class="post-toc-number">13.</span> <span class="post-toc-text">__STDC__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC-VERSION"><span class="post-toc-number">14.</span> <span class="post-toc-text">__STDC_VERSION__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cplusplus"><span class="post-toc-number">15.</span> <span class="post-toc-text">__cplusplus</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ASSEMBLER"><span class="post-toc-number">16.</span> <span class="post-toc-text">__ASSEMBLER__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#macro的技巧"><span class="post-toc-number">17.</span> <span class="post-toc-text">macro的技巧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-isalnum"><span class="post-toc-number">18.</span> <span class="post-toc-text">std::isalnum</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Placement-new"><span class="post-toc-number">19.</span> <span class="post-toc-text">Placement new</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#template-disambiguator"><span class="post-toc-number">20.</span> <span class="post-toc-text">template disambiguator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认构造函数（default-ctor）"><span class="post-toc-number">21.</span> <span class="post-toc-text">默认构造函数（default ctor）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-什么是default-ctor"><span class="post-toc-number">21.1.</span> <span class="post-toc-text">1. 什么是default ctor</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#lambda表达式"><span class="post-toc-number">22.</span> <span class="post-toc-text">lambda表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#捕获外部变量"><span class="post-toc-number">22.1.</span> <span class="post-toc-text">捕获外部变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板的相关问题"><span class="post-toc-number">23.</span> <span class="post-toc-text">模板的相关问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板类error-LNK2019：无法解析的外部符号"><span class="post-toc-number">24.</span> <span class="post-toc-text">模板类error LNK2019：无法解析的外部符号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#error的使用"><span class="post-toc-number">25.</span> <span class="post-toc-text">#error的使用</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17中，可以使用std-shared-ptr管理动态数组。"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">C++ 17中，可以使用std::shared_ptr管理动态数组。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过std-tuple来实现函数调用"><span class="post-toc-number">5.</span> <span class="post-toc-text">通过std::tuple来实现函数调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型擦除（type-erasure）"><span class="post-toc-number">6.</span> <span class="post-toc-text">类型擦除（type erasure）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-通过多态来擦除类型"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 通过多态来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-通过模板来擦除类型"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 通过模板来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-通过某种通用类型来擦除类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4. 通过某种通用类型来擦除类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现any"><span class="post-toc-number">7.</span> <span class="post-toc-text">实现any</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strtod"><span class="post-toc-number">8.</span> <span class="post-toc-text">strtod</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Imcomplete-types（非完整类型）"><span class="post-toc-number">9.</span> <span class="post-toc-text">Imcomplete types（非完整类型）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fprintf"><span class="post-toc-number">10.</span> <span class="post-toc-text">fprintf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Standard-Predefined-Macros"><span class="post-toc-number">11.</span> <span class="post-toc-text">Standard Predefined Macros</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FILE"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">__FILE__</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LINE"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">__LINE__</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DATE-amp-TIME"><span class="post-toc-number">12.</span> <span class="post-toc-text">__DATE__ &amp; __TIME__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC"><span class="post-toc-number">13.</span> <span class="post-toc-text">__STDC__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC-VERSION"><span class="post-toc-number">14.</span> <span class="post-toc-text">__STDC_VERSION__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cplusplus"><span class="post-toc-number">15.</span> <span class="post-toc-text">__cplusplus</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ASSEMBLER"><span class="post-toc-number">16.</span> <span class="post-toc-text">__ASSEMBLER__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#macro的技巧"><span class="post-toc-number">17.</span> <span class="post-toc-text">macro的技巧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-isalnum"><span class="post-toc-number">18.</span> <span class="post-toc-text">std::isalnum</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Placement-new"><span class="post-toc-number">19.</span> <span class="post-toc-text">Placement new</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#template-disambiguator"><span class="post-toc-number">20.</span> <span class="post-toc-text">template disambiguator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认构造函数（default-ctor）"><span class="post-toc-number">21.</span> <span class="post-toc-text">默认构造函数（default ctor）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-什么是default-ctor"><span class="post-toc-number">21.1.</span> <span class="post-toc-text">1. 什么是default ctor</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#lambda表达式"><span class="post-toc-number">22.</span> <span class="post-toc-text">lambda表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#捕获外部变量"><span class="post-toc-number">22.1.</span> <span class="post-toc-text">捕获外部变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板的相关问题"><span class="post-toc-number">23.</span> <span class="post-toc-text">模板的相关问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板类error-LNK2019：无法解析的外部符号"><span class="post-toc-number">24.</span> <span class="post-toc-text">模板类error LNK2019：无法解析的外部符号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#error的使用"><span class="post-toc-number">25.</span> <span class="post-toc-text">#error的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载-lt-lt-和-gt-gt-操作符"><span class="post-toc-number">26.</span> <span class="post-toc-text">重载&lt;&lt;和&gt;&gt;操作符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setjmp和longjmp用法"><span class="post-toc-number">27.</span> <span class="post-toc-text">setjmp和longjmp用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载operator-gt"><span class="post-toc-number">28.</span> <span class="post-toc-text">重载operator-&gt;</span></a></li></ol>
     </ul>
     
 
@@ -1280,7 +1280,45 @@ public:
     a=3;
     f();   //2
 </code></pre>
-<p>C++11中的lambda表达式捕获外部变量的主要形式有：<br>| 捕获方式 | 描述 |<br>| —— | —— |<br>| <code>[]</code> | 不捕获任何外部变量 |<br>| <code>[variable,...]</code> | 默认以值捕获来捕获的多个外部变量（用<code>,</code>分隔），如果引用捕获，需要显示声明（使用<code>&amp;</code>) |<br>| <code>[this]</code> | 以值捕获来捕获<code>this</code>指针 |<br>| <code>[=]</code> | 以值捕获来捕获所有外部变量 |<br>| <code>[&amp;]</code> | 以引用捕获来捕获所有外部变量 |<br>| <code>[=，&amp;x]</code> | 变量<code>x</code>使用引用捕获，其余变量使用值捕获 |<br>| <code>[&amp;,x]</code> | 变量<code>x</code>使用值捕获，其余变量使用引用捕获| </p>
+<p>C++11中的lambda表达式捕获外部变量的主要形式有：</p>
+<table>
+<thead>
+<tr>
+<th>捕获方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[]</code></td>
+<td>不捕获任何外部变量</td>
+</tr>
+<tr>
+<td><code>[variable,...]</code></td>
+<td>默认以值捕获来捕获的多个外部变量（用<code>,</code>分隔），如果引用捕获，需要显示声明（使用<code>&amp;</code>)</td>
+</tr>
+<tr>
+<td><code>[this]</code></td>
+<td>以值捕获来捕获<code>this</code>指针</td>
+</tr>
+<tr>
+<td><code>[=]</code></td>
+<td>以值捕获来捕获所有外部变量</td>
+</tr>
+<tr>
+<td><code>[&amp;]</code></td>
+<td>以引用捕获来捕获所有外部变量</td>
+</tr>
+<tr>
+<td><code>[=，&amp;x]</code></td>
+<td>变量<code>x</code>使用引用捕获，其余变量使用值捕获</td>
+</tr>
+<tr>
+<td><code>[&amp;,x]</code></td>
+<td>变量<code>x</code>使用值捕获，其余变量使用引用捕获</td>
+</tr>
+</tbody>
+</table>
 <p><strong>【注】：</strong>lambda表达式的参数的一些限制：</p>
 <ol>
 <li>参数列表不能有默认参数</li>
@@ -1360,6 +1398,125 @@ Foo&lt;int&gt; f;
 #endif
 </code></pre>
 <p>这样，如果编译时出现错误，就会输出<code>XXX has been defined</code>，表明宏<code>XXX</code>已经被定义了。</p>
+<h2 id="重载-lt-lt-和-gt-gt-操作符"><a href="#重载-lt-lt-和-gt-gt-操作符" class="headerlink" title="重载&lt;&lt;和&gt;&gt;操作符"></a>重载<code>&lt;&lt;</code>和<code>&gt;&gt;</code>操作符</h2><p>在开始重载这些操作符之前，必须注意：<strong>这些操作符必须重载为全局函数。如果想要让它们访问私有成员，则必须设置为友元（friend）</strong>。</p>
+<p><strong>必须将这两个操作符重载为全局函数的原因</strong>：如果操作符重载为一个成员函数，则它必须是对象的成员，且出现在操作符的左侧。由于<code>&lt;&lt;</code>的调用方式为：<code>cout &lt;&lt; obj;</code>，所以如果将它重载为一个成员函数，并且对象能够出现在操作符的右侧，则我们需要将<code>obj</code>定义为<code>ostream</code>类的成员，显然这是不现实的。因此，一般将<strong>这些操作符重载为接受两个参数的全局函数，其中一个参数为<code>cout</code>，另一个则是自定义类的对象</strong>。</p>
+<p>例子：</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+class Complex {
+private:    
+    int real, imag;
+public:    
+    Complex(int r = 0, int i =0)   {  real = r;   imag = i; }    
+    friend std::ostream &amp; operator &lt;&lt; (std::ostream &amp;out, const Complex &amp;c);    
+    friend std::istream &amp; operator &gt;&gt; (std::istream &amp;in,  Complex &amp;c);
+}; 
+ostream &amp; operator &lt;&lt; (std::ostream &amp;out, const Complex &amp;c) {    
+    out &lt;&lt; c.real;    
+    out &lt;&lt; &quot;+i&quot; &lt;&lt; c.imag &lt;&lt; endl;    
+    return out;
+} 
+
+istream &amp; operator &gt;&gt; (std::istream &amp;in,  Complex &amp;c) {    
+    std::cout &lt;&lt; &quot;Enter Real Part &quot;;    
+    in &gt;&gt; c.real;    
+    std::cout &lt;&lt; &quot;Enter Imaginary Part &quot;;    
+    in &gt;&gt; c.imag;    
+    return in;
+} 
+
+int main(){   
+    Complex c1;   
+    std::cin &gt;&gt; c1;   
+    std::cout &lt;&lt; &quot;The complex object is &quot;;   
+    std::cout &lt;&lt; c1;   
+    return 0;
+}
+</code></pre>
+<h2 id="setjmp和longjmp用法"><a href="#setjmp和longjmp用法" class="headerlink" title="setjmp和longjmp用法"></a><code>setjmp</code>和<code>longjmp</code>用法</h2><p><code>setjmp</code>和<code>longjmp</code>是C语言独有的，只有将它们结合起来使用，才能达到程序控制流有效转移的目的，按照用户的预先设计的意图，去实现对程序中可能出现的异常进行集中处理。</p>
+<p>这两个函数的原型定义在<code>&lt;setjmp.h&gt;</code>中：</p>
+<pre><code class="cpp">int setjmp(jmp_buf envbuf);
+</code></pre>
+<p><code>setjmp</code>函数用缓冲区<code>envbuf</code>保存系统堆栈的内容，以便后续的<code>longjmp</code>函数使用。<code>setjmp</code>函数初次启用时返回<code>0</code>值。</p>
+<pre><code class="cpp">void longjmp(jmp_buf envbuf, int val);
+</code></pre>
+<p><code>longjmp</code>函数中的参数<code>envbuf</code>是由<code>setjmp</code>函数所保存的堆栈环境，参数<code>val</code>设置<code>setjmp</code>函数的返回值。<code>longjmp</code>函数本身是没有返回值的，它执行后跳转到保存<code>envbuf</code>参数的<code>setjmp</code>函数调用，并由<code>setjmp</code>函数调用返回，此时<code>setjmp</code>函数的返回值就是<code>val</code>。</p>
+<p>通俗的解释是：<strong>先调用<code>setjmp</code>，用变量<code>envbuf</code>记录当前的位置，然后调用<code>longjmp</code>，返回<code>envbuf</code>所记录的位置，并使<code>setjmp</code>的返回值为<code>val</code>。当时用<code>longjmp</code>时，<code>envbuf</code>的内容被销毁了。其实这里的“位置”一词真正的含义是栈定指针</strong>。</p>
+<p>例子：</p>
+<pre><code class="cpp">#include &lt;stdio.h&gt; 
+#include &lt;setjmp.h&gt;
+
+jmp_buf buf;
+
+void banana() { 
+    printf(&quot;in banana() \n&quot;); 
+    longjmp(buf,1);
+
+    printf(&quot;you&#39;ll never see this,because i longjmp&#39;d&quot;);
+}
+
+int main() { 
+    if(setjmp(buf)) 
+        printf(&quot;back in main\n&quot;); 
+    else { 
+        printf(&quot;first time through\n&quot;); 
+        banana(); 
+    }
+}
+
+//first time through
+//in banana()
+//back in main
+</code></pre>
+<p><code>setjmp</code>/<code>longjmp</code>的最大用处是错误恢复，类似<code>try ...catch...</code>。其功能比<code>goto</code>强大很多，<code>goto</code>只能在函数体内跳来跳去，而<code>setjmp</code>/<code>longjmp</code>可以在到过的所有位置间进行跳转。</p>
+<h2 id="重载operator-gt"><a href="#重载operator-gt" class="headerlink" title="重载operator-&gt;"></a>重载<code>operator-&gt;</code></h2><p>重载<code>operator-&gt;</code>必须定义为类的成员函数。此外，不管其形式如何，<code>-&gt;</code>表达式不接受显示的形参。</p>
+<p>对于形如<code>pointer-&gt;mem</code>的表达式而言，<code>pointer</code>必须以下两种形式之一：</p>
+<ul>
+<li>指向类对象的指针</li>
+<li>重载了<code>operator-&gt;()</code>的类对象</li>
+</ul>
+<p>根据<code>pointer</code>类型的不同，有以下两条规则：</p>
+<ol>
+<li>如果<code>pointer</code>是指针，则按照内置的<code>-&gt;</code>运算符去处理。表达式等价于<code>(*pointer).mem</code>。即，先对<code>pointer</code>指针进行解引用，然后从所得的对象中获得指定的成员。如果没有所指定的成员，编译器则会报错。</li>
+<li>如果<code>pointer</code>是一个定义了<code>operator-&gt;()</code>的类对象，则<code>pointer-&gt;mem</code>等价于<code>pointer.operator-&gt;()-&gt;mem</code>。<ul>
+<li>如果<code>operator-&gt;()</code>的返回结果是一个指针，则转到1；</li>
+<li>如果<code>operator-&gt;()</code>的返回结果是一个对象，且该对象也重载了<code>operator-&gt;()</code>，则重复调用2，否则编译器报错。最终，过程要么结束在1，要么无限递归下去亦或是编译器报错。</li>
+</ul>
+</li>
+</ol>
+<p>简而言之，如果返回类型是类类型（或者这种对象的引用），则将递归引用该操作符。编译器检查返回对象所属类型是否具有成员<code>-&gt;</code>运算符。如果有，则直接应有那个操作符；否则，编译器将产生一个错误。这个过程将持续下去，直到返回一个指向带有指定成员的对象。</p>
+<p>例子，</p>
+<pre><code class="cpp">class A{
+public:
+    int i;
+    A(){i=100;}
+    void print(int a){printf(&quot;%d\n&quot;, a);}
+    A&amp; operator-&gt;(){return *this;}
+};
+
+int main(){
+    int ret;
+    A a;
+    ret=a-&gt;i;
+    a-&gt;print(200);
+}
+</code></pre>
+<p>编译器将会报错：<code>error: circular pointer delegation detected</code>。因为上面的代码将会让<code>operator-&gt;()</code>返回对象本身，从而导致无穷递归，最后报错。</p>
+<p>而如果改为如下，则能够得到正确的结果：</p>
+<pre><code class="cpp">class A{
+public:
+    int i;
+    A(){i=100;}
+    void print(int a){printf(&quot;%d\n&quot;, a);}
+    A* operator-&gt;(){return this;}
+};
+
+int main(){
+    int ret;
+    A a;
+    ret=a-&gt;i;
+    a-&gt;print(200);
+}
+</code></pre>
 
         
     
@@ -1486,7 +1643,7 @@ Foo&lt;int&gt; f;
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1518,7 +1675,7 @@ Foo&lt;int&gt; f;
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">12</span>
+                <span class="sidebar-badge">14</span>
             </a>
         </li>
         

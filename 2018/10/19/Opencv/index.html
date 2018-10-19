@@ -37,7 +37,7 @@
     
     <title>
         
-            CMake学习 | 
+            opencv的点点滴滴 | 
         
         Azurery
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content=",其他">
+    <meta name="keywords" content=",CV">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CMake学习 | Azurery">
+    <meta property="og:title" content="opencv的点点滴滴 | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    <meta property="og:article:tag" content="其他"> 
+    <meta property="og:article:tag" content="CV"> 
 
     
-        <meta property="article:published_time" content="Thu Sep 20 2018 21:22:31 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Sep 21 2018 22:23:06 GMT+0800" />
+        <meta property="article:published_time" content="Fri Oct 19 2018 11:20:53 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Oct 19 2018 16:11:43 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="CMake学习 | Azurery">
+    <meta name="twitter:title" content="opencv的点点滴滴 | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/20/CMake学习/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/19/Opencv/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/20/CMake学习/index.html",
-    "headline": "CMake学习",
-    "datePublished": "Thu Sep 20 2018 21:22:31 GMT+0800",
-    "dateModified": "Fri Sep 21 2018 22:23:06 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/19/Opencv/index.html",
+    "headline": "opencv的点点滴滴",
+    "datePublished": "Fri Oct 19 2018 11:20:53 GMT+0800",
+    "dateModified": "Fri Oct 19 2018 16:11:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",其他",
+    "keywords": ",CV",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Windows平台下"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Windows平台下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在linux平台下"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">在linux平台下</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多个源文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个源文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-同一个目录，多个源文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 同一个目录，多个源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-多个目录，多个源文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 多个目录，多个源文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义编译选项"><span class="post-toc-number">3.</span> <span class="post-toc-text">自定义编译选项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-修改CMakeLists-txt文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 修改CMakeLists.txt文件</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是对齐（alignment）？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是对齐（alignment）？</span></a></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                CMake学习
+                opencv的点点滴滴
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Magicmanoooo</strong>
-        <span>9月 20, 2018</span>
+        <span>10月 19, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -422,7 +422,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3awW7CMBAEUP7/p9trpQqYWSdOQM8nRN3g50O8Gu/j56vHAw8PDw8PDw8P72a8RzzePPTPnP/zk7++/j5fGx4eHt4eXr70lW/y5y+tDQ8PD28j79kLN/mcL3d2hCRrw8PDw7szr11ozsbDw8P7Vl7CePac2Qbh4eHh3ZOXR7RJYZ0/50ZZCx4eHl7Myy+Z9n/eer+Hh4eHF/Da0V50JUufXZs9/UU8PDy8k3n5izg/TtqZbXjxZkPx8PDwTubNIoCkLSA/Htpjo4hx8fDw8E7j5WVxGxPkB0ZeuL/ZSjw8PLztvLY1Kn+V54V1Xu7j4eHh7eflzU/JyzrZrLa5Kt8OPDw8vJ28WTBxVCGez4+OKDw8PLztvDY8bZc1C38TGB4eHt61vPZCa9aMtX5I4OHh4V3Fy4OGoyLatr2gODzw8PDwTubNwtZ2I9rw93UpX7er4uHh4R3KW2+QSi6x2jmHNV3h4eHhncxrWwra0DYvx1fm4+Hh4e3kzV7cbXCQX6fleDw8PLxrecniWmryX3koPEyp8fDw8A7lrRfTbeDbBhnFtRweHh7eRl57MCRXZckVVx4ZR0cFHh4e3kZeUmTnBXF7wVbHtXh4eHgX8drRtljNGhRWfhcPDw/vbN4sQm0jjHx+ezGGh4eHdxWvPQzyi668UG4PhqLpCg8PD+803myhs9K5Lb7z7cDDw8P7FN56ONsGwXh4eHifxWuDjLxwXym78fDw8PbzkjCiLYtnl2HtTDw8PLz9vFkEsDLy7VtqusLDw8M7gfd9Aw8PDw8PDw8P7wbjF16fr1vMgIniAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcUlEQVR42u3aQW7kMAwEwPn/p3evAQI7TVKSnaB8ChCPodJBIpr8/PvTzwcPDw8PDw8PD+9lvE/8XH7uy3+v3v/+ztUa5mvDw8PDO8P74aht8ZINyr+cv4OHh4d3kne1oOTov78Aki8v+wIeHh7eK3n3BXH1SqhuKx4eHt5v5OXIH8rf+1gBDw8P7/W8PG7Io4TJQf9A1oKHh4cX8/Im0/m/j/b38PDw8AJeeaQpLp3zkjq/BspDV3h4eHgbePPGf/VYr5bX5SEwPDw8vM28/AJIRgfyL+fFdPlawsPDwzvCy0vkwgHdugzyjbj8FR4eHt5BXnW5OSMZF0jGCJolNR4eHt5SXn4NVCPa6gbdb1ZeyuPh4eHt5t0vIrkq1kbAveIeDw8P71leNTgoHNlFUt5Ow8PDwzvJqy662gBbW7I3wwg8PDy8IzFudXwqj4AXt7vy0QE8PDy8Rbxq3NB7M/lO3lorhBF4eHh423j5oV+ND1YNEDSHrvDw8PA28PIGf/Wwrg4E9Mr6UX8PDw8Pb8ybRK69QDYvwQvfx8PDw9vMa7bnkwO6FfVONgIPDw/vPC8pXidt/klUkcDw8PDwnuL1Qop8YCta4mDkCw8PD+8kLz+4J/FuMnaQ/xYPDw/vPK/69AKC+1I7b7wl242Hh4e3m/eJn1UNs8noQLQReHh4eEd4yWWQx6+962FSduPh4eE9xdvRuOqV46P2Gx4eHt6LeZMQNol9q2/i4eHh/RZeHv5WS+3kIin39/Dw8PCW8pLFJTHuJOrNLxs8PDy8Z3mTCCB/Pymv8/9u6e/h4eHhBby/9+Dh4eHh4eHh4b3g+Q/6thYRyCHcRgAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -436,7 +436,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/其他/">其他</a>
+        <a class="post_tag-link" href="/tags/CV/">CV</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=opencv的点点滴滴&url=http://yoursite.com/2018/10/19/Opencv/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=opencv的点点滴滴&url=http://yoursite.com/2018/10/19/Opencv/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/19/Opencv/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/19/Opencv/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CMake学习&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=opencv的点点滴滴&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/10/19/Opencv/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -509,92 +509,158 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="什么是CMake"><a href="#什么是CMake" class="headerlink" title="什么是CMake"></a>什么是CMake</h2><p>如果软件想跨平台，必须要保证能够在不同平台编译。但现在存在各种不同的make工具，就得为每一种标准写一次Makefile。</p>
-<p>CMake就是为了针对上述这种问题所设计的工具：它首先允许开发者编写一种平台无关的CMakeLists.txt文件来指定整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化Makefile和工程文件，如Unix的Makefile或者Windows的Visual Studio工程，从而做到<strong>write once，run everywhere</strong>。</p>
-<h3 id="1-Windows平台下"><a href="#1-Windows平台下" class="headerlink" title="1. Windows平台下"></a>1. Windows平台下</h3><p>在Windows下，需要在设置编译器的时候，gcc和g++后面要加上.exe。需要在CMakeLists.txt所在的目录下，运行如下命令：</p>
-<pre><code class="cpp">cmake -G &quot;MinGW Makefiles&quot; .
-</code></pre>
-<p><strong>【注】：</strong>在上面的命令的最后一行的这个<code>.</code>不能丢，代表的是当前路径。</p>
-<p>此外，在MinGW路径下的<code>make</code>叫<code>mingw32-make.exe</code>，在运行的时候，需要使用的命令为：</p>
-<pre><code class="cpp">mingw32-make
-</code></pre>
-<p>此外，在CMakeLists.txt中需要设置为：</p>
-<pre><code class="makefile"># CMake 最低版本号要求
-cmake_minimum_required (VERSION 2.8)
-# 项目信息
-project (Demo1)
-# 指定生成目标
-add_executable(Demo main.cc)
+        <p><code>Ptr</code>源码分析<br><code>Ptr</code>是一个智能指针，用于动态分配objects。这是一个template pointer-wrapping class，用于存储引用计算（reference counter）以及object pointer。它类似于C++中的智能指针，但它更加简易。可以这样使用：<code>Ptr&lt;MyObjectType&gt; ptr</code>。</p>
+<pre><code class="cpp">template&lt;typename _Tp&gt; class CV_EXPORTS Ptr
+{
+public:
+    //! empty constructor
+    Ptr();
+    //! take ownership of the pointer. The associated reference counter is allocated and set to 1
+    Ptr(_Tp* _obj);
+    //! calls release()
+    ~Ptr();
+    //! copy constructor. Copies the members and calls addref()
+    Ptr(const Ptr&amp; ptr);
+    //! copy operator. Calls ptr.addref() and release() before copying the members
+    Ptr&amp; operator = (const Ptr&amp; ptr);
+    //! increments the reference counter
+    void addref();
+    //! decrements the reference counter. If it reaches 0, delete_obj() is called
+    void release();
+    //! deletes the object. Override if needed
+    void delete_obj();
+    //! returns true iff obj==NULL
+    bool empty() const;
 
-set(CMAKE_C_COMPLIER D:/Software/Programming/MinGW/bin/gcc.exe #设置C编译器
-set(CMAKE_CXX_COMPLIER D:/Software/Programming/MinGW/bin/g++.exe) #设置C++编译器
+
+    //! helper operators making &quot;Ptr&lt;T&gt; ptr&quot; use very similar to &quot;T* ptr&quot;.
+    _Tp* operator -&gt; ();
+    const _Tp* operator -&gt; () const;
+
+    operator _Tp* ();
+    operator const _Tp*() const;
+
+protected:
+    _Tp* obj; //&lt; the object pointer.
+    int* refcount; //&lt; the associated reference counter
+};
 </code></pre>
-<p>上述出现的一些命令：</p>
+<p>所谓的智能指针，其实就是模板参数可以是任意的C++ clas，但考虑到对象在使用完毕的时候，需要进行析构，因此需要特化<code>delete_obj()</code>函数。</p>
+<p><code>Ptr</code>的构造函数：</p>
+<pre><code class="cpp">// obj是指向对象的指针，refcount是引用计数，默认ctor只是构造了一个空对象
+// 带参数的ctor则使用了动态分配内存的技术。其中，fastMalloc这个函数使用了pointer alignment技术
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::Ptr() : obj(0), refcount(0) {}
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::Ptr(_Tp* _obj) : obj(_obj)
+{
+    if(obj)
+    {
+        refcount = (int*)fastMalloc(sizeof(*refcount));
+        *refcount = 1;
+    }
+    else
+        refcount = 0;
+}
+
+ // 对于拷贝ctor，参数对应的对象不需要进行释放，直接进行拷贝即可，所以引用计数加1。
+ // 赋值operator则需要先释放掉参数对应的对象，因为将当前对象赋值给另一个对象之后，
+ // 当前指针就不再指向任何对象
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::Ptr(const Ptr&lt;_Tp&gt;&amp; ptr) {
+    obj = ptr.obj;
+    refcount = ptr.refcount;
+    addref();
+}
+
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;&amp; Ptr&lt;_Tp&gt;::operator = (const Ptr&lt;_Tp&gt;&amp; ptr) {
+    int* _refcount = ptr.refcount;
+    if( _refcount )
+        CV_XADD(_refcount, 1);
+    release();
+    obj = ptr.obj;
+    refcount = _refcount;
+    return *this;
+}
+</code></pre>
+<p><code>fastMalloc()</code>的实现：</p>
+<pre><code class="cpp">void* fastMalloc( size_t size )
+{
+    // 在此处，内存多开辟了20字节的空间。其中，前4个字节用以存储分配的这块空间的首地址。
+    // 在进行释放空间时，可以很快地进行释放。另外的16字节用于调整地址，是地址到达16的倍数
+    // 其中，CV_MALLOC_ALIGN的值为16
+    uchar* udata = (uchar*)malloc(size + sizeof(void*) + CV_MALLOC_ALIGN);
+    if(!udata)
+        return OutOfMemoryError(size);
+    // alignPtr用于将地址空间的大小向上调整为16的倍数
+    // udata+1  ===&gt; 其实是 udata + sizeof(uchar**) ，即4，这4个字节便是用于存储udata这个地址空间的起始地址
+    // 要将udata强制转换为uchar**的原因是：因为要访问者4个字节之中的内容，而这个内容中存储的又是首地址，于是就是二级指针 
+    uchar** adata = alignPtr((uchar**)udata + 1, CV_MALLOC_ALIGN);
+    // adata[-1] ===&gt; -1就是向前移动4个字节，既是udata这个地址空间的起始地址
+    adata[-1] = udata;
+    return adata;
+}
+
+void fastFree(void* ptr)
+{
+    if(ptr) {
+    // 取分配地址的首地址
+        uchar* udata = ((uchar**)ptr)[-1];
+        CV_DbgAssert(udata &lt; (uchar*)ptr &amp;&amp;
+               ((uchar*)ptr - udata) &lt;= (ptrdiff_t)(sizeof(void*)+CV_MALLOC_ALIGN)); 
+    // 直接删除首地址即可删除整个分配的空间
+        free(udata);
+    }
+}
+</code></pre>
+<p><code>alignPtr()</code>的实现：</p>
+<pre><code class="cpp">
+template&lt;typename _Tp&gt; static inline _Tp* alignPtr(_Tp* ptr, int n=(int)sizeof(_Tp))
+{
+    return (_Tp*)(((size_t)ptr + n-1) &amp; -n);
+}
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1d98ef5200a11f04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>此处使用了位操作的黑魔法，<br>这个函数用来将<code>ptr</code>指向的地址对齐到<code>n</code>边界，使得到的地址是<code>n</code>的倍数，由于此处<code>n=CV_MALLOC_ALIGN=16</code>。</p>
+<p>现假设<code>ptr</code>为十六进制形式，<code>ptr=0xYY YY YY YY</code>，则<code>ptr+n-1</code>的计算为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9da0eede6c6b165c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>当<code>ptr</code>的低4位不全为<code>0</code>时，<code>ptr+n-1</code>的结果将导致进位，加<code>1</code>。再与<code>-n</code>相<code>&amp;</code>，而<code>-n==0xF0</code>，所以最终返回的地址形式为<code>0x YY YY YY Y0</code>，即为<code>CV_MALLOC_ALIGN==16</code>的倍数。</p>
+<p>增加引用计数时，使用了无锁（lock-free）编程技术：</p>
+<pre><code class="cpp">template&lt;typename _Tp&gt; inline void Ptr&lt;_Tp&gt;::addref() { 
+if( refcount ) 
+    CV_XADD(refcount, 1); 
+}
+</code></pre>
+<p><code>CV_XADD</code>该操作类似于post increment的运算，使用了无锁化编程，其可以用于多线程编程，用户不需要自己维护锁。</p>
+<p>接下来是释放内存的操作：</p>
+<pre><code class="cpp">template&lt;typename _Tp&gt; inline void Ptr&lt;_Tp&gt;::release()
+{
+    if( refcount &amp;&amp; CV_XADD(refcount, -1) == 1 )
+    {
+        delete_obj();
+        fastFree(refcount);
+    }
+    refcount = 0;
+    obj = 0;
+}
+
+template&lt;typename _Tp&gt; inline void Ptr&lt;_Tp&gt;::delete_obj()
+{
+    if( obj ) delete obj;
+}
+
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::~Ptr() { release(); }
+</code></pre>
+<p>其他操作：</p>
+<pre><code class="cpp">template&lt;typename _Tp&gt; inline _Tp* Ptr&lt;_Tp&gt;::operator -&gt; () { return obj; }
+template&lt;typename _Tp&gt; inline const _Tp* Ptr&lt;_Tp&gt;::operator -&gt; () const { return obj; }
+
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::operator _Tp* () { return obj; }
+template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::operator const _Tp*() const { return obj; }
+</code></pre>
+<h3 id="什么是对齐（alignment）？"><a href="#什么是对齐（alignment）？" class="headerlink" title="什么是对齐（alignment）？"></a>什么是对齐（alignment）？</h3><p>在现代的计算机中，内存空间都是按照byte进行划分的，从理论上讲，对任何类型的变量的访问，都可以从任何地址开始，但实际情况是：在访问特定变量的时候，经常需要在特定的内存地址进行访问，这就是对齐。</p>
+<p>需要对齐的原因：</p>
 <ol>
-<li><code>cmake_mimimum_required</code>：指定运行此配置文件所需的CMake的最低版本</li>
-<li><code>project</code>：参数值<code>Demo</code>，该命令表示项目的名称是<code>Demo</code></li>
-<li><code>add_executable</code>：将名为<code>main.cc</code>的源文件编译成一个名为<code>Demo</code>的可执行文件</li>
+<li>某些硬件平台只能在某些地址取某些特定类型的数据，否则抛出硬件异常。</li>
+<li>其余的硬件平台虽然可以在任何地址处，取得任何类型的数据。但如果变量没有对齐的情况下，取这个数据可能会存在效率上的损失。</li>
 </ol>
-<h3 id="在linux平台下"><a href="#在linux平台下" class="headerlink" title="在linux平台下"></a>在linux平台下</h3><p>在当前目录下执行<code>cmake .</code>，得到Makefile后再使用<code>make</code>命令编译得到<code>Demo</code>可执行文件。</p>
-<h2 id="多个源文件"><a href="#多个源文件" class="headerlink" title="多个源文件"></a>多个源文件</h2><h3 id="1-同一个目录，多个源文件"><a href="#1-同一个目录，多个源文件" class="headerlink" title="1. 同一个目录，多个源文件"></a>1. 同一个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-a12804b0d76ccd3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>在这种情况下，可以在<code>add_executable</code>命令中增加多个源文件。虽然这么写没问题，但当源文件过多时，就需要把所以源文件的名字都加进去，这就是很繁琐的工作。比较简单的方法是：<strong>使用<code>aux_source_directory</code>命令，该命令会查找指定目录下的所有源文件，然后将结果存进指定变量名。</strong>其语法如下：</p>
-<pre><code class="makefile">aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
-</code></pre>
-<p>所以，可以修改CMakeLists.txt：</p>
-<pre><code class="makefile"># 查找当前目录下的所有源文件
-# 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(. DIR_SRCS)
-
-# 指定生成目标
-add_executable(Demo ${DIR_SRCS})
-</code></pre>
-<p>这样，CMake会将当前目录的所有源文件的文件名赋值给变量<code>DIR_SRCS</code>，再指示变量<code>DIR_SRCS</code>中的源文件需要编译成一个名为<code>Demo</code>的可执行文件。</p>
-<h3 id="2-多个目录，多个源文件"><a href="#2-多个目录，多个源文件" class="headerlink" title="2. 多个目录，多个源文件"></a>2. 多个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-81de8f0fe4e3fad1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>这种情况，需要分别在项目的根目录<code>Demo3</code>和<code>math</code>目录里各编写一个CMakeLists.txt文件。为了方便起见，可以先将<code>math</code>目录下的文件编译成静态库，再由<code>main</code>函数进行调用。</p>
-<ul>
-<li>使用命令<code>add_subdirectory</code>指明此项目包含一个子目录<code>math</code>，这样<code>math</code>目录下的CMakeLists.txt文件和源代码将会被处理。</li>
-<li>使用命令<code>target_link_libraries</code>指明可执行文件<code>main</code>需要链接一个名为<code>MathFunctions</code>的链接库。</li>
-</ul>
-<p>根目录中的CMakeLists.txt为：</p>
-<pre><code class="makefile">cmake_minimum_required (VERSION 2.8）
-
-# 项目信息
-project (Demo3)
-
-aux_source_directory (. DIR_SRCS)
-
-# 添加math子目录
-add_subdirectory(math)
-
-add_executable(Demo main.cc)
-
-# 添加链接库
-target_link_libraries(Demo MathFunctions)
-</code></pre>
-<h2 id="自定义编译选项"><a href="#自定义编译选项" class="headerlink" title="自定义编译选项"></a>自定义编译选项</h2><p>CMake 允许为项目增加编译选项，从而可以根据用户的环境和需求选择最合适的编译方案。例如，可以将<code>MathFunctions</code>库设置为可选的库，如果该选项为<code>ON</code>，则就使用该库定义的数学函数来进行计算，否则就调用标准库中的数学函数库。</p>
-<h3 id="1-修改CMakeLists-txt文件"><a href="#1-修改CMakeLists-txt文件" class="headerlink" title="1. 修改CMakeLists.txt文件"></a>1. 修改CMakeLists.txt文件</h3><p>需要在项目的最高层的CMakeLists.txt文件中添加该选项：</p>
-<pre><code class="makefile"># CMake最低版本号要求
-cmake_minumum_required (VERSION 2.8)
-
-# 项目信息
-project (Demo)
-
-# 加入一个配置头文件，用于处理CMake对源码的设置
-configure_file (
-    &quot;${PROJECT_SOURCE_DIR}/config.h.in&quot;
-    &quot;${PROJECT_BINARY_DIR}/config.h&quot;
-    )
-
-# 是否使用自己的MathFunctions库
-option (USE_MYMATH
-                &quot;Use provided math implemetation&quot; ON
-                )
-
-# 是否加入MathFunctions库
-if (USE_MYMATH)
-    include_directoris (&quot;${PROJECT_SOURCE_DIR}/math&quot;)
-    add
-</code></pre>
+<p>许多硬件相关的东西在对齐上存在限制。在某些系统中，某种数据类型只能存储在偶数边界的地址处。</p>
+<p>例如，在经典的SPARC架构(以及经典的ARM)上，便不能从奇数地址读取一个超过<code>1</code>字节的整型数据。尝试这么做将会立即终止程序，并伴随着总线（bus）错误。而在X86架构上，CPU硬件处理了这个问题，只是这么做将会花费更多时间，而RISC架构通常是不会为用户做这些。</p>
 
         
     
@@ -615,21 +681,13 @@ if (USE_MYMATH)
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/24/Python点点滴滴/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/20/LevelDB/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/12/libjpeg学习/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
