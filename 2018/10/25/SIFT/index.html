@@ -37,7 +37,7 @@
     
     <title>
         
-            CMake学习 | 
+            SIFT（尺寸不变特征变换匹配算法） | 
         
         Azurery
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content=",其他">
+    <meta name="keywords" content=",CV">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CMake学习 | Azurery">
+    <meta property="og:title" content="SIFT（尺寸不变特征变换匹配算法） | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    <meta property="og:article:tag" content="其他"> 
+    <meta property="og:article:tag" content="CV"> 
 
     
-        <meta property="article:published_time" content="Thu Sep 20 2018 21:22:31 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Sep 21 2018 22:23:06 GMT+0800" />
+        <meta property="article:published_time" content="Thu Oct 25 2018 08:57:02 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Oct 25 2018 17:42:53 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="CMake学习 | Azurery">
+    <meta name="twitter:title" content="SIFT（尺寸不变特征变换匹配算法） | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/20/CMake学习/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/25/SIFT/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/20/CMake学习/index.html",
-    "headline": "CMake学习",
-    "datePublished": "Thu Sep 20 2018 21:22:31 GMT+0800",
-    "dateModified": "Fri Sep 21 2018 22:23:06 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/25/SIFT/index.html",
+    "headline": "SIFT（尺寸不变特征变换匹配算法）",
+    "datePublished": "Thu Oct 25 2018 08:57:02 GMT+0800",
+    "dateModified": "Thu Oct 25 2018 17:42:53 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",其他",
+    "keywords": ",CV",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Windows平台下"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Windows平台下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在linux平台下"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">在linux平台下</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多个源文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个源文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-同一个目录，多个源文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 同一个目录，多个源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-多个目录，多个源文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 多个目录，多个源文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义编译选项"><span class="post-toc-number">3.</span> <span class="post-toc-text">自定义编译选项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-修改CMakeLists-txt文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 修改CMakeLists.txt文件</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SIFT简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">SIFT简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传统的特征提取方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">传统的特征提取方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SIFT算法的特点"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">SIFT算法的特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SIFT算法的适用场景"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">SIFT算法的适用场景</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SIFT算法的实现"><span class="post-toc-number">2.</span> <span class="post-toc-text">SIFT算法的实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-关键点检测"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 关键点检测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#哪些点是SIFT中需要进行查找的关键点（特征点）？"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">哪些点是SIFT中需要进行查找的关键点（特征点）？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#尺度空间"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">尺度空间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gauss金字塔"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Gauss金字塔</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么需要Gauss金字塔？"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">为什么需要Gauss金字塔？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gauss金字塔的初始尺度"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Gauss金字塔的初始尺度</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                CMake学习
+                SIFT（尺寸不变特征变换匹配算法）
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Magicmanoooo</strong>
-        <span>9月 20, 2018</span>
+        <span>10月 25, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -422,7 +422,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3awW7CMBAEUP7/p9trpQqYWSdOQM8nRN3g50O8Gu/j56vHAw8PDw8PDw8P72a8RzzePPTPnP/zk7++/j5fGx4eHt4eXr70lW/y5y+tDQ8PD28j79kLN/mcL3d2hCRrw8PDw7szr11ozsbDw8P7Vl7CePac2Qbh4eHh3ZOXR7RJYZ0/50ZZCx4eHl7Myy+Z9n/eer+Hh4eHF/Da0V50JUufXZs9/UU8PDy8k3n5izg/TtqZbXjxZkPx8PDwTubNIoCkLSA/Htpjo4hx8fDw8E7j5WVxGxPkB0ZeuL/ZSjw8PLztvLY1Kn+V54V1Xu7j4eHh7eflzU/JyzrZrLa5Kt8OPDw8vJ28WTBxVCGez4+OKDw8PLztvDY8bZc1C38TGB4eHt61vPZCa9aMtX5I4OHh4V3Fy4OGoyLatr2gODzw8PDwTubNwtZ2I9rw93UpX7er4uHh4R3KW2+QSi6x2jmHNV3h4eHhncxrWwra0DYvx1fm4+Hh4e3kzV7cbXCQX6fleDw8PLxrecniWmryX3koPEyp8fDw8A7lrRfTbeDbBhnFtRweHh7eRl57MCRXZckVVx4ZR0cFHh4e3kZeUmTnBXF7wVbHtXh4eHgX8drRtljNGhRWfhcPDw/vbN4sQm0jjHx+ezGGh4eHdxWvPQzyi668UG4PhqLpCg8PD+803myhs9K5Lb7z7cDDw8P7FN56ONsGwXh4eHifxWuDjLxwXym78fDw8PbzkjCiLYtnl2HtTDw8PLz9vFkEsDLy7VtqusLDw8M7gfd9Aw8PDw8PDw8P7wbjF16fr1vMgIniAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbUlEQVR42u3aS5KDMAwFwNz/0jMHSOE8yR9IqlmlUmC7WdhC0uvvp68XHh4eHh4eHh7ew3iv+Hp/ajzC+P6rNSxYGx4eHt4R3oet9uKeZEHJCPn40Rrw8PDwDvKSxY235oRxNdr4CMlnxMPDw3smb7y5j0PeVa8VDw8P79t5ecBdTVLg4eHhPZmXfPCf3OhvyLXg4eHhxby8yHT+99H6Hh4eHl7AK7c0FQ+GapC9uOkKDw8PbwMv34jz1G21VNY7GPDw8PDu4o3L/Pn/J48WPDw8vHt5vTapnFFN41aLYXh4eHh38aKS/ESbaT5j/rrx8PDw7uXN/54/KqqNCOXOCDw8PLxFvGToZLnVlGv1KMqPBzw8PLzdvCTA7RWrctKqhAUeHh7eSV51smpAnG/uSelrQWcEHh4e3iJeL0mRB8fJsZHM8mEuPDw8vCO86vRJuFxNcPSaYstfDHh4eHjTvDwIzpOwvUaEJKSOXiUeHh7eZl7+kd87KqrgPBkxVQDDw8PDm+D12gKSkLe60HzMDyvHw8PD28yrfurnB0A5iVAsg5Wz1Hh4eHjbePlCk+aqvJDWG798MODh4eEt5c2E2nlBa227QLMzAg8PD28Dr1qgqi4xT3zk4TUeHh7eGV71ypOz1UOl9+KaWWo8PDy8Cd78ppw/mxe6pg4nPDw8vCO8XolrnGKYCaB7ZTY8PDy887xe4aqQYC2+ml4IjoeHh/dkXrL0maA8HwcPDw/vW3gJu/eCkpVczoWHh4d3kJcsbv7ZVS0FeHh4ePfy5otY+T3jsLjQXLWjvoeHh4cX8H7vwsPDw8PDw8PDe8D1DwslFhF3fLvqAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -436,7 +436,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/其他/">其他</a>
+        <a class="post_tag-link" href="/tags/CV/">CV</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=SIFT（尺寸不变特征变换匹配算法）&url=http://yoursite.com/2018/10/25/SIFT/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake学习&url=http://yoursite.com/2018/09/20/CMake学习/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=SIFT（尺寸不变特征变换匹配算法）&url=http://yoursite.com/2018/10/25/SIFT/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/25/SIFT/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/25/SIFT/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CMake学习&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/20/CMake学习/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=SIFT（尺寸不变特征变换匹配算法）&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/10/25/SIFT/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -509,92 +509,81 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="什么是CMake"><a href="#什么是CMake" class="headerlink" title="什么是CMake"></a>什么是CMake</h2><p>如果软件想跨平台，必须要保证能够在不同平台编译。但现在存在各种不同的make工具，就得为每一种标准写一次Makefile。</p>
-<p>CMake就是为了针对上述这种问题所设计的工具：它首先允许开发者编写一种平台无关的CMakeLists.txt文件来指定整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化Makefile和工程文件，如Unix的Makefile或者Windows的Visual Studio工程，从而做到<strong>write once，run everywhere</strong>。</p>
-<h3 id="1-Windows平台下"><a href="#1-Windows平台下" class="headerlink" title="1. Windows平台下"></a>1. Windows平台下</h3><p>在Windows下，需要在设置编译器的时候，gcc和g++后面要加上.exe。需要在CMakeLists.txt所在的目录下，运行如下命令：</p>
-<pre><code class="cpp">cmake -G &quot;MinGW Makefiles&quot; .
-</code></pre>
-<p><strong>【注】：</strong>在上面的命令的最后一行的这个<code>.</code>不能丢，代表的是当前路径。</p>
-<p>此外，在MinGW路径下的<code>make</code>叫<code>mingw32-make.exe</code>，在运行的时候，需要使用的命令为：</p>
-<pre><code class="cpp">mingw32-make
-</code></pre>
-<p>此外，在CMakeLists.txt中需要设置为：</p>
-<pre><code class="makefile"># CMake 最低版本号要求
-cmake_minimum_required (VERSION 2.8)
-# 项目信息
-project (Demo1)
-# 指定生成目标
-add_executable(Demo main.cc)
-
-set(CMAKE_C_COMPLIER D:/Software/Programming/MinGW/bin/gcc.exe #设置C编译器
-set(CMAKE_CXX_COMPLIER D:/Software/Programming/MinGW/bin/g++.exe) #设置C++编译器
-</code></pre>
-<p>上述出现的一些命令：</p>
-<ol>
-<li><code>cmake_mimimum_required</code>：指定运行此配置文件所需的CMake的最低版本</li>
-<li><code>project</code>：参数值<code>Demo</code>，该命令表示项目的名称是<code>Demo</code></li>
-<li><code>add_executable</code>：将名为<code>main.cc</code>的源文件编译成一个名为<code>Demo</code>的可执行文件</li>
-</ol>
-<h3 id="在linux平台下"><a href="#在linux平台下" class="headerlink" title="在linux平台下"></a>在linux平台下</h3><p>在当前目录下执行<code>cmake .</code>，得到Makefile后再使用<code>make</code>命令编译得到<code>Demo</code>可执行文件。</p>
-<h2 id="多个源文件"><a href="#多个源文件" class="headerlink" title="多个源文件"></a>多个源文件</h2><h3 id="1-同一个目录，多个源文件"><a href="#1-同一个目录，多个源文件" class="headerlink" title="1. 同一个目录，多个源文件"></a>1. 同一个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-a12804b0d76ccd3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>在这种情况下，可以在<code>add_executable</code>命令中增加多个源文件。虽然这么写没问题，但当源文件过多时，就需要把所以源文件的名字都加进去，这就是很繁琐的工作。比较简单的方法是：<strong>使用<code>aux_source_directory</code>命令，该命令会查找指定目录下的所有源文件，然后将结果存进指定变量名。</strong>其语法如下：</p>
-<pre><code class="makefile">aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
-</code></pre>
-<p>所以，可以修改CMakeLists.txt：</p>
-<pre><code class="makefile"># 查找当前目录下的所有源文件
-# 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(. DIR_SRCS)
-
-# 指定生成目标
-add_executable(Demo ${DIR_SRCS})
-</code></pre>
-<p>这样，CMake会将当前目录的所有源文件的文件名赋值给变量<code>DIR_SRCS</code>，再指示变量<code>DIR_SRCS</code>中的源文件需要编译成一个名为<code>Demo</code>的可执行文件。</p>
-<h3 id="2-多个目录，多个源文件"><a href="#2-多个目录，多个源文件" class="headerlink" title="2. 多个目录，多个源文件"></a>2. 多个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-81de8f0fe4e3fad1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>这种情况，需要分别在项目的根目录<code>Demo3</code>和<code>math</code>目录里各编写一个CMakeLists.txt文件。为了方便起见，可以先将<code>math</code>目录下的文件编译成静态库，再由<code>main</code>函数进行调用。</p>
-<ul>
-<li>使用命令<code>add_subdirectory</code>指明此项目包含一个子目录<code>math</code>，这样<code>math</code>目录下的CMakeLists.txt文件和源代码将会被处理。</li>
-<li>使用命令<code>target_link_libraries</code>指明可执行文件<code>main</code>需要链接一个名为<code>MathFunctions</code>的链接库。</li>
+        <h1 id="SIFT简介"><a href="#SIFT简介" class="headerlink" title="SIFT简介"></a>SIFT简介</h1><h2 id="传统的特征提取方法"><a href="#传统的特征提取方法" class="headerlink" title="传统的特征提取方法"></a>传统的特征提取方法</h2><p>成像匹配的核心问题是：<strong>将同一目标在不同时间、不同分辨率、不同光照、不同位姿情况下所成的像相对应。</strong>传统的匹配算法往往是直接提取角点或边缘，对环境的适应能力较差。</p>
+<p>SIFT将一幅图像映射（变换）为一个局部特征向量集；特征向量具有平移、缩放、旋转不变性，同时对光照变化、仿射及投影变换也有一定不变性。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0fdc34e54524f888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="SIFT算法的特点"><a href="#SIFT算法的特点" class="headerlink" title="SIFT算法的特点"></a>SIFT算法的特点</h2><ul>
+<li><strong>SIFT特征是图像的局部特征</strong>，其对旋转、尺度缩放、亮度变化保持不变性，对视角变化、仿射变换、噪声也保持一定程度的稳定性。</li>
+<li>独特性(Distinctiveness)好，信息量丰富，适用于在海量特征数据库中进行快速、准确的匹配。</li>
+<li>多量性，即使少数的几个物体也可以产生大量SIFT特征向量。</li>
+<li>经过优化的SIFT算法可满足一定的速度需求。</li>
+<li>可扩展性，可以很方便的与其他形式的特征向量进行联合。</li>
 </ul>
-<p>根目录中的CMakeLists.txt为：</p>
-<pre><code class="makefile">cmake_minimum_required (VERSION 2.8）
-
-# 项目信息
-project (Demo3)
-
-aux_source_directory (. DIR_SRCS)
-
-# 添加math子目录
-add_subdirectory(math)
-
-add_executable(Demo main.cc)
-
-# 添加链接库
-target_link_libraries(Demo MathFunctions)
-</code></pre>
-<h2 id="自定义编译选项"><a href="#自定义编译选项" class="headerlink" title="自定义编译选项"></a>自定义编译选项</h2><p>CMake 允许为项目增加编译选项，从而可以根据用户的环境和需求选择最合适的编译方案。例如，可以将<code>MathFunctions</code>库设置为可选的库，如果该选项为<code>ON</code>，则就使用该库定义的数学函数来进行计算，否则就调用标准库中的数学函数库。</p>
-<h3 id="1-修改CMakeLists-txt文件"><a href="#1-修改CMakeLists-txt文件" class="headerlink" title="1. 修改CMakeLists.txt文件"></a>1. 修改CMakeLists.txt文件</h3><p>需要在项目的最高层的CMakeLists.txt文件中添加该选项：</p>
-<pre><code class="makefile"># CMake最低版本号要求
-cmake_minumum_required (VERSION 2.8)
-
-# 项目信息
-project (Demo)
-
-# 加入一个配置头文件，用于处理CMake对源码的设置
-configure_file (
-    &quot;${PROJECT_SOURCE_DIR}/config.h.in&quot;
-    &quot;${PROJECT_BINARY_DIR}/config.h&quot;
-    )
-
-# 是否使用自己的MathFunctions库
-option (USE_MYMATH
-                &quot;Use provided math implemetation&quot; ON
-                )
-
-# 是否加入MathFunctions库
-if (USE_MYMATH)
-    include_directoris (&quot;${PROJECT_SOURCE_DIR}/math&quot;)
-    add
-</code></pre>
+<h2 id="SIFT算法的适用场景"><a href="#SIFT算法的适用场景" class="headerlink" title="SIFT算法的适用场景"></a>SIFT算法的适用场景</h2><ul>
+<li>目标的旋转、缩放、平移（ RST）</li>
+<li>图像仿射/投影变换（视点viewpoint）</li>
+<li>光照影响（ illumination）</li>
+<li>目标遮挡（ occlusion）</li>
+<li>杂物场景（ clutter）</li>
+<li>噪声</li>
+</ul>
+<h1 id="SIFT算法的实现"><a href="#SIFT算法的实现" class="headerlink" title="SIFT算法的实现"></a>SIFT算法的实现</h1><p>SIFT算法的实质可以归结为：<strong>在不同的尺度空间上查找特征点（关键点）的问题</strong>。</p>
+<p>SIFT算法实现物体识别的主要步骤：</p>
+<ol>
+<li>提取关键点</li>
+<li>对关键点附加详细的信息（局部特征），即所谓的描述器</li>
+<li>通过双方特征点（附带上特征向量的关键点）的两两比较，找出相互匹配的若干对特征点，即建立物景之间的对应关系</li>
+</ol>
+<h2 id="1-关键点检测"><a href="#1-关键点检测" class="headerlink" title="1. 关键点检测"></a>1. 关键点检测</h2><h3 id="哪些点是SIFT中需要进行查找的关键点（特征点）？"><a href="#哪些点是SIFT中需要进行查找的关键点（特征点）？" class="headerlink" title="哪些点是SIFT中需要进行查找的关键点（特征点）？"></a>哪些点是SIFT中需要进行查找的关键点（特征点）？</h3><p>这些点是<strong>一些十分突出的点，不会因为关照条件的改变而消失</strong>。例如，角点、边缘点、暗区域的亮点以及亮区域的暗点。由于两幅图像中有相同的景物，那么使用某种方法分别提取各自的稳定点，这些点之间会有相互对应的匹配点。</p>
+<p><strong>关键点：</strong>在不同<strong>尺度空间</strong>的图像下检测出的<strong>具有方向信息的局部极值点</strong>。</p>
+<p>特征点具有三个特征：</p>
+<ul>
+<li>尺度</li>
+<li>方向</li>
+<li>大小</li>
+</ul>
+<h3 id="尺度空间"><a href="#尺度空间" class="headerlink" title="尺度空间"></a>尺度空间</h3><p>如果要精确地表示物体，都必须通过一定的尺度来反应。而尺度空间理论的主要思想是：**通过对原始图像进行尺度变换，获得图像多尺度下的尺度空间表示序列，对这些序列进行尺度空间主轮廓的提取，并以该主轮廓作为一种特征向量，实现边缘、角点检测和不同分辨率上的特征提取等。</p>
+<p>尺度空间中各尺度图像的模糊程度逐渐变大，能够模拟人在距离目标由近到远时目标在视网膜上的形成过程。即，<strong>尺度越大图像越模糊</strong>。</p>
+<p>高斯核是唯一可以产生多尺度空间的核，一个图像的尺度空间—<code>L( x,y,σ)</code>定义为原始图像<code>I(x,y)</code>与一个可变尺度的二维高斯函数<code>G(x,y,σ)</code> 进行卷积运算得到。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-dfc68f61c3a4cdfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注意】：</strong>尺度是自然存在的，不是人为创造的！高斯卷积只是表现尺度空间的一种形式。</p>
+<p>高斯模糊（Gaussian Blur）通常用于<strong>减小图像噪声以及降低细节层次</strong>。</p>
+<h3 id="Gauss金字塔"><a href="#Gauss金字塔" class="headerlink" title="Gauss金字塔"></a>Gauss金字塔</h3><p>图像金字塔是一种<strong>以多分辨率来解释图像的结构，通过对原始图像进行多尺度像素采样的方式，生成<code>N</code>个不同分辨率的图像</strong>。把具有最高级别分辨率的图像放在底部，以金字塔形状排列，往上是一系列像素（尺寸）逐渐降低的图像，一直到金字塔的顶部只包含一个像素点的图像，这就构成了传统意义上的图像金字塔。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-403a7488dc50e41b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>获得图像金字塔一般包括二个步骤：</p>
+<ol>
+<li>利用低通滤波器平滑图像 </li>
+<li>对平滑图像进行抽样（采样）</li>
+</ol>
+<p>一般情况下，有两种采样方式——上采样（分辨率逐级升高）和下采样（分辨率逐级降低）。</p>
+<h3 id="为什么需要Gauss金字塔？"><a href="#为什么需要Gauss金字塔？" class="headerlink" title="为什么需要Gauss金字塔？"></a>为什么需要Gauss金字塔？</h3><p>高斯金字塔其实<strong>模仿的是图像的不同的尺度</strong>。</p>
+<blockquote>
+<p>尺度应该怎样理解？对于一副图像，近距离观察，与在一米之外观察，看到的图像效果是不同的，前者比较清晰，后者比较模糊；前者比较大，后者比较小；通过前者能看到图像的一些细节信息，通过后者能看到图像的一些轮廓的信息，这就是图像的尺度。图像的尺度是自然存在的，并不是人为创造的。</p>
+</blockquote>
+<blockquote>
+<p>以前对一幅图像的处理还是比较单调的，因为我们的关注点只落在二维空间，并没有考虑到“图像的纵深”这样一个概念。如果将这些内容考虑进去，我们是不是会得到更多以前在二维空间中没有得到的信息呢？于是，高斯金字塔横空出世了，它就是为了在二维图像的基础之上，榨取出图像中自然存在的另一个维度：尺度。由于高斯核是唯一的线性核，也就是说使用高斯核对图像模糊不会引入其他噪声，因此就选用了高斯核来构建图像的尺度</p>
+</blockquote>
+<p>高斯金字塔并不是一个金字塔，而是有很多组（Octave）金字塔构成，并且每组金字塔都包含若干层（Interval）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e8c176f27ccd06fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Gauss金字塔的构建：</p>
+<ol>
+<li>先将原图像扩大一倍之后，作为高斯金字塔的第<code>1</code>组第<code>1</code>层，将第<code>1</code>组第<code>1</code>层图像进行高斯卷积（高斯平滑或称高斯滤波）之后，作为第<code>1</code>组金字塔的第<code>2</code>层。其中，Guass卷积函数为：</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a01d0e536562ffee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中，参数<code>σ</code>在SIFT算法中取固定值<code>σ=1.6</code>。</p>
+<ol start="2">
+<li>将<code>σ</code>乘以一个比例系数<code>k</code>，得到一个新的平滑因子<code>σ=k*σ</code>，用它来平滑第<code>1</code>组第<code>2</code>层图像，结果图像作为第<code>3</code>层。</li>
+<li>如此重复，最后得到<code>L</code>层图像。在同一组中，每一层图像的尺寸都是一样的，只是平滑系数不一样。它们对应的平滑系数分别为：</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-04e06db809ec72e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>图像的尺度空间解决的问题是如何对图像在所有尺度下描述的问题。</p>
+<p>在高斯金字塔中一共生成<code>o</code>组、<code>s</code>层不同尺度的图像，这两个量合起来<code>(o，s)</code>就构成了高斯金字塔的尺度空间，也就是说以高斯金字塔的组<code>o</code>作为二维坐标系的一个坐标，不同层<code>L</code>作为另一个坐标，则给定的一组坐标<code>(o,s)</code>就可以唯一确定高斯金字塔中的一幅图像。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-3ae305aa6f58b067.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>Gauss金字塔的尺度空间坐标计算方法为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ee64ee6c02b5dfd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-fa30a15b7b36c4e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="Gauss金字塔的初始尺度"><a href="#Gauss金字塔的初始尺度" class="headerlink" title="Gauss金字塔的初始尺度"></a>Gauss金字塔的初始尺度</h3><p>当图像通过相机拍摄时，相机的镜头已经对图像进行了一次初始的模糊，所以根据高斯模糊的性质，可得第<code>0</code>层Gauss金字塔的尺度为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1b5a1a6706dd1ccc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>金字塔的层数根据图像的原始大小和塔顶图像的大小共同决定，计算公式为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d34f8624f59553ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>为了让尺度体现其连续性，高斯金字塔在简单降采样的基础上加上了高斯滤波。如图下图所示，将图像金字塔每层的一张图像使用不同参数做高斯模糊，使得金字塔的每层含有多张高斯模糊图像，将金字塔每层多张图像合称为一组(Octave)，金字塔每层只有一组图像，组数和金字塔层数相等，每组含有多张(也叫层Interval)图像。另外，降采样时，高斯金字塔上一组图像的初始图像(底层图像)是由前一组图像的倒数第三张图像隔点采样得到的。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0aed0e814f038c44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
         
     
@@ -615,21 +604,13 @@ if (USE_MYMATH)
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/24/Python点点滴滴/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/20/LevelDB/" id="post_nav-older" class="next-content">
+        <a href="/2018/10/20/计算机视觉/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

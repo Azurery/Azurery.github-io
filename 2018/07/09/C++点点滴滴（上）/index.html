@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Mon Jul 09 2018 17:36:03 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Sep 16 2018 15:59:01 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Oct 26 2018 11:07:12 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/09/C++点点滴滴（上）/index.html",
     "headline": "C++点点滴滴（上）",
     "datePublished": "Mon Jul 09 2018 17:36:03 GMT+0800",
-    "dateModified": "Sun Sep 16 2018 15:59:01 GMT+0800",
+    "dateModified": "Fri Oct 26 2018 11:07:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -1098,7 +1098,8 @@ string&amp;&amp; r = std::move(str);
 <pre><code class="cpp">char *(*(*a)(void))[20]
 </code></pre>
 <p>名叫为<code>a</code>的函数指针，指向<strong>接受类型为<code>void</code>，返回类型为指向长度 20 的<code>char*</code>数组的指针的函数</strong>。</p>
-<h2 id="特化和偏特化"><a href="#特化和偏特化" class="headerlink" title="特化和偏特化"></a>特化和偏特化</h2><p>需要特化或者偏特化的原因：<strong>因为编译器认为，对于特定的类型，如果你能对某一功能更好的实现，那么就该听你的</strong>。</p>
+<h2 id="特化和偏特化"><a href="#特化和偏特化" class="headerlink" title="特化和偏特化"></a>特化和偏特化</h2><p>所谓模板特例化，即对于通例中的某种或某些情况做单独专门实现，最简单的情况是对每个模板参数指定一个具体值，这成为完全特例化（full specialization）。另外，可以限制模板参数在一个范围取值或满足一定关系等，这称为部分特例化（partial specialization）。<strong>用数学上集合的概念，通例模板参数所有可取的值组合构成全集U，完全特例化对U中某个元素进行专门定义，部分特例化对U的某个真子集进行专门定义</strong>。</p>
+<p>需要特化或者偏特化的原因：<strong>因为编译器认为，对于特定的类型，如果你能对某一功能更好的实现，那么就该听你的</strong>。</p>
 <p>在某些情况下，通用模板的定义对特定类型并不适合。当不能使用模板版本时，可以定义类型或者函数模板的一个特例化版本。</p>
 <p>一个特化版本就是模板的一个独立的定义，在其中一个或者多个模板参数被指定为特定的类型。特化的形式为：<code>template &lt;&gt;</code>，其中<code>&lt;&gt;</code>指出将为原模板的所有模板参数提供实参。</p>
 <p><strong>特化就是将模板的参数写死，针对这样一种具体的实现，告诉编译器要去生成的是这段代码，而非是将参数传入模板当种简单的替换。 偏特化就属于特化和原模板之间，有些参数被写定，有些参数还是<code>T</code>根据实例化的时候去替换。</strong></p>
@@ -4265,7 +4266,7 @@ using remove_reference_t = typename remove_reference&lt;T&gt;::type;
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -4297,7 +4298,7 @@ using remove_reference_t = typename remove_reference&lt;T&gt;::type;
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">14</span>
+                <span class="sidebar-badge">16</span>
             </a>
         </li>
         
