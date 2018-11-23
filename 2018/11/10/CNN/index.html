@@ -37,8 +37,6 @@
     
     <title>
         
-            opencv的点点滴滴 | 
-        
         Azurery
     </title>
 
@@ -49,7 +47,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content=",CV">
+    <meta name="keywords" content="">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +229,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="opencv的点点滴滴 | Azurery">
+    <meta property="og:title" content="Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    <meta property="og:article:tag" content="CV"> 
+    
 
     
-        <meta property="article:published_time" content="Fri Oct 19 2018 11:20:53 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Nov 16 2018 09:27:22 GMT+0800" />
+        <meta property="article:published_time" content="Sat Nov 10 2018 21:22:36 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Nov 10 2018 21:22:36 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="opencv的点点滴滴 | Azurery">
+    <meta name="twitter:title" content="Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -250,7 +248,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/10/19/Opencv/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/11/10/CNN/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +260,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/10/19/Opencv/index.html",
-    "headline": "opencv的点点滴滴",
-    "datePublished": "Fri Oct 19 2018 11:20:53 GMT+0800",
-    "dateModified": "Fri Nov 16 2018 09:27:22 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/11/10/CNN/index.html",
+    "headline": "",
+    "datePublished": "Sat Nov 10 2018 21:22:36 GMT+0800",
+    "dateModified": "Sat Nov 10 2018 21:22:36 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -283,7 +281,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",CV",
+    "keywords": "",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -343,15 +341,6 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是对齐（alignment）？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是对齐（alignment）？</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mixChannels"><span class="post-toc-number"></span> <span class="post-toc-text">mixChannels()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#calcHist"><span class="post-toc-number"></span> <span class="post-toc-text">calcHist</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#findContours"><span class="post-toc-number"></span> <span class="post-toc-text">findContours()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#drawContours"><span class="post-toc-number"></span> <span class="post-toc-text">drawContours</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#createTrackbar"><span class="post-toc-number"></span> <span class="post-toc-text">createTrackbar()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#approxPolyDP"><span class="post-toc-number"></span> <span class="post-toc-text">approxPolyDP()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#boundingRect"><span class="post-toc-number"></span> <span class="post-toc-text">boundingRect()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#图像通道的分离与合并"><span class="post-toc-number"></span> <span class="post-toc-text">图像通道的分离与合并</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cv-split"><span class="post-toc-number"></span> <span class="post-toc-text">cv::split()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cv-merge"><span class="post-toc-number"></span> <span class="post-toc-text">cv::merge()</span></a>
-    </ul>
-    
 
 
 
@@ -381,7 +370,7 @@
         
     
             <p class="article-headline-p">
-                opencv的点点滴滴
+                
             </p>
         </div>
 
@@ -400,7 +389,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Magicmanoooo</strong>
-        <span>10月 19, 2018</span>
+        <span>11月 10, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -422,22 +411,13 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcUlEQVR42u3aQW7kMAwEwPn/p3evAQI7TVKSnaB8ChCPodJBIpr8/PvTzwcPDw8PDw8PD+9lvE/8XH7uy3+v3v/+ztUa5mvDw8PDO8P74aht8ZINyr+cv4OHh4d3kne1oOTov78Aki8v+wIeHh7eK3n3BXH1SqhuKx4eHt5v5OXIH8rf+1gBDw8P7/W8PG7Io4TJQf9A1oKHh4cX8/Im0/m/j/b38PDw8AJeeaQpLp3zkjq/BspDV3h4eHgbePPGf/VYr5bX5SEwPDw8vM28/AJIRgfyL+fFdPlawsPDwzvCy0vkwgHdugzyjbj8FR4eHt5BXnW5OSMZF0jGCJolNR4eHt5SXn4NVCPa6gbdb1ZeyuPh4eHt5t0vIrkq1kbAveIeDw8P71leNTgoHNlFUt5Ow8PDwzvJqy662gBbW7I3wwg8PDy8IzFudXwqj4AXt7vy0QE8PDy8Rbxq3NB7M/lO3lorhBF4eHh423j5oV+ND1YNEDSHrvDw8PA28PIGf/Wwrg4E9Mr6UX8PDw8Pb8ybRK69QDYvwQvfx8PDw9vMa7bnkwO6FfVONgIPDw/vPC8pXidt/klUkcDw8PDwnuL1Qop8YCta4mDkCw8PD+8kLz+4J/FuMnaQ/xYPDw/vPK/69AKC+1I7b7wl242Hh4e3m/eJn1UNs8noQLQReHh4eEd4yWWQx6+962FSduPh4eE9xdvRuOqV46P2Gx4eHt6LeZMQNol9q2/i4eHh/RZeHv5WS+3kIin39/Dw8PCW8pLFJTHuJOrNLxs8PDy8Z3mTCCB/Pymv8/9u6e/h4eHhBby/9+Dh4eHh4eHh4b3g+Q/6thYRyCHcRgAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaUlEQVR42u3aQYrDMAwF0N7/0jPbgSHulxS7obysSgmxnxe2+dLr56ufFx4eHh4eHh4e3sN4r/j5//7Vd/7+czmJ5Si9ueHh4eGd5L3ZaoOJJsj1klXHvXoHDw8P7ySvOnx1018fM1cHQ3VueHh4eE/jVbf1q6mvL+h4eHh438pbb+X5P8mbeHh4eM/k5XFDMnwy3cdlLXh4eHgxrxofnPz9gfoeHh4e3pJXbmkqRrq9SY9miIeHh7eZ14tQJ81SvWOpEH/g4eHhHeflLVbrf96Era3WqxvaVfHw8PDGvGSwfKK9GLfaavBmOfDw8PA28/a1Q62PloTaC0fw8PDwTvKSyCA/DKrgvBjWjHHx8PDwbuL1qNVrd3KETK7ReHh4eCd5eXNVHhbcFeP2mgzw8PDwzvOSDbrXXlD9Qh6O4OHh4Z3nTa7C1VC497XCFRwPDw/vCG8ev84XorfQUQEMDw8P71beZFufBLvVC3dhCfDw8PA28/LyUrXAf1djwXo+5aYrPDw8vA28efw6bwJIlgMPDw/vCbxqwakaH+RFr1FrFx4eHt5m3jyWrW7f1e9U2wjw8PDwTvKSy24+/OTiPmpTwMPDw9vM623B+eR671Tbs/Dw8PBO8nplp+qBUY2DRxduPDw8vM286qbcK5JVY9885iife3h4eHg38eaHQb7R5+WuajMBHh4e3nleXsivtk/lyzePJPDw8PCexksOgySkmB8Y5Ss1Hh4e3kd5veGrU7+tvoeHh4e3jTe5FvcuxL2AGA8PD+8JvGoBrHdRnrRYJYcTHh4e3hne9z14eHh4eHh4eHgPeH4BZRK/g8ZDPWwAAAAASUVORK5CYII=">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CV/">CV</a>
-    </ul>
     
 
     <!-- Share -->
@@ -452,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=opencv的点点滴滴&url=http://yoursite.com/2018/10/19/Opencv/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/11/10/CNN/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -461,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=opencv的点点滴滴&url=http://yoursite.com/2018/10/19/Opencv/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2018/11/10/CNN/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -470,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/19/Opencv/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -479,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/19/Opencv/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -491,7 +471,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=opencv的点点滴滴&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/10/19/Opencv/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -509,343 +489,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><code>Ptr</code>源码分析<br><code>Ptr</code>是一个智能指针，用于动态分配objects。这是一个template pointer-wrapping class，用于存储引用计算（reference counter）以及object pointer。它类似于C++中的智能指针，但它更加简易。可以这样使用：<code>Ptr&lt;MyObjectType&gt; ptr</code>。</p>
-<pre><code class="cpp">template&lt;typename _Tp&gt; class CV_EXPORTS Ptr
-{
-public:
-    //! empty constructor
-    Ptr();
-    //! take ownership of the pointer. The associated reference counter is allocated and set to 1
-    Ptr(_Tp* _obj);
-    //! calls release()
-    ~Ptr();
-    //! copy constructor. Copies the members and calls addref()
-    Ptr(const Ptr&amp; ptr);
-    //! copy operator. Calls ptr.addref() and release() before copying the members
-    Ptr&amp; operator = (const Ptr&amp; ptr);
-    //! increments the reference counter
-    void addref();
-    //! decrements the reference counter. If it reaches 0, delete_obj() is called
-    void release();
-    //! deletes the object. Override if needed
-    void delete_obj();
-    //! returns true iff obj==NULL
-    bool empty() const;
-
-
-    //! helper operators making &quot;Ptr&lt;T&gt; ptr&quot; use very similar to &quot;T* ptr&quot;.
-    _Tp* operator -&gt; ();
-    const _Tp* operator -&gt; () const;
-
-    operator _Tp* ();
-    operator const _Tp*() const;
-
-protected:
-    _Tp* obj; //&lt; the object pointer.
-    int* refcount; //&lt; the associated reference counter
-};
-</code></pre>
-<p>所谓的智能指针，其实就是模板参数可以是任意的C++ clas，但考虑到对象在使用完毕的时候，需要进行析构，因此需要特化<code>delete_obj()</code>函数。</p>
-<p><code>Ptr</code>的构造函数：</p>
-<pre><code class="cpp">// obj是指向对象的指针，refcount是引用计数，默认ctor只是构造了一个空对象
-// 带参数的ctor则使用了动态分配内存的技术。其中，fastMalloc这个函数使用了pointer alignment技术
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::Ptr() : obj(0), refcount(0) {}
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::Ptr(_Tp* _obj) : obj(_obj)
-{
-    if(obj)
-    {
-        refcount = (int*)fastMalloc(sizeof(*refcount));
-        *refcount = 1;
-    }
-    else
-        refcount = 0;
-}
-
- // 对于拷贝ctor，参数对应的对象不需要进行释放，直接进行拷贝即可，所以引用计数加1。
- // 赋值operator则需要先释放掉参数对应的对象，因为将当前对象赋值给另一个对象之后，
- // 当前指针就不再指向任何对象
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::Ptr(const Ptr&lt;_Tp&gt;&amp; ptr) {
-    obj = ptr.obj;
-    refcount = ptr.refcount;
-    addref();
-}
-
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;&amp; Ptr&lt;_Tp&gt;::operator = (const Ptr&lt;_Tp&gt;&amp; ptr) {
-    int* _refcount = ptr.refcount;
-    if( _refcount )
-        CV_XADD(_refcount, 1);
-    release();
-    obj = ptr.obj;
-    refcount = _refcount;
-    return *this;
-}
-</code></pre>
-<p><code>fastMalloc()</code>的实现：</p>
-<pre><code class="cpp">void* fastMalloc( size_t size )
-{
-    // 在此处，内存多开辟了20字节的空间。其中，前4个字节用以存储分配的这块空间的首地址。
-    // 在进行释放空间时，可以很快地进行释放。另外的16字节用于调整地址，是地址到达16的倍数
-    // 其中，CV_MALLOC_ALIGN的值为16
-    uchar* udata = (uchar*)malloc(size + sizeof(void*) + CV_MALLOC_ALIGN);
-    if(!udata)
-        return OutOfMemoryError(size);
-    // alignPtr用于将地址空间的大小向上调整为16的倍数
-    // udata+1  ===&gt; 其实是 udata + sizeof(uchar**) ，即4，这4个字节便是用于存储udata这个地址空间的起始地址
-    // 要将udata强制转换为uchar**的原因是：因为要访问者4个字节之中的内容，而这个内容中存储的又是首地址，于是就是二级指针 
-    uchar** adata = alignPtr((uchar**)udata + 1, CV_MALLOC_ALIGN);
-    // adata[-1] ===&gt; -1就是向前移动4个字节，既是udata这个地址空间的起始地址
-    adata[-1] = udata;
-    return adata;
-}
-
-void fastFree(void* ptr)
-{
-    if(ptr) {
-    // 取分配地址的首地址
-        uchar* udata = ((uchar**)ptr)[-1];
-        CV_DbgAssert(udata &lt; (uchar*)ptr &amp;&amp;
-               ((uchar*)ptr - udata) &lt;= (ptrdiff_t)(sizeof(void*)+CV_MALLOC_ALIGN)); 
-    // 直接删除首地址即可删除整个分配的空间
-        free(udata);
-    }
-}
-</code></pre>
-<p><code>alignPtr()</code>的实现：</p>
-<pre><code class="cpp">template&lt;typename _Tp&gt; static inline _Tp* alignPtr(_Tp* ptr, int n=(int)sizeof(_Tp))
-{
-    return (_Tp*)(((size_t)ptr + n-1) &amp; -n);
-}
-</code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1d98ef5200a11f04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>此处使用了位操作的黑魔法，<br>这个函数用来将<code>ptr</code>指向的地址对齐到<code>n</code>边界，使得到的地址是<code>n</code>的倍数，由于此处<code>n=CV_MALLOC_ALIGN=16</code>。</p>
-<p>现假设<code>ptr</code>为十六进制形式，<code>ptr=0xYY YY YY YY</code>，则<code>ptr+n-1</code>的计算为：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9da0eede6c6b165c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>当<code>ptr</code>的低4位不全为<code>0</code>时，<code>ptr+n-1</code>的结果将导致进位，加<code>1</code>。再与<code>-n</code>相<code>&amp;</code>，而<code>-n==0xF0</code>，所以最终返回的地址形式为<code>0x YY YY YY Y0</code>，即为<code>CV_MALLOC_ALIGN==16</code>的倍数。</p>
-<p>增加引用计数时，使用了无锁（lock-free）编程技术：</p>
-<pre><code class="cpp">template&lt;typename _Tp&gt; inline void Ptr&lt;_Tp&gt;::addref() { 
-if( refcount ) 
-    CV_XADD(refcount, 1); 
-}
-</code></pre>
-<p><code>CV_XADD</code>该操作类似于post increment的运算，使用了无锁化编程，其可以用于多线程编程，用户不需要自己维护锁。</p>
-<p>接下来是释放内存的操作：</p>
-<pre><code class="cpp">template&lt;typename _Tp&gt; inline void Ptr&lt;_Tp&gt;::release()
-{
-    if( refcount &amp;&amp; CV_XADD(refcount, -1) == 1 )
-    {
-        delete_obj();
-        fastFree(refcount);
-    }
-    refcount = 0;
-    obj = 0;
-}
-
-template&lt;typename _Tp&gt; inline void Ptr&lt;_Tp&gt;::delete_obj()
-{
-    if( obj ) delete obj;
-}
-
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::~Ptr() { release(); }
-</code></pre>
-<p>其他操作：</p>
-<pre><code class="cpp">template&lt;typename _Tp&gt; inline _Tp* Ptr&lt;_Tp&gt;::operator -&gt; () { return obj; }
-template&lt;typename _Tp&gt; inline const _Tp* Ptr&lt;_Tp&gt;::operator -&gt; () const { return obj; }
-
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::operator _Tp* () { return obj; }
-template&lt;typename _Tp&gt; inline Ptr&lt;_Tp&gt;::operator const _Tp*() const { return obj; }
-</code></pre>
-<h3 id="什么是对齐（alignment）？"><a href="#什么是对齐（alignment）？" class="headerlink" title="什么是对齐（alignment）？"></a>什么是对齐（alignment）？</h3><p>在现代的计算机中，内存空间都是按照byte进行划分的，从理论上讲，对任何类型的变量的访问，都可以从任何地址开始，但实际情况是：在访问特定变量的时候，经常需要在特定的内存地址进行访问，这就是对齐。</p>
-<p>需要对齐的原因：</p>
-<ol>
-<li>某些硬件平台只能在某些地址取某些特定类型的数据，否则抛出硬件异常。</li>
-<li>其余的硬件平台虽然可以在任何地址处，取得任何类型的数据。但如果变量没有对齐的情况下，取这个数据可能会存在效率上的损失。</li>
-</ol>
-<p>许多硬件相关的东西在对齐上存在限制。在某些系统中，某种数据类型只能存储在偶数边界的地址处。</p>
-<p>例如，在经典的SPARC架构(以及经典的ARM)上，便不能从奇数地址读取一个超过<code>1</code>字节的整型数据。尝试这么做将会立即终止程序，并伴随着总线（bus）错误。而在X86架构上，CPU硬件处理了这个问题，只是这么做将会花费更多时间，而RISC架构通常是不会为用户做这些。</p>
-<h1 id="mixChannels"><a href="#mixChannels" class="headerlink" title="mixChannels()"></a><code>mixChannels()</code></h1><p><strong>将输入数组的指定通道复制到输出数组的指定通道</strong>。</p>
-<pre><code class="cpp">void mixChannels(
-const Mat* src,     //输入数组或向量矩阵,所有矩阵的大小和深度必须相同。
-size_t nsrcs,          //矩阵的数量
-Mat* dst,              //输出数组或矩阵向量,大小和深度必须与src[0]相同
-size_t ndsts,        //矩阵的数量
-const int* fromTo,//指定被复制通道与要复制到的位置组成的索引对
-size_t npairs       //fromTo中索引对的数目
-);
-</code></pre>
-<p>例如，将一个<code>4</code>通道<em>BGRA</em>图像分割成一个<code>3</code>通道<em>BGR</em>和一个单独的<em>alpha</em>通道图像： </p>
-<pre><code class="cpp">#include&lt;opencv2/opencv.hpp&gt;
-using namespace cv;
-
-int main()
-{
-    Mat bgra( 500, 500, CV_8UC4, Scalar(255,255,0,255) );
-    Mat bgr( bgra.rows, bgra.cols, CV_8UC3 );
-    Mat alpha( bgra.rows, bgra.cols, CV_8UC1 );
-
-    Mat out[] = { bgr, alpha };
-
-    int from_to[] = { 0, 2, 1, 1, 2, 0, 3, 3 };
-    mixChannels( &amp;bgra, 1, out, 2, from_to, 4 );
-
-    imshow(&quot;bgra&quot;, bgra);
-    imshow(&quot;bgr&quot;, bgr);
-    waitKey(0);
-    return 0;
-}
-</code></pre>
-<p>其中，索引对<code>from_to[] = { 0, 2, 1, 1, 2, 0, 3, 3 }</code>的含义为： </p>
-<ul>
-<li><em>bgra</em>的<code>0</code>通道复制到<code>out[]</code>的<code>2</code>通道，即<em>bgr</em>的<code>0</code>通道</li>
-<li><em>bgra</em>的<code>1</code>通道复制到<code>out[]</code>的<code>1</code>通道，即<em>bgr</em>的<code>1</code>通道 </li>
-<li><em>bgra</em>的<code>2</code>通道复制到<code>out[]</code>的<code>0</code>通道，即<em>bgr</em><code>2</code>通道 </li>
-<li><em>bgra</em>的<code>3</code>通道复制到<code>out[]</code>的<code>3</code>通道，即<em>alpha</em>通道</li>
-</ul>
-<p>因此，原图的青色<code>(255,255,0)</code>通过指定通道复制到输出图像中变成了黄色<code>(0,255,255)</code>。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-20dc91a593750a49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="calcHist"><a href="#calcHist" class="headerlink" title="calcHist"></a><code>calcHist</code></h1><pre><code class="cpp">void calcHist(
-    const Mat* images,         //输入的图像的指针，可以是多幅图像，所有的图像必须有同样的深度（CV_8U or CV_32F）。
-    //同时一副图像可以有多个channels。
-    int nimages,                  // 输入图像的数量
-    const int* channels,      //用来计算直方图的channels的数组。
-//比如输入是两副图像，第一副图像有0，1，2共三个channel
-//第二幅图像只有一个channel：0，那么输入就一共有4个channels
-//如果int channels[3] = {3, 2, 0}，那么就表示是使用第二副图像的第一个通道和第一副图像的第2和第0个通道来计算直方图。
-    InputArray mask, 
-    OutputArray hist,   //计算出来的直方图
-    int dims,                   //计算出来的直方图的维数
-    const int* histSize, //在每一维上直方图的个数。如果简单地把直方图看作一个一个的竖条的话，就是每一维上竖条的个数
-    const float** ranges, 
-//用来进行统计的范围。比如
-//            float rang1[] = {0, 20};
-//           float rang2[] = {30, 40};
-//        const float *rangs[] = {rang1, rang2};
-//那么就是对0—20和30—40范围的值进行统计。
-    bool uniform=true,    // 一个竖条的宽度是否相等
-    bool accumulate=false 
-)
-</code></pre>
-<h1 id="findContours"><a href="#findContours" class="headerlink" title="findContours()"></a><code>findContours()</code></h1><p>其用于寻找图像中物体的轮廓（一般结合<code>drawContours()</code>函数将找到的轮廓绘制出）。</p>
-<pre><code class="cpp">void cv::findContours   (   
-// 输入图像，图像必须为8-bit单通道图像，图像中的非零像素将被视为1，0像素保留其像素值，
-//故加载图像后会自动转换为二值图像。同样可以使用cv::compare,cv::inRange,cv::threshold,
-//cv::adaptiveThreshold,cv::Canny等函数来创建二值图像。如果第四个参数为cv::RETR_CCOMP或
-//cv::RETR_FLOODFILL，输入图像可以是32-bit整型图像(CV_32SC1) 
-InputOutputArray    image,
-OutputArrayOfArrays     contours,
-OutputArray     hier
-int     mode,
-int     method,
-Point   offset = Point() 
- )   
-</code></pre>
-<ul>
-<li>第一个参数：<code>image</code>，单通道（8-bit）图像矩阵，可以是灰度图，但更常用的是二值图像，一般是经过<code>Canny</code>、<code>Laplcian</code>等边缘检测算子处理过的二值图像</li>
-<li>第二个参数：<code>contours</code>，定义为<code>vector&lt;vector&lt;Point&gt;&gt; contours</code>，是一个双重向量。向量内每个元素保存了一组由连续的<code>Point</code>点构成的点的集合的向量，每一组<code>Point</code>点集就是一个轮廓。有多少轮廓，向量<code>contours</code>就有多少元素。</li>
-<li>第三个参数：<code>hierarchy</code>，定义为<code>vector&lt;Vec4i&gt; hierarchy</code>。向量<code>hiararchy</code>内的元素和轮廓向量<code>contours</code>内的元素是一一对应的，向量的容量相同。<code>hierarchy</code>向量内每一个元素的<code>4</code>个<code>int</code>型变量—<strong><code>hierarchy[i][0] ~ hierarchy[i][3]</code>，分别表示第<code>i</code>个轮廓的后一个轮廓、前一个轮廓、父轮廓、内嵌轮廓的索引编号</strong>。如果当前轮廓没有对应的后一个轮廓、前一个轮廓、父轮廓或内嵌轮廓的话，则<code>hierarchy[i][0] ~ hierarchy[i][3]</code>的相应位被设置为默认值<code>-1</code>。</li>
-<li>第四个参数：<code>mode</code>，定义轮廓的检索模式：<ul>
-<li><code>CV_RETR_EXTERNAL</code>：只检测最外围轮廓，包含在外围轮廓内的内围轮廓被忽略</li>
-<li><code>CV_RETR_LIST</code>：检测所有的轮廓，包括内围、外围轮廓，但是检测到的轮廓不建立等级关系，彼此之间独立，没有等级关系，这就意味着这个检索模式下不存在父轮廓或内嵌轮廓，所以<code>hierarchy</code>向量内所有元素的第<code>3</code>、第<code>4</code>个分量都会被置为<code>-1</code></li>
-<li><code>CV_RETR_CCOMP</code>：检测所有的轮廓，但所有轮廓只建立两个等级关系，外围为顶层，若外围内的内围轮廓还包含了其他的轮廓信息，则内围内的所有轮廓均归属于顶层</li>
-<li><code>CV_RETR_TREE</code>：检测所有轮廓，所有轮廓建立一个等级树结构。外层轮廓包含内层轮廓，内层轮廓还可以继续包含内嵌轮廓。</li>
-</ul>
-</li>
-<li>第五个参数：<code>method</code>，定义轮廓的近似方法：<ul>
-<li><code>CV_CHAIN_APPROX_NONE</code>：获取每个轮廓的每个像素，相邻的两个点的像素位置差不超过1</li>
-<li><code>CV_CHAIN_APPROX_SIMPLE</code>：仅保存轮廓的拐点信息，把所有轮廓拐点处的点保存入<code>contours</code>向量内，拐点与拐点之间直线段上的信息点不予保留</li>
-<li><code>CV_CHAIN_APPROX_TC89_L1</code>，<code>CV_CHAIN_APPROX_TC89_KCOS</code>使用<code>teh-Chinl chain</code>近似算法</li>
-</ul>
-</li>
-<li>第六个参数：<code>offset</code>，所有的轮廓信息相对于原始图像对应点的偏移量，相当于在每一个检测出的轮廓点上加上该偏移量</li>
-</ul>
-<h1 id="drawContours"><a href="#drawContours" class="headerlink" title="drawContours"></a><code>drawContours</code></h1><pre><code class="cpp">void cv::drawContours   (   
-InputOutputArray    image,
-InputArrayOfArrays  contours, // 使用findContours检测到的轮廓数据，每个轮廓以点向量的形式存储，Point类型的vector 
-int     contourIdx,
-const Scalar &amp;  color,    //轮廓的颜色
-int     thickness = 1,       //绘制轮廓所用线条粗细度，如果值为负值，则在轮廓内部绘制
-int     lineType = LINE_8,//线条类型，默认值为LINE_8
-InputArray  hierarchy = noArray(),//可选层次结构信息，可传入vector&lt;Vec4i&gt; hierarchy;
-int     maxLevel = INT_MAX,
-Point   offset = Point() 
-)
-</code></pre>
-<h1 id="createTrackbar"><a href="#createTrackbar" class="headerlink" title="createTrackbar()"></a><code>createTrackbar()</code></h1><p>在显示图像的窗口中快速创建一个滑动控件，用于手动调节阈值。</p>
-<pre><code class="cpp">CV_EXPORTS int createTrackbar(
-const string&amp; trackbarname,  //滑动控件的名称
-const string&amp; winname,    // 滑动控件所在的图像窗口的名称
-int* value,     // 初始化的阈值
-int count,//滑动控件的刻度范围
-TrackbarCallback onChange = 0,
-//TrackbarCallback是回调函数，一般将回调函数定义为：void thresh_callback(int, void*)
-void* userdata = 0    
-);
-</code></pre>
-<p>其中，<code>TrackbarCallback</code>的定义为：</p>
-<pre><code class="cpp">typedef void (CV_CDECL *TrackbarCallback)(int pos, void* userdata);
-</code></pre>
-<h1 id="approxPolyDP"><a href="#approxPolyDP" class="headerlink" title="approxPolyDP()"></a><code>approxPolyDP()</code></h1><p>它的主要功能是：<strong>把一个连续光滑曲线折线化，对图像轮廓点进行多边形拟合</strong>。</p>
-<p>函数原型为：</p>
-<pre><code class="cpp">void approxPolyDP(
-InputArray curve,  //一般是由图像的轮廓点组成的点集
-OutputArray approxCurve, //表示输出的多边形点集
-double epsilon, //要表示输出的精度，就是另个轮廓点之间最大距离数，5,6,7,8...
-bool closed //表示输出的多边形是否封闭
-)
-</code></pre>
-<p>原理图（对比之前黑点连线，之后蓝色连线）：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f4e762596e70284a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>算法描述如下：</strong><br>起始曲线是有序的一组点或线，距离维度<code>ε&gt;0</code>，<strong>该算法递归地划分线</strong>。 </p>
-<ul>
-<li>最初，给出了第一点和最后一点之间的所有点，它会自动标记要保存的第一个和最后一个点。</li>
-<li>然后，<strong>找到距离第一点和最后一点组成的线段的最远的点作为终点</strong>; 这一点在距离终点之间的近似线段的曲线上显然最远。 如果该点比线段更接近于<code>ε</code>，那么当前未被标记的任何点将被保存，而没有简化的曲线比<code>ε</code>更差的可以丢弃。</li>
-</ul>
-<p>如果离线段最远的点距离近似值大于<code>ε</code>，则必须保留该点。该算法以第一个点和最远点递归地调用自身，然后以最远点和最后一个点（包括最远点被标记为保留）递归调用自身。<br>当递归完成时，可以生成一个新的输出曲线，其中包括所有且仅标记为保留的点。</p>
-<p><strong>伪代码：</strong></p>
-<pre><code class="cpp">function DouglasPeucker(PointList[], epsilon)
-    // Find the point with the maximum distance
-    dmax = 0
-    index = 0
-    end = length(PointList)
-    for i = 2 to ( end - 1) {
-        d = perpendicularDistance(PointList[i], Line(PointList[1], PointList[end])) 
-        if ( d &gt; dmax ) {
-            index = i
-            dmax = d
-        }
-    }
-    // If max distance is greater than epsilon, recursively simplify
-    if ( dmax &gt; epsilon ) {
-        // Recursive call
-        recResults1[] = DouglasPeucker(PointList[1...index], epsilon)
-        recResults2[] = DouglasPeucker(PointList[index...end], epsilon)
-
-        // Build the result list
-        ResultList[] = {recResults1[1...length(recResults1)-1], recResults2[1...length(recResults2)]}
-    } else {
-        ResultList[] = {PointList[1], PointList[end]}
-    }
-    // Return the result
-    return ResultList[]
-end
-</code></pre>
-<h1 id="boundingRect"><a href="#boundingRect" class="headerlink" title="boundingRect()"></a><code>boundingRect()</code></h1><p>当得到对象轮廓后，可用</p>
-<ul>
-<li><code>Rect boundingRect(InputArray points)</code>得到<strong>包覆此轮廓的最小正矩形</strong></li>
-<li><code>RotatedRect minAreaRect(InputArray points)</code>得到<strong>包覆轮廓的最小斜矩形</strong></li>
-<li><code>void minEnclosingCircle(InputArray points, Point2f&amp; center, float&amp; radius)</code>得到<strong>包覆此轮廓的最小圆形</strong>。其中，<code>points</code>为输入的二维点集，<code>center</code>为输出的圆形的中心坐标，<code>radius</code>为输出的最小圆的半径。</li>
-</ul>
-<p>这些函数可以填补空隙，或者作进一步的对象辨识。<code>boundingRect()</code>返回正矩形，所以如果对象有倾斜的情形，返回的可能不是想要的结果。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0b498050554d6ad8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="图像通道的分离与合并"><a href="#图像通道的分离与合并" class="headerlink" title="图像通道的分离与合并"></a>图像通道的分离与合并</h1><p>在图像处理中，尤其是处理多通道图像时，有时需要对各个通道进行分离，分别处理；有时还需要对分离处理后的各个通道进行合并，重新合并成一个多通道的图像。</p>
-<h2 id="cv-split"><a href="#cv-split" class="headerlink" title="cv::split()"></a><code>cv::split()</code></h2><pre><code class="cpp">void cv::split(
-    const cv::Mat&amp; mtx, //输入图像
-    vector&lt;Mat&gt;&amp; mv // 输出的多通道序列（n个单通道序列）
-);
-</code></pre>
-<h2 id="cv-merge"><a href="#cv-merge" class="headerlink" title="cv::merge()"></a><code>cv::merge()</code></h2><pre><code class="cpp">void merge(
-    const vector&lt;cv::Mat&gt;&amp; mv, // 输入的多通道序列(n个单通道序列)
-    cv::OutputArray dst // 输出图像，包含mv
-);
-</code></pre>
-
+        
         
     
 
@@ -865,7 +509,7 @@ end
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/10/20/计算机视觉/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/11/17/KCF/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -879,7 +523,7 @@ end
 
     <!-- Next Nav -->
     
-        <a href="/2018/10/12/libjpeg学习/" id="post_nav-older" class="next-content">
+        <a href="/2018/11/05/ORB/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
