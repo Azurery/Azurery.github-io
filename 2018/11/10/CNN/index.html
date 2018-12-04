@@ -37,6 +37,8 @@
     
     <title>
         
+            CNN | 
+        
         Azurery
     </title>
 
@@ -47,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",DL">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -229,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Azurery">
+    <meta property="og:title" content="CNN | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    
+    <meta property="og:article:tag" content="DL"> 
 
     
         <meta property="article:published_time" content="Sat Nov 10 2018 21:22:36 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Nov 10 2018 21:22:36 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 04 2018 15:34:26 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Azurery">
+    <meta name="twitter:title" content="CNN | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -261,9 +263,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://yoursite.com/2018/11/10/CNN/index.html",
-    "headline": "",
+    "headline": "CNN",
     "datePublished": "Sat Nov 10 2018 21:22:36 GMT+0800",
-    "dateModified": "Sat Nov 10 2018 21:22:36 GMT+0800",
+    "dateModified": "Tue Dec 04 2018 15:34:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -281,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "",
+    "keywords": ",DL",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -341,6 +343,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础知识"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无监督预训练（Unsupervised-pre-training）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">无监督预训练（Unsupervised pre-training）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#有监督预训练（Supervised-pre-training）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">有监督预训练（Supervised pre-training）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IOU"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">IOU</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非极大值抑制"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">非极大值抑制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对梯度幅值进行非极大值抑制"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">对梯度幅值进行非极大值抑制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#物体检测-VS-图片分类"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">物体检测 VS 图片分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Selective-Search-for-Object-Recognition"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Selective Search for Object Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#目标检测-VS-目标识别"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">目标检测 VS 目标识别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sliding-Window-Algorithm"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">Sliding Window Algorithm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Region-Proposal-Algorithms"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">Region Proposal Algorithms</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Selective-Search"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">Selective Search</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#算法流程："><span class="post-toc-number">1.7.4.1.</span> <span class="post-toc-text">算法流程：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#相似度计算"><span class="post-toc-number">1.7.4.2.</span> <span class="post-toc-text">相似度计算</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RCNN"><span class="post-toc-number">2.</span> <span class="post-toc-text">RCNN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-算法的整体思路"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 算法的整体思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#候选框的搜索"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">候选框的搜索</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#各向异性缩放"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">各向异性缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#各向同性缩放"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">各向同性缩放</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CNN特征提取"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">CNN特征提取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-网络结构设计"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">1. 网络结构设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-有监督预训练"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">2. 有监督预训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-fine-tuning训练"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">3. fine-tuning训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#疑问"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">疑问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？"><span class="post-toc-number">2.3.4.1.</span> <span class="post-toc-text">1. 既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096-9216，从f6到f7的参数是4096-4096。那么具体是选择p5、f6还是f7呢？"><span class="post-toc-number">2.3.4.2.</span> <span class="post-toc-text">2. 没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096*9216，从f6到f7的参数是4096*4096。那么具体是选择p5、f6还是f7呢？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CNN在进行训练的时候，本来就是对bounding-box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？"><span class="post-toc-number">2.3.4.3.</span> <span class="post-toc-text">CNN在进行训练的时候，本来就是对bounding box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SVM训练"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">SVM训练</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -370,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                
+                CNN
             </p>
         </div>
 
@@ -419,6 +430,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/DL/">DL</a>
+    </ul>
+    
 
     <!-- Share -->
     <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -432,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/11/10/CNN/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CNN&url=http://yoursite.com/2018/11/10/CNN/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2018/11/10/CNN/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CNN&url=http://yoursite.com/2018/11/10/CNN/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -471,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CNN&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -489,7 +509,113 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <p>深度学习以数据的原始形态（raw data）作为算法的输入，经过算法的层层抽象，将原始数据逐层抽象为自身任务所需的最终特种表示，最后以特征到任务的目标的映射（mapping）作为结束，从原始数据到最终任务目标，一气呵成而中间并无夹杂任何人为操作。相比于传统的ML算法仅学得模型这一单一任务模块而言，DL除了模型学习，还有特征学习、特征抽象等任务模块的参与，借助多层任务模块完成最终的学习任务。</p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="无监督预训练（Unsupervised-pre-training）"><a href="#无监督预训练（Unsupervised-pre-training）" class="headerlink" title="无监督预训练（Unsupervised pre-training）"></a>无监督预训练（Unsupervised pre-training）</h2><p>指预训练阶段的样本不需要人工标注数据</p>
+<h2 id="有监督预训练（Supervised-pre-training）"><a href="#有监督预训练（Supervised-pre-training）" class="headerlink" title="有监督预训练（Supervised pre-training）"></a>有监督预训练（Supervised pre-training）</h2><p>也可以将其称为迁移学习。简而言之，就是<strong>把一个训练好的参数，拿到另外一个任务上，作为神经网络的初始参数值，这样就比直接采用随机初始化的方法的精度要提升很多</strong>。</p>
+<p>例如，比如已经有一大堆标注好的人脸年龄分类的图片数据，训练了一个CNN，用于人脸的年龄识别。然后，当新的项目任务是：人脸性别识别时，便可以直接利用已经训练好的年龄识别CNN模型，去掉最后一层，然后其它的网络层参数就直接复制过来，继续进行训练。</p>
+<h2 id="IOU"><a href="#IOU" class="headerlink" title="IOU"></a>IOU</h2><p><strong>物体检测需要定位出物体的bounding box</strong>。如下图所示，不仅要定位出车辆的bounding box，还需要识别出bounding box里面的物体就是车辆。对于bounding box的定位精度，存在一个定位精度评价公式：<code>IOU</code>（因为算法不可能百分百跟人工标注的数据完全匹配）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-802c153951d23b3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><code>IOU</code>定义了两个bounding box的重叠度：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c66aff1ed95a2a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>矩形框<code>A</code>、<code>B</code>的一个重合度<code>IOU</code>计算公式为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1e77ae5572cea6de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>即，矩形框<code>A</code>、<code>B</code>的重叠面积占<code>A</code>、<code>B</code>并集的面积比例:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-45bff28622a98ade.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="非极大值抑制"><a href="#非极大值抑制" class="headerlink" title="非极大值抑制"></a>非极大值抑制</h2><p>非极大值抑制（NMS）就是：<strong>抑制不是极大值的元素，搜索局部的极大值。这个局部代表的是一个邻域，邻域有两个参数可变，一是邻域的维数，二是邻域的大小</strong>。</p>
+<p><strong>【注】：</strong>此处不讨论通用的<em>NMS</em>算法，而是应用于目标检测中用于提取分数最高的窗口。例如，在行人检测中，滑动窗口经提取特征，经分类器分类识别后，每个窗口都会得到一个分数。但滑动窗口会导致很多窗口与其他窗口存在包含或者大部分交叉的情况。这时就需要用到<em>NMS</em>来选取那些邻域里分数最高（即，行人的概率最大），并且抑制那些分数低的窗口。</p>
+<p>RCNN算法会从一张图片中找出<code>n</code>多个可能是物体的矩形框，然后为每个矩形框分别作类别分类概率。</p>
+<p>如下图所示，定位一个车辆，最后算法找出了一堆方框，需要判别哪些矩形框是没用的。非极大值抑制法的步骤：先假设有<code>6</code>个矩形框，根据分类器类别分类概率做排序，从小到大分别属于车辆的概率分别为<code>A</code>、<code>B</code>、<code>C</code>、<code>D</code>、<code>E</code>、<code>F</code>：</p>
+<ol>
+<li>从最大概率矩形框<code>F</code>开始，分别判断<code>A~E</code>与<code>F</code>的重叠度<code>IOU</code>是否大于某个设定的阈值。</li>
+<li>假设<code>B</code>、<code>D</code>与<code>F</code>的重叠度超过阈值，则扔掉<code>B</code>、<code>D</code>；并标记第一个矩形框<code>F</code>是要保留下来的。</li>
+<li>从剩下的矩形框<code>A</code>、<code>C</code>、<code>E</code>中，选择概率最大的<code>E</code>，然后判断<code>E</code>与<code>A</code>、<code>C</code>的重叠度<code>IOU</code>，重叠度大于一定的阈值就扔掉；并标记<code>E</code>是保留下来的第二个矩形框。</li>
+</ol>
+<p>一直重复，找到所有被保留下来的矩形框。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-81e3a20c58bf860a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="对梯度幅值进行非极大值抑制"><a href="#对梯度幅值进行非极大值抑制" class="headerlink" title="对梯度幅值进行非极大值抑制"></a>对梯度幅值进行非极大值抑制</h2><p>图像梯度幅值矩阵中的元素值越大，说明图像中该点的梯度值越大，但这不不能说明该点就是边缘（这仅仅是属于图像增强的过程）。在<em>Canny</em>算法中，非极大值抑制是进行边缘检测的重要步骤，通俗意义上是指：<strong>寻找像素点局部最大值，将非极大值点所对应的灰度值置为<code>0</code>，这样可以剔除掉一大部分非边缘的点</strong>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-016aafd1cd753237.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>非极大值抑制的工作原理：</strong><br>由上图可知，要进行非极大值抑制，首先要确定像素点<code>C</code>的灰度值在其八邻域内是否为最大。蓝色线条方向为<code>C</code>点的梯度方向（这样就可以确定其局部的最大值肯定分布在这条线上），即除了<code>C</code>点外，梯度方向的交点<code>dTmp1</code>和<code>dTmp2</code>这两个点的值也可能会是局部最大值。</p>
+<p>因此，判断<code>C</code>点灰度与这两个点灰度大小，即可判断<code>C</code>点是否为其邻域内的局部最大灰度点。如果经过判断，<code>C</code>点灰度值小于这两个点中的任一个，那就说明<code>C</code>点不是局部极大值，那么则可以排除<code>C</code>点为边缘。</p>
+<p>在实际中，其实只能得到<code>C</code>点邻域的<code>8</code>个点的值，而<code>dTmp1</code>和<code>dTmp2</code>并不在其中。要得到这两个值，就需要对该两个点两端的已知灰度进行线性插值，即根据上图中的<code>g1</code>和<code>g2</code>对<code>dTmp1</code>进行插值，根据<code>g3</code>和<code>g4</code>对<code>dTmp2</code>进行插值，这要用到其梯度方向。</p>
+<p>完成非极大值抑制后，会得到一个二值图像，非边缘的点灰度值均为<code>0</code>，可能为边缘的局部灰度极大值点可设置其灰度为<code>128</code>。</p>
+<h2 id="物体检测-VS-图片分类"><a href="#物体检测-VS-图片分类" class="headerlink" title="物体检测 VS 图片分类"></a>物体检测 VS 图片分类</h2><p>物体检测和图片分类的区别：</p>
+<ul>
+<li>图片分类不需要定位，而物体检测需要定位出物体的位置，也就是相当于把物体的bbox检测出来。</li>
+<li>物体检测是要把所有图片中的物体都识别定位出来。</li>
+</ul>
+<p>简言之，物体检测需要定位出物体的位置，这种就相当于回归问题，求解一个包含物体的方框。而图片分类其实是逻辑回归。这种方法对于单物体检测还不错，但是对于多物体检测便显得捉襟见肘。</p>
+<h2 id="Selective-Search-for-Object-Recognition"><a href="#Selective-Search-for-Object-Recognition" class="headerlink" title="Selective Search for Object Recognition"></a>Selective Search for Object Recognition</h2><h3 id="目标检测-VS-目标识别"><a href="#目标检测-VS-目标识别" class="headerlink" title="目标检测 VS 目标识别"></a>目标检测 VS 目标识别</h3><ul>
+<li>目标识别（object recognition）是指明一幅输入图像中存在哪些对象（目标）。它将整张图像作为输入，输出的是该图像中存在的对象（目标）的类标签（class labels）和类概率（class probability）。例如，类标签为“狗”，相关的类概率是<code>97％</code>。</li>
+<li>目标检测（object detection）不仅要告诉输入图像中包含了哪类目标，还要框出该目标的具体位置—利用bounding boxes <code>(x, y, width, height)</code>来指示图像内对象的位置。</li>
+</ul>
+<p><strong>所有的目标检测算法的核心是目标识别算法</strong>。在目标检测时，为了定位到目标的具体位置，通常会把图像分成许多子块（sub-regions / patches），然后把子块作为输入，送到目标识别的模型中。生成较小区域最直接方法叫滑动窗口法（Sliding Window Algorithm）。滑动窗口的方法就是按照子块的大小在整幅图像上穷举所有子图像块。这种方法产生的数据量想想都头大。和滑动窗口法相对的是另外一类基于区域（Region Proposal Algorithms）的方法，例如selective search。</p>
+<h3 id="Sliding-Window-Algorithm"><a href="#Sliding-Window-Algorithm" class="headerlink" title="Sliding Window Algorithm"></a>Sliding Window Algorithm</h3><p>在滑动窗口方法中，在图像上滑动框或窗口以选择patch，并使用对象识别（object recognition）模型对窗口覆盖的每个图像patch进行分类。 它对整个图像上的对象进行详尽搜索：不仅需要搜索图像中的所有可能位置，还必须以不同的比例进行搜索（这是因为物体识别模型通常以特定尺度（或尺度范围）训练）。</p>
+<p>滑窗法的物体检测流程图：<br><img src="https://upload-images.jianshu.io/upload_images/1351548-32cefc1fb88bbc7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>通过滑窗法的主要思路：首先对输入图像进行不同窗口大小的滑窗进行从左往右、从上到下的滑动。每次滑动时候，对当前窗口执行分类器(分类器是事先训练好的)。如果当前窗口得到较高的分类概率，则认为检测到了物体。对每个不同窗口大小的滑窗都进行检测后，会得到不同窗口检测到的物体标记，这些窗口大小会存在重复较高的部分，最后采用NMS进行筛选。最终，经过NMS筛选后获得检测到的物体。</p>
+<p>滑窗法简单易于理解，但是不同窗口大小进行图像全局搜索导致效率低下，而且设计窗口大小时候还需要考虑物体的长宽比。所以，对于实时性要求较高的分类器，不推荐使用滑窗法。</p>
+<p>滑动窗口方法适用于固定宽高比的物体，例如面部或行人。由于图像是<code>3D</code>对象的<code>2D</code>投影，所以宽高比和形状等对象特征会因为拍摄图像的角度而有很大差异。由于滑动窗口方法需要搜索多个宽高比，所以计算将十分耗时。</p>
+<h3 id="Region-Proposal-Algorithms"><a href="#Region-Proposal-Algorithms" class="headerlink" title="Region Proposal Algorithms"></a>Region Proposal Algorithms</h3><p>这种方法将图像作为输入，将输出边bounding boxes—其对应于图像中最有可能为对象的所有patches。这些区域提议（region proposals）可能是嘈杂的（noisy）、重叠的（overlapping），并且可能没有完全包含对象。但是在这些区域提议中，将有一个非常接近图像中的实际对象的提议（proposal）。然后，可以使用目标识别模型对这些提议进行分类，具有高概率分数的区域提议是对象的位置。</p>
+<p>区域提议算法使用分段（segmentation）识别图像中的预期对象。在分割中，基于一些标准（例如颜色，纹理等）将相邻区域进行分组。与在所有像素位置和所有尺度上寻找对象的sliding window approach不同，region proposal algorithm通过以下方式工作：将像素分成为较少数量的段（segments）。因此，生成的最终提案数量比滑动窗口方法少很多倍。这就减少了必须分类的图像patches的数量，这些生成的区域提议具有不同的比例和宽高比。</p>
+<h3 id="Selective-Search"><a href="#Selective-Search" class="headerlink" title="Selective Search"></a>Selective Search</h3><p>选择搜索的物体检测流程图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a021478bbcff8416.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>滑窗法类似穷举进行图像子区域搜索，但是一般情况下图像中大部分子区域是没有物体的。选择搜索算法的主要观点：<strong>图像中物体可能存在的区域应该是有某些相似性或者连续性区域的</strong>。因此，选择搜索基于这一想法，采用子区域合并的方法进行提取bounding boxes候选边界框。</p>
+<ul>
+<li>首先，对输入图像进行分割算法产生许多小的子区域。</li>
+<li>其次，根据这些子区域之间相似性(相似性标准主要有颜色、纹理、大小等等)进行区域合并，不断的进行区域迭代合并。每次迭代过程中对这些合并的子区域做bounding boxes(外切矩形)，这些子区域外切矩形就是通常所说的候选框。</li>
+</ul>
+<h4 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-b02ebd1dc5e6639d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>step 0：生成区域集<code>R</code>，具体参见论文《Efficient Graph-Based Image Segmentation》</li>
+<li>step 1：计算区域集<code>R</code>里每个相邻区域的相似度<code>S = {s1,s2,…}</code> </li>
+<li>step 2：找出相似度最高的两个区域，将其合并为新集，添加进<code>R</code> </li>
+<li>step 3：从<code>S</code>中移除所有与step 2中有关的子集 </li>
+<li>step 4：计算新集与所有子集的相似度 </li>
+<li>step 5：跳至step 2，直至<code>S</code>为空</li>
+</ul>
+<h4 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h4><h1 id="RCNN"><a href="#RCNN" class="headerlink" title="RCNN"></a>RCNN</h1><h2 id="1-算法的整体思路"><a href="#1-算法的整体思路" class="headerlink" title="1. 算法的整体思路"></a>1. 算法的整体思路</h2><p>通过利用<em>recongnition using regions</em>操作来解决CNN的定位问题，此方法在目标检测和语义分割中都取得了成功。测试阶段，此方法对每一个输入的图片产生近<code>2000</code>个不分种类的<em>region proposals</em>，使用CNN从每个<em>region proposals</em>中提取一个固定长度的特征向量，然后对每个<em>region proposal</em>提取的特征向量使用特定种类的线性SVM进行分类（CNN+SVM for classification）。</p>
+<p>RCNN采用的方法是：首先输入一张图片，先定位出<code>2000</code>个物体候选框，然后采用CNN提取每个候选框中图片的特征向量，特征向量的维度为<code>4096</code>维，接着采用SVM算法对各个候选框中的物体进行分类识别。</p>
+<p>RCNN算法主要分为四个步骤：</p>
+<ol>
+<li>找出候选框（一张图像生成<code>1K~2K</code>个候选区域 ）</li>
+<li>利用CNN提取特征向量（对每个候选区域，使用深度网络提取特征 ）</li>
+<li>利用SVM进行特征向量分类（ 特征送入每一类的SVM 分类器，判别是否属于该类）</li>
+<li>使用回归器精细修正候选框位置</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8980bce3730d6a7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="候选框的搜索"><a href="#候选框的搜索" class="headerlink" title="候选框的搜索"></a>候选框的搜索</h2><p>当输入一张图片时，搜索出所有可能是物体的区域，这个采用的方法是传统文献的算法：《Selective Search for Object Recognition》，通过这个算法可以搜索出<code>2000</code>个候选框（搜出的候选框是矩形的，而且是大小各不相同）。然而，CNN对输入图片的大小的要求是固定的，如果把搜索到的矩形选框不做处理，就扔进CNN中，肯定不行。</p>
+<p>因此，对于每个输入的候选框都需要缩放到固定的大小。为了简单起见，假设下一阶段CNN所需要的输入图片大小是个正方形图片：<code>227×227</code>。由于经过<em>selective search</em>得到的是矩形框，可以采用两种不同的处理方法：</p>
+<h3 id="各向异性缩放"><a href="#各向异性缩放" class="headerlink" title="各向异性缩放"></a>各向异性缩放</h3><p>即不管图片的长宽比例，也不管其是否扭曲，直接缩放成CNN输入的大小<code>227×227</code>（如图<code>(D)</code>所示）。</p>
+<h3 id="各向同性缩放"><a href="#各向同性缩放" class="headerlink" title="各向同性缩放"></a>各向同性缩放</h3><p>因为图片扭曲后，可能会对后续CNN的训练精度有影响。各向同性缩放有两种方案：</p>
+<ol>
+<li>直接在原始图片中，把bounding box的边界扩展延伸成正方形，然后再进行裁剪；如果已经延伸到了原始图片的外边界，那么就用bounding box中的颜色均值填充（如图<code>(B)</code>所示）。</li>
+<li>先把bounding box图片裁剪出来，然后用固定的背景颜色填充成正方形图片（背景颜色也采用bounding box的像素颜色均值，如图<code>(C)</code>所示）。</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-2a5b0f40b0e82d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>得到指定大小的图片后，后面还要继续用这<code>2000</code>个候选框图片继续训练CNN、SVM。在一张图中，人工标注时就只标注了正确的bounding box，搜索出来的<code>2000</code>个矩形框不可能会出现一个与人工标注完全匹配的候选框。</p>
+<p>因此，需要用<code>IOU</code>为<code>2000</code>个bounding box打标签，以便下一步CNN训练使用。在CNN阶段，如果用<em>selective search</em>挑选出来的候选框与物体的人工标注矩形框的重叠<code>IOU</code>大于<code>0.5</code>，就把这个候选框标注成物体类别，否则就把它当做背景类别。</p>
+<h2 id="CNN特征提取"><a href="#CNN特征提取" class="headerlink" title="CNN特征提取"></a>CNN特征提取</h2><h3 id="1-网络结构设计"><a href="#1-网络结构设计" class="headerlink" title="1. 网络结构设计"></a>1. 网络结构设计</h3><p>网络结构有两个可选方案：</p>
+<ul>
+<li>经典的<em>Alexnet</em></li>
+<li><em>VGG16</em></li>
+</ul>
+<p>经过测试，<em>Alexnet</em>精度为<code>58.5%</code>，<em>VGG16</em>精度为<code>66%</code>。<em>VGG</em>模型的特点是：<strong>选择比较小的卷积核、选择较小的跨步，这个网络的精度高，不过计算量是<em>Alexnet</em>的<code>7</code>倍</strong>。</p>
+<p>为简单起见，直接选用<em>Alexnet</em>。<em>Alexnet</em>特征提取部分包含了<code>5</code>个卷积层、<code>2</code>个全连接层，在<em>Alexnet</em>中<code>p5</code>层神经元个数为<code>9216</code>，<code>f6</code>、<code>f7</code>的神经元个数都是<code>4096</code>，通过这个网络训练完毕后，最后提取特征每个输入候选框图片都能得到一个<code>4096</code>维的特征向量。</p>
+<h3 id="2-有监督预训练"><a href="#2-有监督预训练" class="headerlink" title="2. 有监督预训练"></a>2. 有监督预训练</h3><p>参数初始化部分：物体检测的一个难点在于，物体标签训练数据少，如果直接采用随机初始化CNN参数的方法，那么目前的训练数据量是远远不够的。</p>
+<p>这种情况下，最好的是采用某些方法，把参数初始化了，然后再进行有监督的参数微调。RCNN采用有监督的预训练，所以在设计网络结构时，直接用<em>Alexnet</em>的网络（连参数也是直接采用它的参数，作为初始的参数值，然后再fine-tuning训练）。</p>
+<p>网络优化求解：采用随机梯度下降法，学习速率大小为<code>0.001</code>。</p>
+<h3 id="3-fine-tuning训练"><a href="#3-fine-tuning训练" class="headerlink" title="3. fine-tuning训练"></a>3. <em>fine-tuning</em>训练</h3><p>采用<em>selective search</em>搜索出来的候选框，处理到指定的大小，继续对上面预训练的CNN模型进行<em>fine-tuning</em>训练。</p>
+<p>假设要检测的物体类别有<code>N</code>类，那么就需要把上面预训练阶段的CNN模型的最后一层给替换掉，替换成<code>N+1</code>个输出的神经元(加<code>1</code>，表示还有一个背景)，然后这一层直接采用参数随机初始化的方法，其它网络层的参数不变</p>
+<p>接着进行<em>SGD</em>训练。开始的时候，<em>SGD</em>学习率选择<code>0.001</code>，在每次训练的时候，batch size大小选择<code>128</code>（其中，<code>32</code>个为正样本、<code>96</code>个为负样本）。</p>
+<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><h4 id="1-既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？"><a href="#1-既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？" class="headerlink" title="1. 既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？"></a>1. 既然CNN都是用于提取特征，那么直接用<em>Alexnet</em>做特征提取，省去<em>fine-tuning</em>阶段可以吗？</h4><p>可以。可以不需重新训练CNN，直接采用<em>Alexnet</em>模型，提取出<code>p5</code>或者<code>f6</code>、<code>f7</code>的特征作为特征向量，然后进行训练SVM（只不过这样精度会比较低）。</p>
+<h4 id="2-没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096-9216，从f6到f7的参数是4096-4096。那么具体是选择p5、f6还是f7呢？"><a href="#2-没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096-9216，从f6到f7的参数是4096-4096。那么具体是选择p5、f6还是f7呢？" class="headerlink" title="2. 没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096*9216，从f6到f7的参数是4096*4096。那么具体是选择p5、f6还是f7呢？"></a>2. 没有<em>fine-tuning</em>的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择<code>p5</code>、<code>f6</code>、<code>f7</code>，这三层的神经元个数分别是<code>9216</code>、<code>4096</code>、<code>4096</code>。从<code>p5</code>到<code>p6</code>这层的参数个数是：<code>4096*9216</code>，从<code>f6</code>到<code>f7</code>的参数是<code>4096*4096</code>。那么具体是选择<code>p5</code>、<code>f6</code>还是<code>f7</code>呢？</h4><p>RCNN论文证明了一个理论：如果不进行<em>fine-tuning</em>，即直接把<em>Alexnet</em>模型当做万金油使用，类似于<em>HOG</em>、<em>SIFT</em>一样做特征提取，不针对特定的任务，然后把提取的特征用于分类，结果发现<code>p5</code>的精度竟然跟<code>f6</code>、<code>f7</code>差不多，而且<code>f6</code>提取到的特征还比<code>f7</code>的精度略高；如果进行了<em>fine-tuning</em>，那么<code>f7</code>、<code>f6</code>提取到的特征就会让训练的SVM分类器的精度飙涨。</p>
+<p>据此，如果不针对特定任务进行<em>fine-tuning</em>，而是把CNN当做特征提取器的话，卷积层所学到的特征其实就是基础的共享特征提取层，就类似于SIFT算法一样，可以用于提取各种图片的特征，而<code>f6</code>、<code>f7</code>所学习到的特征是用于针对特定任务的特征。打个比方：对于人脸性别识别来说，一个CNN模型前面的卷积层所学习到的特征就类似于学习人脸共性特征，然后全连接层所学习的特征就是针对性别分类的特征。</p>
+<h4 id="CNN在进行训练的时候，本来就是对bounding-box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？"><a href="#CNN在进行训练的时候，本来就是对bounding-box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？" class="headerlink" title="CNN在进行训练的时候，本来就是对bounding box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？"></a>CNN在进行训练的时候，本来就是对bounding box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层<em>softmax</em>就是分类层，那么为什么要先用CNN做特征提取（提取<code>fc7</code>层数据），然后再把提取的特征用于训练SVM分类器？</h4><p>这是因为SVM训练和CNN训练过程的正负样本定义方式各有不同，导致最后采用CNN softmax输出比采用SVM精度还低。</p>
+<p>CNN在训练的时候，对训练数据做了比较宽松的标注（比如一个bounding box可能只包含物体的一部分），那么把它也标注为正样本，用于训练CNN；采用这个方法的主要原因在于CNN容易过拟合，所以需要大量的训练数据。在CNN训练阶段，是对bounding box的位置限制条件限制的比较松(<code>IOU</code>只要大于<code>0.5</code>都被标注为正样本)；</p>
+<p>然而SVM训练的时候，因为SVM适用于少样本训练，所以对于训练样本数据的<code>IOU</code>要求比较严格，只有当bounding box把整个物体都包含进去了，才把它标注为物体类别，然后训练SVM。</p>
+<h2 id="SVM训练"><a href="#SVM训练" class="headerlink" title="SVM训练"></a>SVM训练</h2><p>这是一个二分类问题，我么假设要检测车辆。只有当bounding box把整量车都包含在内，那才叫正样本；如果bounding box 没有包含到车辆，那么就可以把它当做负样本。</p>
+<p>但问题是当检测窗口只有部分包含物体，那该怎么定义正负样本呢？通过训练发现，如果选择<code>IOU</code>阈值为<code>0.3</code>效果最好，即当重叠度小于<code>0.3</code>的时候，就把它标注为负样本。一旦CNN <code>f7</code>层特征被提取出来，那么将为每个物体累训练一个SVM分类器。当用CNN提取<code>2000</code>个候选框，可以得到<code>2000×4096</code>的特征向量矩阵，然后只需要把这样的一个矩阵与SVM权值矩阵<code>4096×N</code>点乘(<code>N</code>为分类类别数目，因为训练的<code>N</code>个SVM，每个SVM包含了<code>4096</code>个<code>W</code>)，就可以得到结果。</p>
+<p>图片分类标注好的训练数据非常多，但是物体检测的标注数据却很少，如何用少量的标注数据，训练高质量的模型，这就是RCNN最大的特点。其采用了迁移学习的思想：先利用<em>ILSVRC2012</em>这个训练数据库（一个图片分类训练数据库，其拥有大量的标注数据，共包含了<code>1000</code>种类别物体），进行网络的图片分类训练。因此，预训练阶段CNN模型的输出是<code>1000</code>个神经元，或者也可以直接采用<em>Alexnet</em>训练好的模型参数。</p>
+
         
     
 
