@@ -37,7 +37,7 @@
     
     <title>
         
-            Python点点滴滴 | 
+            python点点滴滴 | 
         
         Azurery
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content=",Python">
+    <meta name="keywords" content=",python">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Python点点滴滴 | Azurery">
+    <meta property="og:title" content="python点点滴滴 | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    <meta property="og:article:tag" content="Python"> 
+    <meta property="og:article:tag" content="python"> 
 
     
         <meta property="article:published_time" content="Mon Sep 24 2018 11:12:20 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Dec 09 2018 17:50:36 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 18 2018 10:34:26 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Python点点滴滴 | Azurery">
+    <meta name="twitter:title" content="python点点滴滴 | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -263,9 +263,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://yoursite.com/2018/09/24/Python点点滴滴/index.html",
-    "headline": "Python点点滴滴",
+    "headline": "python点点滴滴",
     "datePublished": "Mon Sep 24 2018 11:12:20 GMT+0800",
-    "dateModified": "Sun Dec 09 2018 17:50:36 GMT+0800",
+    "dateModified": "Tue Dec 18 2018 10:34:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Python",
+    "keywords": ",python",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yield关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">yield关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OderdedDict的popitem-last-True"><span class="post-toc-number">2.</span> <span class="post-toc-text">OderdedDict的popitem(last=True)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#repr-与-str-的区别："><span class="post-toc-number">4.</span> <span class="post-toc-text">__repr__与__str__的区别：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#getattr"><span class="post-toc-number">5.</span> <span class="post-toc-text">__getattr__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#staticmethod"><span class="post-toc-number">6.</span> <span class="post-toc-text">staticmethod()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IO模块"><span class="post-toc-number">7.</span> <span class="post-toc-text">IO模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、I-O类层次结构"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">1、I/O类层次结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断Python的版本"><span class="post-toc-number">8.</span> <span class="post-toc-text">判断Python的版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#str-VS-unicode"><span class="post-toc-number">9.</span> <span class="post-toc-text">__str__ VS  __unicode__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bytes与str之间的异同"><span class="post-toc-number">10.</span> <span class="post-toc-text">bytes与str之间的异同</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#self"><span class="post-toc-number">11.</span> <span class="post-toc-text">self</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#u-U-quot-quot"><span class="post-toc-number">12.</span> <span class="post-toc-text">u/U&quot;&quot;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate"><span class="post-toc-number">13.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#callable"><span class="post-toc-number">14.</span> <span class="post-toc-text">callable()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSON与XML的区别"><span class="post-toc-number">15.</span> <span class="post-toc-text">JSON与XML的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xml-etree-ElementTree模块"><span class="post-toc-number">16.</span> <span class="post-toc-text">xml.etree.ElementTree模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-vs-SAX"><span class="post-toc-number">17.</span> <span class="post-toc-text">DOM vs SAX</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用xml-dom-模块"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">1. 使用xml.dom.*模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用xml-etree-ElementTree模块"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">2. 使用xml.etree.ElementTree模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用xml-sax-模块"><span class="post-toc-number">18.</span> <span class="post-toc-text">使用xml.sax.*模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#list-comprehension（列表推导）"><span class="post-toc-number">19.</span> <span class="post-toc-text">list comprehension（列表推导）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#join"><span class="post-toc-number">20.</span> <span class="post-toc-text">join()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate-1"><span class="post-toc-number">21.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Python中的-与"><span class="post-toc-number">22.</span> <span class="post-toc-text">Python中的*与**</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当args与位置参数和默认参数混用的情况（注意三者的顺序）"><span class="post-toc-number">22.1.</span> <span class="post-toc-text">当args与位置参数和默认参数混用的情况（注意三者的顺序）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-，可以从两个角度来看（需要拆分来看）："><span class="post-toc-number">22.2.</span> <span class="post-toc-text">关于*，可以从两个角度来看（需要拆分来看）：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-从形参的角度来看："><span class="post-toc-number">22.3.</span> <span class="post-toc-text">1. 从形参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-从实参的角度来看："><span class="post-toc-number">22.4.</span> <span class="post-toc-text">2. 从实参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-kwargs与位置参数、-args、默认参数混着用的问题：（注意顺序）"><span class="post-toc-number">22.5.</span> <span class="post-toc-text">关于**kwargs与位置参数、*args、默认参数混着用的问题：（注意顺序）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-位置参数、-args、-kwargs三者的顺序必须是：位置参数、-args、-kwargs，不然就会报错："><span class="post-toc-number">22.5.1.</span> <span class="post-toc-text">1. 位置参数、*args、**kwargs三者的顺序必须是：位置参数、*args、**kwargs，不然就会报错：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-位置参数、默认参数、-kwargs三者的顺序必须是位置参数、默认参数、-kwargs，不然就会报错："><span class="post-toc-number">22.5.2.</span> <span class="post-toc-text">2. 位置参数、默认参数、**kwargs三者的顺序必须是位置参数、默认参数、**kwargs，不然就会报错：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-，可以从两个角度来看（需要拆分来看）：-1"><span class="post-toc-number">22.6.</span> <span class="post-toc-text">关于**，可以从两个角度来看（需要拆分来看）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-从形参的角度来看：-1"><span class="post-toc-number">22.6.1.</span> <span class="post-toc-text">1. 从形参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-从实参的角度来看：-1"><span class="post-toc-number">22.6.2.</span> <span class="post-toc-text">2. 从实参的角度来看：</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yield关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">yield关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OderdedDict的popitem-last-True"><span class="post-toc-number">2.</span> <span class="post-toc-text">OderdedDict的popitem(last=True)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#repr-与-str-的区别："><span class="post-toc-number">4.</span> <span class="post-toc-text">__repr__与__str__的区别：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#getattr"><span class="post-toc-number">5.</span> <span class="post-toc-text">__getattr__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#staticmethod"><span class="post-toc-number">6.</span> <span class="post-toc-text">staticmethod()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IO模块"><span class="post-toc-number">7.</span> <span class="post-toc-text">IO模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、I-O类层次结构"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">1、I/O类层次结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断python的版本"><span class="post-toc-number">8.</span> <span class="post-toc-text">判断python的版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#str-VS-unicode"><span class="post-toc-number">9.</span> <span class="post-toc-text">__str__ VS  __unicode__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bytes与str之间的异同"><span class="post-toc-number">10.</span> <span class="post-toc-text">bytes与str之间的异同</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#self"><span class="post-toc-number">11.</span> <span class="post-toc-text">self</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#u-U-quot-quot"><span class="post-toc-number">12.</span> <span class="post-toc-text">u/U&quot;&quot;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#r-39-xxxx-39"><span class="post-toc-number">13.</span> <span class="post-toc-text">r&#39;xxxx&#39;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate"><span class="post-toc-number">14.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#callable"><span class="post-toc-number">15.</span> <span class="post-toc-text">callable()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSON与XML的区别"><span class="post-toc-number">16.</span> <span class="post-toc-text">JSON与XML的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xml-etree-ElementTree模块"><span class="post-toc-number">17.</span> <span class="post-toc-text">xml.etree.ElementTree模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-vs-SAX"><span class="post-toc-number">18.</span> <span class="post-toc-text">DOM vs SAX</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用xml-dom-模块"><span class="post-toc-number">18.1.</span> <span class="post-toc-text">1. 使用xml.dom.*模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用xml-etree-ElementTree模块"><span class="post-toc-number">18.2.</span> <span class="post-toc-text">2. 使用xml.etree.ElementTree模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用xml-sax-模块"><span class="post-toc-number">19.</span> <span class="post-toc-text">使用xml.sax.*模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#list-comprehension（列表推导）"><span class="post-toc-number">20.</span> <span class="post-toc-text">list comprehension（列表推导）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#join"><span class="post-toc-number">21.</span> <span class="post-toc-text">join()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate-1"><span class="post-toc-number">22.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#python中的-与"><span class="post-toc-number">23.</span> <span class="post-toc-text">python中的*与**</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当args与位置参数和默认参数混用的情况（注意三者的顺序）"><span class="post-toc-number">23.1.</span> <span class="post-toc-text">当args与位置参数和默认参数混用的情况（注意三者的顺序）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-，可以从两个角度来看（需要拆分来看）："><span class="post-toc-number">23.2.</span> <span class="post-toc-text">关于*，可以从两个角度来看（需要拆分来看）：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-从形参的角度来看："><span class="post-toc-number">23.3.</span> <span class="post-toc-text">1. 从形参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-从实参的角度来看："><span class="post-toc-number">23.4.</span> <span class="post-toc-text">2. 从实参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-kwargs与位置参数、-args、默认参数混着用的问题：（注意顺序）"><span class="post-toc-number">23.5.</span> <span class="post-toc-text">关于**kwargs与位置参数、*args、默认参数混着用的问题：（注意顺序）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-位置参数、-args、-kwargs三者的顺序必须是：位置参数、-args、-kwargs，不然就会报错："><span class="post-toc-number">23.5.1.</span> <span class="post-toc-text">1. 位置参数、*args、**kwargs三者的顺序必须是：位置参数、*args、**kwargs，不然就会报错：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-位置参数、默认参数、-kwargs三者的顺序必须是位置参数、默认参数、-kwargs，不然就会报错："><span class="post-toc-number">23.5.2.</span> <span class="post-toc-text">2. 位置参数、默认参数、**kwargs三者的顺序必须是位置参数、默认参数、**kwargs，不然就会报错：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-，可以从两个角度来看（需要拆分来看）：-1"><span class="post-toc-number">23.6.</span> <span class="post-toc-text">关于**，可以从两个角度来看（需要拆分来看）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-从形参的角度来看：-1"><span class="post-toc-number">23.6.1.</span> <span class="post-toc-text">1. 从形参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-从实参的角度来看：-1"><span class="post-toc-number">23.6.2.</span> <span class="post-toc-text">2. 从实参的角度来看：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#future"><span class="post-toc-number"></span> <span class="post-toc-text">__future__</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gzip"><span class="post-toc-number"></span> <span class="post-toc-text">gzip</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#six"><span class="post-toc-number"></span> <span class="post-toc-text">six</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#urllib模块"><span class="post-toc-number"></span> <span class="post-toc-text">urllib模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-基本用法"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-使用Request"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 使用Request</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-Request-url-data-None-headers-method-None"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">urllib.request.Request(url, data=None, headers={}, method=None)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Post数据"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. Post数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-parse-urlencode-query-doseq-False-safe-39-39-encoding-None-errors-None"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">urllib.parse.urlencode(query, doseq=False, safe=&#39;&#39;, encoding=None, errors=None)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异常处理"><span class="post-toc-number">4.</span> <span class="post-toc-text">异常处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用代理"><span class="post-toc-number">5.</span> <span class="post-toc-text">使用代理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-ProxyHandler-proxies-None"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">urllib.request.ProxyHandler(proxies=None)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#zip"><span class="post-toc-number"></span> <span class="post-toc-text">zip()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#namedtuple"><span class="post-toc-number"></span> <span class="post-toc-text">namedtuple</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fields类属性"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">_fields类属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#make-iterable-类方法"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">_make(iterable)类方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#asdict-实例方法"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">_asdict()实例方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-abspath-path"><span class="post-toc-number">1.</span> <span class="post-toc-text">os.path.abspath(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-exists-path"><span class="post-toc-number">2.</span> <span class="post-toc-text">os.path.exists(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-split-path"><span class="post-toc-number">3.</span> <span class="post-toc-text">os.path.split(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-dirname-path"><span class="post-toc-number">4.</span> <span class="post-toc-text">os.path.dirname(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-basename-path"><span class="post-toc-number">5.</span> <span class="post-toc-text">os.path.basename(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-commonprefix-list"><span class="post-toc-number">6.</span> <span class="post-toc-text">os.path.commonprefix(list)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-isabs-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.isabs(path)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-isfile-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.isfile(path)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-isdir-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.isdir(path)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-join-path1-path2"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.join(path1[, path2[, ...]])</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-normcase-path"><span class="post-toc-number">1.</span> <span class="post-toc-text">os.path.normcase(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-normpath-path"><span class="post-toc-number">2.</span> <span class="post-toc-text">os.path.normpath(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-splitdrive-path"><span class="post-toc-number">3.</span> <span class="post-toc-text">os.path.splitdrive(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-splitext-path"><span class="post-toc-number">4.</span> <span class="post-toc-text">os.path.splitext(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-getsize-path"><span class="post-toc-number">5.</span> <span class="post-toc-text">os.path.getsize(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-getatime-path"><span class="post-toc-number">6.</span> <span class="post-toc-text">os.path.getatime(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-getmtime-path"><span class="post-toc-number">7.</span> <span class="post-toc-text">os.path.getmtime(path)</span></a></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                Python点点滴滴
+                python点点滴滴
             </p>
         </div>
 
@@ -436,7 +436,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Python/">Python</a>
+        <a class="post_tag-link" href="/tags/python/">python</a>
     </ul>
     
 
@@ -452,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python点点滴滴&url=http://yoursite.com/2018/09/24/Python点点滴滴/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=python点点滴滴&url=http://yoursite.com/2018/09/24/Python点点滴滴/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python点点滴滴&url=http://yoursite.com/2018/09/24/Python点点滴滴/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=python点点滴滴&url=http://yoursite.com/2018/09/24/Python点点滴滴/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -491,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=Python点点滴滴&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/24/Python点点滴滴/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=python点点滴滴&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/24/Python点点滴滴/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -546,12 +546,12 @@
 </li>
 <li><code>[^...]</code>：表示不再<code>[]</code>中的字符</li>
 <li></li>
-<li><code>A|B</code>：表示可以匹配<code>A</code>或<code>B</code>。例如，<code>(P|p)ython</code>可以匹配<code>Python</code>或者<code>python</code></li>
+<li><code>A|B</code>：表示可以匹配<code>A</code>或<code>B</code>。例如，<code>(P|p)ython</code>可以匹配<code>python</code>或者<code>python</code></li>
 <li><code>^</code>：表示行的开头。例如，<code>^\d</code>表示必须以数字开头</li>
 <li><code>$</code>：表示行的结束。例如，<code>\d$</code>表示必须以数字结束</li>
 <li><code>()</code>：表示要提取的分组（Group），即提取子串的能力。<strong>【注】：</strong><code>group(0)</code>永远是原始字符串</li>
 </ul>
-<p>Python在进行正则匹配时，默认是贪婪匹配，也就是<strong>匹配尽可能多的字符</strong>。例如，匹配出数字后面的<code>0</code>：</p>
+<p>python在进行正则匹配时，默认是贪婪匹配，也就是<strong>匹配尽可能多的字符</strong>。例如，匹配出数字后面的<code>0</code>：</p>
 <pre><code class="python">re.match(r&#39;^(\d+)(0*)$&#39;,&#39;102300&#39;)
 </code></pre>
 <p>由于<code>\d+</code>采用贪婪匹配，直接把后面的<code>0</code>全部匹配了，结果<code>0*</code>就只能匹配空字符串了。所以，必须要让<code>\d+</code>采用非贪婪匹配（即尽可能少匹配），才能将后面的<code>0</code>匹配出来，加上<code>?</code>就可以让<code>\d+</code>采用非贪婪匹配。</p>
@@ -588,7 +588,7 @@ if __name__==&#39;__main__&#39;:
 </code></pre>
 <p>对于上述代码，实现了<code>__getattr__</code>之后，就可以像访问属性一样来访问<code>ObjectDict</code>中的键值对。如果没有实现它，就会报<code>AttributeError: &#39;ObjectDict&#39; object has no attribute &#39;d&#39;</code>错误。这实际上可以把一个类的所有属性和方法调用全部动态化处理了，不需要任何特殊手段。</p>
 <h2 id="staticmethod"><a href="#staticmethod" class="headerlink" title="staticmethod()"></a><code>staticmethod()</code></h2><p>返回函数的静态方法，该方法不强制要求传递参数。类可以不用实例化，就可以直接通过<code>class_name.method_name()</code>进行调用。当然，也可以实例化汇总后调用。</p>
-<h2 id="IO模块"><a href="#IO模块" class="headerlink" title="IO模块"></a><code>IO</code>模块</h2><p>Python的<code>IO</code>模块主要用于处理三种类型的<code>I/O</code>：文本<code>I/O</code>、二进制<code>I/O</code>以及原始<code>I/O</code>。这些都是通用类型，各种后备设备科使用其中的每一种类型，所以这些类型的具体对象称为<strong>文件对象（或者流）</strong>。</p>
+<h2 id="IO模块"><a href="#IO模块" class="headerlink" title="IO模块"></a><code>IO</code>模块</h2><p>python的<code>IO</code>模块主要用于处理三种类型的<code>I/O</code>：文本<code>I/O</code>、二进制<code>I/O</code>以及原始<code>I/O</code>。这些都是通用类型，各种后备设备科使用其中的每一种类型，所以这些类型的具体对象称为<strong>文件对象（或者流）</strong>。</p>
 <p>每个具体的流对象都具有各种功能，它可以允许任意的随机访问；向前或者向后寻找任何位置或者只允许顺序访问，如套接字或者pipe的情况。</p>
 <h3 id="1、I-O类层次结构"><a href="#1、I-O类层次结构" class="headerlink" title="1、I/O类层次结构"></a>1、<code>I/O</code>类层次结构</h3><ul>
 <li><code>I/O</code> inheritance structure的顶部是抽象基类<code>IOBase</code>，<strong>它定义了流的基本接口，但基本不提供实现，让子类进行继承具体实现。默认实现只是表明一个文件是否为可读、可写或者可寻址（seek）</strong>它支持iterator protocol，这意味着可以迭代<code>IOBase</code>对象，从而在一个stream中yielding the lines。根据stream是二进制流（yielding bytes）还是文本流（yielding character strings），lines的定义也略有不同。<ul>
@@ -598,29 +598,30 @@ if __name__==&#39;__main__&#39;:
 </li>
 <li><code>RawIOBase</code>继承自<code>IOBase</code>，<strong>它是raw binary I/O的基类，没有public constructor，主要提供了对底层OS设备或者API的访问（low-level），并且不会将其封装在high-level primitives中）</strong>。它的子类为机器文件系统中的文件提供接口。</li>
 <li><code>BufferedIOBase</code>继承自<code>IOBase</code>，它是支持某些缓冲区的binary stream的基类，没有公共的构造器。和<code>RawIOBase</code>的区别在于：<code>read()</code>，<code>readinto()</code>和<code>write()</code>会尽可能(分别)地多读所请求的输入或者尽可能地输出所有给定的输出，但以牺牲多个系统调用为代价。<strong>【注】：</strong>典型的<code>BufferedIOBase</code>实现不应该从<code>RawIOBase</code>类继承然后实现，而是应该wrap一个<code>RawIOBase</code>。</li>
-<li><code>TextIOBase</code>继承自<code>IOBase</code>，它是text streams的基类，此类为stream I/O提供基于character和lines的接口。没有提供<code>readinto()</code>方法，因为Python的字符串是不可变的。</li>
+<li><code>TextIOBase</code>继承自<code>IOBase</code>，它是text streams的基类，此类为stream I/O提供基于character和lines的接口。没有提供<code>readinto()</code>方法，因为python的字符串是不可变的。</li>
 <li><code>StringIO</code>是一个in-memory stream for text I/O。在调用<code>close()</code>方法时，将丢弃text buffer。</li>
 </ul>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-c915715b88a18f27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="判断Python的版本"><a href="#判断Python的版本" class="headerlink" title="判断Python的版本"></a>判断Python的版本</h2><p>可以使用<code>sys.version_info</code>。因为<code>version_info</code>是一个<code>tuple</code>,其构成为<code>(major,minor,micro,releaselevel,serial)</code>。<br>Python 2.0版本的<code>version_info</code>为：<code>(2, 0, 0, &#39;final&#39;, 0)</code>。或者，可以通过索引来获取各个component，例如，<code>sys.version_info[0]==sys.version_info.major</code>。</p>
+<h2 id="判断python的版本"><a href="#判断python的版本" class="headerlink" title="判断python的版本"></a>判断python的版本</h2><p>可以使用<code>sys.version_info</code>。因为<code>version_info</code>是一个<code>tuple</code>,其构成为<code>(major,minor,micro,releaselevel,serial)</code>。<br>python 2.0版本的<code>version_info</code>为：<code>(2, 0, 0, &#39;final&#39;, 0)</code>。或者，可以通过索引来获取各个component，例如，<code>sys.version_info[0]==sys.version_info.major</code>。</p>
 <h2 id="str-VS-unicode"><a href="#str-VS-unicode" class="headerlink" title="__str__ VS  __unicode__"></a><code>__str__</code> VS  <code>__unicode__</code></h2><p><code>__str__</code>一般是旧式方法，用于返回<code>bytes</code>。而<code>__unicode__</code>是新式方法，但更加利好，用于返回<code>characters</code>。虽然名字令人有点儿困惑，但在<code>2.x</code>中，出于兼容性的考虑，还是需要坚持使用<code>__str__</code>。通常，应该将所有字符串格式设置在<code>__unicode__</code>之中，并创建一个<code>__str__</code>包装方法：</p>
 <pre><code class="python">def __str__(self):
     return unicode(self).encode(&#39;utf-8&#39;)
 </code></pre>
 <h2 id="bytes与str之间的异同"><a href="#bytes与str之间的异同" class="headerlink" title="bytes与str之间的异同"></a><code>bytes</code>与<code>str</code>之间的异同</h2><p><code>bytes</code>是一种比特流，它的存在形式是<code>010101111111</code>这样。无论是在编程或者进行阅读，肯定不会有人直接阅读这种比特流，他必须有一个编码方式，使得其变为有意义的比特流，而不是一堆晦涩难懂的二进制组合。因为编码方式的不同，对这个比特流的解读也不一样，会给实际使用造成很大困扰。</p>
 <p>例如：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e41f63ab3c30cab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>从上述代码，可以得知，<code>s</code>是一个<code>str</code>（即字符串类型）。Python的内置函数<code>bytes()</code>可以将字符串<code>str</code>转换为<code>bytes</code>类型。而<code>b</code>实际上是一串二进制组合，为了在IDE中让编程人员相对直接地观察，其被表现为<code>b&#39;\xe4\xb8\xad\xe6\x96\x87&#39;</code>这种形式。<strong>在使用内置函数<code>bytes()</code>时，需要明确<code>encoding</code>参数，不可省略。</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e41f63ab3c30cab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>从上述代码，可以得知，<code>s</code>是一个<code>str</code>（即字符串类型）。python的内置函数<code>bytes()</code>可以将字符串<code>str</code>转换为<code>bytes</code>类型。而<code>b</code>实际上是一串二进制组合，为了在IDE中让编程人员相对直接地观察，其被表现为<code>b&#39;\xe4\xb8\xad\xe6\x96\x87&#39;</code>这种形式。<strong>在使用内置函数<code>bytes()</code>时，需要明确<code>encoding</code>参数，不可省略。</strong></p>
 <p>在字符串类<code>str</code>中有一个<code>encode()</code>方法，实现<strong>从字符串到比特流的编码</strong>过程；而<code>bytes</code>类型拥有<code>decode()</code>方法，实现<code>从比特流向字符串解码</code>过程。这两者几乎拥有一样的函数列表，最大的区别就是上面的两个方法。</p>
 <p>本质而言，字符串在磁盘上的保存形式也是二进制组合，也需要编码解码。</p>
 <p>两者区别的总结：</p>
 <ul>
-<li>在将<code>str</code>（字符串）存入磁盘和从磁盘读取字符串的过程中，Python会自动地帮我们完成编码和解码的工作，我们不需要关心它的过程。</li>
-<li>使用<code>bytes</code>类型，实质上是告诉Python，不需要它帮我们自动地完成编码和解码的工作，而是我们自己手动进行，并指定编码格式。</li>
-<li>Python已经严格区分了<code>bytes</code>和<code>str</code>两种数据类型，我们不能在需要<code>bytes</code>类型参数的时候使用<code>str</code>参数，反之亦然。</li>
+<li>在将<code>str</code>（字符串）存入磁盘和从磁盘读取字符串的过程中，python会自动地帮我们完成编码和解码的工作，我们不需要关心它的过程。</li>
+<li>使用<code>bytes</code>类型，实质上是告诉python，不需要它帮我们自动地完成编码和解码的工作，而是我们自己手动进行，并指定编码格式。</li>
+<li>python已经严格区分了<code>bytes</code>和<code>str</code>两种数据类型，我们不能在需要<code>bytes</code>类型参数的时候使用<code>str</code>参数，反之亦然。</li>
 <li>在<code>bytes</code>和<code>str</code>的互相转换过程中，实际就是编码解码的过程，必须显式地指定编码格式。</li>
 </ul>
-<h2 id="self"><a href="#self" class="headerlink" title="self"></a><code>self</code></h2><p><code>self</code>名称不是必须的，而且在Python中，<code>self</code>并不是关键字，将其定义成其他名字都可，但约定俗成（为了和其他编程语言同一，减少理解难度）。其次，<code>self</code>指的是<strong>类实例对象本身，而不是类本身</strong>。因为如果是指向类本身，那么当创建多个类实例时，<code>self</code>就无法判断指向的是哪一个实例。</p>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a><code>self</code></h2><p><code>self</code>名称不是必须的，而且在python中，<code>self</code>并不是关键字，将其定义成其他名字都可，但约定俗成（为了和其他编程语言同一，减少理解难度）。其次，<code>self</code>指的是<strong>类实例对象本身，而不是类本身</strong>。因为如果是指向类本身，那么当创建多个类实例时，<code>self</code>就无法判断指向的是哪一个实例。</p>
 <h2 id="u-U-quot-quot"><a href="#u-U-quot-quot" class="headerlink" title="u/U&quot;&quot;"></a><code>u/U&quot;&quot;</code></h2><p>其表示unicode字符串，可以对字符串进行unicode编码。一般，英文字符在使用各种不同编码的情况下，依旧可以正常解析，所以一般不带<code>u</code>。但中文就必须需要编码，否则在编码转换时就会出现乱码。</p>
+<h2 id="r-39-xxxx-39"><a href="#r-39-xxxx-39" class="headerlink" title="r&#39;xxxx&#39;"></a><code>r&#39;xxxx&#39;</code></h2><p>如果在前面加<code>r</code>字符，则表示让这个字符串里面的内容失去转义的意义，即得到raw string。</p>
 <h2 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate()"></a><code>enumerate()</code></h2><p>用于将一个Iterable（可遍历）的数据对象（如<code>list</code>、<code>tuple</code>或者<code>str</code>）组合成一个索引序列，同时列出数据和数据下标，一般用在<code>for</code>循环中。</p>
 <p>函数原型：</p>
 <pre><code class="python">enumerate(sequence, [start=0])
@@ -665,10 +666,10 @@ if __name__==&#39;__main__&#39;:
 <p>对于整个document的交互操作（包括读写）通常在<code>ElementTree</code> level，而对于单个<code>XML</code>元素的交互则在<code>Element</code> level。</p>
 <h2 id="DOM-vs-SAX"><a href="#DOM-vs-SAX" class="headerlink" title="DOM vs SAX"></a>DOM vs SAX</h2><p>操作<code>XML</code>有两种方法：DOM和SAX。DOM会把整个<code>XML</code>读入内存，解析为树，因此占用内存大，解析慢，优点是可以任意遍历树的节点。SAX是<strong>流模式，边读边解析，占用内存小，解析快</strong>，缺点是需要用户自己处理事件。</p>
 <p>正常情况下，优先考虑SAX，因为DOM实在太占内存。</p>
-<p>Python处理<code>XML</code>的方法主要有三种：</p>
+<p>python处理<code>XML</code>的方法主要有三种：</p>
 <h3 id="1-使用xml-dom-模块"><a href="#1-使用xml-dom-模块" class="headerlink" title="1. 使用xml.dom.*模块"></a>1. 使用<code>xml.dom.*</code>模块</h3><p>它是根据W3C DOM API进行实现，很适合处理DOM API。</p>
 <p>文件对象模型（Document Object Model，简称<code>DOM</code>），是W3C组织推荐的处理可扩展置标语言的标准编程接口。一个<code>DOM</code>的解析器在解析一个<code>XML</code>文档时，<strong>一次性读取整个文档，把文档中所有元素保存在内存中的一个树结构里，之后便可以利用<code>DOM</code>提供的不同的函数，来读取或修改文档的内容和结构，也可以把修改过的内容写入<code>XML</code>文件</strong>。</p>
-<p>Python中用<code>xml.dom.minidom</code>来解析<code>XML</code>文件。主要步骤为：</p>
+<p>python中用<code>xml.dom.minidom</code>来解析<code>XML</code>文件。主要步骤为：</p>
 <ol>
 <li>获得子标签</li>
 <li>区分相同标签名的标签</li>
@@ -704,9 +705,9 @@ for i in range(len(subElementObj1)):
 </code></pre>
 <p>结果为：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-51ab21ce1e4b5433.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="2-使用xml-etree-ElementTree模块"><a href="#2-使用xml-etree-ElementTree模块" class="headerlink" title="2. 使用xml.etree.ElementTree模块"></a>2. 使用<code>xml.etree.ElementTree</code>模块</h3><p><code>ElementTree</code>主要就是用于处理<code>XML</code>，它在<a href="https://docs.python.org/3/library/xml.etree.elementtree.html" target="_blank" rel="noopener">Python</a>中有两种实现：</p>
+<h3 id="2-使用xml-etree-ElementTree模块"><a href="#2-使用xml-etree-ElementTree模块" class="headerlink" title="2. 使用xml.etree.ElementTree模块"></a>2. 使用<code>xml.etree.ElementTree</code>模块</h3><p><code>ElementTree</code>主要就是用于处理<code>XML</code>，它在<a href="https://docs.python.org/3/library/xml.etree.elementtree.html" target="_blank" rel="noopener">python</a>中有两种实现：</p>
 <ul>
-<li>纯Python实现，如<code>xml.etree.ElementTree</code></li>
+<li>纯python实现，如<code>xml.etree.ElementTree</code></li>
 <li>速度更加快一点儿的<code>xml.etree.cElementTree</code></li>
 </ul>
 <p>主要步骤为：</p>
@@ -825,7 +826,7 @@ if __name__ == &quot;__main__&quot;:
     tree = parse.read_xml()
     root = tree.getroot()
     print(root)
-    parse.add_node(root, &quot;Python&quot;, {&quot;age&quot;:18, &quot;hello&quot;:&quot;world&quot;}, &quot;yes&quot;)
+    parse.add_node(root, &quot;python&quot;, {&quot;age&quot;:18, &quot;hello&quot;:&quot;world&quot;}, &quot;yes&quot;)
     parse.write_xml(&quot;C:/Users/Magicmanoooo/Desktop/dest.xml&quot;)
 </code></pre>
 <h2 id="使用xml-sax-模块"><a href="#使用xml-sax-模块" class="headerlink" title="使用xml.sax.*模块"></a>使用<code>xml.sax.*</code>模块</h2><p>SAX是一种基于事件驱动的API，利用SAX解析XML涉及到两个部分</p>
@@ -833,7 +834,7 @@ if __name__ == &quot;__main__&quot;:
 <li><strong>解析器：</strong>主要负责读取XML文档，并向事件处理器发送事件。如，元素开始于元素结束事件</li>
 <li><strong>事件处理器：</strong>负责对事件作出响应，对传递的XML数据进行处理</li>
 </ul>
-<p>Python中使用SAX解析<code>XML</code>非常简洁，通常需要关心的事件是<code>start_element</code>，<code>end_element</code>和<code>char_data</code>。</p>
+<p>python中使用SAX解析<code>XML</code>非常简洁，通常需要关心的事件是<code>start_element</code>，<code>end_element</code>和<code>char_data</code>。</p>
 <h2 id="list-comprehension（列表推导）"><a href="#list-comprehension（列表推导）" class="headerlink" title="list comprehension（列表推导）"></a>list comprehension（列表推导）</h2><p>可以更加简洁地创建list，list comprehension由括号组成，括号中包含一个表达式，后跟一个<code>for</code> clause，然后是零个或多个<code>for</code>或<code>if</code>子句。 结果将返回一个evaluate后面的<code>for</code>和<code>if</code>子句表达式而得到的新list。 例如，如果列表不相等，则此listcomp将两个列表的元素组合在一起：</p>
 <pre><code class="python">original_dict = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}
 reversed_dict = dict(
@@ -852,7 +853,7 @@ print &#39;-&#39;.join( seq );
 <pre><code class="python">enumerate(sequence, [start=0])
 </code></pre>
 <p><code>sequence</code>—— 一个序列、迭代器或其他支持迭代对象<br><code>start</code> ——下标起始位置</p>
-<h2 id="Python中的-与"><a href="#Python中的-与" class="headerlink" title="Python中的*与**"></a>Python中的<code>*</code>与<code>**</code></h2><ul>
+<h2 id="python中的-与"><a href="#python中的-与" class="headerlink" title="python中的*与**"></a>python中的<code>*</code>与<code>**</code></h2><ul>
 <li>多个实参，放到一个元组（<code>tuple</code>）中，以<code>*</code>开头，可以传入多个参数</li>
 <li><code>**</code>是形参中按照关键字传值，吧多余的传值以字典（<code>dict</code>）的形式呈现</li>
 </ul>
@@ -862,7 +863,7 @@ print &#39;-&#39;.join( seq );
     print(x)
     print(args)
 
-foo(1,2,3,4,5)#其中的2,3,4,5都给了args
+foo(1,2,3,4,5) # 其中的2,3,4,5都给了args
 
 # 1
 # (2,3,4,5)
@@ -893,9 +894,9 @@ foo(1,2,3,4,5) # 其中的x为1，2,3,4,5都给了args,y按照默认参数依旧
 # 1
 </code></pre>
 <h3 id="关于-，可以从两个角度来看（需要拆分来看）："><a href="#关于-，可以从两个角度来看（需要拆分来看）：" class="headerlink" title="关于*，可以从两个角度来看（需要拆分来看）："></a>关于<code>*</code>，可以从两个角度来看（需要拆分来看）：</h3><h3 id="1-从形参的角度来看："><a href="#1-从形参的角度来看：" class="headerlink" title="1. 从形参的角度来看："></a>1. 从形参的角度来看：</h3><p>例子：</p>
-<pre><code class="python">def foo(*args):#其实这一操作相当于def foo（a,b,c,d,e):
+<pre><code class="python">def foo(*args): # 其实这一操作相当于def foo（a,b,c,d,e):
     print(args)
-foo(1,2,3,4,5)#其中的1，2,3,4,5都按照位置传值分别传给了a,b,c,d,e
+foo(1,2,3,4,5) # 其中的1，2,3,4,5都按照位置传值分别传给了a,b,c,d,e
 
 # (1, 2, 3, 4, 5)
 </code></pre>
@@ -925,7 +926,6 @@ foo(1,y=1,a=2,b=3,c=4) # 将y=1,a=2,b=3,c=4以字典的方式给了kwargs
     print(args)
     print(kwargs)
 foo(1,2,3,4,y=1,a=2,b=3,c=4) # 将1传给了x，将2,3,4以元组方式传给了args，y=1,a=2,b=3,c=4以字典的方式给了kwargs
-执行结果是：
 
 # 1
 # (2, 3, 4)
@@ -952,7 +952,7 @@ foo(1,a=2,b=3,c=4) # 将1按照位置传值给x，y按照默认参数为1，a=2,
 # {&#39;a&#39;: 2, &#39;b&#39;: 3, &#39;c&#39;: 4}
 </code></pre>
 <h3 id="关于-，可以从两个角度来看（需要拆分来看）：-1"><a href="#关于-，可以从两个角度来看（需要拆分来看）：-1" class="headerlink" title="关于**，可以从两个角度来看（需要拆分来看）："></a>关于<code>**</code>，可以从两个角度来看（需要拆分来看）：</h3><h4 id="1-从形参的角度来看：-1"><a href="#1-从形参的角度来看：-1" class="headerlink" title="1. 从形参的角度来看："></a>1. 从形参的角度来看：</h4><p>例子：</p>
-<pre><code class="python">def foo(**kwargs):#其实就是相当于def foo(y,a,b,c)
+<pre><code class="python">def foo(**kwargs):# 其实就是相当于def foo(y,a,b,c)
     print(kwargs)
 foo(y=1,a=2,b=3,c=4)
 执行结果是：
@@ -986,6 +986,245 @@ foo(**{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4}) # **{&quot;a&quot;:2,&q
 # 4
 # 1
 </code></pre>
+<h1 id="future"><a href="#future" class="headerlink" title="__future__"></a><code>__future__</code></h1><p>python的新版本会引入一些新的功能特性，但一般一部分的新功能可以在旧版本上测试，测试成功再移植到新的版本上，旧版本可以通过导入<code>__future__</code>模块的某些功能，测试新版本的新功能。</p>
+<p>例如，在python 2.x版本中，整数的除法运算，结果是整数，余数被忽略，<code>10/3</code>的结果为<code>3</code>。新版本python 3.x中，改动的功能除法运算中除法符号为<code>//</code>，结果是整数；符号为<code>/</code>，结果为浮点数。导入新版本的除法运算新功能，通过<code>__future__</code>的<code>division</code>实现。</p>
+<p>在开头加上<code>from __future__ import print_function</code>这句之后，即使在python 2.x，使用<code>print</code>就得像python 3.x那样加括号使用。python 2.x中<code>print</code>不需要括号，而在python 3.x中则需要。</p>
+<h1 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a><code>gzip</code></h1><p><code>gzip</code>块主要支持打开对应格式的压缩文件，并可以完成对压缩文件的读出和写入操作。压缩文件被打开后，可以使用文件对象一样的方法，如<code>read</code>、<code>readline</code>、<code>readlines</code>、<code>write</code>、<code>writelines</code>等。</p>
+<p><strong>例子：使用<code>gzip</code>模块完成对文件的压缩</strong></p>
+<pre><code class="python">f_in = open(&quot;data.txt&quot;, &quot;rb&quot;) # 打开文件
+f_out = gzip.open(&quot;data.txt.gz&quot;, &quot;wb&quot;) # 创建压缩文件对象
+f_out.writelines(f_in)
+f_out.close()
+f_in.close()
+</code></pre>
+<p><strong>例子：使用<code>gzip</code>模块完成对文件的解压</strong></p>
+<pre><code class="python">f = gzip.open(&quot;data.txt.gz&quot;, &#39;rb&#39;) # 打开压缩文件对象
+f_out=open(&quot;data.txt&quot;,&quot;w&quot;) # 打开解压后内容保存的文件
+file_content = f.read() # 读取解压后文件内容
+f_out.write(file_content.decode(&quot;utf-8&quot;)) # 写入新文件当中
+print(file_content) # 打印读取内容
+f.close() # 关闭文件流
+f_out.close()
+</code></pre>
+<h1 id="six"><a href="#six" class="headerlink" title="six"></a><code>six</code></h1><p><code>six</code>提供了简单的实用程序包来封装python 2和python 3之间的差异。它旨在支持无需修改，即可在python 2和python 3上工作的代码库。 <code>six</code>只包含一个python文件，因此无需复制到一个项目中。</p>
+<h1 id="urllib模块"><a href="#urllib模块" class="headerlink" title="urllib模块"></a><code>urllib</code>模块</h1><h2 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1. 基本用法"></a>1. 基本用法</h2><h3 id="urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None"><a href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None" class="headerlink" title="urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)"></a><code>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</code></h3><ul>
+<li><code>url</code>：需要打开的网址</li>
+<li><code>data</code>：<code>Post</code>提交的数据</li>
+<li><code>timeout</code>：设置网站的访问超时时间</li>
+</ul>
+<p>直接用<code>urlopen()</code>获取页面，获得的页面数据格式为<code>bytes</code>类型，需要经过<code>decode()</code>解码，转换成<code>str</code>类型。</p>
+<p>利用<code>urlopen()</code>返回的对象，可以使用以下方法对其进行操作：</p>
+<ul>
+<li><code>read()</code>，·<code>readline()</code>，<code>readlines()</code>，<code>fileno()</code>，<code>close()</code>：对<code>HTTPResponse</code>类型数据进行操作</li>
+<li><code>info()</code>：返回<code>HTTPMessage</code>对象，表示远程服务器返回的头信息</li>
+<li><code>getcode()</code>：返回<code>http</code>状态码。如果是<code>http</code>请求，<code>200</code>请求成功完成；<code>404</code>网址未找到</li>
+<li><code>geturl()</code>：返回请求的<code>url</code></li>
+</ul>
+<h2 id="2-使用Request"><a href="#2-使用Request" class="headerlink" title="2. 使用Request"></a>2. 使用<code>Request</code></h2><h3 id="urllib-request-Request-url-data-None-headers-method-None"><a href="#urllib-request-Request-url-data-None-headers-method-None" class="headerlink" title="urllib.request.Request(url, data=None, headers={}, method=None)"></a><code>urllib.request.Request(url, data=None, headers={}, method=None)</code></h3><p>使用<code>request()</code>来包装请求，再通过<code>urlopen()</code>获取页面。</p>
+<p>例子：</p>
+<pre><code class="python">url = r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;
+headers = {
+    &#39;User-Agent&#39;: r&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                  r&#39;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#39;,
+    &#39;Referer&#39;: r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;,
+    &#39;Connection&#39;: &#39;keep-alive&#39;
+}
+req = request.Request(url, headers=headers)
+page = request.urlopen(req).read()
+page = page.decode(&#39;utf-8&#39;)
+</code></pre>
+<p>用来包装头部的数据：</p>
+<ul>
+<li><code>User-Agent</code>：这个头部可以携带如下几条信息：浏览器名和版本号、操作系统名和版本号、默认语言</li>
+<li><code>Referer</code>：可以用来防止盗链，有一些网站图片显示来源<code>http://***.com，</code>就是检查<code>Referer</code>来鉴定的</li>
+<li><code>Connection</code>：表示连接状态，记录<code>Session</code>的状态</li>
+</ul>
+<h2 id="3-Post数据"><a href="#3-Post数据" class="headerlink" title="3. Post数据"></a>3. <code>Post</code>数据</h2><h3 id="urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None-1"><a href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None-1" class="headerlink" title="urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)"></a><code>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</code></h3><p><code>urlopen()</code>的<code>data</code>参数默认为<code>None</code>，当<code>data</code>参数不为空的时候，<code>urlopen()</code>提交方式为<code>Post</code>。</p>
+<p>例子：</p>
+<pre><code class="python">from urllib import request, parse
+url = r&#39;http://www.lagou.com/jobs/positionAjax.json?&#39;
+headers = {
+    &#39;User-Agent&#39;: r&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                  r&#39;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#39;,
+    &#39;Referer&#39;: r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;,
+    &#39;Connection&#39;: &#39;keep-alive&#39;
+}
+data = {
+    &#39;first&#39;: &#39;true&#39;,
+    &#39;pn&#39;: 1,
+    &#39;kd&#39;: &#39;Python&#39;
+}
+data = parse.urlencode(data).encode(&#39;utf-8&#39;)
+req = request.Request(url, headers=headers, data=data)
+page = request.urlopen(req).read() # 也可以把data的数据封装在urlopen()参数中
+page = page.decode(&#39;utf-8&#39;)
+</code></pre>
+<h3 id="urllib-parse-urlencode-query-doseq-False-safe-39-39-encoding-None-errors-None"><a href="#urllib-parse-urlencode-query-doseq-False-safe-39-39-encoding-None-errors-None" class="headerlink" title="urllib.parse.urlencode(query, doseq=False, safe=&#39;&#39;, encoding=None, errors=None)"></a><code>urllib.parse.urlencode(query, doseq=False, safe=&#39;&#39;, encoding=None, errors=None)</code></h3><p><code>urlencode()</code>主要作用就是将<code>url</code>附上要提交的数据。</p>
+<p>上述的例子中，经过经过<code>urlencode()</code>转换后的<code>data</code>数据为<code>?first=true?pn=1?kd=Python</code>，最后提交的<code>url</code>为：<br><code>http://www.lagou.com/jobs/positionAjax.json?first=true?pn=1?kd=Python</code>。</p>
+<p><code>Post</code>的数据必须是<code>bytes</code>或者<code>iterable of bytes</code>，不能是<code>str</code>，因此需要进行<code>encode()</code>编码。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>例子：</p>
+<pre><code class="python">def get_page(url):
+    headers = {
+        &#39;User-Agent&#39;: r&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                    r&#39;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#39;,
+        &#39;Referer&#39;: r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;,
+        &#39;Connection&#39;: &#39;keep-alive&#39;
+    }
+    data = {
+        &#39;first&#39;: &#39;true&#39;,
+        &#39;pn&#39;: 1,
+        &#39;kd&#39;: &#39;Python&#39;
+    }
+    data = parse.urlencode(data).encode(&#39;utf-8&#39;)
+    req = request.Request(url, headers=headers)
+    try:
+        page = request.urlopen(req, data=data).read()
+        page = page.decode(&#39;utf-8&#39;)
+    except error.HTTPError as e:
+        print(e.code())
+        print(e.read().decode(&#39;utf-8&#39;))
+    return page
+</code></pre>
+<h2 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h2><h3 id="urllib-request-ProxyHandler-proxies-None"><a href="#urllib-request-ProxyHandler-proxies-None" class="headerlink" title="urllib.request.ProxyHandler(proxies=None)"></a><code>urllib.request.ProxyHandler(proxies=None)</code></h3><p>当需要抓取的网站设置了访问限制，这时就需要用到代理来抓取数据。</p>
+<p>例子：</p>
+<pre><code class="python">data = {
+        &#39;first&#39;: &#39;true&#39;,
+        &#39;pn&#39;: 1,
+        &#39;kd&#39;: &#39;Python&#39;
+    }
+proxy = request.ProxyHandler({&#39;http&#39;: &#39;5.22.195.215:80&#39;})  # 设置proxy
+opener = request.build_opener(proxy)  # 挂载opener
+request.install_opener(opener)  # 安装opener
+data = parse.urlencode(data).encode(&#39;utf-8&#39;)
+page = opener.open(url, data).read()
+page = page.decode(&#39;utf-8&#39;)
+return page
+</code></pre>
+<h1 id="zip"><a href="#zip" class="headerlink" title="zip()"></a><code>zip()</code></h1><p>函数原型：</p>
+<pre><code class="python">zip([iterable, ...])
+</code></pre>
+<p>用于<strong>将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表</strong>。</p>
+<p>如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用<code>*</code>号操作符，可以将元组解压为列表。</p>
+<p>例子：</p>
+<pre><code class="python">a = [1, 2, 3]
+b = [4, 5, 6]
+zipped = zip(a, b)
+print(*zipped)
+
+# [(1, 4) (2, 5) (3, 6)]
+</code></pre>
+<h1 id="namedtuple"><a href="#namedtuple" class="headerlink" title="namedtuple"></a><code>namedtuple</code></h1><p>因为元组具有局限性：不能为元组内部的数据进行命名，所以往往并不知道一个元组所要表达的意义，所以引入了<code>collections.namedtuple</code>这个工厂函数，来<strong>构造一个带字段名的元组</strong>。<code>namedtuple</code>的实例和普通元组消耗的内存一样多，因为字段名都被存在对应的类里面。这个类跟普通的对象实例比起来也要小一些，因为python不会用<code>__dict__</code>来存放这些实例的属性。除了能够用索引来访问数据，能够迭代，还能够方便的通过属性名来访问数据。</p>
+<p><code>namedtuple</code>对象的定义格式：</p>
+<pre><code class="python">collections.namedtuple(typename, field_names, verbose=False, rename=False) 
+</code></pre>
+<p>返回一个<code>namedtuple</code>子类<code>typename</code>。其中：</p>
+<ul>
+<li><code>typename</code>：元组名称</li>
+<li><code>field_names</code>：元组中元素的名称，是一组<code>strings</code>。它是有多个字符串组成的可迭代对象，或者是有空格分隔开的字段名组成的字符串</li>
+<li><code>rename</code>: 如果元素名称中含有python的关键字，则必须设置为 <code>rename=True</code></li>
+</ul>
+<h3 id="fields类属性"><a href="#fields类属性" class="headerlink" title="_fields类属性"></a><code>_fields</code>类属性</h3><p>包含这个类所有字段名的元组 </p>
+<h3 id="make-iterable-类方法"><a href="#make-iterable-类方法" class="headerlink" title="_make(iterable)类方法"></a><code>_make(iterable)</code>类方法</h3><p>接受一个可迭代对象来生产这个类的实例 </p>
+<h3 id="asdict-实例方法"><a href="#asdict-实例方法" class="headerlink" title="_asdict()实例方法"></a><code>_asdict()</code>实例方法</h3><p>把<code>namedtuple</code>以<code>collections.OrdereDict</code>的形式返回，可以利用它来把元组里的信息友好的展示出来。</p>
+<p>例子：</p>
+<pre><code class="python">User = namedtuple(&#39;User&#39;, [&#39;name&#39;, &#39;sex&#39;, &#39;age&#39;])
+
+# 创建一个User对象
+user = User(name=&#39;Runoob&#39;, sex=&#39;male&#39;, age=12)
+
+# 获取所有字段名
+print( user._fields )
+
+# 也可以通过一个list来创建一个User对象，这里注意需要使用&quot;_make&quot;方法
+user = User._make([&#39;Runoob&#39;, &#39;male&#39;, 12])
+
+print( user )
+# User(name=&#39;user1&#39;, sex=&#39;male&#39;, age=12)
+
+# 获取用户的属性
+print( user.name )
+print( user.sex )
+print( user.age )
+
+# 修改对象属性，注意要使用&quot;_replace&quot;方法
+user = user._replace(age=22)
+print( user )
+# User(name=&#39;user1&#39;, sex=&#39;male&#39;, age=21)
+
+# 将User对象转换成字典，注意要使用&quot;_asdict&quot;
+print( user._asdict() )
+# OrderedDict([(&#39;name&#39;, &#39;Runoob&#39;), (&#39;sex&#39;, &#39;male&#39;), (&#39;age&#39;, 22)])
+</code></pre>
+<h1 id="os-path"><a href="#os-path" class="headerlink" title="os.path"></a><code>os.path</code></h1><h2 id="os-path-abspath-path"><a href="#os-path-abspath-path" class="headerlink" title="os.path.abspath(path)"></a><code>os.path.abspath(path)</code></h2><pre><code class="python">import os  
+path1=os.path.abspath(&#39;.&#39;)   #表示当前所处的文件夹的绝对路径  
+path2=os.path.abspath(&#39;..&#39;)  #表示当前所处的文件夹上一级文件夹的绝对路径  
+</code></pre>
+<p>可以获得当前文件夹的绝对路径。</p>
+<h2 id="os-path-exists-path"><a href="#os-path-exists-path" class="headerlink" title="os.path.exists(path)"></a><code>os.path.exists(path)</code></h2><p>如果路径<code>path</code>存在，返回<code>True</code>；反之则返回<code>False</code>。</p>
+<h2 id="os-path-split-path"><a href="#os-path-split-path" class="headerlink" title="os.path.split(path)"></a><code>os.path.split(path)</code></h2><p>将<code>path</code>分割成目录和文件名二元组返回。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.split(&#39;c:/csv/test.csv&#39;) 
+# (&#39;c:/csv&#39;, &#39;test.csv&#39;) 
+
+&gt;&gt;&gt; os.path.split(&#39;c:/csv/&#39;) 
+# (&#39;c:/csv&#39;, &#39;&#39;) 
+</code></pre>
+<h2 id="os-path-dirname-path"><a href="#os-path-dirname-path" class="headerlink" title="os.path.dirname(path)"></a><code>os.path.dirname(path)</code></h2><p>返回<code>path</code>的目录（即<code>os.path.split(path)</code>的第一个元素）。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.dirname(&#39;c:/csv/test.csv&#39;) 
+# &#39;c:/&#39; 
+
+&gt;&gt;&gt; os.path.dirname(&#39;c:/csv&#39;) 
+# &#39;c:/&#39; 
+</code></pre>
+<h2 id="os-path-basename-path"><a href="#os-path-basename-path" class="headerlink" title="os.path.basename(path)"></a><code>os.path.basename(path)</code></h2><p>返回<code>path</code>最后的文件名。（即<code>os.path.split(path)</code>的第二个元素，如果<code>path</code>以<code>／</code>或<code>\\</code>结尾，那么就会返回空值）。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.basename(&#39;c:/test.csv&#39;) 
+# &#39;test.csv&#39; 
+
+&gt;&gt;&gt; os.path.basename(&#39;c:/csv&#39;) 
+# &#39;csv&#39; （这里csv被当作文件名处理了） 
+
+&gt;&gt;&gt; os.path.basename(&#39;c:\\csv\\&#39;) 
+# &#39;&#39; 
+</code></pre>
+<h2 id="os-path-commonprefix-list"><a href="#os-path-commonprefix-list" class="headerlink" title="os.path.commonprefix(list)"></a><code>os.path.commonprefix(list)</code></h2><p>返回<code>list</code>中，所有<code>path</code>共有的最长的路径。 </p>
+<pre><code class="python">&gt;&gt;&gt;os.path.commonprefix([&#39;/home/td&#39;,&#39;/home/td/ff&#39;,&#39;/home/td/fff&#39;]) 
+
+# &#39;/home/td&#39; 
+</code></pre>
+<h1 id="os-path-isabs-path"><a href="#os-path-isabs-path" class="headerlink" title="os.path.isabs(path)"></a><code>os.path.isabs(path)</code></h1><p>如果<code>path</code>是绝对路径，则返回<code>True</code>。 </p>
+<h1 id="os-path-isfile-path"><a href="#os-path-isfile-path" class="headerlink" title="os.path.isfile(path)"></a><code>os.path.isfile(path)</code></h1><p>如果<code>path</code>是一个存在的文件，返回<code>True</code>；否则返回<code>False</code>。</p>
+<h1 id="os-path-isdir-path"><a href="#os-path-isdir-path" class="headerlink" title="os.path.isdir(path)"></a><code>os.path.isdir(path)</code></h1><p>如果<code>path</code>是一个存在的目录，则返回<code>True</code>；否则返回<code>False</code>。</p>
+<h1 id="os-path-join-path1-path2"><a href="#os-path-join-path1-path2" class="headerlink" title="os.path.join(path1[, path2[, ...]])"></a><code>os.path.join(path1[, path2[, ...]])</code></h1><p>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.join(&#39;c:\\&#39;, &#39;csv&#39;, &#39;test.csv&#39;) 
+# &#39;c:\\csv\\test.csv&#39; 
+
+&gt;&gt;&gt; os.path.join(&#39;windows\temp&#39;, &#39;c:\\&#39;, &#39;csv&#39;, &#39;test.csv&#39;) 
+# &#39;c:\\csv\\test.csv&#39; 
+
+&gt;&gt;&gt; os.path.join(&#39;/home/aa&#39;,&#39;/home/aa/bb&#39;,&#39;/home/aa/bb/c&#39;) 
+# &#39;/home/aa/bb/c&#39; 
+</code></pre>
+<h2 id="os-path-normcase-path"><a href="#os-path-normcase-path" class="headerlink" title="os.path.normcase(path)"></a><code>os.path.normcase(path)</code></h2><p>在<code>Linux</code>和<code>Mac</code>平台上，该函数会原样返回<code>path</code>；在<code>windows</code>平台上会将路径中所有字符转换为小写，并将所有斜杠转换为反斜杠。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.normcase(&#39;c:/windows\\system32\\&#39;) 
+# &#39;c:\\windows\\system32\\&#39; 
+</code></pre>
+<h2 id="os-path-normpath-path"><a href="#os-path-normpath-path" class="headerlink" title="os.path.normpath(path)"></a><code>os.path.normpath(path)</code></h2><p>规范化路径。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.normpath(&#39;c://windows\\System32\\../Temp/&#39;) 
+# &#39;c:\\windows\\Temp&#39; 
+</code></pre>
+<h2 id="os-path-splitdrive-path"><a href="#os-path-splitdrive-path" class="headerlink" title="os.path.splitdrive(path)"></a><code>os.path.splitdrive(path)</code></h2><p>返回<code>(drivername，fpath)</code>元组 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.splitdrive(&#39;c:\\windows&#39;) 
+# (&#39;c:&#39;, &#39;\\windows&#39;) 
+</code></pre>
+<h2 id="os-path-splitext-path"><a href="#os-path-splitext-path" class="headerlink" title="os.path.splitext(path)"></a><code>os.path.splitext(path)</code></h2><p>分离文件名与扩展名；默认返回<code>(fname,fextension)</code>元组，可做分片操作 。</p>
+<pre><code class="python">&gt;&gt;&gt; os.path.splitext(&#39;c:\\csv\\test.csv&#39;) 
+# (&#39;c:\\csv\\test&#39;, &#39;.csv&#39;) 
+</code></pre>
+<h2 id="os-path-getsize-path"><a href="#os-path-getsize-path" class="headerlink" title="os.path.getsize(path)"></a><code>os.path.getsize(path)</code></h2><p>返回<code>path</code>的文件的大小（字节）。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.getsize(&#39;c:\\boot.ini&#39;) 
+# 299L 
+</code></pre>
+<h2 id="os-path-getatime-path"><a href="#os-path-getatime-path" class="headerlink" title="os.path.getatime(path)"></a><code>os.path.getatime(path)</code></h2><p>返回<code>path</code>所指向的文件或者目录的最后存取时间。 </p>
+<h2 id="os-path-getmtime-path"><a href="#os-path-getmtime-path" class="headerlink" title="os.path.getmtime(path)"></a><code>os.path.getmtime(path)</code></h2><p>返回<code>path</code>所指向的文件或者目录的最后修改时间。</p>
 
         
     
@@ -1112,7 +1351,7 @@ foo(**{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4}) # **{&quot;a&quot;:2,&q
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1144,7 +1383,7 @@ foo(**{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4}) # **{&quot;a&quot;:2,&q
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">20</span>
+                <span class="sidebar-badge">21</span>
             </a>
         </li>
         

@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            TensorFlow的使用 | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",ML">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="TensorFlow的使用 | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="ML"> 
+
+    
+        <meta property="article:published_time" content="Tue Dec 11 2018 19:06:59 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 18 2018 17:57:15 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="TensorFlow的使用 | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/12/11/TensorFlow的使用/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/12/11/TensorFlow的使用/index.html",
+    "headline": "TensorFlow的使用",
+    "datePublished": "Tue Dec 11 2018 19:06:59 GMT+0800",
+    "dateModified": "Tue Dec 18 2018 17:57:15 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",ML",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-Session-run"><span class="post-toc-number">1.</span> <span class="post-toc-text">tf.Session().run()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-truncated-normal-shape-mean-stddev"><span class="post-toc-number">2.</span> <span class="post-toc-text">tf.truncated_normal(shape, mean, stddev)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-name-scope-amp-tf-variable-scope"><span class="post-toc-number">3.</span> <span class="post-toc-text">tf.name_scope() &amp; tf.variable_scope()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-tf-name-scope对tf-get-variable-的影响"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. tf.name_scope对tf.get_variable()的影响</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-dropout"><span class="post-toc-number">4.</span> <span class="post-toc-text">tf.nn.dropout()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-conv2d"><span class="post-toc-number">5.</span> <span class="post-toc-text">tf.nn.conv2d</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-separable-conv2d"><span class="post-toc-number">6.</span> <span class="post-toc-text">tf.nn.separable_conv2d</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常规卷积操作"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">常规卷积操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Depthwise-Convolution"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Depthwise Convolution</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pointwise-Convolution"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">Pointwise Convolution</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-avg-pool"><span class="post-toc-number">7.</span> <span class="post-toc-text">tf.nn.avg_pool</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-initialize-all-variables-vs-tf-initialize-variables"><span class="post-toc-number">8.</span> <span class="post-toc-text">tf.initialize_all_variables() vs tf.initialize_variables</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-变量初始化"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">1. 变量初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-识别未被初始化的变量"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">2. 识别未被初始化的变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-变量的更新"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">3. 变量的更新</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tensorflow-tf-python-io"><span class="post-toc-number">9.</span> <span class="post-toc-text">tensorflow tf.python_io</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源码解析"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">源码解析</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据读取的三种方式"><span class="post-toc-number">10.</span> <span class="post-toc-text">数据读取的三种方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Preload-data-constant-预加载数据"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">1. Preload data: constant 预加载数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Feeding-placeholder，feed-dict"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">2. Feeding: placeholder，feed_dict</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Reading-From-File：直接从文件中读取"><span class="post-toc-number">10.3.</span> <span class="post-toc-text">3. Reading From File：直接从文件中读取</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四种类型数据的读取流程"><span class="post-toc-number">11.</span> <span class="post-toc-text">四种类型数据的读取流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-文件队列构造"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">1. 文件队列构造</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-文件阅读器"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">2. 文件阅读器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-文件内容解码器"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">3. 文件内容解码器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（1）CSV文件"><span class="post-toc-number">11.3.1.</span> <span class="post-toc-text">（1）CSV文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（2）二进制文件"><span class="post-toc-number">11.3.2.</span> <span class="post-toc-text">（2）二进制文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（3）图像文件"><span class="post-toc-number">11.3.3.</span> <span class="post-toc-text">（3）图像文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（4）TFRecords文件"><span class="post-toc-number">11.3.4.</span> <span class="post-toc-text">（4）TFRecords文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-批处理数据"><span class="post-toc-number">11.4.</span> <span class="post-toc-text">4. 批处理数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TFRecords文件的存储与读取"><span class="post-toc-number">12.</span> <span class="post-toc-text">TFRecords文件的存储与读取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-TFRecords存储"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">一. TFRecords存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-建立TFRecord存储器"><span class="post-toc-number">12.1.1.</span> <span class="post-toc-text">1. 建立TFRecord存储器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-构造每个样本的Example协议块"><span class="post-toc-number">12.1.2.</span> <span class="post-toc-text">2. 构造每个样本的Example协议块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（1）-tf-train-Example-features-None"><span class="post-toc-number">12.1.2.1.</span> <span class="post-toc-text">（1） tf.train.Example(features = None)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（2）-tf-train-Features-feature-None"><span class="post-toc-number">12.1.2.2.</span> <span class="post-toc-text">（2） tf.train.Features(feature = None)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（3）-tf-train-Feature-options"><span class="post-toc-number">12.1.2.3.</span> <span class="post-toc-text">（3） tf.train.Feature(**options)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-TFRecords读取方法"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">二. TFRecords读取方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解析TFRecords的Example协议内存块："><span class="post-toc-number">12.2.1.</span> <span class="post-toc-text">解析TFRecords的Example协议内存块：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-tf-parse-single-example-serialized-features-None-name-None"><span class="post-toc-number">12.2.1.1.</span> <span class="post-toc-text">1. tf.parse_single_example(serialized,features=None,name= None</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-tf-FixedLenFeature-shape-dtype"><span class="post-toc-number">12.2.1.2.</span> <span class="post-toc-text">2. tf.FixedLenFeature(shape,dtype)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#timeline模块"><span class="post-toc-number">13.</span> <span class="post-toc-text">timeline模块</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                TensorFlow的使用
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>12月 11, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACV0lEQVR42u3aQXLDIAwFUN//0u0BWif6ksFO5rHKZLDheYE0QsfPV48DDw8PDw8PDw/vYbyjPNKn/s4/+z1Z5Z+n8PDw8Lbw3hy14ZzKJv7OnK+Lh4eHt593tqHK79LCLzG9EIKHh4f3KbzXSXP6Ic7ejIeHh/d9vKtS7XoJAw8PD+9pvF6aW0+g69Tbai14eHh4ZV79yN7/e+v9Hh4eHl6BF7c0lT9BKf0tHP2jpis8PDy8Bbw0za0n3L3U+YL94OHh4S3m9Yqw84uuyVpBGRcPDw9vAS89yuvtp+nMXgk4iHt4eHh4l/LSwzq9Bqu84bIPh4eHh7eYVzmO68vXkZM9vEnN8fDw8Dby0sDQK1X0SrpBwQIPDw9vMW9+fZWWGOYtCEFgwMPDw9vC67VJpaFiXiYedUbg4eHhLeClyXSvBFwJUWl4wMPDw1vNS4NEmhb3mq7SPeDh4eHt56Ww3v+TMNBsusLDw8NbwEuv6nulit7VWpqU4+Hh4d3Lmx/i9eJFumJ8AYaHh4e3gFfZVuWgrxcUKu9JC754eHh49/LqBda0eJG2HcQXb3h4eHgbeSmp94Zrk3U8PDy8e3nXFh3SOWk7wun/eHh4eIt56Zgk071nL+iMwMPDw7uUd5THpH1qEnjw8PDwnslLG6R6y49KDOX5eHh4eDt59QN6XmJIr9aC9B0PDw/vkbxKCEmLF2nYwMPDw/tEXpoE11uv0jYFPDw8vLt46XGflm4rhYl6Eo+Hh4d3L69XAphcbr1un5oECTw8PLzVvO8beHh4eHh4eHh4Dxi/L+q5NakVqEAAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/ML/">ML</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=TensorFlow的使用&url=http://yoursite.com/2018/12/11/TensorFlow的使用/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=TensorFlow的使用&url=http://yoursite.com/2018/12/11/TensorFlow的使用/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/12/11/TensorFlow的使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/12/11/TensorFlow的使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=TensorFlow的使用&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/12/11/TensorFlow的使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="tf-Session-run"><a href="#tf-Session-run" class="headerlink" title="tf.Session().run()"></a><code>tf.Session().run()</code></h1><pre><code class="python">run(fetches, feed_dict=None, options=None, run_metadata=None)
+</code></pre>
+<p><code>Session</code>实例中的方法对<code>fetches</code>中的张量进行评估和计算。</p>
+<p>该方法进行Tensorflow计算的第一个步骤，是将<code>feed_dict</code>中的值替换为相应的输入值，通过运行必要的图形片段（necessary graph fragment）来执行每一个<code>Operation</code>，并计算<code>fetches</code>中的每一个张量。</p>
+<ul>
+<li><code>fetches</code>：可以是单个图元素（single graph element），也可以是任意嵌套的<code>list</code>，<code>tuple</code>，<code>namedtuple</code>，<code>dict</code>或包含图元素的<code>OrderedDict</code>。</li>
+<li><code>feed_dict</code>：允许调用者覆盖图中张量的值，其中的每个<code>key</code>可以为：<ul>
+<li><code>tf.Tensor</code>：则值<code>value</code>可能是python中的<code>scalar</code>、<code>string</code>、<code>list</code>、<code>numpy ndarray</code>，可以将其转化为<code>dtype</code>相同的张量</li>
+<li><code>tf.placeholder</code>：则将检查值的形状是否与占位符兼容</li>
+<li><code>tf.SparseTensor</code></li>
+<li><code>tf.SparseTensorValue</code></li>
+</ul>
+</li>
+<li><code>options</code>：需要一个<code>RunOptions</code>原型，允许控制该特定步骤的行为（例如，打开跟踪）。</li>
+<li><code>run_metadata</code>参数需要一个<code>RunMetadata</code>原型。 适当时，将在那里收集此步骤的非Tensor输出。 例如，当用户在<code>options</code>中打开跟踪时，配置信息将被收集到此参数中并传回。</li>
+</ul>
+<h1 id="tf-truncated-normal-shape-mean-stddev"><a href="#tf-truncated-normal-shape-mean-stddev" class="headerlink" title="tf.truncated_normal(shape, mean, stddev)"></a><code>tf.truncated_normal(shape, mean, stddev)</code></h1><ul>
+<li><code>shape</code>：生成张量的维度</li>
+<li><code>mean</code>：均值</li>
+<li><code>stddev</code>：标准差</li>
+</ul>
+<p>这个函数产生正态分布，均值和标准差自己设定。这是一个截断的产生正太分布的函数，就是说产生正太分布的值如果与均值的差值大于两倍的标准差，那就重新生成。和一般的正太分布的产生随机数据比起来，这个函数产生的随机数与均值的差距不会超过两倍的标准差，但是一般的别的函数是可能的。</p>
+<h1 id="tf-name-scope-amp-tf-variable-scope"><a href="#tf-name-scope-amp-tf-variable-scope" class="headerlink" title="tf.name_scope() &amp; tf.variable_scope()"></a><code>tf.name_scope() &amp; tf.variable_scope()</code></h1><p>它们主要针对<code>name</code>进行范围定义。典型的TensorFlow可以有数以千计的节点，在构建各<code>op</code>的过程中，命名要做到不重复，在编写程序时就要特别注意。<code>name_scope</code>和<code>variable_scope</code>是从<code>name</code>上保证变量命名的唯一性。有了<code>scope</code>的存在，其中描述的变量和常量就会在机器当中自动给添加前缀描述，作为对各个变量、常量的区分。在这里的编程和以前使用C、C++不同之处就是，C/C++当中的变量名实际相当于这里的<code>XXX.name()</code>而不是<code>XXX</code>。</p>
+<h2 id="1-tf-name-scope对tf-get-variable-的影响"><a href="#1-tf-name-scope对tf-get-variable-的影响" class="headerlink" title="1. tf.name_scope对tf.get_variable()的影响"></a>1. <code>tf.name_scope</code>对<code>tf.get_variable()</code>的影响</h2><p>例子：</p>
+<pre><code class="python">with tf.name_scope(&quot;a_name_scope&quot;) as myscope:
+    initializer = tf.constant_initializer(value=1)
+    var1 = tf.get_variable(name=&#39;var1&#39;, shape=[1], dtype=tf.float32, initializer=initializer)
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    print(var1.name)        # var1:0
+    print(sess.run(var1))     # [ 1.]
+
+# var1:0
+# [ 1.]
+</code></pre>
+<h1 id="tf-nn-dropout"><a href="#tf-nn-dropout" class="headerlink" title="tf.nn.dropout()"></a><code>tf.nn.dropout()</code></h1><p>Dropout就是在不同的训练过程中随机扔掉一部分神经元。也就是让某个神经元的激活值以一定的概率<code>p</code>，让其停止工作，即此次训练过程中不更新权值，也不参加神经网络的计算。但是它的权重得保留下来（只是暂时不更新而已），因为下次样本输入时它可能又得工作。</p>
+<pre><code class="python">def dropout(x, keep_prob, noise_shape=None, seed=None, name=None)
+</code></pre>
+<ul>
+<li><code>x</code>：需要的训练、测试数据等</li>
+<li><code>keep_prob</code>：dropout概率</li>
+</ul>
+<p>输出是：<code>A Tensor of the same shape of x</code>。</p>
+<blockquote>
+<p>一个神经元将以概率<code>keep_prob</code>决定是否被抑制。如果被抑制，该神经元的输出就为<code>0</code>；如果不被抑制，那么该神经元的输出值将被放大到原来的<code>1/keep_prob</code> 倍。个人觉得是随机抑制。</p>
+</blockquote>
+<p>除非是大型网络，才采用dropout，不然在一些小型网络上，训练结果不是很好</p>
+<h1 id="tf-nn-conv2d"><a href="#tf-nn-conv2d" class="headerlink" title="tf.nn.conv2d"></a><code>tf.nn.conv2d</code></h1><pre><code class="python">tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=None, name=None)
+</code></pre>
+<ul>
+<li><code>input</code>：指需要做卷积的输入图像，它要求是一个<code>Tensor</code>，具有<code>[batch, in_height, in_width, in_channels]</code>这样的<code>shape</code>，具体含义是<code>[训练时一个</code>batch<code>的图片数量, 图片高度, 图片宽度, 图像通道数]</code>。注意：它是一个<code>4</code>维的<code>Tensor</code>，要求类型为<code>float32</code>和<code>float64</code>其中之一。</li>
+<li><code>filter</code>：相当于CNN中的卷积核，它要求是一个<code>Tensor</code>，具有<code>[filter_height, filter_width, in_channels, out_channels]</code>这样的<code>shape</code>，具体含义是<code>[卷积核的高度，卷积核的宽度，图像通道数，卷积核个数]</code>，要求类型与参数<code>input</code>相同。注意：第三维<code>in_channels</code>，就是参数<code>input的</code>第四维。</li>
+<li><code>strides</code>：卷积时在图像每一维的步长，这是一个长度为<code>4</code>的一维张量。每一维度对应的是<code>input</code>中每一维的对应移动步数。</li>
+<li><code>padding</code>：<code>string</code>类型，只能是<code>SAME</code>或`VALID”。这个值决定了不同的卷积方式。<ul>
+<li>例如，当用<code>5x5</code> 的卷积核对<code>28x28</code>的图像进行卷积，采用<code>padding=VALID</code>模式，步长为<code>5</code>，那么最后每个方向会余下<code>3</code>个像素，而<code>VALID</code>模式中会直接舍弃，这样每个方向上的<code>5</code>个元素会变成一个元素，所以最终卷积后的图像大小变成了<code>5x5</code>。</li>
+<li>当采用<code>padding=SAME</code>模式时，当每个方向差偶数个元素时首尾各补一半，差奇数个时前边补奇数个，后边补偶数个。当然具体差多少元素和选定的卷积核大小以及滑动步长密切相关。</li>
+</ul>
+</li>
+<li><code>use_cudnn_on_gpu</code>：<code>bool</code>类型，是否使用<code>cudnn</code>加速，默认为<code>true</code>。</li>
+<li><code>name</code>：用以指定该操作的<code>name</code>。</li>
+</ul>
+<p>结果：返回一个<code>Tensor</code>，这个输出就是常说的<code>feature map</code>，<code>shape</code>仍然是<code>[batch, height, width, channels]</code>这种形式。</p>
+<h1 id="tf-nn-separable-conv2d"><a href="#tf-nn-separable-conv2d" class="headerlink" title="tf.nn.separable_conv2d"></a><code>tf.nn.separable_conv2d</code></h1><pre><code class="python">tf.nn.separable_conv2d (input, depthwise_filter, pointwise_filter, strides, padding, rate=None,
+name=None, data_format=None)
+</code></pre>
+<ul>
+<li><code>input</code>： 指需要做卷积的输入图像，要求是一个4维<code>Tensor</code>，具有<code>[batch, height, width, in_channels]</code>这样的<code>shape</code>，具体含义是<code>[训练时一个batch的图片数量, 图片高度, 图片宽度, 图像通道数]</code></li>
+<li><code>filter</code>：相当于CNN中的卷积核，要求是一个<code>4</code>维<code>Tensor</code>，具有<code>[filter_height, filter_width, in_channels, channel_multiplier]</code>这样的<code>shape</code>，具体含义是<code>[卷积核的高度，卷积核的宽度，输入通道数，输出卷积乘子]</code>，同理这里第三维<code>in_channels</code>，就是参数<code>input</code>的第四维。</li>
+<li><code>strides</code>：卷积的滑动步长。</li>
+<li>padding： <code>string</code>类型的量，只能<code>SAME</code>或<code>VALID</code>，这个值决定了不同边缘填充方式。</li>
+<li><code>rate</code>：要求是一个<code>int</code>型的正数，正常的卷积操作应该会有<code>stride</code>（即卷积核的滑动步长），但是空洞卷积是没有<code>stride</code>参数的。取而代之，它使用了新的<code>rate</code>参数，它定义为在输入图像上卷积时的采样间隔。可以理解为卷积核当中穿插了（rate-1）数量的<code>0</code>，把原来的卷积核插出了很多“洞洞”，这样做卷积时就相当于对原图像的采样间隔变大了.。可以易得出<code>rate=1</code>时，就没有<code>0</code>插入，此时这个函数就变成了普通卷积。</li>
+</ul>
+<p>结果返回一个<code>Tensor</code>，<code>shape</code>为<code>[batch, out_height, out_width, in_channels * channel_multiplier]</code>，注意这里输出通道变成了<code>in_channels * channel_multiplier</code>。</p>
+<h2 id="常规卷积操作"><a href="#常规卷积操作" class="headerlink" title="常规卷积操作"></a>常规卷积操作</h2><p>对于一张<code>5×5</code>像素、三通道彩色输入图片（<code>shape</code>为<code>5×5×3</code>）。经过<code>3×3</code>卷积核的卷积层（假设输出通道数为<code>4</code>，则卷积核<code>shape</code>为<code>3×3×3×4</code>），最终输出<code>4</code>个<code>Feature Map</code>，如果有<code>same padding</code>，则尺寸与输入层相同（<code>5×5</code>），如果没有则为尺寸变为<code>3×3</code>。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d03e7ecf3dba787a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="Depthwise-Convolution"><a href="#Depthwise-Convolution" class="headerlink" title="Depthwise Convolution"></a>Depthwise Convolution</h2><p>不同于常规卷积操作，Depthwise Convolution的一个卷积核负责一个通道，一个通道只被一个卷积核卷积。常规卷积每个卷积核是同时操作输入图片的每个通道。 同样是对于一张<code>5×5</code>像素、三通道彩色输入图片（<code>shape</code>为<code>5×5×3</code>），Depthwise Convolution首先经过第一次卷积运算，不同于上面的常规卷积，DW完全是在二维平面内进行。卷积核的数量与上一层的通道数相同（通道和卷积核一一对应）。所以一个三通道的图像经过运算后生成了<code>3</code>个<code>Feature map</code>(如果有<code>same padding</code>，则尺寸与输入层相同为<code>5×5</code>)。</p>
+<p>Depthwise Convolution完成后的<code>Feature map</code>数量与输入层的通道数相同，无法扩展Feature map。而且这种运算对输入层的每个通道独立进行卷积运算，没有有效的利用不同通道在相同空间位置上的feature信息。因此需要Pointwise Convolution来将这些Feature map进行组合生成新的Feature map。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-529584d7a3ab4443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="Pointwise-Convolution"><a href="#Pointwise-Convolution" class="headerlink" title="Pointwise Convolution"></a>Pointwise Convolution</h2><p>Pointwise Convolution的运算与常规卷积运算非常相似，它的卷积核的尺寸为<code>1×1×M</code>，<code>M</code>为上一层的通道数。所以这里的卷积运算会将上一步的map在深度方向上进行加权组合，生成新的<code>Feature map</code>。有几个卷积核就有几个输出<code>Feature map</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8c009c7b659336bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="tf-nn-avg-pool"><a href="#tf-nn-avg-pool" class="headerlink" title="tf.nn.avg_pool"></a><code>tf.nn.avg_pool</code></h1><pre><code class="python">def avg_pool(value, ksize, strides, padding, data_format=&#39;NHWC&#39;, name=None)。
+</code></pre>
+<ul>
+<li><code>value</code>：一个四维的张量。数据维度是<code>[batch, height, width, channels]</code>。</li>
+<li><code>ksize</code>：一个长度不小于<code>4</code>的整型数组。每一位上的值对应于输入数据张量中每一维的窗口对应值。</li>
+<li><code>data_format</code>：<code>NHWC</code>代表输入张量维度的顺序， <code>N</code> 为个数，<code>H</code>为高度，<code>W</code>为宽度，<code>C</code>为通道数（<code>RGB</code>三通道或者灰度单通道）。</li>
+</ul>
+<p>输出：一个张量。数据类型和<code>value</code>相同。计算输出维度的方法是： <code>shape(output) = (shape(value) - ksize + 1) / strides</code></p>
+<h1 id="tf-initialize-all-variables-vs-tf-initialize-variables"><a href="#tf-initialize-all-variables-vs-tf-initialize-variables" class="headerlink" title="tf.initialize_all_variables() vs tf.initialize_variables"></a><code>tf.initialize_all_variables() vs tf.initialize_variables</code></h1><blockquote>
+<p><code>tf.initialize_all_variables()</code>: THIS FUNCTION IS DEPRECATED. It will be removed after 2017-03-02. Instructions for updating: Use <code>tf.global_variables_initializer()</code> instead. </p>
+</blockquote>
+<h2 id="1-变量初始化"><a href="#1-变量初始化" class="headerlink" title="1. 变量初始化"></a>1. 变量初始化</h2><p>变量初始化的标准形式：</p>
+<pre><code class="python">init = tf.initialize_all_variables() 
+sess = tf.Session() 
+sess.run(init)
+</code></pre>
+<p>也可简写为：</p>
+<pre><code class="python">tf.Session().run(tf.initialize_all_variables())
+</code></pre>
+<p>如何有选择地初始化部分变量呢？可以使用<code>tf.initialize_variables()</code>。比如要初始化<code>v_6</code>，<code>v_7</code>，<code>v_8</code>三个变量：</p>
+<pre><code class="python">init_new_vars_op = tf.initialize_variables([v_6, v_7, v_8]) sess.run(init_new_vars_op)
+</code></pre>
+<h2 id="2-识别未被初始化的变量"><a href="#2-识别未被初始化的变量" class="headerlink" title="2. 识别未被初始化的变量"></a>2. 识别未被初始化的变量</h2><p>用<code>try &amp; except</code>语句块捕获：</p>
+<pre><code class="python">uninit_vars = [] for var in tf.all_variables(): 
+    try: 
+        sess.run(var) 
+    except tf.errors.FailedPreconditionError:             
+        uninit_vars.append(var) 
+        init_new_vars_op = tf.initialize_variables(uninit_vars)
+</code></pre>
+<h2 id="3-变量的更新"><a href="#3-变量的更新" class="headerlink" title="3. 变量的更新"></a>3. 变量的更新</h2><pre><code class="python">state = tf.Variable(1, name=&#39;counter&#39;)
+add_one = tf.add(state, tf.constant(1))
+update = tf.assign(state, add_one)
+with tf.Session() as sess:         
+    sess.run(tf.gloabl_variables_initializer()) 
+    sess.run(state) 
+    for _ in range(3): 
+        sess.run(update) 
+        print(sess.run(state))
+</code></pre>
+<h1 id="tensorflow-tf-python-io"><a href="#tensorflow-tf-python-io" class="headerlink" title="tensorflow tf.python_io"></a><code>tensorflow tf.python_io</code></h1><p>该模块是tensorflow用来处理<code>tfrecords</code>文件的接口，定义在<code>tensorflow/python/lib/io/python_io.py</code>，主要包含了四个部分：</p>
+<ul>
+<li><code>class TFRecordCompressionType</code>：记录的压缩类型。 </li>
+<li><code>class TFRecordOptions</code>：用于操作<code>TFRecord</code>文件的选项。</li>
+<li><code>class TFRecordWriter</code>：将记录写入<code>TFRecords</code>文件的类。</li>
+<li><code>tf_record_iterator(…)</code>：从TFRecords文件中读取记录的迭代器</li>
+</ul>
+<h2 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h2><pre><code class="python">from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+from tensorflow.python import pywrap_tensorflow
+from tensorflow.python.framework import errors
+from tensorflow.python.util import compat
+
+# 该类定义了tfrecords文件压缩类型：无，ZLIB，GZIP三种
+class TFRecordCompressionType(object):
+  &quot;&quot;&quot;The type of compression for the record.&quot;&quot;&quot;
+  NONE = 0
+  ZLIB = 1
+  GZIP = 2
+
+
+# 这个类会转换为proto格式，以便与C++接口对接
+class TFRecordOptions(object):
+  &quot;&quot;&quot;Options used for manipulating TFRecord files.&quot;&quot;&quot;
+  compression_type_map = {
+      TFRecordCompressionType.ZLIB: &quot;ZLIB&quot;,
+      TFRecordCompressionType.GZIP: &quot;GZIP&quot;,
+      TFRecordCompressionType.NONE: &quot;&quot;
+  }
+
+  def __init__(self, compression_type):
+    self.compression_type = compression_type
+
+  @classmethod
+  def get_compression_type_string(cls, options):
+    if not options:
+      return &quot;&quot;
+    return cls.compression_type_map[options.compression_type]
+
+def tf_record_iterator(path, options=None):
+  &quot;&quot;&quot;从tfrecords文件读取数据的迭代器.
+  参数:
+    path: TFRecords文件路径.
+    options: 读取选项，主要是压缩类型，TFRecordOptions对象.
+  yields:
+    Strings.
+  异常:
+    IOError: 路径不正确是引发.
+  &quot;&quot;&quot;
+  compression_type = TFRecordOptions.get_compression_type_string(options)
+  with errors.raise_exception_on_not_ok_status() as status:
+    reader = pywrap_tensorflow.PyRecordReader_New(
+        compat.as_bytes(path), 0, compat.as_bytes(compression_type), status)#读取器，pywarp_tensorflow包装所以的符号，这里定义了一个文件读取器对象
+
+  if reader is None:
+    raise IOError(&quot;Could not open %s.&quot; % path)
+  while True:
+    try:
+      with errors.raise_exception_on_not_ok_status() as status:
+        reader.GetNext(status)
+    except errors.OutOfRangeError:
+      break
+    yield reader.record() #逐步读取文件
+  reader.Close()
+
+
+class TFRecordWriter(object):
+  &quot;&quot;&quot;tfrecords文件写操作类，由于实施了__enter__和__exit__接口，根据Python的上下文管理机制，可以用with语句
+  &quot;&quot;&quot;
+
+  # TODO(josh11b): Support appending?
+  def __init__(self, path, options=None):
+    &quot;&quot;&quot;打开文件，并初始化写对象
+    参数:
+      path: 文件路径
+      options: 选项，TFRecordOptions对象
+    Raises:
+      IOError: If `path` cannot be opened for writing.
+    &quot;&quot;&quot;
+    compression_type = TFRecordOptions.get_compression_type_string(options)#获取压缩类型
+
+    with errors.raise_exception_on_not_ok_status() as status:
+      self._writer = pywrap_tensorflow.PyRecordWriter_New(
+          compat.as_bytes(path), compat.as_bytes(compression_type), status)#定义writer
+
+  def __enter__(self):
+    &quot;&quot;&quot;进入with语句块&quot;&quot;&quot;
+    return self
+
+  def __exit__(self, unused_type, unused_value, unused_traceback):
+    &quot;&quot;&quot;退出with语句块，并关闭文件&quot;&quot;&quot;
+    self.close()
+
+  def write(self, record):
+    &quot;&quot;&quot;想文件中写入一条记录.
+    Args:
+      record: str
+    &quot;&quot;&quot;
+    self._writer.WriteRecord(record)#实际是由writer实现
+
+  def flush(self):
+    &quot;&quot;&quot;刷新缓冲区内容到磁盘文件&quot;&quot;&quot;
+    with errors.raise_exception_on_not_ok_status() as status:
+      self._writer.Flush(status)
+
+  def close(self):
+    &quot;&quot;&quot;关闭文件&quot;&quot;&quot;
+    with errors.raise_exception_on_not_ok_status() as status:
+      self._writer.Close(status)
+</code></pre>
+<h1 id="数据读取的三种方式"><a href="#数据读取的三种方式" class="headerlink" title="数据读取的三种方式"></a>数据读取的三种方式</h1><p><img src="https://upload-images.jianshu.io/upload_images/1351548-8d41c0a358a472ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>TensorFlow的系统架构分为两个部分：</p>
+<ul>
+<li>前端系统：提供编程模型，负责构造计算图；</li>
+<li>后端系统：提供运行时环境，负责执行计算图。</li>
+</ul>
+<p>在处理数据的过程当中，由于现在的硬件性能的极大提升，数值计算过程可以通过加强硬件的方式来改善，因此数据读取（即<code>IO</code>)往往会成为系统运行性能的瓶颈。在TensorFlow框架中提供了三种数据读取方式：</p>
+<ul>
+<li>Preloaded data：预加载数据</li>
+<li>Feeding：<code>placeholder</code>、<code>feed_dict</code>，即由占位符代替数据，运行时填入数据</li>
+<li>Reading from file: 从文件中直接读取</li>
+</ul>
+<blockquote>
+<p>TF的核心是用C++写的，这样的好处是运行快，缺点是调用不灵活。而Python恰好相反，所以结合两种语言的优势。涉及计算的核心算子和运行框架是用C++写的，并提供API给Python。Python调用这些API，设计训练模型(<code>Graph</code>)，再将设计好的<code>Graph</code>给后端去执行。简而言之，Python的角色是Design，C++是Run。</p>
+</blockquote>
+<h2 id="1-Preload-data-constant-预加载数据"><a href="#1-Preload-data-constant-预加载数据" class="headerlink" title="1. Preload data: constant 预加载数据"></a>1. Preload data: <code>constant</code> 预加载数据</h2><p>特点：数据直接嵌入<code>graph</code>， 由<code>graph</code>传入<code>session</code>中运行.</p>
+<h2 id="2-Feeding-placeholder，feed-dict"><a href="#2-Feeding-placeholder，feed-dict" class="headerlink" title="2. Feeding: placeholder，feed_dict"></a>2. Feeding: <code>placeholder</code>，<code>feed_dict</code></h2><p>特点：由占位符代替数据，运行时填入数据</p>
+<h2 id="3-Reading-From-File：直接从文件中读取"><a href="#3-Reading-From-File：直接从文件中读取" class="headerlink" title="3. Reading From File：直接从文件中读取"></a>3. Reading From File：直接从文件中读取</h2><p>前两种方法很方便，但是遇到大型数据的时候就会很吃力，即使是<code>Feeding</code>，中间环节的增加也是不小的开销，比如数据类型转换等等。最优的方案就是在<code>Graph</code>定义好文件读取的方法，让TF自己去从文件中读取数据，并解码成可使用的样本集。</p>
+<p>这种直接从文件中读取数据的方式需要设计成<code>Queue</code>的方式才能较好的解决<code>IO</code>瓶颈的问题。 <code>Queue</code>机制有如下三个特点：</p>
+<ul>
+<li>producer-consumer pattern(生产消费模式)</li>
+<li>独立于主线程执行</li>
+<li>异步IO: <code>reader.read(queue) tf.train.batch()</code></li>
+</ul>
+<p><img src="http://honggang.io/images/AnimatedFileQueues.gif" alt=""></p>
+<p>最左边的<code>A</code>、<code>B</code>、<code>C</code>是存储于磁盘中文件，经过打乱文件之后（这里是默认的乱序读取，只是文件的顺序乱，但是文件内容不受影响），进入到文件队列中（Filename Queue）。文件队列当中的文件经过阅读器（<code>Reader</code>）处理，存储到内存当中。接下来对文件进行解码（<code>Decoder</code>），解码之后进入样本队列当中进行批处理，此时经过批处理之后就可以用于模型训练了。</p>
+<h1 id="四种类型数据的读取流程"><a href="#四种类型数据的读取流程" class="headerlink" title="四种类型数据的读取流程"></a>四种类型数据的读取流程</h1><h2 id="1-文件队列构造"><a href="#1-文件队列构造" class="headerlink" title="1. 文件队列构造"></a>1. 文件队列构造</h2><pre><code class="python">tf.train.string_input_producer(string_tensor,num_epochs,shuffle=True)
+</code></pre>
+<p>将输出字符串（例如文件名）输入到管道队列。返回具有输出字符串的队列。</p>
+<ul>
+<li><code>string_tensor</code>：含有文件名的一阶张量，需要指定文件路径</li>
+<li><code>num_epochs</code>：将全部数据循环的次数</li>
+</ul>
+<h2 id="2-文件阅读器"><a href="#2-文件阅读器" class="headerlink" title="2. 文件阅读器"></a>2. 文件阅读器</h2><p>此时需要根据文件的格式，选择对应的文件阅读器。它们的返回值都是对应文件格式的读取器实例。</p>
+<ul>
+<li><strong>文本文件</strong>：<code>tf.TextLineReader()</code><ul>
+<li>读取文本文件，逗号分隔值（CSV)格式，默认按行读取</li>
+</ul>
+</li>
+<li><strong>二进制文件</strong>：<code>tf.FixedLengthRecordReader(record_bytes)</code><ul>
+<li>读取每个记录是固定数量字节的二进制文件</li>
+<li><code>record_bytes</code>：整型，指定每次读取的字节数</li>
+</ul>
+</li>
+<li><strong>图片文件</strong>：<code>tf.WholeReader()</code><ul>
+<li>将文件的全部内容作为值输出，即一次读取一整个文件</li>
+</ul>
+</li>
+<li><strong><code>TFRecords</code>文件</strong>：<code>tf.TFRecordReader()</code><ul>
+<li>读取<code>TFRecords</code>文件</li>
+</ul>
+</li>
+</ul>
+<p><strong>【注】：</strong>这几种文件格式都有一个共同的读取方法：<code>read(file_queue)</code></p>
+<ul>
+<li>从队列中指定内容数量</li>
+<li><code>file_name</code> : 文件队列</li>
+</ul>
+<p>返回一个<code>Tensor</code>元组：<code>(key, value)</code> </p>
+<ul>
+<li><code>key</code>：文件名</li>
+<li><code>value</code>：每次读取的值（一行文本、一张图片或指定字节的值）</li>
+</ul>
+<h2 id="3-文件内容解码器"><a href="#3-文件内容解码器" class="headerlink" title="3. 文件内容解码器"></a>3. 文件内容解码器</h2><p>由于从文件中读取的是字符串，需要函数去解析这些字符串，最后变换成张量 。</p>
+<h3 id="（1）CSV文件"><a href="#（1）CSV文件" class="headerlink" title="（1）CSV文件"></a>（1）CSV文件</h3><pre><code class="python">tf.decode_csv(records,record_defaults=None,field_delim=None,name=None)
+</code></pre>
+<p>将CSV文件转换成张量，需要<code>tf.TextLineReader()</code>搭配使用。</p>
+<ul>
+<li><code>records</code>：<code>tensor</code>型字符串，每个字符串是CSV中的记录行（即<code>value</code>值）</li>
+<li><code>record_defaults</code>：此参数决定了所得张量的类型，并设置一个值，如果在输入字符串中缺少则使用默认值，如<code>[[1],[1]]</code>或者<code>[[“None”]，[“None”]]</code></li>
+<li><code>field_dim</code>：默认分隔符——<code>,</code><h3 id="（2）二进制文件"><a href="#（2）二进制文件" class="headerlink" title="（2）二进制文件"></a>（2）二进制文件</h3><pre><code class="python">tf.decode_raw(bytes,out_type,little_endian=None,name=None)
+</code></pre>
+</li>
+</ul>
+<p>将字节转换为一个数字向量表示，字节为以字符串类型的张量。与函数<code>tf.FixedLengthRecordReader</code>搭配使用。将二进制转换为<code>uint8</code>格式。</p>
+<h3 id="（3）图像文件"><a href="#（3）图像文件" class="headerlink" title="（3）图像文件"></a>（3）图像文件</h3><ul>
+<li><code>tf.image.decode_jpeg(contens)</code><ul>
+<li>将JPEG编码的图像解码为<code>uint8</code>张量</li>
+<li>返回<code>uint8</code>张量（3D形状<code>[height,width,channels]</code>）</li>
+</ul>
+</li>
+<li><code>tf.image.decode_png(contents)</code><ul>
+<li>将PNG编码的图像解码为<code>uint8</code>或者<code>uint16</code>编码</li>
+<li>返回张量类型（3D形状<code>[height,width,channels]</code>）<h3 id="（4）TFRecords文件"><a href="#（4）TFRecords文件" class="headerlink" title="（4）TFRecords文件"></a>（4）<code>TFRecords</code>文件</h3></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-批处理数据"><a href="#4-批处理数据" class="headerlink" title="4. 批处理数据"></a>4. 批处理数据</h2><p>对数据进行批处理需要在会话开启之前进行。</p>
+<ul>
+<li><p><code>tf.train.batch(tensors,batch_size,num_threads=1,capacity=32,name=None)</code></p>
+<ul>
+<li>用于读取指定大小（个数）的张量，返回<code>tensors</code>。<ul>
+<li><code>tensor</code>：包含张量的列表</li>
+<li><code>batch_size</code>：从队列中读取的批处理数据大小</li>
+<li><code>num_threads</code>：进入队列的线程数</li>
+<li><code>capacity</code>：整数，批处理队列中元素的最大数量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>tf.train.shuffle_batch(tensors,batch_size,capacity,min_after_dequeue,num_threads=1,capacity=32,name=None)</code></p>
+</li>
+<li>乱序读取指定大小（数量）的张量<ul>
+<li><code>min_after_dequeue</code>：留下队列里的张量个数，能够保持随机打乱</li>
+</ul>
+</li>
+</ul>
+<h1 id="TFRecords文件的存储与读取"><a href="#TFRecords文件的存储与读取" class="headerlink" title="TFRecords文件的存储与读取"></a><code>TFRecords</code>文件的存储与读取</h1><p><code>TFRecords</code>是TensorFlow中的设计的一种内置的文件格式，它是一种二进制文件，优点为：</p>
+<ul>
+<li>统一不同输入文件的框架</li>
+<li>它更好地利用内存，更方便复制和移动（<code>TFRecord</code>压缩的二进制文件，<code>protocal buffer</code>序列化）</li>
+<li>用于将二进制数据和标签（训练的类别标签）数据存储在同一个文件中</li>
+</ul>
+<h2 id="一-TFRecords存储"><a href="#一-TFRecords存储" class="headerlink" title="一. TFRecords存储"></a>一. <code>TFRecords</code>存储</h2><p>在将其他数据存储为<code>TFRecords</code>文件的时候，需要经过两个步骤：</p>
+<ul>
+<li>建立<code>TFRecord</code>存储器</li>
+<li>构造每个样本的<code>Example</code>模块</li>
+</ul>
+<h3 id="1-建立TFRecord存储器"><a href="#1-建立TFRecord存储器" class="headerlink" title="1. 建立TFRecord存储器"></a>1. 建立<code>TFRecord</code>存储器</h3><pre><code class="python">tf.python_io.TFRecordWriter(path)
+</code></pre>
+<ul>
+<li><code>path</code>：<code>TFRecords</code>文件的路径</li>
+<li>方法：<ul>
+<li><code>write(record)</code>:向文件中写入一个字符串记录（即一个样本）</li>
+<li><code>close()</code>：关闭文件写入器</li>
+</ul>
+</li>
+</ul>
+<p>用于写入<code>TFRecords</code>文件。</p>
+<p>注：此处的字符串为一个序列化的<code>Example</code>，通过<code>Example.SerializeToString()</code>来实现，它的作用是将<code>Example</code>中的<code>map</code>压缩为二进制，节约大量空间。</p>
+<h3 id="2-构造每个样本的Example协议块"><a href="#2-构造每个样本的Example协议块" class="headerlink" title="2. 构造每个样本的Example协议块"></a>2. 构造每个样本的<code>Example</code>协议块</h3><p><code>Example</code>协议块的规则为（<code>feature.proto</code>）：</p>
+<pre><code>message Example {
+  Features features = 1;
+};
+
+message Features {
+  map&lt;string, Feature&gt; feature = 1;
+};
+
+message Feature {
+  oneof kind {
+    BytesList bytes_list = 1;
+    FloatList float_list = 2;
+    Int64List int64_list = 3;
+  }
+};
+</code></pre><h4 id="（1）-tf-train-Example-features-None"><a href="#（1）-tf-train-Example-features-None" class="headerlink" title="（1） tf.train.Example(features = None)"></a>（1） <code>tf.train.Example(features = None)</code></h4><p>用于写入<code>TFRecords</code>文件，返回<code>Example</code>协议格式块。</p>
+<ul>
+<li><code>features</code>：<code>tf.train.Features</code>类型的特征实例</li>
+</ul>
+<h4 id="（2）-tf-train-Features-feature-None"><a href="#（2）-tf-train-Features-feature-None" class="headerlink" title="（2） tf.train.Features(feature = None)"></a>（2） <code>tf.train.Features(feature = None)</code></h4><p>构造每个样本的信息键值对，返回<code>Features</code>类型。</p>
+<ul>
+<li><code>feature</code>：字典数据，<code>key</code>为要保存的名字，<code>value</code>为<code>tf.train.Feature</code>实例</li>
+</ul>
+<h4 id="（3）-tf-train-Feature-options"><a href="#（3）-tf-train-Feature-options" class="headerlink" title="（3） tf.train.Feature(**options)"></a>（3） <code>tf.train.Feature(**options)</code></h4><p><code>options</code>可以选择如下三种格式数据：</p>
+<ul>
+<li><code>bytes_list = tf.train.BytesList(value = [Bytes])</code></li>
+<li><code>int64_list = tf.train.Int64List(value = [Value])</code></li>
+<li><code>float_list = tf.trian.FloatList(value = [Value])</code></li>
+</ul>
+<p>将图片数据转化为<code>TFRecords</code>的例子（对每一个样本，都做如下的处理）：</p>
+<pre><code class="python">example = tf.train.Example(feature = tf.train.Features(feature = {                               &quot;image&quot;:tf.train.Feature(bytes_list=tf.train.BytesList(value=[image(bytes)]))              &quot;label&quot;:tf.train.Feature(int64_list=tf.train.Int64List(value=[label(int)]))
+    }))
+</code></pre>
+<h2 id="二-TFRecords读取方法"><a href="#二-TFRecords读取方法" class="headerlink" title="二. TFRecords读取方法"></a>二. <code>TFRecords</code>读取方法</h2><p>和文件阅读器的流程基本相同，只是中间多了一步解析过程。</p>
+<h3 id="解析TFRecords的Example协议内存块："><a href="#解析TFRecords的Example协议内存块：" class="headerlink" title="解析TFRecords的Example协议内存块："></a>解析<code>TFRecords</code>的<code>Example</code>协议内存块：</h3><h4 id="1-tf-parse-single-example-serialized-features-None-name-None"><a href="#1-tf-parse-single-example-serialized-features-None-name-None" class="headerlink" title="1. tf.parse_single_example(serialized,features=None,name= None"></a>1. <code>tf.parse_single_example(serialized,features=None,name= None</code></h4><ul>
+<li>用于解析一个单一的<code>Example</code>原型，返回 一个键值对组成的字典，键为读取的名字</li>
+<li><code>serialized</code>：标量字符串的<code>Tensor</code>，一个序列化的<code>Example</code>，文件经过文件阅读器之后的<code>value</code></li>
+<li><code>features</code>：字典数据，<code>key</code>为读取的名字，<code>value</code>为<code>FixedLenFeature</code><h4 id="2-tf-FixedLenFeature-shape-dtype"><a href="#2-tf-FixedLenFeature-shape-dtype" class="headerlink" title="2. tf.FixedLenFeature(shape,dtype)"></a>2. <code>tf.FixedLenFeature(shape,dtype)</code></h4></li>
+<li><code>shape</code>：输入数据的形状，一般不指定，为空列表</li>
+<li><code>dtype</code>：输入数据类型，与存储进文件的类型要一致，类型只能是<code>float32</code>，<code>int64</code>，<code>string</code></li>
+<li>返回<code>Tensor</code> (即使有零的部分也存储）</li>
+</ul>
+<p><strong>【注】：</strong><code>1</code>中<code>features</code>中的<code>value</code>还可以为<code>tf.VarLenFeature()</code>，但是这种方式用的比较少，它返回的是<code>SparseTensor</code>数据，这是一种只存储非零部分的数据格式。</p>
+<h1 id="timeline模块"><a href="#timeline模块" class="headerlink" title="timeline模块"></a><code>timeline</code>模块</h1>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/11/17/KCF/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
