@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Mon Jul 09 2018 17:36:03 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Oct 26 2018 11:07:12 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Jan 17 2019 16:30:46 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/07/09/C++点点滴滴（上）/index.html",
     "headline": "C++点点滴滴（上）",
     "datePublished": "Mon Jul 09 2018 17:36:03 GMT+0800",
-    "dateModified": "Fri Oct 26 2018 11:07:12 GMT+0800",
+    "dateModified": "Thu Jan 17 2019 16:30:46 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -665,19 +665,22 @@
 </ul>
 </li>
 </ul>
-<h2 id="raw-sting-literal"><a href="#raw-sting-literal" class="headerlink" title="raw sting literal"></a>raw sting literal</h2><p>这是一种比较特殊的string，它的用途是：在使用的过程中，可以忽略转义字符（escape character,例如<code>\n</code>,<code>\t</code>,<code>\&quot;</code>），即将转义字符当做普通的字符进行处理。其语法为：<code>R&quot;(xxxx)&quot;;</code>。</p>
+<h2 id="raw-sting-literal"><a href="#raw-sting-literal" class="headerlink" title="raw sting literal"></a>raw sting literal</h2><p>这是一种比较特殊的string，它的用途是：在使用的过程中，可以忽略转义字符（escape character，例如<code>\n</code>,<code>\t</code>,<code>\&quot;</code>），即将转义字符当做普通的字符进行处理。其语法为：<code>R&quot;(xxxx)&quot;;</code>。</p>
 <p>例子：</p>
 <pre><code class="cpp">std::string normal_string = &quot;I&#39;m a normal string.\nI&#39;m also a normal string\n&quot;;
 std::string raw_string = R&quot;(I&#39;m a raw string.\nI&#39;m also a raw string\n)&quot;;
 </code></pre>
 <p>输出结果为：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-297fa63358c0108d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="nullptr-t"><a href="#nullptr-t" class="headerlink" title="nullptr_t"></a><code>nullptr_t</code></h2><p>起定义在<code>&lt;stddef&gt;</code>：<br><code>typedef deltype(nullptr) nullptr_t;</code><br>表示的是null pointer literal(空指针字面值常量）<code>nullptr</code>的类型，它既不是指针类型，也不是指向成员的指针类型。</p>
+<h2 id="nullptr-t"><a href="#nullptr-t" class="headerlink" title="nullptr_t"></a><code>nullptr_t</code></h2><p>其定义在<code>&lt;stddef&gt;</code>：</p>
+<pre><code class="c++">typedef deltype(nullptr) nullptr_t;
+</code></pre>
+<p>表示的是null pointer literal（空指针字面值常量）<code>nullptr</code>的类型，它既不是指针类型，也不是指向成员的指针类型。</p>
 <p>即：<code>nullptr</code>是constant，而<code>nullptr_t</code>是<code>nullptr</code>的类型。</p>
-<p><code>nullptr</code>是<code>std::nullptr_t</code>类型的一个pointer literal，而且它是一个prvalue（即不能利用<code>&amp;</code>对其进行取地址）。</p>
+<p><code>nullptr</code> 是 <code>std::nullptr_t</code> 类型的一个 pointer literal，而且它是一个prvalue（即不能利用 <code>&amp;</code> 对其进行取地址）。</p>
 <ul>
-<li>一个<code>std::nullptr_t</code>类型的prvalue是一个null pointer constant，这种这种integral null pointer constant能够被转换为<code>std::nullptr_t</code>，而反向转换则不允许。这允许为pointers和integers重载函数，并且通过传递<code>nullptr</code>来进行选择pointer version。而传入<code>NULL</code>或者<code>0</code>则会令人困惑地选择<code>int</code>版本。</li>
-<li>将<code>nullptr_t</code>强制转换为ingeral type需要使用<code>reinterpret_cast</code>，其作用等同于<code>(void*)0</code>强制转换为integral type。<code>reinterpret_cast</code>不能将<code>nullptr_t</code>转换为任何pointer type。如果可能，应使用隐式转换或者<code>static_cast</code>。</li>
+<li>一个 <code>std::nullptr_t</code> 类型的 prvalue 是一个 null pointer constant，这种这种 integral null pointer constant 能够被转换为 <code>std::nullptr_t</code>，而反向转换则不允许。这允许为 pointers 和 integers 重载函数，并且通过传递 <code>nullptr</code> 来进行选择pointer version。而传入 <code>NULL</code> 或者 <code>0</code> 则会令人困惑地选择 <code>int</code> 版本。</li>
+<li>将 <code>nullptr_t</code> 强制转换为 ingeral type 需要使用 <code>reinterpret_cast</code>，其作用等同于 <code>(void*)0</code>强制转换为 integral type。<code>reinterpret_cast</code>不能将<code>nullptr_t</code>转换为任何pointer type。如果可能，应使用隐式转换或者<code>static_cast</code>。</li>
 <li>标准规定：<code>sizeof(nullptr_t)</code>等同于<code>sizeof(void*)</code>。</li>
 </ul>
 <p><strong>【注】：</strong><br>尽管<code>NULL</code>的定义<code>#define NULL 0;</code>，但其并不保证其值就是<code>0</code>，也可以是<code>0L</code>，在进行调用<code>void f(int); void f(char *);</code>中将会产生歧义，而使用<code>nullpter</code>则只会选择pointer version（从不会选择<code>int</code>这一重载）。此外，<code>nullpter</code>还可以转换为<code>bool</code>。</p>
@@ -736,7 +739,7 @@ typename remove_reference&lt;T&gt;::type&amp;&amp; move(T&amp;&amp; arg) {
 T&amp; operator= (T&amp;&amp;rhs);
 </code></pre>
 <p><code>std::move</code>的作用：<strong>只是为了让调用构造函数的时候告诉编译器去选择移动构造函数</strong>。</p>
-<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><p>让编译器可以把费事的拷贝操作变成开销很小的移动操作。如果你有一个对象，需要移动到另一个对象，但是类中的数据都是不变的且源对象将不会再使用，那么为什么不直接让目标使用源的子数据的内存而要拷贝一份呢？移动语义就是提供了这种操作的语法，就像拷贝构造函数和拷贝赋值操作符让你能够拷贝对象一样，移动构造函数和移动赋值操作符让你能够移动一个对象。利用移动机制你还可以创造只能移动不能拷贝的类,比如<code>std::unique_ptr</code>。</p>
+<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><p>让编译器可以把费事的拷贝操作变成开销很小的移动操作。如果你有一个对象，需要移动到另一个对象，但是类中的数据都是不变的且源对象将不会再使用，那么为什么不直接让目标使用源的子数据的内存而要拷贝一份呢？移动语义就是提供了这种操作的语法，就像拷贝构造函数和拷贝赋值操作符让你能够拷贝对象一样，移动构造函数和移动赋值操作符让你能够移动一个对象。利用移动机制你还可以创造只能移动不能拷贝的类，比如<code>std::unique_ptr</code>。</p>
 <h4 id="完美转发"><a href="#完美转发" class="headerlink" title="完美转发"></a>完美转发</h4><p>允许你在函数模板中，接受不确定的参数，然后将它们转发给其他函数。完美转发保证在转发的过程中传递的参数的类型和传入时候是完全相同的。</p>
 <p><code>std::move</code>和<code>std::forward</code>仅仅是执行类型转换的函数而已。<code>std::move</code>无条件地将参数转换为右值引用，而<code>std::forward</code>仅当满足一定条件的时候将参数转换为右值引用。</p>
 <p><strong>转发：</strong>某些函数需要将其中一个或多个参数连同类型不变地转发给其他函数，在这种情况下，需要保持被转发实参的所有性质，包括实参类型是否为<code>const</code>的以及实参是左值还是右值。</p>
@@ -1089,7 +1092,7 @@ string&amp;&amp; r = std::move(str);
 <h2 id="char-a-void-20"><a href="#char-a-void-20" class="headerlink" title="char*(*(*a)(void))[20];"></a><code>char*(*(*a)(void))[20];</code></h2><pre><code class="cpp">void (*a)(void)
 </code></pre>
 <p>名为<code>a</code>的函数指针，指向<strong>接受类型为<code>void</code>，返回类型也为<code>void</code> 的函数</strong>。</p>
-<pre><code class="cpp">`char *(*a)(void)
+<pre><code class="cpp">char *(*a)(void)
 </code></pre>
 <p>名叫<code>a</code>的函数指针，指向<strong>接受类型为<code>void</code>，返回类型为<code>char</code>指针的函数</strong>。</p>
 <pre><code class="cpp">char (*(*a)(void))[20]
@@ -1098,7 +1101,7 @@ string&amp;&amp; r = std::move(str);
 <pre><code class="cpp">char *(*(*a)(void))[20]
 </code></pre>
 <p>名叫为<code>a</code>的函数指针，指向<strong>接受类型为<code>void</code>，返回类型为指向长度 20 的<code>char*</code>数组的指针的函数</strong>。</p>
-<h2 id="特化和偏特化"><a href="#特化和偏特化" class="headerlink" title="特化和偏特化"></a>特化和偏特化</h2><p>所谓模板特例化，即对于通例中的某种或某些情况做单独专门实现，最简单的情况是对每个模板参数指定一个具体值，这成为完全特例化（full specialization）。另外，可以限制模板参数在一个范围取值或满足一定关系等，这称为部分特例化（partial specialization）。<strong>用数学上集合的概念，通例模板参数所有可取的值组合构成全集U，完全特例化对U中某个元素进行专门定义，部分特例化对U的某个真子集进行专门定义</strong>。</p>
+<h2 id="特化和偏特化"><a href="#特化和偏特化" class="headerlink" title="特化和偏特化"></a>特化和偏特化</h2><p>所谓模板特例化，即对于通例中的某种或某些情况做单独专门实现，最简单的情况是对每个模板参数指定一个具体值，这成为完全特例化（full specialization）。另外，可以限制模板参数在一个范围取值或满足一定关系等，这称为部分特例化（partial specialization）。<strong>用数学上集合的概念，通例模板参数所有可取的值组合构成全集 U，完全特例化对 U 中某个元素进行专门定义，部分特例化对 U 的某个真子集进行专门定义</strong>。</p>
 <p>需要特化或者偏特化的原因：<strong>因为编译器认为，对于特定的类型，如果你能对某一功能更好的实现，那么就该听你的</strong>。</p>
 <p>在某些情况下，通用模板的定义对特定类型并不适合。当不能使用模板版本时，可以定义类型或者函数模板的一个特例化版本。</p>
 <p>一个特化版本就是模板的一个独立的定义，在其中一个或者多个模板参数被指定为特定的类型。特化的形式为：<code>template &lt;&gt;</code>，其中<code>&lt;&gt;</code>指出将为原模板的所有模板参数提供实参。</p>
@@ -1321,9 +1324,9 @@ int main() {
 </code></pre>
 <p><strong><code>__PRETTY_FUNCTION__</code></strong> 为非标准宏，</p>
 <ol>
-<li><p>若用g++编译C++程序， <code>__FUNCTION__</code>只能输出类的成员函数名，不会输出类名。而<code>__PRETTY_FUNCTION__</code>则会以<code>&lt;return-type&gt; &lt;class-name&gt;::&lt;member-function-name&gt;(&lt;parameters-list&gt;)</code>的格式输出成员函数的详悉信息(注: 只会输出<code>parameters-list</code>的形参类型, 而不会输出形参名).</p>
+<li><p>若用g++编译C++程序， <code>__FUNCTION__</code> 只能输出类的成员函数名，不会输出类名。而 <code>__PRETTY_FUNCTION__</code> 则会以 <code>&lt;return-type&gt; &lt;class-name&gt;::&lt;member-function-name&gt;(&lt;parameters-list&gt;)</code> 的格式输出成员函数的详悉信息(注: 只会输出 <code>parameters-list</code> 的形参类型, 而不会输出形参名).</p>
 </li>
-<li><p>若用gcc编译C程序，<code>__PRETTY_FUNCTION__</code>跟<code>__FUNCTION__</code>的功能相同。</p>
+<li><p>若用gcc编译C程序，<code>__PRETTY_FUNCTION__</code>跟 <code>__FUNCTION__</code> 的功能相同。</p>
 </li>
 </ol>
 <blockquote>
@@ -1484,7 +1487,7 @@ void Accept(T animal) {
     Accept(animal, typename T::type());        //##
 }
 </code></pre>
-<p>此时，所有的类型推导、函数重载都是在编译期完成，几乎不需要耗费任何runtime成本（除了创建lion_tag，panda_tag临时对象成成本，然而经过编译器的优化，这种成本将会消失）就能拥有可读性和可维护性高的代码。也许你会纳闷，traits在哪里，其实**<code>typename T::type</code>就是traits，只不过少了一层封装而已，可以如下改进：</p>
+<p>此时，所有的类型推导、函数重载都是在编译期完成，几乎不需要耗费任何runtime成本（除了创建lion_tag，panda_tag临时对象成成本，然而经过编译器的优化，这种成本将会消失）就能拥有可读性和可维护性高的代码。也许你会纳闷，traits在哪里，其实 <code>typename T::type</code> 就是 traits，只不过少了一层封装而已，可以如下改进：</p>
 <pre><code class="cpp">template &lt;typename T&gt;
 struct AnimalTraits {
     typedef T::type type;

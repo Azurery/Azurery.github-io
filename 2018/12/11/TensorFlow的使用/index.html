@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Tue Dec 11 2018 19:06:59 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Dec 23 2018 21:17:58 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Jan 17 2019 18:24:25 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/12/11/TensorFlow的使用/index.html",
     "headline": "TensorFlow的使用",
     "datePublished": "Tue Dec 11 2018 19:06:59 GMT+0800",
-    "dateModified": "Sun Dec 23 2018 21:17:58 GMT+0800",
+    "dateModified": "Thu Jan 17 2019 18:24:25 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-get-variable"><span class="post-toc-number">1.</span> <span class="post-toc-text">tf.get_variable</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TensorFlow-中的变量初始化函数："><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">TensorFlow 中的变量初始化函数：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-Session-run"><span class="post-toc-number">2.</span> <span class="post-toc-text">tf.Session().run()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-truncated-normal-shape-mean-stddev"><span class="post-toc-number">3.</span> <span class="post-toc-text">tf.truncated_normal(shape, mean, stddev)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-name-scope-amp-tf-variable-scope"><span class="post-toc-number">4.</span> <span class="post-toc-text">tf.name_scope() &amp; tf.variable_scope()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-tf-name-scope对tf-get-variable-的影响"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. tf.name_scope对tf.get_variable()的影响</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-dropout"><span class="post-toc-number">5.</span> <span class="post-toc-text">tf.nn.dropout()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-conv2d"><span class="post-toc-number">6.</span> <span class="post-toc-text">tf.nn.conv2d</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-separable-conv2d"><span class="post-toc-number">7.</span> <span class="post-toc-text">tf.nn.separable_conv2d</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常规卷积操作"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">常规卷积操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Depthwise-Convolution"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">Depthwise Convolution</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pointwise-Convolution"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">Pointwise Convolution</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-avg-pool"><span class="post-toc-number">8.</span> <span class="post-toc-text">tf.nn.avg_pool</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-initialize-all-variables-vs-tf-initialize-variables"><span class="post-toc-number">9.</span> <span class="post-toc-text">tf.initialize_all_variables() vs tf.initialize_variables</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-变量初始化"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">1. 变量初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-识别未被初始化的变量"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">2. 识别未被初始化的变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-变量的更新"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">3. 变量的更新</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tensorflow-tf-python-io"><span class="post-toc-number">10.</span> <span class="post-toc-text">tensorflow tf.python_io</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源码解析"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">源码解析</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据读取的三种方式"><span class="post-toc-number">11.</span> <span class="post-toc-text">数据读取的三种方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Preload-data-constant-预加载数据"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">1. Preload data: constant 预加载数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Feeding-placeholder，feed-dict"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">2. Feeding: placeholder，feed_dict</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Reading-From-File：直接从文件中读取"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">3. Reading From File：直接从文件中读取</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四种类型数据的读取流程"><span class="post-toc-number">12.</span> <span class="post-toc-text">四种类型数据的读取流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-文件队列构造"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">1. 文件队列构造</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-文件阅读器"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">2. 文件阅读器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-文件内容解码器"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">3. 文件内容解码器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（1）CSV文件"><span class="post-toc-number">12.3.1.</span> <span class="post-toc-text">（1）CSV文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（2）二进制文件"><span class="post-toc-number">12.3.2.</span> <span class="post-toc-text">（2）二进制文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（3）图像文件"><span class="post-toc-number">12.3.3.</span> <span class="post-toc-text">（3）图像文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（4）TFRecords文件"><span class="post-toc-number">12.3.4.</span> <span class="post-toc-text">（4）TFRecords文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-批处理数据"><span class="post-toc-number">12.4.</span> <span class="post-toc-text">4. 批处理数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TFRecords文件的存储与读取"><span class="post-toc-number">13.</span> <span class="post-toc-text">TFRecords文件的存储与读取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-TFRecords存储"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">一. TFRecords存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-建立TFRecord存储器"><span class="post-toc-number">13.1.1.</span> <span class="post-toc-text">1. 建立TFRecord存储器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-构造每个样本的Example协议块"><span class="post-toc-number">13.1.2.</span> <span class="post-toc-text">2. 构造每个样本的Example协议块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（1）-tf-train-Example-features-None"><span class="post-toc-number">13.1.2.1.</span> <span class="post-toc-text">（1） tf.train.Example(features = None)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（2）-tf-train-Features-feature-None"><span class="post-toc-number">13.1.2.2.</span> <span class="post-toc-text">（2） tf.train.Features(feature = None)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（3）-tf-train-Feature-options"><span class="post-toc-number">13.1.2.3.</span> <span class="post-toc-text">（3） tf.train.Feature(**options)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-TFRecords读取方法"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">二. TFRecords读取方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解析TFRecords的Example协议内存块的步骤："><span class="post-toc-number">13.2.1.</span> <span class="post-toc-text">解析TFRecords的Example协议内存块的步骤：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-tf-parse-single-example-serialized-features-None-name-None"><span class="post-toc-number">13.2.1.1.</span> <span class="post-toc-text">1. tf.parse_single_example(serialized,features=None,name= None</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-tf-FixedLenFeature-shape-dtype"><span class="post-toc-number">13.2.1.2.</span> <span class="post-toc-text">2. tf.FixedLenFeature(shape,dtype)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结（读取TFRecord文件的步骤）："><span class="post-toc-number">13.2.2.</span> <span class="post-toc-text">总结（读取TFRecord文件的步骤）：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-cast"><span class="post-toc-number">14.</span> <span class="post-toc-text">tf.cast()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-app-flags"><span class="post-toc-number">15.</span> <span class="post-toc-text">tf.app.flags()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-app-run"><span class="post-toc-number">16.</span> <span class="post-toc-text">tf.app.run()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Basis"><span class="post-toc-number">17.</span> <span class="post-toc-text">Basis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#get-shape"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">get_shape()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TensorFlow-随机数生成函数"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">TensorFlow 随机数生成函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常数生成函数"><span class="post-toc-number">17.3.</span> <span class="post-toc-text">常数生成函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-ConfigProto-allow-soft-placement-True-log-device-placement-True"><span class="post-toc-number">18.</span> <span class="post-toc-text">tf.ConfigProto(allow soft_placement=True,log_device_placement=True)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-clip-by-value"><span class="post-toc-number">19.</span> <span class="post-toc-text">tf.clip_by_value</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#反向传播算法（backpropagation）"><span class="post-toc-number">20.</span> <span class="post-toc-text">反向传播算法（backpropagation）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-train-exponential-decay"><span class="post-toc-number">21.</span> <span class="post-toc-text">tf.train.exponential_decay</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#timeline模块"><span class="post-toc-number">22.</span> <span class="post-toc-text">timeline模块</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-get-variable"><span class="post-toc-number">1.</span> <span class="post-toc-text">tf.get_variable</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TensorFlow-中的变量初始化函数："><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">TensorFlow 中的变量初始化函数：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-Session-run"><span class="post-toc-number">2.</span> <span class="post-toc-text">tf.Session().run()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-truncated-normal-shape-mean-stddev"><span class="post-toc-number">3.</span> <span class="post-toc-text">tf.truncated_normal(shape, mean, stddev)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-name-scope-amp-tf-variable-scope"><span class="post-toc-number">4.</span> <span class="post-toc-text">tf.name_scope() &amp; tf.variable_scope()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-tf-name-scope对tf-get-variable-的影响"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. tf.name_scope对tf.get_variable()的影响</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-dropout"><span class="post-toc-number">5.</span> <span class="post-toc-text">tf.nn.dropout()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-conv2d"><span class="post-toc-number">6.</span> <span class="post-toc-text">tf.nn.conv2d</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-separable-conv2d"><span class="post-toc-number">7.</span> <span class="post-toc-text">tf.nn.separable_conv2d</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常规卷积操作"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">常规卷积操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Depthwise-Convolution"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">Depthwise Convolution</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pointwise-Convolution"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">Pointwise Convolution</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-nn-avg-pool"><span class="post-toc-number">8.</span> <span class="post-toc-text">tf.nn.avg_pool</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-initialize-all-variables-vs-tf-initialize-variables"><span class="post-toc-number">9.</span> <span class="post-toc-text">tf.initialize_all_variables() vs tf.initialize_variables</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-变量初始化"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">1. 变量初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-识别未被初始化的变量"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">2. 识别未被初始化的变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-变量的更新"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">3. 变量的更新</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tensorflow-tf-python-io"><span class="post-toc-number">10.</span> <span class="post-toc-text">tensorflow tf.python_io</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源码解析"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">源码解析</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据读取的三种方式"><span class="post-toc-number">11.</span> <span class="post-toc-text">数据读取的三种方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Preload-data-constant-预加载数据"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">1. Preload data: constant 预加载数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Feeding-placeholder，feed-dict"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">2. Feeding: placeholder，feed_dict</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Reading-From-File：直接从文件中读取"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">3. Reading From File：直接从文件中读取</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四种类型数据的读取流程"><span class="post-toc-number">12.</span> <span class="post-toc-text">四种类型数据的读取流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-文件队列构造"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">1. 文件队列构造</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-文件阅读器"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">2. 文件阅读器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-文件内容解码器"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">3. 文件内容解码器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（1）CSV文件"><span class="post-toc-number">12.3.1.</span> <span class="post-toc-text">（1）CSV文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（2）二进制文件"><span class="post-toc-number">12.3.2.</span> <span class="post-toc-text">（2）二进制文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（3）图像文件"><span class="post-toc-number">12.3.3.</span> <span class="post-toc-text">（3）图像文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（4）TFRecords文件"><span class="post-toc-number">12.3.4.</span> <span class="post-toc-text">（4）TFRecords文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-批处理数据"><span class="post-toc-number">12.4.</span> <span class="post-toc-text">4. 批处理数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TFRecords文件的存储与读取"><span class="post-toc-number">13.</span> <span class="post-toc-text">TFRecords文件的存储与读取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-TFRecords存储"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">一. TFRecords存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-建立TFRecord存储器"><span class="post-toc-number">13.1.1.</span> <span class="post-toc-text">1. 建立TFRecord存储器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-构造每个样本的Example协议块"><span class="post-toc-number">13.1.2.</span> <span class="post-toc-text">2. 构造每个样本的Example协议块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（1）-tf-train-Example-features-None"><span class="post-toc-number">13.1.2.1.</span> <span class="post-toc-text">（1） tf.train.Example(features = None)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（2）-tf-train-Features-feature-None"><span class="post-toc-number">13.1.2.2.</span> <span class="post-toc-text">（2） tf.train.Features(feature = None)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（3）-tf-train-Feature-options"><span class="post-toc-number">13.1.2.3.</span> <span class="post-toc-text">（3） tf.train.Feature(**options)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-TFRecords读取方法"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">二. TFRecords读取方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解析TFRecords的Example协议内存块的步骤："><span class="post-toc-number">13.2.1.</span> <span class="post-toc-text">解析TFRecords的Example协议内存块的步骤：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-tf-parse-single-example-serialized-features-None-name-None"><span class="post-toc-number">13.2.1.1.</span> <span class="post-toc-text">1. tf.parse_single_example(serialized,features=None,name= None</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-tf-FixedLenFeature-shape-dtype"><span class="post-toc-number">13.2.1.2.</span> <span class="post-toc-text">2. tf.FixedLenFeature(shape,dtype)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结（读取TFRecord文件的步骤）："><span class="post-toc-number">13.2.2.</span> <span class="post-toc-text">总结（读取TFRecord文件的步骤）：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-cast"><span class="post-toc-number">14.</span> <span class="post-toc-text">tf.cast()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-app-flags"><span class="post-toc-number">15.</span> <span class="post-toc-text">tf.app.flags()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-app-run"><span class="post-toc-number">16.</span> <span class="post-toc-text">tf.app.run()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Basis"><span class="post-toc-number">17.</span> <span class="post-toc-text">Basis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#get-shape"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">get_shape()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TensorFlow-随机数生成函数"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">TensorFlow 随机数生成函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常数生成函数"><span class="post-toc-number">17.3.</span> <span class="post-toc-text">常数生成函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-ConfigProto-allow-soft-placement-True-log-device-placement-True"><span class="post-toc-number">18.</span> <span class="post-toc-text">tf.ConfigProto(allow soft_placement=True,log_device_placement=True)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-clip-by-value"><span class="post-toc-number">19.</span> <span class="post-toc-text">tf.clip_by_value</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#反向传播算法（backpropagation）"><span class="post-toc-number">20.</span> <span class="post-toc-text">反向传播算法（backpropagation）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-train-exponential-decay"><span class="post-toc-number">21.</span> <span class="post-toc-text">tf.train.exponential_decay</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#保存模型和加载模型"><span class="post-toc-number">22.</span> <span class="post-toc-text">保存模型和加载模型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tf-gradients-与stop-gradient"><span class="post-toc-number">23.</span> <span class="post-toc-text">tf.gradients()与stop_gradient()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#timeline模块"><span class="post-toc-number">24.</span> <span class="post-toc-text">timeline模块</span></a></li></ol>
     </ul>
     
 
@@ -572,7 +572,7 @@ with tf.Session() as sess:
 <li><code>input</code>：指需要做卷积的输入图像，它要求是一个<code>Tensor</code>，具有<code>[batch, in_height, in_width, in_channels]</code>这样的<code>shape</code>，具体含义是<code>[训练时一个</code>batch<code>的图片数量, 图片高度, 图片宽度, 图像通道数]</code>。注意：它是一个<code>4</code>维的<code>Tensor</code>，要求类型为<code>float32</code>和<code>float64</code>其中之一。</li>
 <li><code>filter</code>：相当于CNN中的卷积核，它要求是一个<code>Tensor</code>，具有<code>[filter_height, filter_width, in_channels, out_channels]</code>这样的<code>shape</code>，具体含义是<code>[卷积核的高度，卷积核的宽度，图像通道数，卷积核个数]</code>，要求类型与参数<code>input</code>相同。注意：第三维<code>in_channels</code>，就是参数<code>input的</code>第四维。</li>
 <li><code>strides</code>：卷积时在图像每一维的步长，这是一个长度为<code>4</code>的一维张量。每一维度对应的是<code>input</code>中每一维的对应移动步数。</li>
-<li><code>padding</code>：<code>string</code>类型，只能是<code>SAME</code>或`VALID”。这个值决定了不同的卷积方式。<ul>
+<li><code>padding</code>：<code>string</code>类型，只能是<code>SAME</code>或<code>VALID</code>。这个值决定了不同的卷积方式。<ul>
 <li>例如，当用<code>5x5</code> 的卷积核对<code>28x28</code>的图像进行卷积，采用<code>padding=VALID</code>模式，步长为<code>5</code>，那么最后每个方向会余下<code>3</code>个像素，而<code>VALID</code>模式中会直接舍弃，这样每个方向上的<code>5</code>个元素会变成一个元素，所以最终卷积后的图像大小变成了<code>5x5</code>。</li>
 <li>当采用<code>padding=SAME</code>模式时，当每个方向差偶数个元素时首尾各补一半，差奇数个时前边补奇数个，后边补偶数个。当然具体差多少元素和选定的卷积核大小以及滑动步长密切相关。</li>
 </ul>
@@ -1162,20 +1162,11 @@ print(FLAGS.data_dir, FLAGS.batch_size, FLAGS.num_evals)
 <h2 id="常数生成函数"><a href="#常数生成函数" class="headerlink" title="常数生成函数"></a>常数生成函数</h2><p><img src="https://upload-images.jianshu.io/upload_images/1351548-e42fbd934f63d67f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h1 id="tf-ConfigProto-allow-soft-placement-True-log-device-placement-True"><a href="#tf-ConfigProto-allow-soft-placement-True-log-device-placement-True" class="headerlink" title="tf.ConfigProto(allow soft_placement=True,log_device_placement=True)"></a><code>tf.ConfigProto(allow soft_placement=True,log_device_placement=True)</code></h1><p>通过<code>ConfigProto</code>可以配置类似并行的线程数、 GPU 分配策略、运算超时时间等参数。在这些参数中，最常使用的有两个。</p>
 <ul>
-<li><code>allow_soft_placement</code>，这是一个布尔型的参数，当它为<code>True</code>时， 在以下任意一个条件成立时， GPU 上的运算可 以放到 CPU 上进行 ：<ul>
-<li><ol>
+<li><code>allow_soft_placement</code>，这是一个布尔型的参数，当它为<code>True</code>时， 在以下任意一个条件成立时， GPU 上的运算可 以放到 CPU 上进行 ：<ol>
 <li>运算无法在 GPU 上执行 。</li>
-</ol>
-</li>
-<li><ol start="2">
 <li>没有 GPU 资源（比如运算被指定在第 二个 GPU 上运行 ，但是机器只有一个 GPU ） 。</li>
-</ol>
-</li>
-<li><ol start="3">
 <li>运算输入包含对 CPU 计算结果的引用 。<br>这个参数的默认值为 <code>False</code>，但是为了使得代码的可移植性更强，在有 GPU 的环境下这个参数一般会被设置为 <code>True</code>。不同的 GPU 驱动版本可能对计算的支持有略微的区别，通过将 <code>allow_soft_placement</code> 参数设为 <code>True</code>，当某些运算无法被当前 GPU 支持时，可 以自动调整到 CPU 上，而不是报错。类似地，通过将这个参数设置为 True，可以让程序在拥有不同数量的 GPU 机器上顺利运行。</li>
 </ol>
-</li>
-</ul>
 </li>
 <li><code>log_device_placement</code>：这也是一个布尔型的参数，当它为 <code>True</code> 时日志中将会记录每个节点被安排在哪个设备上以方便调试。而在生产环境中将这个参数设置为 <code>False</code> 可以减少日志量。</li>
 </ul>
@@ -1194,16 +1185,10 @@ print(FLAGS.data_dir, FLAGS.batch_size, FLAGS.num_evals)
 <p>为了综合梯度下降算法和随机梯度下降算法的优缺点，在实际应用中一般采用这两个算法的折中：每次计算一小部分训练数据的损失函数 。 这一小部分数据被称之为一个 <code>batch</code>。通过矩阵运算，每次在一个 <code>batch</code> 上优化神经网络的参数并不会比单个数据慢太多。另一方面，每次使用一个 <code>batch</code> 可以大大减小收敛所需要的迭代次数，同时可以使收敛到的结果更加接近梯度下降的效果。</p>
 <h1 id="tf-train-exponential-decay"><a href="#tf-train-exponential-decay" class="headerlink" title="tf.train.exponential_decay"></a><code>tf.train.exponential_decay</code></h1><p>实现指数衰减学习率。</p>
 <p>步骤： </p>
-<ul>
-<li><ol>
+<ol>
 <li>首先使用较大学习率（目的：为快速得到一个比较优的解)）</li>
-</ol>
-</li>
-<li><ol start="2">
 <li>然后通过迭代逐步减小学习率（目的：为使模型在训练后期更加稳定）</li>
 </ol>
-</li>
-</ul>
 <pre><code class="python">tf.train.exponential_decay(
     learning_rate,        # 初始学习率
     global_step,      # 当前迭代次数
@@ -1219,6 +1204,166 @@ print(FLAGS.data_dir, FLAGS.batch_size, FLAGS.num_evals)
 </code></pre><p>直观解释：假设给定初始学习率 learning_rate 为 <code>0.1</code>，学习率衰减率为 <code>0.1</code>，<code>decay_steps</code> 为 <code>10000</code>。则随着迭代次数从 <code>1</code> 到 <code>10000</code>，当前的学习率 <code>decayed_learning_rate</code> 慢慢的从 <code>0.1</code> 降低为  <code>0.1*0.1 = 0.01</code>，当迭代次数到 <code>20000</code>，当前的学习率慢慢的从 <code>0.01</code> 降低为<img src="https://upload-images.jianshu.io/upload_images/1351548-1bd7275ad60cee5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，以此类推。 也就是说每 <code>10000</code> 次迭代，学习率衰减为前 <code>10000</code> 次的十分之一，该衰减是连续的，这是在 <code>staircase</code> 为 <code>False</code> 的情况下。</p>
 <p>如果 <code>staircase</code> 为 <code>True</code>，则 <code>global_step / decay_steps</code>始终取整数，也就是说衰减是突变的，每 <code>decay_steps</code> 次变化一次，变化曲线是阶梯状。</p>
 <p><code>decay_steps</code> 通常代表了完整的使用一遍训练数据所需要的迭代轮数。这个迭代轮数也就是总训练样本数除以每一个 <code>batch</code> 中的训练样本数 。这种设置的常用场景是每完整地过完一遍训练数据，学习率就减小一次。这可以使得训练数据集中的所有数据对模型训练有相等的作用。当使用连续的指数衰减学习率时，不同的训练数据有不同的学习率，而当学习率减小时，对应的训练数据对模型训练结果的影响也就小了。</p>
+<h1 id="保存模型和加载模型"><a href="#保存模型和加载模型" class="headerlink" title="保存模型和加载模型"></a>保存模型和加载模型</h1><p>利用 TensorFlow 搭建模型并保存时，保存模型的方法为：</p>
+<pre><code class="python">saver = tf.train.Saver();
+saver.save(sess, model_path + model_name)
+</code></pre>
+<p>这样，在 <code>model_path</code> 路径下会得到3个名为 <code>model_name</code> 的文件和一个 <code>checkpoint</code> 文件。</p>
+<p>其中， <code>.data-00000-of-00001</code> 和 <code>.index</code> 文件属于 <code>ckpt</code> 文件，<strong>保存了所有的 <code>weights</code> 、<code>biases</code> 、<code>gradients</code> 等变量</strong>。</p>
+<p><code>.meta</code> 主要保存图结构，它是 <code>pb（protocol buffer）</code> 格式文件，包含变量、<code>op</code>、集合等。</p>
+<p><code>checkpoint</code> 文件<strong>记录了保存的最新的 <code>checkpoint</code> 文件以及其他 <code>checkpoint</code> 文件列表</strong>。在 <code>inference</code> 时，可以通过修改这个文件来指定使用哪个model。</p>
+<p>在实际训练中，我们可能会在每迭代 <code>1000</code> 次后保存一次模型数据，但有图是不变的，没必要每次都去保存，可以通过如下方式指定不保存图：</p>
+<pre><code class="python">saver.saver(sess, model_path, global_step=step, write_meta_graph=False)
+</code></pre>
+<p>另一种比较实用的是，如果希望每 <code>2</code> 个小时保存一次模型，并且只保存最近的 <code>5</code> 个模型文件：</p>
+<pre><code class="python">tf.train.Saver(max_to_keep=5, keep_checkpoint_every_n_hours=2)
+</code></pre>
+<p><strong>【注意】：</strong> TensorFlow 默认只会保存最近的 <code>5</code> 个模型文件，如果希望保存更多的文件，可以通过 <code>max_to_keep</code> 来进行指定。</p>
+<p>如果我们不对 <code>tf.train.Saver</code> 指定任何参数，默认会保存所有变量。如果不想保存所有变量，而只保存一部分变量，可以通过指定 <code>variables/collections</code>。在创建 <code>tf.train.Saver</code> 实例时，通过将需要保存的变量构造 <code>list</code> 或者 <code>dictionary</code>，传入到 <code>Saver</code> 中：</p>
+<pre><code class="python">w1 = tf.Variable(tf.random_normal(shape=[2]), name=&#39;w1&#39;)
+w2 = tf.Variable(tf.random_normal(shape=[5]), name=&#39;w2&#39;)
+saver = tf.train.Saver([w1,w2])
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+saver.save(sess, &#39;./checkpoint_dir/MyModel&#39;,global_step=1000)
+</code></pre>
+<p>由于 TensorFlow 将图和变量数据分开保存为不同的文件。因此，在导入模型时，也要分为两步：</p>
+<ol>
+<li>构造网络图</li>
+<li>加载参数</li>
+</ol>
+<p>在进行构造网络图时，一种比较笨的办法是：直接再将之前的代码再敲一遍，实现跟模型一模一样的图结构。其实，由于之前已经保存了图，就没有必要再去手写一遍图结构代码，而是可以通过以下方式就可以将图加载进来：</p>
+<pre><code class="python">saver = tf.train.import_meta_graph(meta_path)
+</code></pre>
+<p>仅仅将图加载进来并没有用，还需要将之前训练好的模型参数（即 <code>weights</code> 、<code>biases</code>等）。由于变量值需要依赖于 <code>Session</code>，因此在加载参数时，需要先要构造好 <code>Session</code> ：</p>
+<pre><code class="python">with tf.Session() as sess:
+    new_saver = tf.train.import_meta_graph(meta_path)
+    new_saver.restore(sess, tf.train.latest_checkpoint(ckpt_dir))
+</code></pre>
+<p>此时，<code>w1</code> 和 <code>w2</code> 就被加载进了图中，并且可以被访问：</p>
+<pre><code class="python">with tf.Session() as sess:
+    saver = tf.train.import_meta_graph(model_path+meta_name)
+    saver.restore(sess, tf.train.latest_checkpoint(model_path))
+    print(sess.run(&#39;w1:0&#39;))
+# [ 0.51480412 -0.56989086]
+</code></pre>
+<p>理解了如何保存和恢复模型之后，在实际应用中，通常是希望使用一些已经训练好的模型，如 <code>prediction</code>、<code>fine-tuning</code> 以及进一步训练等。这时，可能需要获取训练好的模型中的一些中间结果值，可以通过 <code>graph.get_tensor_by_name(&#39;w1:0&#39;)</code> 来进行获取（其中，<code>w1:0</code> 是 tensor 的 name）。</p>
+<p>例子：</p>
+<pre><code class="python">w1 = tf.Placeholder(&#39;float&#39;, name=&#39;w1&#39;)
+w2 = tf.Placeholder(&#39;float&#39;, name=&#39;w2&#39;)
+b1 = tf.Variable(2.0, name=&#39;bias&#39;)
+
+# 定义一个op，用于后面恢复
+w3 = tf.add(w1, w2)
+w4 = tf.multiply(w3, b1, name=&#39;op_to_restore&#39;)
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# 创建一个Saver对象，用于保存多有的变量
+saver = tf.train.Saver()
+
+# 通过传入数据，执行op
+print(sess.run(w4, feed_dict={w1:4, w2:8}))
+
+# 现在保存模型
+saver.save(sess, model_path+model_name, global_step=1000)
+
+# 通过
+sess = tf.Session()
+# 先加载图和参数变量
+saver = tf.train.import_meta_graph(model_path+meta_name)
+saver.restore(sess, tf.train.latest_checkpoint(model_path))
+
+# 访问Placeholder变量，并且创建feed-dict来作为Placeholder的新值
+graph = tf.get_default_graph()
+w1 = graph.get_tensor_by_name(&#39;w1:0&#39;)
+w2 = graph.get_tensor_by_name(&#39;w2:0&#39;)
+feed_dict = {w1:13.0, w2:17.0}
+
+# 访问想要执行的op
+op_to_restore = graph.get_tensor_by_name(&#39;op_to_restore:0&#39;)
+print(sess.run(op_to_restore, feed_dict))
+# 结果为60.0
+</code></pre>
+<p><strong>注意</strong>：保存模型时，只会保存变量的值，<code>Placeholder</code> 里面的值不会被保存。</p>
+<p>如果不仅仅是用训练好的模型，还要加入一些 <code>op</code>，或者说加入一些 <code>layers</code>，并训练新的模型：</p>
+<pre><code class="python">sess = tf.Session()
+
+# 加载图和变量
+saver = tf.train.import_meta_graph(meta_name)
+saver.restore(sess, tf.train.latest_checkpoint(model_path))
+
+# 访问Placeholder变量，并且创建feed-dict来作为Placeholder的新值
+graph = tf.train.get_default_graph()
+w1 = graph.get_tensor_by_name(&#39;w1:0&#39;)
+w2 = graph.get_tensor_by_name(&#39;w2:0&#39;)
+feed_dict = {w1:13.0, w2:17.0}
+
+# 访问想要执行的op
+op_to_restore = graph.get_tensor_by_name(&#39;op_to_restore:0&#39;)
+
+# 在当前图中加入op
+add_on_op = tf.multiply(op_to_restore, 2)
+print(sess.run(add_on_op, feed_dict))
+</code></pre>
+<p>如果只想恢复图的一部分，并且再加入其它的 <code>op</code> 用于 <code>fine-tuning</code>。只需通过 <code>graph.get_tensor_by_name()</code> 方法获取需要的 <code>op</code>，并且在此基础上建立图。假设我们需要在训练好的VGG网络使用图，并且修改最后一层，将输出改为 <code>2</code>，用于 <code>fine-tuning</code> 新数据：</p>
+<pre><code class="python">saver = tf.train.import_meta_graph(meta_name)
+graph = tf.get_default_graph()
+
+# 访问用于fine-tuning的output
+fc7 = graph.get_tensor_by_name(&#39;fc7:0&#39;)
+
+# 如果想要修改最后一层梯度，需要如下操作
+fc7 = tf.stop_gradient(fc7)
+fc7_shape = fc7.get_shape().as_list()
+
+new_outputs = 2
+weights = tf.Variable(tf.truncated_normal([fc7_shape[3], num_ouputs], stddev=0.05))
+biases = tf.Variable(tf.constant(0.05, shape=[num_outputs]))
+output = tf.matmul(fc7, weights) + biased
+pred = tf.nn.softmax(output)
+</code></pre>
+<h1 id="tf-gradients-与stop-gradient"><a href="#tf-gradients-与stop-gradient" class="headerlink" title="tf.gradients()与stop_gradient()"></a><code>tf.gradients()与stop_gradient()</code></h1><p>TensorFlow 中有一个计算梯度的函数 <code>tf.gradients(ys, xs)</code>。要注意的是，<code>xs</code> 中的 <code>x</code> 必须要与 <code>ys</code> 相关，不相关的话，会报错。</p>
+<p>例如，下述代码中定义了两个变量 <code>w1</code>， <code>w2</code>， 但 <code>ret</code> 只与 <code>w1</code> 相关。</p>
+<pre><code class="python">w1 = tf.Variable([[1,2]])
+w2 = tf.Variable([[3,4]])
+ret = tf.matmul(w1, [[2,1]])
+grad = tf.gradients(ret, [w1,w2])
+
+with tf.Session() as sess:
+    tf.global_variables_initializer().run()
+    print(sess.run(grad))
+# TypeError: Fetch argument None has invalid type
+</code></pre>
+<p>正确做法为：</p>
+<pre><code class="python">w1 = tf.Variable([[1,2]])
+w2 = tf.Variable([[3,4]])
+
+ret = tf.matmul(w1, [[2],[1]])
+
+grad = tf.gradients(ret,[w1])
+
+with tf.Session() as sess:
+    tf.global_variables_initializer().run()
+    print(sess.run(grad))
+#  [array([[2, 1]], dtype=int32)]
+</code></pre>
+<p>对求导函数而言，其主要功能即求导：<br>$$<br>\frac{\partial y}{\partial x}<br>$$</p>
+<p>。在tensorflow中，yy和xx都是tensor。</p>
+<p>更进一步，tf.gradients()接受求导值ys和xs不仅可以是tensor，还可以是list，形如[tensor1, tensor2, …, tensorn]。当ys和xs都是list时，它们的求导关系为：</p>
+<p>gradients() adds ops to the graph to output the derivatives of ys with respect to xs. It returns a list of Tensor of length len(xs) where each tensor is the sum(dy/dx) for y in ys.</p>
+<p>意思是：</p>
+<p>tf.gradients()实现ys对xs求导<br>求导返回值是一个list，list的长度等于len(xs)</p>
+<p>假设返回值是[grad1, grad2, grad3]，ys=[y1, y2]，xs=[x1, x2, x3]。则，真实的计算过程为: </p>
+<p><code>tf.gradients()</code> 的原型为：</p>
+<pre><code class="python">tf.gradients(ys, xs, 
+             grad_ys=None, 
+             name=&#39;gradients&#39;,
+             colocate_gradients_with_ops=False,
+             gate_gradients=False,
+             aggregation_method=None,
+             stop_gradients=None)
+</code></pre>
 <h1 id="timeline模块"><a href="#timeline模块" class="headerlink" title="timeline模块"></a><code>timeline</code>模块</h1>
         
     
