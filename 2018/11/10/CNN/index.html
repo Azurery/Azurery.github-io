@@ -37,8 +37,6 @@
     
     <title>
         
-            CNN | 
-        
         Azurery
     </title>
 
@@ -49,7 +47,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content=",DL">
+    <meta name="keywords" content="">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,18 +229,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CNN | Azurery">
+    <meta property="og:title" content="Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    <meta property="og:article:tag" content="DL"> 
+    
 
     
         <meta property="article:published_time" content="Sat Nov 10 2018 21:22:36 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Dec 30 2018 11:56:53 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Feb 19 2019 11:14:07 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="CNN | Azurery">
+    <meta name="twitter:title" content="Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -263,9 +261,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://yoursite.com/2018/11/10/CNN/index.html",
-    "headline": "CNN",
+    "headline": "",
     "datePublished": "Sat Nov 10 2018 21:22:36 GMT+0800",
-    "dateModified": "Sun Dec 30 2018 11:56:53 GMT+0800",
+    "dateModified": "Tue Feb 19 2019 11:14:07 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Magicmanoooo",
@@ -283,7 +281,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",DL",
+    "keywords": "",
     "description": "蒟蒻一枚",
 }
 </script>
@@ -349,7 +347,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#神经网络基础概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">神经网络基础概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#神经网络的工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">神经网络的工作原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#损失函数（loss-function）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">损失函数（loss function）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化器（optimizer）"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">优化器（optimizer）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#神经网络的组件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">神经网络的组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#神经网络的数据表示"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">神经网络的数据表示</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#张量的关键属性有以下三个关键属性来定义："><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">张量的关键属性有以下三个关键属性来定义：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#梯度"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">梯度</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#训练网络"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">训练网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么需要激活函数？"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">为什么需要激活函数？</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#交叉熵"><span class="post-toc-number">2.</span> <span class="post-toc-text">交叉熵</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础知识"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无监督预训练（Unsupervised-pre-training）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">无监督预训练（Unsupervised pre-training）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#有监督预训练（Supervised-pre-training）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">有监督预训练（Supervised pre-training）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IoU"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">IoU</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非极大值抑制"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">非极大值抑制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对梯度幅值进行非极大值抑制"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">对梯度幅值进行非极大值抑制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#物体检测-VS-图片分类"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">物体检测 VS 图片分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Selective-Search-for-Object-Recognition"><span class="post-toc-number">4.</span> <span class="post-toc-text">Selective Search for Object Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标检测-VS-目标识别"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">目标检测 VS 目标识别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Sliding-Window-Algorithm"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Sliding Window Algorithm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Region-Proposal-Algorithms"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Region Proposal Algorithms</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Selective-Search"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Selective Search</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算法流程："><span class="post-toc-number">4.4.1.</span> <span class="post-toc-text">算法流程：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相似度计算"><span class="post-toc-number">4.4.2.</span> <span class="post-toc-text">相似度计算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#颜色相似度（color-similarity）"><span class="post-toc-number">4.4.2.1.</span> <span class="post-toc-text">颜色相似度（color similarity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#纹理相似度（texture-similarity）"><span class="post-toc-number">4.4.2.2.</span> <span class="post-toc-text">纹理相似度（texture similarity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#尺寸相似度（size-similarity）"><span class="post-toc-number">4.4.2.3.</span> <span class="post-toc-text">尺寸相似度（size similarity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#交叠相似度（shape-compatibility-measure）"><span class="post-toc-number">4.4.2.4.</span> <span class="post-toc-text">交叠相似度（shape compatibility measure）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最终的相似度"><span class="post-toc-number">4.4.2.5.</span> <span class="post-toc-text">最终的相似度</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LeNet"><span class="post-toc-number">5.</span> <span class="post-toc-text">LeNet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一层：卷积层"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">第一层：卷积层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二层：池化层"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">第二层：池化层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三层：卷积层"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">第三层：卷积层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四层：池化层"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">第四层：池化层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五层：全连接层"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">第五层：全连接层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第六层：全连接层"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">第六层：全连接层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第七层：全连接层"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">第七层：全连接层</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RCNN"><span class="post-toc-number">6.</span> <span class="post-toc-text">RCNN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整体过程："><span class="post-toc-number">6.1.</span> <span class="post-toc-text">整体过程：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-算法的整体思路"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">1. 算法的整体思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-候选框的搜索"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">2. 候选框的搜索</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#各向异性缩放"><span class="post-toc-number">6.3.1.</span> <span class="post-toc-text">各向异性缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#各向同性缩放"><span class="post-toc-number">6.3.2.</span> <span class="post-toc-text">各向同性缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#非极大值抑制的具体操作"><span class="post-toc-number">6.3.3.</span> <span class="post-toc-text">非极大值抑制的具体操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#步骤："><span class="post-toc-number">6.3.3.1.</span> <span class="post-toc-text">步骤：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-CNN特征提取"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">3. CNN特征提取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-网络结构设计"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">1. 网络结构设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-有监督预训练"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">2. 有监督预训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-fine-tuning训练"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">3. fine-tuning训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#疑问"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">疑问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？"><span class="post-toc-number">6.4.4.1.</span> <span class="post-toc-text">1. 既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096-9216，从f6到f7的参数是4096-4096。那么具体是选择p5、f6还是f7呢？"><span class="post-toc-number">6.4.4.2.</span> <span class="post-toc-text">2. 没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096*9216，从f6到f7的参数是4096*4096。那么具体是选择p5、f6还是f7呢？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-CNN在进行训练的时候，本来就是对bounding-box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？"><span class="post-toc-number">6.4.4.3.</span> <span class="post-toc-text">3. CNN在进行训练的时候，本来就是对bounding box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-为什么需要回归器？"><span class="post-toc-number">6.4.4.4.</span> <span class="post-toc-text">4. 为什么需要回归器？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何设计回归器（Bounding-box-regression）？"><span class="post-toc-number">6.4.4.5.</span> <span class="post-toc-text">如何设计回归器（Bounding-box regression）？</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-SVM训练"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">4. SVM训练</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#AlexNet"><span class="post-toc-number">7.</span> <span class="post-toc-text">AlexNet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-模型结构"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">1. 模型结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-创新点"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">2. 创新点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Fast-RCNN"><span class="post-toc-number">8.</span> <span class="post-toc-text">Fast RCNN</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#神经网络基础概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">神经网络基础概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#神经网络的工作原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">神经网络的工作原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#损失函数（loss-function）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">损失函数（loss function）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化器（optimizer）"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">优化器（optimizer）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#神经网络的组件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">神经网络的组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#神经网络的数据表示"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">神经网络的数据表示</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#张量的关键属性有以下三个关键属性来定义："><span class="post-toc-number">1.5.0.1.</span> <span class="post-toc-text">张量的关键属性有以下三个关键属性来定义：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#梯度"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">梯度</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#训练网络"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">训练网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么需要激活函数？"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">为什么需要激活函数？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线性组合只能是直线"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">线性组合只能是直线</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#交叉熵"><span class="post-toc-number">2.</span> <span class="post-toc-text">交叉熵</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Dropout"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dropout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Dropout-出现的缘由"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. Dropout 出现的缘由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Dropout-的概念"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. Dropout 的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Dropout-具体工作流程"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. Dropout 具体工作流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Dropout-的使用"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4. Dropout 的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-在训练模型阶段"><span class="post-toc-number">3.4.0.1.</span> <span class="post-toc-text">1. 在训练模型阶段</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-在测试模型阶段"><span class="post-toc-number">3.4.0.2.</span> <span class="post-toc-text">2. 在测试模型阶段</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-为什么Dropout-可以解决过拟合？"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">5. 为什么Dropout 可以解决过拟合？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Dropout-在-Keras-中的源码分析"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">6. Dropout 在 Keras 中的源码分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础知识"><span class="post-toc-number">4.</span> <span class="post-toc-text">基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无监督预训练（Unsupervised-pre-training）"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">无监督预训练（Unsupervised pre-training）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#有监督预训练（Supervised-pre-training）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">有监督预训练（Supervised pre-training）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ground-Truth"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Ground Truth</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-错误的数据"><span class="post-toc-number">4.3.0.1.</span> <span class="post-toc-text">1.  错误的数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-正确的数据"><span class="post-toc-number">4.3.0.2.</span> <span class="post-toc-text">2.  正确的数据</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#感受野（receptive-field）"><span class="post-toc-number">5.</span> <span class="post-toc-text">感受野（receptive field）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IoU"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">IoU</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非极大值抑制"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">非极大值抑制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对梯度幅值进行非极大值抑制"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">对梯度幅值进行非极大值抑制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#非极大值抑制的工作原理："><span class="post-toc-number">5.3.0.1.</span> <span class="post-toc-text">非极大值抑制的工作原理：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#物体检测-VS-图片分类"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">物体检测 VS 图片分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Selective-Search-for-Object-Recognition"><span class="post-toc-number">6.</span> <span class="post-toc-text">Selective Search for Object Recognition</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标检测-VS-目标识别"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">目标检测 VS 目标识别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Sliding-Window-Algorithm"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Sliding Window Algorithm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Region-Proposal-Algorithms"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">Region Proposal Algorithms</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Selective-Search"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">Selective Search</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算法流程："><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">算法流程：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相似度计算"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">相似度计算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#颜色相似度（color-similarity）"><span class="post-toc-number">6.4.2.1.</span> <span class="post-toc-text">颜色相似度（color similarity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#纹理相似度（texture-similarity）"><span class="post-toc-number">6.4.2.2.</span> <span class="post-toc-text">纹理相似度（texture similarity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#尺寸相似度（size-similarity）"><span class="post-toc-number">6.4.2.3.</span> <span class="post-toc-text">尺寸相似度（size similarity）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#交叠相似度（shape-compatibility-measure）"><span class="post-toc-number">6.4.2.4.</span> <span class="post-toc-text">交叠相似度（shape compatibility measure）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最终的相似度"><span class="post-toc-number">6.4.2.5.</span> <span class="post-toc-text">最终的相似度</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#池化层"><span class="post-toc-number">7.</span> <span class="post-toc-text">池化层</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LeNet"><span class="post-toc-number">8.</span> <span class="post-toc-text">LeNet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一层：卷积层"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">第一层：卷积层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二层：池化层"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">第二层：池化层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三层：卷积层"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">第三层：卷积层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四层：池化层"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">第四层：池化层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五层：全连接层"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">第五层：全连接层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第六层：全连接层"><span class="post-toc-number">8.6.</span> <span class="post-toc-text">第六层：全连接层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第七层：全连接层"><span class="post-toc-number">8.7.</span> <span class="post-toc-text">第七层：全连接层</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RCNN"><span class="post-toc-number">9.</span> <span class="post-toc-text">RCNN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整体过程："><span class="post-toc-number">9.1.</span> <span class="post-toc-text">整体过程：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-算法的整体思路"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">1. 算法的整体思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-候选框的搜索"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">2. 候选框的搜索</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-各向异性缩放"><span class="post-toc-number">9.3.1.</span> <span class="post-toc-text">1. 各向异性缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-各向同性缩放"><span class="post-toc-number">9.3.2.</span> <span class="post-toc-text">2. 各向同性缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#非极大值抑制的具体操作"><span class="post-toc-number">9.3.3.</span> <span class="post-toc-text">非极大值抑制的具体操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#步骤："><span class="post-toc-number">9.3.3.1.</span> <span class="post-toc-text">步骤：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-CNN特征提取"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">3. CNN特征提取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-网络结构设计"><span class="post-toc-number">9.4.1.</span> <span class="post-toc-text">1. 网络结构设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-有监督预训练"><span class="post-toc-number">9.4.2.</span> <span class="post-toc-text">2. 有监督预训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-fine-tuning-训练"><span class="post-toc-number">9.4.3.</span> <span class="post-toc-text">3. fine-tuning 训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#疑问"><span class="post-toc-number">9.4.4.</span> <span class="post-toc-text">疑问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-既然-CNN-都是用于提取特征，那么直接用-Alexnet-做特征提取，省去-fine-tuning-阶段可以吗？"><span class="post-toc-number">9.4.4.1.</span> <span class="post-toc-text">1. 既然 CNN 都是用于提取特征，那么直接用 Alexnet 做特征提取，省去  fine-tuning 阶段可以吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-没有-fine-tuning-的时候，要选择哪一层的特征作为-CNN-提取到的特征呢？由于可以选择-p5、f6、f7，这三层的神经元个数分别是-9216、4096、4096。从-p5-到-p6-这层的参数个数是：4096-9216，从-f6-到-f7-的参数是4096-4096。那么具体是选择-p5、f6-还是-f7-呢？"><span class="post-toc-number">9.4.4.2.</span> <span class="post-toc-text">2. 没有 fine-tuning 的时候，要选择哪一层的特征作为 CNN 提取到的特征呢？由于可以选择 p5、f6、f7，这三层的神经元个数分别是 9216、4096、4096。从 p5 到 p6 这层的参数个数是：4096*9216，从 f6 到 f7 的参数是4096*4096。那么具体是选择 p5、f6 还是 f7 呢？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-CNN-在进行训练的时候，本来就是对-bounding-box-的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层-softmax-就是分类层，那么为什么要先用-CNN-做特征提取（提取-fc7层数据），然后再把提取的特征用于训练-SVM-分类器？"><span class="post-toc-number">9.4.4.3.</span> <span class="post-toc-text">3. CNN 在进行训练的时候，本来就是对 bounding box 的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层 softmax 就是分类层，那么为什么要先用 CNN 做特征提取（提取 fc7层数据），然后再把提取的特征用于训练 SVM 分类器？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-为什么需要回归器？"><span class="post-toc-number">9.4.4.4.</span> <span class="post-toc-text">4. 为什么需要回归器？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何设计回归器（Bounding-box-regression）？"><span class="post-toc-number">9.4.4.5.</span> <span class="post-toc-text">如何设计回归器（Bounding-box regression）？</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-SVM训练"><span class="post-toc-number">9.5.</span> <span class="post-toc-text">4. SVM训练</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Faster-RCNN"><span class="post-toc-number">10.</span> <span class="post-toc-text">Faster RCNN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Conv-layers"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">1. Conv layers</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Region-Proposal-Networks（RPN）"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">2.  Region Proposal Networks（RPN）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-多通道图像卷积基础知识介绍"><span class="post-toc-number">10.2.1.</span> <span class="post-toc-text">2.1 多通道图像卷积基础知识介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-anchors"><span class="post-toc-number">10.2.2.</span> <span class="post-toc-text">2.2  anchors</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-softmax-判定-foreground-与-background"><span class="post-toc-number">10.2.3.</span> <span class="post-toc-text">2.3  softmax 判定 foreground 与 background</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-bounding-box-regression-原理"><span class="post-toc-number">10.2.4.</span> <span class="post-toc-text">2.4  bounding box regression 原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#目标检测中-region-proposal-的作用？"><span class="post-toc-number">11.</span> <span class="post-toc-text">目标检测中 region proposal 的作用？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-理由一"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">1.  理由一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-理由二"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">2.  理由二</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">11.2.1.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SPP-Net"><span class="post-toc-number">12.</span> <span class="post-toc-text">SPP Net</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RCNN-的弊端"><span class="post-toc-number">12.0.1.</span> <span class="post-toc-text">RCNN 的弊端</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么要固定输入图片的大小？"><span class="post-toc-number">12.0.1.1.</span> <span class="post-toc-text">为什么要固定输入图片的大小？</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络细节"><span class="post-toc-number">12.0.2.</span> <span class="post-toc-text">网络细节</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-卷积层特征图"><span class="post-toc-number">12.0.2.1.</span> <span class="post-toc-text">1.  卷积层特征图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-空间金字塔池化（Spatial-Pyramid-Pooling）"><span class="post-toc-number">12.0.2.2.</span> <span class="post-toc-text">2.  空间金字塔池化（Spatial Pyramid Pooling）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-SPP-Net应用于图像分类"><span class="post-toc-number">12.0.2.3.</span> <span class="post-toc-text">3.  SPP Net应用于图像分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-SPP-Net-应用于目标检测"><span class="post-toc-number">12.0.2.4.</span> <span class="post-toc-text">4.  SPP Net 应用于目标检测</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-如何从一个-region-proposal-映射到-feature-map-的位置？"><span class="post-toc-number">12.0.2.5.</span> <span class="post-toc-text">5.  如何从一个 region proposal 映射到 feature map 的位置？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#金字塔池化的意义"><span class="post-toc-number">12.0.2.6.</span> <span class="post-toc-text">金字塔池化的意义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SPP-Net-amp-RCNN"><span class="post-toc-number">12.0.2.7.</span> <span class="post-toc-text">SPP Net &amp; RCNN</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#AlexNet"><span class="post-toc-number">13.</span> <span class="post-toc-text">AlexNet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-模型结构"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">1. 模型结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-具体结构"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">2. 具体结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一层：卷积层（conv1）"><span class="post-toc-number">13.2.0.1.</span> <span class="post-toc-text">第一层：卷积层（conv1）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二层：卷积层（conv2）"><span class="post-toc-number">13.2.0.2.</span> <span class="post-toc-text">第二层：卷积层（conv2）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第三层：卷积层（conv3）"><span class="post-toc-number">13.2.0.3.</span> <span class="post-toc-text">第三层：卷积层（conv3）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第四层：卷积层（conv4）"><span class="post-toc-number">13.2.0.4.</span> <span class="post-toc-text">第四层：卷积层（conv4）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第五层：卷积层（conv5）"><span class="post-toc-number">13.2.0.5.</span> <span class="post-toc-text">第五层：卷积层（conv5）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第六层：全连接层（fc6）"><span class="post-toc-number">13.2.0.6.</span> <span class="post-toc-text">第六层：全连接层（fc6）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第七层：全连接层（fc7）"><span class="post-toc-number">13.2.0.7.</span> <span class="post-toc-text">第七层：全连接层（fc7）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第八层：全连接层（fc8）"><span class="post-toc-number">13.2.0.8.</span> <span class="post-toc-text">第八层：全连接层（fc8）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-创新点"><span class="post-toc-number">13.3.</span> <span class="post-toc-text">3. 创新点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-ReLU-Nonlinearity"><span class="post-toc-number">13.3.0.1.</span> <span class="post-toc-text">1. ReLU Nonlinearity</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-双-GPU-并行运行"><span class="post-toc-number">13.3.0.2.</span> <span class="post-toc-text">2. 双 GPU 并行运行</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-LRN-局部响应归一化"><span class="post-toc-number">13.3.0.3.</span> <span class="post-toc-text">3. LRN 局部响应归一化</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ZF-Net"><span class="post-toc-number">14.</span> <span class="post-toc-text">ZF Net</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-概述"><span class="post-toc-number">14.1.</span> <span class="post-toc-text">1.  概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-可视化结构"><span class="post-toc-number">14.2.</span> <span class="post-toc-text">2.  可视化结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-Unpooling"><span class="post-toc-number">14.2.1.</span> <span class="post-toc-text">2.1  Unpooling</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-Rectification"><span class="post-toc-number">14.2.2.</span> <span class="post-toc-text">2.2  Rectification</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-Filtering"><span class="post-toc-number">14.2.3.</span> <span class="post-toc-text">2.3  Filtering</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Feature-Visualization"><span class="post-toc-number">14.3.</span> <span class="post-toc-text">3.  Feature Visualization</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Feature-Evolution-during-Training"><span class="post-toc-number">14.4.</span> <span class="post-toc-text">4.  Feature Evolution during Training</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-Feature-Invariance"><span class="post-toc-number">14.5.</span> <span class="post-toc-text">5.  Feature Invariance</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-ZF-Net"><span class="post-toc-number">14.6.</span> <span class="post-toc-text">6.  ZF Net</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-实验"><span class="post-toc-number">14.7.</span> <span class="post-toc-text">7.  实验</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结-1"><span class="post-toc-number">14.8.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#VGG-Net"><span class="post-toc-number">15.</span> <span class="post-toc-text">VGG Net</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-概括"><span class="post-toc-number">15.1.</span> <span class="post-toc-text">1.  概括</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创新点"><span class="post-toc-number">15.2.</span> <span class="post-toc-text">创新点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Yolo-v1"><span class="post-toc-number">16.</span> <span class="post-toc-text">Yolo v1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-滑动窗口与-CNN"><span class="post-toc-number">16.1.</span> <span class="post-toc-text">1. 滑动窗口与 CNN</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-设计理念"><span class="post-toc-number">16.2.</span> <span class="post-toc-text">2.  设计理念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-网络设计"><span class="post-toc-number">16.3.</span> <span class="post-toc-text">3.  网络设计</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                CNN
+                
             </p>
         </div>
 
@@ -430,15 +428,6 @@
 
     <!-- Tags (bookmark) -->
     
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/DL/">DL</a>
-    </ul>
-    
 
     <!-- Share -->
     <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -452,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CNN&url=http://yoursite.com/2018/11/10/CNN/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/11/10/CNN/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -461,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CNN&url=http://yoursite.com/2018/11/10/CNN/index.html&via=Magicmanoooo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2018/11/10/CNN/index.html&via=Magicmanoooo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -491,7 +480,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CNN&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/11/10/CNN/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -509,7 +498,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>深度学习以数据的原始形态（raw data）作为算法的输入，经过算法的层层抽象，将原始数据逐层抽象为自身任务所需的最终特种表示，最后以特征到任务的目标的映射（mapping）作为结束，从原始数据到最终任务目标，一气呵成而中间并无夹杂任何人为操作。相比于传统的ML算法仅学得模型这一单一任务模块而言，DL除了模型学习，还有特征学习、特征抽象等任务模块的参与，借助多层任务模块完成最终的学习任务。</p>
+        <p>title: CNN<br>tags: DL</p>
+<p>深度学习以数据的原始形态（raw data）作为算法的输入，经过算法的层层抽象，将原始数据逐层抽象为自身任务所需的最终特种表示，最后以特征到任务的目标的映射（mapping）作为结束，从原始数据到最终任务目标，一气呵成而中间并无夹杂任何人为操作。相比于传统的 ML 算法仅学得模型这一单一任务模块而言，DL 除了模型学习，还有特征学习、特征抽象等任务模块的参与，借助多层任务模块完成最终的学习任务。</p>
 <h1 id="神经网络基础概念"><a href="#神经网络基础概念" class="headerlink" title="神经网络基础概念"></a>神经网络基础概念</h1><h2 id="神经网络的工作原理"><a href="#神经网络的工作原理" class="headerlink" title="神经网络的工作原理"></a>神经网络的工作原理</h2><p>神经网络中每层对输入数据所做的具体操作保存在该层的权重（ weight）中，其本质是一串数字。用术语来说，每层实现的变换由其权重来参数化（ parameterize）。权重有时也被称为该层的参数（ parameter）。在这种语境下，<strong>学习的意思是为神经网络的所有层找到一组权重值，使得该网络能够将每个示例输入与其目标正确地一一对应</strong>。</p>
 <p>一个深度神经网络可能包含数千万个参数。找到所有参数的正确取值可能是一项非常艰巨的任务，特别是考虑到修改某个参数值将会影响其他所有参数的行为。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-19d814df9cde4e2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -518,13 +508,8 @@
 <h2 id="优化器（optimizer）"><a href="#优化器（optimizer）" class="headerlink" title="优化器（optimizer）"></a>优化器（optimizer）</h2><p>深度学习的基本技巧是：<strong>利用之前的距离值作为反馈信号来对权重值进行微调（fine tuning），以降低当前示例对应的损失值。这种调节由优化器（ optimizer）来完成，它实现了所谓的反向传播（ backpropagation）算法，这是深度学习的核心算法</strong>。其基于训练数据和损失函数来更新网络的机制。决定如何基于损失函数对网络进行更新。它执行的是随机梯度下降（ SGD）的某个变体。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-b4b7fa5551d1d28f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h2 id="神经网络的组件"><a href="#神经网络的组件" class="headerlink" title="神经网络的组件"></a>神经网络的组件</h2><p><strong>神经网络的核心组件是层（ layer），它是一种数据处理模块，可以将它看成数据 filter </strong>。进去一些数据，出来的数据变得更加有用。具体来说，层从输入数据中提取表示。大多数深度学习都是将简单的层链接起来，从而实现渐进式的数据蒸馏（ data distillation）。深度学习模型就像是数据处理的筛子，包含一系列越来越精细的数据 filter （即层）。有些层是无状态的，但大多数的层是有状态的，即层的权重。<strong>权重是利用随机梯度下降学到的一个或多个张量，其中包含网络的知识</strong>。</p>
-<h2 id="神经网络的数据表示"><a href="#神经网络的数据表示" class="headerlink" title="神经网络的数据表示"></a>神经网络的数据表示</h2><p>张量的核心在于，它是一个<strong>数据容器</strong>。它包含的数据几乎总是数值数据，因此它是数字的容器。<strong>张量是矩阵向任意维度的推广</strong>［注意，张量的维度（ dimension）通常叫作轴（ axis）]</p>
-<ul>
-<li>仅包含一个数字的张量，叫作标量（ scalar）</li>
-<li>数字组成的数组，叫作向量（ vector）或一维张量（ 1D 张量，一维张量只有一个轴）</li>
-<li>向量组成的数组叫作矩阵（ matrix）或二维张量（ 2D 张量）。矩阵有 2 个轴（通常叫作行和列）。</li>
-</ul>
-<h3 id="张量的关键属性有以下三个关键属性来定义："><a href="#张量的关键属性有以下三个关键属性来定义：" class="headerlink" title="张量的关键属性有以下三个关键属性来定义："></a>张量的关键属性有以下三个关键属性来定义：</h3><ol>
+<h2 id="神经网络的数据表示"><a href="#神经网络的数据表示" class="headerlink" title="神经网络的数据表示"></a>神经网络的数据表示</h2><p>张量的核心在于，它是一个<strong>数据容器</strong>。它包含的数据几乎总是数值数据，因此它是数字的容器。</p>
+<h4 id="张量的关键属性有以下三个关键属性来定义："><a href="#张量的关键属性有以下三个关键属性来定义：" class="headerlink" title="张量的关键属性有以下三个关键属性来定义："></a>张量的关键属性有以下三个关键属性来定义：</h4><ol>
 <li>轴的个数（阶）</li>
 <li>形状，它是一个整数元祖，表示张量沿每个轴的维度大小（元素大小）</li>
 <li>数据类型（在Python库中通常叫做<code>dtype</code>）</li>
@@ -532,8 +517,7 @@
 <h3 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h3><p>每个神经层都用下述方法对输入数据进行变换。</p>
 <pre><code class="python">output = relu(dot(W, input) + b)
 </code></pre>
-<p><code>W</code>和<code>b</code>都是张量，均为该层的属性。它们被称为该层的权重（ weight）或可训练参数（ trainable parameter），</p>
-<p>一开始，这些权重矩阵取较小的随机值，这一步叫作随机初始化（ random initialization）。<code>W</code>和<code>b</code>都是随机的，<code>relu(dot(W, input) + b)</code>肯定不会得到任何有用的表示。虽然得到的表示是没有意义的，但这是一个起点。下一步则是根据反馈信号逐渐调节这些权重。这个逐渐调节的过程叫作<strong>训练</strong>，也就是机器学习中的<strong>学习</strong>。</p>
+<p><code>W</code>和<code>b</code>都是张量，均为该层的属性。它们被称为该层的权重（ weight）或可训练参数（ trainable parameter），一开始，这些权重矩阵取较小的随机值，这一步叫作随机初始化（ random initialization）。<code>W</code>和<code>b</code>都是随机的，<code>relu(dot(W, input) + b)</code>肯定不会得到任何有用的表示。虽然得到的表示是没有意义的，但这是一个起点。下一步则是根据反馈信号逐渐调节这些权重。这个逐渐调节的过程叫作<strong>训练</strong>，也就是机器学习中的<strong>学习</strong>。</p>
 <p>上述过程发生在一个训练循环（ training loop）内，其具体过程如下（必要时一直重复这些步骤）：</p>
 <ol>
 <li>抽取训练样本<code>x</code>和对应目标<code>y</code>组成的数据批量</li>
@@ -542,108 +526,270 @@
 <li>更新网络的所有权重，使网络在这批数据上的损失略微下降</li>
 </ol>
 <p>最终得到的网络在训练数据上的损失非常小，即预测值<code>y_pred</code>和预期目标<code>y</code>之间的距离非常小。网络“学会”将输入映射到正确的目标。</p>
-<p>计算损失相对于网络系数的梯度（ gradient），然后向梯度<br>的反方向改变系数，从而使损失降低。</p>
+<p>计算损失相对于网络系数的梯度（ gradient），然后向梯度的反方向改变系数，从而使损失降低。</p>
 <h2 id="训练网络"><a href="#训练网络" class="headerlink" title="训练网络"></a>训练网络</h2><p>一开始对神经网络的权重随机赋值，因此网络只是实现了一系列随机变换。其输出结果自然也和理想值相去甚远，相应地，损失值也很高。但随着网络处理的示例越来越多，权重值也在向正确的方向逐步微调，损失值也逐渐降低。这就是<strong>训练循环（ training loop）</strong>，将这种循环重复足够多的次数（通常对数千个示例进行数十次迭代），得到的权重值可以使损失函数最小。具有最小损失的网络，其输出值与目标值尽可能地接近，这就是训练好的网络。</p>
-<p>典型的Keras工作流程：</p>
+<p>典型的 Keras 工作流程：</p>
 <ol>
 <li>定义训练数据：输入张量和目标张量。</li>
 <li>定义层组成的网络（或模型），将输入映射到目标。</li>
 <li>配置学习过程：选择损失函数、优化器和需要监控的指标。</li>
-<li>调用模型的<code>fit</code>方法在训练数据上进行迭代。</li>
+<li>调用模型的 <code>fit</code> 方法在训练数据上进行迭代。</li>
 </ol>
 <p>Keras定义模型有两种方法：</p>
 <ul>
-<li>使用<code>Sequential</code>类（仅用于层的线性堆叠，这是目前最常见的网络架构）</li>
-<li>函数式<code>API</code>（functional API，用于层组成的有向无环图，可以构建任意形式的架构）。</li>
+<li>使用 <code>Sequential</code> 类（仅用于层的线性堆叠，这是目前最常见的网络架构）</li>
+<li>函数式 <code>API</code>（functional API，用于层组成的有向无环图，可以构建任意形式的架构）。</li>
 </ul>
-<h2 id="为什么需要激活函数？"><a href="#为什么需要激活函数？" class="headerlink" title="为什么需要激活函数？"></a>为什么需要激活函数？</h2><p>如果没有<code>relu</code>等激活函数（也叫<strong>非线性</strong>），<code>Dense</code>层将只包含两个线性运算——点积和加法：</p>
-<pre><code class="python">Dense(16, activation=&#39;relu&#39;)
-output = dot(W, input) + b
-</code></pre>
-<p>这将导致<code>Dense</code>层就<strong>只能学习输入数据的线性变换（仿射变换）：该层的假设空间是从输入数据到<code>16</code>位空间所有可能的线性变换集合</strong>。这种假设空间非常有限，无法利用多个表示层的优势，因为多个线性层堆叠实现的仍是线性运算，添加层数并不会扩展假设空间。</p>
-<p>为了得到更丰富的假设空间，从而充分利用多层表示的优势，需要添加非线性或激活函数。 </p>
+<h2 id="为什么需要激活函数？"><a href="#为什么需要激活函数？" class="headerlink" title="为什么需要激活函数？"></a>为什么需要激活函数？</h2><p>模型分类：</p>
+<ul>
+<li>回归模型：预测连续值，是多少的问题。例如，房价是多少？</li>
+<li>分类模型：预测离散值，是不是的问题。例如，这只动物是不是狗？</li>
+</ul>
+<p>卷积层就是我们所做的一大堆特定的滤波器，该滤波器会对某些特定的特征进行强烈的响应，一般情况下是结果值非常大。而对一些无关特性，其响应很小，大部分是结果相对较小，或者几乎为 <code>0</code>。</p>
+<p>这样就可以看做为激活，当特定卷积核发现特定特征时，就会做出响应，输出大的数值，而响应函数的存在把输出归为 <code>0~1</code>，那么大的数值就接近 <code>1</code>，小的数值就接近 <code>0</code>。因此在最后计算每种可能所占比重时，自然大的数值比重大。</p>
+<p>对于分类问题，画一条直线，这个问题还是比较简单，一条直线解决不了两条就可以了。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-5df4d99bde230f65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-782e86daf2859c11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这就是一个没有激活函数的网络，可以看出该网络是 <code>x1</code> 和 <code>x2</code> 的线性组合。</p>
+<h3 id="线性组合只能是直线"><a href="#线性组合只能是直线" class="headerlink" title="线性组合只能是直线"></a>线性组合只能是直线</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-fc050203e463932d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>再加一层变为：<img src="https://upload-images.jianshu.io/upload_images/1351548-26835092163ca6e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。拆开后，结果还是线性的，这样就严重影响了分类的效果，这样根本无法解决非线性问题。</p>
+<p>神经网络的激活函数其实是：将线性转化为非线性的一个函数，并非只是简单地给予 <code>0</code>，或者给予 <code>1</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-32dfb94ae27e7905.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-302b87bd7d560649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>总而言之，如果不用激活函数，多层神经网络和一层神经网络就没什么区别了。经过多层神经网络的加权计算，都可以展开成一次的加权计算。</p>
 <h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><p>刻画了两个概率分布之间的距离，它是分类问题中使用比较广的一种损失函数。给定两个概率分布 <code>p</code> 和 <code>q</code> ， 通过 <code>q</code> 来表示 <code>p</code> 的交叉熵为 ：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-d65fdc08cb1301b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>交叉熵刻画的是两个概率分布之间的距离 ， 然而神经网络的输出却不一定是一个概率分布。概率分布刻画了不同事件发生的概率。当事件总数有限的情况下 ，概率分布函数 <img src="https://upload-images.jianshu.io/upload_images/1351548-aef4ae4834de9636.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> 满足 ：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4aba17810c6147af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>也就是说，任意事件发生的概率都在 <code>0</code> 和 <code>1</code> 之间，且总有某一个事件发生 （概率的和为 <code>1</code> ）。如果将分类问题中“ 一个样例属于某一个类别”看成一个概率事件，那么训练数据的正确答案就符合一个概率分布。因为事件“一个样例属于不正确的类别”的概率为 <code>1</code>，而“ 一个样例属于正确的类别”的概率为 <code>1</code> 。如何将神经网络前向传播得到的结果也变成概率分布呢？ <code>Softmax</code> 回归就是一个非常常用的方法 。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4aba17810c6147af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>也就是说，任意事件发生的概率都在 <code>0</code> 和 <code>1</code> 之间，且总有某一个事件发生 （概率的和为 <code>1</code> ）。如果将分类问题中“ 一个样例属于某一个类别”看成一个概率事件，那么训练数据的正确答案就符合一个概率分布。因为事件“一个样例属于不正确的类别”的概率为 <code>1</code>，而“ 一个样例属于正确的类别”的概率为 <code>1</code> 。如何将神经网络前向传播得到的结果也变成概率分布呢？ <code>Softmax</code> 回归就是一个非常常用的方法 。</p>
 <p>在 TensorFlow 中，<code>Softmax</code> 回归的参数被去掉了，它只是一层额外的处理层，将神经网络的输出变成一个概率分布 。假设原始的神经网络输出为<img src="https://upload-images.jianshu.io/upload_images/1351548-b44113b7e9413800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，那么经过 <code>Softmax</code> 回归处理之后的输出为 ：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-7c98927906272ad0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>从以上公式中可以看出，原始神经网络的输出被用作置信度来生成新的输出，而新的输出满足概率分布的所有要求。这个新的输出可以理解为经过神经网络的推导，一个样例为不同类别的概率分别是多大。这样就把神经网络的输出也变成了一个概率分布，从而可以通过交叉熵来计算预测的概率分布和真实答案的概率分布之间的距离了。</p>
 <p>从交叉熵的公式中可以看到，交叉熵函数不是对称（<img src="https://upload-images.jianshu.io/upload_images/1351548-0221c1bbb69f4c5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">），它刻画的是通过概率分布 <code>q</code> 来表达概率分布 <code>p</code> 的困难程度。因为正确答案是希望得到的结果，所以当交叉熵作为神经网络的损失函数时，<code>p</code> 代表的是正确答案，<code>q</code> 代表的是预测值。交叉熵刻画的是两个概率分布的距离，也就是说交叉熵值越小，两个概率分布越接近。</p>
+<h1 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a><code>Dropout</code></h1><h2 id="1-Dropout-出现的缘由"><a href="#1-Dropout-出现的缘由" class="headerlink" title="1. Dropout 出现的缘由"></a>1. <code>Dropout</code> 出现的缘由</h2><p>在机器学习的模型中，如果模型的参数太多，而训练样本又太少，训练出来的模型很容易产生过拟合的现象。在训练神经网络的时候经常会遇到过拟合的问题，过拟合具体表现在：模型在训练数据上损失函数较小，预测准确率较高；但是在测试数据上损失函数比较大，预测准确率较低。</p>
+<p>过拟合是很多机器学习的通病。如果模型过拟合，那么得到的模型几乎不能用。为了解决过拟合问题，一般会采用模型集成的方法，即训练多个模型进行组合。此时，训练模型费时就成为一个很大的问题，不仅训练多个模型费时，测试多个模型也是很费时。</p>
+<p>总而言之，训练深度神经网络的时候，总是会遇到两大缺点：</p>
+<ul>
+<li>容易过拟合</li>
+<li>费时</li>
+</ul>
+<p><code>Dropout</code> 可以比较有效的缓解过拟合的发生，在一定程度上达到正则化的效果。</p>
+<h2 id="2-Dropout-的概念"><a href="#2-Dropout-的概念" class="headerlink" title="2. Dropout 的概念"></a>2. <code>Dropout</code> 的概念</h2><p>在 2012 年，<em>Hinton</em> 在其论文《<em>Improving neural networks by preventing co-adaptation of feature detectors</em>》中提出 <code>Dropout</code>。当一个复杂的前馈神经网络被训练在小的数据集时，容易造成过拟合。为了防止过拟合，可以通过阻止特征检测器的共同作用来提高神经网络的性能。</p>
+<p><code>Dropout</code> 可以作为训练深度神经网络的一种 trick 供选择。在每个训练批次中，通过忽略一半的特征检测器（让一半的隐层节点值为 <code>0</code>），可以明显地减少过拟合现象。这种方式可以减少特征检测器（隐层节点）间的相互作用，检测器相互作用是指某些检测器依赖其他检测器才能发挥作用。</p>
+<p>简而言之，<code>Dropout</code> 就是在前向传播的时候，让某个神经元的激活值以一定的概率 <code>p</code> 停止工作，这样可以使模型泛化性更强，因为它不会太依赖某些局部的特征，如下图所示。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8870250e1e7f84f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3-Dropout-具体工作流程"><a href="#3-Dropout-具体工作流程" class="headerlink" title="3. Dropout 具体工作流程"></a>3. <code>Dropout</code> 具体工作流程</h2><p>假设要训练这样一个神经网络：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-84b4cf8c8881db40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>输入是 <code>x</code>，输出是 <code>y</code>，正常的流程是：首先把 <code>x</code> 通过网络前向传播，然后把误差反向传播以决定如何更新参数让网络进行学习。使用 <code>Dropout</code> 之后，过程变成如下：</p>
+<ol>
+<li><p>首先随机（临时）删掉网络中一半的隐藏神经元，输入输出神经元保持不变（下图中虚线为部分临时被删除的神经元）</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-48f78862458547db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>然后把输入 <code>x</code> 通过修改后的网络前向传播，然后把得到的损失结果通过修改的网络反向传播。一小批训练样本执行完这个过程后，在没有被删除的神经元上按照随机梯度下降法更新对应的参数 <code>(w, b)</code>。</p>
+</li>
+<li><p>然后继续重复以下过程：</p>
+<ol>
+<li><p>恢复被删掉的神经元（此时被删除的神经元保持原样，而没有被删除的神经元已经有所更新）</p>
+</li>
+<li><p>从隐藏层神经元中随机选择一个一半大小的子集临时删除掉（备份被删除神经元的参数）。</p>
+</li>
+<li><p>对一小批训练样本，先前向传播然后反向传播损失并根据随机梯度下降法更新参数<code>(w, b)</code> （没有被删除的那一部分参数得到更新，删除的神经元参数保持被删除前的结果）。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>不断重复这一过程。</p>
+<h2 id="4-Dropout-的使用"><a href="#4-Dropout-的使用" class="headerlink" title="4. Dropout 的使用"></a>4. <code>Dropout</code> 的使用</h2><p><code>Dropout</code> 具体怎么让某些神经元以一定的概率停止工作（就是被删除掉）？代码层面如何实现呢？</p>
+<p><code>Dropout</code> 代码层面的一些公式推导及代码实现思路。</p>
+<h4 id="1-在训练模型阶段"><a href="#1-在训练模型阶段" class="headerlink" title="1. 在训练模型阶段"></a>1. 在训练模型阶段</h4><p>无可避免的，在训练网络的每个单元都要添加一个概率流程。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-34f2a6455fe9745d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>现在描述 <code>dropout</code> 神经网络模型，其中有 <code>L</code> 层隐藏层，隐藏层索引为<img src="https://upload-images.jianshu.io/upload_images/1351548-15f0aafde8e5c982.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。<img src="https://upload-images.jianshu.io/upload_images/1351548-4f2bb9114cfcc3e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示第<img src="https://upload-images.jianshu.io/upload_images/1351548-29499d0ec3799f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">层隐藏层的输入向量， <img src="https://upload-images.jianshu.io/upload_images/1351548-13ef3ac1c619bd91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示第<img src="https://upload-images.jianshu.io/upload_images/1351548-29499d0ec3799f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">层隐藏层的输出向量（<img src="https://upload-images.jianshu.io/upload_images/1351548-6a36c02a3b0be0fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示输入）。<img src="https://upload-images.jianshu.io/upload_images/1351548-37a6899d8d68a218.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">和<img src="https://upload-images.jianshu.io/upload_images/1351548-f182a13ab3dc7563.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">分别表示第<img src="https://upload-images.jianshu.io/upload_images/1351548-29499d0ec3799f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">层隐藏层的权重与偏置值，<img src="https://upload-images.jianshu.io/upload_images/1351548-8add07a883a36714.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示激活函数。</p>
+<p>对应的公式变化如下：</p>
+<ul>
+<li><p>没有 <code>Dropout</code> 的网络计算公式：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-cbdd98802363e79f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>采用 <code>Dropout</code> 的网络计算公式：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d7b5af5489261e1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面公式中，<em>Bernoulli</em> 函数是为了生成概率 <code>r</code> 向量，也就是随机生成一个 <code>0</code>、<code>1</code> 的向量。</p>
+</li>
+</ul>
+<p>代码层面实现让某个神经元以概率 <code>p</code> 停止工作，其实就是让它的激活函数值的从概率 <code>p</code> 变为 <code>0</code>。比如某一层网络神经元的个数为 <code>1000</code> 个，其激活函数输出值为 <code>y1</code>、<code>y2</code>、<code>y3</code>、<code>...</code>、<code>y1000</code>，<code>dropout</code>比率选择 <code>0.4</code>，那么这一层神经元经过 <code>dropout</code> 后，<code>1000</code> 个神经元中会有大约 <code>400</code> 个的值被置为 <code>0</code>。</p>
+<p><strong>注意：</strong> 经过上面屏蔽掉某些神经元，使其激活值为 <code>0</code> 以后，还需要对向量 <code>y1</code>、<code>y2</code>、<code>y3</code>、<code>...</code>、<code>y1000</code> 进行缩放，也就是乘以 <code>1/(1-p)</code>。如果在训练的时候，经过置 <code>0</code> 后，没有对 <code>y1</code>、<code>y2</code>、<code>y3</code>、<code>...</code>、<code>y1000</code> 进行缩放（rescale），那么在测试的时候，就需要对权重进行缩放，操作如下。</p>
+<h4 id="2-在测试模型阶段"><a href="#2-在测试模型阶段" class="headerlink" title="2. 在测试模型阶段"></a>2. 在测试模型阶段</h4><p>预测模型的时候，每一个神经单元的权重参数要乘以概率 <code>p</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1b734a8afb4847b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>测试阶段 <code>dropout</code> 公式：</p>
+<p><img src="C:\Users\Magicmanoooo\AppData\Roaming\Typora\typora-user-images\1549420022775.png" alt="1549420022775"></p>
+<h2 id="5-为什么Dropout-可以解决过拟合？"><a href="#5-为什么Dropout-可以解决过拟合？" class="headerlink" title="5. 为什么Dropout 可以解决过拟合？"></a>5. 为什么<code>Dropout</code> 可以解决过拟合？</h2><ol>
+<li><strong>取平均的作用：</strong> 先回到标准的模型（即没有 <code>dropout</code>），用相同的训练数据去训练 <code>5</code> 个不同的神经网络，一般会得到 <code>5</code> 个不同的结果，此时可以采用 “<code>5</code> 个结果取均值”或者“多数取胜的投票策略“去决定最终结果。例如，<code>3</code> 个网络判断结果为数字 <code>9</code>，那么很有可能真正的结果就是数字 <code>9</code>，其它两个网络给出了错误结果。这种“综合起来取平均”的策略通常可以有效防止过拟合问题。因为不同的网络可能产生不同的过拟合，取平均则有可能让一些“相反的”拟合互相抵消。<code>dropout</code> 掉不同的隐藏神经元就类似在训练不同的网络，随机删掉一半隐藏神经元导致网络结构已经不同，整个 <code>dropout</code> 过程就相当于对很多个不同的神经网络取平均。而不同的网络产生不同的过拟合，一些互为“反向”的拟合相互抵消就可以达到整体上减少过拟合。</li>
+<li><strong>减少神经元之间复杂的共适应关系：</strong> 因为 <code>dropout</code> 程序导致两个神经元不一定每次都在一个 <code>dropout</code> 网络中出现。这样权值的更新不再依赖于有固定关系的隐含节点的共同作用，阻止了某些特征仅仅在其它特定特征下才有效果的情况 。迫使网络去学习更加鲁棒的特征 ，这些特征在其它的神经元的随机子集中也存在。换句话说，假如神经网络是在做出某种预测，它不应该对一些特定的线索片段太过敏感，即使丢失特定的线索，它也应该可以从众多其它线索中学习一些共同的特征。从这个角度看 <code>dropout</code> 就有点像 <code>L1</code>，<code>L2</code> 正则，减少权重使得网络对丢失特定神经元连接的鲁棒性提高。</li>
+</ol>
+<h2 id="6-Dropout-在-Keras-中的源码分析"><a href="#6-Dropout-在-Keras-中的源码分析" class="headerlink" title="6. Dropout 在 Keras 中的源码分析"></a>6. <code>Dropout</code> 在 Keras 中的源码分析</h2><pre><code class="python">def dropout(x, level, noise_shape=None, seed=None):
+    &quot;&quot;&quot;Sets entries in `x` to zero at random,
+    while scaling the entire tensor.
+    # Arguments
+        x: tensor
+        level: fraction of the entries in the tensor
+            that will be set to 0.
+        noise_shape: shape for randomly generated keep/drop flags,
+            must be broadcastable to the shape of `x`
+        seed: random seed to ensure determinism.
+    &quot;&quot;&quot;
+    if level &lt; 0. or level &gt;= 1:
+        raise ValueError(&#39;Dropout level must be in interval [0, 1[.&#39;)
+    if seed is None:
+        seed = np.random.randint(1, 10e6)
+    if isinstance(noise_shape, list):
+        noise_shape = tuple(noise_shape)
+
+    rng = RandomStreams(seed=seed)
+    retain_prob = 1. - level
+
+    if noise_shape is None:
+        random_tensor = rng.binomial(x.shape, p=retain_prob, dtype=x.dtype)
+    else:
+        random_tensor = rng.binomial(noise_shape, p=retain_prob, dtype=x.dtype)
+        random_tensor = T.patternbroadcast(random_tensor,
+                                           [dim == 1 for dim in noise_shape])
+    x *= random_tensor
+    x /= retain_prob
+    return x
+</code></pre>
+<p>对 Keras 中 <code>dropout</code> 实现函数做一些修改，让 <code>dropout</code> 函数可以单独运行（函数中，<code>x</code> 是本层网络的激活值，<code>level</code> 就是 <code>dropout</code> 每个神经元要被丢弃的概率。）。</p>
+<pre><code class="python">import numpy as np
+
+# dropout函数的实现
+def dropout(x, level):
+    #level是概率值，必须在0~1之间
+    if level &lt; 0. or level &gt;= 1: 
+        raise ValueError(&#39;Dropout level must be in interval [0, 1[.&#39;)
+    retain_prob = 1. - level
+
+    # 通过binomial函数，生成与x一样的维数向量。binomial函数就像抛硬币一样，可以把每个神经元当做抛硬币一样
+    # 硬币 正面的概率为p，n表示每个神经元试验的次数
+    # 因为每个神经元只需要抛一次就可以了，所以n=1，size参数是有多少个硬币。
+    random_tensor = np.random.binomial(n=1, p=retain_prob, size=x.shape) #即将生成一个0、1分布的向量，0表示这个神经元被屏蔽，不工作了，也就是dropout了
+    print(random_tensor)
+
+    x *= random_tensor
+    print(x)
+    x /= retain_prob
+
+    return x
+
+#对dropout的测试，大家可以跑一下上面的函数，了解一个输入x向量，经过dropout的结果  
+x=np.asarray([1,2,3,4,5,6,7,8,9,10],dtype=np.float32)
+dropout(x,0.4)
+
+# [1 0 0 0 0 1 1 1 1 0]
+# [1. 0. 0. 0. 0. 6. 7. 8. 9. 0.]
+
+# [1 1 1 0 1 1 1 0 0 1]
+# [ 1.  2.  3.  0.  5.  6.  7.  0.  0. 10.]
+</code></pre>
+<p><strong>注意：</strong> Keras 中 <code>dropout</code> 的实现，是屏蔽掉某些神经元，使其激活值为 <code>0</code> 以后，对激活值向量 <code>x1</code>、<code>...</code>、<code>x1000</code> 进行放大，也就是乘以 <code>1/(1-p)</code>。</p>
+<p>在训练的时候会随机的丢弃一些神经元，但是预测的时候就没办法随机丢弃了。如果丢弃一些神经元，这会带来结果不稳定的问题，也就是给定一个测试数据，有时候输出 <code>a</code> ，有时候输出 <code>b</code>，结果不稳定，这是实际系统不能接受的，用户可能认为模型预测不准。那么一种”补偿“的方案就是每个神经元的权重都乘以一个 <code>p</code>，这样在“总体上”使得测试数据和训练数据是大致一样的。比如一个神经元的输出是 <code>x</code>，那么在训练的时候它有 <code>p</code> 的概率参与训练，<code>(1-p)</code> 的概率丢弃，那么它输出的期望是 <code>px+(1-p)0=px</code>。因此，测试的时候把这个神经元的权重乘以 <code>p</code> 可以得到同样的期望。</p>
 <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="无监督预训练（Unsupervised-pre-training）"><a href="#无监督预训练（Unsupervised-pre-training）" class="headerlink" title="无监督预训练（Unsupervised pre-training）"></a>无监督预训练（Unsupervised pre-training）</h2><p>指预训练阶段的样本不需要人工标注数据</p>
 <h2 id="有监督预训练（Supervised-pre-training）"><a href="#有监督预训练（Supervised-pre-training）" class="headerlink" title="有监督预训练（Supervised pre-training）"></a>有监督预训练（Supervised pre-training）</h2><p>也可以将其称为迁移学习。简而言之，就是<strong>把一个训练好的参数，拿到另外一个任务上，作为神经网络的初始参数值，这样就比直接采用随机初始化的方法的精度要提升很多</strong>。</p>
 <p>例如，比如已经有一大堆标注好的人脸年龄分类的图片数据，训练了一个CNN，用于人脸的年龄识别。然后，当新的项目任务是：人脸性别识别时，便可以直接利用已经训练好的年龄识别CNN模型，去掉最后一层，然后其它的网络层参数就直接复制过来，继续进行训练。</p>
-<h2 id="IoU"><a href="#IoU" class="headerlink" title="IoU"></a>IoU</h2><p><strong>物体检测需要定位出物体的bounding box</strong>。如下图所示，不仅要定位出车辆的bounding box，还需要识别出bounding box里面的物体就是车辆。对于bounding box的定位精度，存在一个定位精度评价公式：<code>IoU</code>（因为算法不可能百分百跟人工标注的数据完全匹配）。</p>
+<h2 id="Ground-Truth"><a href="#Ground-Truth" class="headerlink" title="Ground Truth"></a>Ground Truth</h2><p>机器学习包括有监督学习（supervised learning），无监督学习（unsupervised learning），和半监督学习（semi-supervised learning）。</p>
+<p>在有监督学习中，数据是有标注的，以 <code>(x, t)</code> 的形式出现，其中 <code>x</code> 是输入数据，<code>t</code> 是标注。<strong>正确的 <code>t</code> 标注是 ground truth，</strong> 错误的标记则不是。（也有人将所有标注数据都叫做 ground truth）</p>
+<p>由模型函数的数据则是由 <code>(x, y)</code> 的形式出现的。其中 <code>x</code> 为之前的输入数据，<code>y</code> 为模型预测的值。标注会和模型预测的结果作比较。在损耗函数（loss function / error function）中会将 <code>y</code>  和 <code>t</code> 作比较，从而计算损耗（loss / error）。 比如在最小方差中：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6258d35d612386e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>因此，如果标注数据不是 ground truth，那么 loss 的计算将会产生误差，从而影响到模型质量。</p>
+<p>例子：（比如输入三维，判断是否性感）</p>
+<h4 id="1-错误的数据"><a href="#1-错误的数据" class="headerlink" title="1.  错误的数据"></a>1.  错误的数据</h4><ul>
+<li>标注数据 <code>1</code> ：<code>((84,62,86), 1)</code>，其中 <code>x = (84,62,86)</code>，<code>t = 1</code> </li>
+<li>标注数据 <code>2</code>：<code>((84,162,86), 1)</code>，其中 <code>x = (84,162,86)</code>，<code>t = 1</code>   </li>
+</ul>
+<p>这里标注数据 <code>1</code> 是 ground truth， 而标注数据 <code>2</code> 不是。</p>
+<ul>
+<li>预测数据<code>1</code>：<code>y = -1</code></li>
+<li>预测数据 <code>2</code>：<code>y = -1</code></li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d8c74bafec931ef4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2-正确的数据"><a href="#2-正确的数据" class="headerlink" title="2.  正确的数据"></a>2.  正确的数据</h4><ul>
+<li>标注数据 <code>1</code>：<code>((84,62,86) ,1)</code>，其中 <code>x =(84,62,86)</code>，<code>t = 1</code>  </li>
+<li>标注数据 <code>2</code>：<code>((84,162,86) ,1)</code>，其中 <code>x =(84,162,86)</code>，<code>t = -1</code>（改为 ground truth）</li>
+</ul>
+<p>这里标注数据 <code>1</code> 和 <code>2</code> 都是 ground truth。</p>
+<ul>
+<li>预测数据 <code>1</code> ：<code>y = -1</code></li>
+<li>预测数据 <code>2</code>：<code>y = -1</code></li>
+</ul>
+<p>总之一句话：ground truth 就是标定好的真实数据。</p>
+<h1 id="感受野（receptive-field）"><a href="#感受野（receptive-field）" class="headerlink" title="感受野（receptive field）"></a>感受野（receptive field）</h1><h2 id="IoU"><a href="#IoU" class="headerlink" title="IoU"></a>IoU</h2><p><strong>物体检测需要定位出物体的 bounding box</strong>。如下图所示，不仅要定位出车辆的 bounding box，还需要识别出 bounding box里面的物体就是车辆。对于 bounding box 的定位精度，存在一个定位精度评价公式：<code>IoU</code>（因为算法不可能百分百跟人工标注的数据完全匹配）。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-802c153951d23b3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><code>IoU</code>定义了两个bounding box的重叠度：</p>
+<p><code>IoU</code>定义了两个 bounding box 的重叠度：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-c66aff1ed95a2a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>矩形框<code>A</code>、<code>B</code>的一个重合度<code>IoU</code>计算公式为：</p>
+<p>矩形框 <code>A</code>、<code>B</code>的一个重合度 <code>IoU</code> 计算公式为：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-1e77ae5572cea6de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>即，矩形框<code>A</code>、<code>B</code>的重叠面积占<code>A</code>、<code>B</code>并集的面积比例:</p>
+<p>即，矩形框 <code>A</code>、<code>B</code> 的重叠面积占 <code>A</code>、<code>B</code>并集的面积比例:</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-45bff28622a98ade.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h2 id="非极大值抑制"><a href="#非极大值抑制" class="headerlink" title="非极大值抑制"></a>非极大值抑制</h2><p>非极大值抑制（NMS）就是：<strong>抑制不是极大值的元素，搜索局部的极大值。这个局部代表的是一个邻域，邻域有两个参数可变，一是邻域的维数，二是邻域的大小</strong>。</p>
-<p><strong>【注】：</strong>此处不讨论通用的<em>NMS</em>算法，而是应用于目标检测中用于提取分数最高的窗口。例如，在行人检测中，滑动窗口经提取特征，经分类器分类识别后，每个窗口都会得到一个分数。但滑动窗口会导致很多窗口与其他窗口存在包含或者大部分交叉的情况。这时就需要用到<em>NMS</em>来选取那些邻域里分数最高（即，行人的概率最大），并且抑制那些分数低的窗口。</p>
-<p>RCNN算法会从一张图片中找出<code>n</code>多个可能是物体的矩形框，然后为每个矩形框分别作类别分类概率。</p>
+<p><strong>【注】：</strong>此处不讨论通用的 <em>NMS</em> 算法，而是应用于目标检测中用于提取分数最高的窗口。例如，在行人检测中，滑动窗口经提取特征，经分类器分类识别后，每个窗口都会得到一个分数。但滑动窗口会导致很多窗口与其他窗口存在包含或者大部分交叉的情况。这时就需要用到<em>NMS</em>来选取那些邻域里分数最高（即，行人的概率最大），并且抑制那些分数低的窗口。</p>
+<p>RCNN 算法会从一张图片中找出 <code>n</code> 多个可能是物体的矩形框，然后为每个矩形框分别作类别分类概率。</p>
 <p>如下图所示，定位一个车辆，最后算法找出了一堆方框，需要判别哪些矩形框是没用的。非极大值抑制法的步骤：先假设有<code>6</code>个矩形框，根据分类器类别分类概率做排序，从小到大分别属于车辆的概率分别为<code>A</code>、<code>B</code>、<code>C</code>、<code>D</code>、<code>E</code>、<code>F</code>：</p>
 <ol>
-<li>从最大概率矩形框<code>F</code>开始，分别判断<code>A~E</code>与<code>F</code>的重叠度<code>IoU</code>是否大于某个设定的阈值。</li>
-<li>假设<code>B</code>、<code>D</code>与<code>F</code>的重叠度超过阈值，则扔掉<code>B</code>、<code>D</code>；并标记第一个矩形框<code>F</code>是要保留下来的。</li>
+<li>从最大概率矩形框 <code>F</code> 开始，分别判断 <code>A~E</code> 与 <code>F</code> 的重叠度 <code>IoU</code> 是否大于某个设定的阈值。</li>
+<li>假设<code>B</code>、<code>D</code>与 <code>F</code> 的重叠度超过阈值，则扔掉 <code>B</code>、<code>D</code>，并标记第一个矩形框<code>F</code>是要保留下来的。</li>
 <li>从剩下的矩形框<code>A</code>、<code>C</code>、<code>E</code>中，选择概率最大的<code>E</code>，然后判断<code>E</code>与<code>A</code>、<code>C</code>的重叠度<code>IoU</code>，重叠度大于一定的阈值就扔掉；并标记<code>E</code>是保留下来的第二个矩形框。</li>
 </ol>
 <p>一直重复，找到所有被保留下来的矩形框。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-81e3a20c58bf860a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="对梯度幅值进行非极大值抑制"><a href="#对梯度幅值进行非极大值抑制" class="headerlink" title="对梯度幅值进行非极大值抑制"></a>对梯度幅值进行非极大值抑制</h2><p>图像梯度幅值矩阵中的元素值越大，说明图像中该点的梯度值越大，但这不不能说明该点就是边缘（这仅仅是属于图像增强的过程）。在<em>Canny</em>算法中，非极大值抑制是进行边缘检测的重要步骤，通俗意义上是指：<strong>寻找像素点局部最大值，将非极大值点所对应的灰度值置为<code>0</code>，这样可以剔除掉一大部分非边缘的点</strong>。</p>
+<h2 id="对梯度幅值进行非极大值抑制"><a href="#对梯度幅值进行非极大值抑制" class="headerlink" title="对梯度幅值进行非极大值抑制"></a>对梯度幅值进行非极大值抑制</h2><p>图像梯度幅值矩阵中的元素值越大，说明图像中该点的梯度值越大，但这不不能说明该点就是边缘（这仅仅是属于图像增强的过程）。在 <em>Canny</em> 算法中，非极大值抑制是进行边缘检测的重要步骤，通俗意义上是指：<strong>寻找像素点局部最大值，将非极大值点所对应的灰度值置为<code>0</code>，这样可以剔除掉一大部分非边缘的点</strong>。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-016aafd1cd753237.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>非极大值抑制的工作原理：</strong><br>由上图可知，要进行非极大值抑制，首先要确定像素点<code>C</code>的灰度值在其八邻域内是否为最大。蓝色线条方向为<code>C</code>点的梯度方向（这样就可以确定其局部的最大值肯定分布在这条线上），即除了<code>C</code>点外，梯度方向的交点<code>dTmp1</code>和<code>dTmp2</code>这两个点的值也可能会是局部最大值。</p>
-<p>因此，判断<code>C</code>点灰度与这两个点灰度大小，即可判断<code>C</code>点是否为其邻域内的局部最大灰度点。如果经过判断，<code>C</code>点灰度值小于这两个点中的任一个，那就说明<code>C</code>点不是局部极大值，那么则可以排除<code>C</code>点为边缘。</p>
-<p>在实际中，其实只能得到<code>C</code>点邻域的<code>8</code>个点的值，而<code>dTmp1</code>和<code>dTmp2</code>并不在其中。要得到这两个值，就需要对该两个点两端的已知灰度进行线性插值，即根据上图中的<code>g1</code>和<code>g2</code>对<code>dTmp1</code>进行插值，根据<code>g3</code>和<code>g4</code>对<code>dTmp2</code>进行插值，这要用到其梯度方向。</p>
-<p>完成非极大值抑制后，会得到一个二值图像，非边缘的点灰度值均为<code>0</code>，可能为边缘的局部灰度极大值点可设置其灰度为<code>128</code>。</p>
+<h4 id="非极大值抑制的工作原理："><a href="#非极大值抑制的工作原理：" class="headerlink" title="非极大值抑制的工作原理："></a>非极大值抑制的工作原理：</h4><p>由上图可知，要进行非极大值抑制，首先要确定像素点 <code>C</code> 的灰度值在其八邻域内是否为最大。蓝色线条方向为 <code>C</code> 点的梯度方向（这样就可以确定其局部的最大值肯定分布在这条线上），即除了 <code>C</code> 点外，梯度方向的交点 <code>dTmp1</code> 和 <code>dTmp2</code> 这两个点的值也可能会是局部最大值。</p>
+<p>因此，判断 <code>C</code> 点灰度与这两个点灰度大小，即可判断 <code>C</code> 点是否为其邻域内的局部最大灰度点。如果经过判断，<code>C</code> 点灰度值小于这两个点中的任一个，那就说明 <code>C</code> 点不是局部极大值，那么则可以排除 <code>C</code> 点为边缘。</p>
+<p>在实际中，其实只能得到 <code>C</code> 点邻域的 <code>8</code> 个点的值，而 <code>dTmp1</code> 和 <code>dTmp2</code> 并不在其中。要得到这两个值，就需要对该两个点两端的已知灰度进行线性插值，即根据上图中的 <code>g1</code> 和 <code>g2</code> 对 <code>dTmp1</code> 进行插值，根据 <code>g3</code> 和 <code>g4</code> 对 <code>dTmp2</code> 进行插值，这要用到其梯度方向。</p>
+<p>完成非极大值抑制后，会得到一个二值图像，非边缘的点灰度值均为 <code>0</code>，可能为边缘的局部灰度极大值点可设置其灰度为 <code>128</code>。</p>
 <h2 id="物体检测-VS-图片分类"><a href="#物体检测-VS-图片分类" class="headerlink" title="物体检测 VS 图片分类"></a>物体检测 VS 图片分类</h2><p>物体检测和图片分类的区别：</p>
 <ul>
-<li>图片分类不需要定位，而物体检测需要定位出物体的位置，也就是相当于把物体的bbox检测出来。</li>
+<li>图片分类不需要定位，而物体检测需要定位出物体的位置，也就是相当于把物体的 bbox 检测出来。</li>
 <li>物体检测是要把所有图片中的物体都识别定位出来。</li>
 </ul>
 <p>简言之，物体检测需要定位出物体的位置，这种就相当于回归问题，求解一个包含物体的方框。而图片分类其实是逻辑回归。这种方法对于单物体检测还不错，但是对于多物体检测便显得捉襟见肘。</p>
 <h1 id="Selective-Search-for-Object-Recognition"><a href="#Selective-Search-for-Object-Recognition" class="headerlink" title="Selective Search for Object Recognition"></a>Selective Search for Object Recognition</h1><h2 id="目标检测-VS-目标识别"><a href="#目标检测-VS-目标识别" class="headerlink" title="目标检测 VS 目标识别"></a>目标检测 VS 目标识别</h2><ul>
-<li>目标识别（object recognition）是指明一幅输入图像中存在哪些对象（目标）。它将整张图像作为输入，输出的是该图像中存在的对象（目标）的类标签（class labels）和类概率（class probability）。例如，类标签为“狗”，相关的类概率是<code>97％</code>。</li>
-<li>目标检测（object detection）不仅要告诉输入图像中包含了哪类目标，还要框出该目标的具体位置—利用bounding boxes <code>(x, y, width, height)</code>来指示图像内对象的位置。</li>
+<li>目标识别（object recognition）是指明一幅输入图像中存在哪些对象（目标）。它将整张图像作为输入，输出的是该图像中存在的对象（目标）的类标签（class labels）和类概率（class probability）。例如，类标签为“狗”，相关的类概率是 <code>97％</code>。</li>
+<li>目标检测（object detection）不仅要告诉输入图像中包含了哪类目标，还要框出该目标的具体位置—利用 bounding boxes <code>(x, y, width, height)</code>来指示图像内对象的位置。</li>
 </ul>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-8171190cdaa8253e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>所有的目标检测算法的核心是目标识别算法</strong>。在目标检测时，为了定位到目标的具体位置，通常会把图像分成许多子块（sub-regions / patches），然后把子块作为输入，送到目标识别的模型中。生成较小区域最直接方法叫滑动窗口法（Sliding Window Algorithm）。滑动窗口的方法就是按照子块的大小在整幅图像上穷举所有子图像块。这种方法产生的数据量想想都头大。和滑动窗口法相对的是另外一类基于区域（Region Proposal Algorithms）的方法，例如selective search。</p>
-<h2 id="Sliding-Window-Algorithm"><a href="#Sliding-Window-Algorithm" class="headerlink" title="Sliding Window Algorithm"></a>Sliding Window Algorithm</h2><p>在滑动窗口方法中，在图像上滑动框或窗口以选择patch，并使用对象识别（object recognition）模型对窗口覆盖的每个图像patch进行分类。 它对整个图像上的对象进行详尽搜索：不仅需要搜索图像中的所有可能位置，还必须以不同的比例进行搜索（这是因为物体识别模型通常以特定尺度（或尺度范围）训练）。</p>
-<p>滑窗法的物体检测流程图：<br><img src="https://upload-images.jianshu.io/upload_images/1351548-32cefc1fb88bbc7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>所有的目标检测算法的核心是目标识别算法</strong>。在目标检测时，为了定位到目标的具体位置，通常会把图像分成许多子块（sub-regions / patches），然后把子块作为输入，送到目标识别的模型中。生成较小区域最直接方法叫滑动窗口法（Sliding Window Algorithm）。滑动窗口的方法就是按照子块的大小在整幅图像上穷举所有子图像块。这种方法产生的数据量想想都头大。和滑动窗口法相对的是另外一类基于区域（Region Proposal Algorithms）的方法，例如 selective search。</p>
+<h2 id="Sliding-Window-Algorithm"><a href="#Sliding-Window-Algorithm" class="headerlink" title="Sliding Window Algorithm"></a>Sliding Window Algorithm</h2><p>在滑动窗口方法中，在图像上滑动框或窗口以选择 patch，并使用对象识别（object recognition）模型对窗口覆盖的每个图像 patch 进行分类。 它对整个图像上的对象进行详尽搜索：不仅需要搜索图像中的所有可能位置，还必须以不同的比例进行搜索（这是因为物体识别模型通常以特定尺度（或尺度范围）训练）。</p>
+<p>滑窗法的物体检测流程图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-32cefc1fb88bbc7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>通过滑窗法的主要思路：首先对输入图像进行不同窗口大小的滑窗进行从左往右、从上到下的滑动。每次滑动时候，对当前窗口执行分类器(分类器是事先训练好的)。如果当前窗口得到较高的分类概率，则认为检测到了物体。对每个不同窗口大小的滑窗都进行检测后，会得到不同窗口检测到的物体标记，这些窗口大小会存在重复较高的部分，最后采用NMS进行筛选。最终，经过NMS筛选后获得检测到的物体。</p>
 <p>滑窗法简单易于理解，但是不同窗口大小进行图像全局搜索导致效率低下，而且设计窗口大小时候还需要考虑物体的长宽比。所以，对于实时性要求较高的分类器，不推荐使用滑窗法。</p>
 <p>滑动窗口方法适用于固定宽高比的物体，例如面部或行人。由于图像是<code>3D</code>对象的<code>2D</code>投影，所以宽高比和形状等对象特征会因为拍摄图像的角度而有很大差异。由于滑动窗口方法需要搜索多个宽高比，所以计算将十分耗时。</p>
-<h2 id="Region-Proposal-Algorithms"><a href="#Region-Proposal-Algorithms" class="headerlink" title="Region Proposal Algorithms"></a>Region Proposal Algorithms</h2><p>这种方法将图像作为输入，将输出边bounding boxes—其对应于图像中最有可能为对象的所有patches。这些区域提议（region proposals）可能是嘈杂的（noisy）、重叠的（overlapping），并且可能没有完全包含对象。但是在这些区域提议中，将有一个非常接近图像中的实际对象的提议（proposal）。然后，可以使用目标识别模型对这些提议进行分类，具有高概率分数的区域提议是对象的位置。</p>
-<p>区域提议算法使用分段（segmentation）识别图像中的预期对象。在分割中，基于一些标准（例如颜色，纹理等）将相邻区域进行分组。与在所有像素位置和所有尺度上寻找对象的sliding window approach不同，region proposal algorithm通过以下方式工作：将像素分成为较少数量的段（segments）。因此，生成的最终提案数量比滑动窗口方法少很多倍。这就减少了必须分类的图像patches的数量，这些生成的区域提议具有不同的比例和宽高比。</p>
-<h2 id="Selective-Search"><a href="#Selective-Search" class="headerlink" title="Selective Search"></a>Selective Search</h2><p>选择搜索算法的主要观点：<strong>图像中物体可能存在的区域应该是有某些相似性或者连续性区域的。因此，选择搜索基于上面这一想法采用子区域合并的方法进行提取bounding boxes候选边界框。首先，对输入图像进行分割算法产生许多小的子区域。其次，根据这些子区域之间相似性(相似性标准主要有颜色、纹理、大小等等)进行区域合并，不断的进行区域迭代合并。每次迭代过程中对这些合并的子区域做bounding boxes(外切矩形)，这些子区域外切矩形就是通常所说的候选框。</strong></p>
+<h2 id="Region-Proposal-Algorithms"><a href="#Region-Proposal-Algorithms" class="headerlink" title="Region Proposal Algorithms"></a>Region Proposal Algorithms</h2><p>这种方法将图像作为输入，将输出边 bounding boxes —其对应于图像中最有可能为对象的所有patches。这些区域提议（region proposals）可能是嘈杂的（noisy）、重叠的（overlapping），并且可能没有完全包含对象。但是在这些区域提议中，将有一个非常接近图像中的实际对象的提议（proposal）。然后，可以使用目标识别模型对这些提议进行分类，具有高概率分数的区域提议是对象的位置。</p>
+<p>区域提议算法使用分段（segmentation）识别图像中的预期对象。在分割中，基于一些标准（例如颜色，纹理等）将相邻区域进行分组。与在所有像素位置和所有尺度上寻找对象的 sliding window approach 不同，region proposal algorithm 通过以下方式工作：将像素分成为较少数量的段（segments）。因此，生成的最终提案数量比滑动窗口方法少很多倍。这就减少了必须分类的图像 patches 的数量，这些生成的区域提议具有不同的比例和宽高比。</p>
+<h2 id="Selective-Search"><a href="#Selective-Search" class="headerlink" title="Selective Search"></a>Selective Search</h2><p>选择搜索算法的主要观点：<strong>图像中物体可能存在的区域应该是有某些相似性或者连续性区域的。因此，选择搜索基于上面这一想法采用子区域合并的方法进行提取 bounding boxes 候选边界框。首先，对输入图像进行分割算法产生许多小的子区域。其次，根据这些子区域之间相似性(相似性标准主要有颜色、纹理、大小等等)进行区域合并，不断的进行区域迭代合并。每次迭代过程中对这些合并的子区域做 bounding boxes(外切矩形)，这些子区域外切矩形就是通常所说的候选框。</strong></p>
 <p>选择搜索的物体检测流程图：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-a021478bbcff8416.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>滑窗法类似穷举进行图像子区域搜索，但是一般情况下图像中大部分子区域是没有物体的。选择搜索算法的主要观点：<strong>图像中物体可能存在的区域应该是有某些相似性或者连续性区域的</strong>。因此，选择搜索基于这一想法，采用子区域合并的方法进行提取bounding boxes候选边界框。</p>
+<p>滑窗法类似穷举进行图像子区域搜索，但是一般情况下图像中大部分子区域是没有物体的。选择搜索算法的主要观点：<strong>图像中物体可能存在的区域应该是有某些相似性或者连续性区域的</strong>。因此，选择搜索基于这一想法，采用子区域合并的方法进行提取 bounding boxes 候选边界框。</p>
 <ul>
 <li>首先，对输入图像进行分割算法产生许多小的子区域。</li>
-<li>其次，根据这些子区域之间相似性(相似性标准主要有颜色、纹理、大小等等)进行区域合并，不断的进行区域迭代合并。每次迭代过程中对这些合并的子区域做bounding boxes(外切矩形)，这些子区域外切矩形就是通常所说的候选框。</li>
+<li>其次，根据这些子区域之间相似性(相似性标准主要有颜色、纹理、大小等等)进行区域合并，不断的进行区域迭代合并。每次迭代过程中对这些合并的子区域做 bounding boxes(外切矩形)，这些子区域外切矩形就是通常所说的候选框。</li>
 </ul>
 <h3 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-b02ebd1dc5e6639d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <ul>
-<li>step 0：生成区域集<code>R</code>，具体参见论文《Efficient Graph-Based Image Segmentation》</li>
-<li>step 1：计算区域集<code>R</code>里每个相邻区域的相似度<code>S = {s1,s2,…}</code> </li>
-<li>step 2：找出相似度最高的两个区域，将其合并为新集，添加进<code>R</code> </li>
-<li>step 3：从<code>S</code>中移除所有与step 2中有关的子集 </li>
+<li>step 0：生成区域集 <code>R</code>，具体参见论文<em>《Efficient Graph-Based Image Segmentation》</em></li>
+<li>step 1：计算区域集 <code>R</code> 里每个相邻区域的相似度 <code>S = {s1,s2,…}</code> </li>
+<li>step 2：找出相似度最高的两个区域，将其合并为新集，添加进 <code>R</code> </li>
+<li>step 3：从 <code>S</code> 中移除所有与 step 2中有关的子集 </li>
 <li>step 4：计算新集与所有子集的相似度 </li>
-<li>step 5：跳至step 2，直至<code>S</code>为空</li>
+<li>step 5：跳至 step 2，直至 <code>S</code> 为空</li>
 </ul>
-<h3 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h3><p><a href="https://www.koen.me/research/pub/uijlings-ijcv2013-draft.pdf" target="_blank" rel="noopener">Selective Search for Object Recognition论文</a>考虑了颜色、纹理、尺寸和空间交叠这4个参数。</p>
-<h4 id="颜色相似度（color-similarity）"><a href="#颜色相似度（color-similarity）" class="headerlink" title="颜色相似度（color similarity）"></a>颜色相似度（color similarity）</h4><p>将色彩空间转为<code>HSV</code>，对于每一个region的每个通道以<code>bins=25</code>计算直方图，这样每个区域的颜色直方图有<code>25*3=75</code>个区间。 对直方图除以区域尺寸做归一化后使用下式计算相似度：</p>
+<h3 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h3><p><a href="https://www.koen.me/research/pub/uijlings-ijcv2013-draft.pdf" target="_blank" rel="noopener">Selective Search for Object Recognition论文</a>考虑了颜色、纹理、尺寸和空间交叠这 4 个参数。</p>
+<h4 id="颜色相似度（color-similarity）"><a href="#颜色相似度（color-similarity）" class="headerlink" title="颜色相似度（color similarity）"></a>颜色相似度（color similarity）</h4><p>将色彩空间转为 <code>HSV</code>，对于每一个 region 的每个通道以 <code>bins=25</code> 计算直方图，这样每个区域的颜色直方图有 <code>25*3=75</code> 个区间。 对直方图除以区域尺寸做归一化后使用下式计算相似度：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-eff1704538e4f10c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-4e4cfa123e4817ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示两个不同的region，<img src="https://upload-images.jianshu.io/upload_images/1351548-62e5b75b53d37959.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示颜色直方图。</p>
+<p>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-4e4cfa123e4817ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> 表示两个不同的 region，<img src="https://upload-images.jianshu.io/upload_images/1351548-62e5b75b53d37959.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示颜色直方图。</p>
 <h4 id="纹理相似度（texture-similarity）"><a href="#纹理相似度（texture-similarity）" class="headerlink" title="纹理相似度（texture similarity）"></a>纹理相似度（texture similarity）</h4><p>采用方差为<code>1</code>（<img src="https://upload-images.jianshu.io/upload_images/1351548-3bf7bdb571fb795b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">）的高斯分布在<code>8</code>个方向做梯度统计，然后将统计结果（尺寸与区域大小一致）以<code>bins=10</code>计算直方图。直方图区间数为<code>8*3*10=240</code>（使用RGB色彩空间）</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-8fcaf06f2a2cf2f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-1f7c99d38fc5d1f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是直方图中第<img src="https://upload-images.jianshu.io/upload_images/1351548-a62871eb544528b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">个<code>bin</code>的值</p>
 <h4 id="尺寸相似度（size-similarity）"><a href="#尺寸相似度（size-similarity）" class="headerlink" title="尺寸相似度（size similarity）"></a>尺寸相似度（size similarity）</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-72e9f09684e62525.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>保证合并操作的尺度较为均匀，避免一个大区域陆续“吃掉”其他小区域。</p>
-<p><strong>例子：</strong><br>设有区域<code>a-b-c-d-e-f-g-h</code>。</p>
+<p><strong>例子：</strong><br>设有区域 <code>a-b-c-d-e-f-g-h</code> ：</p>
 <ul>
 <li>较好的合并方式是：<code>ab-cd-ef-gh -&gt; abcd-efgh -&gt; abcdefgh</code>。 </li>
 <li>不好的合并方法是：<code>ab-c-d-e-f-g-h -&gt;abcd-e-f-g-h -&gt;abcdef-gh -&gt; abcdefgh</code>。</li>
@@ -652,6 +798,9 @@ output = dot(W, input) + b
 <p><strong>例子：左图适于合并，右图不适于合并</strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-184f03ae37b03853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h4 id="最终的相似度"><a href="#最终的相似度" class="headerlink" title="最终的相似度"></a>最终的相似度</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-d3e553866a3762f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h1><p>池化层可以非常有效地缩小矩阵的尺寸，从而减少最后全连接层中的参数。使用池化层，既可以加快计算速度，也有防止过拟合问题的作用。</p>
+<p>池化层前向传播的过程也是通过移动 一个类似过滤器的结构完成的 。不过池化层过滤器中 的计算不是节点的加权和，而是采用更加简单的最大值或者平均值运算。使用最大值操作的池化层被称之为最大池化层（ max pooling ），这是被使用得最多的池化层结构。使用平均值操作的池化层被称之为平均池化层（ average pooling ）。</p>
+<p>卷积层和池化层中过滤器移动的方式是相似的，唯一的区别在于卷积层使用的过滤器是横跨整个深度的，而池化层使用 的过滤器只影响一个深度上的节点。所以池化层 的过滤器除了在长和宽两个维度移动 ，它还需要在深度这个维度移动。 </p>
 <h1 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h1><p><img src="https://upload-images.jianshu.io/upload_images/1351548-47c319fa1b2e4308.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h2 id="第一层：卷积层"><a href="#第一层：卷积层" class="headerlink" title="第一层：卷积层"></a>第一层：卷积层</h2><p>这一层的输入就是原始的图像像素 ， LeNet 模型接受的输入层大小为 <code>32×32×l</code>。第一个卷积层 filter 的尺寸为 <code>5×5</code>，深度为 <code>6</code>，不使用全 <code>0</code> 填充，步长为 <code>1</code> 。因为没有使用全 <code>0</code> 填充，所以这 一 层的输出 的尺寸为 <code>32-5+1=28</code>， 深度为 <code>6</code> 。这一个卷积层总共有 <code>5×5×6+6=156</code> 个参数，其中 <code>6</code> 个为偏置项参数。因为下一层的节点矩阵有 <code>28×28=4704</code> 个节点，每个节点和 <code>5×5=25</code> 个当前层节点相连，所以本 层卷积层总共有 <code>4704×(25+1)=122304</code> 个连接。</p>
 <h2 id="第二层：池化层"><a href="#第二层：池化层" class="headerlink" title="第二层：池化层"></a>第二层：池化层</h2><p>这一层的输入为第一层的输出， 是一个 <code>28×28×6</code> 的节点矩阵。本层采用的 filter 大小为 <code>2×2</code>，长和宽的步长均为 <code>2</code>，所以本层的输出矩阵大小为 <code>14×14×6</code>。</p>
@@ -660,64 +809,517 @@ output = dot(W, input) + b
 <h2 id="第五层：全连接层"><a href="#第五层：全连接层" class="headerlink" title="第五层：全连接层"></a>第五层：全连接层</h2><p>本层的输入矩阵大小为 <code>5×5×16</code>，在 LeNet 模型的论文中将这一层称为卷积层，但是因为 filter 的大小就是 <code>5×5</code>，所以和全连接层没有区别。如果将 <code>5×5×16</code> 矩阵中的节点拉成一个向量，那么这一层和全连接层输入就一样了。本层的输出节点个数为 <code>120</code>个，总共有 <code>5×5×16×120+120=48120</code> 个参数。</p>
 <h2 id="第六层：全连接层"><a href="#第六层：全连接层" class="headerlink" title="第六层：全连接层"></a>第六层：全连接层</h2><p>本层的输入节点个数为 <code>120</code> 个，输出节点个数为 <code>84</code> 个，总共参数为 <code>120×84+84=10164</code>个。</p>
 <h2 id="第七层：全连接层"><a href="#第七层：全连接层" class="headerlink" title="第七层：全连接层"></a>第七层：全连接层</h2><p>本层的输入节点个数为 <code>84</code> 个，输出节点个数为 <code>10</code> 个，总共参数为 <code>84×10+10=850</code> 个 。</p>
+<p>TensorFlow 的实现（<code>LeNet.py</code>，在 MNIST 中为 <code>mnist_train.py</code>）：</p>
+<pre><code class="python"># 配置神经网络参数
+INPUT_NODE = 784
+OUTPUT_NODE = 10
+
+IMAGE_SIZE = 28
+NUM_CHANNELS = 1
+NUM_LABELS = 10
+
+# 第一层卷积层的尺寸和深度
+CONV1_DEEPTH = 32
+CONV1_SIZE = 5
+
+# 第二层卷积层的尺寸和深度
+CONV2_DEEPTH = 64
+CONV2_SIZE = 5
+
+# 全连接层的结点个数
+FC_SIZE = 512
+
+# 次函数表示CNN的的前向传播过程。其中，train用于表示：区分训练过程还是测试过程。
+def inference(input_tensor, train, regularizer):
+    # 第一层卷积层，和标准的LeNet模型不太一样。
+    # 卷积层的输入为：28*28*1 即原始的MNIST图片的像素
+    # 使用全0填充
+    # 输出为：28*28*32的矩阵
+    with tf.variable_scope(&#39;layer1_conv1&#39;):
+        # 5*5*32
+        conv1_weights = tf.get_variable(
+            &#39;weight&#39;, 
+            [CONV1_SIZE, CONV1_SIZE, NUM_CHANNELS, CONV1_DEEPTH],
+            initializer = tf.truncated_normal_initializer(stddev=0.1)            
+            )
+
+        conv1_biases = tf.get_variable(
+            &#39;bias&#39;,
+            [CONV1_DEEPTH],
+            initializer = tf.constant_initializer(0.0)
+            )
+
+        # 使用边长为5，深度为32的filter，filter移动的步长为1，且使用全0填充。
+        conv1 = tf.nn.conv2d(
+                input_tensor,
+                conv1_weights,
+                strides = [1, 1, 1, 1],
+                padding = &#39;SAME&#39;
+            )
+
+        relu1 = tf.nn.relu(tf.nn.bias_add(conv1, conv1_biases))
+
+
+    with tf.name_scope(&#39;layer2_pool1&#39;):
+        # 这一层的输入是上一层的输出：28*28*32
+        # 池化层filter为：2*2 全0填充 移动步长为2 
+        # 输出为：14*14*32
+        pool1 = tf.nn.max_pool(
+            relu1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#39;SAME&#39;)
+
+    # 这一层的输入为：14*14*32
+    # 输出为：14*14*64
+    with tf.name_scope(&#39;layer3_conv2&#39;):
+        conv2_weights = tf.get_variable(
+            &#39;weight&#39;,
+            # 5*5*32*64
+            [CONV2_SIZE, CONV2_SIZE, CONV1_DEEPTH, CONV2_DEEPTH],
+            initializer=tf.truncated_normal_initializer(stddev=0.1))
+
+        conv2_biases = tf.get_variable(
+            &#39;bias&#39;,
+            [CONV2_DEEPTH], # 64
+            initializer=tf.constant_initializer(0.0))
+
+        # 使用边长为5，深度为64的过滤器，过滤器移动的步长为1
+        conv2 = tf.nn.conv2d(
+                        pool1,
+                        conv2_weights,
+                        strides=[1, 1, 1, 1],
+                        padding=&#39;SAME&#39;)
+
+        relu2 = tf.nn.relu(tf.nn.bias_add(conv2, conv2_biases))
+
+    # 输入为：14*14*64
+    # 输出为：7*7*64
+    with tf.name_scope(&#39;layer4_pool2&#39;):
+        pool2 = tf.nn.max_pool(
+            relu2, ksize=[1,2,2,1], strides=[1,2,2,1], padding=&#39;SAME&#39;)
+
+    pool_shape = pool2.get_shape().as_list()
+
+    # pool_shape[0]：为一个 batch 中数据的大小
+    nodes = pool_shape[1] * pool_shape[2] * pool_shape[3]
+
+    # 将第四层的输出转化为一个 batch 的向量
+    reshaped = tf.reshape(pool2, [pool_shape[0], nodes])
+
+    # 这一层的输入是拉直之后的一组向量，长度为：7*7*64=3136。输出为：512的向量
+    with tf.variable_scope(&#39;layer5_fc1&#39;):
+        fc1_weights = tf.get_variable(
+            &#39;weight&#39;,
+            [nodes, FC_SIZE],
+            initializer=tf.truncated_normal_initializer(stddev=0.1))
+
+        # 只有全连接层的权重才需要加入正则化
+        if regularizer != None:
+            tf.add_to_collection(&#39;losses&#39;, regularizer(fc1_weights))
+
+        fc1_biases = tf.get_variable(
+            &#39;bias&#39;, 
+            [FC_SIZE],
+            initializer=tf.constant_initializer(0.1))
+
+        fc1 = tf.nn.relu(tf.matmul(reshaped, fc1_weights) + fc1_biases)
+        if train: 
+            fc1 = tf.nn.dropout(fc1, 0.5)
+
+    with tf.variable_scope(&#39;layer6_fc2&#39;):
+        fc2_weights = tf.get_variable(
+            &#39;weight&#39;,
+            [FC_SIZE, NUM_LABELS],
+            initializer=tf.truncated_normal_initializer(stddev=0.1))
+        if regularizer != None:
+            tf.add_to_collection(&#39;losses&#39;, regularizer(fc2_weights))
+
+        fc2_biases = tf.get_variable(
+            &#39;bias&#39;,
+            [NUM_LABELS],
+            initializer=tf.constant_initializer(0.1))
+
+        logit = tf.matmul(fc1, fc2_weights) + fc2_biases
+
+    return logit
+</code></pre>
+<p>MNIST 训练过程（<code>mnist_train.py</code>）：</p>
+<pre><code class="python">import os
+import numpy as np
+
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+
+# 加载mnist_inference.py中定义的常量和前向传播的函数
+import mnist_inference
+
+# 配置神经网络的参数
+BATCH_SIZE = 100                
+# 一个训练 batch 中的训练数据的数量。
+#    - 数字越小时，训练过程越接近随机梯度下降
+#     - 数字越大时，训练就越接近梯度下降
+
+LEARNING_RATE_BASE = 0.01        # 基础学习率
+LEARNING_RATE_DECAY = 0.99        # 学习率的衰减率
+REGULARAZTION_RATE = 0.0001        # 正则化项中的 \lambda 系数
+TRAINING_STEPS = 30000            # 训练轮数
+MOVING_AVERAGE_DECAY = 0.99        # 滑动平均衰减率
+
+# 模型保存的路径和文件名
+MODEL_SAVE_PATH = &quot;model/&quot;
+MODEL_NAME = &quot;model.ckpt&quot;
+
+def train(mnist):
+    # 定义输入输出placeholder
+    # 调整输入数据placeholder的格式，输入为一个四维矩阵
+    x = tf.placeholder(
+        tf.float32, 
+        [BATCH_SIZE,                             # 第一维表示一个batch中样例的个数
+        mnist_inference.IMAGE_SIZE,              # 第二维和第三维表示图片的尺寸
+        mnist_inference.IMAGE_SIZE,
+        mnist_inference.NUM_CHANNELS],           # 第四维表示图片的深度
+        name=&#39;x-input&#39;)
+
+    y_ = tf.placeholder(
+        tf.float32, 
+        [None, mnist_inference.OUTPUT_NODE], 
+        name=&#39;y-input&#39;)
+
+    # L2 正则化项
+    regularizer = tf.contrib.layers.l2_regularizer(REGULARAZTION_RATE)
+
+    # 直接使用 mnist_inference.py 中定义的前向传播过程
+    y = mnist_inference.inference(x, True, regularizer)
+
+    # 在使用 TensorFlow 训练神经网络时，
+    # 一般会将代表训练轮数的变量指定为不可训练的参数。    
+    global_step = tf.Variable(0, trainable=False)
+
+    # 定义损失函数、学习率、滑动平均操作以及训练过程
+    # 创建一个滑动平均类，设置的初始滑动平均衰减率为 0.99，并设置了训练轮数
+    # 给定训练轮数的变量可以加快训练早期变量的更新速度。
+    variable_averages = tf.train.ExponentialMovingAverage(MOVING_AVERAGE_DECAY, global_step)
+
+    # 在所有代表神经网络参数的变量上使用滑动平均。其他辅助变量（比如 global_step）就
+    # 不需要。tf.trainable_variables 返回的就是图上集合 GraphKeys.TRAINABLE_VARIABLES 
+    # 中的元索。这个集合的元索就是所有没有指定 trainable=False 的参数。
+    variable_averages_op = variable_averages.apply(tf.trainable_variables())
+
+    # 计算交叉熵作为刻画预训值和真实值之间差距的损失函数。这里使用了 TensorFlow 中提
+    # 供的 sparse_softmax_cross_entropy_with_logits 函数来计算交叉熵。当分类
+    # 问题只有一个正确答案时，可以使用这个函数来加速交叉熵的计算。MNIST问题的图片中
+    # 只包含了 0～9 中的一个数字，所以可以使用这个函数来计算交叉熵损失。
+
+    # 第一个参数是神经网络不包括 softmax 层的前向传播结果
+    # 第二个是训练数据的正确答案
+    # 因为标准答案是 1 个长度为 10 的一维数组，而该函数需要提供的是一个正确答案的数字
+    # 所以需要使用 tf.argmax 函数来得到正确答案对应的类别编号。
+    cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=y, labels=tf.argmax(y_, 1))
+
+    # 计算在当前 batch 中所有样例的交叉熵平均值。
+    cross_entropy_mean = tf.reduce_mean(cross_entropy)
+
+    # 总损失 = 交叉熵损 + 正正则化损失
+    loss = cross_entropy_mean + tf.add_n(tf.get_collection(&#39;losses&#39;))
+
+    # 设置指数衰减学习率
+    learning_rate = tf.train.exponential_decay(
+        LEARNING_RATE_BASE,  # 初始学习率，随着迭代的进行，更新变量时使用的学习率在这个基础上递减
+        global_step,          # 当前迭代轮数
+        mnist.train.num_examples/BATCH_SIZE, # 过完所有的训练数据所需要的迭代次数 
+        LEARNING_RATE_DECAY) # 学习率衰减速度
+
+    # 优化损失函数
+    train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss, global_step=global_step)
+
+    # 在训练神经网络模型时，每过一遍数据：
+    #    - 需要通过反向传播来更新神经网络中的参数，
+    #      - 需要更新每一个参数的滑平均动值。
+    # 为了一次完成多个操作，TensorFlow 提供了tf.control_dependencies 和 tf.group 两种机制。
+    # 下式等价于：train_op = tf.group(train_step, variables_averages_op)
+    with tf.control_dependencies([train_step, variable_averages_op]):
+        train_op = tf.no_op(name=&#39;train&#39;)
+
+    # 初始化 Tensorflow 持久化类
+    saver = tf.train.Saver()
+    with tf.Session() as sess:
+        tf.global_variables_initializer().run()
+
+        # 验证和测试的过程将会有一个独立的程序来完成
+        # 一共训练 30000 轮
+        for i in range(TRAINING_STEPS):
+            # 每次训练所取的 batch 中的训练样本数为 100
+            xs, ys = mnist.train.next_batch(BATCH_SIZE)
+
+            # 将输入的训练数据格式调整为一个四维矩阵，并将这个调整后的数据传入sess.run过程
+            # xs 的 shape 为 (100, 784)，其中 100 就是 batch_size 的大小，即 100 张图片
+            # 经过reshape之后，变为 (100, 28, 28, 1)，100张图片，每张图片像素为 28*28，深度为 1
+            reshaped_xs = np.reshape(xs, (    BATCH_SIZE,                 # 100
+                                              mnist_inference.IMAGE_SIZE, # 28
+                                              mnist_inference.IMAGE_SIZE, # 28
+                                              mnist_inference.NUM_CHANNELS) # 1
+                                    )
+        # 将经过reshape之后的输入传入CNN之中，将结果保存在y_之中   
+        _, loss_value, step = sess.run(
+            [train_op, loss, global_step], 
+            feed_dict={x: reshaped_xs, y_: ys})
+
+            # 每1000轮保存一次模型。
+            if i % 1000 == 0:
+                # 输出当前的训练情况。这里只输出了模型在当前训练batch上的损失函数大小。通过损失函数的大小可以大概了解训练的情况。
+                # 在验证数据集上的正确率信息会有一个单独的程序来生成。
+                print(&quot;After %d training step(s), loss on training batch is %f.&quot; % (step, loss_value))
+                # 保存当前的模型。这里给出了global_step参数，这样可以让每个被保存模型的文件名末尾加上训练的轮数，比如“model.ckpt-1000”表示训练1000轮后得到的模型
+                saver.save(sess, os.path.join(MODEL_SAVE_PATH, MODEL_NAME), global_step=global_step)
+
+def main(argv=None):
+    mnist = input_data.read_data_sets(&quot;dataset/&quot;, False, one_hot=True)
+    train(mnist)
+
+if __name__ == &#39;__main__&#39;:
+    tf.app.run()
+</code></pre>
+<p>接下来，就是验证（<code>mnist_eval.py</code>）：</p>
+<pre><code class="python">import time
+import numpy as np
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+
+# 加载mnist_inference.py 和 mnist_train.py中定义的常量和函数
+import mnist_inference
+import mnist_train
+
+# 每10秒加载一次最新的模型， 并在测试数据上测试最新模型的正确率
+EVAL_INTERVAL_SECS = 10
+
+
+def evaluate(mnist):
+    with tf.Graph().as_default() as g:
+        # 定义输入输出的格式
+        x = tf.placeholder(
+            tf.float32, 
+            [mnist.validation.num_examples,           # 第一维表示样例的个数
+            mnist_inference.IMAGE_SIZE,             # 第二维和第三维表示图片的尺寸
+            mnist_inference.IMAGE_SIZE,
+            mnist_inference.NUM_CHANNELS],         
+            name=&#39;x-input&#39;)
+
+        y_ = tf.placeholder(
+            tf.float32, 
+            [None, mnist_inference.OUTPUT_NODE], 
+            name=&#39;y-input&#39;)
+
+        validate_feed = {
+            x: np.reshape(mnist.validation.images, 
+                            (mnist.validation.num_examples, 
+                             mnist_inference.IMAGE_SIZE, 
+                             mnist_inference.IMAGE_SIZE, 
+                             mnist_inference.NUM_CHANNELS)),
+            y_: mnist.validation.labels
+        }
+
+        # 直接通过调用封装好的函数来计算前向传播的结果。
+        # 因为测试时不关注正则损失的值，所以这里用于计算正则化损失的函数被设置为None。
+        y = mnist_inference.inference(x, False, None)
+
+        # 使用前向传播的结果计算正确率。
+        # 如果需要对未知的样例进行分类，那么使用tf.argmax(y,1)就可以得到输入样例的预测类别了。
+        correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
+        accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+        # 通过变量重命名的方式来加载模型，这样在前向传播的过程中就不需要调用求滑动平均的函数来获取平局值了。
+        # 这样就可以完全共用mnist_inference.py中定义的前向传播过程
+        variable_averages = tf.train.ExponentialMovingAverage(mnist_train.MOVING_AVERAGE_DECAY)
+        variable_to_restore = variable_averages.variables_to_restore()
+        saver = tf.train.Saver(variable_to_restore)
+
+        #每隔EVAL_INTERVAL_SECS秒调用一次计算正确率的过程以检测训练过程中正确率的变化
+        while True:
+            with tf.Session() as sess:
+                # tf.train.get_checkpoint_state函数会通过checkpoint文件自动找到目录中最新模型的文件名
+                ckpt = tf.train.get_checkpoint_state(mnist_train.MODEL_SAVE_PATH)
+                if ckpt and ckpt.model_checkpoint_path:
+                    # 加载模型
+                    saver.restore(sess, ckpt.model_checkpoint_path)
+                    # 通过文件名得到模型保存时迭代的轮数
+                    global_step = ckpt.model_checkpoint_path.split(&#39;/&#39;)[-1].split(&#39;-&#39;)[-1]
+                    accuracy_score = sess.run(accuracy, feed_dict = validate_feed)
+                    print(&quot;After %s training step(s), validation accuracy = %f&quot; % (global_step, accuracy_score))
+                else:
+                    print(&quot;No checkpoint file found&quot;)
+                    return
+            time.sleep(EVAL_INTERVAL_SECS)
+
+
+def main(argv=None):
+    mnist = input_data.read_data_sets(&quot;dataset/&quot;, one_hot=True)
+    evaluate(mnist)
+
+
+if __name__ == &#39;__main__&#39;:
+    tf.app.run()
+</code></pre>
+<p>以下是自己手写图片的识别：</p>
+<pre><code class="python">import time
+import numpy as np
+import tensorflow as tf
+from PIL import Image
+import matplotlib.pyplot as plt
+from tensorflow.examples.tutorials.mnist import input_data
+
+# 加载mnist_inference.py 和 mnist_train.py中定义的常量和函数
+import mnist_inference
+import mnist_train
+
+def evaluate(image_array):
+    with tf.Graph().as_default() as g:
+        # 定义输入输出的格式
+        x = tf.placeholder(
+            tf.float32, 
+            [1,                                     # 第一维表示样例的个数
+            mnist_inference.IMAGE_SIZE,             # 第二维和第三维表示图片的尺寸
+            mnist_inference.IMAGE_SIZE,
+            mnist_inference.NUM_CHANNELS],          # 第四维表示图片的深度
+            name=&#39;x-input&#39;)
+
+        y = mnist_inference.inference(x, False, None)
+        prediction_value = tf.argmax(y, 1)
+
+
+        # 通过变量重命名的方式来加载模型，这样在前向传播的过程中就不需要调用求滑动平均的函数来获取平局值了。
+        # 这样就可以完全共用mnist_inference.py中定义的前向传播过程
+        variable_averages = tf.train.ExponentialMovingAverage(mnist_train.MOVING_AVERAGE_DECAY)
+        variable_to_restore = variable_averages.variables_to_restore()
+        saver = tf.train.Saver(variable_to_restore)
+
+        with tf.Session() as sess:
+            # tf.train.get_checkpoint_state函数会通过checkpoint文件自动找到目录中最新模型的文件名
+            ckpt = tf.train.get_checkpoint_state(mnist_train.MODEL_SAVE_PATH)
+            if ckpt and ckpt.model_checkpoint_path:
+            # 加载模型
+                saver.restore(sess, ckpt.model_checkpoint_path)
+            # 通过文件名得到模型保存时迭代的轮数
+                prediction_value = sess.run(prediction_value, 
+                    feed_dict={x: np.reshape(image_array, (1, mnist_inference.IMAGE_SIZE, mnist_inference.IMAGE_SIZE, mnist_inference.NUM_CHANNELS))})
+                return prediction_value
+            else:
+                print(&quot;No checkpoint file found&quot;)
+                return
+
+# def pre_pic(picName):
+#     # 先打开传入的原始图片
+#     img = Image.open(picName)
+#     # 使用消除锯齿的方法resize图片
+#     reIm = img.resize((28,28),Image.ANTIALIAS)
+#     # 变成灰度图，转换成矩阵
+#     im_arr = np.array(reIm.convert(&quot;L&quot;))
+#     threshold = 50#对图像进行二值化处理，设置合理的阈值，可以过滤掉噪声，让他只有纯白色的点和纯黑色点
+#     for i in range(28):
+#         for j in range(28):
+#             im_arr[i][j] = 255-im_arr[i][j]
+#             if (im_arr[i][j]&lt;threshold):
+#                 im_arr[i][j] = 0
+#             else:
+#                 im_arr[i][j] = 255
+#     # 将图像矩阵拉成1行784列，并将值变成浮点型（像素要求的仕0-1的浮点型输入）
+#     nm_arr = im_arr.reshape([1,784])
+#     nm_arr = nm_arr.astype(np.float32)
+#     img_ready = np.multiply(nm_arr,1.0/255.0)
+
+#     return img_ready
+
+# 图片预处理函数
+def process_image():
+    file_name=&#39;pic/2.png&#39; # 导入自己的图片地址
+    image = Image.open(file_name).convert(&#39;L&#39;)
+    image_array = [(255-x)*1.0/255.0 for x in list(image.getdata())] 
+    return image_array
+
+def main(argv=None):
+    image_array = process_image()
+    # 将处理后的结果输入到预测函数最后返回预测结果
+    prediction_value = evaluate(image_array)
+    print(&quot;The prediction number is : &quot;, prediction_value)
+
+if __name__ == &#39;__main__&#39;:
+    tf.app.run()
+
+#  从mnist中读取数字
+# mnist = input_data.read_data_sets(&quot;dataset/&quot;, False, one_hot=True)
+# tf.reset_default_graph()
+
+# im = mnist.test.images[1].reshape((28,28))
+# img = Image.fromarray(im*255)
+# img = img.convert(&#39;RGB&#39;)
+# img.save(r&#39;pic\2.jpg&#39;)
+# plt.imshow(im, cmap=&quot;gray&quot;)
+# plt.show()
+</code></pre>
+<p>如何设计卷积神经网络的架构呢？以下正则表达式公式总结了一些经典的用于图片分类问题的卷积神经网络架构 ：</p>
+<pre><code class="python">输入层 --&gt; (卷积层+ --&gt; 池化层?)＋ --&gt; 全连接层+
+</code></pre>
+<p>在以上公式中：</p>
+<ul>
+<li><code>卷积层+</code> 表示一层或者多层卷积层，大部分卷积神经网络中一般最多连续使用三层卷积层。</li>
+<li><code>池化层?</code> 表示没有或者一层池化层。池化层虽然可以起到减少参数防止过拟合问题，但是在部分论文中也发现可以直接通过调整卷积层步长来完成。 所以有些卷积神经网络中没有地化层。在多轮卷积层和池化层之后，卷积神经网络在输出之前一般会经过 <code>1～2</code> 个全连接层。</li>
+</ul>
+<p>比如 LeNet-5 模型就可以表示为以下结构。</p>
+<pre><code class="python">输入层 --&gt; 卷积层 --&gt; 池化层 --&gt; 卷积层 --&gt; 池化层 --&gt; 全连接层 --&gt; 全连接层 --&gt; 输出层 
+</code></pre>
+<p>在输入和输出层之间的神经网络叫做隐藏层， 一般一个神经网络的隐藏层越多，这个神经网络越“深”。而所谓深度学习中的这个“深度”和神经网络的层数也是密切相关的。 </p>
 <h1 id="RCNN"><a href="#RCNN" class="headerlink" title="RCNN"></a>RCNN</h1><h2 id="整体过程："><a href="#整体过程：" class="headerlink" title="整体过程："></a>整体过程：</h2><ol>
-<li>输入一张多目标图像，采用<em>selective search</em>算法提取约<code>2000</code>个建议框</li>
-<li>先在每个建议框周围加上<code>16</code>个像素值为建议框像素平均值的边框，再直接变形为<code>227×227</code>的大小</li>
-<li>先将所有建议框像素减去该建议框像素平均值后【预处理操作】，再依次将每个<code>227×227</code>的建议框输入<em>AlexNet CNN</em>网络获取<code>4096</code>维的特征【比以前的人工经验特征低两个数量级】，<code>2000</code>个建议框的CNN特征组合成<code>2000×4096</code>维矩阵</li>
-<li>将<code>2000×4096</code>维特征与<code>20</code>个SVM组成的权值矩阵<code>4096×20</code>相乘【<code>20</code>种分类，SVM是二分类器，则有<code>20</code>个SVM】，获得<code>2000×20</code>维矩阵表示每个建议框是某个物体类别的得分</li>
-<li>分别对上述<code>2000×20</code>维矩阵中每一列即每一类进行非极大值抑制剔除重叠建议框，得到该列即该类中得分最高的一些建议框</li>
-<li>分别用<code>20</code>个回归器对上述<code>20</code>个类别中剩余的建议框进行回归操作，最终得到每个类别的修正后的得分最高的bounding box</li>
+<li>输入一张多目标图像，采用 <em>selective search</em> 算法提取约 <code>2000</code> 个建议框</li>
+<li>先在每个建议框周围加上 <code>16</code> 个像素值为建议框像素平均值的边框，再直接变形为 <code>227×227</code> 的大小</li>
+<li>先将所有建议框像素减去该建议框像素平均值后【预处理操作】，再依次将每个 <code>227×227</code> 的建议框输入 <em>AlexNet CNN</em> 网络获取 <code>4096</code> 维的特征【比以前的人工经验特征低两个数量级】，<code>2000</code> 个建议框的CNN特征组合成 <code>2000×4096</code> 维矩阵</li>
+<li>将 <code>2000×4096</code> 维特征与 <code>20</code> 个 SVM 组成的权值矩阵 <code>4096×20</code> 相乘【<code>20</code> 种分类，SVM 是二分类器，则有 <code>20</code> 个 SVM】，获得 <code>2000×20</code> 维矩阵表示每个建议框是某个物体类别的得分</li>
+<li>分别对上述 <code>2000×20</code> 维矩阵中每一列即每一类进行非极大值抑制剔除重叠建议框，得到该列即该类中得分最高的一些建议框</li>
+<li>分别用 <code>20</code> 个回归器对上述 <code>20</code> 个类别中剩余的建议框进行回归操作，最终得到每个类别的修正后的得分最高的 bounding box</li>
 </ol>
-<h2 id="1-算法的整体思路"><a href="#1-算法的整体思路" class="headerlink" title="1. 算法的整体思路"></a>1. 算法的整体思路</h2><p>通过利用<em>recongnition using regions</em>操作来解决CNN的定位问题，此方法在目标检测和语义分割中都取得了成功。测试阶段，此方法对每一个输入的图片产生近<code>2000</code>个不分种类的<em>region proposals</em>，使用CNN从每个<em>region proposals</em>中提取一个固定长度的特征向量，然后对每个<em>region proposal</em>提取的特征向量使用特定种类的线性SVM进行分类（CNN+SVM for classification）。</p>
-<p>RCNN采用的方法是：首先输入一张图片，先定位出<code>2000</code>个物体候选框，然后采用CNN提取每个候选框中图片的特征向量，特征向量的维度为<code>4096</code>维，接着采用SVM算法对各个候选框中的物体进行分类识别。</p>
-<p>RCNN算法主要分为四个步骤：</p>
+<h2 id="1-算法的整体思路"><a href="#1-算法的整体思路" class="headerlink" title="1. 算法的整体思路"></a>1. 算法的整体思路</h2><p>通过利用 <em>recongnition using regions</em> 操作来解决 CNN 的定位问题，此方法在目标检测和语义分割中都取得了成功。测试阶段，此方法对每一个输入的图片产生近 <code>2000</code> 个不分种类的 <em>region proposals</em>，使用 CNN  从每个 <em>region proposals</em> 中提取一个固定长度的特征向量，然后对每个 <em>region proposal</em> 提取的特征向量使用特定种类的线性SVM进行分类（CNN + SVM for classification）。</p>
+<p>RCNN 采用的方法是：首先输入一张图片，先定位出 <code>2000</code> 个物体候选框，然后采用 CNN 提取每个候选框中图片的特征向量，特征向量的维度为 <code>4096</code> 维，接着采用 SVM 算法对各个候选框中的物体进行分类识别。</p>
+<p>RCNN 算法主要分为四个步骤：</p>
 <ol>
-<li>找出候选框（一张图像生成<code>1K~2K</code>个候选区域 ）</li>
-<li>利用CNN提取特征向量（对每个候选区域，使用深度网络提取特征 ）</li>
-<li>利用SVM进行特征向量分类（ 特征送入每一类的SVM 分类器，判别是否属于该类）</li>
+<li>找出候选框（一张图像生成 <code>1K~2K</code> 个候选区域 ）</li>
+<li>利用 CNN 提取特征向量（对每个候选区域，使用深度网络提取特征 ）</li>
+<li>利用 SVM 进行特征向量分类（ 特征送入每一类的 SVM 分类器，判别是否属于该类）</li>
 <li>使用回归器精细修正候选框位置</li>
 </ol>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-8980bce3730d6a7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="2-候选框的搜索"><a href="#2-候选框的搜索" class="headerlink" title="2. 候选框的搜索"></a>2. 候选框的搜索</h2><p>当输入一张图片时，搜索出所有可能是物体的区域，这个采用的方法是传统文献的算法：《Selective Search for Object Recognition》，通过这个算法可以搜索出<code>2000</code>个候选框（搜出的候选框是矩形的，而且是大小各不相同）。然而，CNN对输入图片的大小的要求是固定的，如果把搜索到的矩形选框不做处理，就扔进CNN中，肯定不行。</p>
-<p>因此，对于每个输入的候选框都需要缩放到固定的大小。为了简单起见，假设下一阶段CNN所需要的输入图片大小是个正方形图片：<code>227×227</code>。由于经过<em>selective search</em>得到的是矩形框，可以采用两种不同的处理方法：</p>
-<h3 id="各向异性缩放"><a href="#各向异性缩放" class="headerlink" title="各向异性缩放"></a>各向异性缩放</h3><p>即不管图片的长宽比例，也不管其是否扭曲，直接缩放成CNN输入的大小<code>227×227</code>（如图<code>(D)</code>所示）。</p>
-<h3 id="各向同性缩放"><a href="#各向同性缩放" class="headerlink" title="各向同性缩放"></a>各向同性缩放</h3><p>因为图片扭曲后，可能会对后续CNN的训练精度有影响。各向同性缩放有两种方案：</p>
+<h2 id="2-候选框的搜索"><a href="#2-候选框的搜索" class="headerlink" title="2. 候选框的搜索"></a>2. 候选框的搜索</h2><p>当输入一张图片时，搜索出所有可能是物体的区域，这个采用的方法是传统文献的算法：《Selective Search for Object Recognition》，通过这个算法可以搜索出 <code>2000</code> 个候选框（搜出的候选框是矩形的，而且是大小各不相同）。然而，CNN 对输入图片的大小的要求是固定的，如果把搜索到的矩形选框不做处理，就扔进 CNN 中，肯定不行。</p>
+<p>因此，对于每个输入的候选框都需要缩放到固定的大小。为了简单起见，假设下一阶段 CNN 所需要的输入图片大小是个正方形图片：<code>227×227</code>。由于经过 <em>selective search</em> 得到的是矩形框，可以采用两种不同的处理方法：</p>
+<h3 id="1-各向异性缩放"><a href="#1-各向异性缩放" class="headerlink" title="1. 各向异性缩放"></a>1. 各向异性缩放</h3><p>即不管图片的长宽比例，也不管其是否扭曲，直接缩放成 CNN 输入的大小 <code>227×227</code>（如图 <code>(D)</code> 所示）。</p>
+<h3 id="2-各向同性缩放"><a href="#2-各向同性缩放" class="headerlink" title="2. 各向同性缩放"></a>2. 各向同性缩放</h3><p>因为图片扭曲后，可能会对后续 CNN 的训练精度有影响。各向同性缩放有两种方案：</p>
 <ol>
-<li>直接在原始图片中，把bounding box的边界扩展延伸成正方形，然后再进行裁剪；如果已经延伸到了原始图片的外边界，那么就用bounding box中的颜色均值填充（如图<code>(B)</code>所示）。</li>
-<li>先把bounding box图片裁剪出来，然后用固定的背景颜色填充成正方形图片（背景颜色也采用bounding box的像素颜色均值，如图<code>(C)</code>所示）。</li>
+<li>直接在原始图片中，把 bounding box 的边界扩展延伸成正方形，然后再进行裁剪；如果已经延伸到了原始图片的外边界，那么就用 bounding box 中的颜色均值填充（如图<code>(B)</code>所示）。</li>
+<li>先把 bounding box 图片裁剪出来，然后用固定的背景颜色填充成正方形图片（背景颜色也采用 bounding box 的像素颜色均值，如图<code>(C)</code>所示）。</li>
 </ol>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-2a5b0f40b0e82d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>得到指定大小的图片后，后面还要继续用这<code>2000</code>个候选框图片继续训练CNN、SVM。在一张图中，人工标注时就只标注了正确的bounding box，搜索出来的<code>2000</code>个矩形框不可能会出现一个与人工标注完全匹配的候选框。</p>
-<p>因此，需要用<code>IoU</code>为<code>2000</code>个bounding box打标签，以便下一步CNN训练使用。在CNN阶段，如果用<em>selective search</em>挑选出来的候选框与物体的人工标注矩形框的重叠<code>IoU</code>大于<code>0.5</code>，就把这个候选框标注成物体类别，否则就把它当做背景类别。</p>
-<h3 id="非极大值抑制的具体操作"><a href="#非极大值抑制的具体操作" class="headerlink" title="非极大值抑制的具体操作"></a>非极大值抑制的具体操作</h3><p>在测试过程完成到第<code>4</code>步之后，获得<code>2000×20</code>维矩阵表示每个建议框是某个物体类别的得分情况，此时会遇到下图所示情况，同一个车辆目标会被多个建议框包围，这时需要非极大值抑制操作去除得分较低的候选框以减少重叠框。</p>
+<p>得到指定大小的图片后，后面还要继续用这 <code>2000</code> 个候选框图片继续训练 CNN、SVM。在一张图中，人工标注时就只标注了正确的 bounding box，搜索出来的 <code>2000</code> 个矩形框不可能会出现一个与人工标注完全匹配的候选框。</p>
+<p>因此，需要用 <code>IoU</code> 为 <code>2000</code> 个 bounding box 打标签，以便下一步 CNN 训练使用。在 CNN 阶段，如果用 <em>selective search</em> 挑选出来的候选框与物体的人工标注矩形框的重叠 <code>IoU</code> 大于 <code>0.5</code>，就把这个候选框标注成物体类别，否则就把它当做背景类别。</p>
+<h3 id="非极大值抑制的具体操作"><a href="#非极大值抑制的具体操作" class="headerlink" title="非极大值抑制的具体操作"></a>非极大值抑制的具体操作</h3><p>在测试过程完成到第 <code>4</code> 步之后，获得 <code>2000×20</code> 维矩阵表示每个建议框是某个物体类别的得分情况，此时会遇到下图所示情况，同一个车辆目标会被多个建议框包围，这时需要非极大值抑制操作去除得分较低的候选框以减少重叠框。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-994e742fcbc5f915.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><ol>
-<li>对<code>2000×20</code>维矩阵中每列按从大到小进行排序</li>
-<li>从每列最大的得分建议框开始，分别与该列后面的得分建议框进行<code>IoU</code>计算，若<code>IoU &gt; 阈值</code>，则剔除得分较小的建议框，否则认为图像中存在多个同一类物体</li>
-<li>从每列次大的得分建议框开始，重复步骤<code>2</code> </li>
-<li>重复步骤<code>3</code>，直到遍历完该列所有建议框</li>
-<li>遍历完<code>2000×20</code>维矩阵所有列，即所有物体种类都做一遍非极大值抑制</li>
+<li>对 <code>2000×20</code> 维矩阵中每列按从大到小进行排序</li>
+<li>从每列最大的得分建议框开始，分别与该列后面的得分建议框进行 <code>IoU</code> 计算，若 <code>IoU &gt; 阈值</code>，则剔除得分较小的建议框，否则认为图像中存在多个同一类物体</li>
+<li>从每列次大的得分建议框开始，重复步骤 <code>2</code> </li>
+<li>重复步骤 <code>3</code>，直到遍历完该列所有建议框</li>
+<li>遍历完 <code>2000×20</code> 维矩阵所有列，即所有物体种类都做一遍非极大值抑制</li>
 <li>最后剔除各个类别中剩余建议框得分少于该类别阈值的建议框</li>
 </ol>
 <h2 id="3-CNN特征提取"><a href="#3-CNN特征提取" class="headerlink" title="3. CNN特征提取"></a>3. CNN特征提取</h2><h3 id="1-网络结构设计"><a href="#1-网络结构设计" class="headerlink" title="1. 网络结构设计"></a>1. 网络结构设计</h3><p>网络结构有两个可选方案：</p>
 <ul>
-<li>经典的<em>Alexnet</em></li>
+<li>经典的 <em>Alexnet</em></li>
 <li><em>VGG16</em></li>
 </ul>
-<p>经过测试，<em>Alexnet</em>精度为<code>58.5%</code>，<em>VGG16</em>精度为<code>66%</code>。<em>VGG</em>模型的特点是：<strong>选择比较小的卷积核、选择较小的跨步，这个网络的精度高，不过计算量是<em>Alexnet</em>的<code>7</code>倍</strong>。</p>
-<p>为简单起见，直接选用<em>Alexnet</em>。<em>Alexnet</em>特征提取部分包含了<code>5</code>个卷积层、<code>2</code>个全连接层，在<em>Alexnet</em>中<code>p5</code>层神经元个数为<code>9216</code>，<code>f6</code>、<code>f7</code>的神经元个数都是<code>4096</code>，通过这个网络训练完毕后，最后提取特征每个输入候选框图片都能得到一个<code>4096</code>维的特征向量。</p>
-<h3 id="2-有监督预训练"><a href="#2-有监督预训练" class="headerlink" title="2. 有监督预训练"></a>2. 有监督预训练</h3><p>参数初始化部分：物体检测的一个难点在于，物体标签训练数据少，如果直接采用随机初始化CNN参数的方法，那么目前的训练数据量是远远不够的。</p>
-<p>这种情况下，最好的是采用某些方法，把参数初始化了，然后再进行有监督的参数微调。RCNN采用有监督的预训练，所以在设计网络结构时，直接用<em>Alexnet</em>的网络（连参数也是直接采用它的参数，作为初始的参数值，然后再fine-tuning训练）。</p>
-<p>网络优化求解：采用随机梯度下降法，学习速率大小为<code>0.001</code>。</p>
-<h3 id="3-fine-tuning训练"><a href="#3-fine-tuning训练" class="headerlink" title="3. fine-tuning训练"></a>3. <em>fine-tuning</em>训练</h3><p>采用<em>selective search</em>搜索出来的候选框，处理到指定的大小，继续对上面预训练的CNN模型进行<em>fine-tuning</em>训练。</p>
-<p>假设要检测的物体类别有<code>N</code>类，那么就需要把上面预训练阶段的CNN模型的最后一层给替换掉，替换成<code>N+1</code>个输出的神经元(加<code>1</code>，表示还有一个背景)，然后这一层直接采用参数随机初始化的方法，其它网络层的参数不变</p>
-<p>接着进行<em>SGD</em>训练。开始的时候，<em>SGD</em>学习率选择<code>0.001</code>，在每次训练的时候，batch size大小选择<code>128</code>（其中，<code>32</code>个为正样本、<code>96</code>个为负样本）。</p>
-<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><h4 id="1-既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？"><a href="#1-既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？" class="headerlink" title="1. 既然CNN都是用于提取特征，那么直接用Alexnet做特征提取，省去fine-tuning阶段可以吗？"></a>1. 既然CNN都是用于提取特征，那么直接用<em>Alexnet</em>做特征提取，省去<em>fine-tuning</em>阶段可以吗？</h4><p>可以。可以不需重新训练CNN，直接采用<em>Alexnet</em>模型，提取出<code>p5</code>或者<code>f6</code>、<code>f7</code>的特征作为特征向量，然后进行训练SVM（只不过这样精度会比较低）。</p>
-<h4 id="2-没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096-9216，从f6到f7的参数是4096-4096。那么具体是选择p5、f6还是f7呢？"><a href="#2-没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096-9216，从f6到f7的参数是4096-4096。那么具体是选择p5、f6还是f7呢？" class="headerlink" title="2. 没有fine-tuning的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择p5、f6、f7，这三层的神经元个数分别是9216、4096、4096。从p5到p6这层的参数个数是：4096*9216，从f6到f7的参数是4096*4096。那么具体是选择p5、f6还是f7呢？"></a>2. 没有<em>fine-tuning</em>的时候，要选择哪一层的特征作为CNN提取到的特征呢？由于可以选择<code>p5</code>、<code>f6</code>、<code>f7</code>，这三层的神经元个数分别是<code>9216</code>、<code>4096</code>、<code>4096</code>。从<code>p5</code>到<code>p6</code>这层的参数个数是：<code>4096*9216</code>，从<code>f6</code>到<code>f7</code>的参数是<code>4096*4096</code>。那么具体是选择<code>p5</code>、<code>f6</code>还是<code>f7</code>呢？</h4><p>RCNN论文证明了一个理论：如果不进行<em>fine-tuning</em>，即直接把<em>Alexnet</em>模型当做万金油使用，类似于<em>HOG</em>、<em>SIFT</em>一样做特征提取，不针对特定的任务，然后把提取的特征用于分类，结果发现<code>p5</code>的精度竟然跟<code>f6</code>、<code>f7</code>差不多，而且<code>f6</code>提取到的特征还比<code>f7</code>的精度略高；如果进行了<em>fine-tuning</em>，那么<code>f7</code>、<code>f6</code>提取到的特征就会让训练的SVM分类器的精度飙涨。</p>
-<p>据此，如果不针对特定任务进行<em>fine-tuning</em>，而是把CNN当做特征提取器的话，卷积层所学到的特征其实就是基础的共享特征提取层，就类似于SIFT算法一样，可以用于提取各种图片的特征，而<code>f6</code>、<code>f7</code>所学习到的特征是用于针对特定任务的特征。打个比方：对于人脸性别识别来说，一个CNN模型前面的卷积层所学习到的特征就类似于学习人脸共性特征，然后全连接层所学习的特征就是针对性别分类的特征。</p>
-<h4 id="3-CNN在进行训练的时候，本来就是对bounding-box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？"><a href="#3-CNN在进行训练的时候，本来就是对bounding-box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？" class="headerlink" title="3. CNN在进行训练的时候，本来就是对bounding box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层softmax就是分类层，那么为什么要先用CNN做特征提取（提取fc7层数据），然后再把提取的特征用于训练SVM分类器？"></a>3. CNN在进行训练的时候，本来就是对bounding box的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层<em>softmax</em>就是分类层，那么为什么要先用CNN做特征提取（提取<code>fc7</code>层数据），然后再把提取的特征用于训练SVM分类器？</h4><p>这是因为SVM训练和CNN训练过程的正负样本定义方式各有不同，导致最后采用CNN softmax输出比采用SVM精度还低。</p>
-<p>CNN在训练的时候，对训练数据做了比较宽松的标注（比如一个bounding box可能只包含物体的一部分），那么把它也标注为正样本，用于训练CNN；采用这个方法的主要原因在于CNN容易过拟合，所以需要大量的训练数据。在CNN训练阶段，是对bounding box的位置限制条件限制的比较松(<code>IoU</code>只要大于<code>0.5</code>都被标注为正样本)；</p>
-<p>然而SVM训练的时候，因为SVM适用于少样本训练，所以对于训练样本数据的<code>IoU</code>要求比较严格，只有当bounding box把整个物体都包含进去了，才把它标注为物体类别，然后训练SVM。</p>
+<p>经过测试，<em>Alexnet</em> 精度为 <code>58.5%</code>，<em>VGG16</em> 精度为 <code>66%</code>。 <em>VGG</em> 模型的特点是：<strong>选择比较小的卷积核、选择较小的跨步，这个网络的精度高，不过计算量是 <em>Alexnet</em> 的 <code>7</code> 倍</strong>。为简单起见，直接选用 <em>Alexnet</em>。<em>Alexnet</em> 特征提取部分包含了 <code>5</code> 个卷积层、<code>3</code> 个全连接层，在 <em>Alexnet</em> 中 <code>p5</code> 层神经元个数为 <code>9216</code>，<code>f6</code>、<code>f7</code> 的神经元个数都是 <code>4096</code>，通过这个网络训练完毕后，最后提取特征每个输入候选框图片都能得到一个 <code>4096</code> 维的特征向量。</p>
+<h3 id="2-有监督预训练"><a href="#2-有监督预训练" class="headerlink" title="2. 有监督预训练"></a>2. 有监督预训练</h3><p>参数初始化部分：物体检测的一个难点在于，物体标签训练数据少，如果直接采用随机初始化 CNN 参数的方法，那么目前的训练数据量是远远不够的。</p>
+<p>这种情况下，最好的是采用某些方法，把参数初始化了，然后再进行有监督的参数微调。RCNN 采用有监督的预训练，所以在设计网络结构时，直接用 <em>Alexnet</em> 的网络（连参数也是直接采用它的参数，作为初始的参数值，然后再 fine-tuning 训练）。网络优化求解：采用随机梯度下降法，学习速率大小为 <code>0.001</code>。</p>
+<h3 id="3-fine-tuning-训练"><a href="#3-fine-tuning-训练" class="headerlink" title="3. fine-tuning 训练"></a>3. <em>fine-tuning</em> 训练</h3><p>采用 <em>selective search</em> 搜索出来的候选框，处理到指定的大小，继续对上面预训练的 CNN 模型进行 <em>fine-tuning</em> 训练。</p>
+<p>假设要检测的物体类别有 <code>N</code> 类，那么就需要把上面预训练阶段的 CNN 模型的最后一层给替换掉，替换成 <code>N+1</code> 个输出的神经元(加 <code>1</code>，表示还有一个背景)，然后这一层直接采用参数随机初始化的方法，其它网络层的参数不变。接着进行 <em>SGD</em> 训练。开始的时候，<em>SGD</em> 学习率选择 <code>0.001</code>，在每次训练的时候，batch size 大小选择 <code>128</code>（其中，<code>32</code> 个为正样本、<code>96</code> 个为负样本）。</p>
+<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><h4 id="1-既然-CNN-都是用于提取特征，那么直接用-Alexnet-做特征提取，省去-fine-tuning-阶段可以吗？"><a href="#1-既然-CNN-都是用于提取特征，那么直接用-Alexnet-做特征提取，省去-fine-tuning-阶段可以吗？" class="headerlink" title="1. 既然 CNN 都是用于提取特征，那么直接用 Alexnet 做特征提取，省去  fine-tuning 阶段可以吗？"></a>1. 既然 CNN 都是用于提取特征，那么直接用 <em>Alexnet</em> 做特征提取，省去  <em>fine-tuning</em> 阶段可以吗？</h4><p>可以。可以不需重新训练 CNN，直接采用 <em>Alexnet</em> 模型，提取出 <code>p5</code> 或者 <code>f6</code>、<code>f7</code> 的特征作为特征向量，然后进行训练 SVM（只不过这样精度会比较低）。</p>
+<h4 id="2-没有-fine-tuning-的时候，要选择哪一层的特征作为-CNN-提取到的特征呢？由于可以选择-p5、f6、f7，这三层的神经元个数分别是-9216、4096、4096。从-p5-到-p6-这层的参数个数是：4096-9216，从-f6-到-f7-的参数是4096-4096。那么具体是选择-p5、f6-还是-f7-呢？"><a href="#2-没有-fine-tuning-的时候，要选择哪一层的特征作为-CNN-提取到的特征呢？由于可以选择-p5、f6、f7，这三层的神经元个数分别是-9216、4096、4096。从-p5-到-p6-这层的参数个数是：4096-9216，从-f6-到-f7-的参数是4096-4096。那么具体是选择-p5、f6-还是-f7-呢？" class="headerlink" title="2. 没有 fine-tuning 的时候，要选择哪一层的特征作为 CNN 提取到的特征呢？由于可以选择 p5、f6、f7，这三层的神经元个数分别是 9216、4096、4096。从 p5 到 p6 这层的参数个数是：4096*9216，从 f6 到 f7 的参数是4096*4096。那么具体是选择 p5、f6 还是 f7 呢？"></a>2. 没有 <em>fine-tuning</em> 的时候，要选择哪一层的特征作为 CNN 提取到的特征呢？由于可以选择 <code>p5</code>、<code>f6</code>、<code>f7</code>，这三层的神经元个数分别是 <code>9216</code>、<code>4096</code>、<code>4096</code>。从 <code>p5</code> 到 <code>p6</code> 这层的参数个数是：<code>4096*9216</code>，从 <code>f6</code> 到 <code>f7</code> 的参数是<code>4096*4096</code>。那么具体是选择 <code>p5</code>、<code>f6</code> 还是 <code>f7</code> 呢？</h4><p>RCNN 论文证明了一个理论：如果不进行 <em>fine-tuning</em>，即直接把 <em>Alexnet</em> 模型当做万金油使用，类似于 <em>HOG</em>、<em>SIFT</em> 一样做特征提取，不针对特定的任务，然后把提取的特征用于分类，结果发现 <code>p5</code> 的精度竟然跟 <code>f6</code>、<code>f7</code> 差不多，而且 <code>f6</code> 提取到的特征还比 <code>f7</code> 的精度略高；如果进行了 <em>fine-tuning</em>，那么 <code>f7</code>、<code>f6</code> 提取到的特征就会让训练的 SVM 分类器的精度飙涨。</p>
+<p>据此，如果不针对特定任务进行 <em>fine-tuning</em>，而是把 CNN 当做特征提取器的话，卷积层所学到的特征其实就是基础的共享特征提取层，就类似于 SIFT 算法一样，可以用于提取各种图片的特征，而 <code>f6</code>、<code>f7</code> 所学习到的特征是用于针对特定任务的特征。打个比方：对于人脸性别识别来说，一个 CNN 模型前面的卷积层所学习到的特征就类似于学习人脸共性特征，然后全连接层所学习的特征就是针对性别分类的特征。</p>
+<h4 id="3-CNN-在进行训练的时候，本来就是对-bounding-box-的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层-softmax-就是分类层，那么为什么要先用-CNN-做特征提取（提取-fc7层数据），然后再把提取的特征用于训练-SVM-分类器？"><a href="#3-CNN-在进行训练的时候，本来就是对-bounding-box-的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层-softmax-就是分类层，那么为什么要先用-CNN-做特征提取（提取-fc7层数据），然后再把提取的特征用于训练-SVM-分类器？" class="headerlink" title="3. CNN 在进行训练的时候，本来就是对 bounding box 的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层 softmax 就是分类层，那么为什么要先用 CNN 做特征提取（提取 fc7层数据），然后再把提取的特征用于训练 SVM 分类器？"></a>3. CNN 在进行训练的时候，本来就是对 bounding box 的物体进行识别分类训练，是一个端到端的任务。在训练的最后一层 <em>softmax</em> 就是分类层，那么为什么要先用 CNN 做特征提取（提取 <code>fc7</code>层数据），然后再把提取的特征用于训练 SVM 分类器？</h4><p>这是因为 SVM 训练和 CNN 训练过程的正负样本定义方式各有不同，导致最后采用 CNN softmax 输出比采用 SVM 精度还低。</p>
+<p>CNN 在训练的时候，对训练数据做了比较宽松的标注（比如一个 bounding box 可能只包含物体的一部分），那么把它也标注为正样本，用于训练 CNN；采用这个方法的主要原因在于 CNN 容易过拟合，所以需要大量的训练数据。在 CNN 训练阶段，是对 bounding box 的位置限制条件限制的比较松(<code>IoU</code> 只要大于 <code>0.5</code> 都被标注为正样本)；</p>
+<p>然而 SVM 训练的时候，因为 SVM 适用于少样本训练，所以对于训练样本数据的 <code>IoU</code> 要求比较严格，只有当bounding box 把整个物体都包含进去了，才把它标注为物体类别，然后训练 SVM。</p>
 <h4 id="4-为什么需要回归器？"><a href="#4-为什么需要回归器？" class="headerlink" title="4. 为什么需要回归器？"></a>4. 为什么需要回归器？</h4><p>目标检测不仅是要对目标进行识别，还要完成定位任务，所以最终获得的bounding-box也决定了目标检测的精度（定位精度可以用算法得出的物体检测框与实际标注的物体边界框的<code>IoU</code>值来近似表示）。</p>
 <p>如下图所示，绿色框为实际标准的卡宴车辆框，即Ground Truth；黄色框为<em>selective search</em>算法得出的建议框，即Region Proposal。即使黄色框中物体被分类器识别为卡宴车辆，但是由于绿色框和黄色框<code>IoU</code>值并不大，所以最后的目标检测精度并不高。采用回归器是为了对建议框进行校正，使得校正后的Region Proposal与<em>selective search</em>更接近， 以提高最终的检测精度。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1351548-a8e13a1891d2f2b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -747,17 +1349,721 @@ output = dot(W, input) + b
 <li><a href="https://blog.csdn.net/u014696921/article/details/52824097" target="_blank" rel="noopener">R-CNN论文详解</a></li>
 <li><a href="https://arxiv.org/pdf/1311.2524.pdf" target="_blank" rel="noopener">RCNN论文</a></li>
 </ul>
-<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><h2 id="1-模型结构"><a href="#1-模型结构" class="headerlink" title="1. 模型结构"></a>1. 模型结构</h2><p><img src="https://upload-images.jianshu.io/upload_images/1351548-d33870250f3acd76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>如上图所示，采用是两台GPU服务器，所有会有两个流程图。该模型一共分为<code>8</code>层——<code>5</code>个卷积层，<code>3</code>个全连接层（个卷积层后面加了最大池化层)，包含<code>6</code>亿<code>3000</code>万个连接，<code>6000</code>万个参数和<code>65</code>万个神经元。。在每一个卷积层中，包含了激励函数<code>ReLU</code>以及局部响应归一化（<code>LRN</code>）处理，然后再经过降采样（<code>pool</code>处理）。</p>
-<h2 id="2-创新点"><a href="#2-创新点" class="headerlink" title="2. 创新点"></a>2. 创新点</h2><ul>
-<li>使用<code>ReLU</code>作为CNN的激活函数，验证了其效果在较深的网络中超过了<code>Sigmoid</code>，成功解决了<code>Sigmoid</code>在网络较深时的梯度弥散问题。</li>
-<li>训练时使用<code>Dropout</code>随机忽略一部分神经元，以避免模型过拟合。一般在全连接层使用，在预测的时候是不使用<code>Dropout</code>的，即<code>Dropout</code>为<code>1</code>。</li>
-<li>在CNN中使用重叠的最大池化(步长小于卷积核)。此前CNN中普遍使用平均池化，使用最大池化可以避免平均池化的模糊效果。同时重叠效果可以提升特征的丰富性。</li>
-<li>提出<code>LRN</code>（Local Response Normalization，即局部响应归一化）层，对局部神经元的活动创建竞争机制，使得其中响应比较大的值变得相对更大，并抑制其他反馈较小的神经元，增强了模型的泛化能力。</li>
-<li>使用CUDA加速神经网络的训练，利用了GPU强大的计算能力。</li>
-<li>数据增强，随机的从<code>256*256</code>的图片中截取<code>224*224</code>大小的区域（以及水平翻转的镜像），相当于增加了<img src="https://upload-images.jianshu.io/upload_images/1351548-8abcfb2e5fb034f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">倍的数据量，如果没有数据增强，模型会陷入过拟合中，使用数据增强可以增大模型的泛化能力。</li>
+<h1 id="Faster-RCNN"><a href="#Faster-RCNN" class="headerlink" title="Faster RCNN"></a>Faster RCNN</h1><p>经过 R-CNN 和 Fast RCNN 的积淀，<em>Ross B. Girshick</em> 在 2016 年提出了新的 Faster RCNN，在结构上，Faster RCNN 已经将特征抽（feature extraction），proposal 提取，bounding box regression（rect refine），classification 都整合在了一个网络中，使得综合性能有较大提高，在检测速度方面尤为明显。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c45c2eab6eac9222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>依作者看来，如上图，Faster RCNN 其实可以分为 4 个主要内容：</p>
+<ol>
+<li>Conv layers。作为一种 CNN 网络目标检测方法，Faster RCNN 首先使用一组基础的 <code>conv + relu + pooling</code> 层提取 image 的 feature maps。该 feature maps 被共享用于后续 RPN 层和全连接层。</li>
+<li>Region Proposal Networks。RPN 网络用于生成 region proposals。该层通过 softmax 判断 anchors 属于 foreground 或者 background，再利用 bounding box regression 修正 anchors 获得精确的 proposals。</li>
+<li>Roi Pooling。该层收集输入的 feature maps 和 proposals，综合这些信息后提取 proposal feature maps，送入后续全连接层判定目标类别。</li>
+<li>Classification。利用 proposal feature maps 计算 proposal 的类别，同时再次 bounding box regression 获得检测框最终的精确位置。</li>
+</ol>
+<p>所以本文以上述 4 个内容作为切入点介绍 Faster R-CNN 网络。下图展示了Python 版本中的 VGG16 模型中的 <code>faster_rcnn_test.py</code> 的网络结构，可以清晰的看到该网络对于一副任意大小 <code>PxQ</code> 的图像：</p>
+<ul>
+<li>首先缩放至固定大小 <code>MxN</code>，然后将 <code>MxN</code> 图像送入网络</li>
+<li>而 Conv layers 中包含了 <code>13</code> 个 <code>conv</code> 层 + <code>13</code> 个 <code>relu</code> 层 + <code>4</code> 个 <code>pooling</code> 层</li>
+<li>RPN 网络首先经过 <code>3x3</code> 卷积，再分别生成 foreground anchors 与 bounding box regression 偏移量，然后计算出 proposals</li>
+<li>而 Roi Pooling 层则利用 proposals 从 feature maps 中提取 proposal feature 送入后续全连接和 softmax 网络作 classification（即分类 proposal 到底是什么 object）</li>
 </ul>
-<h1 id="Fast-RCNN"><a href="#Fast-RCNN" class="headerlink" title="Fast RCNN"></a>Fast RCNN</h1>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-75b0a13a4a6a8baf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="1-Conv-layers"><a href="#1-Conv-layers" class="headerlink" title="1. Conv layers"></a>1. Conv layers</h2><p>Conv layers 包含了 <code>conv</code>，<code>pooling</code>，<code>relu</code> 三种层。以 Python版本中的 VGG16 模型中的 <code>faster_rcnn_test.py</code> 的网络结构为例，如上图。Conv layers 部分共有 <code>13</code> 个 <code>conv</code> 层，<code>13</code> 个 <code>relu</code> 层，<code>4</code> 个 <code>pooling</code> 层。在 Conv layers 中：</p>
+<ul>
+<li>所有的 <code>conv</code> 层为：<ul>
+<li><code>kernel_size = 3</code></li>
+<li><code>padding = 1</code></li>
+<li><code>stride = 1</code></li>
+</ul>
+</li>
+<li>所有的 <code>pooling</code> 层为：<ul>
+<li><code>kernel_size = 2</code></li>
+<li><code>padding = 0</code></li>
+<li><code>stride = 2</code></li>
+</ul>
+</li>
+</ul>
+<p>在 Faster RCNN Conv layers 中对所有的卷积都做了扩边处理（ <code>padding=1</code>，即填充一圈 <code>0</code>），导致原图变为 <code>(M+2)x(N+2)</code> 大小，再做 <code>3x3</code> 卷积后输出 <code>MxN</code>。正是这种设置，导致 Conv layers 中的 <code>conv</code> 层不改变输入和输出矩阵大小。如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-49a933372f94f832.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>类似的是，Conv layers 中的 <code>pooling</code> 层 <code>kernel_size=2</code>，<code>stride=2</code>。这样，·每个经过 <code>pooling</code> 层的 <code>MxN</code> 矩阵，都会变为 <code>(M/2)x(N/2)</code> 大小。综上所述，在整个 Conv layers 中，<code>conv</code> 和 <code>relu</code> 层不改变输入输出大小，只有 <code>pooling</code> 层使输出长宽都变为输入的 <code>1/2</code>。</p>
+<p>那么，一个 <code>MxN</code> 大小的矩阵经过 Conv layers 固定变为 <code>(M/16)x(N/16)</code>。这样 Conv layers 生成的 feature map 中都可以和原图对应起来。</p>
+<h2 id="2-Region-Proposal-Networks（RPN）"><a href="#2-Region-Proposal-Networks（RPN）" class="headerlink" title="2.  Region Proposal Networks（RPN）"></a>2.  Region Proposal Networks（RPN）</h2><p>经典的检测方法生成检测框都非常耗时，如 OpenCV adaboost 使用滑动窗口 + 图像金字塔生成检测框；或如 R-CNN 使用 SS（Selective Search）方法生成检测框。而 Faster RCNN 则抛弃了传统的滑动窗口和 SS 方法，直接使用 RPN 生成检测框，这也是 Faster R-CNN 的巨大优势，能极大提升检测框的生成速度。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ac14a124c3d47e62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图展示了 RPN 网络的具体结构。可以看到 RPN 网络实际分为两条线：</p>
+<ul>
+<li>上面一条通过 softmax 分类 anchors 获得 foreground 和 background（检测目标是 foreground）</li>
+<li>下面一条用于计算对于 anchors 的 bounding box regression 偏移量，以获得精确的 proposal。</li>
+</ul>
+<p>最后的 Proposal 层则负责综合 foreground anchors 和 bounding box regression 偏移量获取 proposals，同时剔除太小和超出边界的 proposals。其实整个网络到了 Proposal Layer 这里，就完成了相当于目标定位的功能。</p>
+<h3 id="2-1-多通道图像卷积基础知识介绍"><a href="#2-1-多通道图像卷积基础知识介绍" class="headerlink" title="2.1 多通道图像卷积基础知识介绍"></a>2.1 多通道图像卷积基础知识介绍</h3><ol>
+<li>对于单通道图像+单卷积核做卷积，比较简单。</li>
+<li>对于多通道图像+多卷积核做卷积，计算方式如下：</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-946967852bd6cbe9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如上图，输入有 <code>3</code> 个通道，同时有 <code>2</code> 个卷积核。对于每个卷积核，先在输入 <code>3</code> 个通道分别作卷积，再将 <code>3</code> 个通道结果加起来得到卷积输出。所以对于某个卷积层，无论输入图像有多少个通道，输出图像通道数总是等于卷积核数量。</p>
+<p>对多通道图像做 <code>1x1</code> 卷积，其实就是将输入图像于每个通道乘以卷积系数后加在一起，即相当于把原图像中本来各个独立的通道“联通”在了一起。</p>
+<h3 id="2-2-anchors"><a href="#2-2-anchors" class="headerlink" title="2.2  anchors"></a>2.2  anchors</h3><p>与 RPN 网络密切相关的是 anchors。anchors，实际上就是一组由<code>rpn/generate_anchors.py</code> 生成的矩形。直接运行作者 demo 中的 <code>generate_anchors.py</code> 可以得到以下输出：</p>
+<p>​<img src="https://upload-images.jianshu.io/upload_images/1351548-4ca50a18887a966a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">                                                                                     </p>
+<p>其中每行的 <code>4</code> 个值 <img src="https://upload-images.jianshu.io/upload_images/1351548-ad6b1deee1003558.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> 表矩形左上和右下角点坐标。<code>9</code> 个矩形共有 <code>3</code> 种形状，长宽比为大约为： <img src="https://upload-images.jianshu.io/upload_images/1351548-e131eef7c6a62439.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">三种，如下图。实际上通过 anchors 就引入了检测中常用到的多尺度方法。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e5aebe2f28f70a06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>注：关于上面的 anchors size，其实是根据检测图像设置的。在 Python demo 中，会把任意大小的输入图像 reshape 成 <code>800x600</code>（即之前图中的<code>M=800</code>，<code>N=600</code>）。再回头来看 anchors 的大小，anchors 中长宽 <code>1:2</code> 中最大为 <code>352x704</code>，长宽 <code>2:1</code> 中最大 <code>736x384</code>，基本是 cover 了 <code>800x600</code> 的各个尺度和形状。</p>
+<p>那么这 <code>9</code> 个 anchors 是做什么的呢？借用 Faster RCNN 论文中的原图，如图7，遍历 Conv layers 计算获得的 feature maps，为每一个点都配备这 <code>9</code> 种 anchors 作为初始的检测框。这样做获得检测框很不准确，不用担心，后面还有 <code>2</code> 次 bounding box regression 可以修正检测框位置。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-54211e7aaa9c8818.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>解释一下上面这张图的数字：</p>
+<ol>
+<li>在原文中使用的是 ZF model 中，其 Conv Layers 中最后的 <code>conv5</code> 层 <code>num_output=256</code>，对应生成 <code>256</code> 张特征图，所以相当于 feature map 每个点都是 <code>256-dimensions</code></li>
+<li>在 <code>conv5</code> 之后，做了 <code>rpn_conv/3x3</code>卷积且 <code>num_output=256</code>，相当于每个点又融合了周围 <code>3x3</code> 的空间信息（猜测这样做也许更鲁棒？反正我没测试），同时 <code>256-d</code> 不变</li>
+<li>假设在 <code>conv5</code> feature map 中每个点上有 <code>k</code> 个 anchor（默认 <code>k=9</code>），而每个 anchor 要分 foreground 和 background，所以每个点由 <code>256d</code> feature 转化为 <code>cls=2k scores</code>；而每个 anchor 都有 <code>(x, y, w, h)</code> 对应 <code>4</code> 个偏移量，所以 <code>reg=4k coordinates</code></li>
+<li>补充一点，全部 anchors 拿去训练太多了，训练程序会在合适的 anchors 中<strong>随机</strong>选取 <code>128</code> 个 positive anchors + <code>128</code> 个negative anchors 进行训练（什么是合适的 anchors 下文解释）</li>
+</ol>
+<p>注意，在本文使用的 VGG <code>conv5</code> <code>num_output=512</code>，所以是 <code>512d</code>，其他类似。</p>
+<p><strong>其实 RPN 最终就是在原图尺度上，设置了密密麻麻的候选 anchor。然后用 CNN 去判断哪些 anchor是里面有目标的 foreground anchor，哪些是没目标的 background。所以，仅仅是个二分类而已。</strong></p>
+<p>那么 anchor 一共有多少个？原图 <code>800x600</code>，VGG 下采样 <code>16</code> 倍，feature map 每个点设置 <code>9</code> 个 anchor，所以：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-efc5e871341345bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中 <code>ceil()</code> 表示向上取整，是因为 VGG 输出的 feature map <code>size= 50*38</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8aa64e78296c35c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="2-3-softmax-判定-foreground-与-background"><a href="#2-3-softmax-判定-foreground-与-background" class="headerlink" title="2.3  softmax 判定 foreground 与 background"></a>2.3  softmax 判定 foreground 与 background</h3><p>一副 <code>MxN</code> 大小的矩阵送入 Faster RCNN 网络后，到 RPN 网络变为 <code>(M/16)x(N/16)</code>，不妨设 <code>W=M/16</code>，<code>H=N/16</code>。在进入 reshape 与 softmax 之前，先做了 <code>1x1</code> 卷积，如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7838873912a5f891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>该 <code>1x1</code> 卷积的 caffe prototxt 定义如下：</p>
+<pre><code class="python">layer {
+  name: &quot;rpn_cls_score&quot;
+  type: &quot;Convolution&quot;
+  bottom: &quot;rpn/output&quot;
+  top: &quot;rpn_cls_score&quot;
+  convolution_param {
+    num_output: 18   # 2(bg/fg) * 9(anchors)
+    kernel_size: 1 pad: 0 stride: 1
+  }
+}
+</code></pre>
+<p>可以看到其 <code>num_output=18</code>，也就是经过该卷积的输出图像为 <code>WxHx18</code> 大小。这也就刚好对应了 feature maps 每一个点都有 <code>9</code> 个 anchors，同时每个 anchors 又有可能是 foreground 和 background，所有这些信息都保存 <code>WxHx(9*2)</code> 大小的矩阵。</p>
+<p>为何这样做？后面接 softmax 分类获得 foreground anchors，也就相当于初步提取了检测目标候选区域 box（一般认为目标在 foreground anchors 中）。</p>
+<p>那么为何要在 softmax 前后都接一个 reshape layer？其实只是为了便于 softmax 分类，至于具体原因这就要从 caffe 的实现形式说起了。在 caffe 基本数据结构 blob 中以如下形式保存数据：</p>
+<pre><code class="python">blob=[batch_size, channel，height，width]
+</code></pre>
+<p>对应至上面的保存 <code>bg/fg</code> anchors的矩阵，其在 caffe <code>blob</code> 中的存储形式为 <code>[1, 2x9, H, W]</code>。而在 softmax 分类时需要进行 <code>fg/bg</code> 二分类，所以 reshape layer 会将其变为 <code>[1, 2, 9xH, W]</code> 大小，即单独“腾空”出来一个维度以便 softmax 分类，之后再 reshape 回复原状。贴一段 caffe <code>softmax_loss_layer.cpp</code> 的 <code>reshape</code> 函数的解释，非常精辟：</p>
+<pre><code class="python">&quot;Number of labels must match number of predictions; &quot;
+&quot;e.g., if softmax axis == 1 and prediction shape is (N, C, H, W), &quot;
+&quot;label count (number of labels) must be N*H*W, &quot;
+&quot;with integer values in {0, 1, ..., C-1}.&quot;;
+</code></pre>
+<p>综上所述，RPN 网络中利用 anchors 和 softmax 初步提取出 foreground anchors 作为候选区域。</p>
+<h3 id="2-4-bounding-box-regression-原理"><a href="#2-4-bounding-box-regression-原理" class="headerlink" title="2.4  bounding box regression 原理"></a>2.4  bounding box regression 原理</h3><h1 id="目标检测中-region-proposal-的作用？"><a href="#目标检测中-region-proposal-的作用？" class="headerlink" title="目标检测中 region proposal 的作用？"></a>目标检测中 region proposal 的作用？</h1><h2 id="1-理由一"><a href="#1-理由一" class="headerlink" title="1.  理由一"></a>1.  理由一</h2><p>以 Faster RCNN 举例。在 Faster RCNN 里面，anchor（或者说 RPN 网络）的作用是代替以往 RCNN 使用的 selective search 的方法寻找图片里面可能存在物体的区域。当一张图片输入 Resnet 或者 VGG，在最后一层的 feature map 上面，寻找可能出现物体的位置，这时候分别以这张 feature map 的每一个点为中心，在原图上画出 <code>9</code> 个尺寸不一的 anchor。然后计算 anchor 与GT（ground truth） box 的 IoU（重叠率），满足一定 IoU 条件的 anchor，便认为是这个 anchor 包含了某个物体。</p>
+<p>目标检测的思想是，首先在图片中寻找<strong>“可能存在物体的位置（regions）”</strong>，然后再判断<strong>“这个位置里面的物体是什么东西”</strong>，所以region proposal就参与了判断物体可能存在位置的过程。</p>
+<p><strong>region proposal 是让模型学会去看哪里有物体，GT box 就是给它进行参考，告诉它是不是看错了，该往哪些地方看才对。</strong></p>
+<h2 id="2-理由二"><a href="#2-理由二" class="headerlink" title="2.  理由二"></a>2.  理由二</h2><p>首先明确一个定义，当前主流的 Object Detection 框架分为 one-stage 和 two-stage，而 two-stage 多出来的这个 stage 就是 Regional Proposal 过程。</p>
+<p>Regional Proposal的输出到底是什么？以 Faster R-CNN 为代表的 two-stage 目标检测方法为例：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-22ab86e6c802cde7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可以看到，图中有两个 Classification loss 和两个 Bounding-box regression loss，有什么区别呢？</p>
+<ol>
+<li>Input Image 经过 CNN 特征提取，<strong>首先</strong>来到 Region Proposal 网络。由 Region Proposal Network 输出的Classification，这<strong>并不是</strong>判定物体在 COCO 数据集上对应的 <code>80</code> 类中哪一类，而是输出一个二进制值 <code>p</code>，可以理解为 <img src="https://www.zhihu.com/equation?tex=p%5Cin%5B0%2C1%5D" alt="p\in[0,1]"> ，人工设定一个 <code>threshold=0.5</code>。</li>
+<li>RPN 网络做的事情就是，如果一个 Region 的 <img src="https://www.zhihu.com/equation?tex=p%5Cgeq0.5" alt="p\geq0.5"> ，则认为这个 Region 中可能是 <code>80</code> 个类别中的某一类，具体是哪一类现在还不清楚。到此为止，Network 只需要把这些可能含有物体的区域选取出来就可以了，这些被选取出来的 Region 又叫做 ROI （Region of Interests），即感兴趣的区域。当然了，<strong>RPN 同时也会在 feature map 上框定这些 ROI 感兴趣区域的大致位置，即输出 Bounding-box</strong>。</li>
+</ol>
+<p>所以，RPN 网络做的事情就是，把一张图片中不感兴趣的区域—花花草草、大马路、天空之类的区域忽视掉，只留下一些可能感兴趣的区域—车辆、行人、水杯、闹钟等等，然后之后只需要关注这些感兴趣的区域，进一步确定它到底是车辆、还是行人、还是水杯（分类问题）等。<strong>到此为止，RPN 网络的工作就完成了，即我们现在得到的有：在输入 RPN 网络的 feature map 上，所有可能包含 <code>80</code> 类物体的 Region 区域的信息，其他 Region（非常多）可以直接不考虑了（不用输入后续网络）。</strong></p>
+<p>接下来的工作就很简单了，假设输入 RPN 网络的 feature map 大小为 <img src="https://www.zhihu.com/equation?tex=64%5Ctimes64" alt="64\times64"> ，那么<strong>提取的 ROI 的尺寸一定小于 <img src="https://www.zhihu.com/equation?tex=64%5Ctimes64" alt="64\times64"></strong>，因为原始图像某一块的物体在 feature map 上也以同样的比例存在。只需要把这些 Region 从 feature map 上抠出来，由于每个 Region 的尺寸可能不一样，因为原始图像上物体大小不一样，所以<strong>我们需要将这些抠出来的 Region 想办法 resize 到相同的尺寸</strong>，这一步方法很多（Pooling 或者 Interpolation，一般采用 Pooling，因为反向传播时求导方便）。</p>
+<p>假设这些抠出来的 ROI Region 被 resize 到了 <img src="https://www.zhihu.com/equation?tex=14%5Ctimes14" alt="14\times14"> 或者 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes7" alt="7\times7"> ，那接下来将这些 Region 输入普通的分类网络，即第一张 Faster R-CNN 的结构图中最上面的部分，即可得到整个网络最终的输出 classification，这里的 class（车、人、狗 ……）才真正对应了 COCO 数据集 <code>80</code> 类中的具体类别。</p>
+<p>同时，由于<strong>之前 RPN 确定的 box\region 坐标比较粗略</strong>，即大概框出了感兴趣的区域，所以这里再来一次精确的微调，根据每个 box 中的具体内容微微调整一下这个 box的坐标，即输出第一张图中右上方的 Bounding-box regression。 </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Region Proposal有什么作用？</p>
+<ol>
+<li>COCO 数据集上总共只有 <code>80</code> 类物体，如果不进行 Region Proposal，即网络最后的 classification 是对所有 anchor 框定的 Region 进行识别分类，<strong>会严重拖累网络的分类性能，难以收敛</strong>。原因在于，存在过多的不包含任何有用的类别（<code>80</code> 类之外的，例如各种各样的天空、草地、水泥墙、玻璃反射等等）的 Region 输入分类网络，而这些无用的 Region 占了所有 Region 的很大比例。换句话说，这些 Region 数量庞大，却并不能为 softmax 分类器带来有用的性能提升（因为无论怎么预测，其类别都是背景，对于主体的 <code>80</code> 类没有贡献）。</li>
+<li>大量无用的 Region 都需要单独进入分类网络，而分类网络由几层卷积层和最后一层全连接层组成，<strong>参数众多，十分耗费计算时间</strong>，Faster R-CNN 本来就不能做到实时，这下更慢了。</li>
+</ol>
+<h1 id="SPP-Net"><a href="#SPP-Net" class="headerlink" title="SPP Net"></a>SPP Net</h1><p>出自 2015 年发表在 IEEE 上的论文—《<em>Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition</em>》</p>
+<p>在此之前，所有的神经网络都是需要输入固定尺寸的图片，比如 <code>224x224</code>（AlexNet）、<code>32x32</code>（LeNet）、<code>96x96</code> 等。这样对于希望检测各种大小的图片的时候，需要经过 crop，或者 war p等一系列操作，这都在一定程度上导致图片信息的丢失和变形，限制了识别精确度。</p>
+<h3 id="RCNN-的弊端"><a href="#RCNN-的弊端" class="headerlink" title="RCNN 的弊端"></a>RCNN 的弊端</h3><p>RCNN 使用 CNN 作为特征提取器，首次使得目标检测跨入深度学习的阶段。但是 RCNN 对于每一个区域候选都需要首先将图片放缩到固定的尺寸（<code>224x224</code>），然后为每个区域候选提取 CNN 特征。容易看出这里面存在的一些性能瓶颈：</p>
+<ul>
+<li>速度瓶颈：重复为每个 region proposal 提取特征是极其费时的，Selective Search 对于每幅图片产生 <code>2K</code> 左右个 region proposal，也就是意味着一幅图片需要经过 <code>2K</code> 次的完整的 CNN 计算得到最终的结果。</li>
+<li>性能瓶颈：对于所有的 region proposal 防缩到固定的尺寸会导致我们不期望看到的几何形变，而且由于速度瓶颈的存在，不可能采用多尺度或者是大量的数据增强去训练模型。</li>
+</ul>
+<p>在 RCNN 中 CNN 阶段的流程大致如下（红色框是 selective search 输出的可能包含物体的候选框（ROI））：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-2a84667b762d7e2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面这个图可以看出SPP Net 和 RCNN 的区别，首先是输入不需要放缩到指定大小。其次是增加了一个空间金字塔池化层，还有最重要的一点是每幅图片只需要提取一次特征。</p>
+<h4 id="为什么要固定输入图片的大小？"><a href="#为什么要固定输入图片的大小？" class="headerlink" title="为什么要固定输入图片的大小？"></a>为什么要固定输入图片的大小？</h4><p>卷积层的参数和输入大小无关，它仅仅是一个卷积核在图像上滑动，不管输入图像多大都没关系，只是对不同大小的图片卷积出不同大小的特征图，但是全连接层的参数就和输入图像大小有关，因为它要把输入的所有像素点连接起来，需要指定输入层神经元个数和输出层神经元个数，所以需要规定输入的 feature 的大小。因此，固定长度的约束仅限于全连接层（作为全连接层，如果输入的 <code>x</code> 维数不等，那么参数 <code>w</code> 肯定也会不同。因此，全连接层是必须确定输入，输出个数的）。</p>
+<p>一张图图片会有大约 <code>2k</code> 个候选框，每一个都要单独输入 CNN 做卷积等操作很费时。SPP Net 提出：能否在 feature map 上提取 ROI 特征，这样就只需要在整幅图像上做一次卷积。SPP Net 在最后一个卷积层后，接入了金字塔池化层，使用这种方式，可以让网络输入任意的图片，而且还会生成固定大小的输出。</p>
+<p>何凯明团队的 SPP Net 给出的解决方案是，既然只有全连接层需要固定的输入，那么我们在全连接层前加入一个网络层，让他对任意的输入产生固定的输出不就好了吗？一种常见的想法是对于最后一层卷积层的输出 pooling 一下，但是这个 pooling 窗口的尺寸及步伐设置为相对值，也就是输出尺寸的一个比例值，这样对于任意输入经过这层后都能得到一个固定的输出。SPP Net 在这个想法上继续加入 SPM 的思路，SPM 其实在传统的机器学习特征提取中很常用，主要思路就是对于一副图像分成若干尺度的一些块，比如一幅图像分成 <code>1</code> 份，<code>4</code> 份，<code>8</code> 份等。然后对于每一块提取特征然后融合在一起，这样就可以兼容多个尺度的特征啦。SPP Net 首次将这种思想应用在 CNN 中，对于卷积层特征我们也先给他分成不同的尺寸，然后每个尺寸提取一个固定维度的特征，最后拼接这些特征不就是一个固定维度的输入了吗？</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-fd0a04600d7ec16a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>所谓空间金字塔池化就是沿着金字塔的低端向顶端一层一层做池化。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d1eaacbb881e9193.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图的空间金字塔池化层是 SPP Net 的核心，其主要目的是对于任意尺寸的输入产生固定大小的输出。思路是对于任意大小的 feature map 首先分成 <code>16</code>、<code>4</code>、<code>1</code> 个块，然后在每个块上最大池化，池化后的特征拼接得到一个固定维度的输出。以满足全连接层的需要。不过因为不是针对于目标检测的，所以输入的图像为一整副图像。</p>
+<p>假设原图输入是 <code>224x224</code>，对于 <code>conv5</code> 出来后的输出是 <code>13x13x256</code> 的，可以理解成有 <code>256</code> 个这样的 filter，每个 filter 对应一张 <code>13x13</code> 的 response map。如果像上图那样将 response map 分成 <code>1x1</code>(金字塔底座)，<code>2x2</code>(金字塔中间)，<code>4x4</code>（金字塔顶座）三张子图，分别做 max pooling 后，出来的特征就是 <code>(16+4+1)x256</code> 维度。如果原图的输入不是 <code>224x224</code>，出来的特征依然是 <code>(16+4+1)x256</code> 维度。这样就实现了不管图像尺寸如何池化 <code>n</code> 的输出永远是 <code>(16+4+1）x256</code> 维度。 </p>
+<p>实际运用中只需要根据全连接层的输入维度要求设计好空间金字塔即可。</p>
+<h3 id="网络细节"><a href="#网络细节" class="headerlink" title="网络细节"></a>网络细节</h3><h4 id="1-卷积层特征图"><a href="#1-卷积层特征图" class="headerlink" title="1.  卷积层特征图"></a>1.  卷积层特征图</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-2ddac4a5368150f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>SPP Net 通过可视化 <code>conv5</code> 层特征，发现卷积特征其实保存了空间位置信息（数学推理中更容易发现这点），并且每一个卷积核负责提取不同的特征，比如 <code>C</code> 图 <code>175</code>、<code>55</code> 卷积核的特征，其中 <code>175</code> 负责提取窗口特征，<code>55</code> 负责提取圆形的类似于车轮的特征。我们可以通过传统的方法聚集这些特征，例如词袋模型或是空间金字塔的方法。</p>
+<h4 id="2-空间金字塔池化（Spatial-Pyramid-Pooling）"><a href="#2-空间金字塔池化（Spatial-Pyramid-Pooling）" class="headerlink" title="2.  空间金字塔池化（Spatial Pyramid Pooling）"></a>2.  空间金字塔池化（Spatial Pyramid Pooling）</h4><p>虽然总体流程还是 Selective Search 得到候选区域 <code>—&gt;</code> CNN 提取ROI 特征 <code>—&gt;</code> 类别判断 <code>—&gt;</code> 位置精修，但是由于所有 ROI 的特征直接在 feature map 上提取，大大减少了卷积操作，提高了效率。 </p>
+<p>有两个难点要解决：</p>
+<ol>
+<li>原始图像的 ROI 如何映射到特征图（feature map，一系列卷积层的最后输出）</li>
+<li>ROI 的在特征图上的对应的特征区域的维度不满足全连接层的输入要求怎么办（又不可能像在原始 ROI 图像上那样进行截取和缩放）？ </li>
+</ol>
+<p>​                                                                                                                                                                                                                                           </p>
+<p>对于难点 <code>2</code>：</p>
+<ul>
+<li>这个问题涉及的流程主要有：图像输入 <code>—&gt;</code> 卷积层 <code>1</code> <code>—&gt;</code> 池化 <code>1</code> <code>—&gt;</code> … <code>—&gt;</code> 卷积层 <code>n</code> <code>—&gt;</code> 池化 <code>n</code> <code>—&gt;</code> 全连接层。</li>
+<li>引发问题的原因主要有：全连接层的输入维度是固定死的，导致池化 <code>n</code> 的输出必须与之匹配，继而导致图像输入的尺寸必须固定。</li>
+</ul>
+<p>为了使一些列卷积层的最后输出刚维度好是全连接层的输入维度，解决方法可能有：</p>
+<ol>
+<li>想办法让不同尺寸的图像也可以使池化 <code>n</code> 产生固定的 输出维度（打破图像输入的固定性）</li>
+<li>想办法让全连接层可以接受非固定的输入维度（打破全连接层的固定性，继而也打破了图像输入的固定性）</li>
+</ol>
+<p>以上的方法 <code>1</code> 就是 SPP Net 的思想。它在池化 <code>n</code> 的地方做了一些手脚（特殊池化手段：空间金字塔池化），使得不同尺寸的图像也可以使池化 <code>n</code> 产生固定的输出维度。至于方法 <code>2</code>，其实就是全连接转换为全卷积，作用的效果等效为在原始图像做滑窗，多个窗口并行处理）</p>
+<h4 id="3-SPP-Net应用于图像分类"><a href="#3-SPP-Net应用于图像分类" class="headerlink" title="3.  SPP Net应用于图像分类"></a>3.  SPP Net应用于图像分类</h4><p>SPP Net 的能够接受任意尺寸图片的输入，但是训练难点在于所有的深度学习框架都需要固定大小的输入，因此 SPP Net 做出了多阶段多尺寸训练方法。在每一个 epoch 的时候，我们先将图像放缩到一个 size，然后训练网络。训练完整后保存网络的参数，然后 resize 到另外一个尺寸，并在之前权值的基础上再次训练模型。相比于其他的 CNN 网络，SPP Net 的优点是可以方便地进行多尺寸训练，而且对于同一个尺度，其特征也是个空间金字塔的特征，综合了多个特征的空间多尺度信息。</p>
+<h4 id="4-SPP-Net-应用于目标检测"><a href="#4-SPP-Net-应用于目标检测" class="headerlink" title="4.  SPP Net 应用于目标检测"></a>4.  SPP Net 应用于目标检测</h4><p>SPP Net 理论上可以改进任何 CNN 网络，通过空间金字塔池化，使得 CNN 的特征不再是单一尺度的。但是 SPP Net 更适用于处理目标检测问题，首先是网络可以介绍任意大小的输入，也就是说能够很方便地多尺寸训练。其次是空间金字塔池化能够对于任意大小的输入产生固定的输出，这样使得一幅图片的多个 region proposal 提取一次特征成为可能。SPP Net 的做法是：</p>
+<ol>
+<li><p>首先通过 selective search 产生一系列的 region proposal</p>
+</li>
+<li><p>然后训练多尺寸识别网络用以提取区域特征，其中处理方法是每个尺寸的最短边大小在尺寸集合中：<img src="https://pic2.zhimg.com/v2-237603b04a4f5f801924219f4fdfad99_b.png" alt="img"></p>
+<p>训练的时候通过上面提到的多尺寸训练方法，也就是在每个 epoch 中首先训练一个尺寸产生一个 model，然后加载这个 model 并训练第二个尺寸，直到训练完所有的尺寸。空间金字塔池化使用的尺度为：<code>1x1</code>，<code>2x2</code>，<code>3x3</code>，<code>6x6</code>，一共是 <code>50</code> 个 <code>bins</code>。</p>
+</li>
+</ol>
+<ol start="3">
+<li>在测试时，每个 region proposal 选择能使其包含的像素个数最接近 <code>224x224</code> 的尺寸，提取相 应特征。</li>
+</ol>
+<p>   由于我们的空间金字塔池化可以接受任意大小的输入，因此对于每个region proposal将其映射到feature map上，然后仅对这一块feature map进行空间金字塔池化就可以得到固定维度的特征用以训练CNN了。关于从region proposal映射到feature map的细节我们待会儿去说。</p>
+<ol start="4">
+<li>训练 SVM，bounding box 回归</li>
+</ol>
+<h4 id="5-如何从一个-region-proposal-映射到-feature-map-的位置？"><a href="#5-如何从一个-region-proposal-映射到-feature-map-的位置？" class="headerlink" title="5.  如何从一个 region proposal 映射到 feature map 的位置？"></a>5.  如何从一个 region proposal 映射到 feature map 的位置？</h4><p>SPP Net 通过角点尽量将图像像素映射到 feature map 感受野的中央，假设每一层的 padding 都是 <code>p/2</code>（<code>p</code>为卷积核大小）。对于 feature map 的一个像素 <code>(x&#39;,y&#39;)</code>，其实际感受野为：<code>(Sx‘，Sy’)</code>，其中 <code>S</code> 为之前所有层步伐的乘积。然后对于 region proposal 的位置，我们获取左上右下两个点对应的 feature map 的位置，然后取特征就好了。左上角映射为：</p>
+<p><img src="https://pic2.zhimg.com/v2-8c5eddc9f856822aad5ae8d030ce1779_b.png" alt="img"></p>
+<p>右下角映射为：</p>
+<p><img src="https://pic3.zhimg.com/v2-7a4ce0c60b8fcac5eb7ffe365f99572e_b.png" alt="img"></p>
+<p>当然，如果 padding 大小不一致，那么就需要计算相应的偏移值啦。</p>
+<h4 id="金字塔池化的意义"><a href="#金字塔池化的意义" class="headerlink" title="金字塔池化的意义"></a>金字塔池化的意义</h4><p>总结而言，当网络输入的是一张任意大小的图片，这个时候可以一直进行卷积、池化，直到网络的倒数几层的时候，也就是即将与全连接层连接的时候，就要使用金字塔池化，使得任意大小的特征图都能够转换成固定大小的特征向量，这就是空间金字塔池化的意义（多尺度特征提取出固定大小的特征向量）。</p>
+<h4 id="SPP-Net-amp-RCNN"><a href="#SPP-Net-amp-RCNN" class="headerlink" title="SPP Net &amp; RCNN"></a>SPP Net &amp; RCNN</h4><p>对于 RCNN，整个过程是：</p>
+<ol>
+<li>首先通过 Selective Search，对待检测的图片进行搜索出大约 <code>2000</code> 个候选窗口。 </li>
+<li>把这 <code>2k</code> 个候选窗口的图片都缩放到 <code>227x227</code>，然后分别输入 CNN 中，每个 proposal 提取出一个特征向量，也就是说利用 CNN 对每个 proposal 进行提取特征向量。 </li>
+<li>把上面每个候选窗口的对应特征向量，利用 SVM 算法进行分类识别。 </li>
+</ol>
+<p>可以看出 RCNN 的计算量是非常大的，因为 <code>2k</code> 个候选窗口都要输入到 CNN 中，分别进行特征提取。</p>
+<p>而对于 SPP Net，整个过程是：</p>
+<ol>
+<li>首先通过 Selective Search，对待检测的图片进行搜索出 <code>2000</code> 个候选窗口。这一步和 RCNN 一样。</li>
+<li>特征提取阶段。这一步就是和 RCNN 最大的区别了，这一步骤的具体操作如下：把整张待检测的图片，输入 CNN 中，进行一次性特征提取，得到 feature maps，然后在 feature maps 中找到各个候选框的区域，再对各个候选框采用金字塔空间池化，提取出固定长度的特征向量。而 RCNN 输入的是每个候选框，然后在进入 CNN，因为 SPP Net 只需要一次对整张图片进行特征提取，速度会大大提升。</li>
+<li>最后一步也是和 RCNN 一样，采用 SVM 算法进行特征向量分类识别。</li>
+</ol>
+<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><h2 id="1-模型结构"><a href="#1-模型结构" class="headerlink" title="1. 模型结构"></a>1. 模型结构</h2><p><img src="https://upload-images.jianshu.io/upload_images/1351548-d33870250f3acd76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如上图所示，采用是两台GPU服务器，所有会有两个流程图。该模型一共分为 <code>8</code> 层——<code>5</code> 个卷积层，<code>3</code> 个全连接层（卷积层后面加了最大池化层)，包含 <code>6</code> 亿 <code>3000</code> 万个连接，<code>6000</code> 万个参数和 <code>65</code> 万个神经元。在每一个卷积层中，包含了激励函数 <code>ReLU</code> 以及局部响应归一化（<code>LRN</code>）处理，然后再经过降采样（<code>pooling</code> 处理）。</p>
+<h2 id="2-具体结构"><a href="#2-具体结构" class="headerlink" title="2. 具体结构"></a>2. 具体结构</h2><p>整个网络共有 <code>8</code> 个需要训练的层，前 <code>5</code> 个为卷积层，最后 <code>3</code> 层为全连接层。</p>
+<h4 id="第一层：卷积层（conv1）"><a href="#第一层：卷积层（conv1）" class="headerlink" title="第一层：卷积层（conv1）"></a>第一层：卷积层（<code>conv1</code>）</h4><ol>
+<li>输入图片大小为：<code>224×224×3</code>（经过预处理后实际大小变为 <code>227×227×3</code>）</li>
+<li>卷积核：<code>11×11×3</code>；步长： <code>4</code>；数量：<code></code>96<code>（图中为</code>48<code>个是由于采用了</code>2` 个 GPU。由于卷积核的深度与图像深度一样，所以提取到的特征也是彩色的）</li>
+<li>卷积后的数据： <code>55×55×96</code>【<code>(227-11+1)/4 = 55</code>（向上取整）】</li>
+<li><code>relu1</code> 后的数据： <code>55×55×96</code></li>
+<li>最大池化层 <code>pool1</code> 的核：<code>3×3</code>；步长： <code>2</code>。因此输出的尺寸为： <code>(227-11+1)/4 = 55</code>（向上取整）</li>
+<li><code>pool1</code> 后的数据（降采样）：<code>27×27×96</code> 【<code>(55-3+1)/2 = 27</code>】</li>
+<li>局部归一化 LRN <code>norm1</code>：<code>local_size = 5</code> （归一化运算的尺度为 <code>5×5</code>）</li>
+<li>输出：<code>27×27×96</code>。</li>
+</ol>
+<h4 id="第二层：卷积层（conv2）"><a href="#第二层：卷积层（conv2）" class="headerlink" title="第二层：卷积层（conv2）"></a>第二层：卷积层（<code>conv2</code>）</h4><ol>
+<li>输入数据： <code>27×27×96</code></li>
+<li>卷积核： <code>5×5×96</code>；步长：  <code>1</code>；数量： <code>256</code></li>
+<li>卷积后的数据： <code>27×27×256</code> （SAME padding，使得卷积后图像大小不变）</li>
+<li><code>relu2</code> 后的数据： <code>27×27×256</code></li>
+<li><code>pool2</code> 的核（最大池化）： <code>3×3</code> ；步长： <code>2</code></li>
+<li><code>pool2</code> 后的数据：<code>13×13×256</code> 【<code>(27-3+1)/2 = 13</code>】 </li>
+<li><code>norm2</code>：<code>local_size = 5</code> </li>
+<li>输出：<code>13×13×256</code></li>
+</ol>
+<h4 id="第三层：卷积层（conv3）"><a href="#第三层：卷积层（conv3）" class="headerlink" title="第三层：卷积层（conv3）"></a>第三层：卷积层（<code>conv3</code>）</h4><ol>
+<li>输入数据：<code>13×13×256</code></li>
+<li>卷积核：<code>3×3</code> ；步长：<code>1</code> ；数量： <code>384</code></li>
+<li>卷积后数据：<code>13×13×384</code>  （SAME padding）</li>
+<li><code>relu3</code> 后的数据：<code>13×13×384</code></li>
+<li>输出：<code>13×13×384</code></li>
+</ol>
+<p><code>conv3</code> 层没有 max pool 层和 norm 层。</p>
+<h4 id="第四层：卷积层（conv4）"><a href="#第四层：卷积层（conv4）" class="headerlink" title="第四层：卷积层（conv4）"></a>第四层：卷积层（<code>conv4</code>）</h4><ol>
+<li>输入数据：<code>13×13×384</code></li>
+<li>卷积核：<code>3×3</code> ；步长：<code>1</code> ；数量：<code>384</code></li>
+<li>卷积后数据：<code>13×13×384</code>  （SAME padding）</li>
+<li><code>relu4</code> 后的数据：<code>13×13×384</code></li>
+<li>输出：<code>13×13×384</code></li>
+</ol>
+<p><code>conv4</code> 层也没有 max pool 层和 norm 层。</p>
+<h4 id="第五层：卷积层（conv5）"><a href="#第五层：卷积层（conv5）" class="headerlink" title="第五层：卷积层（conv5）"></a>第五层：卷积层（<code>conv5</code>）</h4><ol>
+<li>输入数据：<code>13×13×384</code></li>
+<li>卷积核：<code>3×3</code> ；步长：<code>1</code> ；数量：<code>256</code></li>
+<li>卷积后数据：<code>13×13×256</code>  （SAME padding）</li>
+<li><code>relu5</code> 后的数据：<code>13×13×256</code></li>
+<li><code>pool5</code> 的核：<code>3×3</code> ；步长：<code>2</code></li>
+<li><code>pool5</code> 后的数据：<code>6×6×256</code> 【<code>(13-3+1)/2 = 6</code>】</li>
+<li>输出：<code>6×6×256</code></li>
+</ol>
+<p><code>conv5</code> 层有 max pool，没有 norm 层</p>
+<h4 id="第六层：全连接层（fc6）"><a href="#第六层：全连接层（fc6）" class="headerlink" title="第六层：全连接层（fc6）"></a>第六层：全连接层（<code>fc6</code>）</h4><ol>
+<li>输入数据：<code>6×6×256</code></li>
+<li>全连接输出：<code>4096×1</code></li>
+<li><code>relu6</code> 后的数据：<code>4096×1</code></li>
+<li><code>dropout6</code> 后数据：<code>4096×1</code></li>
+<li>输出：<code>4096×1</code></li>
+</ol>
+<h4 id="第七层：全连接层（fc7）"><a href="#第七层：全连接层（fc7）" class="headerlink" title="第七层：全连接层（fc7）"></a>第七层：全连接层（<code>fc7</code>）</h4><ol>
+<li>输入数据：<code>4096×1</code></li>
+<li>全连接输出：4096×1</li>
+<li><code>relu7</code> 后的数据：<code>4096×1</code></li>
+<li><code>dropout7</code> 后数据：<code>4096×1</code></li>
+<li>输出：<code>4096×1</code></li>
+</ol>
+<h4 id="第八层：全连接层（fc8）"><a href="#第八层：全连接层（fc8）" class="headerlink" title="第八层：全连接层（fc8）"></a>第八层：全连接层（<code>fc8</code>）</h4><ol>
+<li>输入数据：<code>4096×1</code></li>
+<li>全连接输出：<code>1000</code></li>
+<li>输出一千种分类的概率</li>
+</ol>
+<p>Alexnet 网络定义如下（<code>alexnet_inference.py</code>）：</p>
+<pre><code class="python">import tensorflow as tf
+
+def print_layers(layer):
+  print(layer.op.name, &#39; &#39;, layer.get_shape().as_list())
+
+def inference(input_tensor, keep_prob, num_classes):
+    # conv1
+    with tf.name_scope(&#39;conv1&#39;):
+        conv1_weights = tf.get_variable(
+            &#39;weight1&#39;,
+            [11, 11, 3, 96],
+            initializer=tf.truncated_normal_initializer(stddev=0.1)
+            )
+
+        conv1_biases = tf.get_variable(
+            &#39;bias1&#39;,
+            [96],
+            initializer=tf.constant_initializer(0.)
+            )
+
+        conv1 = tf.nn.conv2d(
+            input_tensor,
+            conv1_weights,
+             strides=[1, 4, 4, 1],
+             padding=&#39;VALID&#39;
+             )
+
+        relu1 = tf.nn.relu(tf.nn.bias_add(conv1, conv1_biases))
+
+        pool1 = tf.nn.max_pool(
+            relu1, 
+            ksize=[1, 3, 3, 1],
+            strides=[1, 2, 2, 1],
+            padding=&#39;VALID&#39;
+            )
+
+        norm1 = tf.nn.lrn(pool1, depth_radius=4, bias=1, alpha=1e-3/9, beta=0.75, name=&#39;norm1&#39;) 
+
+    # conv2
+    with tf.name_scope(&#39;conv2&#39;):
+        conv2_weights = tf.get_variable(
+            &#39;weight2&#39;,
+            [5, 5, 96, 256],
+            initializer=tf.truncated_normal_initializer(stddev=0.1)
+            )
+
+        conv2_biases = tf.get_variable(
+            &#39;bias2&#39;,
+            [256],
+            initializer=tf.constant_initializer(0.)
+            )
+
+        conv2 = tf.nn.conv2d(
+            norm1,
+            conv2_weights,
+             strides=[1, 1, 1, 1],
+             padding=&#39;SAME&#39;
+             )
+        relu2 = tf.nn.relu(tf.nn.bias_add(conv2, conv2_biases))
+        pool2 = tf.nn.max_pool(
+            relu2, 
+            ksize=[1, 3, 3, 1],
+            strides=[1, 2, 2, 1],
+            padding=&#39;VALID&#39;
+            )
+
+        norm2 = tf.nn.lrn(pool2, depth_radius=4, bias=1, alpha=1e-3/9, beta=0.75, name=&#39;norm1&#39;) 
+
+    # conv3
+    with tf.name_scope(&#39;conv3&#39;):
+        conv3_weights = tf.get_variable(
+            &#39;weight3&#39;,
+            [3, 3, 256, 384],
+            initializer=tf.truncated_normal_initializer(stddev=0.1)
+            )
+
+        conv3_biases = tf.get_variable(
+            &#39;bias3&#39;,
+            [384],
+            initializer=tf.constant_initializer(0.)
+            )
+
+        conv3 = tf.nn.conv2d(
+            pool2,
+            conv3_weights,
+            strides=[1, 1, 1, 1],
+            padding=&#39;SAME&#39;
+             )
+
+        relu3 = tf.nn.relu(tf.nn.bias_add(conv3, conv3_biases))
+
+    # conv4
+    with tf.name_scope(&#39;conv4&#39;):
+        conv4_weights = tf.get_variable(
+            &#39;weight4&#39;,
+            [3, 3, 384, 384],
+            initializer=tf.truncated_normal_initializer(stddev=0.1)
+            )
+
+        conv4_biases = tf.get_variable(
+            &#39;bias4&#39;,
+            [384],
+            initializer=tf.constant_initializer(0.)
+            )
+
+        conv4 = tf.nn.conv2d(
+            relu3,
+            conv4_weights,
+             strides=[1, 1, 1, 1],
+             padding=&#39;SAME&#39;
+             )
+
+        relu4 = tf.nn.relu(tf.nn.bias_add(conv4, conv4_biases))
+
+
+    # conv5
+    with tf.name_scope(&#39;conv5&#39;):
+        conv5_weights = tf.get_variable(
+            &#39;weight5&#39;,
+            [3, 3, 384, 256],
+            initializer=tf.truncated_normal_initializer(stddev=0.1)
+            )
+
+        conv5_biases = tf.get_variable(
+            &#39;bias5&#39;,
+            [256],
+            initializer=tf.constant_initializer(0.)
+            )
+
+        conv5 = tf.nn.conv2d(
+            relu4,
+            conv5_weights,
+             strides=[1, 1, 1, 1],
+             padding=&#39;SAME&#39;
+             )
+
+        relu5 = tf.nn.relu(tf.nn.bias_add(conv5, conv5_biases))
+        pool5 = tf.nn.max_pool(
+            relu5, 
+            ksize=[1, 3, 3, 1],
+            strides=[1, 2, 2, 1],
+            padding=&#39;VALID&#39;
+            )
+
+
+    # fc6
+    with tf.name_scope(&#39;fc6&#39;):
+        flattened = tf.reshape(pool5, shape=[-1, 6*6*256])
+        weights = tf.Variable(tf.truncated_normal(
+            [6*6*256, 4096],
+            dtype=tf.float32,
+            stddev=1e-1), name=&#39;weights&#39;)
+
+        biases = tf.Variable(tf.constant(0., shape=[4096], dtype=tf.float32),
+                            name=&#39;biases&#39;)
+        relu6 = tf.nn.relu(tf.nn.xw_plus_b(flattened, weights, biases))
+        dropout6 = tf.nn.dropout(relu6, keep_prob)
+
+
+
+    # fc7
+    with tf.name_scope(&#39;fc7&#39;):
+        weights = tf.Variable(tf.truncated_normal(
+            [4096, 4096],
+            dtype=tf.float32,
+            stddev=1e-1), name=&#39;weights&#39;)
+
+        biases = tf.Variable(tf.constant(0., shape=[4096], dtype=tf.float32),
+                            name=&#39;biases&#39;)
+        relu7 = tf.nn.relu(tf.nn.xw_plus_b(dropout6, weights, biases))
+        dropout7 = tf.nn.dropout(relu7, keep_prob)
+
+    with tf.name_scope(&#39;fc8&#39;):
+        weights = tf.Variable(tf.truncated_normal(
+            [4096, num_classes],
+            dtype=tf.float32,
+            stddev=1e-1), name=&#39;weights&#39;)
+
+        biases = tf.Variable(tf.constant(0., shape=[num_classes], dtype=tf.float32),
+                            name=&#39;biases&#39;)
+        fc8 = tf.nn.xw_plus_b(dropout7, weights, biases)
+    return fc8
+
+</code></pre>
+<p>Alexnet 网络的训练过程（<code>alexnet_train.py</code>）：</p>
+<pre><code class="python">import os
+import numpy as np
+import tensorflow as tf
+import alexnet_inference
+import glob
+from datetime import datetime
+
+# 配置神经网络的参数
+TRAIN_BATCH_SIZE = 10
+TEST_BATCH_SIZE = 10
+LEARNING_RATE = 1e-3
+DROPOUT_RATE = 0.25
+NUM_CLASSES = 2 # 类别标签
+NUM_EPOCHS = 10
+
+# 模型保存的路径和文件名
+MODEL_SAVE_PATH = &quot;model/&quot;
+MODEL_NAME = &quot;model.ckpt&quot;
+TENSORBOARD_PATH = &quot;tensorboard/&quot; # 存储tensorboard文件
+
+TOTAL_DATASET = &#39;train/&#39;
+TRAIN_DATASET_PATH = [&#39;train/cat/&#39;,
+                    &#39;train/dog/&#39;]
+
+TEST_DATASET_PATH = [&#39;test/&#39;]
+LABEL = [&#39;cat&#39;,
+         &#39;dog&#39;]
+
+# 将图像转换为三维数据，将标签转换为one-hot形式
+def parse_image(file_name, label):  
+    image_string = tf.read_file(file_name) 
+    image_decoded = tf.image.decode_jpeg(image_string, channels=3) 
+    image_resized = tf.image.resize_images(image_decoded, [227, 227]) # 将图片居中
+    image_centered = tf.subtract(image_resized, [123.68, 116.779, 103.939]) 
+    image = image_centered[:, :, ::-1]      # 将RGB转换为BGR 
+    label = tf.one_hot(label, NUM_CLASSES) 
+    return image, label
+
+# 打乱图片顺序
+def shuffle_images(train_images, train_labels):
+    permutation = np.random.permutation(len(train_labels))
+    images = []
+    labels = []
+    for i in permutation:
+        images.append(train_images[i])
+        labels.append(train_labels[i])
+    return images, labels
+
+# 将图片和标签先转化为tensor，再创建Dataset，
+def process_image(train_images, train_labels):
+    image_num = len(train_images)
+    train_images = tf.convert_to_tensor(train_images, dtype=tf.string)
+    train_labels = tf.convert_to_tensor(train_labels, dtype=tf.int32)
+    dataset = tf.data.Dataset.from_tensor_slices((train_images, train_labels))
+    dataset = dataset.map(parse_image).batch(TRAIN_BATCH_SIZE)
+    return dataset, image_num
+
+def train():
+    if not os.path.isdir(MODEL_SAVE_PATH):
+        os.mkdir(MODEL_SAVE_PATH)
+
+    if not os.path.isdir(TOTAL_DATASET):
+        os.mkdir(TOTAL_DATASET)
+
+    if not os.path.isdir(list(TRAIN_DATASET_PATH)[0]) or not os.path.isdir(list(TRAIN_DATASET_PATH)[1]):
+        os.mkdir(list(TRAIN_DATASET_PATH)[0])
+        os.mkdir(list(TRAIN_DATASET_PATH)[1])
+
+    # 处理训练集图片
+    train_images = []
+    train_labels = []
+
+    for path in TRAIN_DATASET_PATH:
+        train_images[len(train_images): len(train_images)] = np.array(glob.glob(path + &#39;*jpg&#39;)).tolist()
+    for path in train_images:
+        # file_name表示文件名
+        file_name = path.split(&#39;/&#39;)[-1]
+        for i in range(NUM_CLASSES):
+            if LABEL[i] in file_name:
+                train_labels.append(i)
+                break
+
+    train_images, train_labels = shuffle_images(train_images, train_labels)
+    train_data, train_data_size = process_image(train_images, train_labels)
+
+    # 将training的过程分为train_batches_per_epoch次迭代完成，每次迭代包含的元素为TRAIN_BATCH_SIZE个
+    train_batches_per_epoch = int(np.floor(train_data_size) / TRAIN_BATCH_SIZE)
+    train_iterator = tf.data.Iterator.from_structure(train_data.output_types, train_data.output_shapes)
+    train_initializer = train_iterator.make_initializer(train_data)     # 创建dataset迭代器，需要进行初始化
+    train_next_batch = train_iterator.get_next() 
+
+    # 处理测试集图片
+    test_images = []
+    test_labels = []
+
+    for path in TEST_DATASET_PATH:
+        test_images[len(test_images): len(test_images)] = np.array(glob.glob(path + &#39;*jpg&#39;)).tolist()
+    for path in test_images:
+        # file_name表示文件名
+        file_name = path.split(&#39;/&#39;)[-1]
+        for i in range(NUM_CLASSES):
+            if LABEL[i] in file_name:
+                test_labels.append(i)
+                break
+
+    test_images, test_labels = shuffle_images(test_images, test_labels)
+    test_data, test_data_size = process_image(test_images, test_labels)
+
+    # 将training的过程分为train_batches_per_epoch次迭代完成，每次迭代包含的元素为TRAIN_BATCH_SIZE个
+    test_batches_per_epoch = int(np.floor(test_data_size) / TEST_BATCH_SIZE)
+    test_iterator = tf.data.Iterator.from_structure(test_data.output_types, test_data.output_shapes)
+    test_initializer = test_iterator.make_initializer(test_data)     # 创建dataset迭代器，需要进行初始化
+    test_next_batch = test_iterator.get_next() 
+
+
+    x = tf.placeholder(tf.float32, [None, 227, 227, 3])
+    y_ = tf.placeholder(tf.float32, [None, NUM_CLASSES])
+    keep_prob = tf.placeholder(tf.float32)
+    y = alexnet_inference.inference(x, keep_prob, NUM_CLASSES)
+
+    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=y, labels=y_))
+    train_op = tf.train.AdamOptimizer(LEARNING_RATE).minimize(loss)
+    accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1)), tf.float32))
+
+    init_op = tf.global_variables_initializer()
+
+    # tensorboard
+    # tf.summary.scalar(&#39;loss,&#39;)
+
+    saver = tf.train.Saver()
+
+    with tf.Session() as sess:
+        sess.run(init_op)
+
+        print(&#39;{}: Start training...&#39;.format(datetime.now()))
+        for epoch in range(NUM_EPOCHS):
+            sess.run(train_initializer)
+            print(&#39;ecpoch number: {} start&#39;.format(epoch+1))
+
+            # train
+            # 200 / 10 = 20
+            for step in range(train_batches_per_epoch):
+                image_batch, label_batch = sess.run(train_next_batch)
+                loss_value, train_step = sess.run([loss, train_op], feed_dict={
+                                                                  x: image_batch,
+                                                                  y_: label_batch,
+                                                                  keep_prob: DROPOUT_RATE
+                                                })
+                if step % 10 ==0:
+                    print(&quot;After %d training step(s), loss on training batch is %f.&quot; % (epoch, loss_value))
+
+
+            # accuracy
+            sess.run(test_initializer)
+            test_accuracy = 0
+            test_count = 0
+            for _ in range(test_batches_per_epoch):
+                image_batch, label_batch = sess.run(test_next_batch)
+                temp_accuracy = sess.run(accuracy, feed_dict={x: image_batch,
+                                                              y_: label_batch,
+                                                              keep_prob: 1.0})
+                test_accuracy += temp_accuracy
+                test_count += 1
+            try:
+                test_accuracy /= test_count
+            except:
+                print(&#39;ZeroDivisionError!&#39;)
+            print(&quot;Accuracy = {:.4f}&quot;.format(test_accuracy))
+
+
+            # save model
+            print(&quot;{}: Saving model... &quot;.format(datetime.now()))
+            saver.save(sess, os.path.join(MODEL_SAVE_PATH,MODEL_NAME), global_step=epoch)
+
+def main(argv=None):
+    train()
+
+main()
+# if __name__ == &#39;__main__&#39;:
+#     tf.app.run()
+</code></pre>
+<h2 id="3-创新点"><a href="#3-创新点" class="headerlink" title="3. 创新点"></a>3. 创新点</h2><h4 id="1-ReLU-Nonlinearity"><a href="#1-ReLU-Nonlinearity" class="headerlink" title="1. ReLU Nonlinearity"></a>1. ReLU Nonlinearity</h4><p>一般神经元的激活函数会选择 <code>sigmoid</code> 函数或者 <code>tanh</code> 函数，然而 Alex 发现在训练时间的梯度衰减方面，这些非线性饱和函数要比非线性非饱和函数慢很多。在 AlexNet 中用的非线性非饱和函数是 <code>f=max(0,x)</code>，即 ReLU。实验结果表明，要将深度网络训练至 training error rate 达到 <code>25%</code> 的话，ReLU 只需 <code>5</code> 个 epochs 的迭代，但 <code>tanh</code> 需要 <code>35</code> 个 epochs 的迭代，用 ReLU 比 tanh 快 <code>6</code> 倍。</p>
+<h4 id="2-双-GPU-并行运行"><a href="#2-双-GPU-并行运行" class="headerlink" title="2. 双 GPU 并行运行"></a>2. 双 GPU 并行运行</h4><p>为提高运行速度和提高网络运行规模，采用双 GPU 的设计模式。并且规定  GPU只能在特定的层进行通信交流。其实就是每一个 GPU 负责一半的运算处理。值得注意的是，虽然 one-GPU 网络规模只有 two-GPU 的一半，但其实这两个网络其实并非等价的。</p>
+<h4 id="3-LRN-局部响应归一化"><a href="#3-LRN-局部响应归一化" class="headerlink" title="3. LRN 局部响应归一化"></a>3. LRN 局部响应归一化</h4><h1 id="ZF-Net"><a href="#ZF-Net" class="headerlink" title="ZF Net"></a>ZF Net</h1><p>源自论文《<em>Visualizing and Understanding Convolutional Networks</em> 》</p>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.  概述"></a>1.  概述</h2><p>本文设计了一种可以可视化卷积层中 feature map 的系统，通过可视化每层 layer 的某些 activation 来探究 CNN 网络究竟是怎样“学习”的，同时文章通过可视化了 AlexNet 发现了因为结构问题，导致有“影像重叠”（aliasing artifacts），因此对网络进行了改进，设计出了 ZF Net。</p>
+<p>文章通过把 activation（feature map 中的数值）映射回输入像素的空间，去了解什么样的输入模式会生成 feature map  中的一个给定activation，这个模型主要通过反卷积（deconvolution），反向池化（Unpooling）与“反向激活”（Rectification），其实就是把整个 CNN 网络倒过来，另外值得说一下的是，并不是完全倒过来，只是近似，所有的“反向”操作都是近似，主要是使得从各层 layer 的尺度还原到在原始图像中相应大小的尺度。</p>
+<p>同时文章还分析了每层 layer 学习到了什么，以及可视化最强 activation 的演化过程来关系模型的收敛过程，同时也利用遮挡某些部位来学习 CNN 是学习 object 本身还是周围环境。</p>
+<h2 id="2-可视化结构"><a href="#2-可视化结构" class="headerlink" title="2.  可视化结构"></a>2.  可视化结构</h2><h3 id="2-1-Unpooling"><a href="#2-1-Unpooling" class="headerlink" title="2.1  Unpooling"></a>2.1  Unpooling</h3><p>要想完全还原 max pooling 是不太现实的，除非记录每一层 feature，那有些得不偿失，文章通过记录池化过程中最大激活值所在位置以及数值，在 unpooling 的时候，还原那个数值，其他的位置设为 <code>0</code>，从而近似“反向池化”，具体如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ccb747524abe3965.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="2-2-Rectification"><a href="#2-2-Rectification" class="headerlink" title="2.2  Rectification"></a>2.2  Rectification</h3><p>CNN 使用 ReLU 确保每层输出的激活之都是正数，因此对于反向过程，同样需要保证每层的特征图为正值，也就是说这个反激活过程和激活过程没有什么差别，都是直接采用 ReLU 函数。</p>
+<h3 id="2-3-Filtering"><a href="#2-3-Filtering" class="headerlink" title="2.3  Filtering"></a>2.3  Filtering</h3><p>卷积过程使用学习到的过滤器对 feature map 进行卷积，为近似反转这个过程，反卷积使用该卷积核的转置来进行卷积操作。</p>
+<p>注意：在上述重构过程中没有使用任何对比度归一化操作</p>
+<h2 id="3-Feature-Visualization"><a href="#3-Feature-Visualization" class="headerlink" title="3.  Feature Visualization"></a>3.  Feature Visualization</h2><p>在 ImageNet 验证集上使用反卷积进行特征图的可视化，如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c32de690d0152aab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f87dee560b3aa6c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-fc3409361cffca63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对于一个给定的 feature map，展示了响应最大的九张响应图，每个响应图向下映射到原图像素空间，右面的原图通过找到在原图的感受野来截取对应的原图。</p>
+<p>通过观察可以发现，来自每个层中的投影显示出网络中特征的分层特性。第二层响应角落和其他的边缘/颜色信息，层三具有更复杂的不变性，捕获相似的纹理，层四显示了显著的变化，并且更加类别具体化，层五则显示了具有显著姿态变化的整个对象，所以这就是常说的 CNN 结构前几层通常学习简单的线条纹理，一些共性特征，后面将这些特征组合成 不同的更丰富的语义内容。</p>
+<h2 id="4-Feature-Evolution-during-Training"><a href="#4-Feature-Evolution-during-Training" class="headerlink" title="4.  Feature Evolution during Training"></a>4.  Feature Evolution during Training</h2><p>文中对于一个 layer 中给定的 feature map，图中给出在训练 epochs 在 <code>[1,2,5,10,20,30,40,64]</code>时，训练集对该 feature map 响应最大的可视化图片，如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-21fccc427dc0c7d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>从图中可以看出，较低层 <code>(L1, L2)</code> 只需要几个 epochs 就可以完全收敛，而高层 <code>(L5)</code> 则需要很多次迭代，需要让模型完全收敛之后。这一点正好与深层网络的梯度弥散现象正好相反，但是这种底层先收敛，然后高层再收敛的现象也很符合直观。</p>
+<h2 id="5-Feature-Invariance"><a href="#5-Feature-Invariance" class="headerlink" title="5.  Feature Invariance"></a>5.  Feature Invariance</h2><p><img src="https://upload-images.jianshu.io/upload_images/1351548-a4c0c7c1b274a786.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图显示出了相对于未变换的特征，通过垂直平移，旋转和缩放的 <code>5</code> 个样本图像在可视化过程中的变化。小变换对模型的第一层有着显著的影响，但对顶层影响较小，对于平移和缩放是准线性的。网络输出对于平移和缩放是稳定的。但是一般来说，除了具有旋转对称性的物体来说，输出来旋转来说是不稳定的（这说明了卷积操作对于平移和缩放具有很好的不变性，而对于旋转的不变性较差）。</p>
+<h2 id="6-ZF-Net"><a href="#6-ZF-Net" class="headerlink" title="6.  ZF Net"></a>6.  ZF Net</h2><p><img src="https://upload-images.jianshu.io/upload_images/1351548-b8fde413c0efc595.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可视化训练模型不但可以洞察 CNN 的操作，也可以帮助我们在前几层选择更好的模型架构。通过可视化 AlexNet 的前两层（图中b，d），就可以看出问题:</p>
+<ol>
+<li>第一层 filter 是非常高频和低频的信息，中间频率的filter很少覆盖</li>
+<li>第二层的可视化有些具有混叠效应，由于第一层比较大的 stride</li>
+</ol>
+<p>为了解决这些问题：</p>
+<ol>
+<li><p>将第一层的 filter 的尺寸从 <code>11x11</code> 减到 <code>7x7</code></p>
+</li>
+<li><p>缩小间隔，从 <code>4</code> 变为 <code>2</code>。</p>
+</li>
+</ol>
+<p>这两个改动形成的新结构，获取了更多的信息，而且提升了分类准确率。</p>
+<h2 id="7-实验"><a href="#7-实验" class="headerlink" title="7.  实验"></a>7.  实验</h2><p>首先，作者进行了网络结构尺寸调整实验。去除掉包含大部分网络参数最后两个全连接层之后，网络性能下降很少；去掉中间两层卷积层之后，网络性能下降也很少；但是当把上述的全连接层和卷积层都去掉之后，网络性能急剧下降，由此作者得出结论：模型深度对于模型性能很重要，存在一个最小深度，当小于此深度时，模型性能大幅下降。<br>作者固定了通过 ImageNet pre-train 网络的权值，只是使用新数据训练了 softmax 分类器，效果非常好。这就形成了目前的人们对于卷积神经网络的共识：卷积网络相当于一个特征提取器。特征提取器是通用的，因为 ImageNet 数据量，类别多，所以由 ImageNet 训练出来的特征提取器更具有普遍性。也正是因为此，目前的卷积神经网络的 Backbone Network 基本上都是 ImageNet 上训练出来的网络。</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>本文最大的贡献在于<strong>通过使用可视化技术揭示了神经网络各层到底在干什么，起到了什么作用</strong>。可视化技术依赖于反卷积操作，即卷积的逆过程，将特征映射到像素上。具体过程如下图所示： </p>
+<ul>
+<li><strong>Unpooling</strong>：在卷积神经网络中，最大池化是不可逆的，作者采用近似的实现，使用一组转换变量 switch 记录<strong>每个池化区域最大值的位置</strong>。在反池化的时候，将最大值返回到其所应该在的位置，其他位置用 <code>0</code> 补充。 </li>
+<li><strong>Rectification</strong>：反卷积的时候也同样利用 ReLU 激活函数 </li>
+<li><strong>Filtering</strong>：解卷积网络中利用卷积网络中相同的 filter 的转置应用到 Rectified Unpooled Maps，也就是对 filter 进行水平方向和垂直方向的翻转。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-454028f1fe5834fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可视化不仅能够看到一个训练完的模型的内部操作，而且还能够帮助改进网络结构从而提高网络性能。ZF Net 模型是在 AlexNet 基础上进行改动，网络结构上并没有太大的突破。差异表现在，AlexNet 是用两块 GPU 的稀疏连接结构，而 ZF Net 只用了一块 GPU 的稠密链接结构；改变了 AlexNet 的第一层，将过滤器的大小由 <code>11x 11</code> 变成 <code>7x7</code>，并且将步长由 <code>4</code> 变成 <code>2</code> ，使用更小的卷积核和步长，保留更多特征；将<code>3</code>，<code>4</code>，<code>5</code> 层变成了全连接。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9143fb452ee8eeb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="VGG-Net"><a href="#VGG-Net" class="headerlink" title="VGG Net"></a>VGG Net</h1><p>出自论文 《<em>Very Deep Convolutional Networks for Large-Scale Image Recognition</em>》</p>
+<h2 id="1-概括"><a href="#1-概括" class="headerlink" title="1.  概括"></a>1.  概括</h2><p>VGG 模型由牛津大学 VGG 组提出。<strong>VGG 全部使用了 <code>3x3</code> 的卷积核和 <code>2x2</code> 最大池化核通过不断加深网络结构来提神性能</strong>。采用堆积的小卷积核优于采用大的卷积核，因为多层非线性层可以增加网络深层来保证学习更复杂的模式，而且所需的参数还比较少。</p>
+<p>VGG 论文给出了一个非常振奋人心的结论：卷积神经网络的深度增加和小卷积核的使用对网络的最终分类识别效果有很大的作用。</p>
+<h2 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h2><p>VGG 全部使用 <code>3x3</code> 的卷积核和 <code>2x2</code> 的池化核，通过不断加深网络结构来提升性能。网络层数的增长并不会带来参数量上的爆炸，因为参数量主要集中在最后三个全连接层中。同时，两个 <code>3x3</code> 卷积层的串联相当于 <code>1</code> 个 <code>5x5</code> 的卷积层，<code>3</code> 个 <code>3x3</code> 的卷积层串联相当于 <code>1</code> 个 <code>7x7</code> 的卷积层，即 <code>3</code> 个 <code>3x3</code> 卷积层的感受野大小相当于 <code>1</code> 个 <code>7x7</code> 的卷积层。但是 <code>3</code> 个 <code>3x3</code> 的卷积层参数量只有 <code>7x7</code> 的一半左右，同时前者可以有 <code>3</code> 个非线性操作，而后者只有 <code>1</code> 个非线性操作，这样使得前者对于特征的学习能力更强。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4d78d45d7516d4c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d5d0636a64ab73a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p> <img src="https://upload-images.jianshu.io/upload_images/1351548-29d5f1b929690b4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="Yolo-v1"><a href="#Yolo-v1" class="headerlink" title="Yolo v1"></a>Yolo v1</h1><p>近几年来比较流行的目标检测算法可以分为两类：</p>
+<ul>
+<li><p>一类是基于 Region Proposal 的 RCNN 系算法（RCNN，Fast RCNN，Faster RCNN），它们是 two-stage 的，需要先使用启发式方法（selective search）或者 CNN 网络（RPN）产生 Region Proposal，然后再在 Region Proposal 上做分类与回归。</p>
+</li>
+<li><p>另一类是 Yolo，SSD 这类 one-stage 算法，其仅仅使用一个 CNN 网络直接预测不同目标的类别与位置。</p>
+</li>
+</ul>
+<p>第一类方法是准确度高一些，但是速度慢，但是第二类算法是速度快，但是准确性要低一些。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9e53d3c99cb9f789.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="1-滑动窗口与-CNN"><a href="#1-滑动窗口与-CNN" class="headerlink" title="1. 滑动窗口与 CNN"></a>1. 滑动窗口与 CNN</h2><p><strong>采用滑动窗口的目标检测算法思路非常简单，它将检测问题转化为了图像分类问题。</strong>其基本原理就是采用不同大小和比例（宽高比）的窗口在整张图片上以一定的步长进行滑动，然后对这些窗口对应的区域做图像分类，这样就可以实现对整张图片的检测了，如下图所示，如 DPM 就是采用这种思路。但是这个方法有致命的缺点，就是你并不知道要检测的目标大小是什么规模，所以你要设置不同大小和比例的窗口去滑动，而且还要选取合适的步长。但是这样会产生很多的子区域，并且都要经过分类器去做预测，这需要很大的计算量，所以你的分类器不能太复杂，因为要保证速度。解决思路之一就是减少要分类的子区域，这就是 RCNN 的一个改进策略，其采用了 selective search 方法来找到最有可能包含目标的子区域（Region Proposal），其实可以看成采用启发式方法过滤掉很多子区域，这会提升效率。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-057bedc91673a5a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如果你使用 CNN 分类器，那么滑动窗口是非常耗时的。但是结合卷积运算的特点，我们可以使用 CNN 实现更高效的滑动窗口方法。这里要介绍的是一种全卷积的方法，简单来说就是网络中用卷积层代替了全连接层，如下图所示。输入图片大小是 <code>16x16</code>，经过一系列卷积操作，提取了 <code>2x2</code> 的特征图，但是这个 <code>2x2</code> 的图上每个元素都是和原图是一一对应的，如图中蓝色的格子对应蓝色的区域，这不就是相当于在原图上做大小为 <code>14x14</code> 的窗口滑动，且步长为 <code>2</code>，共产生 <code>4</code> 个字区域。最终输出的通道数为 <code>4</code>，可以看成 <code>4</code> 个类别的预测概率值，这样一次 CNN 计算就可以实现窗口滑动的所有子区域的分类预测。这其实是 Overfeat 算法的思路。之所可以 CNN 可以实现这样的效果是因为卷积操作的特性，就是图片的空间位置信息的不变性，尽管卷积过程中图片大小减少，但是位置对应关系还是保存的。说点题外话，这个思路也被 RCNN 借鉴，从而诞生了 Fast RCNN 算法。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a2e6c2ab8f7d6eeb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面尽管可以减少滑动窗口的计算量，但是只是针对一个固定大小与步长的窗口，这是远远不够的。Yolo 算法很好的解决了这个问题，它不再是窗口滑动了，而是直接将原始图片分割成互不重合的小方块，然后通过卷积最后生产这样大小的特征图，基于上面的分析，可以认为特征图的每个元素也是对应原始图片的一个小方块，然后用每个元素来可以预测那些中心点在该小方格内的目标，这就是 Yolo 算法的朴素思想。</p>
+<h2 id="2-设计理念"><a href="#2-设计理念" class="headerlink" title="2.  设计理念"></a>2.  设计理念</h2><p>整体来看，Yolo 算法采用一个单独的 CNN 模型实现 end-to-end 的目标检测，整个系统如下图所示：首先将输入图片 resize 到 <code>448x448</code>，然后送入 CNN 网络，最后处理网络预测结果得到检测的目标。相比 RCNN 算法，其是一个统一的框架，其速度更快，而且 Yolo 的训练过程也是 end-to-end 的。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1e8dc5ecca8eaca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>具体来说，Yolo 的 CNN 网络将输入的图片分割成 <img src="https://www.zhihu.com/equation?tex=S%5Ctimes+S" alt="S\times S"> 网格，然后<strong>每个单元格负责去检测那些中心点落在该格子内的目标</strong>，如下图所示，可以看到狗这个目标的中心落在左下角一个单元格内，那么该单元格负责预测这个狗。每个单元格会预测 <img src="https://www.zhihu.com/equation?tex=B" alt="B"> 个边界框（bounding box）以及边界框的置信度（confidence score）。                      </p>
+<p>所谓置信度其实包含两个方面：</p>
+<ul>
+<li><p>一是这个边界框含有目标的可能性大小。前者记为 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29" alt="Pr(object)"> ，当该边界框是背景时（即不包含目标），此时 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%3D0" alt="Pr(object)=0"> 。而当该边界框包含目标时， <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%3D1" alt="Pr(object)=1"> 。</p>
+</li>
+<li><p>二是这个边界框的准确度。边界框的准确度可以用预测框与实际框（ground truth）的 IoU 来表征，记为 <img src="https://www.zhihu.com/equation?tex=%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="\text{IOU}^{truth}_{pred}"> 。</p>
+</li>
+</ul>
+<p>因此，置信度可以定义为 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%2A%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="Pr(object)*\text{IOU}^{truth}_{pred}"> 。</p>
+<p>很多人可能将 Yolo 的置信度看成边界框是否含有目标的概率，但是其实它是两个因子的乘积，预测框的准确度也反映在里面。边界框的大小与位置可以用 <code>4</code> 个值来表征： <img src="https://www.zhihu.com/equation?tex=%28x%2C+y%2Cw%2Ch%29" alt="(x, y,w,h)"> ，其中 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)"> 是边界框的中心坐标，而 <img src="https://www.zhihu.com/equation?tex=w" alt="w"> 和 <img src="https://www.zhihu.com/equation?tex=h" alt="h"> 是边界框的宽与高。</p>
+<p>还有一点要注意，中心坐标的预测值 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)"> 是相对于每个单元格左上角坐标点的偏移值，并且单位是相对于单元格大小的，单元格的坐标定义如下图所示。而边界框的 <img src="https://www.zhihu.com/equation?tex=w" alt="w"> 和 <img src="https://www.zhihu.com/equation?tex=h" alt="h"> 预测值是相对于整个图片的宽与高的比例，这样理论上 <code>4</code> 个元素的大小应该在 <img src="https://www.zhihu.com/equation?tex=%5B0%2C1%5D" alt="[0,1]"> 范围。这样，每个边界框的预测值实际上包含 <code>5</code> 个元素： <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%2Cw%2Ch%2Cc%29" alt="(x,y,w,h,c)"> ，其中前 <code>4</code> 个表征边界框的大小与位置，而最后一个值是置信度。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e4b1c735185f8ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>还有分类问题，对于每一个单元格其还要给出预测出 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 个类别概率值，其表征的是由该单元格负责预测的边界框其目标属于各个类别的概率。但是这些概率值其实是在各个边界框置信度下的条件概率，即 <img src="https://www.zhihu.com/equation?tex=Pr%28class_%7Bi%7D%7Cobject%29" alt="Pr(class_{i}|object)"> 。值得注意的是，不管一个单元格预测多少个边界框，其只预测一组类别概率值，这是 Yolo 算法的一个缺点，在后来的改进版本中，Yolo9000 是把类别概率预测值与边界框是绑定在一起的。同时，我们可以计算出各个边界框类别置信度（class-specific confidence scores）：</p>
+<p> <img src="https://www.zhihu.com/equation?tex=Pr%28class_%7Bi%7D%7Cobject%29%2APr%28object%29%2A%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D%3DPr%28class_%7Bi%7D%29%2A%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="Pr(class_{i}|object)*Pr(object)*\text{IOU}^{truth}_{pred}=Pr(class_{i})*\text{IOU}^{truth}_{pred}"> </p>
+<p>边界框类别置信度表征的是该边界框中目标属于各个类别的可能性大小以及边界框匹配目标的好坏。后面会说，一般会根据类别置信度来过滤网络的预测框。</p>
+<p>总结一下，每个单元格需要预测 <img src="https://www.zhihu.com/equation?tex=%28B%2A5%2BC%29" alt="(B*5+C)"> （每个单元格会预测 <img src="https://www.zhihu.com/equation?tex=B" alt="B"> 个边界框（bounding box）；对于每一个单元格其还要给出预测出 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 个类别概率值，其表征的是由该单元格负责预测的边界框其目标属于各个类别的概率）个值。如果将输入图片划分为 <img src="https://www.zhihu.com/equation?tex=S%5Ctimes+S" alt="S\times S"> 网格，那么最终预测值为 <img src="https://www.zhihu.com/equation?tex=S%5Ctimes+S%5Ctimes+%28B%2A5%2BC%29" alt="S\times S\times (B*5+C)"> 大小的张量。整个模型的预测值结构如下图所示。对于 PASCAL VOC 数据，其共有 <code>20</code> 个类别，如果使用 <img src="https://www.zhihu.com/equation?tex=S%3D7%2CB%3D2" alt="S=7,B=2"> ，那么最终的预测结果就是 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes+7%5Ctimes+30" alt="7\times 7\times 30"> 大小的张量。在下面的网络结构中我们会详细讲述每个单元格的预测值的分布位置。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9b46d719c61170d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3-网络设计"><a href="#3-网络设计" class="headerlink" title="3.  网络设计"></a>3.  网络设计</h2><p>Yolo 采用卷积网络来提取特征，然后使用全连接层来得到预测值。网络结构参考 GooLeNet 模型，包含 <code>24</code> 个卷积层和 <code>2</code> 个全连接层，如下图所示。对于卷积层，主要使用 <code>1x1</code> 卷积来做 channel reduction，然后紧跟 <code>3x3</code> 卷积。对于卷积层和全连接层，采用 Leaky ReLU 激活函数： <img src="https://www.zhihu.com/equation?tex=max%28x%2C+0.1x%29" alt="max(x, 0.1x)"> ，但是最后一层却采用线性激活函数。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6834afa6247f6ccd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
         
     
 
@@ -883,7 +2189,7 @@ output = dot(W, input) + b
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -915,7 +2221,7 @@ output = dot(W, input) + b
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">21</span>
+                <span class="sidebar-badge">20</span>
             </a>
         </li>
         
