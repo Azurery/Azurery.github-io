@@ -37,6 +37,8 @@
     
     <title>
         
+            CMake学习 | 
+        
         Azurery
     </title>
 
@@ -47,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Magicmanoooo">
     <meta name="description" itemprop="description" content="蒟蒻一枚">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",其他">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -96,6 +98,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -226,15 +231,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Azurery">
+    <meta property="og:title" content="CMake学习 | Azurery">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="蒟蒻一枚">
-    
+    <meta property="og:article:tag" content="其他"> 
 
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Sep 21 2018 22:23:06 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Azurery">
+    <meta name="twitter:title" content="CMake学习 | Azurery">
     <meta name="twitter:description" content="蒟蒻一枚">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -242,35 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com" />
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/CMake学习/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
+
+
 <script type="application/ld+json">
 {
-    "@context": "http://schema.org",
-    "@type": "Website",
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/CMake学习/index.html",
+    "headline": "CMake学习",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Fri Sep 21 2018 22:23:06 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
     "publisher": {
         "@type": "Organization",
         "name": "Azurery",
-        "logo": "/img/favicon.png"
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
     },
-    "url": "http://yoursite.com",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://yoursite.com"
-    },
-    "description": "蒟蒻一枚"
+    "keywords": ",其他",
+    "description": "蒟蒻一枚",
 }
 </script>
-
-
 
 
     
@@ -304,736 +320,328 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                秘境，探寻你的足迹
-            
-        
-        </a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>Magicmanoooo</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-    <!-- Google -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-
-            <input type="hidden" name="sitesearch" value="http://yoursite.com">
-        </form>
-    </div>
-
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/logo.png" alt="logo" />
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
         </a>
     </div>
+    -->
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>Azurery</strong>
-        </div>
-        <div class="section-spacer"></div>
 
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-        </ul>
-
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-
-            
-
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Azurery&url=http://yoursite.com&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到微博
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=Azurery&url=http://yoursite.com&via=Magicmanoooo" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Twitter
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Facebook
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://plus.google.com/share?url=http://yoursite.com" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Google+
-                    </li>
-                </a>
-            
-
-            
-
-            
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=Azurery&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com" target="_blank">
-                    <li class="mdl-menu__item">
-                        分享到 QQ
-                    </li>
-                </a>
-            
-
-            
-        </ul>
-    </div>
-</div>
-
+    <!-- Left aligned menu below button -->
     
-    <div class="locate-thumbnail-symbol"></div>
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
-    <!-- Pin on top -->
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Windows平台下"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Windows平台下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在linux平台下"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">在linux平台下</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多个源文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个源文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-同一个目录，多个源文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 同一个目录，多个源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-多个目录，多个源文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 多个目录，多个源文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义编译选项"><span class="post-toc-number">3.</span> <span class="post-toc-text">自定义编译选项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-修改CMakeLists-txt文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 修改CMakeLists.txt文件</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/目标检测/"></a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/目标检测/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/计算机视觉/">计算机视觉</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            图像匹配
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/计算机视觉/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/杂谈/">杂谈</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            自己长期以来，在开发软件的时候总是感觉找不着北，甚有如履薄冰之感。在拜读了miloyip大大的
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/杂谈/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/Unicode三三两两/">Unicode的三三两两</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Un...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/Unicode三三两两/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/SIFT/">SIFT（尺寸不变特征变换匹配算法）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            SIFT简...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/SIFT/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/Python点点滴滴/">Python点点滴滴</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/Python点点滴滴/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/ORB/">ORB（Oriented FAST and Rotated BRIEF）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简介假如有两张人物...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/ORB/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/Opencv/">opencv的点点滴滴</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Ptr源码分析Ptr是一个智能指针，用于动态分配objects。这是一个template...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/Opencv/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/LLVM知识点/">LLVM的一些知识点</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/LLVM知识点/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/03/09/Linux点点滴滴/">Linux点点滴滴</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/03/09/Linux点点滴滴/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Magicmanoooo's avatar">
-            </div>
-            <div>
-                <strong>Magicmanoooo</strong>
-                <span>3月 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                CMake学习
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZ0lEQVR42u3aQZKjQAwEQP//0zsfWOMqtdEQE8nJYTB0cmjJkl7//vTxwsPDw8PDw8PDexjvFR//udGbs9ffvDt7/X2+Njw8PLwd3oetNgAkv2qvHK4NDw8Pb5H3bsO9/vzu+iQA5CEkWRseHh7ek3ntQpMA8LXn4uHh4T2Sl9+hPXuyNjw8PLx9XvKHPy/ytvd5RK0FDw8PL+blTab9z6v9PTw8PLyAV480HQwK5KXeoxXi4eHh3czLN+Kk/NoOTuWNtDyJx8PDw7ubN0t281GA82S6Hj7Aw8PDW+edlHGLkkFwNllDHRjw8PDwbuC1o1HJstrE+qTxhoeHh3c3Lx9+yjf3fJRq1vT6sCo8PDy8Fd51GGjPtkEivz5Kx/Hw8PBu5rWlhzYkzEJOC8bDw8N7Ai9/cJ7s3hEk8PDw8PZ5s8Q3b27NUvCi3dX+Y8DDw8M75p2387/L+ML98fDw8G7m5Qn0LAzkowBJsy0KFXh4eHjrvJPwcL1l5889uR4PDw9vk9e27fPtvg0YeeGjCAx4eHh4N/DaQatZIp6XhttWHB4eHt4m7+Sbk2bVLLR8uBseHh7eIu9b5YCENCttRKECDw8Pb5GXpNGz4kK73c8Kynh4eHg7vPaIktpgQ09GENrn4uHh4e3wZiXUfPSqvb5tjOHh4eH9Fq8NBu32nby49s7F0BUeHh7ebbxZcWGWOiflj9nrwMPDw3smL0+aZ4GhHcnCw8PDez5vtqwkcT9Ju/Hw8PD2ebPRqHooKh7bage88PDw8DZ5bQkgGn46bqclrxIPDw9vn/f3Djw8PDw8PDw8vAccPyUF2CQfc4jTAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/其他/">其他</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake学习&url=http://yoursite.com/2019/03/09/CMake学习/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake学习&url=http://yoursite.com/2019/03/09/CMake学习/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/CMake学习/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/CMake学习/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=CMake学习&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/CMake学习/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="什么是CMake"><a href="#什么是CMake" class="headerlink" title="什么是CMake"></a>什么是CMake</h2><p>如果软件想跨平台，必须要保证能够在不同平台编译。但现在存在各种不同的make工具，就得为每一种标准写一次Makefile。</p>
+<p>CMake就是为了针对上述这种问题所设计的工具：它首先允许开发者编写一种平台无关的CMakeLists.txt文件来指定整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化Makefile和工程文件，如Unix的Makefile或者Windows的Visual Studio工程，从而做到<strong>write once，run everywhere</strong>。</p>
+<h3 id="1-Windows平台下"><a href="#1-Windows平台下" class="headerlink" title="1. Windows平台下"></a>1. Windows平台下</h3><p>在Windows下，需要在设置编译器的时候，gcc和g++后面要加上.exe。需要在CMakeLists.txt所在的目录下，运行如下命令：</p>
+<pre><code class="cpp">cmake -G &quot;MinGW Makefiles&quot; .
+</code></pre>
+<p><strong>【注】：</strong>在上面的命令的最后一行的这个<code>.</code>不能丢，代表的是当前路径。</p>
+<p>此外，在MinGW路径下的<code>make</code>叫<code>mingw32-make.exe</code>，在运行的时候，需要使用的命令为：</p>
+<pre><code class="cpp">mingw32-make
+</code></pre>
+<p>此外，在CMakeLists.txt中需要设置为：</p>
+<pre><code class="makefile"># CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+# 项目信息
+project (Demo1)
+# 指定生成目标
+add_executable(Demo main.cc)
+
+set(CMAKE_C_COMPLIER D:/Software/Programming/MinGW/bin/gcc.exe #设置C编译器
+set(CMAKE_CXX_COMPLIER D:/Software/Programming/MinGW/bin/g++.exe) #设置C++编译器
+</code></pre>
+<p>上述出现的一些命令：</p>
+<ol>
+<li><code>cmake_mimimum_required</code>：指定运行此配置文件所需的CMake的最低版本</li>
+<li><code>project</code>：参数值<code>Demo</code>，该命令表示项目的名称是<code>Demo</code></li>
+<li><code>add_executable</code>：将名为<code>main.cc</code>的源文件编译成一个名为<code>Demo</code>的可执行文件</li>
+</ol>
+<h3 id="在linux平台下"><a href="#在linux平台下" class="headerlink" title="在linux平台下"></a>在linux平台下</h3><p>在当前目录下执行<code>cmake .</code>，得到Makefile后再使用<code>make</code>命令编译得到<code>Demo</code>可执行文件。</p>
+<h2 id="多个源文件"><a href="#多个源文件" class="headerlink" title="多个源文件"></a>多个源文件</h2><h3 id="1-同一个目录，多个源文件"><a href="#1-同一个目录，多个源文件" class="headerlink" title="1. 同一个目录，多个源文件"></a>1. 同一个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-a12804b0d76ccd3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在这种情况下，可以在<code>add_executable</code>命令中增加多个源文件。虽然这么写没问题，但当源文件过多时，就需要把所以源文件的名字都加进去，这就是很繁琐的工作。比较简单的方法是：<strong>使用<code>aux_source_directory</code>命令，该命令会查找指定目录下的所有源文件，然后将结果存进指定变量名。</strong>其语法如下：</p>
+<pre><code class="makefile">aux_source_directory(&lt;dir&gt; &lt;variable&gt;)
+</code></pre>
+<p>所以，可以修改CMakeLists.txt：</p>
+<pre><code class="makefile"># 查找当前目录下的所有源文件
+# 并将名称保存到 DIR_SRCS 变量
+aux_source_directory(. DIR_SRCS)
+
+# 指定生成目标
+add_executable(Demo ${DIR_SRCS})
+</code></pre>
+<p>这样，CMake会将当前目录的所有源文件的文件名赋值给变量<code>DIR_SRCS</code>，再指示变量<code>DIR_SRCS</code>中的源文件需要编译成一个名为<code>Demo</code>的可执行文件。</p>
+<h3 id="2-多个目录，多个源文件"><a href="#2-多个目录，多个源文件" class="headerlink" title="2. 多个目录，多个源文件"></a>2. 多个目录，多个源文件</h3><p><img src="https://upload-images.jianshu.io/upload_images/1351548-81de8f0fe4e3fad1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这种情况，需要分别在项目的根目录<code>Demo3</code>和<code>math</code>目录里各编写一个CMakeLists.txt文件。为了方便起见，可以先将<code>math</code>目录下的文件编译成静态库，再由<code>main</code>函数进行调用。</p>
+<ul>
+<li>使用命令<code>add_subdirectory</code>指明此项目包含一个子目录<code>math</code>，这样<code>math</code>目录下的CMakeLists.txt文件和源代码将会被处理。</li>
+<li>使用命令<code>target_link_libraries</code>指明可执行文件<code>main</code>需要链接一个名为<code>MathFunctions</code>的链接库。</li>
+</ul>
+<p>根目录中的CMakeLists.txt为：</p>
+<pre><code class="makefile">cmake_minimum_required (VERSION 2.8）
+
+# 项目信息
+project (Demo3)
+
+aux_source_directory (. DIR_SRCS)
+
+# 添加math子目录
+add_subdirectory(math)
+
+add_executable(Demo main.cc)
+
+# 添加链接库
+target_link_libraries(Demo MathFunctions)
+</code></pre>
+<h2 id="自定义编译选项"><a href="#自定义编译选项" class="headerlink" title="自定义编译选项"></a>自定义编译选项</h2><p>CMake 允许为项目增加编译选项，从而可以根据用户的环境和需求选择最合适的编译方案。例如，可以将<code>MathFunctions</code>库设置为可选的库，如果该选项为<code>ON</code>，则就使用该库定义的数学函数来进行计算，否则就调用标准库中的数学函数库。</p>
+<h3 id="1-修改CMakeLists-txt文件"><a href="#1-修改CMakeLists-txt文件" class="headerlink" title="1. 修改CMakeLists.txt文件"></a>1. 修改CMakeLists.txt文件</h3><p>需要在项目的最高层的CMakeLists.txt文件中添加该选项：</p>
+<pre><code class="makefile"># CMake最低版本号要求
+cmake_minumum_required (VERSION 2.8)
+
+# 项目信息
+project (Demo)
+
+# 加入一个配置头文件，用于处理CMake对源码的设置
+configure_file (
+    &quot;${PROJECT_SOURCE_DIR}/config.h.in&quot;
+    &quot;${PROJECT_BINARY_DIR}/config.h&quot;
+    )
+
+# 是否使用自己的MathFunctions库
+option (USE_MYMATH
+                &quot;Use provided math implemetation&quot; ON
+                )
+
+# 是否加入MathFunctions库
+if (USE_MYMATH)
+    include_directoris (&quot;${PROJECT_SOURCE_DIR}/math&quot;)
+    add
+</code></pre>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/CNN/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/C++点点滴滴（中）/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1370,12 +978,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
-
 
 <!-- UC Browser Compatible -->
 <script>
@@ -1389,6 +991,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1401,6 +1007,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

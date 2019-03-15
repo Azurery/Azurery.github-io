@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            KCF追踪算法 | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",CV">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="KCF追踪算法 | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="CV"> 
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Nov 22 2018 10:25:14 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="KCF追踪算法 | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/KCF/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/KCF/index.html",
+    "headline": "KCF追踪算法",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Thu Nov 22 2018 10:25:14 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",CV",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-KCF简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. KCF简介</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-MOSSE简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. MOSSE简介</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-KCF详解"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. KCF详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-Linear-regression（线性回归）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">3.1 Linear regression（线性回归）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-Cyclic-shifts（循环矩阵）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">3.2 Cyclic shifts（循环矩阵）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-循环矩阵在傅氏空间内的对角化"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.3 循环矩阵在傅氏空间内的对角化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#傅式对角化简化的岭回归（Ridge-Regression）"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">傅式对角化简化的岭回归（Ridge Regression）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#核空间的Ridge-Regression"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">核空间的Ridge Regression</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速检测（Fast-detection）"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">快速检测（Fast detection）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#核矩阵的快速计算（-Fast-kernel-regression）"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">核矩阵的快速计算（ Fast kernel regression）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内积和多项式核"><span class="post-toc-number">3.6.1.</span> <span class="post-toc-text">内积和多项式核</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                KCF追踪算法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQXLDMAgF0Nz/0u0F6vQDkuxknleZScbheSEw8Pr56uuFh4eHh4eHh4f3MN4rvv640cVvrn5/9e3Vv/Riw8PDwzvD++eoDX6TMxLYJDY8PDy8k7zkoK8mjPcBvX8E1djw8PDwnszrHesJBg8PD++7eUl7Ik8eOR4PDw/vObzkhb9aXiekB/Va8PDw8GJePmQ6//nofA8PDw8v4PXGWhN2NZ2UI8TDw8PbzMsP4qTYrS5OJY+s+lDw8PDwdvPKr/ob1gXy0RoeHh7eE3iTRatq4yAHV5cM8PDw8E7yJiXyqpI6GaeN2rh4eHh4S3kJIC9280M/aUA0FxTw8PDwjvDyhdTqUV4tlPNmRHkzAg8PD28Rr3e7PJ2sanAUXgPw8PDwNvOqTYFeYZ2kliT06Fs8PDy8I7wcU00M+ci/Oe7K3xjw8PDwlvJyRjW4JPRqQ3nxNi4eHh7eon3OajMiH27NB2kLdsrw8PDwxrxe6TxJJKse3OKSGg8PDy+erVdDnywKTFq90b/g4eHhbeb1mhH5ymleOs/XtvDw8PDu5fUK6FULB73khIeHh3cvLx/YVxekqs2Ocmx4eHh4t/JyTLXtW22C5EkIDw8PbzdvslBVGOcvKsejVISHh4e3mTc5lHvrU/OEVC6p8fDw8DbwqskgCX2yzpXHUHhjwMPDw9vAmx/Qk9ZDbwCGh4eH94m8Krv370nCwMPDw/sU3mTolbdFEioeHh7eeV5vcSpp1L6/c2+ZAA8PD+9eXrUF0LtDvlgQtWt3zPfw8PDwAt73XXh4eHh4eHh4eA+4fgHHLPcTCrdpMAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/CV/">CV</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=KCF追踪算法&url=http://yoursite.com/2019/03/09/KCF/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=KCF追踪算法&url=http://yoursite.com/2019/03/09/KCF/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/KCF/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/KCF/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=KCF追踪算法&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/KCF/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>目前大多数追踪器的核心组件是一个<strong>能有效区分目标和背景的分类器</strong>。而KCF算法则巧妙地通过魂环偏移进行都贱分类器的训练样本，从而使得数据矩阵变为了一个循环矩阵。然后基于循环矩阵的特性把问题的求解变换到傅里叶变换域，从而避免了矩阵求逆的过程。</p>
+<h1 id="1-KCF简介"><a href="#1-KCF简介" class="headerlink" title="1. KCF简介"></a>1. <code>KCF</code>简介</h1><p><code>KCF</code>（Kernel Correlation Filter，核相关滤波算法），其中，Correlation Filter（以下简称CF）源于信号处理领域，后被运用于图像分类等方面。而Correlation Filter应用于tracking方面最朴素的想法就是：<strong>相关（Correlation）是衡量两个信号相似值的度量，如果两个信号越相似，那么其相关值就越高，而在tracking的应用里，就是需要设计一个滤波模板，使得当它作用在跟踪目标上时，得到的响应最大，最大响应值的位置就是目标的位置</strong>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-41718499011e12b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>Correlation包含Cross-correlation和Auto-correlation，在这里一般指的就是Cross-correlation。Cross-correlation的定义（假设有<img src="https://upload-images.jianshu.io/upload_images/1351548-58043b18b1bc55ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">和<img src="https://upload-images.jianshu.io/upload_images/1351548-9fda671b4b910b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">两个函数（信号））：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-b09fb7818aadc3f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-3d988b0955bdf96f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示<img src="https://upload-images.jianshu.io/upload_images/1351548-58043b18b1bc55ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的复共轭。Correlation的直观解释就是：<strong>衡量两个函数在某个时刻<code>τ</code>的相似程度</strong>。</p>
+<p>如下图所示，假设<img src="https://upload-images.jianshu.io/upload_images/1351548-58043b18b1bc55ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">和<img src="https://upload-images.jianshu.io/upload_images/1351548-9fda671b4b910b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的形状一样，但相差了若干个时刻，那么<img src="https://upload-images.jianshu.io/upload_images/1351548-471853c08479a25a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>取得最大值的时候一定是<img src="https://upload-images.jianshu.io/upload_images/1351548-58043b18b1bc55ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">和<img src="https://upload-images.jianshu.io/upload_images/1351548-9fda671b4b910b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">对齐的时候。但因为两者有时间差，想要取得最大值，就需要把其中一个函数在时间轴上进行平移，所以<img src="https://upload-images.jianshu.io/upload_images/1351548-aff33610fdc3e204.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">就代表把<img src="https://upload-images.jianshu.io/upload_images/1351548-9fda671b4b910b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">平移<code>τ</code>个时刻。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4ef8e3f41cfb9686.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="2-MOSSE简介"><a href="#2-MOSSE简介" class="headerlink" title="2. MOSSE简介"></a>2. <code>MOSSE</code>简介</h1><p><code>MOSSE</code>（Minimum Output Sum of Squared Error filter，误差最小平方和滤波器），是CF中的开山鼻祖。按照之前的思路，需要寻找一个filter模板，使得其在目标上的响应最大。则有：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-5ee8962f7000764d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-a9cdccbc275cc07b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示响应输出，<img src="https://upload-images.jianshu.io/upload_images/1351548-44deb33fbdac9927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示滤波模板，<img src="https://upload-images.jianshu.io/upload_images/1351548-c1dffd8f6b461c36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示输入图像。 <img src="https://upload-images.jianshu.io/upload_images/1351548-a9cdccbc275cc07b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">可以为任意形状的响应输出。在最上面的的示意图里，假设它为Gaussian。那么只需要求出<img src="https://upload-images.jianshu.io/upload_images/1351548-44deb33fbdac9927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">就可以了。这样做看起来很简单，但为何CF类方法的速度如此之快呢？就是因为：<strong>在求解等一系列操作中，都利用了快速傅里叶变换FFT</strong>。</p>
+<p><strong>由卷积定理的Correlation版本可知，函数互相关的傅里叶变换等于函数傅里叶变换的乘积</strong>，即：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0f54e9114b5169ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>那么，假设<img src="https://upload-images.jianshu.io/upload_images/1351548-c1dffd8f6b461c36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">所含的像素个数为<code>n</code>，而已知FFT的时间开销为<code>O(nlogn)</code>，因此上式的计算开销也为<code>O(nlogn)</code>，远比其他跟踪算法要快。</p>
+<p>剩下的就是如何计算<img src="https://upload-images.jianshu.io/upload_images/1351548-44deb33fbdac9927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。为了方便起见，令<img src="https://upload-images.jianshu.io/upload_images/1351548-3b5df4f2270057db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，就有：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ae32a1afe3128727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>但是在实际应用中，因为目标的外观变换等因素的影响，需要同时考虑目标的<code>m</code>个图像作为参考，以提高模型的鲁棒性，于是就有如下的目标函数：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ee1947a427eb9222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>根据卷积定理，在频率域的操作都是元素级别的，因此可以分别求解<img src="https://upload-images.jianshu.io/upload_images/1351548-de4f08e38d4eb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">中的每一个元素<img src="https://upload-images.jianshu.io/upload_images/1351548-c1ee359fa6a7a8fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，那么上式变为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-2cc3799b36a8d690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后，对上式求导并使其为<code>0</code>：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-17a10d87d2d72370.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>按以上方式处理所有<img src="https://upload-images.jianshu.io/upload_images/1351548-cb0b80fb4c9442ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">中的所有元素，得到：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-faa08b74d0220919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>于是，便可以开始追踪了。在追踪的过程中，只需要把以上模板与当前帧的图像作相关操作，然后将得到的响应结果中的最大的那点所对应的坐标，作为目标在当前帧的位置就可以了（相当于在二维空间上平移模板）。然后，模板的更新方式可以按照如下的方式进行：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1b6df6ca6b2c7c80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-671c6c607de3b4db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示在第<code>t</code>帧求得的滤波模板，<img src="https://upload-images.jianshu.io/upload_images/1351548-93b4732165802bbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">为经验常数</p>
+<h1 id="3-KCF详解"><a href="#3-KCF详解" class="headerlink" title="3. KCF详解"></a>3. <code>KCF</code>详解</h1><h2 id="3-1-Linear-regression（线性回归）"><a href="#3-1-Linear-regression（线性回归）" class="headerlink" title="3.1 Linear regression（线性回归）"></a>3.1 Linear regression（线性回归）</h2><p>主要使用Ridge Regression（岭回归函数），使得模型能够像SVM那些有良好的表现。训练的目的就是找到这么一个函数<img src="https://upload-images.jianshu.io/upload_images/1351548-f22d7d52772e4f8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，使得误差最小（此处使用平方误差，squared error）。使用的误差函数为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-45f673a020fa4f35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中：<code>λ</code>是一个正则化参数，用于防止过拟合（overfitting）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7915768b2c2838ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中，矩阵<img src="https://upload-images.jianshu.io/upload_images/1351548-760950d58f547a68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">每行都具有一个样本（sample）<img src="https://upload-images.jianshu.io/upload_images/1351548-3fbd1280b1be71e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，并且<img src="https://upload-images.jianshu.io/upload_images/1351548-e53bc785e4e57a15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的每个元素都是一个回归目标（regression target）<img src="https://upload-images.jianshu.io/upload_images/1351548-e8538857ee468313.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>。 <img src="https://upload-images.jianshu.io/upload_images/1351548-fa551803281cb3c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是一个单位矩阵（identity matrix）。</p>
+<p>由于后面需要在傅里叶域内（Fourier domain）进行计算，牵涉到复数矩阵，所以将结果都统一写成复数域的形式：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d9a86f60d820c8bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-bb9289e9d984c40a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，<img src="https://upload-images.jianshu.io/upload_images/1351548-e6c1ae72dc956ba9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示复共轭矩阵。</p>
+<h2 id="3-2-Cyclic-shifts（循环矩阵）"><a href="#3-2-Cyclic-shifts（循环矩阵）" class="headerlink" title="3.2 Cyclic shifts（循环矩阵）"></a>3.2 Cyclic shifts（循环矩阵）</h2><p>先使用单通道、一维的数据（<img src="https://upload-images.jianshu.io/upload_images/1351548-da753320618114fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>的vector）进行举例，可以直接扩展到二维的情况。可以通过循环移位算子（cyclic shift operator）对该vector进行平移，循环移位算子是一个置换矩阵（permutation<br>matrix）：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-da46e0e5b8809104.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f10304c014855384.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6fd4a0aa47ff3b42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对于二维图像，可以通过<code>x</code>轴和<code>y</code>轴分别循环移动实现不同位置的移动：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-45a87fe7866699dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>所以，由一个向量可以通过不断地乘上排列矩阵得到<code>n</code>个循环移位向量。将这<code>n</code>个向量依序排列到一个矩阵中，就形成了由<img src="https://upload-images.jianshu.io/upload_images/1351548-ebd265b29bb78f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">生成的循环矩阵，表示成：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-5476db02f86df14a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>一维向量得到的循环矩阵：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4804ea535f578a36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>即，一维的情况下就是矩阵相乘的问题，即左乘一个单位矩阵和右乘一个单位矩阵。左乘是行变换，右乘列变化。<strong>目的就是得到更多的样本，每乘一次都是一个新的样本，这样就可以多出来<code>n*n</code>个样本了，这就是循环矩阵在这里最大的用处，制造样本的数量，以图像的形式展示就是这样的，一个样本经过循环矩阵之后就可以产生这么多的样本</strong>。</p>
+<p>二维向量得到的循环矩阵：<br><img src="https://upload-images.jianshu.io/upload_images/1351548-a9a85e77fd0446bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3-3-循环矩阵在傅氏空间内的对角化"><a href="#3-3-循环矩阵在傅氏空间内的对角化" class="headerlink" title="3.3 循环矩阵在傅氏空间内的对角化"></a>3.3 循环矩阵在傅氏空间内的对角化</h2><p>所有的循环矩阵都能够在傅氏空间中使用离散傅里叶矩阵进行对角化：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7c376f5923ab0f2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-652e05bfb9e447d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>对应于生成<img src="https://upload-images.jianshu.io/upload_images/1351548-82fd45aa822bebc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的向量（就是<img src="https://upload-images.jianshu.io/upload_images/1351548-82fd45aa822bebc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的第一行矩阵）的傅里叶变换后的值，<img src="https://upload-images.jianshu.io/upload_images/1351548-37171d976c917ce3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，<img src="https://upload-images.jianshu.io/upload_images/1351548-7dd9d1d81a787c81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">为离散傅里叶矩阵，为一个常量：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f7c58763d9465b0d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="傅式对角化简化的岭回归（Ridge-Regression）"><a href="#傅式对角化简化的岭回归（Ridge-Regression）" class="headerlink" title="傅式对角化简化的岭回归（Ridge Regression）"></a>傅式对角化简化的岭回归（Ridge Regression）</h3><p>将<img src="https://upload-images.jianshu.io/upload_images/1351548-7c376f5923ab0f2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">带入之前的Fourier domain的Ridge Regression的公式，可以得到：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-3bfc289463dfa01e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注】：</strong>分号表示点除运算，即对应元素相除。</p>
+<p>因为，<img src="https://upload-images.jianshu.io/upload_images/1351548-9e3541caf117a1a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。对上式两边同时进行Fourier transform，可以得到：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-b3561dc3df478642.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>于是，<img src="https://upload-images.jianshu.io/upload_images/1351548-c0dac683e7270dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">（亦或是<img src="https://upload-images.jianshu.io/upload_images/1351548-f9e4cf02e044173a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">）</p>
+<p>这样，就可以使用向量的点积运算取代矩阵运算，特别是求逆运算，大大提高了计算速度。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-10ab9add136858f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="核空间的Ridge-Regression"><a href="#核空间的Ridge-Regression" class="headerlink" title="核空间的Ridge Regression"></a>核空间的Ridge Regression</h2><p>现在希望找到一个非线性映射函数<img src="https://upload-images.jianshu.io/upload_images/1351548-a2b53962d3e27804.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">列向量，使映射后的样本在新空间中线性可分，那么在新空间中就可以使用Ridge Regression来寻找一个分类器<img src="https://upload-images.jianshu.io/upload_images/1351548-47a47286bb24ad43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。所以，这时候得到的权重系数为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f3af28e1044f3913.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-206bdf2ced990901.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是<img src="https://upload-images.jianshu.io/upload_images/1351548-8a13c164db6a437f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">行向量空间中的一个向量，所以可以令<img src="https://upload-images.jianshu.io/upload_images/1351548-0265d09569b7cf60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>则，上式将变为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-2dd19d8535fce714.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>该问题称为<img src="https://upload-images.jianshu.io/upload_images/1351548-206bdf2ced990901.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的对偶问题。</p>
+<p>令关于列向量<img src="https://upload-images.jianshu.io/upload_images/1351548-b950766042aa49c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的导数为<code>0</code>，则有：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4aa126d1e62f017e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0b3803ee6bcd3bb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>所以，可以解得：<img src="https://upload-images.jianshu.io/upload_images/1351548-ba42535c779a7bcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>【注】：</strong>在计算<img src="https://upload-images.jianshu.io/upload_images/1351548-2ba73ac67203ff7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">时，可以将<img src="https://upload-images.jianshu.io/upload_images/1351548-d1839d164de0f3a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">当做一个整体，计算一个向量的模的平方，相当于让其自己与自己的转置相乘。</p>
+<p>对于核方法，一般不知道非线性映射函数<img src="https://upload-images.jianshu.io/upload_images/1351548-57c70bfbf22724da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的具体形式，而只是刻画在核空间的核矩阵<img src="https://upload-images.jianshu.io/upload_images/1351548-dfe088d2628ca0a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。那么，令<img src="https://upload-images.jianshu.io/upload_images/1351548-335102b287c635ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">表示核空间的核矩阵，由核函数得到。那么，<img src="https://upload-images.jianshu.io/upload_images/1351548-dc3fe80be9ca345a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，于是，<img src="https://upload-images.jianshu.io/upload_images/1351548-fa58e86f0036d11a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-da20b570c530c548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>论文提出的一个创新点就是：<strong>使循环矩阵的傅里叶对角化简化计算</strong>。所以，如果希望计算<img src="https://upload-images.jianshu.io/upload_images/1351548-3c0ee5e20fba6b27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">时，可以将矩阵的求逆运算变为元素运算，就应该希望先将<img src="https://upload-images.jianshu.io/upload_images/1351548-76ad5e7f3204a2e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">对角化。所以希望找到一个核函数，使对应的核矩阵是一个循环矩阵。</p>
+<blockquote>
+<p><strong>Theorem 1.</strong> Given circulant data <img src="https://upload-images.jianshu.io/upload_images/1351548-a3c7d47448b95d3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">, the corresponding kernel matrix <img src="https://upload-images.jianshu.io/upload_images/1351548-1dcda0ae69230d97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> is circulant if the kernel function satisfies <img src="https://upload-images.jianshu.io/upload_images/1351548-3f9ceb476bcb5410.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>, for any permutation matrix <img src="https://upload-images.jianshu.io/upload_images/1351548-e9491decfb47a033.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">.<br>即核矩阵是循环矩阵应该满足两个条件：第一个样本和第二个样本都是由生成样本循环移位产生的（可以不是由同一个样本生成）；满足<img src="https://upload-images.jianshu.io/upload_images/1351548-3f9ceb476bcb5410.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，其中<img src="https://upload-images.jianshu.io/upload_images/1351548-e9491decfb47a033.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是置换矩阵。</p>
+</blockquote>
+<p><strong>【注】：</strong>置换矩阵是指行重新排列的单位矩阵，其实单位矩阵就是一个特殊的置换矩阵。<img src="https://upload-images.jianshu.io/upload_images/1351548-54ae40f4ffeb18db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">阶的置换矩阵个数为：<img src="https://upload-images.jianshu.io/upload_images/1351548-dfbc9ef21214cb57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。</p>
+<p>置换矩阵都是可逆的，并且它的逆矩阵等于它的转置（<img src="https://upload-images.jianshu.io/upload_images/1351548-302d54cf7bd67557.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">）。所以，有：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c306f67860393865.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>proof：</strong>设<img src="https://upload-images.jianshu.io/upload_images/1351548-59842dcff40fc4d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，<img src="https://upload-images.jianshu.io/upload_images/1351548-8815422f09ad525c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。于是有：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0eeb2b9b7d8a762a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>因为<img src="https://upload-images.jianshu.io/upload_images/1351548-2f3cf005eae8de79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的第一行为<img src="https://upload-images.jianshu.io/upload_images/1351548-f85861beb8cce72f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。所以，<img src="https://upload-images.jianshu.io/upload_images/1351548-ce570caf73889c03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">相当于将第一行的第（<img src="https://upload-images.jianshu.io/upload_images/1351548-ed0c1ea867b14e38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">）个元素放到<img src="https://upload-images.jianshu.io/upload_images/1351548-2f3cf005eae8de79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的第<code>i</code>行<code>j</code>列上，那么，<img src="https://upload-images.jianshu.io/upload_images/1351548-1a8f70c49407632b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">就得到了循环矩阵，所以，<img src="https://upload-images.jianshu.io/upload_images/1351548-2f3cf005eae8de79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是循环矩阵。</p>
+<p>若<img src="https://upload-images.jianshu.io/upload_images/1351548-2f3cf005eae8de79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是循环矩阵，则：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7435731f96183b70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，<img src="https://upload-images.jianshu.io/upload_images/1351548-8fbd3ade3a846272.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是<img src="https://upload-images.jianshu.io/upload_images/1351548-76ad5e7f3204a2e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">中的第一行。两个转置的原因是：已经约定<img src="https://upload-images.jianshu.io/upload_images/1351548-f4dbe797bef12756.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是列向量，而<img src="https://upload-images.jianshu.io/upload_images/1351548-042fc8bb857a3aef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的第<code>i</code>行是<br><img src="https://upload-images.jianshu.io/upload_images/1351548-434da29f350d65bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。</p>
+<h2 id="快速检测（Fast-detection）"><a href="#快速检测（Fast-detection）" class="headerlink" title="快速检测（Fast detection）"></a>快速检测（Fast detection）</h2><p>首先，由训练样本和测试样本（或者标签训练检测器）（其中，训练集是由目标区域和由其移位得到的若干样本组成，对应的标签是根据距离越近，正样本可能性越大的准则进行赋值的）可以得到<img src="https://upload-images.jianshu.io/upload_images/1351548-da30d3c187eef5f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。</p>
+<p>待分类样本集，即待检测样本集，是由预测区域和由其移位得到的样本集合<img src="https://upload-images.jianshu.io/upload_images/1351548-a55be5c02671ba65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。那么就可以选择<img src="https://upload-images.jianshu.io/upload_images/1351548-8d8d4fbbcc067f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">最大的样本作为检测出的新目标区域，由<img src="https://upload-images.jianshu.io/upload_images/1351548-14db5d6641b32010.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">判断目标移动的位置。</p>
+<p>定义<img src="https://upload-images.jianshu.io/upload_images/1351548-ee50341e6e2ba68b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是测试样本和训练样本间在核空间的核矩阵：<img src="https://upload-images.jianshu.io/upload_images/1351548-90f088b306082052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。由于核矩阵满足<img src="https://upload-images.jianshu.io/upload_images/1351548-3c81de2e1a198797.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">，即类似于<strong>theorem 1</strong>的证明，可得<img src="https://upload-images.jianshu.io/upload_images/1351548-ee50341e6e2ba68b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是循环矩阵。</p>
+<p>于是，可得到各个测试样本的响应：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1445bc1816bedb7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注】：</strong>小写的都是列向量，<img src="https://upload-images.jianshu.io/upload_images/1351548-935c796f695be4ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是列向量。注意，<img src="https://upload-images.jianshu.io/upload_images/1351548-c079ed0638754532.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">是矩阵<img src="https://upload-images.jianshu.io/upload_images/1351548-e9cca13d1277f874.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的第一行，即<img src="https://upload-images.jianshu.io/upload_images/1351548-5dfd4e286bf76f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">的第一列。</p>
+<h2 id="核矩阵的快速计算（-Fast-kernel-regression）"><a href="#核矩阵的快速计算（-Fast-kernel-regression）" class="headerlink" title="核矩阵的快速计算（ Fast kernel regression）"></a>核矩阵的快速计算（ Fast kernel regression）</h2><p>还需要进行的矩阵运算就是关于核矩阵的第一行的计算：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-be45e64aca115816.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="内积和多项式核"><a href="#内积和多项式核" class="headerlink" title="内积和多项式核"></a>内积和多项式核</h3><p>这种核函数核矩阵可以表示成：<img src="https://upload-images.jianshu.io/upload_images/1351548-1c48854dfd2dc8c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">。于是</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-b977f21277496108.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>因此对于多项式核<img src="https://upload-images.jianshu.io/upload_images/1351548-e6768408c922620d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">有：</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/LevelDB/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/Database/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            Python点点滴滴 | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",Python">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Python点点滴滴 | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="Python"> 
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Mar 15 2019 20:45:15 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Python点点滴滴 | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/Python点点滴滴/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/Python点点滴滴/index.html",
+    "headline": "Python点点滴滴",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Fri Mar 15 2019 20:45:15 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Python",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yield关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">yield关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OderdedDict的popitem-last-True"><span class="post-toc-number">2.</span> <span class="post-toc-text">OderdedDict的popitem(last=True)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则表达式</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#re-模块"><span class="post-toc-number"></span> <span class="post-toc-text">re 模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-compile"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.  compile()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#repr-与-str-的区别："><span class="post-toc-number">2.</span> <span class="post-toc-text">__repr__ 与 __str__ 的区别：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#getattr"><span class="post-toc-number">3.</span> <span class="post-toc-text">__getattr__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#staticmethod"><span class="post-toc-number">4.</span> <span class="post-toc-text">staticmethod()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IO模块"><span class="post-toc-number">5.</span> <span class="post-toc-text">IO模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、I-O类层次结构"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1、I/O类层次结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断-Python-的版本"><span class="post-toc-number">6.</span> <span class="post-toc-text">判断 Python 的版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#str-VS-unicode"><span class="post-toc-number">7.</span> <span class="post-toc-text">__str__ VS  __unicode__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bytes与str之间的异同"><span class="post-toc-number">8.</span> <span class="post-toc-text">bytes与str之间的异同</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#self"><span class="post-toc-number">9.</span> <span class="post-toc-text">self</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#u-U-quot-quot"><span class="post-toc-number">10.</span> <span class="post-toc-text">u/U&quot;&quot;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#r-39-xxxx-39"><span class="post-toc-number">11.</span> <span class="post-toc-text">r&#39;xxxx&#39;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate"><span class="post-toc-number">12.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#callable"><span class="post-toc-number">13.</span> <span class="post-toc-text">callable()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSON与XML的区别"><span class="post-toc-number">14.</span> <span class="post-toc-text">JSON与XML的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xml-etree-ElementTree模块"><span class="post-toc-number">15.</span> <span class="post-toc-text">xml.etree.ElementTree模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-vs-SAX"><span class="post-toc-number">16.</span> <span class="post-toc-text">DOM vs SAX</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用xml-dom-模块"><span class="post-toc-number">16.1.</span> <span class="post-toc-text">1. 使用xml.dom.*模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用-xml-etree-ElementTree-模块"><span class="post-toc-number">16.2.</span> <span class="post-toc-text">2. 使用 xml.etree.ElementTree 模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-xml-sax-模块"><span class="post-toc-number">17.</span> <span class="post-toc-text">使用 xml.sax.* 模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#list-comprehension（列表推导）"><span class="post-toc-number">18.</span> <span class="post-toc-text">list comprehension（列表推导）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#join"><span class="post-toc-number">19.</span> <span class="post-toc-text">join()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate-1"><span class="post-toc-number">20.</span> <span class="post-toc-text">enumerate()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Python中的-与"><span class="post-toc-number">21.</span> <span class="post-toc-text">Python中的*与**</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当args与位置参数和默认参数混用的情况（注意三者的顺序）"><span class="post-toc-number">21.1.</span> <span class="post-toc-text">当args与位置参数和默认参数混用的情况（注意三者的顺序）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-，可以从两个角度来看（需要拆分来看）："><span class="post-toc-number">21.2.</span> <span class="post-toc-text">关于 *，可以从两个角度来看（需要拆分来看）：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-从形参的角度来看："><span class="post-toc-number">21.3.</span> <span class="post-toc-text">1. 从形参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-从实参的角度来看："><span class="post-toc-number">21.4.</span> <span class="post-toc-text">2. 从实参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-kwargs-与位置参数、-args、默认参数混着用的问题：（注意顺序）"><span class="post-toc-number">21.5.</span> <span class="post-toc-text">关于 **kwargs 与位置参数、*args、默认参数混着用的问题：（注意顺序）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-位置参数、-args、-kwargs三者的顺序必须是：位置参数、-args、-kwargs，不然就会报错："><span class="post-toc-number">21.5.1.</span> <span class="post-toc-text">1. 位置参数、*args、**kwargs三者的顺序必须是：位置参数、*args、**kwargs，不然就会报错：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-位置参数、默认参数、-kwargs三者的顺序必须是位置参数、默认参数、-kwargs，不然就会报错："><span class="post-toc-number">21.5.2.</span> <span class="post-toc-text">2. 位置参数、默认参数、**kwargs三者的顺序必须是位置参数、默认参数、**kwargs，不然就会报错：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-，可以从两个角度来看（需要拆分来看）：-1"><span class="post-toc-number">21.6.</span> <span class="post-toc-text">关于**，可以从两个角度来看（需要拆分来看）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-从形参的角度来看：-1"><span class="post-toc-number">21.6.1.</span> <span class="post-toc-text">1. 从形参的角度来看：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-从实参的角度来看：-1"><span class="post-toc-number">21.6.2.</span> <span class="post-toc-text">2. 从实参的角度来看：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#future"><span class="post-toc-number"></span> <span class="post-toc-text">__future__</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gzip"><span class="post-toc-number"></span> <span class="post-toc-text">gzip</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#six"><span class="post-toc-number"></span> <span class="post-toc-text">six</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#urllib模块"><span class="post-toc-number"></span> <span class="post-toc-text">urllib模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-基本用法"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-使用Request"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 使用Request</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-Request-url-data-None-headers-method-None"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">urllib.request.Request(url, data=None, headers={}, method=None)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Post数据"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. Post数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-parse-urlencode-query-doseq-False-safe-39-39-encoding-None-errors-None"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">urllib.parse.urlencode(query, doseq=False, safe=&#39;&#39;, encoding=None, errors=None)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异常处理"><span class="post-toc-number">4.</span> <span class="post-toc-text">异常处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用代理"><span class="post-toc-number">5.</span> <span class="post-toc-text">使用代理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#urllib-request-ProxyHandler-proxies-None"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">urllib.request.ProxyHandler(proxies=None)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#zip"><span class="post-toc-number"></span> <span class="post-toc-text">zip()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#namedtuple"><span class="post-toc-number"></span> <span class="post-toc-text">namedtuple</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#fields类属性"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">_fields类属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#make-iterable-类方法"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">_make(iterable)类方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#asdict-实例方法"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">_asdict() 实例方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-abspath-path"><span class="post-toc-number">1.</span> <span class="post-toc-text">os.path.abspath(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-exists-path"><span class="post-toc-number">2.</span> <span class="post-toc-text">os.path.exists(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-split-path"><span class="post-toc-number">3.</span> <span class="post-toc-text">os.path.split(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-dirname-path"><span class="post-toc-number">4.</span> <span class="post-toc-text">os.path.dirname(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-basename-path"><span class="post-toc-number">5.</span> <span class="post-toc-text">os.path.basename(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-commonprefix-list"><span class="post-toc-number">6.</span> <span class="post-toc-text">os.path.commonprefix(list)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-isabs-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.isabs(path)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-isfile-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.isfile(path)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-isdir-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.isdir(path)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-path-join-path1-path2"><span class="post-toc-number"></span> <span class="post-toc-text">os.path.join(path1[, path2[, ...]])</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-normcase-path"><span class="post-toc-number">1.</span> <span class="post-toc-text">os.path.normcase(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-normpath-path"><span class="post-toc-number">2.</span> <span class="post-toc-text">os.path.normpath(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-splitdrive-path"><span class="post-toc-number">3.</span> <span class="post-toc-text">os.path.splitdrive(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-splitext-path"><span class="post-toc-number">4.</span> <span class="post-toc-text">os.path.splitext(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-getsize-path"><span class="post-toc-number">5.</span> <span class="post-toc-text">os.path.getsize(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-getatime-path"><span class="post-toc-number">6.</span> <span class="post-toc-text">os.path.getatime(path)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#os-path-getmtime-path"><span class="post-toc-number">7.</span> <span class="post-toc-text">os.path.getmtime(path)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-getcwd"><span class="post-toc-number"></span> <span class="post-toc-text">os.getcwd()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#os-stat-path"><span class="post-toc-number"></span> <span class="post-toc-text">os.stat(path)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参数"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#返回值"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">返回值</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#if-name-39-main-39"><span class="post-toc-number"></span> <span class="post-toc-text">if __name__ == &#39;__main__&#39;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-通俗的理解-name-39-main-39-："><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 通俗的理解__name__ == &#39;__main__&#39;：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-程序入口"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 程序入口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-一个-py文件被其他-py文件引用"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 一个.py文件被其他.py文件引用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-修改const-py，添加if-name-39-main-39"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 修改const.py，添加if __name__ == &#39;__main__&#39;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-name"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. __name__</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-name-反映一个包的结构"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">3.1 __name__反映一个包的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-name-表示当前模块的名字"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">3.2 __name__表示当前模块的名字</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-main-py文件与Python-m"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. __main__.py文件与Python -m</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-运行Python程序的两种方式"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">4.1 运行Python程序的两种方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-2-main-py的作用"><span class="post-toc-number">5.</span> <span class="post-toc-text">4.2 __main__.py的作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结："><span class="post-toc-number">5.1.</span> <span class="post-toc-text">总结：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#argparse"><span class="post-toc-number"></span> <span class="post-toc-text">argparse</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-创建解析器：ArgumentParser"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 创建解析器：ArgumentParser</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-添加参数选项：add-argument"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 添加参数选项：add_argument</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-解析参数"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 解析参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ArgumentParser-parse-known-args-args-None-namespace-None"><span class="post-toc-number"></span> <span class="post-toc-text">ArgumentParser.parse_known_args(args=None, namespace=None)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#vars-object"><span class="post-toc-number"></span> <span class="post-toc-text">vars([object])</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sys模块"><span class="post-toc-number"></span> <span class="post-toc-text">sys模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sys-modules"><span class="post-toc-number">1.</span> <span class="post-toc-text">sys.modules</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sys-stdout-与-sys-stdin"><span class="post-toc-number"></span> <span class="post-toc-text">sys.stdout 与 sys.stdin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-sys-stdout-与-print"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. sys.stdout 与 print</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-sys-stdin-与-input"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. sys.stdin 与 input</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-从控制台重定向到文件"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 从控制台重定向到文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#glob"><span class="post-toc-number"></span> <span class="post-toc-text">glob</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-通配符"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 通配符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-单个字符通配符"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 单个字符通配符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-字符范围"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 字符范围</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Numpy-random-shuffle-VS-Numpy-random-permutation"><span class="post-toc-number"></span> <span class="post-toc-text">Numpy.random.shuffle VS Numpy.random.permutation</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-load"><span class="post-toc-number"></span> <span class="post-toc-text">np.load</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#切片操作"><span class="post-toc-number"></span> <span class="post-toc-text">切片操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用法说明"><span class="post-toc-number">1.</span> <span class="post-toc-text">用法说明</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Python-带-的变量或函数命名"><span class="post-toc-number"></span> <span class="post-toc-text">Python 带 _ 的变量或函数命名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-前后均带有双下划线-的命名"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 前后均带有双下划线 __ 的命名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-仅开头带双下划线-的命名"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 仅开头带双下划线 __ 的命名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-以单下划线-开头的命名"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 以单下划线 _ 开头的命名</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#tarfile-模块"><span class="post-toc-number"></span> <span class="post-toc-text">tarfile 模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-打包及重命名文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 打包及重命名文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-查看文件列表"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 查看文件列表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-追加"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 追加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-解压全部文件"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 解压全部文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-解压单个文件"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 解压单个文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-压缩一个文件夹下的所有文件"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 压缩一个文件夹下的所有文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#urllib-模块"><span class="post-toc-number"></span> <span class="post-toc-text">urllib 模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-urllib-urlopen-url-data-proxies"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">1. urllib.urlopen(url[,data[,proxies]])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-urllib-urlretrieve-url-filename-reporthook-data"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">2. urllib.urlretrieve(url[,filename[,reporthook[,data]]])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-urllib-urlcleanup"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">3. urllib.urlcleanup()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-urllib-quote-url-和-urllib-quote-plus-url"><span class="post-toc-number">0.4.</span> <span class="post-toc-text">4. urllib.quote(url) 和 urllib.quote_plus(url)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-urllib-unquote-url-和-urllib-unquote-plus-url"><span class="post-toc-number">0.5.</span> <span class="post-toc-text">5. urllib.unquote(url) 和 urllib.unquote_plus(url)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-urllib-urlencode-query"><span class="post-toc-number">0.6.</span> <span class="post-toc-text">6. urllib.urlencode(query)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#cPickle"><span class="post-toc-number"></span> <span class="post-toc-text">cPickle</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-dump：-将-Python-对象序列化保存到本地的文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. dump： 将 Python 对象序列化保存到本地的文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-load：载入本地文件，恢复-Python-对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. load：载入本地文件，恢复 Python 对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-dumps：将-Python-对象序列化保存到一个字符串变量中"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. dumps：将 Python 对象序列化保存到一个字符串变量中</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-loads：从字符串变量中载入-Python-对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. loads：从字符串变量中载入 Python 对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-pickle-模块使用的数据格式是-Python-专用的，并且不同版本不向后兼容，同时也不能被其他语言说识别。要和其他语言交互，可以使用内置的-json-包"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. pickle 模块使用的数据格式是 Python 专用的，并且不同版本不向后兼容，同时也不能被其他语言说识别。要和其他语言交互，可以使用内置的 json 包</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-concatenate-函数"><span class="post-toc-number"></span> <span class="post-toc-text">np.concatenate 函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Numpy数字转置的三种转置方法"><span class="post-toc-number"></span> <span class="post-toc-text">Numpy数字转置的三种转置方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-数组转置-T"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 数组转置 T</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-轴对换之-transpose"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 轴对换之 transpose</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-两轴对换-swapaxes"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 两轴对换 swapaxes</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#reshape"><span class="post-toc-number"></span> <span class="post-toc-text">reshape</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#随机抽样（numpy-random）"><span class="post-toc-number"></span> <span class="post-toc-text">随机抽样（numpy.random）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-简单的随机数据"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 简单的随机数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-rand-d0-d1-dn"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1 rand(d0, d1, ..., dn)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-randn-d0-d1-dn"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2 randn(d0, d1, ..., dn)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-randint-low-high-size"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.3 randint(low[, high, size])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-random-integers-low-high-size"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1.4 random_integers(low[, high, size])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-random-sample-size"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">1.5 random_sample([size])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6-random-size"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">1.6 random([size])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-7-ranf-size"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">1.7 ranf([size])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-8-sample-size"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">1.8 sample([size])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-9-choice-a-size-replace-p"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">1.9 choice(a[, size, replace, p])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-10-bytes-length"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">1.10 bytes(length)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-排列"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 排列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-shuffle-x"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 shuffle(x)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-permutation-x"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 permutation(x)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#numpy-切片中的省略号"><span class="post-toc-number"></span> <span class="post-toc-text">numpy 切片中的省略号 ...</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-mean"><span class="post-toc-number"></span> <span class="post-toc-text">np.mean</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-max-与-np-maximum"><span class="post-toc-number"></span> <span class="post-toc-text">np.max 与 np.maximum</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-参数"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">1. 参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">2. 使用</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#numpy-std"><span class="post-toc-number"></span> <span class="post-toc-text">numpy.std()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-pad"><span class="post-toc-number"></span> <span class="post-toc-text">np.pad()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-函数原型"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 函数原型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-transpose"><span class="post-toc-number"></span> <span class="post-toc-text">np.transpose</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-一维数组"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 一维数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-二维数组"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 二维数组</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#np-arange-函数"><span class="post-toc-number"></span> <span class="post-toc-text">np.arange() 函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运算符"><span class="post-toc-number"></span> <span class="post-toc-text">// 运算符</span></a>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Python点点滴滴
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACd0lEQVR42u3ay26EMBAEwP3/n06ukSKgewze1ao4rRIeLg4e0+PXz1cfLzw8PDw8PDw8vA/jveLj7/mHt/53/tE5yVXt2PDw8PB28i6m2n+8o6vO/35+n/ZVHr4sPDw8vI28thjMysDsv/nY8PDw8D6Nl5NumOLx8PDwvoLXLpSPnpIvxPHw8PA+mbey8E1gOeZtWQseHh5ezJs1wPb8flt/Dw8PD++A1x55AZgFE0kxuBghHh4e3sO8vJ0/C3PPl8uz7VkXLxoPDw/vYd5Ki2s2lbeL6eQDAA8PD28/Ly8MebMqCXnz8lM02/Dw8PC282YTejRlj4Zeb97Cw8PD28jLh7LS4M+3ZEVbrGYNMDw8PLwF3mxDf7LAzQvGrMF2ODY8PDy8jbz8YSvN/jaire+Ph4eH9zAv//hvF7izMtAWJDw8PLz9vHxrVDvctt3VNsPw8PDw3sVrJ9926DNwsVGgTanx8PDwbuKtb6hKCsm9v6MYFw8PD+9h3hOx7EWzqiwVyR3w8PDw9vPaYPfeWLYNR+rCgIeHh7fMawPTtoS0QUNOjQoDHh4e3gO8fNGcB7XF1tJyc2oU7OLh4eFt4bVBavIiVuLg2YIbDw8Pbw9v1p6fhbD5Mj2/KvpiwMPDw7uVN1tezwaUB7Xtc/Hw8PB28tpw4XzoK+HFbAFdNMDw8PDwbuW1MW5bPJJGV1tO6i8GPDw8vAd4yQSdY/Ii0UYY9aYrPDw8vLfy7m1WzUrURZyBh4eH95G8NpBthz4rUXh4eHj7ee2UnUS6+bL7vPzk2xfw8PDw9vBWmlL7y8lFOIKHh4f3MO/7Djw8PDw8PDw8vA84fgET90A7h1L+1AAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Python/">Python</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python点点滴滴&url=http://yoursite.com/2019/03/09/Python点点滴滴/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python点点滴滴&url=http://yoursite.com/2019/03/09/Python点点滴滴/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/Python点点滴滴/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/Python点点滴滴/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=Python点点滴滴&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/Python点点滴滴/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="yield关键字"><a href="#yield关键字" class="headerlink" title="yield关键字"></a><code>yield</code>关键字</h2><ol>
+<li>在常规的 <code>for...in...</code> 循环之中，后面紧跟的是一个可迭代对象（Iterable），但这类对象在使用时必须将其所有对象都载入内存，但如果有大量的数据，就会十分耗内存</li>
+<li><strong>生成器（Generator）是可以迭代的，但只能使用一次，因为只有在用它的时候才会生成</strong></li>
+<li>生成器能够进行迭代的原因是：它具有一个 <code>next()</code> 方法，工作原理就是通过反复调用 <code>next()</code> 方法来完成迭代，直到捕获一个异常</li>
+<li><strong>带有 <code>yield</code> 关键字的函数不再是一个普通函数，而是一个 generator，可以用于迭代</strong></li>
+<li><code>yield</code>是一个类似<code>return</code>的关键字，迭代一次遇到<code>yield</code>时，就返回<code>yield</code>后面的值。<strong>【注】：下一次迭代时，从上一次迭代遇到的<code>yield</code>后面的代码开始执行</strong></li>
+<li><code>yield</code>就是返回一个值，并且记住这个返回的位置，下次迭代就从这个位置后面开始</li>
+<li>带有<code>yield</code>关键字的函数，不只是可以用于for循环，而且可以用于某个函数的参数，只要这个函数的参数允许迭代参数。</li>
+</ol>
+<h2 id="OderdedDict的popitem-last-True"><a href="#OderdedDict的popitem-last-True" class="headerlink" title="OderdedDict的popitem(last=True)"></a><code>OderdedDict</code>的<code>popitem(last=True)</code></h2><p><code>last</code>为<code>True</code>时，表示<code>LIFO</code>，即堆栈；反之为<code>FIFO</code>，即队列。</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><ul>
+<li><code>\d</code>：可以匹配数字</li>
+<li><code>\D</code>：匹配任意非数字</li>
+<li><code>\w</code>：可以匹配一个字母或者数字</li>
+<li><code>\W</code>：匹配非字母数字及下划线</li>
+<li><code>\s</code>：匹配任意空白字符，等价<code>[\t\n\r\f]</code></li>
+<li><code>\S</code>：匹配任意非空字符</li>
+<li><code>\A</code>：匹配字符串开始</li>
+<li><code>\Z</code>：匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串</li>
+<li><code>\z</code>：匹配字符串结束</li>
+<li><code>\b</code>：匹配一个单词边界，也就是指单词和空格间的位置。例如，<code>er\b</code>可以匹配<code>never</code>中的<code>er</code>，但不能匹配<code>verb</code>中的<code>er</code></li>
+<li><code>\B</code>：    匹配非单词边界。<code>er\B</code>能匹配<code>verb</code>中的<code>er</code>，但不能匹配<code>never</code>中的<code>er</code></li>
+<li><code>.</code>：可以匹配任意字符（<code>0</code>个或者多个）</li>
+<li><code>*</code>：表示任意个字符（包括<code>0</code>个）</li>
+<li><code>+</code>：表示至少一个字符（<code>1</code>个或者多个）</li>
+<li><code>?</code>：表示<code>0</code>或<code>1</code>个字符（匹配<code>0</code>个或者<code>1</code>个由前面的正则表达式定义的片段，非贪婪方式）</li>
+<li><code>{n}</code>：表示<code>n</code>个字符</li>
+<li><code>{n,m}</code>：表示<code>n~m</code>个字符。例如，<code>0{2,}</code>表示至少匹配<code>2</code>个<code>o</code>，即它不能匹配<code>Bob</code>中的<code>o</code>，但能够匹配<code>foooooood</code>中的所有<code>o</code>。</li>
+<li><code>[]</code>表示范围<ul>
+<li><code>[0-9a-zA-Z\_]</code>：可以匹配到一个数字、字母或者下划线</li>
+<li><code>[0-9a-zA-Z\_]+</code>：可以匹配到至少由一个数字、字母或者下划线组成的字符串，例如<code>_num10</code></li>
+<li><code>[a-zA-Z\_][0-9a-zA-Z\_]*</code>：可以匹配到由字母或者下划线开头，后面接任意个有一个数字、字母或者下划线组成的字符串，即identifier</li>
+<li><code>[a-zA-Z\_][0-9a-zA-Z\_]{0,19}</code>：相比上面，更加精确地限制了变量的长度为<code>1-20</code>个字符</li>
+</ul>
+</li>
+<li><code>[^...]</code>：表示不再<code>[]</code>中的字符</li>
+<li><code>A|B</code>：表示可以匹配<code>A</code>或<code>B</code>。例如，<code>(P|p)ython</code>可以匹配<code>Python</code>或者<code>Python</code></li>
+<li><code>^</code>：表示行的开头。例如，<code>^\d</code>表示必须以数字开头</li>
+<li><code>$</code>：表示行的结束。例如，<code>\d$</code>表示必须以数字结束</li>
+<li><code>()</code>：表示要提取的分组（Group），即提取子串的能力。<strong>【注】：</strong><code>group(0)</code>永远是原始字符串</li>
+</ul>
+<p>Python在进行正则匹配时，默认是贪婪匹配，也就是<strong>匹配尽可能多的字符</strong>。例如，匹配出数字后面的<code>0</code>：</p>
+<pre><code class="python">re.match(r&#39;^(\d+)(0*)$&#39;,&#39;102300&#39;)
+</code></pre>
+<p>由于<code>\d+</code>采用贪婪匹配，直接把后面的<code>0</code>全部匹配了，结果<code>0*</code>就只能匹配空字符串了。所以，必须要让<code>\d+</code>采用非贪婪匹配（即尽可能少匹配），才能将后面的<code>0</code>匹配出来，加上<code>?</code>就可以让<code>\d+</code>采用非贪婪匹配。</p>
+<pre><code class="python">re.match(r&#39;^(\d+?)(0*)$&#39;，&#39;102300&#39;)
+</code></pre>
+<h1 id="re-模块"><a href="#re-模块" class="headerlink" title="re 模块"></a><code>re</code> 模块</h1><h2 id="1-compile"><a href="#1-compile" class="headerlink" title="1.  compile()"></a>1.  <code>compile()</code></h2><p>编译正则表达式模式，返回一个对象的模式（可以把那些常用的正则表达式编译成正则表达式对象，这样可以提高一点效率）。</p>
+<p>格式：</p>
+<pre><code class="python">re.compile(pattern, flags=0)
+</code></pre>
+<p>参数：</p>
+<ul>
+<li><code>pattern</code>：编译时用的表达式字符串。</li>
+<li><code>flags</code>：编译标志位，用于修改正则表达式的匹配方式，如：是否区分大小写，多行匹配等。常用的 <code>flags</code> 有：</li>
+</ul>
+<p>例子：</p>
+<pre><code class="python">import re
+tt = &quot;Tina is a good girl, she is cool, clever, and so on...&quot;
+rr = re.compile(r&#39;\w*oo\w*&#39;)
+print(rr.findall(tt))   #查找所有包含&#39;oo&#39;的单词
+
+# [&#39;good&#39;, &#39;cool&#39;]
+</code></pre>
+<h2 id="repr-与-str-的区别："><a href="#repr-与-str-的区别：" class="headerlink" title="__repr__ 与 __str__ 的区别："></a><code>__repr__</code> 与 <code>__str__</code> 的区别：</h2><p><code>__repr__</code> 和 <code>__str__</code> 这两个方法都是用于显示的。其中，<code>__str__</code>是面向用户的，而 <code>__repr__</code> 是面向程序员的。</p>
+<p>区别：</p>
+<ul>
+<li>在进行打印操作时，首先会尝试<code>__str__</code>和<code>str</code>内置函数（<code>print</code>运行的内部等价形式），它通常返回一个友好的显示</li>
+<li><code>__repr__</code>用于所有其他环境中：用于交互模式下，提示回应以及<code>__repr__</code>函数。如果没有使用<code>__str__</code>，会使用<code>print</code>和<code>str</code>。它通常应该返回一个编码字符串，可以用来重建对象，或者给开发者详细的显示。</li>
+</ul>
+<p>如果先要所有环境下都同一显示的话，可以重构<code>__repr__</code>方法；当我们想在不同环境下，支持不同的显示，例如终端用户显示使用<code>__str__</code>，而程序员在开发期间则使用底层的<code>__repr__</code>来显示，实际上<code>__str__</code>只是覆盖了<code>__repr__</code>，已得到更加友好的用户显示。</p>
+<p>在进行格式化输出时，<code>%r</code>与<code>%s</code>的区别就好比<code>repr()</code>函数处理对象与<code>str()</code>函数处理对象的差别：</p>
+<ul>
+<li><code>%s</code>====&gt; <code>str()</code>：比较智能</li>
+<li><code>%r</code>====&gt;<code>repr()</code>：处理较为简单和直接；</li>
+</ul>
+<p>对于<code>{!r}</code>这个符号只是在<code>format()</code>之中才有用，其实就是<code>%r</code>。</p>
+<h2 id="getattr"><a href="#getattr" class="headerlink" title="__getattr__"></a><code>__getattr__</code></h2><p>作用：如果属性查找（attribute lookup）在实例以及对应的类中（通过<code>__dict__</code>）失败，那么会调用到类的<code>__getattr__</code>函数。如果没有定义这个函数，就会抛出<code>AttributeError</code>异常。由此可见，<code>__getattr__</code>一定是作用于属性查找的最后一步。</p>
+<p>例子：</p>
+<pre><code class="python">class ObjectDict(dict):
+    def __init__(self,*args,**kw):
+        super(ObjectDict,self).__init__(*args,**kw)
+
+    def __getattr__(self,name):
+        value=self[name]
+        if isinstance(value,dict):
+            value=ObjectDict(value)
+        return value
+
+if __name__==&#39;__main__&#39;:
+    od=ObjectDict(d={&#39;a&#39;:1},f=True)
+    print(od.d,od.d.a)
+</code></pre>
+<p>对于上述代码，实现了<code>__getattr__</code>之后，就可以像访问属性一样来访问<code>ObjectDict</code>中的键值对。如果没有实现它，就会报<code>AttributeError: &#39;ObjectDict&#39; object has no attribute &#39;d&#39;</code>错误。这实际上可以把一个类的所有属性和方法调用全部动态化处理了，不需要任何特殊手段。</p>
+<h2 id="staticmethod"><a href="#staticmethod" class="headerlink" title="staticmethod()"></a><code>staticmethod()</code></h2><p>返回函数的静态方法，该方法不强制要求传递参数。类可以不用实例化，就可以直接通过<code>class_name.method_name()</code>进行调用。当然，也可以实例化汇总后调用。</p>
+<h2 id="IO模块"><a href="#IO模块" class="headerlink" title="IO模块"></a><code>IO</code>模块</h2><p>Python的<code>IO</code>模块主要用于处理三种类型的<code>I/O</code>：文本<code>I/O</code>、二进制<code>I/O</code>以及原始<code>I/O</code>。这些都是通用类型，各种后备设备科使用其中的每一种类型，所以这些类型的具体对象称为<strong>文件对象（或者流）</strong>。</p>
+<p>每个具体的流对象都具有各种功能，它可以允许任意的随机访问；向前或者向后寻找任何位置或者只允许顺序访问，如套接字或者pipe的情况。</p>
+<h3 id="1、I-O类层次结构"><a href="#1、I-O类层次结构" class="headerlink" title="1、I/O类层次结构"></a>1、<code>I/O</code>类层次结构</h3><ul>
+<li><code>I/O</code> inheritance structure的顶部是抽象基类<code>IOBase</code>，<strong>它定义了流的基本接口，但基本不提供实现，让子类进行继承具体实现。默认实现只是表明一个文件是否为可读、可写或者可寻址（seek）</strong>它支持iterator protocol，这意味着可以迭代<code>IOBase</code>对象，从而在一个stream中yielding the lines。根据stream是二进制流（yielding bytes）还是文本流（yielding character strings），lines的定义也略有不同。<ul>
+<li>对于二进制文件，行终止符（line terminator）总是<code>b\n</code></li>
+<li>对于文本文件，<code>open()</code>的换行参数（newline argument）可以用于选择line terminator </li>
+</ul>
+</li>
+<li><code>RawIOBase</code>继承自<code>IOBase</code>，<strong>它是raw binary I/O的基类，没有public constructor，主要提供了对底层OS设备或者API的访问（low-level），并且不会将其封装在high-level primitives中）</strong>。它的子类为机器文件系统中的文件提供接口。</li>
+<li><code>BufferedIOBase</code>继承自<code>IOBase</code>，它是支持某些缓冲区的binary stream的基类，没有公共的构造器。和<code>RawIOBase</code>的区别在于：<code>read()</code>，<code>readinto()</code>和<code>write()</code>会尽可能(分别)地多读所请求的输入或者尽可能地输出所有给定的输出，但以牺牲多个系统调用为代价。<strong>【注】：</strong>典型的<code>BufferedIOBase</code>实现不应该从<code>RawIOBase</code>类继承然后实现，而是应该wrap一个<code>RawIOBase</code>。</li>
+<li><code>TextIOBase</code>继承自<code>IOBase</code>，它是text streams的基类，此类为stream I/O提供基于character和lines的接口。没有提供<code>readinto()</code>方法，因为Python的字符串是不可变的。</li>
+<li><code>StringIO</code>是一个in-memory stream for text I/O。在调用<code>close()</code>方法时，将丢弃text buffer。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c915715b88a18f27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="判断-Python-的版本"><a href="#判断-Python-的版本" class="headerlink" title="判断 Python 的版本"></a>判断 Python 的版本</h2><p>可以使用 <code>sys.version_info</code>。因为 <code>version_info</code> 是一个 <code>tuple</code>，其构成为<code>(major,minor,micro,releaselevel,serial)</code>。<br>Python 2.0版本的<code>version_info</code>为：<code>(2, 0, 0, &#39;final&#39;, 0)</code>。或者，可以通过索引来获取各个component，例如，<code>sys.version_info[0]==sys.version_info.major</code>。</p>
+<h2 id="str-VS-unicode"><a href="#str-VS-unicode" class="headerlink" title="__str__ VS  __unicode__"></a><code>__str__</code> VS  <code>__unicode__</code></h2><p><code>__str__</code> 一般是旧式方法，用于返回 <code>bytes</code>。而 <code>__unicode__</code> 是新式方法，但更加利好，用于返回 <code>characters</code>。虽然名字令人有点儿困惑，但在 <code>2.x</code> 中，出于兼容性的考虑，还是需要坚持使用 <code>__str__</code>。通常，应该将所有字符串格式设置在 <code>__unicode__</code>之中，并创建一个 <code>__str__</code> 包装方法：</p>
+<pre><code class="python">def __str__(self):
+    return unicode(self).encode(&#39;utf-8&#39;)
+</code></pre>
+<h2 id="bytes与str之间的异同"><a href="#bytes与str之间的异同" class="headerlink" title="bytes与str之间的异同"></a><code>bytes</code>与<code>str</code>之间的异同</h2><p><code>bytes</code>是一种比特流，它的存在形式是 <code>010101111111</code> 这样。无论是在编程或者进行阅读，肯定不会有人直接阅读这种比特流，它必须有一个编码方式，使得其变为有意义的比特流，而不是一堆晦涩难懂的二进制组合。因为编码方式的不同，对这个比特流的解读也不一样，会给实际使用造成很大困扰。</p>
+<p>例如：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e41f63ab3c30cab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>从上述代码，可以得知，<code>s</code> 是一个 <code>str</code>（即字符串类型）。Python 的内置函数 <code>bytes()</code>可以将字符串 <code>str</code> 转换为 <code>bytes</code> 类型。而 <code>b</code> 实际上是一串二进制组合，为了在 IDE 中让编程人员相对直接地观察，其被表现为 <code>b&#39;\xe4\xb8\xad\xe6\x96\x87&#39;</code> 这种形式。<strong>在使用内置函数 <code>bytes()</code> 时，需要明确 <code>encoding</code> 参数，不可省略。</strong></p>
+<p>在字符串类<code>str</code>中有一个<code>encode()</code>方法，实现<strong>从字符串到比特流的编码</strong>过程；而<code>bytes</code>类型拥有<code>decode()</code>方法，实现<code>从比特流向字符串解码</code>过程。这两者几乎拥有一样的函数列表，最大的区别就是上面的两个方法。</p>
+<p>本质而言，字符串在磁盘上的保存形式也是二进制组合，也需要编码解码。</p>
+<p>两者区别的总结：</p>
+<ul>
+<li>在将<code>str</code>（字符串）存入磁盘和从磁盘读取字符串的过程中，Python会自动地帮我们完成编码和解码的工作，我们不需要关心它的过程。</li>
+<li>使用<code>bytes</code>类型，实质上是告诉Python，不需要它帮我们自动地完成编码和解码的工作，而是我们自己手动进行，并指定编码格式。</li>
+<li>Python已经严格区分了<code>bytes</code>和<code>str</code>两种数据类型，我们不能在需要<code>bytes</code>类型参数的时候使用<code>str</code>参数，反之亦然。</li>
+<li>在<code>bytes</code>和<code>str</code>的互相转换过程中，实际就是编码解码的过程，必须显式地指定编码格式。</li>
+</ul>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a><code>self</code></h2><p><code>self</code> 名称不是必须的，而且在 Python 中，<code>self</code> 并不是关键字，将其定义成其他名字都可，但约定俗成（为了和其他编程语言同一，减少理解难度）。其次，<code>self</code> 指的是<strong>类实例对象本身，而不是类本身</strong>。因为如果是指向类本身，那么当创建多个类实例时，<code>self</code>就无法判断指向的是哪一个实例。</p>
+<h2 id="u-U-quot-quot"><a href="#u-U-quot-quot" class="headerlink" title="u/U&quot;&quot;"></a><code>u/U&quot;&quot;</code></h2><p>其表示 Unicode 字符串，可以对字符串进行 Unicode 编码。一般，英文字符在使用各种不同编码的情况下，依旧可以正常解析，所以一般不带 <code>u</code>。但中文就必须需要编码，否则在编码转换时就会出现乱码。</p>
+<h2 id="r-39-xxxx-39"><a href="#r-39-xxxx-39" class="headerlink" title="r&#39;xxxx&#39;"></a><code>r&#39;xxxx&#39;</code></h2><p>如果在前面加<code>r</code>字符，则表示让这个字符串里面的内容失去转义的意义，即得到raw string。</p>
+<h2 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate()"></a><code>enumerate()</code></h2><p>用于将一个Iterable（可遍历）的数据对象（如<code>list</code>、<code>tuple</code>或者<code>str</code>）组合成一个索引序列，同时列出数据和数据下标，一般用在<code>for</code>循环中。</p>
+<p>函数原型：</p>
+<pre><code class="python">enumerate(sequence, [start=0])
+</code></pre>
+<p>其中，<code>sequence</code>表示一个序列、迭代器或者其他支持迭代的对象；<code>start</code>表示下标起始位置。返回<code>enumerate</code>（枚举）对象。</p>
+<h2 id="callable"><a href="#callable" class="headerlink" title="callable()"></a><code>callable()</code></h2><ul>
+<li>用于检查一个对象是否是可调用的（<strong>可被调用指的是对象能否使用<code>()</code>括号的方法调用</strong>）。</li>
+<li>可调用对象，在实际调用也可能调用失败；但是不可调用对象，调用肯定不成功。</li>
+<li>类对象都是可被调用对象，类的实例对象是否可调用对象，取决于类是否定义了<code>__call__</code>方法。</li>
+</ul>
+<h2 id="JSON与XML的区别"><a href="#JSON与XML的区别" class="headerlink" title="JSON与XML的区别"></a>JSON与XML的区别</h2><p>至于这两个哪一个更高、更快，其实是没有可比较性的，但是它们的实用范围是不一样的。</p>
+<p>例子：</p>
+<pre><code class="json">{
+  &quot;id&quot;: 123,
+  &quot;title&quot;: &quot;Object Thinking&quot;,
+  &quot;author&quot;: &quot;David West&quot;,
+  &quot;published&quot;: {
+    &quot;by&quot;: &quot;Microsoft Press&quot;,
+    &quot;year&quot;: 2004
+  }
+}
+</code></pre>
+<p>相同的内容用XML表示则是：</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;book id=&quot;123&quot;&gt;
+  &lt;title&gt;Object Thinking&lt;/title&gt;
+  &lt;author&gt;David West&lt;/author&gt;
+  &lt;published&gt;
+    &lt;by&gt;Microsoft Press&lt;/by&gt;
+    &lt;year&gt;2004&lt;/year&gt;
+  &lt;/published&gt;
+&lt;/book&gt;
+</code></pre>
+<p>相比较而言，JSON要短一点，并且更加容易理解，在JavaScript中能够完全解析出来。</p>
+<p>XML其实不是一种数据格式，而是一种标记语言，</p>
+<h2 id="xml-etree-ElementTree模块"><a href="#xml-etree-ElementTree模块" class="headerlink" title="xml.etree.ElementTree模块"></a><code>xml.etree.ElementTree</code>模块</h2><p><code>XML</code>（eXtensible Markup Language）是指可扩展语言，主要被用于<strong>传输和存储数据</strong>。</p>
+<p><code>XML</code>是一个inherently hierarchical的数据格式，通常用一个tree来表示它。<code>ET</code>有两个类来达到这一目的：</p>
+<ul>
+<li><code>ElementTree</code>：将整个<code>XML</code>文档表示为一个tree</li>
+<li><code>Element</code>：表示这个tree中的某一个单节点</li>
+</ul>
+<p>对于整个document的交互操作（包括读写）通常在<code>ElementTree</code> level，而对于单个<code>XML</code>元素的交互则在<code>Element</code> level。</p>
+<h2 id="DOM-vs-SAX"><a href="#DOM-vs-SAX" class="headerlink" title="DOM vs SAX"></a>DOM vs SAX</h2><p>操作<code>XML</code>有两种方法：DOM和SAX。DOM会把整个<code>XML</code>读入内存，解析为树，因此占用内存大，解析慢，优点是可以任意遍历树的节点。SAX是<strong>流模式，边读边解析，占用内存小，解析快</strong>，缺点是需要用户自己处理事件。</p>
+<p>正常情况下，优先考虑SAX，因为DOM实在太占内存。</p>
+<p>Python处理<code>XML</code>的方法主要有三种：</p>
+<h3 id="1-使用xml-dom-模块"><a href="#1-使用xml-dom-模块" class="headerlink" title="1. 使用xml.dom.*模块"></a>1. 使用<code>xml.dom.*</code>模块</h3><p>它是根据W3C DOM API进行实现，很适合处理DOM API。</p>
+<p>文件对象模型（Document Object Model，简称<code>DOM</code>），是W3C组织推荐的处理可扩展置标语言的标准编程接口。一个<code>DOM</code>的解析器在解析一个<code>XML</code>文档时，<strong>一次性读取整个文档，把文档中所有元素保存在内存中的一个树结构里，之后便可以利用<code>DOM</code>提供的不同的函数，来读取或修改文档的内容和结构，也可以把修改过的内容写入<code>XML</code>文件</strong>。</p>
+<p>Python中用<code>xml.dom.minidom</code>来解析<code>XML</code>文件。主要步骤为：</p>
+<ol>
+<li>获得子标签</li>
+<li>区分相同标签名的标签</li>
+<li>获取标签的属性值</li>
+<li>获取标签对之间的数据</li>
+</ol>
+<p>例子：</p>
+<pre><code class="python">#coding=utf-8
+import xml.dom.minidom as xmldom
+import os
+
+file_path = os.path.abspath(&quot;C:/Users/Magicmanoooo/Desktop/demo.xml&quot;)
+print(&quot;文件路径为：&quot;,file_path)
+
+# 得到文档对象
+dom_object = xmldom.parse(file_path)
+print(&quot;xmldom.parse:&quot;,type(dom_object))
+
+# 得到元素对象
+element_object = dom_object.documentElement
+print(&quot;dom_object.documentElement: &quot;,type(element_object))
+
+# 获得子标签
+subelement_object = element_object.getElementsByTagName(&quot;object&quot;)
+print(&quot;getElemenstByTagName: &quot;,type(subelement_object))
+
+# 获得标签属性值
+#print(subelement_object[0].getAttribute(&quot;name&quot;))
+subElementObj1 = element_object.getElementsByTagName(&quot;name&quot;)
+for i in range(len(subElementObj1)):
+    print (&quot;subElementObj1[%d]:&quot; % i, type(subElementObj1[i]))
+    print (subElementObj1[i].firstChild.data)  #显示标签对之间的数据
+</code></pre>
+<p>结果为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-51ab21ce1e4b5433.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="2-使用-xml-etree-ElementTree-模块"><a href="#2-使用-xml-etree-ElementTree-模块" class="headerlink" title="2. 使用 xml.etree.ElementTree 模块"></a>2. 使用 <code>xml.etree.ElementTree</code> 模块</h3><p><code>ElementTree</code> 主要就是用于处理 <code>XML</code>，它在 <a href="https://docs.Python.org/3/library/xml.etree.elementtree.html" target="_blank" rel="noopener">Python</a> 中有两种实现：</p>
+<ul>
+<li>纯 Python 实现，如 <code>xml.etree.ElementTree</code></li>
+<li>速度更加快一点儿的 <code>xml.etree.cElementTree</code></li>
+</ul>
+<p>主要步骤为：</p>
+<ol>
+<li>遍历根节点的下一层</li>
+<li>通过下标访问各个标签、属性、文本</li>
+<li>查找 root 下的指定标签</li>
+<li>遍历 XML 文件</li>
+<li>修改 XML 文件</li>
+</ol>
+<pre><code class="python">import xml.etree.ElementTree as ET
+import os
+import sys
+
+def traverse_xml(element):
+    if len(element) &gt; 0:
+        for child in element:
+            print(child.tag, &quot;-----&quot;, child.attrib)
+            traverse_xml(child)
+
+if __name__ == &quot;__main__&quot;:
+    file_path = os.path.abspath(&quot;C:/Users/Magicmanoooo/Desktop/demo.xml&quot;)
+    print(file_path)
+
+    try:
+        tree = ET.parse(file_path)
+        print(&quot;tree type: &quot;, type(tree))
+
+        # 获取根节点
+        root = tree.getroot()
+    except Exception as e:
+        print(&quot;parse demo.xml fail&quot;)
+        sys.exit()
+    print(&quot;root type: &quot;, type(root))
+    print(root.tag, &quot;----&quot;, root.attrib)
+
+    # 遍历root的下一层
+    for child in root:
+        print(&quot;遍历root的下一层&quot;, &quot;-----&quot;, child.attrib)
+
+    # 使用下标访问
+    #print(root[0].text)
+
+    # 遍历xml文件
+    traverse_xml(root)
+
+    # 根据标签名查找root下的所有标签
+    name_list = root.findall(&quot;item&quot;)
+    print(len(name_list))
+    for name in name_list:
+        # print(name.tag, &quot;-----&quot;, name.attrib, &quot;-----&quot;, name.text)
+        print(name.items())
+
+    print(root[0].text)
+    print(root[1][1][0].text)
+
+    # 修改xml文件
+    login = root.find(&quot;login&quot;)
+    password = login.get(&quot;passwd&quot;)
+    print(&quot;before modify: &quot;, password)
+    login.set(&quot;passwd&quot;, &quot;00000&quot;)
+    print(&quot;after modify: &quot;, login.get(&quot;passwd&quot;))
+
+    captions = root.findall(&quot;caption&quot;)
+    print(len(captions))
+    for caption in captions:
+            # print()
+        print(caption.tag, &quot;-----&quot;, caption.attrib,&quot;-----&quot;, caption.text)
+</code></pre>
+<p>使用面向对象的方式：</p>
+<pre><code class="python">import xml.etree.ElementTree as ET
+import sys
+import os.path
+
+class xml_parse:
+    def __init__(self, file_path):
+        self.tree = None
+        self.root = None
+        self.file_path = file_path
+
+    def read_xml(self):
+        try:
+            print(&quot;xml file: &quot;, self.file_path)
+            self.tree = ET.parse(self.file_path)
+            self.root = self.tree.getroot()
+        except Exception as e:
+            print(&quot;parse xml failed&quot;)
+            sys.exit()
+        else:
+            print(&quot;parse xml success&quot;)
+        finally:
+            return self.tree
+
+    def create_node(self, tag, attrib, text):
+        element = ET.Element(tag, attrib)
+        element.text = text
+        print(&quot;tag:%s;attrib:%s;text:%s&quot; % (tag, attrib, text))
+        return element
+
+    def add_node(self, parent, tag, attrib, text):
+        element = self.create_node(tag, attrib, text)
+        if parent:
+            parent.append(element)
+            element = self.root.find(&quot;name&quot;)
+            print(element.tag, &quot;-----&quot;, element.attrib, &quot;-----&quot;, element.txt)
+        else:
+            print(&quot;parent is none&quot;)
+
+    def write_xml(self, dest_file):
+        dest_file = os.path.abspath(dest_file)
+        self.tree.write(dest_file, encoding=&quot;utf-8&quot;,xml_declaration=True)
+
+if __name__ == &quot;__main__&quot;:
+    file = os.path.abspath(&quot;C:/Users/Magicmanoooo/Desktop/demo.xml&quot;)
+    parse = xml_parse(file)
+    tree = parse.read_xml()
+    root = tree.getroot()
+    print(root)
+    parse.add_node(root, &quot;Python&quot;, {&quot;age&quot;:18, &quot;hello&quot;:&quot;world&quot;}, &quot;yes&quot;)
+    parse.write_xml(&quot;C:/Users/Magicmanoooo/Desktop/dest.xml&quot;)
+</code></pre>
+<h2 id="使用-xml-sax-模块"><a href="#使用-xml-sax-模块" class="headerlink" title="使用 xml.sax.* 模块"></a>使用 <code>xml.sax.*</code> 模块</h2><p>SAX 是一种基于事件驱动的 API，利用 SAX 解析 XML 涉及到两个部分：</p>
+<ul>
+<li><strong>解析器：</strong>主要负责读取XML文档，并向事件处理器发送事件。如，元素开始于元素结束事件</li>
+<li><strong>事件处理器：</strong>负责对事件作出响应，对传递的XML数据进行处理</li>
+</ul>
+<p>Python 中使用 SAX 解析 <code>XML</code> 非常简洁，通常需要关心的事件是 <code>start_element</code>，<code>end_element</code> 和 <code>char_data</code>。</p>
+<h2 id="list-comprehension（列表推导）"><a href="#list-comprehension（列表推导）" class="headerlink" title="list comprehension（列表推导）"></a>list comprehension（列表推导）</h2><p>可以更加简洁地创建list，list comprehension由括号组成，括号中包含一个表达式，后跟一个<code>for</code> clause，然后是零个或多个<code>for</code>或<code>if</code>子句。 结果将返回一个evaluate后面的<code>for</code>和<code>if</code>子句表达式而得到的新list。 例如，如果列表不相等，则此listcomp将两个列表的元素组合在一起：</p>
+<pre><code class="python">original_dict = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}
+reversed_dict = dict(
+    [(value, key) for (key, value) in original_dict.items()])
+
+# {1: &#39;a&#39;, 2: &#39;b&#39;, 3: &#39;c&#39;}
+</code></pre>
+<h2 id="join"><a href="#join" class="headerlink" title="join()"></a><code>join()</code></h2><p>用于将序列中的元素以指定的字符连接，生成一个新的字符串。</p>
+<pre><code class="python">seq = (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;); # 字符串序列
+print &#39;-&#39;.join( seq );
+
+# a-b-c
+</code></pre>
+<p><code>str.join(元组、列表、字典、字符串)</code>之后生成的只能是字符串。</p>
+<h2 id="enumerate-1"><a href="#enumerate-1" class="headerlink" title="enumerate()"></a><code>enumerate()</code></h2><p>用于将一个可遍历的数据对象（如<code>list</code>、<code>tuple</code>或字符串）组合成一个索引序列，可同时列出数据和数据下标，一般用在<code>for</code>循环中。其返回<code>enumerate</code>对象。</p>
+<pre><code class="python">enumerate(sequence, [start=0])
+</code></pre>
+<p><code>sequence</code>—— 一个序列、迭代器或其他支持迭代对象<br><code>start</code> ——下标起始位置</p>
+<h2 id="Python中的-与"><a href="#Python中的-与" class="headerlink" title="Python中的*与**"></a>Python中的<code>*</code>与<code>**</code></h2><ul>
+<li>多个实参，放到一个元组（<code>tuple</code>）中，以<code>*</code>开头，可以传入多个参数</li>
+<li><code>**</code>是形参中按照关键字传值，吧多余的传值以字典（<code>dict</code>）的形式呈现</li>
+</ul>
+<p><strong><code>*args</code>：表示将实参按照位置传值，多出来的值都给<code>args</code>，且以<code>tuple</code>的形式呈现</strong>。</p>
+<p>例子：</p>
+<pre><code class="python">def foo(x,*args):
+    print(x)
+    print(args)
+
+foo(1,2,3,4,5) # 其中的2,3,4,5都给了args
+
+# 1
+# (2,3,4,5)
+</code></pre>
+<h3 id="当args与位置参数和默认参数混用的情况（注意三者的顺序）"><a href="#当args与位置参数和默认参数混用的情况（注意三者的顺序）" class="headerlink" title="当args与位置参数和默认参数混用的情况（注意三者的顺序）"></a>当<code>args</code>与位置参数和默认参数混用的情况（注意三者的顺序）</h3><p>例一（三者顺序是：位置参数、默认参数、<code>*args</code>）：</p>
+<pre><code class="python">def foo(x,y=1,*args):
+    print(x)
+    print(y)
+    print(args)
+
+foo(1,2,3,4,5) # 其中的x为1，y=1的值被2重置了，3,4,5都给了args
+　执行结果是：
+
+# 1
+# 2
+# (3, 4, 5)
+</code></pre>
+<p>例二（三者顺序是：位置参数、<code>*args</code>、默认参数）：</p>
+<pre><code class="python">def foo(x,*args,y=1):
+    print(x)
+    print(args)
+    print(y)
+
+foo(1,2,3,4,5) # 其中的x为1，2,3,4,5都给了args,y按照默认参数依旧为1
+
+# 1
+# (2, 3, 4, 5)
+# 1
+</code></pre>
+<h3 id="关于-，可以从两个角度来看（需要拆分来看）："><a href="#关于-，可以从两个角度来看（需要拆分来看）：" class="headerlink" title="关于 *，可以从两个角度来看（需要拆分来看）："></a>关于 <code>*</code>，可以从两个角度来看（需要拆分来看）：</h3><h3 id="1-从形参的角度来看："><a href="#1-从形参的角度来看：" class="headerlink" title="1. 从形参的角度来看："></a>1. 从形参的角度来看：</h3><p>例子：</p>
+<pre><code class="python">def foo(*args): # 其实这一操作相当于def foo（a,b,c,d,e):
+    print(args)
+foo(1,2,3,4,5) # 其中的1，2,3,4,5都按照位置传值分别传给了a,b,c,d,e
+
+# (1, 2, 3, 4, 5)
+</code></pre>
+<h3 id="2-从实参的角度来看："><a href="#2-从实参的角度来看：" class="headerlink" title="2. 从实参的角度来看："></a>2. 从实参的角度来看：</h3><p>例子：</p>
+<pre><code class="python">def foo(x,y,z):
+    print(x)
+    print(y)
+    print(z)
+
+foo(*(1,2,3)) # 其中的*（1,2,3）拆开来看就是：foo（1,2,3），都按照位置传值分别传给了x,y,z
+
+# 1
+# 2
+# 3　　
+</code></pre>
+<p><strong>`</strong>kwargs`：（表示的就是形参中按照关键字传值把多余的传值以字典的方式呈现）**<br>例子：</p>
+<pre><code class="python">def foo(x,**kwargs):
+    print(x)
+    print(kwargs)
+foo(1,y=1,a=2,b=3,c=4) # 将y=1,a=2,b=3,c=4以字典的方式给了kwargs
+
+# {&#39;y&#39;: 1, &#39;a&#39;: 2, &#39;b&#39;: 3, &#39;c&#39;: 4}
+</code></pre>
+<h3 id="关于-kwargs-与位置参数、-args、默认参数混着用的问题：（注意顺序）"><a href="#关于-kwargs-与位置参数、-args、默认参数混着用的问题：（注意顺序）" class="headerlink" title="关于 **kwargs 与位置参数、*args、默认参数混着用的问题：（注意顺序）"></a>关于 <code>**kwargs</code> 与位置参数、<code>*args</code>、默认参数混着用的问题：（注意顺序）</h3><h4 id="1-位置参数、-args、-kwargs三者的顺序必须是：位置参数、-args、-kwargs，不然就会报错："><a href="#1-位置参数、-args、-kwargs三者的顺序必须是：位置参数、-args、-kwargs，不然就会报错：" class="headerlink" title="1. 位置参数、*args、**kwargs三者的顺序必须是：位置参数、*args、**kwargs，不然就会报错："></a>1. 位置参数、<code>*args</code>、<code>**kwargs</code>三者的顺序必须是：位置参数、<code>*args</code>、<code>**kwargs</code>，不然就会报错：</h4><p>例子：</p>
+<pre><code class="python">def foo(x,*args,**kwargs):
+    print(x)
+    print(args)
+    print(kwargs)
+foo(1,2,3,4,y=1,a=2,b=3,c=4) # 将1传给了x，将2,3,4以元组方式传给了args，y=1,a=2,b=3,c=4以字典的方式给了kwargs
+
+# 1
+# (2, 3, 4)
+# {&#39;y&#39;: 1, &#39;a&#39;: 2, &#39;b&#39;: 3, &#39;c&#39;: 4}
+</code></pre>
+<p>错误示例：（由于顺序错误）</p>
+<pre><code class="python">def foo(x,**kwargs,*args):
+    print(x)
+    print(args)
+    print(kwargs)
+foo(1,y=1,a=2,b=3,c=4,2,3,4)
+
+# SyntaxError: invalid syntax
+</code></pre>
+<h4 id="2-位置参数、默认参数、-kwargs三者的顺序必须是位置参数、默认参数、-kwargs，不然就会报错："><a href="#2-位置参数、默认参数、-kwargs三者的顺序必须是位置参数、默认参数、-kwargs，不然就会报错：" class="headerlink" title="2. 位置参数、默认参数、**kwargs三者的顺序必须是位置参数、默认参数、**kwargs，不然就会报错："></a>2. 位置参数、默认参数、<code>**kwargs</code>三者的顺序必须是位置参数、默认参数、<code>**kwargs</code>，不然就会报错：</h4><p>例子：</p>
+<pre><code class="python">def foo(x,y=1,**kwargs):
+    print(x)
+    print(y)
+    print(kwargs)
+foo(1,a=2,b=3,c=4) # 将1按照位置传值给x，y按照默认参数为1，a=2,b=3,c=4以字典的方式给了kwargs
+
+# 1
+# 1
+# {&#39;a&#39;: 2, &#39;b&#39;: 3, &#39;c&#39;: 4}
+</code></pre>
+<h3 id="关于-，可以从两个角度来看（需要拆分来看）：-1"><a href="#关于-，可以从两个角度来看（需要拆分来看）：-1" class="headerlink" title="关于**，可以从两个角度来看（需要拆分来看）："></a>关于<code>**</code>，可以从两个角度来看（需要拆分来看）：</h3><h4 id="1-从形参的角度来看：-1"><a href="#1-从形参的角度来看：-1" class="headerlink" title="1. 从形参的角度来看："></a>1. 从形参的角度来看：</h4><p>例子：</p>
+<pre><code class="python">def foo(**kwargs):# 其实就是相当于def foo(y,a,b,c)
+    print(kwargs)
+foo(y=1,a=2,b=3,c=4)
+执行结果是：
+
+s
+# {&#39;y&#39;: 1, &#39;a&#39;: 2, &#39;b&#39;: 3, &#39;c&#39;: 4}
+</code></pre>
+<h4 id="2-从实参的角度来看：-1"><a href="#2-从实参的角度来看：-1" class="headerlink" title="2. 从实参的角度来看："></a>2. 从实参的角度来看：</h4><p>例子：</p>
+<pre><code class="python">def foo(a,b,c,d):
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+foo(**{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4,&quot;d&quot;:5}) # **{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4,&quot;d&quot;:5}是将字典里的每个值按照关键字传值的方式传给a,b,c,d
+
+# 2
+# 3
+# 4
+# 5
+</code></pre>
+<p>例二：</p>
+<pre><code class="python">def foo(a,b,c,d=1):
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+foo(**{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4}) # **{&quot;a&quot;:2,&quot;b&quot;:3,&quot;c&quot;:4}是将字典里的每个值按照关键字传值的方式传给a,b,c；d依旧按照默认参数
+
+# 2
+# 3
+# 4
+# 1
+</code></pre>
+<h1 id="future"><a href="#future" class="headerlink" title="__future__"></a><code>__future__</code></h1><p>Python的新版本会引入一些新的功能特性，但一般一部分的新功能可以在旧版本上测试，测试成功再移植到新的版本上，旧版本可以通过导入<code>__future__</code>模块的某些功能，测试新版本的新功能。</p>
+<p>例如，在Python 2.x版本中，整数的除法运算，结果是整数，余数被忽略，<code>10/3</code>的结果为<code>3</code>。新版本Python 3.x中，改动的功能除法运算中除法符号为<code>//</code>，结果是整数；符号为<code>/</code>，结果为浮点数。导入新版本的除法运算新功能，通过<code>__future__</code>的<code>division</code>实现。</p>
+<p>在开头加上<code>from __future__ import print_function</code>这句之后，即使在Python 2.x，使用<code>print</code>就得像Python 3.x那样加括号使用。Python 2.x中<code>print</code>不需要括号，而在Python 3.x中则需要。</p>
+<h1 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a><code>gzip</code></h1><p><code>gzip</code>块主要支持打开对应格式的压缩文件，并可以完成对压缩文件的读出和写入操作。压缩文件被打开后，可以使用文件对象一样的方法，如<code>read</code>、<code>readline</code>、<code>readlines</code>、<code>write</code>、<code>writelines</code>等。</p>
+<p><strong>例子：使用<code>gzip</code>模块完成对文件的压缩</strong></p>
+<pre><code class="python">f_in = open(&quot;data.txt&quot;, &quot;rb&quot;) # 打开文件
+f_out = gzip.open(&quot;data.txt.gz&quot;, &quot;wb&quot;) # 创建压缩文件对象
+f_out.writelines(f_in)
+f_out.close()
+f_in.close()
+</code></pre>
+<p><strong>例子：使用<code>gzip</code>模块完成对文件的解压</strong></p>
+<pre><code class="python">f = gzip.open(&quot;data.txt.gz&quot;, &#39;rb&#39;) # 打开压缩文件对象
+f_out=open(&quot;data.txt&quot;,&quot;w&quot;) # 打开解压后内容保存的文件
+file_content = f.read() # 读取解压后文件内容
+f_out.write(file_content.decode(&quot;utf-8&quot;)) # 写入新文件当中
+print(file_content) # 打印读取内容
+f.close() # 关闭文件流
+f_out.close()
+</code></pre>
+<h1 id="six"><a href="#six" class="headerlink" title="six"></a><code>six</code></h1><p><code>six</code>提供了简单的实用程序包来封装Python 2和Python 3之间的差异。它旨在支持无需修改，即可在Python 2和Python 3上工作的代码库。 <code>six</code>只包含一个Python文件，因此无需复制到一个项目中。</p>
+<h1 id="urllib模块"><a href="#urllib模块" class="headerlink" title="urllib模块"></a><code>urllib</code>模块</h1><h2 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1. 基本用法"></a>1. 基本用法</h2><h3 id="urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None"><a href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None" class="headerlink" title="urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)"></a><code>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</code></h3><ul>
+<li><code>url</code>：需要打开的网址</li>
+<li><code>data</code>：<code>Post</code>提交的数据</li>
+<li><code>timeout</code>：设置网站的访问超时时间</li>
+</ul>
+<p>直接用<code>urlopen()</code>获取页面，获得的页面数据格式为<code>bytes</code>类型，需要经过<code>decode()</code>解码，转换成<code>str</code>类型。</p>
+<p>利用<code>urlopen()</code>返回的对象，可以使用以下方法对其进行操作：</p>
+<ul>
+<li><code>read()</code>，·<code>readline()</code>，<code>readlines()</code>，<code>fileno()</code>，<code>close()</code>：对<code>HTTPResponse</code>类型数据进行操作</li>
+<li><code>info()</code>：返回<code>HTTPMessage</code>对象，表示远程服务器返回的头信息</li>
+<li><code>getcode()</code>：返回<code>http</code>状态码。如果是<code>http</code>请求，<code>200</code>请求成功完成；<code>404</code>网址未找到</li>
+<li><code>geturl()</code>：返回请求的<code>url</code></li>
+</ul>
+<h2 id="2-使用Request"><a href="#2-使用Request" class="headerlink" title="2. 使用Request"></a>2. 使用<code>Request</code></h2><h3 id="urllib-request-Request-url-data-None-headers-method-None"><a href="#urllib-request-Request-url-data-None-headers-method-None" class="headerlink" title="urllib.request.Request(url, data=None, headers={}, method=None)"></a><code>urllib.request.Request(url, data=None, headers={}, method=None)</code></h3><p>使用<code>request()</code>来包装请求，再通过<code>urlopen()</code>获取页面。</p>
+<p>例子：</p>
+<pre><code class="python">url = r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;
+headers = {
+    &#39;User-Agent&#39;: r&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                  r&#39;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#39;,
+    &#39;Referer&#39;: r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;,
+    &#39;Connection&#39;: &#39;keep-alive&#39;
+}
+req = request.Request(url, headers=headers)
+page = request.urlopen(req).read()
+page = page.decode(&#39;utf-8&#39;)
+</code></pre>
+<p>用来包装头部的数据：</p>
+<ul>
+<li><code>User-Agent</code>：这个头部可以携带如下几条信息：浏览器名和版本号、操作系统名和版本号、默认语言</li>
+<li><code>Referer</code>：可以用来防止盗链，有一些网站图片显示来源<code>http://***.com，</code>就是检查<code>Referer</code>来鉴定的</li>
+<li><code>Connection</code>：表示连接状态，记录<code>Session</code>的状态</li>
+</ul>
+<h2 id="3-Post数据"><a href="#3-Post数据" class="headerlink" title="3. Post数据"></a>3. <code>Post</code>数据</h2><h3 id="urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None-1"><a href="#urllib-request-urlopen-url-data-None-timeout-cafile-None-capath-None-cadefault-False-context-None-1" class="headerlink" title="urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)"></a><code>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</code></h3><p><code>urlopen()</code>的<code>data</code>参数默认为<code>None</code>，当<code>data</code>参数不为空的时候，<code>urlopen()</code>提交方式为<code>Post</code>。</p>
+<p>例子：</p>
+<pre><code class="python">from urllib import request, parse
+url = r&#39;http://www.lagou.com/jobs/positionAjax.json?&#39;
+headers = {
+    &#39;User-Agent&#39;: r&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                  r&#39;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#39;,
+    &#39;Referer&#39;: r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;,
+    &#39;Connection&#39;: &#39;keep-alive&#39;
+}
+data = {
+    &#39;first&#39;: &#39;true&#39;,
+    &#39;pn&#39;: 1,
+    &#39;kd&#39;: &#39;Python&#39;
+}
+data = parse.urlencode(data).encode(&#39;utf-8&#39;)
+req = request.Request(url, headers=headers, data=data)
+page = request.urlopen(req).read() # 也可以把data的数据封装在urlopen()参数中
+page = page.decode(&#39;utf-8&#39;)
+</code></pre>
+<h3 id="urllib-parse-urlencode-query-doseq-False-safe-39-39-encoding-None-errors-None"><a href="#urllib-parse-urlencode-query-doseq-False-safe-39-39-encoding-None-errors-None" class="headerlink" title="urllib.parse.urlencode(query, doseq=False, safe=&#39;&#39;, encoding=None, errors=None)"></a><code>urllib.parse.urlencode(query, doseq=False, safe=&#39;&#39;, encoding=None, errors=None)</code></h3><p><code>urlencode()</code>主要作用就是将<code>url</code>附上要提交的数据。</p>
+<p>上述的例子中，经过经过<code>urlencode()</code>转换后的<code>data</code>数据为<code>?first=true?pn=1?kd=Python</code>，最后提交的<code>url</code>为：<br><code>http://www.lagou.com/jobs/positionAjax.json?first=true?pn=1?kd=Python</code>。</p>
+<p><code>Post</code>的数据必须是<code>bytes</code>或者<code>iterable of bytes</code>，不能是<code>str</code>，因此需要进行<code>encode()</code>编码。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>例子：</p>
+<pre><code class="python">def get_page(url):
+    headers = {
+        &#39;User-Agent&#39;: r&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) &#39;
+                    r&#39;Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3&#39;,
+        &#39;Referer&#39;: r&#39;http://www.lagou.com/zhaopin/Python/?labelWords=label&#39;,
+        &#39;Connection&#39;: &#39;keep-alive&#39;
+    }
+    data = {
+        &#39;first&#39;: &#39;true&#39;,
+        &#39;pn&#39;: 1,
+        &#39;kd&#39;: &#39;Python&#39;
+    }
+    data = parse.urlencode(data).encode(&#39;utf-8&#39;)
+    req = request.Request(url, headers=headers)
+    try:
+        page = request.urlopen(req, data=data).read()
+        page = page.decode(&#39;utf-8&#39;)
+    except error.HTTPError as e:
+        print(e.code())
+        print(e.read().decode(&#39;utf-8&#39;))
+    return page
+</code></pre>
+<h2 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h2><h3 id="urllib-request-ProxyHandler-proxies-None"><a href="#urllib-request-ProxyHandler-proxies-None" class="headerlink" title="urllib.request.ProxyHandler(proxies=None)"></a><code>urllib.request.ProxyHandler(proxies=None)</code></h3><p>当需要抓取的网站设置了访问限制，这时就需要用到代理来抓取数据。</p>
+<p>例子：</p>
+<pre><code class="python">data = {
+        &#39;first&#39;: &#39;true&#39;,
+        &#39;pn&#39;: 1,
+        &#39;kd&#39;: &#39;Python&#39;
+    }
+proxy = request.ProxyHandler({&#39;http&#39;: &#39;5.22.195.215:80&#39;})  # 设置proxy
+opener = request.build_opener(proxy)  # 挂载opener
+request.install_opener(opener)  # 安装opener
+data = parse.urlencode(data).encode(&#39;utf-8&#39;)
+page = opener.open(url, data).read()
+page = page.decode(&#39;utf-8&#39;)
+return page
+</code></pre>
+<h1 id="zip"><a href="#zip" class="headerlink" title="zip()"></a><code>zip()</code></h1><p>函数原型：</p>
+<pre><code class="python">zip([iterable, ...])
+</code></pre>
+<p>用于<strong>将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表</strong>。</p>
+<p>如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用<code>*</code>号操作符，可以将元组解压为列表。</p>
+<p>例子：</p>
+<pre><code class="python">a = [1, 2, 3]
+b = [4, 5, 6]
+zipped = zip(a, b)
+print(*zipped)
+
+# [(1, 4) (2, 5) (3, 6)]
+</code></pre>
+<h1 id="namedtuple"><a href="#namedtuple" class="headerlink" title="namedtuple"></a><code>namedtuple</code></h1><p>因为元组具有局限性：不能为元组内部的数据进行命名，所以往往并不知道一个元组所要表达的意义，所以引入了 <code>collections.namedtuple</code> 这个工厂函数，来<strong>构造一个带字段名的元组</strong>。<code>namedtuple</code> 的实例和普通元组消耗的内存一样多，因为字段名都被存在对应的类里面。这个类跟普通的对象实例比起来也要小一些，因为 Python 不会用 <code>__dict__</code> 来存放这些实例的属性。除了能够用索引来访问数据，能够迭代，还能够方便的通过属性名来访问数据。</p>
+<p><code>namedtuple</code> 对象的定义格式：</p>
+<pre><code class="python">collections.namedtuple(typename, field_names, verbose=False, rename=False) 
+</code></pre>
+<p>返回一个 <code>namedtuple</code> 子类 <code>typename</code>。其中：</p>
+<ul>
+<li><code>typename</code>：元组名称</li>
+<li><code>field_names</code>：元组中元素的名称，是一组 <code>strings</code>。它是有多个字符串组成的可迭代对象，或者是有空格分隔开的字段名组成的字符串</li>
+<li><code>rename</code>: 如果元素名称中含有 Python 的关键字，则必须设置为 <code>rename=True</code></li>
+</ul>
+<h3 id="fields类属性"><a href="#fields类属性" class="headerlink" title="_fields类属性"></a><code>_fields</code>类属性</h3><p>包含这个类所有字段名的元组 </p>
+<h3 id="make-iterable-类方法"><a href="#make-iterable-类方法" class="headerlink" title="_make(iterable)类方法"></a><code>_make(iterable)</code>类方法</h3><p>接受一个可迭代对象来生产这个类的实例 </p>
+<h3 id="asdict-实例方法"><a href="#asdict-实例方法" class="headerlink" title="_asdict() 实例方法"></a><code>_asdict()</code> 实例方法</h3><p>把 <code>namedtuple</code> 以 <code>collections.OrdereDict</code> 的形式返回，可以利用它来把元组里的信息友好的展示出来。</p>
+<p>例子：</p>
+<pre><code class="python">User = namedtuple(&#39;User&#39;, [&#39;name&#39;, &#39;sex&#39;, &#39;age&#39;])
+
+# 创建一个User对象
+user = User(name=&#39;Runoob&#39;, sex=&#39;male&#39;, age=12)
+
+# 获取所有字段名
+print( user._fields )
+
+# 也可以通过一个list来创建一个User对象，这里注意需要使用&quot;_make&quot;方法
+user = User._make([&#39;Runoob&#39;, &#39;male&#39;, 12])
+
+print( user )
+# User(name=&#39;user1&#39;, sex=&#39;male&#39;, age=12)
+
+# 获取用户的属性
+print( user.name )
+print( user.sex )
+print( user.age )
+
+# 修改对象属性，注意要使用&quot;_replace&quot;方法
+user = user._replace(age=22)
+print( user )
+# User(name=&#39;user1&#39;, sex=&#39;male&#39;, age=21)
+
+# 将User对象转换成字典，注意要使用&quot;_asdict&quot;
+print( user._asdict() )
+# OrderedDict([(&#39;name&#39;, &#39;Runoob&#39;), (&#39;sex&#39;, &#39;male&#39;), (&#39;age&#39;, 22)])
+</code></pre>
+<h1 id="os-path"><a href="#os-path" class="headerlink" title="os.path"></a><code>os.path</code></h1><h2 id="os-path-abspath-path"><a href="#os-path-abspath-path" class="headerlink" title="os.path.abspath(path)"></a><code>os.path.abspath(path)</code></h2><pre><code class="python">import os  
+path1=os.path.abspath(&#39;.&#39;)   #表示当前所处的文件夹的绝对路径  
+path2=os.path.abspath(&#39;..&#39;)  #表示当前所处的文件夹上一级文件夹的绝对路径  
+</code></pre>
+<p>可以获得当前文件夹的绝对路径。</p>
+<h2 id="os-path-exists-path"><a href="#os-path-exists-path" class="headerlink" title="os.path.exists(path)"></a><code>os.path.exists(path)</code></h2><p>如果路径 <code>path</code> 存在，返回 <code>True</code>；反之则返回 <code>False</code>。</p>
+<h2 id="os-path-split-path"><a href="#os-path-split-path" class="headerlink" title="os.path.split(path)"></a><code>os.path.split(path)</code></h2><p>将 <code>path</code> 分割成目录和文件名二元组返回。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.split(&#39;c:/csv/test.csv&#39;) 
+# (&#39;c:/csv&#39;, &#39;test.csv&#39;) 
+
+&gt;&gt;&gt; os.path.split(&#39;c:/csv/&#39;) 
+# (&#39;c:/csv&#39;, &#39;&#39;) 
+</code></pre>
+<h2 id="os-path-dirname-path"><a href="#os-path-dirname-path" class="headerlink" title="os.path.dirname(path)"></a><code>os.path.dirname(path)</code></h2><p>返回<code>path</code>的目录（即<code>os.path.split(path)</code>的第一个元素）。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.dirname(&#39;c:/csv/test.csv&#39;) 
+# &#39;c:/&#39; 
+
+&gt;&gt;&gt; os.path.dirname(&#39;c:/csv&#39;) 
+# &#39;c:/&#39; 
+</code></pre>
+<h2 id="os-path-basename-path"><a href="#os-path-basename-path" class="headerlink" title="os.path.basename(path)"></a><code>os.path.basename(path)</code></h2><p>返回<code>path</code>最后的文件名。（即<code>os.path.split(path)</code>的第二个元素，如果<code>path</code>以<code>／</code>或<code>\\</code>结尾，那么就会返回空值）。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.basename(&#39;c:/test.csv&#39;) 
+# &#39;test.csv&#39; 
+
+&gt;&gt;&gt; os.path.basename(&#39;c:/csv&#39;) 
+# &#39;csv&#39; （这里csv被当作文件名处理了） 
+
+&gt;&gt;&gt; os.path.basename(&#39;c:\\csv\\&#39;) 
+# &#39;&#39; 
+</code></pre>
+<h2 id="os-path-commonprefix-list"><a href="#os-path-commonprefix-list" class="headerlink" title="os.path.commonprefix(list)"></a><code>os.path.commonprefix(list)</code></h2><p>返回<code>list</code>中，所有<code>path</code>共有的最长的路径。 </p>
+<pre><code class="python">&gt;&gt;&gt;os.path.commonprefix([&#39;/home/td&#39;,&#39;/home/td/ff&#39;,&#39;/home/td/fff&#39;]) 
+
+# &#39;/home/td&#39; 
+</code></pre>
+<h1 id="os-path-isabs-path"><a href="#os-path-isabs-path" class="headerlink" title="os.path.isabs(path)"></a><code>os.path.isabs(path)</code></h1><p>如果<code>path</code>是绝对路径，则返回<code>True</code>。 </p>
+<h1 id="os-path-isfile-path"><a href="#os-path-isfile-path" class="headerlink" title="os.path.isfile(path)"></a><code>os.path.isfile(path)</code></h1><p>如果<code>path</code>是一个存在的文件，返回<code>True</code>；否则返回<code>False</code>。</p>
+<h1 id="os-path-isdir-path"><a href="#os-path-isdir-path" class="headerlink" title="os.path.isdir(path)"></a><code>os.path.isdir(path)</code></h1><p>如果<code>path</code>是一个存在的目录，则返回<code>True</code>；否则返回<code>False</code>。</p>
+<h1 id="os-path-join-path1-path2"><a href="#os-path-join-path1-path2" class="headerlink" title="os.path.join(path1[, path2[, ...]])"></a><code>os.path.join(path1[, path2[, ...]])</code></h1><p>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.join(&#39;c:\\&#39;, &#39;csv&#39;, &#39;test.csv&#39;) 
+# &#39;c:\\csv\\test.csv&#39; 
+
+&gt;&gt;&gt; os.path.join(&#39;windows\temp&#39;, &#39;c:\\&#39;, &#39;csv&#39;, &#39;test.csv&#39;) 
+# &#39;c:\\csv\\test.csv&#39; 
+
+&gt;&gt;&gt; os.path.join(&#39;/home/aa&#39;,&#39;/home/aa/bb&#39;,&#39;/home/aa/bb/c&#39;) 
+# &#39;/home/aa/bb/c&#39; 
+</code></pre>
+<h2 id="os-path-normcase-path"><a href="#os-path-normcase-path" class="headerlink" title="os.path.normcase(path)"></a><code>os.path.normcase(path)</code></h2><p>在<code>Linux</code>和<code>Mac</code>平台上，该函数会原样返回<code>path</code>；在<code>windows</code>平台上会将路径中所有字符转换为小写，并将所有斜杠转换为反斜杠。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.normcase(&#39;c:/windows\\system32\\&#39;) 
+# &#39;c:\\windows\\system32\\&#39; 
+</code></pre>
+<h2 id="os-path-normpath-path"><a href="#os-path-normpath-path" class="headerlink" title="os.path.normpath(path)"></a><code>os.path.normpath(path)</code></h2><p>规范化路径。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.normpath(&#39;c://windows\\System32\\../Temp/&#39;) 
+# &#39;c:\\windows\\Temp&#39; 
+</code></pre>
+<h2 id="os-path-splitdrive-path"><a href="#os-path-splitdrive-path" class="headerlink" title="os.path.splitdrive(path)"></a><code>os.path.splitdrive(path)</code></h2><p>返回<code>(drivername，fpath)</code>元组 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.splitdrive(&#39;c:\\windows&#39;) 
+# (&#39;c:&#39;, &#39;\\windows&#39;) 
+</code></pre>
+<h2 id="os-path-splitext-path"><a href="#os-path-splitext-path" class="headerlink" title="os.path.splitext(path)"></a><code>os.path.splitext(path)</code></h2><p>分离文件名与扩展名；默认返回<code>(fname,fextension)</code>元组，可做分片操作 。</p>
+<pre><code class="python">&gt;&gt;&gt; os.path.splitext(&#39;c:\\csv\\test.csv&#39;) 
+# (&#39;c:\\csv\\test&#39;, &#39;.csv&#39;) 
+</code></pre>
+<h2 id="os-path-getsize-path"><a href="#os-path-getsize-path" class="headerlink" title="os.path.getsize(path)"></a><code>os.path.getsize(path)</code></h2><p>返回<code>path</code>的文件的大小（字节）。 </p>
+<pre><code class="python">&gt;&gt;&gt; os.path.getsize(&#39;c:\\boot.ini&#39;) 
+# 299L 
+</code></pre>
+<h2 id="os-path-getatime-path"><a href="#os-path-getatime-path" class="headerlink" title="os.path.getatime(path)"></a><code>os.path.getatime(path)</code></h2><p>返回 <code>path</code> 所指向的文件或者目录的最后存取时间。 </p>
+<h2 id="os-path-getmtime-path"><a href="#os-path-getmtime-path" class="headerlink" title="os.path.getmtime(path)"></a><code>os.path.getmtime(path)</code></h2><p>返回 <code>path</code> 所指向的文件或者目录的最后修改时间。</p>
+<h1 id="os-getcwd"><a href="#os-getcwd" class="headerlink" title="os.getcwd()"></a><code>os.getcwd()</code></h1><p>用于返回当前工作目录。</p>
+<h1 id="os-stat-path"><a href="#os-stat-path" class="headerlink" title="os.stat(path)"></a><code>os.stat(path)</code></h1><p>用于在给定的路径上执行一个系统 <code>stat</code> 的调用。</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li><code>path</code> — 指定路径</li>
+</ul>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p><code>stat</code> 结构:</p>
+<ul>
+<li><strong><code>st_mode</code>:</strong> <code>inode</code> 保护模式</li>
+<li><strong><code>st_ino</code>:</strong> <code>inode</code> 节点号</li>
+<li><strong><code>st_dev</code>:</strong> <code>inode</code> 驻留的设备</li>
+<li><strong><code>st_nlink</code>:</strong> <code>inode</code> 的链接数</li>
+<li><strong><code>st_uid</code>:</strong> 所有者的用户 ID</li>
+<li><strong><code>st_gid</code>:</strong> 所有者的组 ID</li>
+<li><strong><code>st_size</code>:</strong> 普通文件以字节为单位的大小；包含等待某些特殊文件的数据</li>
+<li><strong><code>st_atime</code>:</strong> 上次访问的时间</li>
+<li><strong><code>st_mtime</code>:</strong> 最后一次修改的时间</li>
+<li><strong><code>st_ctime</code>:</strong> 由操作系统报告的 <code>ctime</code>。在某些系统上（如 Unix）是最新的元数据更改的时间，在其它系统上（如 Windows）是创建时间</li>
+</ul>
+<p>例子：</p>
+<pre><code class="python">import os,sys
+
+statinfo = os.stat(&#39;cifar10_input.py&#39;)
+print(statinfo)
+
+# os.stat_result(st_mode=33206, 
+#                st_ino=4503599627469042, 
+#                st_dev=3672258594, 
+#                st_nlink=1, 
+#                st_uid=0, 
+#                st_gid=0, 
+#                st_size=1260, 
+#                st_atime=1551532715, 
+#                st_mtime=1551532715, 
+#                st_ctime=1551506243)
+</code></pre>
+<h1 id="if-name-39-main-39"><a href="#if-name-39-main-39" class="headerlink" title="if __name__ == &#39;__main__&#39;"></a><code>if __name__ == &#39;__main__&#39;</code></h1><h2 id="1-通俗的理解-name-39-main-39-："><a href="#1-通俗的理解-name-39-main-39-：" class="headerlink" title="1. 通俗的理解__name__ == &#39;__main__&#39;："></a>1. 通俗的理解<code>__name__ == &#39;__main__&#39;</code>：</h2><p>假如你叫<code>小明.py</code>，在朋友眼中，你是小明（<code>__name__ == &#39;小明&#39;</code>）；在你自己眼中，你是你自己（<code>__name__ == &#39;__main__&#39;</code>）。</p>
+<p><code>if __name__ == &#39;__main__&#39;</code> 的意思是：</p>
+<ul>
+<li><strong>当 <code>.py</code> 文件被直接运行时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块将被运行</strong></li>
+<li><strong>当 <code>.py</code> 文件以模块形式被导入时，<code>if __name__ == &#39;__main__&#39;</code> 之下的代码块不被运行</strong></li>
+</ul>
+<h2 id="2-程序入口"><a href="#2-程序入口" class="headerlink" title="2. 程序入口"></a>2. 程序入口</h2><p>对于很多编程语言来说，程序都必须要有一个入口（即 <code>main()</code> 或者<code>Main()</code>）。而Python则不同，它属于脚本语言，不像编译型语言那样先将程序编译成二进制再运行，而是动态的逐行解释运行。也就是从脚本第一行开始运行，没有统一的入口。</p>
+<p>一个Python源码文件除了可以被直接运行外，还可以作为模块（也就是库），被其他<code>.py</code>文件导入。不管是直接运行还是被导入，<code>.py</code>文件的最顶层代码都会被运行（Python用缩进来区分代码层次），而当一个<code>.py</code>文件作为模块被导入时，我们可能不希望一部分代码被运行。</p>
+<h3 id="2-1-一个-py文件被其他-py文件引用"><a href="#2-1-一个-py文件被其他-py文件引用" class="headerlink" title="2.1 一个.py文件被其他.py文件引用"></a>2.1 一个<code>.py</code>文件被其他<code>.py</code>文件引用</h3><p>假设有一个<code>const.py</code>文件，内容如下：</p>
+<pre><code class="python">PI = 3.14
+
+def main():
+    print(&quot;PI:&quot;, PI)
+
+main()
+
+# 运行结果：PI: 3.14
+</code></pre>
+<p>现在，写一个用于计算圆面积的<code>area.py</code>文件，<code>area.py</code>文件需要用到<code>const.py</code>文件中的<code>PI</code>变量。从<code>const.py</code>中，把<code>PI</code>变量导入<code>area.py</code>：</p>
+<pre><code class="python">from const import PI
+
+def calc_round_area(radius):
+    return PI * (radius ** 2)
+
+def main():
+    print(&quot;round area: &quot;, calc_round_area(2))
+
+main()
+
+# PI: 3.14
+# round area:  12.56
+</code></pre>
+<h3 id="2-2-修改const-py，添加if-name-39-main-39"><a href="#2-2-修改const-py，添加if-name-39-main-39" class="headerlink" title="2.2 修改const.py，添加if __name__ == &#39;__main__&#39;"></a>2.2 修改<code>const.py</code>，添加<code>if __name__ == &#39;__main__&#39;</code></h3><p>可以看到<code>const.py</code>中的<code>main</code>函数也被运行了，实际上不希望它被运行，因为<code>const.py</code>提供的<code>main</code>函数只是为了测试常量定义。这时<code>if __name__ == &#39;__main__&#39;</code>派上了用场。把<code>const.py</code>改一下，添加<code>if __name__ == &#39;__main__&#39;</code>：</p>
+<pre><code class="python">PI = 3.14
+
+def main():
+    print(&quot;PI:&quot;, PI)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>运行<code>const.py</code>，输出如下：</p>
+<pre><code class="pyton">PI: 3.14
+</code></pre>
+<p>运行<code>area.py</code>，输出如下：</p>
+<pre><code class="python">round area:  12.56
+</code></pre>
+<p>可以看到<code>if __name__ == &#39;__main__&#39;</code>相当于Python模拟的程序入口，Python本身并没有这么规定，这只是一种编码习惯。由于模块之间相互引用，不同模块可能有这样的定义，而程序入口只有一个。到底哪个程序入口被选中，这取决于<code>__name__</code>的值。 </p>
+<h2 id="3-name"><a href="#3-name" class="headerlink" title="3. __name__"></a>3. <code>__name__</code></h2><h3 id="3-1-name-反映一个包的结构"><a href="#3-1-name-反映一个包的结构" class="headerlink" title="3.1 __name__反映一个包的结构"></a>3.1 <code>__name__</code>反映一个包的结构</h3><p><code>__name__</code>是内置变量，可用于反映一个包的结构。假设有一个包<code>a</code>，包的结构如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-59eda6b9d2279a56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在包<code>a</code>中，文件<code>c.py</code>，<code>__init__.py</code>，<code>__init__.py</code>的内容都为：</p>
+<pre><code class="python">print(__name__)
+</code></pre>
+<p>当一个<code>.py</code>文件（模块）被其他<code>.py</code>文件（模块）导入时，在命令行执行</p>
+<pre><code class="python">Python -c &quot;import a.b.c&quot;
+
+# a
+# a.b
+# a.b.c
+</code></pre>
+<p>由此可见，<code>__name__</code>可以清晰地反映一个模块在包中的层次。</p>
+<h3 id="3-2-name-表示当前模块的名字"><a href="#3-2-name-表示当前模块的名字" class="headerlink" title="3.2 __name__表示当前模块的名字"></a>3.2 <code>__name__</code>表示当前模块的名字</h3><p><code>__name__</code>是内置变量，可用于表示当前模块的名字。直接运行一个<code>.py</code>文件（模块）</p>
+<pre><code class="python">Python a/b/c.py
+# __main__
+</code></pre>
+<p>由此可知：如果一个<code>.py</code>文件（模块）被直接运行时，则其没有包结构，其<code>__name__</code>值为<code>__main__</code>，即模块名为<code>__main__</code>。</p>
+<p>所以，<code>if __name__ == &#39;__main__&#39;</code>的意思是：</p>
+<ul>
+<li>当<code>.py</code>文件被直接运行时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块将被运行</li>
+<li>当<code>.py</code>文件以模块形式被导入时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块不被运行</li>
+</ul>
+<h2 id="4-main-py文件与Python-m"><a href="#4-main-py文件与Python-m" class="headerlink" title="4. __main__.py文件与Python -m"></a>4. <code>__main__.py</code>文件与<code>Python -m</code></h2><p>Python的<code>-m</code>参数用于将一个模块或者包作为一个脚本运行，而<code>__main__.py</code>文件相当于是一个包的“入口程序“。</p>
+<h3 id="4-1-运行Python程序的两种方式"><a href="#4-1-运行Python程序的两种方式" class="headerlink" title="4.1 运行Python程序的两种方式"></a>4.1 运行Python程序的两种方式</h3><ul>
+<li><code>Python xxx.py</code>，直接运行<code>xxx.py</code>文件</li>
+<li><code>Python -m xxx.py</code>，把<code>xxx.py</code>当做模块运行</li>
+</ul>
+<p>假设有一个文件<code>run.py</code>：</p>
+<pre><code class="python">import sys
+print(sys.path)
+</code></pre>
+<p>用直接运行的方式启动</p>
+<pre><code class="python">Python run.py
+# [&#39;/home/huoty/aboutme/Pythonstudy/main&#39;, ...] 输出结果只截取了重要部分
+</code></pre>
+<p>然后以模块的方式运行:</p>
+<pre><code class="python">Python -m run.py
+# [&#39;&#39;, ...]
+# /usr/bin/Python: No module named run.py
+</code></pre>
+<p>由于输出结果只列出了关键的部分，应该很容易看出他们之间的差异：</p>
+<ul>
+<li>直接运行方式是把<code>run.py</code>文件所在的目录放到了<code>sys.path</code>属性中</li>
+<li>以模块方式运行是把你输入命令的目录（也就是当前工作路径），放到了<code>sys.path</code>属性中。</li>
+</ul>
+<p>以模块方式运行还有一个不同的地方：多出了一行<code>No module named run.py</code>的错误。实际上以模块方式运行时，Python先对<code>run.py</code>执行一遍<code>import</code>，所以<code>print(sys.path)</code>被成功执行，然后Python才尝试运行<code>run.py</code>模块，但是在<code>path</code>变量中并没有<code>run.py</code>这个模块，所以报错。正确的运行方式，应该是<code>Python -m run</code>。</p>
+<h2 id="4-2-main-py的作用"><a href="#4-2-main-py的作用" class="headerlink" title="4.2 __main__.py的作用"></a>4.2 <code>__main__.py</code>的作用</h2><p>假设有如下一个包package：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-875cfd027b6e1caf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，文件<code>__init__.py</code>的内容：</p>
+<pre><code class="python">import sys
+
+print(&quot;__init__&quot;)
+print(sys.path)
+</code></pre>
+<p>文件<code>__main__.py</code>的内容`:</p>
+<pre><code class="python">import sys
+
+print(&quot;__main__&quot;)
+print(sys.path)
+</code></pre>
+<p>接下来，运行这个package（使用<code>Python -m package</code>）运行，输出结果：</p>
+<pre><code class="python">__init__
+[&#39;&#39;, ...]
+
+__main__
+[&#39;&#39;, ...]
+</code></pre>
+<p>使用<code>Python package</code>运行，输出结果：</p>
+<pre><code class="python">__main__
+[&#39;package&#39;, ...]
+</code></pre>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li>当加上<code>-m</code>参数时，Python会把当前工作目录添加到<code>sys.path</code>中；而不加<code>-m</code>时，Python则会把脚本所在目录添加到<code>sys.path</code>中。</li>
+<li>当加上<code>-m</code>参数时，Python会先将模块或者包导入，然后再执行。</li>
+<li><code>__main__.py</code>文件是一个包或者目录的入口程序。不管是用<code>Python package</code>还是用<code>Python -m package</code>运行，<code>__main__.py</code>文件总是被执行。 </li>
+</ul>
+<h1 id="argparse"><a href="#argparse" class="headerlink" title="argparse"></a><code>argparse</code></h1><h2 id="1-创建解析器：ArgumentParser"><a href="#1-创建解析器：ArgumentParser" class="headerlink" title="1. 创建解析器：ArgumentParser"></a>1. 创建解析器：<code>ArgumentParser</code></h2><pre><code class="python">import argparse
+parser = argparse.ArgumentParser()
+</code></pre>
+<pre><code class="python">class ArgumentParser(
+    prog=None, 
+    usage=None, 
+    description=None, 
+    epilog=None, 
+    parents=[],             
+    formatter_class=argparse.HelpFormatter, 
+    prefix_chars=&#39;-&#39;, 
+    fromfile_prefix_chars=None, 
+    argument_default=None, 
+    conflict_handler=&#39;error&#39;, 
+    add_help=True)
+</code></pre>
+<p>创建一个 <code>ArgumentParser</code> 实例，<code>ArgumentParser</code> 的参数都为关键字参数。</p>
+<ul>
+<li><strong><code>prog</code>：</strong>文件名，默认为 <code>sys.argv[0]</code>，用来在 <code>help</code>信息中描述程序的名称。</li>
+<li><strong><code>usage</code>：</strong>描述程序用途的字符串</li>
+<li><strong><code>description</code>：</strong><code>help</code> 信息前显示的信息</li>
+<li><p><strong><code>epilog</code>：</strong><code>help</code>信息之后显示的信息</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/1351548-864f58c03a960f07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p><strong><code>parents</code>：</strong>由 <code>ArgumentParser</code> 对象组成的列表，它们的 <code>arguments</code> 选项会被包含到新 <code>ArgumentParser</code> 对象中。(类似于继承)</p>
+</li>
+<li><strong><code>formatter_class</code>：</strong><code>help</code> 信息的输出的格式</li>
+<li><p><strong><code>prefix_chars</code>：</strong>参数前缀，默认为<code>-</code>(最好不要修改)</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/1351548-3f3c3e218e31bf66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p><strong><code>fromfile_prefix_chars</code>：</strong>前缀字符，放在文件名之前。当参数过多时，可以将参数放到文件中读取，例子中 <code>parser.parse_args([&#39;-f&#39;,&#39;foo&#39;, &#39;@args.txt&#39;])</code>解 析时会从文件 <code>args.txt</code> 读取，相当于 <code>[&#39;-f&#39;, &#39;foo&#39;, &#39;-f&#39;, &#39;bar&#39;]</code>。</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/1351548-ca9760314bc863c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><strong><code>conflict_handler</code>：</strong>解决冲突的策略，默认情况下冲突会发生错误，(最好不要修改)</li>
+<li><strong><code>add_help</code>：</strong>是否增加 <code>-h/-help</code> 选项 (默认为 <code>True</code>)，一般 <code>help</code> 信息都是必须的。设为 <code>False</code> 时，<code>help</code>信息里面不再显示 <code>-h –help</code> 信息</li>
+<li><strong><code>argument_default</code>：</strong><code>(default: None)</code>设置一个全局的选项的缺省值，一般每个选项单独设置，基本没用</li>
+</ul>
+<h2 id="2-添加参数选项：add-argument"><a href="#2-添加参数选项：add-argument" class="headerlink" title="2. 添加参数选项：add_argument"></a>2. 添加参数选项：<code>add_argument</code></h2><pre><code class="python">ArgumentParser.add_argument(
+    name or flags...
+    [, action]
+    [, nargs]
+    [, const]
+    [, default]
+    [, type]
+    [, choices]
+    [, required]
+    [, help]
+    [, metavar]
+    [, dest])
+</code></pre>
+<ul>
+<li><code>name or flags</code>：参数有两种，可选参数和位置参数。<ul>
+<li>添加可选参数<pre><code class="python">parser.add_argument(&#39;-f&#39;, &#39;--foo&#39;)
+</code></pre>
+</li>
+<li>添加位置参数（解析时缺少位置参数就会报错了）<pre><code class="python">parser.add_argument(&#39;bar&#39;)
+</code></pre>
+<code>parse_args()</code> 运行时，默认会用 <code>-</code> 来认证可选参数，剩下的即为位置参数。</li>
+</ul>
+</li>
+</ul>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/1351548-7ed258e92cfe1e39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><p><code>action</code>：默认为 <code>store</code></p>
+<ul>
+<li><code>store_const</code>：值存放在 <code>const</code> 中：<br>  <img src="https://upload-images.jianshu.io/upload_images/1351548-d218b7142238bac1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><code>store_true</code> 和 <code>store_false</code>：值存为 <code>True</code> 或 <code>False</code><br>  <img src="https://upload-images.jianshu.io/upload_images/1351548-377906596aa46cb3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><code>append</code>：存为列表，可以有多个参数<br>  <img src="https://upload-images.jianshu.io/upload_images/1351548-0de8b670bdc73f43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><code>append_const</code>：存为列表，会根据<code>const</code>关键参数进行添加：<br>  <img src="https://upload-images.jianshu.io/upload_images/1351548-7d7708fe8fe26ce1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><code>count</code>：统计参数出现的次数<br>  <img src="https://upload-images.jianshu.io/upload_images/1351548-1df42245cd650228.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><code>help</code>：<code>help</code>信息</li>
+<li><code>version</code>：版本<br>  <img src="https://upload-images.jianshu.io/upload_images/1351548-2fc79de037106a96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+<li><code>metaver</code>：帮助信息中显示的参数名称</li>
+<li><code>nargs</code>： 参数的数量<ul>
+<li>值可以为整数 <code>N</code>（<code>N</code> 个），<code>*</code>（任意多个，可以为 <code>0</code> 个)，<code>+</code>（一个或更多）<br><img src="https://upload-images.jianshu.io/upload_images/1351548-dda721596303a39b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>值为 <code>?</code> 时，首先从命令行获得参数，如果有 <code>-y</code>后面没加参数，则从 <code>const</code> 中取值；如果没有 <code>-y</code>，则从 <code>default</code> 中取值<br><img src="https://upload-images.jianshu.io/upload_images/1351548-90be073cde800e82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+<li><code>const</code>：保存一个常量</li>
+<li><code>default</code>：默认值</li>
+<li><code>type</code>：参数类型，默认为<code>str</code></li>
+<li><code>choices</code>：设置参数值的范围，如果 <code>choices</code>中的类型不是字符串，记得指定<code>type</code><br><img src="https://upload-images.jianshu.io/upload_images/1351548-66096211bb45de57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><code>required</code>：该选项是否必选，默认为<code>True</code></li>
+<li><code>dest</code>：参数名<br><img src="https://upload-images.jianshu.io/upload_images/1351548-425fff11a038bfdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h2 id="3-解析参数"><a href="#3-解析参数" class="headerlink" title="3. 解析参数"></a>3. 解析参数</h2><p>像名称空间一样使用即可。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-425fff11a038bfdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>re</p>
+<h1 id="ArgumentParser-parse-known-args-args-None-namespace-None"><a href="#ArgumentParser-parse-known-args-args-None-namespace-None" class="headerlink" title="ArgumentParser.parse_known_args(args=None, namespace=None)"></a><code>ArgumentParser.parse_known_args(args=None, namespace=None)</code></h1><p>有时，脚本只能解析一些命令行参数，将剩余的参数传递给另一个脚本或程序。 在这些情况下，可以使用 <code>parse_known_args()</code>。 它的工作方式与 <code>parse_args()</code> 非常相似，只是在存在额外参数时不会产生错误。 相反，它返回一个包含填充命名空间（namespace）和剩余参数字符串 <code>list</code> 的两项 <code>tuple</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-66096211bb45de57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="vars-object"><a href="#vars-object" class="headerlink" title="vars([object])"></a><code>vars([object])</code></h1><p>返回对象 <code>object</code> 的属性和属性值的字典对象。如果没有参数，就打印当前调用位置的属性和属性值，类似 <code>locals()</code>。</p>
+<h1 id="sys模块"><a href="#sys模块" class="headerlink" title="sys模块"></a><code>sys</code>模块</h1><ul>
+<li><code>os</code> 模块提供了一种方便的使用操作系统函数的方法。</li>
+<li><code>sys</code> 模块可供访问由解释器使用或维护的变量和与解释器进行交互的函数。</li>
+</ul>
+<p><strong>总之，<code>os</code> 模块负责程序与操作系统的交互，提供了访问操作系统底层的接口；<code>sys</code> 模块负责程序与 Python 解释器的交互，提供了一系列的函数和变量，用于操控 Python 的运行时环境。</strong></p>
+<h2 id="sys-modules"><a href="#sys-modules" class="headerlink" title="sys.modules"></a><code>sys.modules</code></h2><p><code>sys.modules</code> 是一个全局字典，该字典在 <code>Python</code> 启动后就加载在内存中。每当导入新的模块时，<code>sys.modules</code> 都将记录这些模块。字典 <code>sys.modules</code> 对于加载模块起到了缓冲的作用。当某个模块第一次导入，字典 <code>sys.modules</code> 将自动记录该模块。当第二次再导入该模块时，Python 会直接到字典中查找，从而加快了程序运行的速度。</p>
+<p>字典 <code>sys.modules</code> 具有字典所拥有的一切方法，可以通过这些方法了解当前的环境加载了哪些模块。</p>
+<p><code>sys.modules</code> 返回所有已经导入的模块列表 ：</p>
+<ul>
+<li><code>keys()</code>：返回模块名 </li>
+<li><code>values</code>()`：返回模块 </li>
+<li><code>modules([module_name])</code>：返回路径</li>
+</ul>
+<h1 id="sys-stdout-与-sys-stdin"><a href="#sys-stdout-与-sys-stdin" class="headerlink" title="sys.stdout 与 sys.stdin"></a><code>sys.stdout</code> 与 <code>sys.stdin</code></h1><p>如果需要更好的控制输出，而 <code>print</code> 不能满足需求，<code>sys.stdout</code>，<code>sys.stdin</code>，<code>sys.stderr</code> 的功能更强大。</p>
+<h2 id="1-sys-stdout-与-print"><a href="#1-sys-stdout-与-print" class="headerlink" title="1. sys.stdout 与 print"></a>1. <code>sys.stdout</code> 与 <code>print</code></h2><p>在 Python 中调用 <code>print</code> 时，事实上调用了 <code>sys.stdout.write(obj+&#39;\n&#39;)</code>。<code>print</code> 将需要的内容打印到控制台，然后追加一个换行符。</p>
+<p>以下两行代码等价：</p>
+<pre><code class="python">sys.stdout.write(&#39;hello&#39; + &#39;\n&#39;)
+print(&#39;hello&#39;)
+</code></pre>
+<h2 id="2-sys-stdin-与-input"><a href="#2-sys-stdin-与-input" class="headerlink" title="2. sys.stdin 与 input"></a>2. <code>sys.stdin</code> 与 <code>input</code></h2><p><code>sys.stdin.readline()</code> 会将标准输入全部获取，包括末尾的 <code>&#39;\n&#39;</code>，因此用 <code>len</code> 计算长度时是把换行符 <code>&#39;\n&#39;</code> 算进去了的，但是 <code>input()</code> 获取输入时，返回的结果是不包含末尾的换行符 <code>&#39;\n&#39;</code> 的。</p>
+<p>因此如果在平时使用 <code>sys.stdin.readline()</code> 获取输入的话，不要忘了去掉末尾的换行符，可以用 <code>strip()</code> 函数（<code>sys.stdin.readline( ).strip(&#39;\n&#39;)</code>）或 <code>sys.stdin.readline()[:-1]</code> 这两种方法去掉换行。</p>
+<pre><code class="python">import sys 
+v1 = input()
+v2 = sys.stdin.readline()
+print(len(v1))
+print(len(v2))
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6ed65e118e696bec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3-从控制台重定向到文件"><a href="#3-从控制台重定向到文件" class="headerlink" title="3. 从控制台重定向到文件"></a>3. 从控制台重定向到文件</h2><p>原始的 <code>sys.stdout</code> 指向控制台，如果把文件的对象引用赋给 <code>sys.stdout</code>，那么 <code>print</code> 调用的就是文件对象的 <code>write</code> 方法。</p>
+<h1 id="glob"><a href="#glob" class="headerlink" title="glob"></a><code>glob</code></h1><p>文件名模式匹配，不用遍历整个目录判断每个文件是不是符合。</p>
+<h2 id="1-通配符"><a href="#1-通配符" class="headerlink" title="1. 通配符"></a>1. 通配符</h2><p>星号（<code>*</code>）匹配零个或多个字符。</p>
+<pre><code class="python">import glob
+
+for name in glob.glob(&#39;dir/*&#39;)
+    print(name)
+
+# dir/file.txt
+# dir/file1.txt
+# dir/file2.txt
+# dir/filea.txt
+# dir/fileb.txt
+# dir/subdir
+</code></pre>
+<p>列出子目录中的文件，必须在模式中包括子目录名：</p>
+<pre><code class="python">import glob
+
+# 用子目录查询文件
+print(&#39;Named explicitly:&#39;)
+for name in glob.glob(&#39;dir/subdir/*&#39;):
+    print(&#39;\t&#39;, name)
+
+# 用通配符*代替子目录名
+print(&#39;Named with wildcard:&#39;)
+for name in glob.glob(&#39;dir/*/*&#39;):
+    print (&#39;\t&#39;, name)
+
+# Named explicitly:
+#         dir/subdir/subfile.txt
+# Named with wildcard:
+#        dir/subdir/subfile.txt
+
+</code></pre>
+<h2 id="2-单个字符通配符"><a href="#2-单个字符通配符" class="headerlink" title="2. 单个字符通配符"></a>2. 单个字符通配符</h2><p>用问号（<code>?</code>）匹配任何单个的字符。</p>
+<pre><code class="python">for name in glob.glob(&#39;dir/file?.txt&#39;):
+    print(name)
+
+# dir/file1.txt
+# dir/file2.txt
+# dir/filea.txt
+# dir/fileb.txt
+</code></pre>
+<h2 id="3-字符范围"><a href="#3-字符范围" class="headerlink" title="3. 字符范围"></a>3. 字符范围</h2><p>当需要匹配一个特定的字符，可以使用一个范围。</p>
+<pre><code class="python">for name in glob.glob(&#39;dir/*[0-9].*&#39;):
+    print(name)
+
+# dir/file1.txt
+# dir/file2.txt
+</code></pre>
+<h1 id="Numpy-random-shuffle-VS-Numpy-random-permutation"><a href="#Numpy-random-shuffle-VS-Numpy-random-permutation" class="headerlink" title="Numpy.random.shuffle VS Numpy.random.permutation"></a><code>Numpy.random.shuffle</code> VS <code>Numpy.random.permutation</code></h1><p><code>shuffle</code> 与 <code>permutation</code> 都是对原来的数组进行重新洗牌（即随机打乱原来的元素顺序）。</p>
+<p>区别在于：</p>
+<ul>
+<li><code>shuffle</code>：直接在原来的数组上进行操作，改变原来数组的顺序，无返回值。</li>
+<li><code>permutation</code>：不直接在原来的数组上进行操作，而是返回一个新的打乱顺序的数组，并不改变原来的数组。</li>
+</ul>
+<p>例子：</p>
+<pre><code class="python">a = np.arange(12)
+print(a)
+print(&#39;\n&#39;)
+
+np.random.shuffle(a)
+print(a)
+print(&#39;\n&#39;)
+
+a = np.arange(12)
+print(a)
+print(&#39;\n&#39;)
+
+b = np.random.permutation(a)
+print(b)
+print(a)
+
+# [ 0  1  2  3  4  5  6  7  8  9 10 11]
+
+# [ 3  1 10  4  2 11  0  9  6  5  7  8]
+
+# [ 0  1  2  3  4  5  6  7  8  9 10 11]
+
+# [ 7  0  4  1  9  5  2 10 11  6  8  3]
+# [ 0  1  2  3  4  5  6  7  8  9 10 11]
+</code></pre>
+<h1 id="np-load"><a href="#np-load" class="headerlink" title="np.load"></a><code>np.load</code></h1><pre><code class="python">numpy.load(file, 
+           mmap_mode=None, 
+           allow_pickle=True, 
+           fix_imports=True, 
+           encoding=&#39;ASCII&#39;)
+</code></pre>
+<p>返回：<code>array</code>，<code>tuple</code> 或者 <code>dict</code>。</p>
+<p>例子：</p>
+<pre><code class="python">np.load(vgg16_npy_path, encoding=&#39;latin1&#39;).item()
+&#39;&#39;&#39;
+np.load(vgg16_npy_path, encoding=&#39;latin1&#39;)是一个dict类型，将其转换为（key，value）形式
+&#39;&#39;&#39;
+</code></pre>
+<p><code>numpy</code> 提供了便捷的内部文件存取，将数据存为<code>np</code> 专用的 <code>npy</code>（二进制格式）或 <code>npz</code>（压缩打包格式）格式。</p>
+<p>对各个格式文件的存取如下：</p>
+<ul>
+<li><code>np</code> 格式：<code>np.save</code>，<code>np.load</code></li>
+<li><code>znp</code> 格式：<code>np.savez</code>，<code>np.load</code></li>
+<li><code>csv</code> 文件：<code>np.savetxt</code>，<code>np.loadtxt</code></li>
+</ul>
+<h1 id="切片操作"><a href="#切片操作" class="headerlink" title="切片操作"></a>切片操作</h1><pre><code class="python">a=&#39;Python&#39;
+b=a[::-1]
+print(b) #nohtyp
+c=a[::-2]
+print(c) #nhy
+#从后往前数的话，最后一个位置为-1
+d=a[:-1]  #从位置0到位置-1之前的数
+print(d)  #pytho
+e=a[:-2]  #从位置0到位置-2之前的数
+print(e)  #pyth
+</code></pre>
+<h2 id="用法说明"><a href="#用法说明" class="headerlink" title="用法说明"></a>用法说明</h2><pre><code class="python">b = a[i:j]   # 表示复制a[i]到a[j-1]，以生成新的list对象
+
+a = [0,1,2,3,4,5,6,7,8,9]
+b = a[1:3]   # [1,2]
+&#39;&#39;&#39;
+当i缺省时，默认为0，即 a[:3]相当于 a[0:3]
+当j缺省时，默认为len(alist), 即a[1:]相当于a[1:10]
+当i,j都缺省时，a[:]就相当于完整复制一份a
+&#39;&#39;&#39;
+
+b = a[i:j:s]表示：i,j与上面的一样，但s表示步进，缺省为1.
+&#39;&#39;&#39;
+所以a[i:j:1]相当于a[i:j]
+当s&lt;0时，i缺省时，默认为-1. j缺省时，默认为-len(a)-1
+
+所以a[::-1]相当于 a[-1:-len(a)-1:-1]，也就是从最后一个元素到第一个元素复制一遍，即倒序。
+&#39;&#39;&#39;
+</code></pre>
+<h1 id="Python-带-的变量或函数命名"><a href="#Python-带-的变量或函数命名" class="headerlink" title="Python 带 _ 的变量或函数命名"></a>Python 带 <code>_</code> 的变量或函数命名</h1><p>Python 中的标识符可以包含数字、字母和 <code>_</code>，但必须以字母或者 <code>_</code> 开头，其中以 <code>_</code> 开头的命名一般具有特殊的意义。</p>
+<h2 id="1-前后均带有双下划线-的命名"><a href="#1-前后均带有双下划线-的命名" class="headerlink" title="1. 前后均带有双下划线 __ 的命名"></a>1. 前后均带有双下划线 <code>__</code> 的命名</h2><p>一般用于特殊方法的命名，用来实现对象的一些行为或者功能，比如 <code>__new__()</code> 方法用来创建实例，<code>__init__()</code> 方法用来初始化对象，<code>x + y</code> 操作被映射为方法 <code>x.__add__(y)</code>，序列或者字典的索引操作 <code>x[k]</code> 映射为 <code>x.__getitem__(k)</code>，<code>__len__()</code>、<code>__str__()</code> 分别被内置函数 <code>len()</code>、<code>str()</code> 调用等等。</p>
+<h2 id="2-仅开头带双下划线-的命名"><a href="#2-仅开头带双下划线-的命名" class="headerlink" title="2. 仅开头带双下划线 __ 的命名"></a>2. 仅开头带双下划线 <code>__</code> 的命名</h2><p>用于对象的数据封装，以此命名的属性或者方法为类的私有属性或者私有方法。</p>
+<pre><code class="python">`class` `Foo(``object``):``    ``def` `__init__(``self``):``        ``self``.__name ``=` `&#39;private name&#39;` `    ``def` `getname(``self``):``        ``return` `self``.__name` `    ``def` `__spam(``self``):``        ``print` `&#39;private method&#39;` `    ``def` `bar(``self``):``        ``self``.__spam()`
+</code></pre>
+<p>在外部直接访问私有属性或者方法是不可行的，这就起到了隐藏数据的作用：</p>
+<pre><code class="python">`&gt;&gt;&gt; f ``=` `Foo()``&gt;&gt;&gt; f.__name` `Traceback (most recent call last):``  ``File` `&quot;&lt;pyshell#1&gt;&quot;``, line ``1``, ``in` `&lt;module&gt;``    ``f.__name``AttributeError: ``&#39;Foo&#39;` `object` `has no attribute ``&#39;__name&#39;``&gt;&gt;&gt; f.__spam()` `Traceback (most recent call last):``  ``File` `&quot;&lt;pyshell#2&gt;&quot;``, line ``1``, ``in` `&lt;module&gt;``    ``f.__spam()``AttributeError: ``&#39;Foo&#39;` `object` `has no attribute ``&#39;__spam&#39;`
+</code></pre>
+<p>但是这种实现机制并不是很严格，机制是通过自动”变形”实现的，类中所有以双下划线开头的名称 <code>__name</code> 都会自动变为 <code>_类名__name</code> 的新名称：</p>
+<pre><code class="python">`&gt;&gt;&gt; f._Foo__name``&#39;private name&#39;``&gt;&gt;&gt; f._Foo__spam()``private method`
+</code></pre>
+<p>这样就可以访问了。这种机制可以阻止继承类重新定义或者更改方法的实现，比如，定义一个 <code>Foo</code> 的派生类：</p>
+<pre><code class="python">`class` `Goo(Foo):``    ``def` `__spam(``self``):``        ``print` `&#39;private method of Goo&#39;`
+</code></pre>
+<p>重写了 <code>__spam</code> 方法，运行：</p>
+<pre><code class="python">`&gt;&gt;&gt; g ``=` `Goo()``&gt;&gt;&gt; g.bar()``private method`
+</code></pre>
+<p>调用 <code>bar()</code> 方法的时候依然执行的是 <code>Foo</code> 类的 <code>__spam()</code> 方法，因为在 <code>bar()</code> 方法的实现中，<code>self.__spam()</code> 已自动变形为 <code>self._Foo__spam()</code>，<code>Goo</code> 继承的 <code>bar()</code> 方法也是如此。</p>
+<h2 id="3-以单下划线-开头的命名"><a href="#3-以单下划线-开头的命名" class="headerlink" title="3. 以单下划线 _ 开头的命名"></a>3. 以单下划线 <code>_</code> 开头的命名</h2><p>一般用于模块中的”私有”定义的命名。<code>from module import *</code> 语句用于加载模块中的所有名称，要控制导入的名称，一种方法是定义列表 <code>__all__</code>，只有在 <code>__all__</code> 中的名称才能通过 <code>*</code> 导入；另一种方法就是以单下划线开头命名定义了，这种定义不会被 <code>*</code> 导入。</p>
+<p>当然，在类中也可以用单下划线开头来命名属性或者方法，这只是表示类的定义者希望这些属性或者方法是”私有的”，但实际上并不会起任何作用。</p>
+<h1 id="tarfile-模块"><a href="#tarfile-模块" class="headerlink" title="tarfile 模块"></a><code>tarfile</code> 模块</h1><h2 id="1-打包及重命名文件"><a href="#1-打包及重命名文件" class="headerlink" title="1. 打包及重命名文件"></a>1. 打包及重命名文件</h2><pre><code class="python">import tarfile
+# 以w模式创建文件
+tar = tarfile.open(&#39;tar_file.tar&#39;,&#39;w&#39;)
+# 添加一个文件，arcname可以重命名文件
+tar.add(&#39;/tmp/folder/file.txt&#39;, arcname=&#39;file.log&#39;)
+# 添加一个目录
+tar.add(&#39;/tmp/folder/tmp&#39;)                         
+# 关闭
+tar.close()
+</code></pre>
+<h2 id="2-查看文件列表"><a href="#2-查看文件列表" class="headerlink" title="2. 查看文件列表"></a>2. 查看文件列表</h2><pre><code class="python">tar = tarfile.open(&#39;tar_file.tar&#39;,&#39;r&#39;)             
+# 获取包内的所有文件列表
+tar.getmembers()
+[&lt;TarInfo &#39;file.log&#39; at 0x7f737af2da70&gt;, &lt;TarInfo &#39;tmp/folder/tmp&#39; at 0x7f737af2dd90&gt;]
+</code></pre>
+<h2 id="3-追加"><a href="#3-追加" class="headerlink" title="3. 追加"></a>3. 追加</h2><pre><code class="python"># 以a模式创建文件
+tar = tarfile.open(&#39;tar_file.tar&#39;,&#39;a&#39;)
+tar.add(&#39;/tmp/folder/sc.pyc&#39;)
+tar.close()
+tar = tarfile.open(&#39;tar_file.tar&#39;,&#39;r&#39;)
+tar.getmembers()
+[&lt;TarInfo &#39;file.log&#39; at 0x7ff8d4fa1110&gt;, &lt;TarInfo &#39;tmp/folder/tmp&#39; at 0x7ff8d4fa11d8&gt;, &lt;TarInfo &#39;tmp/folder/sc.pyc&#39; at 0x7ff8d4fa12a0&gt;]
+</code></pre>
+<h2 id="4-解压全部文件"><a href="#4-解压全部文件" class="headerlink" title="4. 解压全部文件"></a>4. 解压全部文件</h2><pre><code class="python">import tarfile
+tar = tarfile.open(&#39;tar_file.tar&#39;,&#39;r&#39;)
+tar.extractall()
+tar.close()
+</code></pre>
+<h2 id="5-解压单个文件"><a href="#5-解压单个文件" class="headerlink" title="5. 解压单个文件"></a>5. 解压单个文件</h2><p>如果我们的压缩包很大的情况下，就不能够一次性解压了，那样太耗内存了，可以通过下面的方式进行解压，其原理就是一个文件一个文件的解压。</p>
+<pre><code class="python">import tarfile
+tar = tarfile.open(&#39;tar_file.tar&#39;,&#39;r&#39;)
+for n in tar.getmembers():
+    tar.extract(n,&quot;/tmp&quot;)
+tar.close()
+</code></pre>
+<h2 id="6-压缩一个文件夹下的所有文件"><a href="#6-压缩一个文件夹下的所有文件" class="headerlink" title="6. 压缩一个文件夹下的所有文件"></a>6. 压缩一个文件夹下的所有文件</h2><pre><code class="python">#coding=utf8  
+import os  
+import tarfile  
+
+__author__ = &#39;Administrator&#39;  
+
+def main():  
+    cwd = os.getcwd()  
+    tar = tarfile.open(&#39;test.tar&#39;,&#39;w:gz&#39;)  
+    for root ,dir,files in os.walk(cwd):  
+        for file in files:  
+            fullpath = os.path.join(root,file)  
+            tar.add(fullpath)  
+
+if __name__==&#39;__main__&#39;:  
+    main()  
+</code></pre>
+<h1 id="urllib-模块"><a href="#urllib-模块" class="headerlink" title="urllib 模块"></a><code>urllib</code> 模块</h1><h3 id="1-urllib-urlopen-url-data-proxies"><a href="#1-urllib-urlopen-url-data-proxies" class="headerlink" title="1. urllib.urlopen(url[,data[,proxies]])"></a>1. <code>urllib.urlopen(url[,data[,proxies]])</code></h3><p>打开一个 <code>url</code> 的方法，返回一个文件对象，然后可以进行类似文件对象的操作。【注意】对于 Python3.X，应该用 <code>urllib.request</code>，否则话会报错：<code>AttributeError: module &#39;urllib&#39; has no attribute &#39;urlopen&#39;</code>。</p>
+<pre><code class="python"># 本例试着打开 baidu
+import urllib.request
+
+f = urllib.request.urlopen(&#39;http://www.baidu.com/&#39;)
+first_line = f.readline()
+print(first_line)
+
+# b&#39;&lt;!DOCTYPE html&gt;\n&#39;
+</code></pre>
+<p><code>urlopen</code> 返回对象提供方法：</p>
+<ul>
+<li><code>read()</code>，<code>readline()</code>，<code>readlines()</code>，<code>fileno()</code>，<code>close()</code>：这些方法的使用方式与文件对象完全一样</li>
+<li><code>info()</code>：返回一个 <code>httplib.HTTPMessage</code> 对象，表示远程服务器返回的头信息</li>
+<li><code>getcode()</code>：返回 Http 状态码。如果是 http 请求，<code>200</code> 请求成功完成；<code>404</code> 网址未找到</li>
+<li><code>geturl()</code>：返回请求的 <code>url</code></li>
+</ul>
+<h3 id="2-urllib-urlretrieve-url-filename-reporthook-data"><a href="#2-urllib-urlretrieve-url-filename-reporthook-data" class="headerlink" title="2. urllib.urlretrieve(url[,filename[,reporthook[,data]]])"></a>2. <code>urllib.urlretrieve(url[,filename[,reporthook[,data]]])</code></h3><p>将 <code>url</code> 定位到的 html 文件下载到你本地的硬盘中。如果不指定 <code>filename</code>，则会存为临时文件。</p>
+<p><code>urlretrieve()</code> 返回一个二元组 <code>(filename, mine_hdrs)</code>。【注意】：Python2 与 Python3 的 <code>urllib</code> 不同在与 Python3 要加上 <code>.request</code>。</p>
+<p><strong>临时存放：</strong></p>
+<pre><code class="python">import urllib.request
+
+f = urllib.request.urlretrieve(&#39;https://www.baidu.com/&#39;)
+print(type(f))
+# &lt;class &#39;tuple&#39;&gt;
+
+print(f[0])
+# C:\Users\MAGICM~1\AppData\Local\Temp\tmp32cx296x
+
+print(f[1])
+# Accept-Ranges: bytes
+# Cache-Control: no-cache
+# Content-Length: 227
+# Content-Type: text/html
+# Date: Sat, 02 Mar 2019 13:58:32 GMT
+# Etag: &quot;5c73a860-e3&quot;
+# Last-Modified: Mon, 25 Feb 2019 08:33:36 GMT
+# P3p: CP=&quot; OTI DSP COR IVA OUR IND COM &quot;
+# Pragma: no-cache
+# Server: BWS/1.1
+# Set-Cookie: BD_NOT_HTTPS=1; path=/; Max-Age=300
+# Set-Cookie: BIDUPSID=66D7A90F912A514E83F04FC1CA386389; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+# Set-Cookie: PSTM=1551535112; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com
+# Strict-Transport-Security: max-age=0
+# X-Ua-Compatible: IE=Edge,chrome=1
+# Connection: close
+</code></pre>
+<p><strong>存为本地文件:</strong></p>
+<pre><code class="python">&gt;&gt;&gt; filename = urllib.request.urlretrieve(&#39;http://www.google.com.hk/&#39;,filename=&#39;/home/dzhwen/Python文件/Homework/urllib/google.html&#39;)
+&gt;&gt;&gt; type(filename)
+&lt;type &#39;tuple&#39;&gt;
+&gt;&gt;&gt; filename[0]
+&#39;/home/dzhwen/Python\xe6\x96\x87\xe4\xbb\xb6/Homework/urllib/google.html&#39;
+&gt;&gt;&gt; filename[1]
+&lt;httplib.HTTPMessage instance at 0xb6e2c38c&gt;
+</code></pre>
+<h3 id="3-urllib-urlcleanup"><a href="#3-urllib-urlcleanup" class="headerlink" title="3. urllib.urlcleanup()"></a>3. <code>urllib.urlcleanup()</code></h3><p>清除由于 <code>urllib.urlretrieve()</code> 所产生的缓存。</p>
+<h3 id="4-urllib-quote-url-和-urllib-quote-plus-url"><a href="#4-urllib-quote-url-和-urllib-quote-plus-url" class="headerlink" title="4. urllib.quote(url) 和 urllib.quote_plus(url)"></a>4. <code>urllib.quote(url)</code> 和 <code>urllib.quote_plus(url)</code></h3><p>将 <code>url</code> 数据获取之后，并将其编码，从而适用与 <code>url</code> 字符串中，使其能被打印和被 WEB 服务器接受。</p>
+<pre><code class="python">import urllib.request
+
+print(urllib.request.quote(&#39;http://www.baidu.com&#39;))
+# http%3A//www.baidu.com
+</code></pre>
+<h3 id="5-urllib-unquote-url-和-urllib-unquote-plus-url"><a href="#5-urllib-unquote-url-和-urllib-unquote-plus-url" class="headerlink" title="5. urllib.unquote(url) 和 urllib.unquote_plus(url)"></a>5. <code>urllib.unquote(url)</code> 和 <code>urllib.unquote_plus(url)</code></h3><p>与 4 的函数相反。</p>
+<h3 id="6-urllib-urlencode-query"><a href="#6-urllib-urlencode-query" class="headerlink" title="6. urllib.urlencode(query)"></a>6. <code>urllib.urlencode(query)</code></h3><p>将 <code>url</code> 中的键值对以连接符 <code>&amp;</code> 划分，这里可以与 <code>urlopen</code> 结合以实现 <code>post</code> 方法和 <code>get</code> 方法（【注意】：Python3 中的需要这样调用：<code>urllib.parse.urlencode</code>）：</p>
+<p><strong><code>GET</code> 方法：</strong></p>
+<pre><code class="python">import urllib.request
+
+
+params = urllib.parse.urlencode({&#39;spam&#39;:1,&#39;eggs&#39;:2,&#39;bacon&#39;:0})
+print(params)
+# spam=1&amp;eggs=2&amp;bacon=0
+</code></pre>
+<p><strong><code>POST</code> 方法：</strong></p>
+<pre><code class="python">import urllib.request
+
+parmas = urllib.parse.urlencode({&#39;about&#39;:1, &#39;quotes&#39;:2})
+f = urllib.request.urlopen(&quot;http://Python.org&quot;, parmas)
+print(f.read())
+</code></pre>
+<h1 id="cPickle"><a href="#cPickle" class="headerlink" title="cPickle"></a><code>cPickle</code></h1><p>在 Python 中，一般可以使用 <code>pickle</code> 类来进行 Python 对象的序列化，而 <code>cPickle</code> 提供了一个更快速简单的接口，如 Python 文档所说的：“<code>cPickle</code> – A faster <code>pickle</code>”。</p>
+<p><code>cPickle</code> 可以对任意一种类型的 Python 对象进行序列化操作，比如 <code>list</code>，<code>dict</code>，甚至是一个类的对象等。而所谓的序列化，就是为了能够完整的保存并能够完全可逆的恢复。在 <code>cPickle</code> 中，主要有四个函数可以做这一工作。 </p>
+<h2 id="1-dump：-将-Python-对象序列化保存到本地的文件"><a href="#1-dump：-将-Python-对象序列化保存到本地的文件" class="headerlink" title="1. dump： 将 Python 对象序列化保存到本地的文件"></a>1. <code>dump</code>： 将 Python 对象序列化保存到本地的文件</h2><pre><code class="python">import cPickle
+
+data = range(1000)
+cPickle.dump(data,open(&quot;test\\data.pkl&quot;,&quot;wb&quot;))
+</code></pre>
+<p><code>dump</code> 函数需要指定两个参数，第一个是需要序列化的 Python 对象名称，第二个是本地的文件。需要注意的是，在这里需要使用 <code>open</code> 函数打开一个文件，并指定“写”操作 。</p>
+<h2 id="2-load：载入本地文件，恢复-Python-对象"><a href="#2-load：载入本地文件，恢复-Python-对象" class="headerlink" title="2. load：载入本地文件，恢复 Python 对象"></a>2. <code>load</code>：载入本地文件，恢复 Python 对象</h2><pre><code class="python">data = cPickle.load(open(&quot;test\\data.pkl&quot;,&quot;rb&quot;)) 
+</code></pre>
+<p>同 <code>dump</code> 一样，这里需要使用 <code>open</code> 函数打开本地的一个文件，并指定“读”操作。</p>
+<h2 id="3-dumps：将-Python-对象序列化保存到一个字符串变量中"><a href="#3-dumps：将-Python-对象序列化保存到一个字符串变量中" class="headerlink" title="3. dumps：将 Python 对象序列化保存到一个字符串变量中"></a>3. <code>dumps</code>：将 Python 对象序列化保存到一个字符串变量中</h2><pre><code class="python">data_string = cPickle.dumps(data)
+</code></pre>
+<h2 id="4-loads：从字符串变量中载入-Python-对象"><a href="#4-loads：从字符串变量中载入-Python-对象" class="headerlink" title="4. loads：从字符串变量中载入 Python 对象"></a>4. <code>loads</code>：从字符串变量中载入 Python 对象</h2><pre><code class="python">data = cPickle.loads(data_string)
+</code></pre>
+<h2 id="5-pickle-模块使用的数据格式是-Python-专用的，并且不同版本不向后兼容，同时也不能被其他语言说识别。要和其他语言交互，可以使用内置的-json-包"><a href="#5-pickle-模块使用的数据格式是-Python-专用的，并且不同版本不向后兼容，同时也不能被其他语言说识别。要和其他语言交互，可以使用内置的-json-包" class="headerlink" title="5. pickle 模块使用的数据格式是 Python 专用的，并且不同版本不向后兼容，同时也不能被其他语言说识别。要和其他语言交互，可以使用内置的 json 包"></a>5. <code>pickle</code> 模块使用的数据格式是 Python 专用的，并且不同版本不向后兼容，同时也不能被其他语言说识别。要和其他语言交互，可以使用内置的 <code>json</code> 包</h2><p>使用 <code>pickle</code> 模块你可以把 Python 对象直接保存到文件，而不需要把它们转化为字符串，也不用底层的文件访问操作把它们写入到一个二进制文件里。 <code>pickle</code> 模块会创建一个 Python 语言专用的二进制格式，基本上不用考虑任何文件细节，它会帮你干净利落地完成读写独享操作，唯一需要的只是一个 合法的文件句柄。</p>
+<p><code>pickle</code> 模块中的两个主要函数是 <code>dump()</code> 和 <code>load()</code>。<code>dump()</code> 函数接受一个文件句柄和一个数据对象作为参数，把数据对象以特定的格式保存 到给定的文件中。当使用 <code>load()</code> 函数从文件中取出已保存的对象时，<code>pickle</code> 知道如何恢复这些对象到它们本来的格式。</p>
+<p><code>dumps()</code> 函数执行和 <code>dump()</code> 函数相同的序列化。取代接受流对象并将序列化后的数据保存到磁盘文件，这个函数简单的返回序列化的数据。</p>
+<p><code>loads()</code> 函数执行和 <code>load()</code> 函数一样的反序列化。取代接受一个流对象并去文件读取序列化后的数据，它接受包含序列化后的数据的 <code>str</code> 对象, 直接返回的对象。</p>
+<p><code>cPickle</code> 是 <code>pickle</code> 得一个更快得 C 语言编译版本。<code>pickle</code> 和 <code>cPickle</code> 相当于 Java 的序列化和反序列化操作。</p>
+<pre><code class="python">if __name__ == &quot;__main__&quot;:
+    import cPickle
+
+#序列化到文件
+obj = 123,&quot;abcdedf&quot;,[&quot;ac&quot;,123],{&quot;key&quot;:&quot;value&quot;,&quot;key1&quot;:&quot;value1&quot;}
+print(obj)
+# 输出：(123, &#39;abcdedf&#39;, [&#39;ac&#39;, 123], {&#39;key1&#39;: &#39;value1&#39;, &#39;key&#39;: &#39;value&#39;})
+# r+ 读写权限 r+b 读写到二进制文件
+
+f = open(r&quot;d:\a.txt&quot;,&quot;r+&quot;)
+cPickle.dump(obj,f)
+f.close()
+f = open(r&quot;d:\a.txt&quot;)
+print(cPickle.load(f))
+# 输出：(123, &#39;abcdedf&#39;, [&#39;ac&#39;, 123], {&#39;key1&#39;: &#39;value1&#39;, &#39;key&#39;: &#39;value&#39;})
+
+# 序列化到内存（字符串格式保存），然后对象可以以任何方式处理如通过网络传输
+obj1 = cPickle.dumps(obj)
+print(type(obj1))
+#输出：&lt;type &#39;str&#39;&gt;
+print(obj1)
+# 输出：Python专用的存储格式
+
+obj2 = cPickle.loads(obj1)
+print(type(obj2))
+# 输出：&lt;type &#39;tuple&#39;&gt;
+
+print(obj2)
+#输出：(123, &#39;abcdedf&#39;, [&#39;ac&#39;, 123], {&#39;key1&#39;: &#39;value1&#39;, &#39;key&#39;: &#39;value&#39;})
+</code></pre>
+<h1 id="np-concatenate-函数"><a href="#np-concatenate-函数" class="headerlink" title="np.concatenate 函数"></a><code>np.concatenate</code> 函数</h1><pre><code class="python">numpy.concatenate((a1, a2, ...), axis=0)
+</code></pre>
+<p>Join a sequence of arrays along an existing <code>axis</code>.（按轴 <code>axis</code> 连接 <code>array</code> 组成一个新的 <code>array</code>）。</p>
+<p>The arrays must have the same shape, except in the dimension corresponding to <code>axis</code>，<code>axis</code>：default is <code>0</code>。</p>
+<pre><code class="python">a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6]])              # b是一个二维array
+np.concatenate((a, b), axis=0)
+# array([[1, 2],
+#       [3, 4],
+#       [5, 6]])
+
+np.concatenate((a, b.T), axis=1)
+
+# array([[1, 2, 5],
+#       [3, 4, 6]])
+
+
+b = np.array([[5,6]]) 　　　　　# 可以看出b是二维的不是一维的
+print(b.shape)
+# (1, 2)
+
+b = np.array([5,6])
+print(b.shape)
+# (2,)
+</code></pre>
+<p>更普通的例子：</p>
+<pre><code class="python">a = np.array([[1, 2], [3, 4]])　　　　　　　　　　　　　　　　# a、b的shape为（2,2），连接第一维就变成（4,2），连接第二维就变成（2,4）
+b = np.array([[5, 6], [7, 8]])
+np.concatenate((a,b),axis=0)
+# array([[1, 2],
+#        [3, 4],
+#        [5, 6],
+#        [7, 8]])
+
+np.concatenate((a,b),axis=1)
+# array([[1, 2, 5, 6],
+#        [3, 4, 7, 8]])
+
+c = np.concatenate((a,b),axis=1)
+# array([[1, 2, 5, 6],
+#        [3, 4, 7, 8]])
+
+print(c.shape)
+# (2, 4)
+</code></pre>
+<p><code>concatenate([a, b])</code> 连接，连接后 <code>ndim</code> 不变，<code>a</code> 和 <code>b</code> 可以有一维 <code>size</code> 不同，但 <code>size</code> 不同的维度必须是要连接的维度。</p>
+<p>例如，<code>a.shape</code> 为 <code>(4,5,6,10)</code>，<code>b.shape</code> 为 <code>(4,5,6,20)</code>。</p>
+<pre><code class="python">np.concatenate([a,b], axis=3) 
+# 返回张量的shape为(4,5,6,30)
+</code></pre>
+<pre><code class="python">a=np.array([1,2,3])
+b=np.array([11,22,33])
+c=np.array([44,55,66])
+np.concatenate((a,b,c),axis=0)  
+# array([ 1,  2,  3, 11, 22, 33, 44, 55, 66]) 
+</code></pre>
+<h1 id="Numpy数字转置的三种转置方法"><a href="#Numpy数字转置的三种转置方法" class="headerlink" title="Numpy数字转置的三种转置方法"></a><code>Numpy</code>数字转置的三种转置方法</h1><h2 id="1-数组转置-T"><a href="#1-数组转置-T" class="headerlink" title="1. 数组转置 T"></a>1. 数组转置 <code>T</code></h2><p>创建二维数组 <code>data</code> 如下：</p>
+<pre><code class="python">import numpy as np
+data = np.arange(10).reshpe(2, 5)
+print(data)
+# [[0 1 2 3 4]
+# [5 6 7 8 9]]
+
+print(data.T)
+# [[0 5]
+#  [1 6]
+#  [2 7]
+#  [3 8]
+#  [4 9]]
+</code></pre>
+<h2 id="2-轴对换之-transpose"><a href="#2-轴对换之-transpose" class="headerlink" title="2. 轴对换之 transpose"></a>2. 轴对换之 <code>transpose</code></h2><p>对于高维数组，可以使用轴对换来对多个维度进行变换。</p>
+<pre><code class="python">data = np.arange(24).reshape(2, 3, 4)
+print(data)
+
+# [[[ 0  1  2  3]
+#   [ 4  5  6  7]
+#   [ 8  9 10 11]]
+
+#  [[12 13 14 15]
+#   [16 17 18 19]
+#   [20 21 22 23]]]
+
+print(data.transpose(1, 0 , 2))
+# [[[ 0  1  2  3]
+#   [12 13 14 15]]
+
+#  [[ 4  5  6  7]
+#   [16 17 18 19]]
+
+#  [[ 8  9 10 11]
+#   [20 21 22 23]]]
+</code></pre>
+<p><code>transpose</code> 进行的操作其实是将各个维度重置，原来 <code>(2,3,4)</code> 对应的是 <code>(0,1,2)</code>。使用 <code>transpose(1,0,2)</code> 后，各个维度大小变为 <code>(3,2,4)</code>，其实就是将第一维和第二维互换。</p>
+<p>对于这个三维数组，转置T其实就等价于 <code>transpose(2,1,0)</code>，如下：</p>
+<pre><code class="python">print(data.transpose(2, 1, 0))
+# [[[ 0 12]
+#   [ 4 16]
+#   [ 8 20]]
+
+#  [[ 1 13]
+#   [ 5 17]
+#   [ 9 21]]
+
+#  [[ 2 14]
+#   [ 6 18]
+#   [10 22]]
+
+#  [[ 3 15]
+#   [ 7 19]
+#   [11 23]]]
+</code></pre>
+<h2 id="3-两轴对换-swapaxes"><a href="#3-两轴对换-swapaxes" class="headerlink" title="3. 两轴对换 swapaxes"></a>3. 两轴对换 <code>swapaxes</code></h2><p><code>swapaxes</code> 方法接受的参数是一对轴编号，使用 <code>transpose</code> 方法是对整个轴进行对换，而 <code>swapaxes</code> 是将参数的两个轴进行对换。</p>
+<p>刚刚上面的 <code>transpose(1,0,2)</code>，实际上就是将 <code>0</code> 和 <code>1</code> 轴进行对换，因此使用 <code>swapaxes</code> 也可以实现，如下：</p>
+<pre><code class="python">print(data.swapaxes(0, 1))
+
+# [[[ 0  1  2  3]
+#   [12 13 14 15]]
+
+#  [[ 4  5  6  7]
+#   [16 17 18 19]]
+
+#  [[ 8  9 10 11]
+#   [20 21 22 23]]]
+</code></pre>
+<h1 id="reshape"><a href="#reshape" class="headerlink" title="reshape"></a><code>reshape</code></h1><p>参数：</p>
+<ul>
+<li><code>a</code>：数组—需要处理的数据。</li>
+<li><code>newshape</code>：新的格式—整数或整数数组，如 <code>(2,3)</code> 表示 <code>2</code> 行 <code>3</code> 列。新的形状应该与原来的形状兼容，即行数和列数相乘后等于 <code>a</code> 中元素的数量。如果是整数，则结果将是长度的一维数组，所以这个整数必须等于 <code>a</code> 中元素数量。<strong>若这里是一个整数数组，那么其中一个数据可以为 <code>-1</code></strong>。在这种情况下，这个个值 Python 会自动从根据第二个数值和剩余维度推断出来。</li>
+<li><code>order</code>：可选范围—<code>{&#39;C&#39;, &#39;F&#39;, &#39;A&#39;}</code>。使用索引顺序读取 <code>a</code> 的元素，并按照索引顺序将元素放到变换后的的数组中（如果不进行 <code>order</code> 参数的设置，默认为 <code>&#39;C&#39;</code>。）。<ul>
+<li><code>&#39;C&#39;</code> 指的是用类 C 写的读/索引顺序的元素，横着读，横着写，优先读/写一行。</li>
+<li><code>&#39;F&#39;</code> 是指用 FORTRAN 类索引顺序读/写元素，竖着读，竖着写，优先读/写一列。【注意，<code>&#39;C&#39;</code> 和 <code>&#39;F&#39;</code> 选项不考虑底层数组的内存布局，只引用索引的顺序】</li>
+<li><code>&#39;A&#39;</code> 竖着读，横着写。</li>
+</ul>
+</li>
+</ul>
+<p>示例（有两种使用方法，可以使用 <code>np.reshape(r, (-1,1), order=&#39;F&#39;)</code>，也可以使用 <code>r1 = p.reshape((-1,1), order=&#39;F&#39;)</code>）：</p>
+<pre><code class="python">import numpy as np
+
+r = np.arange(12)
+r1 = r
+r2 = r
+r3 = r
+r1 = r1.reshape((3,4), order=&#39;F&#39;)
+# print(r1)
+# [[ 0  3  6  9]
+#  [ 1  4  7 10]
+#  [ 2  5  8 11]]
+
+r2 = r2.reshape((3,4), order=&#39;A&#39;)
+# print(r2)
+# [[ 0  1  2  3]
+#  [ 4  5  6  7]
+#  [ 8  9 10 11]]
+
+r3 = r3.reshape((3,4), order=&#39;C&#39;)
+print(r3)
+# [[ 0  1  2  3]
+#  [ 4  5  6  7]
+#  [ 8  9 10 11]]
+</code></pre>
+<h1 id="随机抽样（numpy-random）"><a href="#随机抽样（numpy-random）" class="headerlink" title="随机抽样（numpy.random）"></a>随机抽样（<code>numpy.random</code>）</h1><h2 id="1-简单的随机数据"><a href="#1-简单的随机数据" class="headerlink" title="1. 简单的随机数据"></a>1. 简单的随机数据</h2><h3 id="1-1-rand-d0-d1-dn"><a href="#1-1-rand-d0-d1-dn" class="headerlink" title="1.1 rand(d0, d1, ..., dn)"></a>1.1 <code>rand(d0, d1, ..., dn)</code></h3><p>随机值</p>
+<pre><code class="python">np.random.rand(3,2)
+
+array([[ 0.14022471,  0.96360618],  #random
+       [ 0.37601032,  0.25528411],  #random
+       [ 0.49313049,  0.94909878]]) #random
+</code></pre>
+<h3 id="1-2-randn-d0-d1-dn"><a href="#1-2-randn-d0-d1-dn" class="headerlink" title="1.2 randn(d0, d1, ..., dn)"></a>1.2 <code>randn(d0, d1, ..., dn)</code></h3><p>返回一个样本，具有标准正态分布（期望为 <code>0</code>，方差为 <code>1</code> 的正态分布）。</p>
+<p>这个函数的作用就是从标准正态分布中返回一个或多个样本值。如果没有参数，则返回一个值，如果有参数，则返回 <code>(d0, d1, …, dn)</code> 个值，这些值都是从标准正态分布中随机取样得到的。</p>
+<p><code>d0, d1, …, dn</code> 都应该是整数，是浮点数也没关系，系统会自动把浮点数的整数部分截取出来。</p>
+<p>参数</p>
+<ul>
+<li><code>d0, d1, …, dn</code>：应该为正整数，表示维度。</li>
+</ul>
+<p>返回值</p>
+<ul>
+<li><code>Z</code>：<code>ndarray</code> 或者 <code>float</code>。</li>
+</ul>
+<p>如果想要从非标准正态分布中产生随机样本，例如下面这个正态分布：</p>
+<pre><code class="math">N(\mu, \sigma^2)
+</code></pre>
+<p>可以这样做：</p>
+<pre><code class="math">\sigma * np.random.randn(...) + \mu
+</code></pre>
+<p>例子：</p>
+<pre><code class="python">np.random.randn()
+# -0.8405297****8702
+
+2.5 * np.random.randn(2, 4) + 3
+# array([[ 4.128****53,  1.764****44 ,  2.732****92,  2.90839231],
+#        [0.174****86,  4.92026887,  1.574****66, -0.4305991 ]])
+</code></pre>
+<p>这个函数与 <code>numpy.random.standard_normal</code> 函数非常相似，但是调用方式不一样：</p>
+<pre><code class="python">numpy.random.standard_normal(size=None)
+</code></pre>
+<p><code>size</code> 参数就是一个整数或者一个整数的元组，表示维度。例子：</p>
+<pre><code class="python">np.random.standard_normal(8000)
+np.random.standard_normal(size=(3, 4, 2)）
+</code></pre>
+<h3 id="1-3-randint-low-high-size"><a href="#1-3-randint-low-high-size" class="headerlink" title="1.3 randint(low[, high, size])"></a>1.3 <code>randint(low[, high, size])</code></h3><p>返回随机的整数，位于半开区间 <code>[low, high)</code>。</p>
+<pre><code class="python">np.random.randint(2, size=10)
+# array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0])
+
+np.random.randint(1, size=10)
+# array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+</code></pre>
+<p>Generate a <code>2 x 4</code> array of int between <code>0</code> and <code>4</code>, inclusive:</p>
+<pre><code class="python">np.random.randint(5, size=(2, 4))
+#array([[4, 0, 2, 1],
+#       [3, 2, 2, 0]])
+</code></pre>
+<h3 id="1-4-random-integers-low-high-size"><a href="#1-4-random-integers-low-high-size" class="headerlink" title="1.4 random_integers(low[, high, size])"></a>1.4 <code>random_integers(low[, high, size])</code></h3><p>返回随机的整数，位于闭区间 <code>[low, high]</code>。</p>
+<p>To sample from <code>N</code> evenly spaced floating-point numbers between <code>a</code> and <code>b</code>, use:</p>
+<pre><code>a + (b - a) * (np.random.random_integers(N) - 1) / (N - 1.)
+</code></pre><p>例子：</p>
+<pre><code class="python">np.random.random_integers(5)
+# 4
+
+type(np.random.random_integers(5))
+# &lt;type &#39;int&#39;&gt;
+
+np.random.random_integers(5, size=(3., 2.))
+# array([[5, 4],
+#        [3, 3],
+#        [4, 5]])
+</code></pre>
+<p>Choose five random numbers from the set of five evenly-spaced numbers between <code>0</code> and <code>2.5</code>：</p>
+<pre><code class="python">2.5 * (np.random.random_integers(5, size=(5,)) - 1) / 4.
+# array([ 0.625,  1.25 ,  0.625,  0.625,  2.5  ])
+</code></pre>
+<p>Roll two six sided dice <code>1000</code> times and sum the results:</p>
+<pre><code class="python">d1 = np.random.random_integers(1, 6, 1000)
+d2 = np.random.random_integers(1, 6, 1000)
+dsums = d1 + d2
+</code></pre>
+<p>Display results as a histogram:</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+count, bins, ignored = plt.hist(dsums, 11, normed=True)
+plt.show()
+</code></pre>
+<h3 id="1-5-random-sample-size"><a href="#1-5-random-sample-size" class="headerlink" title="1.5 random_sample([size])"></a>1.5 <code>random_sample([size])</code></h3><p>返回随机的浮点数，在半开区间 <code>[0.0, 1.0)</code>。</p>
+<p>To sample multiply the output of <code>random_sample</code> by <code>(b-a)</code> and add <code>a</code>:</p>
+<pre><code class="python">(b - a) * random_sample() + a
+</code></pre>
+<p>例子：</p>
+<pre><code class="python">np.random.random_sample()
+# 0.47108547995356098
+
+type(np.random.random_sample())
+# &lt;type &#39;float&#39;&gt;
+
+np.random.random_sample((5,))
+# array([0.30220482, 0.86820401, 0.1654503, 0.11659149, 0.54323428])
+</code></pre>
+<p>Three-by-two array of random numbers from <code>[-5, 0)</code>：</p>
+<pre><code class="python">5 * np.random.random_sample((3, 2)) - 5
+# array([[-3.99149989, -0.52338984],
+#        [-2.99091858, -0.79479508],
+#        [-1.23204345, -1.75224494]])
+</code></pre>
+<h3 id="1-6-random-size"><a href="#1-6-random-size" class="headerlink" title="1.6 random([size])"></a>1.6 <code>random([size])</code></h3><p>返回随机的浮点数，在半开区间 <code>[0.0, 1.0)</code>。</p>
+<h3 id="1-7-ranf-size"><a href="#1-7-ranf-size" class="headerlink" title="1.7 ranf([size])"></a>1.7 <code>ranf([size])</code></h3><p>返回随机的浮点数，在半开区间 <code>[0.0, 1.0)</code>。</p>
+<h3 id="1-8-sample-size"><a href="#1-8-sample-size" class="headerlink" title="1.8 sample([size])"></a>1.8 <code>sample([size])</code></h3><p>返回随机的浮点数，在半开区间 <code>[0.0, 1.0)</code>。</p>
+<h3 id="1-9-choice-a-size-replace-p"><a href="#1-9-choice-a-size-replace-p" class="headerlink" title="1.9 choice(a[, size, replace, p])"></a>1.9 <code>choice(a[, size, replace, p])</code></h3><pre><code class="python">def choice(a, size=None, replace=True, p=None)
+</code></pre>
+<ul>
+<li>表示从 <code>a</code> 中随机选取 <code>size</code> 个数</li>
+<li><code>replace</code>：代表的意思是抽样之后还放不放回去，如果是 <code>False</code> 的话，那么通一次挑选出来的数都不一样，如果是 <code>True</code> 的话， 有可能会出现重复的，因为前面的抽的放回去了。</li>
+<li><code>p</code>：表示每个元素被抽取的概率，如果没有指定，<code>a</code> 中所有元素被选取的概率是相等的。</li>
+</ul>
+<p>例子：</p>
+<pre><code class="python">import numpy as np
+
+offset = np.random.choice(100, 1)
+print(type(offset))
+# &lt;class &#39;numpy.ndarray&#39;&gt;
+print(offset)
+# [7]
+print(offset[0])
+# 7
+# 这样做可以将ndarray
+</code></pre>
+<p>Generate a uniform random sample from <code>np.arange(5)</code> of size <code>3</code>:</p>
+<pre><code class="python">np.random.choice(5, 3)
+# array([0, 3, 4])
+# This is equivalent to np.random.randint(0,5,3)
+</code></pre>
+<p>Generate a non-uniform random sample from <code>np.arange(5)</code> of size <code>3</code>:</p>
+<pre><code class="python">np.random.choice(5, 3, p=[0.1, 0, 0.3, 0.6, 0])
+# array([3, 3, 0])
+</code></pre>
+<p>Generate a uniform random sample from <code>np.arange(5)</code> of size <code>3</code>without replacement:</p>
+<pre><code class="python">np.random.choice(5, 3, replace=False)
+# array([3,1,0])
+# This is equivalent to np.random.permutation(np.arange(5))[:3]
+</code></pre>
+<p>Generate a non-uniform random sample from <code>np.arange(5)</code> of size <code>3</code> without replacement:</p>
+<pre><code class="python">np.random.choice(5, 3, replace=False, p=[0.1, 0, 0.3, 0.6, 0])
+# array([2, 3, 0])
+</code></pre>
+<p>Any of the above can be repeated with an arbitrary array-like instead of just integers. For instance（可以对列表 list 类型元素使用）:</p>
+<pre><code class="python">aa_milne_arr = [&#39;pooh&#39;, &#39;rabbit&#39;, &#39;piglet&#39;, &#39;Christopher&#39;]
+np.random.choice(aa_milne_arr, 5, p=[0.5, 0.1, 0.1, 0.3])
+# array([&#39;pooh&#39;, &#39;pooh&#39;, &#39;pooh&#39;, &#39;Christopher&#39;, &#39;piglet&#39;])
+</code></pre>
+<h3 id="1-10-bytes-length"><a href="#1-10-bytes-length" class="headerlink" title="1.10 bytes(length)"></a>1.10 <code>bytes(length)</code></h3><p>返回随机字节。</p>
+<pre><code class="python">np.random.bytes(10)
+# &#39; eh\x85\x022SZ\xbf\xa4&#39; #random
+</code></pre>
+<h2 id="2-排列"><a href="#2-排列" class="headerlink" title="2. 排列"></a>2. 排列</h2><h3 id="2-1-shuffle-x"><a href="#2-1-shuffle-x" class="headerlink" title="2.1 shuffle(x)"></a>2.1 <code>shuffle(x)</code></h3><p>现场修改序列，改变自身内容。（类似洗牌，打乱顺序）</p>
+<pre><code class="python">arr = np.arange(10)
+np.random.shuffle(arr)
+print(arr)
+# [1 7 5 2 9 4 3 6 0 8]
+</code></pre>
+<p>This function only shuffles the array along the first index of a multi-dimensional array:</p>
+<pre><code class="python">arr = np.arange(9).reshape((3, 3))
+np.random.shuffle(arr)
+print(arr)
+# array([[3, 4, 5],
+#        [6, 7, 8],
+#        [0, 1, 2]])
+</code></pre>
+<h3 id="2-2-permutation-x"><a href="#2-2-permutation-x" class="headerlink" title="2.2 permutation(x)"></a>2.2 <code>permutation(x)</code></h3><p>返回一个随机排列。</p>
+<pre><code class="python">np.random.permutation(10)
+# array([1, 7, 4, 3, 0, 9, 2, 5, 8, 6])
+
+np.random.permutation([1, 4, 9, 12, 15])
+# array([15,  1,  9,  4, 12])
+
+arr = np.arange(9).reshape((3, 3))
+np.random.permutation(arr)
+# array([[6, 7, 8],
+#        [0, 1, 2],
+#        [3, 4, 5]])
+</code></pre>
+<h1 id="numpy-切片中的省略号"><a href="#numpy-切片中的省略号" class="headerlink" title="numpy 切片中的省略号 ..."></a>numpy 切片中的省略号 <code>...</code></h1><p>它是对切片 <code>[ : ]</code> 里的 <code>:</code> 的拓展，但是它只能出现一个，就是说可以这样使用：<code>[ : , : , : ]</code>，但 <code>[ ... , ...]</code> 就会报错。</p>
+<p>常用的数据列表切片里的符号是冒号（形如 <code>x[:5]</code>）。将 <code>x[..., 1]</code> 换为 <code>x[:, 1]</code> 并不会影响代码的结果。尝试下省略号是否可以用在所有列表数据类型呢？</p>
+<pre><code class="python">a = [i+1 for i in range(100)]
+a[..., 3]
+
+# Traceback (most recent call last):
+#   File &quot;&lt;input&gt;&quot;, line 1, in &lt;module&gt;
+# TypeError: list indices must be integers or slices, not tuple
+</code></pre>
+<p>看来 Python 自带的 <code>list</code> 类型并不能用省略号：</p>
+<pre><code class="python">import numpy as np
+
+b = np.array(a)
+b[..., 1]
+# array(2)
+</code></pre>
+<p>看来 numpy 库中的 <code>array</code> 类型数据是可以使用该省略号的。值得注意的是，该 <code>b[..., 1]</code> 返回的数据类型也是 <code>array</code> 类型。 </p>
+<p>numpy 库的说明文档：</p>
+<blockquote>
+<p> Ellipsis expand to the number of : objects needed to make a selection tuple of the same length as <code>x.ndim</code>.<br>Only the first ellipsis is expanded, any others are interpreted as <code>:</code>. </p>
+</blockquote>
+<p>例子：</p>
+<pre><code class="python">x = np.array([[[1],[2],[3]], [[4],[5],[6]]])
+x[..., 0]
+# array([[1, 2, 3],
+#        [4, 5, 6]])
+</code></pre>
+<p>当然，手册中的这个例子 <code>x[..., 0]</code> 并不能替换为 <code>x[:, 0]</code> ，而是需要替换为 <code>x[:, :, 0]</code>： </p>
+<pre><code class="python">x = np.array([[[1],[2],[3]], [[4],[5],[6]]])
+x[..., 0]
+# array([[1, 2, 3],
+#        [4, 5, 6]])
+
+x[:, 0]
+# array([[1],
+#        [4]])
+
+x[:, :, 0]
+# array([[1, 2, 3],
+#        [4, 5, 6]])
+</code></pre>
+<pre><code class="python">import numpy as np
+
+data = np.array([1, 2, 3, 4, 5, 6, 7 ,8])
+order = np.random.permutation(len(data))
+data = data[order, ...]
+print(data)
+# [3 2 8 1 6 5 4 7]
+</code></pre>
+<h1 id="np-mean"><a href="#np-mean" class="headerlink" title="np.mean"></a><code>np.mean</code></h1><pre><code class="python">numpy.mean(a, axis, dtype, out，keepdims)
+</code></pre>
+<p>主要用于求取均值。</p>
+<p>经常操作的参数为 <code>axis</code>，以 <code>m*n</code> 矩阵举例：</p>
+<ul>
+<li><p><code>axis</code> 不设置值，对 <code>m*n</code> 个数求均值，返回一个实数</p>
+</li>
+<li><p><code>axis = 0</code>：压缩行，对各列求均值，返回 <code>1*n</code> 矩阵</p>
+</li>
+<li><p><code>axis =1</code> ：压缩列，对各行求均值，返回 <code>m*1</code> 矩阵</p>
+</li>
+</ul>
+<p>例子：</p>
+<p><strong>1. 数组的操作</strong>：</p>
+<pre><code class="python">a = np.array([[1, 2], [3, 4]])
+# array([[1, 2],
+#        [3, 4]])
+
+np.mean(a)
+# 2.5
+
+np.mean(a, axis=0) # axis=0，计算每一列的均值
+# array([ 2.,  3.])
+
+np.mean(a, axis=1) # 计算每一行的均值 
+# array([ 1.5,  3.5])
+</code></pre>
+<p><strong>2. 矩阵的操作：</strong></p>
+<pre><code class="python">import numpy as np
+num1 = np.array([[1,2,3], [2,3,4], [3,4,5], [4,5,6]])
+# array([[1, 2, 3],
+#        [2, 3, 4],
+#        [3, 4, 5],
+#        [4, 5, 6]])
+
+num2 = np.mat(num1)
+# matrix([[1, 2, 3],
+#         [2, 3, 4],
+#         [3, 4, 5],
+#         [4, 5, 6]])
+
+np.mean(num2) # 对所有元素求均值
+# 3.5
+
+np.mean(num2, 0) # 压缩行，对各列求均值
+# matrix([[ 2.5,  3.5,  4.5]])
+
+np.mean(num2, 1) # 压缩列，对各行求均值
+# matrix([[ 2.],
+#         [ 3.],
+#         [ 4.],
+#         [ 5.]])
+</code></pre>
+<h1 id="np-max-与-np-maximum"><a href="#np-max-与-np-maximum" class="headerlink" title="np.max 与 np.maximum"></a><code>np.max</code> 与 <code>np.maximum</code></h1><h3 id="1-参数"><a href="#1-参数" class="headerlink" title="1. 参数"></a>1. 参数</h3><p>首先比较二者的参数部分：</p>
+<pre><code class="python">np.max(a, axis=None, out=None, keepdims=False) 
+</code></pre>
+<ul>
+<li>求序列的最值</li>
+<li>最少接收一个参数</li>
+<li><code>axis</code>：默认为列向（也即 <code>axis=0</code>），<code>axis = 1</code> 时为行方向的最值</li>
+</ul>
+<pre><code class="python">np.maximum(X, Y, out=None) 
+</code></pre>
+<ul>
+<li><code>X</code> 与 <code>Y</code> 逐位比较取其大者</li>
+<li>最少接收两个参数</li>
+</ul>
+<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><pre><code class="python">np.max([-2, -1, 0, 1, 2])
+# 2
+
+np.maximum([-2, -1, 0, 1, 2], 0)
+# array([0, 0, 0, 1, 2])
+# 当然 np.maximum 接受的两个参数，也可以大小一致
+# 或者更为准确地说，第二个参数只是一个单独的值时，其实是用到了维度的 broadcast 机制
+</code></pre>
+<h1 id="numpy-std"><a href="#numpy-std" class="headerlink" title="numpy.std()"></a><code>numpy.std()</code></h1><p>计算矩阵标准差。</p>
+<p>例子：</p>
+<pre><code class="python">a = np.array([[1, 2], [3, 4]])
+np.std(a) # 计算全局标准差
+# 1.1180339887498949
+
+np.std(a, axis=0) # axis=0计算每一列的标准差
+# array([ 1.,  1.])
+
+np.std(a, axis=1) # 计算每一行的标准差
+# array([ 0.5,  0.5])
+</code></pre>
+<h1 id="np-pad"><a href="#np-pad" class="headerlink" title="np.pad()"></a><code>np.pad()</code></h1><p>在卷积神经网络中，为了避免因为卷积运算导致输出图像缩小和图像边缘信息丢失，常常采用图像边缘填充技术，即在图像四周边缘填充 <code>0</code>，使得卷积运算后图像大小不会缩小，同时也不会丢失边缘和角落的信息。在 Python 的 numpy 库中，常常采用 <code>numpy.pad()</code> 进行填充操作。</p>
+<h2 id="1-函数原型"><a href="#1-函数原型" class="headerlink" title="1. 函数原型"></a>1. 函数原型</h2><pre><code class="python">pad(array, pad_width, mode, **kwargs)
+</code></pre>
+<p>返回值：数组</p>
+<p>参数：</p>
+<ul>
+<li><code>array</code> — 表示需要填充的数组</li>
+<li><code>pad_width</code> — 表示每个轴（axis）边缘需要填充的数值数目。参数输入方式为：<code>((before_1, after_1), … (before_N, after_N))</code>，其中 <code>(before_1, after_1)</code> 表示第 <code>1</code> 轴两边缘分别填充 <code>before_1</code> 个和 <code>after_1</code> 个数值。</li>
+<li><code>mode</code> — 表示填充的方式（取值：<code>str</code> 字符串或用户提供的函数），总共有 <code>11</code> 种填充模式</li>
+</ul>
+<p>填充方式：</p>
+<ul>
+<li><code>&#39;constant&#39;</code> — 表示连续填充相同的值，每个轴可以分别指定填充值，<code>constant_values = (x, y)</code> 时前面用 <code>x</code> 填充，后面用 <code>y</code> 填充，缺省值填充 <code>0</code></li>
+<li><code>&#39;edge&#39;</code> — 表示用边缘值填充</li>
+<li><code>&#39;linear_ramp&#39;</code> — 表示用边缘递减的方式填充</li>
+<li><code>&#39;maximum&#39;</code> — 表示最大值填充</li>
+<li><code>&#39;mean&#39;</code> — 表示均值填充</li>
+<li><code>&#39;median&#39;</code> — 表示中位数填充</li>
+<li><code>&#39;minimum&#39;</code> — 表示最小值填充</li>
+<li><code>&#39;reflect&#39;</code> — 表示对称填充</li>
+<li><code>&#39;symmetric&#39;</code> — 表示对称填充</li>
+<li><code>&#39;wrap&#39;</code> — 表示用原数组后面的值填充前面，前面的值填充后面</li>
+</ul>
+<p>对一维数组的填充：</p>
+<pre><code class="python">import numpy as np
+arr1D = np.array([1, 1, 2, 2, 3, 4])
+
+&#39;&#39;&#39;不同的填充方法&#39;&#39;&#39;
+print(&#39;constant: &#39;       + str(np.pad(arr1D, (2, 3), &#39;constant&#39;))
+print(&#39;edge: &#39;           + str(np.pad(arr1D, (2, 3), &#39;edge&#39;))
+print(&#39;linear_ramp: &#39; + str(np.pad(arr1D, (2, 3), &#39;linear_ramp&#39;))
+print(&#39;maximum: &#39;       + str(np.pad(arr1D, (2, 3), &#39;maximum&#39;))
+print(&#39;mean: &#39;           + str(np.pad(arr1D, (2, 3), &#39;mean&#39;))
+print(&#39;median: &#39;       + str(np.pad(arr1D, (2, 3), &#39;median&#39;))
+print(&#39;minimum: &#39;     + str(np.pad(arr1D, (2, 3), &#39;minimum&#39;))
+print(&#39;reflect: &#39;     + str(np.pad(arr1D, (2, 3), &#39;reflect&#39;))
+print(&#39;symmetric: &#39;   + str(np.pad(arr1D, (2, 3), &#39;symmetric&#39;))
+print(&#39;wrap: &#39;        + str(np.pad(arr1D, (2, 3), &#39;wrap&#39;)) 
+# （2，3）表示前面两个，后面三个
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c1f2393963b2d628.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对多维数组的填充：</p>
+<pre><code class="python">import numpy as np
+
+arr3D = np.array([[[1, 1, 2, 2, 3, 4], [1, 1, 2, 2, 3, 4], [1, 1, 2, 2, 3, 4]], 
+                  [[0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5]], 
+                  [[1, 1, 2, 2, 3, 4], [1, 1, 2, 2, 3, 4], [1, 1, 2, 2, 3, 4]]])
+
+&#39;&#39;&#39;对于多维数组&#39;&#39;&#39;
+print(&#39;constant: \n&#39;    + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;constant&#39;)))
+print(&#39;edge:  \n&#39;         + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;edge&#39;)))
+print(&#39;linear_ramp: \n&#39; + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;linear_ramp&#39;)))
+print(&#39;maximum: \n&#39;     + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;maximum&#39;)))
+print(&#39;mean: \n&#39;        + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;mean&#39;)))
+print(&#39;median: \n&#39;         + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;median&#39;)))
+print(&#39;minimum: \n&#39;     + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;minimum&#39;)))
+print(&#39;reflect: \n&#39;     + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;reflect&#39;)))
+print(&#39;symmetric: \n&#39;     + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;symmetric&#39;)))
+print(&#39;wrap: \n&#39;         + str(np.pad(arr3D, ((0, 0), (1, 1), (2, 2)), &#39;wrap&#39;)))
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-db91ccefe3afce1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> <img src="https://upload-images.jianshu.io/upload_images/1351548-b23a5935e5285ab1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> <img src="https://upload-images.jianshu.io/upload_images/1351548-9e0dd28a64b2eb6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-27a10ddfda2c65a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> <img src="https://upload-images.jianshu.io/upload_images/1351548-b20ecdd5730f23eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> <img src="https://upload-images.jianshu.io/upload_images/1351548-9cb5d1125245cd07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7bc9b37e61356735.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> <img src="https://upload-images.jianshu.io/upload_images/1351548-1404c6fb847cbaad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> <img src="https://upload-images.jianshu.io/upload_images/1351548-018f45e7fa88d39e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-032ee07a4486de4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="np-transpose"><a href="#np-transpose" class="headerlink" title="np.transpose"></a><code>np.transpose</code></h1><p><img src="https://upload-images.jianshu.io/upload_images/1351548-75540f66fb4551aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>参数：</p>
+<ul>
+<li><code>a</code>：输入数组 </li>
+<li><code>axis</code>：<code>int</code> 类型的列表，这个参数是可选的。默认情况下，反转的输入数组的维度，当给定这个参数时，按照这个参数所定的值进行数组变换。 </li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li><code>p</code>：<code>ndarray</code> 类型，返回转置过后的原数组的视图。</li>
+</ul>
+<h2 id="1-一维数组"><a href="#1-一维数组" class="headerlink" title="1. 一维数组"></a>1. 一维数组</h2><pre><code class="python">import numpy as np
+t=np.arange(4)
+# array([0, 1, 2, 3])
+
+t.transpose()
+# array([0, 1, 2, 3])
+# 对于一维数组而言，numpy.transpose()是不起作用的
+</code></pre>
+<h2 id="2-二维数组"><a href="#2-二维数组" class="headerlink" title="2. 二维数组"></a>2. 二维数组</h2><pre><code class="python">two=np.arange(16).reshape(4,4)
+# array([[ 0,  1,  2,  3],
+#        [ 4,  5,  6,  7],
+#        [ 8,  9, 10, 11],
+#        [12, 13, 14, 15]])
+
+two.transpose()
+# array([[ 0,  4,  8, 12],
+#        [ 1,  5,  9, 13],
+#        [ 2,  6, 10, 14],
+#        [ 3,  7, 11, 15]])
+
+two.transpose(1,0)
+# array([[ 0,  4,  8, 12],
+#        [ 1,  5,  9, 13],
+#        [ 2,  6, 10, 14],
+#        [ 3,  7, 11, 15]])
+# 对于三维数组，原始axis排列为（0,1,2），numpy.transpose()默认的参数为（2，1，0）得到转置后的数组的视图，不影响原数组的内容以及大小。 
+</code></pre>
+<h1 id="np-arange-函数"><a href="#np-arange-函数" class="headerlink" title="np.arange() 函数"></a><code>np.arange()</code> 函数</h1><p>返回值：</p>
+<ul>
+<li><code>np.arange()</code> 函数返回一个有终点和起点的固定步长的排列，如 <code>[1,2,3,4,5]</code>，起点是 <code>1</code>，终点是 <code>5</code>，步长为 <code>1</code>。 </li>
+</ul>
+<p>参数个数情况：<code>np.arange()</code> 函数分为一个参数，两个参数，三个参数三种情况：</p>
+<ol>
+<li>一个参数时，参数值为终点，起点取默认值 <code>0</code>，步长取默认值 <code>1</code>。 </li>
+<li>两个参数时，第一个参数为起点，第二个参数为终点，步长取默认值 <code>1</code>。 </li>
+<li>三个参数时，第一个参数为起点，第二个参数为终点，第三个参数为步长（其中步长支持小数）。</li>
+</ol>
+<p>例子：</p>
+<pre><code class="python">#一个参数 默认起点0，步长为1 输出：[0 1 2]
+a = np.arange(3)
+
+#两个参数 默认步长为1 输出[3 4 5 6 7 8]
+a = np.arange(3,9)
+
+#三个参数 起点为0，终点为4，步长为0.1 输出[ 0\.   0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1\.   1.1  1.2  1.3  1.4 1.5  1.6  1.7  1.8  1.9  2\.   2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9]
+a = np.arange(0, 3, 0.1)
+</code></pre>
+<p>例子：</p>
+<pre><code class="python">B = 2
+S = 7
+x = np.array([np.arange(S)] * S * B)
+# np.arange(S)创建一个一维数组：[0,1,2,3,4,5,6]
+# 而S*B=14,就把一维数组复制14遍
+# 相当于创建一个7*14的二维数组
+print(x)
+
+# [[0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]
+#  [0 1 2 3 4 5 6]]
+</code></pre>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="// 运算符"></a><code>//</code> 运算符</h1><p>取整除 - 返回商的整数部分（<strong>向下取整</strong>）。</p>
+<p>例子：</p>
+<pre><code class="python">9//2
+# 4
+
+-9//2
+# -5
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/SIFT/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/ORB/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

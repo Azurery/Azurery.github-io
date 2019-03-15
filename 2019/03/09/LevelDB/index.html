@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            LevelDB源码解析 | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",数据库">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="LevelDB源码解析 | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="数据库"> 
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Oct 06 2018 17:56:45 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="LevelDB源码解析 | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/LevelDB/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/LevelDB/index.html",
+    "headline": "LevelDB源码解析",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Sat Oct 06 2018 17:56:45 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",数据库",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Slice"><span class="post-toc-number">1.</span> <span class="post-toc-text">Slice</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Status"><span class="post-toc-number">2.</span> <span class="post-toc-text">Status</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内存池Arena"><span class="post-toc-number">3.</span> <span class="post-toc-text">内存池Arena</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#data-block"><span class="post-toc-number">4.</span> <span class="post-toc-text">data block</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#整形数据存储"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">整形数据存储</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#fixed转换"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">fixed转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#varient"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">varient</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#leveldb键的形式"><span class="post-toc-number">5.</span> <span class="post-toc-text">leveldb键的形式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-InternalKey，其格式为："><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1. InternalKey，其格式为：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-ParsedInternalKey的格式为："><span class="post-toc-number">5.2.</span> <span class="post-toc-text">2. ParsedInternalKey的格式为：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-skiplist内部存储的key的格式为："><span class="post-toc-number">5.3.</span> <span class="post-toc-text">3. skiplist内部存储的key的格式为：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-传入memtable的是LookupKey，其格式为："><span class="post-toc-number">5.4.</span> <span class="post-toc-text">4. 传入memtable的是LookupKey，其格式为：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#memtable"><span class="post-toc-number">6.</span> <span class="post-toc-text">memtable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#读写log文件"><span class="post-toc-number">7.</span> <span class="post-toc-text">读写log文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Writer类"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Writer类</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#log文件的Reader类"><span class="post-toc-number">8.</span> <span class="post-toc-text">log文件的Reader类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Skiplist"><span class="post-toc-number">9.</span> <span class="post-toc-text">Skiplist</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">搜索</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">插入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存屏障（memory-barrier）"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">内存屏障（memory barrier）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#skiplist结点"><span class="post-toc-number">9.5.</span> <span class="post-toc-text">skiplist结点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#skiplist具体实现"><span class="post-toc-number">9.6.</span> <span class="post-toc-text">skiplist具体实现</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                LevelDB源码解析
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACa0lEQVR42u3aQXKDMAwF0Nz/0u0BOiH/y2BI57HKpBT8vLAUSa+ff3298PDw8PDw8PDwHsZ7xdff+989J//+w0LLteHh4eHt5CWvefc5wSfLPX5vsjY8PDy8/bzjYPD2ceXBfRw2kq38sB48PDy8h/GSb9rl5lQ8PDy8b+TlSfAsacbDw8P7Ll7xg//wBSulh+TJF9Za8PDw8GJe2wDb+fmG/h4eHh7eIW9pvCkIGOsH/dLQFR4eHt4FvFlDK29x5dQPx31c5sDDw8O7mpe/YAWfJ8ptYl3EPTw8PLyNvKQBlowCJA2zWbjCw8PDu5eXN7pm98/CwPFW4uHh4e3ktQluzjtrQCEPLXh4eHh7eOutqRaZJN/5YFYU9/Dw8PBO5SWNpbbR1RYUZgVlPDw8vHt5s2Q6CRWzJDtpmy39YsDDw8Nb5uUtsVlDa/bX4YAXHh4e3sW82dE8W+JK8bcYMsDDw8O7mJePk7bHd0ttixR4eHh4d/HaEmpeVG3LEPlGD8dV8fDw8E7inTtc1SbT+bvy7cbDw8PbycsflzfA8mCQ3zMcusLDw8O7gHeMacNJO6DQln1PSKnx8PDwlnnt0mdjBHlrbTY+i4eHh7eHNwsPK6l2ctzPkHh4eHhX89prfSzgGJxvDR4eHt5dvPXjeDZolT+5TvTx8PDwtvDydn5b2M3bV7PAgIeHh3cvr02O8/GCWdG2HbfCw8PDezIvb4a1/5uUjOsqNR4eHt6tvLMw+fbVAQMPDw9vI68drmrHodrNypF4eHh4+3mzBtis3HACYE9/Dw8PD++koavnX3h4eHh4eHh4eA+4fgHQMzUAeJmxEQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/数据库/">数据库</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=LevelDB源码解析&url=http://yoursite.com/2019/03/09/LevelDB/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=LevelDB源码解析&url=http://yoursite.com/2019/03/09/LevelDB/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/LevelDB/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/LevelDB/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=LevelDB源码解析&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/LevelDB/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h2><p>LevelDB并没有使用STL中自带的<code>std::string</code>，而是自己写了个<code>Slice</code>，它的原理就是：拥有一个指向字符串的指针和表示该字符串大小的<code>size</code>成员。</p>
+<p>先上源码，首先是构造函数，这四个构造函数分别使用<strong>空字符串</strong>、<strong>C-style字符串（以NULL结尾）</strong>以及<strong>C++ string</strong>来进行构造：</p>
+<pre><code class="cpp">class LEVELDB_EXPORT Slice {
+ public:
+  // Create an empty slice.
+  // 创建空的字符串，使用方法为：Slice str;
+  Slice() : data_(&quot;&quot;), size_(0) { }
+
+  // Create a slice that refers to d[0,n-1].
+  // 传入一个字符串指针以及该字符串的长度
+  Slice(const char* d, size_t n) : data_(d), size_(n) { }
+
+  // Create a slice that refers to the contents of &quot;s&quot;
+  // 传入一个C++ string进行初始化
+  Slice(const std::string&amp; s) : data_(s.data()), size_(s.size()) { }
+
+  // Create a slice that refers to s[0,strlen(s)-1]
+  // 传入一个字符串指针（长度通过strlen获取）进行初始化
+  Slice(const char* s) : data_(s), size_(strlen(s)) { }
+};
+</code></pre>
+<p>接下来是成员函数：</p>
+<pre><code class="cpp">// Return a pointer to the beginning of the referenced data
+// 获取字符串的值，返回指向该字符串起始位置的指针
+  const char* data() const { return data_; }
+
+  // Return the length (in bytes) of the referenced data
+  // 获取字符串的长度
+  size_t size() const { return size_; }
+
+  // Return true iff the length of the referenced data is zero
+  bool empty() const { return size_ == 0; }
+
+  // Return the ith byte in the referenced data.
+  // REQUIRES: n &lt; size()
+  // 重载operator []，通过使用str[i]来获取第i个字符
+  char operator[](size_t n) const {
+    assert(n &lt; size());
+    return data_[n];
+  }
+
+  // Change this slice to refer to an empty array
+  // 清除整个Slice字符串
+  void clear() { data_ = &quot;&quot;; size_ = 0; }
+
+  // Drop the first &quot;n&quot; bytes from this slice.
+  // 删除Slice字符串的前n个字符（需要将data_指针前移n位，字符串长度减少n位）
+  void remove_prefix(size_t n) {
+    assert(n &lt;= size());
+    data_ += n;
+    size_ -= n;
+  }
+
+  // Return a string that contains the copy of the referenced data.
+  // 返回C++ string形式的Slice（利用std::string来进行构造）
+  std::string ToString() const { return std::string(data_, size_); }
+
+  // Three-way comparison.  Returns value:
+  //   &lt;  0 iff &quot;*this&quot; &lt;  &quot;b&quot;,
+  //   == 0 iff &quot;*this&quot; == &quot;b&quot;,
+  //   &gt;  0 iff &quot;*this&quot; &gt;  &quot;b&quot;
+  int compare(const Slice&amp; b) const;
+
+  // Return true iff &quot;x&quot; is a prefix of &quot;*this&quot;
+  // 判断Slice字符串是否是以字符串x起始
+  bool starts_with(const Slice&amp; x) const {
+    return ((size_ &gt;= x.size_) &amp;&amp;
+            (memcmp(data_, x.data_, x.size_) == 0));
+  }
+</code></pre>
+<p>  接着，是两个成员变量：</p>
+<pre><code class="cpp">  private:
+  const char* data_;
+  size_t size_;
+};
+</code></pre>
+<p>其他一些函数：</p>
+<pre><code class="cpp">// 重载operator ==，用于判断两个Slice字符串是否相等
+inline bool operator==(const Slice&amp; x, const Slice&amp; y) {
+  return ((x.size() == y.size()) &amp;&amp;
+          (memcmp(x.data(), y.data(), x.size()) == 0));
+}
+
+inline bool operator!=(const Slice&amp; x, const Slice&amp; y) {
+  return !(x == y);
+}
+
+// 比较两个Slice字符串
+inline int Slice::compare(const Slice&amp; b) const {
+  const size_t min_len = (size_ &lt; b.size_) ? size_ : b.size_;
+  int r = memcmp(data_, b.data_, min_len);
+  if (r == 0) {
+    if (size_ &lt; b.size_) r = -1;
+    else if (size_ &gt; b.size_) r = +1;
+  }
+  return r;
+}
+</code></pre>
+<h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2><p><code>Status</code>封装了执行某个操作之后的结果（即返回的状态），它可能表示成功或者表示失败并返回一些错误信息。</p>
+<p><code>Status</code>一共包含了6种状态：</p>
+<pre><code class="cpp">enum Code {
+    kOk = 0,
+    kNotFound = 1,
+    kCorruption = 2,
+    kNotSupported = 3,
+    kInvalidArgument = 4,
+    kIOError = 5
+  };
+</code></pre>
+<p><code>Status</code>拥有一个成员变量<code>state_</code>：</p>
+<pre><code class="cpp">const char* state_;
+</code></pre>
+<p>如果为<code>Ok</code>状态，则其<code>state_</code>成员变量的值就是<code>null</code>。对于其他情况而言，<code>state_</code>就是一个<code>new[]</code>的数组，其形式如下 ：</p>
+<ul>
+<li><code>state_[0...3]</code>：表示消息的长度（不包含Status状态头部信息）</li>
+<li><code>state_[4]</code>：表示消息的类型</li>
+<li><code>state_[5...]</code>：具体的消息内容</li>
+</ul>
+<p>先是一些构造函数、析构函数以及一些与copy赋值相关的操作符：</p>
+<pre><code class="cpp">class LEVELDB_EXPORT Status {
+ public:
+  // Create a success status.
+  // default ctor，默认创建一个success status
+  Status() noexcept : state_(nullptr) { }
+  ~Status() { delete[] state_; }
+
+  Status(const Status&amp; rhs);
+  Status&amp; operator=(const Status&amp; rhs);
+
+  Status(Status&amp;&amp; rhs) noexcept : state_(rhs.state_) { rhs.state_ = nullptr; }
+  Status&amp; operator=(Status&amp;&amp; rhs) noexcept;
+</code></pre>
+<p>主要的成员函数：</p>
+<pre><code class="cpp">  // Return a success status.
+  static Status OK() { return Status(); }
+
+  // Return error status of an appropriate type.
+  // 返回错误类型
+  static Status NotFound(const Slice&amp; msg, const Slice&amp; msg2 = Slice()) {
+    return Status(kNotFound, msg, msg2);
+  }
+  static Status Corruption(const Slice&amp; msg, const Slice&amp; msg2 = Slice()) {
+    return Status(kCorruption, msg, msg2);
+  }
+  static Status NotSupported(const Slice&amp; msg, const Slice&amp; msg2 = Slice()) {
+    return Status(kNotSupported, msg, msg2);
+  }
+  static Status InvalidArgument(const Slice&amp; msg, const Slice&amp; msg2 = Slice()) {
+    return Status(kInvalidArgument, msg, msg2);
+  }
+  static Status IOError(const Slice&amp; msg, const Slice&amp;  = Slice()) {
+    return Status(kIOError, msg, msg2);
+  }
+</code></pre>
+<p>  上述函数都直接调用了构造函数：</p>
+<pre><code class="cpp">Status(Code code, const Slice&amp; msg, const Slice&amp; msg2);
+</code></pre>
+<p>其实现为：</p>
+<pre><code class="cpp">Status::Status(Code code, const Slice&amp; msg, const Slice&amp; msg2) {
+  assert(code != kOk);
+  const uint32_t len1 = msg.size();
+  const uint32_t len2 = msg2.size();
+
+  //判断第二个字符串长度是否为0，如果不为0，则信息总长度为len1+2+len2，这里的2是用于存储 &#39;:&#39; 和 &#39; &#39;。
+  const uint32_t size = len1 + (len2 ? (2 + len2) : 0);            
+  char* result = new char[size + 5];        //计算state_总长度时，需要将status头部信息那5个字节包含进来
+  memcpy(result, &amp;size, sizeof(size));      //将信息长度存入result前四个字节（sizeof(uint32_t) ===&gt;4)
+  result[4] = static_cast&lt;char&gt;(code);       //第5个字节存状态
+  memcpy(result + 5, msg.data(), len1);  //从第6个字节开始，存储第一个消息的具体内容
+  if (len2) {                                                //如果msg2不为空，则需要在最终的信息内容中加上&#39;:&#39;+&#39; &#39;+msg2
+    result[5 + len1] = &#39;:&#39;;                                //第6个字节用于存储&#39;:&#39;
+    result[6 + len1] = &#39; &#39;;                                //第7个字节用于存储&#39; &#39;
+    memcpy(result + 7 + len1, msg2.data(), len2);    //从第（8+len1）个字节开始，用于存储msg2
+  }
+  state_ = result;
+}
+</code></pre>
+<p>接下来是copy ctor和assignment operator：</p>
+<pre><code class="cpp">inline Status::Status(const Status&amp; s) {
+  state_ = (s.state_ == NULL) ? NULL : CopyState(s.state_);
+}
+
+inline void Status::operator=(const Status&amp; s) {
+  if (state_ != s.state_) {
+    delete[] state_;
+    state_ = (s.state_ == NULL) ? NULL : CopyState(s.state_);
+  }
+}
+</code></pre>
+<p>两者都调用了<code>CopyState</code>方法来拷贝<code>s.state_</code>中的内容。</p>
+<p><code>CopyState</code>的实现为：</p>
+<pre><code class="cpp">const char* Status::CopyState(const char* state) {
+  uint32_t size;
+  memcpy(&amp;size, state, sizeof(size));    //获取message的长度
+  char* result = new char[size + 5];      //重新分配空间
+  memcpy(result, state, size + 5);          //将message拷贝到新的空间
+  return result;                                      //返回新空间的地址
+}
+</code></pre>
+<h2 id="内存池Arena"><a href="#内存池Arena" class="headerlink" title="内存池Arena"></a>内存池Arena</h2><p>内存池的主要作用是：<strong>减少<code>malloc</code>或者<code>new</code>调用的次数，从而减少时常需要分配内存所带来的系统开销</strong>。</p>
+<p>该类一共拥有4个成员变量：</p>
+<pre><code class="cpp">  // Allocation state
+  char* alloc_ptr_;                                  //表示内存的offset指针，即指向未使用内存的首地址
+  size_t alloc_bytes_remaining_;          //剩余的内存大小（即还能分配的内存）
+
+  // Array of new[] allocated memory blocks
+  std::vector&lt;char*&gt; blocks_;              //用于存放每一次所分配的内存指针
+
+  // Total memory usage of the arena.
+  port::AtomicPointer memory_usage_; //已经分配的总内存的大小
+</code></pre>
+<p>接着是ctor和dtor：</p>
+<pre><code class="cpp">//default ctor将进行初始化：已分配内存大小为0，offset指针为NULL，剩余内存大小为0
+Arena::Arena() : memory_usage_(0) {
+  alloc_ptr_ = nullptr;                              // First allocation will allocate a block
+  alloc_bytes_remaining_ = 0;
+}
+
+//进行析构时，只需将所有的指向已分配内存的指针全部删除即可
+Arena::~Arena() {
+  for (size_t i = 0; i &lt; blocks_.size(); i++) {
+    delete[] blocks_[i];
+  }
+}
+</code></pre>
+<p><code>Arena</code>主要有3个关于内存分配的函数：</p>
+<pre><code class="cpp">  // Return a pointer to a newly allocated memory block of &quot;bytes&quot; bytes.
+  char* Allocate(size_t bytes);
+
+  // Allocate memory with the normal alignment guarantees provided by malloc
+  char* AllocateAligned(size_t bytes);
+
+  // Returns an estimate of the total memory usage of data allocated
+  // by the arena.
+  size_t MemoryUsage() const {
+    return reinterpret_cast&lt;uintptr_t&gt;(memory_usage_.NoBarrier_Load());
+  }
+
+ private:
+  char* AllocateFallback(size_t bytes);
+  char* AllocateNewBlock(size_t block_bytes);
+</code></pre>
+<p> 其总体的内存分配策略为：</p>
+<ul>
+<li>如果所申请的内存小于剩余的内存容量（<code>alloc_bytes_remaining_</code>)，则直接在剩余内存中划出一块即可</li>
+<li>如果所申请的内存大于剩余的内存容量，并且其大于<code>4096/4=1024kb</code>时，则需要单独给它分配一块区域，大小为<code>bytes</code>，从而避免过多的内存浪费（例如，现在剩余的内存容量为1200kb，如果有个内存需求为300kb，第二个内存需求为1200kb。则第一个需求可以使用4次才进行一次重新的内存分配，而第二个需求只能使用一次就需要重新进行一个内存分配）</li>
+<li>如果所申请的内存大于剩余的内存容量，但其小于<code>4096/4=1024kb</code>时，则需重新分配一个内存块，默认大小为<code>4096</code></li>
+</ul>
+<p>它们的源码为：</p>
+<pre><code class="cpp">inline char* Arena::Allocate(size_t bytes) {
+  // The semantics of what to return are a bit messy if we allow
+  // 0-byte allocations, so we disallow them here (we don&#39;t need
+  // them for our internal use).
+  assert(bytes &gt; 0);
+
+  //如果申请的内存大熊啊小于剩余的内存容量，则直接划出一块内存就好。
+  //三部曲：移动offset指针，减少剩余内存容量，返回刚分配内存的其实地址
+  if (bytes &lt;= alloc_bytes_remaining_) {
+    char* result = alloc_ptr_;                    //保存offset指针，用于返回
+    alloc_ptr_ += bytes;                         //将offset指针前移bytes个字节
+    alloc_bytes_remaining_ -= bytes;    //将剩余的内存容量减少bytes个字节
+    return result;
+  }
+  return AllocateFallback(bytes);
+}
+
+char* Arena::AllocateFallback(size_t bytes) {
+//当申请内存大于1024kb时，需要进行重新开辟内存
+  if (bytes &gt; kBlokbSize / 4) {
+    // Object is more than a quarter of our block size.  Allocate it separately
+    // to avoid wasting too much space in leftover bytes.
+    char* result = AllocateNewBlock(bytes);
+    return result;
+  }
+
+  // We waste the remaining space in the current block.
+  //当申请内存大于剩余内存容量，但小于1024kb时
+  alloc_ptr_ = AllocateNewBlock(kBlockSize);        //重新开辟一个大小为4096kb的内存
+  alloc_bytes_remaining_ = kBlockSize;                   //修改最新剩余内存容量的大小
+
+  char* result = alloc_ptr_;
+  alloc_ptr_ += bytes;
+  alloc_bytes_remaining_ -= bytes;
+  return result;
+}
+
+char* Arena::AllocateNewBlock(size_t block_bytes) {
+  char* result = new char[block_bytes];        //重新开辟一个内存空间
+  blocks_.push_back(result);                     //将新分配的内存空间的首地址指针加入已分配内存的指针数组指针
+  memory_usage_.NoBarrier_Store(         //总的内村加上刚分配的内存
+      reinterpret_cast&lt;void*&gt;(MemoryUsage() + block_bytes + sizeof(char*)));
+  return result;
+}
+</code></pre>
+<p><code>Arena</code>还提供了字节对齐的内存分配。通常是<code>8</code>字节对齐分配：</p>
+<pre><code class="cpp">char* Arena::AllocateAligned(size_t bytes) {
+//用于判断对齐的大小（64为计算机sizeof(void*)===&gt;8)，所以对齐大小为8
+  const int align = (sizeof(void*) &gt; 8) ? sizeof(void*) : 8;
+//用于判断对齐大小是否为2的幂，此外也可以使用v&amp;&amp;!(v&amp;(v-1))达到相同的目的
+  assert((align &amp; (align-1)) == 0);   // Pointer size should be a power of 2
+//align-1==&gt;此时，后三位为1，其余各位均为0，再与alloc_ptr作与运算，就相当于
+//让指针与align进行求余运算，即alloc_ptr%align
+  size_t current_mod = reinterpret_cast&lt;uintptr_t&gt;(alloc_ptr_) &amp; (align-1);
+//根据当前的模式，计算出需要添加的字节数（如果不够8，就补足8，使其成为8的倍数）
+  size_t slop = (current_mod == 0 ? 0 : align - current_mod);
+// 最终分配的字节数=申请内存大小+为了对齐添加的补足字节数
+  size_t needed = bytes + slop;
+  char* result;
+  if (needed &lt;= alloc_bytes_remaining_) {
+    result = alloc_ptr_ + slop;
+    alloc_ptr_ += needed;
+    alloc_bytes_remaining_ -= needed;
+  } else {
+    // AllocateFallback always returned aligned memory
+    result = AllocateFallback(bytes);
+  }
+//再次验证分配的内存是否为8的倍数
+  assert((reinterpret_cast&lt;uintptr_t&gt;(result) &amp; (align-1)) == 0);
+  return result;
+}
+</code></pre>
+<p><code>Arena</code>还有一个<code>MemoryUsage</code>的接口，用于返回内存池已分配的总的内存大小：</p>
+<pre><code class="cpp">  // Returns an estimate of the total memory usage of data allocated
+  // by the arena.
+  size_t MemoryUsage() const {
+    return reinterpret_cast&lt;uintptr_t&gt;(memory_usage_.NoBarrier_Load());
+  }
+</code></pre>
+<p>  最终，可以得到<code>Arena</code>的模型：</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/1351548-e1474dc87633534a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="data-block"><a href="#data-block" class="headerlink" title="data block"></a>data block</h2><p>leveldb作为一个key-value数据库，它并没有将数据存放在内存之中，而是把数据存放在磁盘之中。</p>
+<p><strong>leveldb存放数据的流程</strong></p>
+<ol>
+<li>首先需要将数据写入<code>log</code>文件（<code>log</code>文件主要用处：防止在断电时，内存中的数据会丢失，数据可以从<code>log</code>文件中恢复），接着指定一块内存用于写数据（这块内存称之为<code>MemTable</code>），当占用的内存到达阈值之后（<code>options</code>属性中的<code>write_buffer_size</code>的大小，默认为<code>4&lt;&lt;20</code>），就将这块内存转换为只读的（read-only，这块只读内存称为<code>Immutable MemTable</code>），并且<code>log</code>文件也会生成一个新的<code>log</code>文件</li>
+<li>与此同时，开辟一块新的内存（<code>MemTable</code>）来进行继续写数据</li>
+<li>然后异步地将<code>Immutable MemTable</code>的数据添加到磁盘之中（即持久化到磁盘中）</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-551f36e5aca8df30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="整形数据存储"><a href="#整形数据存储" class="headerlink" title="整形数据存储"></a>整形数据存储</h3><p>leveldb多有数据都是字符从事，即使是整形也会被转换为字符型进行存储。这样做的目的是为了减少内存空间的使用。例如，有一个<code>int</code>型数据，小于<code>128</code>，存储为整型时，将占用<code>4</code>个字节；而存储为字符型时，只需要<code>1</code>个字节即可。</p>
+<p>leveldb共有两种整型和字符型数据转换，一种是<code>fixed</code>，一种是<code>variant</code>。</p>
+<h4 id="fixed转换"><a href="#fixed转换" class="headerlink" title="fixed转换"></a><code>fixed</code>转换</h4><p>直接将<code>int</code>的每一个字节直接存入字符数组中。</p>
+<pre><code class="cpp">//编码（整型——&gt;字符串）
+void EncodeFixed32(char* buf, uint32_t value) {
+//如果是小端，直接进行copy
+  if (port::kLittleEndian) {
+    memcpy(buf, &amp;value, sizeof(value));
+  } else {
+//如果是大端，则需要一个字节一个字节的进行copy
+    buf[0] = value &amp; 0xff;             //得到第一个字节（低8位）
+    buf[1] = (value &gt;&gt; 8) &amp; 0xff;
+    buf[2] = (value &gt;&gt; 16) &amp; 0xff;
+    buf[3] = (value &gt;&gt; 24) &amp; 0xff;
+  }
+}
+
+//解码（字符串——&gt;整型）
+inline uint32_t DecodeFixed32(const char* ptr) {
+  if (port::kLittleEndian) {
+    // Load the raw bytes
+    uint32_t result;
+    memcpy(&amp;result, ptr, sizeof(result));  // gcc optimizes this to a plain load
+    return result;
+  } else {
+    return ((static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[0])))
+        | (static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[1])) &lt;&lt; 8)
+        | (static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[2])) &lt;&lt; 16)
+        | (static_cast&lt;uint32_t&gt;(static_cast&lt;unsigned char&gt;(ptr[3])) &lt;&lt; 24));
+  }
+}
+
+inline uint64_t DecodeFixed64(const char* ptr) {
+  if (port::kLittleEndian) {
+    // Load the raw bytes
+    uint64_t result;
+    memcpy(&amp;result, ptr, sizeof(result));  // gcc optimizes this to a plain load
+    return result;
+  } else {
+    uint64_t lo = DecodeFixed32(ptr);
+    uint64_t hi = DecodeFixed32(ptr + 4);
+    return (hi &lt;&lt; 32) | lo;
+  }
+}
+</code></pre>
+<h4 id="varient"><a href="#varient" class="headerlink" title="varient"></a>varient</h4><p>这种转换是将一个字节分为两部分，前<code>7</code>个字节用于存储数据，第<code>8</code>个字节用于表示高位是否还有数据：</p>
+<pre><code class="cpp">char* EncodeVarint32(char* dst, uint32_t v) {
+  // Operate on characters as unsigneds
+  unsigned char* ptr = reinterpret_cast&lt;unsigned char*&gt;(dst);
+//128 ===&gt; 1000 0000  
+  static const int B = 128;
+//如果v&lt;128，则将v的低7位copy到ptr，ptr第8位为0，表示高位没有数据
+if (v &lt; (1&lt;&lt;7)) {
+    *(ptr++) = v;
+//v的低7位copy到ptr，ptr的第8位为1，表示高位还有数据
+//在将v的高7位copy到(ptr+1)的低7位，(ptr+1)的第8位为0，表示高位没有数据了
+  } else if (v &lt; (1&lt;&lt;14)) {
+    *(ptr++) = v | B;
+    *(ptr++) = v&gt;&gt;7;
+  } else if (v &lt; (1&lt;&lt;21)) {
+    *(ptr++) = v | B;
+    *(ptr++) = (v&gt;&gt;7) | B;
+    *(ptr++) = v&gt;&gt;14;
+  } else if (v &lt; (1&lt;&lt;28)) {
+    *(ptr++) = v | B;
+    *(ptr++) = (v&gt;&gt;7) | B;
+    *(ptr++) = (v&gt;&gt;14) | B;
+    *(ptr++) = v&gt;&gt;21;
+  } else {
+    *(ptr++) = v | B;
+    *(ptr++) = (v&gt;&gt;7) | B;
+    *(ptr++) = (v&gt;&gt;14) | B;
+    *(ptr++) = (v&gt;&gt;21) | B;
+    *(ptr++) = v&gt;&gt;28;
+  }
+  return reinterpret_cast&lt;char*&gt;(ptr);
+}
+
+const char* GetVarint32PtrFallback(const char* p,
+                                   const char* limit,
+                                   uint32_t* value) {
+  uint32_t result = 0;
+  for (uint32_t shift = 0; shift &lt;= 28 &amp;&amp; p &lt; limit; shift += 7) {
+  //取出p字符串当前的第一个字节
+    uint32_t byte = *(reinterpret_cast&lt;const unsigned char*&gt;(p));
+    p++;
+//判断第8位是否为1，如果为1，说明高位还有数据，则继续循环
+    if (byte &amp; 128) {
+      // More bytes are present
+//每7位移动一次，分别向result的7位进行赋值
+      result |= ((byte &amp; 127) &lt;&lt; shift);
+    } else {
+      result |= (byte &lt;&lt; shift);
+      *value = result;
+      return reinterpret_cast&lt;const char*&gt;(p);
+    }
+  }
+  return nullptr;
+}
+</code></pre>
+<p>在解析<code>variant</code>时，需要首先取出字符数组的每一个字节，先判断该字节是否大于<code>128</code>。如果其小于<code>128</code>，则直接取出该字节的低<code>7</code>位，赋值给<code>result</code>的低<code>7</code>位。而如果该字节大于<code>128</code>，则说明还有第二个字节，则取出第二个字节，得到其低<code>7</code>位，然后左移<code>7</code>位，然后赋值给<code>result</code>的<code>8~14</code>位，后续亦是如此。</p>
+<h2 id="leveldb键的形式"><a href="#leveldb键的形式" class="headerlink" title="leveldb键的形式"></a>leveldb键的形式</h2><p>都定义在<code>db/dbformat.h</code>头文件之中。</p>
+<h3 id="1-InternalKey，其格式为："><a href="#1-InternalKey，其格式为：" class="headerlink" title="1. InternalKey，其格式为："></a>1. <code>InternalKey</code>，其格式为：</h3><pre><code class="cpp">| user key | sequence number | type |
+InternalKey_size = key_size + 8
+</code></pre>
+<p><code>user_key</code>就是用户输入的key，而<code>InternalKey</code>在<code>user_key</code>的基础上，封装了<code>sequence</code>+<code>type</code>。<code>sequence</code>是一个全局递增的序列号，每一次<code>Put</code>操作都会递增。这样，不同时间的写入操作会得到不一样的<code>sequence</code>。</p>
+<p><code>sstable</code>单条<code>record</code>中的key，其内部其实就是一个<code>InternalKey</code>。<code>sequence</code>主要跟<code>snapshot</code>机制与<code>version</code>机制相关，对压缩会产生一定影响。根据<code>type</code>字段，可以获知本次写入操作是写还是删除（也就是说删除是一种特殊的写）。而<code>LookupKey</code>/<code>memtable_key</code>用于在<code>memtable</code>中，多了一个长度字段。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-edfa9c72a7fced9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其实，<code>InternalKey</code>就是对plain strings的一个简单封装，即在使用时应该将key保存在<code>InternalKey</code>之中，而不是普通的的string中。这样做的目的是为了防止用户错误地使用字符串比较函数，而是应该使用提供的<code>InternalKeyComparator</code>。</p>
+<p>其源码为：</p>
+<pre><code class="cpp">class InternalKey {
+ private:
+  std::string rep_;
+ public:
+  InternalKey() { }   // Leave rep_ as empty to indicate it is invalid
+  InternalKey(const Slice&amp; user_key, SequenceNumber s, ValueType t) {
+    AppendInternalKey(&amp;rep_, ParsedInternalKey(user_key, s, t));
+  }
+
+  void DecodeFrom(const Slice&amp; s) { rep_.assign(s.data(), s.size()); }
+  Slice Encode() const {
+    assert(!rep_.empty());
+    return rep_;
+  }
+
+  Slice user_key() const { return ExtractUserKey(rep_); }
+
+  void SetFrom(const ParsedInternalKey&amp; p) {
+    rep_.clear();
+    AppendInternalKey(&amp;rep_, p);
+  }
+
+  void Clear() { rep_.clear(); }
+};
+</code></pre>
+<p>解析<code>InternalKey</code>的源码：</p>
+<pre><code class="cpp">inline bool ParseInternalKey(const Slice&amp; internal_key,
+                             ParsedInternalKey* result) {
+//获取key的长度
+  const size_t n = internal_key.size();
+//key的长度必须大于8
+  if (n &lt; 8) return false;
+//将key的具体内容进行变长解码，其中sequence+type一共占8个字节，+n的目的是将字符指针移动到key的末尾，-8是为了使得字符指针移动到sequence+type处。
+  uint64_t num = DecodeFixed64(internal_key.data() + n - 8);
+//获得key的低8位，即type
+  unsigned char c = num &amp; 0xff;
+  result-&gt;sequence = num &gt;&gt; 8;
+  result-&gt;type = static_cast&lt;ValueType&gt;(c);
+  result-&gt;user_key = Slice(internal_key.data(), n - 8);
+  return (c &lt;= static_cast&lt;unsigned char&gt;(kTypeValue));
+}
+</code></pre>
+<h3 id="2-ParsedInternalKey的格式为："><a href="#2-ParsedInternalKey的格式为：" class="headerlink" title="2. ParsedInternalKey的格式为："></a>2. <code>ParsedInternalKey</code>的格式为：</h3><pre><code class="cpp">| user_key | sequence number | type |
+</code></pre>
+<p>其源码为：</p>
+<pre><code class="cpp">struct ParsedInternalKey {
+  Slice user_key;
+  SequenceNumber sequence;
+  ValueType type;
+
+  ParsedInternalKey() { }  // Intentionally left uninitialized (for speed)
+  ParsedInternalKey(const Slice&amp; u, const SequenceNumber&amp; seq, ValueType t)
+      : user_key(u), sequence(seq), type(t) { }
+};
+</code></pre>
+<h3 id="3-skiplist内部存储的key的格式为："><a href="#3-skiplist内部存储的key的格式为：" class="headerlink" title="3. skiplist内部存储的key的格式为："></a>3. skiplist内部存储的key的格式为：</h3><pre><code class="cpp">VatInt(InternalKey_size)len | InternalKey | VarInt(value) len | value |
+</code></pre>
+<p>skiplist中的单个节点不仅存储了key，也存储了value。尽管单个节点的开头部分是一个<code>LookupKey</code>，但其内部比较时，还是使用的<code>InternalKey</code>。也就是说，比较时，先使用<code>InternalKey</code>内部的<code>user_key</code>进行比较，再比较<code>sequence</code>。这样，不管是<code>memtable</code>还是<code>sstable</code>文件，其内部都是按<code>InternalKey</code>有序的。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f8530eed7a31714c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<pre><code class="cpp">int InternalKeyComparator::Compare(const Slice&amp; akey, const Slice&amp; bkey) const {
+  // Order by:
+  //    increasing user key (according to user-supplied comparator)
+  //    decreasing sequence number
+  //    decreasing type (though sequence# should be enough to disambiguate)
+  int r = user_comparator_-&gt;Compare(ExtractUserKey(akey), ExtractUserKey(bkey));
+  if (r == 0) {
+    const uint64_t anum = DecodeFixed64(akey.data() + akey.size() - 8);
+    const uint64_t bnum = DecodeFixed64(bkey.data() + bkey.size() - 8);
+    if (anum &gt; bnum) {
+      r = -1;
+    } else if (anum &lt; bnum) {
+      r = +1;
+    }
+  }
+  return r;
+}
+</code></pre>
+<h3 id="4-传入memtable的是LookupKey，其格式为："><a href="#4-传入memtable的是LookupKey，其格式为：" class="headerlink" title="4. 传入memtable的是LookupKey，其格式为："></a>4. 传入<code>memtable</code>的是<code>LookupKey</code>，其格式为：</h3><pre><code class="cpp">| InternalKey_size | InternalKey |
+</code></pre>
+<p><code>LookupKey</code>是leveldb为了在<code>memtable</code>/<code>sstable</code>中查找方便，为key包装的类型，其源码为：</p>
+<pre><code class="cpp">// A helper class useful for DBImpl::Get()
+class LookupKey {
+ public:
+  // Initialize *this for looking up user_key at a snapshot with
+  // the specified sequence number.
+//初始化LoopupKey，主要用于在snapshot中查找user_key
+  LookupKey(const Slice&amp; user_key, SequenceNumber sequence);
+
+  ~LookupKey();
+
+//其实，在本质上，memtable_key和LookupKey是一样的
+  // Return a key suitable for lookup in a MemTable.
+  Slice memtable_key() const { return Slice(start_, end_ - start_); }
+
+  // Return an internal key (suitable for passing to an internal iterator)
+  Slice internal_key() const { return Slice(kstart_, end_ - kstart_); }
+
+  // Return the user key
+  Slice user_key() const { return Slice(kstart_, end_ - kstart_ - 8); }
+
+ private:
+  // We construct a char array of the form:
+  //    klength   varint32                   &lt;-- start_
+  //    userkey  char[klength]           &lt;-- kstart_
+  //    tag          uint64
+  //                                                   &lt;-- end_
+  // The array is a suitable MemTable key.
+  // The suffix starting with &quot;userkey&quot; can be used as an InternalKey.
+  const char* start_;
+  const char* kstart_;
+  const char* end_;
+  char space_[200];      // Avoid allocation for short keys
+
+  // No copying allowed
+  LookupKey(const LookupKey&amp;);
+  void operator=(const LookupKey&amp;);
+};
+
+inline LookupKey::~LookupKey() {
+  if (start_ != space_) delete[] start_;
+}
+</code></pre>
+<p><strong>总结：</strong></p>
+<ol>
+<li>最短的是<code>InternalKey</code>，由<code>uer_key</code>+<code>sequence</code>+<code>type</code>组成</li>
+<li><code>LookupKey</code>，由<code>InternalKey</code>的长度+<code>InternalKey</code>组成</li>
+<li>skiplist中存储的键为：<code>LookupKey</code>+<code>value</code>的长度+<code>value</code></li>
+</ol>
+<h2 id="memtable"><a href="#memtable" class="headerlink" title="memtable"></a><code>memtable</code></h2><p><code>memtable</code>是leveldb数据在内存中的存储形式，写操作的数据都会先写到<code>memtable</code>中，<code>memtable</code>的大小有上限（<code>write_buffer_size</code>)。<code>memtable</code>的底层DS是skiplist。<code>memtable</code>的主要作用是：<strong>完成key-value的打包，调用底层skiplist，为上层调用插入数据提供接口</strong>。</p>
+<p><code>memtable</code>主要有三个公共interface：</p>
+<ol>
+<li><code>Get</code>：用于获取某个键值（key）</li>
+<li><code>Add</code>：用于添加某个键值（key）</li>
+<li><code>NewIterator</code>：用于获取<code>memtable</code>的迭代器</li>
+</ol>
+<p><code>memtable</code>一共有4个成员变量：</p>
+<pre><code class="cpp">  typedef SkipList&lt;const char*, KeyComparator&gt; Table; //实例化跳跃表
+  KeyComparator comparator_;    //键值（字符）比较器
+  int refs_;                                      //memtable的引用计数
+  Arena arena_;                                //内存池
+  Table table_;                                //底层跳跃表
+</code></pre>
+<p>构造函数：</p>
+<pre><code class="cpp">MemTable::MemTable(const InternalKeyComparator&amp; cmp)
+    : comparator_(cmp),
+      refs_(0),
+      table_(comparator_, &amp;arena_) {
+}
+</code></pre>
+<p>往<code>memtable</code>中插入记录，其实就是讲<code>key-value</code>数据进行打包。<code>memtable</code>的插入操作其实很简单，只需要按照协议（数据存储格式）封装好键值即可，最后再将其插入到skiplist之中即可。</p>
+<ol>
+<li>首先需要将<code>key</code>、<code>SequenceNumber</code>和<code>ValueType</code>打包成<code>InternalKey</code>。（<strong>【注】：</strong>每次进行更新（<code>Put</code>/<code>Delete</code>）时，都会产生不同的序列号<code>SequenceNumber</code>；<code>ValueType</code>用于区分<code>entry</code>是真实的<code>key-value</code>数据还是更新操作。如果是<code>delete</code>操作，leveldb需要先进行记录，然后在后台的<code>compact</code>县城会完成真正的删除工作；进行存储时，<code>SequenceNumber</code>占<code>7</code>个字节，<code>ValueType</code>占<code>1</code>个字节，两者用户共占用<code>8</code>个字节）。</li>
+<li>打包除了有<code>key</code>（<code>InternalKey</code>）和<code>value</code>，还加入了<code>key</code>、<code>value</code>各自的长度信息，而两者均是自定义的<code>Variant</code>（变长整型）数据，需要将它们进行<code>int——&gt;Variant</code>的类型转换。</li>
+</ol>
+<pre><code class="cpp">void MemTable::Add(SequenceNumber s, ValueType type,
+                   const Slice&amp; key,
+                   const Slice&amp; value) {
+  // Format of an entry is concatenation of:
+  //  key_size     : varint32 of internal_key.size()
+  //  key bytes    : char[internal_key.size()]
+  //  value_size   : varint32 of value.size()
+  //  value bytes  : char[value.size()]
+  size_t key_size = key.size();                         //key（键值）长度
+  size_t val_size = value.size();                       //值的长度
+  size_t internal_key_size = key_size + 8;       //InternalKey的长度
+  const size_t encoded_len =                           //skiplist中存储结点的总长度
+      VarintLength(internal_key_size) + internal_key_size +
+      VarintLength(val_size) + val_size;
+  char* buf = arena_.Allocate(encoded_len);      //为key分配内存
+  char* p = EncodeVarint32(buf, internal_key_size);  //将key的长度存入buf中
+  memcpy(p, key.data(), key_size);                      //将key的具体内容存入buf之中
+  p += key_size;                         //将指针后移key_size个字节，使得指针指向sequence+type
+  EncodeFixed64(p, (s &lt;&lt; 8) | type);     //获取sequence+type
+  p += 8;                                                 
+  p = EncodeVarint32(p, val_size);       //将value的长度进行编码
+  memcpy(p, value.data(), val_size);    //将编码后的value长度压入内存
+  assert(p + val_size == buf + encoded_len);
+  table_.Insert(buf);
+}
+</code></pre>
+<p>其中，关于<code>VariantLenth()</code>的实现为：</p>
+<pre><code class="cpp">int VarintLength(uint64_t v) {
+  int len = 1;
+  while (v &gt;= 128) {
+    v &gt;&gt;= 7;
+    len++;
+  }
+  return len;
+</code></pre>
+<p>接下来，是读取操作：</p>
+<pre><code class="cpp">bool MemTable::Get(const LookupKey&amp; key, std::string* value, Status* s) {
+//LookupKey是leveldb为了在memtable/sstable中查找方便，为key包装的类型
+//调用memtable_key可以返回在memtable中的key格式
+  Slice memkey = key.memtable_key();
+//利用skiplist的专属迭代器查找key
+  Table::Iterator iter(&amp;table_);
+  iter.Seek(memkey.data());
+  if (iter.Valid()) {
+    // entry format is:
+    //    klength    varint32
+    //    userkey   char[klength]
+    //    tag          uint64
+    //    vlength    varint32
+    //    value       char[vlength]
+    // Check that it belongs to same user key.  We do not check the
+    // sequence number since the Seek() call above should have skipped
+    // all entries with overly large sequence numbers.
+    const char* entry = iter.key();
+    uint32_t key_length;
+    const char* key_ptr = GetVarint32Ptr(entry, entry+5, &amp;key_length);
+    if (comparator_.comparator.user_comparator()-&gt;Compare(
+            Slice(key_ptr, key_length - 8),
+            key.user_key()) == 0) {
+      // Correct user key
+//从memtable中的entry&#39;中提取出ValueType
+//如果ValueType==kTypeValue ====&gt; 是真实的key-value数据
+//如果ValueType==kTypeDeletion ====&gt; 是要删除的类型，并不代表数据真实存在
+      const uint64_t tag = DecodeFixed64(key_ptr + key_length - 8);
+      switch (static_cast&lt;ValueType&gt;(tag &amp; 0xff)) {
+        case kTypeValue: {
+          Slice v = GetLengthPrefixedSlice(key_ptr + key_length);
+          value-&gt;assign(v.data(), v.size());
+          return true;
+        }
+        case kTypeDeletion:
+          *s = Status::NotFound(Slice());
+          return true;
+      }
+    }
+  }
+  return false;
+}
+</code></pre>
+<p><code>memtable</code>迭代器的定义为：</p>
+<pre><code class="cpp">class MemTableIterator : public Iterator {
+ public:
+  explicit MemTableIterator(MemTable::Table* table) : iter_(table) { }
+
+  virtual bool Valid() const { return iter_.Valid(); }
+  virtual void Seek(const Slice&amp; k) { iter_.Seek(EncodeKey(&amp;tmp_, k)); }
+  virtual void SeekToFirst() { iter_.SeekToFirst(); }
+  virtual void SeekToLast() { iter_.SeekToLast(); }
+  virtual void Next() { iter_.Next(); }
+  virtual void Prev() { iter_.Prev(); }
+  virtual Slice key() const { return GetLengthPrefixedSlice(iter_.key()); }
+  virtual Slice value() const {
+    Slice key_slice = GetLengthPrefixedSlice(iter_.key());
+    return GetLengthPrefixedSlice(key_slice.data() + key_slice.size());
+  }
+
+  virtual Status status() const { return Status::OK(); }
+
+ private:
+  MemTable::Table::Iterator iter_;
+  std::string tmp_;       // For passing to EncodeKey
+
+  // No copying allowed
+  MemTableIterator(const MemTableIterator&amp;);
+  void operator=(const MemTableIterator&amp;);
+};
+</code></pre>
+<p>返回<code>memtable</code>迭代器：</p>
+<pre><code class="cpp">Iterator* MemTable::NewIterator() {
+  return new MemTableIterator(&amp;table_);
+}
+</code></pre>
+<h2 id="读写log文件"><a href="#读写log文件" class="headerlink" title="读写log文件"></a>读写<code>log</code>文件</h2><p>leveldb的第二大组件<code>log</code>文件的读写，<code>log</code>文件也可以成为<strong>恢复日志</strong>。当leveldb插入数据时，先将数据插入<code>log</code>日志文件中，接着再插入到内存中的<code>memtable</code>中。这样，即使在使用过程，突然断电，<code>memtable</code>还不来及把数据持久化到磁盘时，内存数据就不会丢失，这是就可从<code>log</code>文件中恢复。</p>
+<p><code>log</code>文件按块划分，默认每块为<code>32768kb=32M</code>。这么大的好处是：可以减少从磁盘读取数据的次数，减少磁盘IO。可以看如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-26f18dd647643002.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>上图中有<code>3</code>个<code>block</code>。然后每一条数据的格式为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-543f76b2d5976eef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><code>log</code>文件每一条记录由四个部分组成：</p>
+<ol>
+<li><code>CheckSum</code>，即CRC验证码，占4个字节</li>
+<li>记录长度，即数据部分的长度，2个字节</li>
+<li>类型，这条记录的类型，占1个字节</li>
+<li>数据，即这条记录的数据</li>
+</ol>
+<p>关于记录的类型，通常使用的有<code>4</code>种：</p>
+<ol>
+<li><code>FULL</code>，表示这是一条完整的记录</li>
+<li><code>FIRST</code>，表示这是一条记录的第一部分</li>
+<li><code>MIDDLE</code>，表示这是一条记录的中间部分</li>
+<li><code>LAST</code>，表示这是一条记录的最后一部分</li>
+</ol>
+<h3 id="Writer类"><a href="#Writer类" class="headerlink" title="Writer类"></a><code>Writer</code>类</h3><p><code>log</code>日志写相对简单，把数据按记录的格式封装好，再写入文件即可。成员变量有：</p>
+<pre><code class="cpp">  WritableFile* dest_;    //log日志文件的封装类
+  int block_offset_;       //块内偏移量，用于指定写地址（Current offset in block）
+</code></pre>
+<p>  构造函数为：</p>
+<pre><code class="cpp">  static void InitTypeCrc(uint32_t* type_crc) {
+  for (int i = 0; i &lt;= kMaxRecordType; i++) {
+    char t = static_cast&lt;char&gt;(i);
+    type_crc[i] = crc32c::Value(&amp;t, 1);
+  }
+}
+
+//当创建一个writer时，数据将被append到*dest中。
+//*dest初始必须为empty
+// 在Writer的使用过程中，*dest需要一直remain live
+Writer::Writer(WritableFile* dest)
+    : dest_(dest),
+      block_offset_(0) {
+  InitTypeCrc(type_crc_);
+}
+
+Writer::Writer(WritableFile* dest, uint64_t dest_length)
+    : dest_(dest), block_offset_(dest_length % kBlockSize) {
+  InitTypeCrc(type_crc_);
+}
+</code></pre>
+<p>添加记录函数：</p>
+<pre><code class="cpp">enum RecordType {
+  // Zero is reserved for preallocated files
+  kZeroType = 0,
+
+  kFullType = 1,
+
+  // For fragments
+  kFirstType = 2,
+  kMiddleType = 3,
+  kLastType = 4
+};
+
+Status Writer::AddRecord(const Slice&amp; slice) {
+  const char* ptr = slice.data();      //需要添加的记录数据
+  size_t left = slice.size();              //记录数据的长度
+
+  // Fragment the record if necessary and emit it.  Note that if slice
+  // is empty, we still want to iterate once to emit a single
+  // zero-length record
+  Status s;
+  bool begin = true;
+  do {
+//kBlockSize ===&gt; 32768
+//由于block_offset_表示块内偏移量，而kBlockSize表示一个分配的最大内存块
+//所以，leftover表示当前块的剩余容量
+    const int leftover = kBlockSize - block_offset_;     
+    assert(leftover &gt;= 0);
+    if (leftover &lt; kHeaderSize) {             //如果剩余容量小于记录头长度（kHeaderSize=7kb）
+      // Switch to a new block
+      if (leftover &gt; 0) {
+        // Fill the trailer (literal below relies on kHeaderSize being 7)
+        assert(kHeaderSize == 7);
+        dest_-&gt;Append(Slice(&quot;\x00\x00\x00\x00\x00\x00&quot;, leftover));
+      }
+      block_offset_ = 0;
+    }
+
+    // Invariant: we never leave &lt; kHeaderSize bytes in a block.
+    assert(kBlockSize - block_offset_ - kHeaderSize &gt;= 0);
+
+//除去记录头以后，剩余的块还有剩余空间avail
+    const size_t avail = kBlockSize - block_offset_ - kHeaderSize;
+//判断当前块能否容纳下当前记录数据。如果记录数据小于剩余空间，这将fragment的长度设置为记录数据的长度。反之，就将其设置为剩余的块内长度
+    const size_t fragment_length = (left &lt; avail) ? left : avail;
+
+    RecordType type;
+    const bool end = (left == fragment_length); 
+    if (begin &amp;&amp; end) {      //如果拥有开头和结尾标志，说明是一个完整块
+      type = kFullType;           
+    } else if (begin) {           //如果只有开头标志，说明它是一个起始块
+      type = kFirstType;
+    } else if (end) {           //如果只有结尾标志，说明它是记录的最后一块
+      type = kLastType;
+    } else {
+      type = kMiddleType;
+    }
+
+//将fragment_length长度记录写入文件
+    s = EmitPhysicalRecord(type, ptr, fragment_length);
+    ptr += fragment_length;  //指针向后移动fragment_length个字节
+    left -= fragment_length;  //减少记录的剩余长度
+    begin = false;
+  } while (s.ok() &amp;&amp; left &gt; 0);
+  return s;
+}
+
+
+Status Writer::EmitPhysicalRecord(RecordType t, const char* ptr, size_t n) {
+  assert(n &lt;= 0xffff);  // Must fit in two bytes
+  assert(block_offset_ + kHeaderSize + n &lt;= kBlockSize);
+
+  // Format the header
+//封装记录头Header：checksum + length + flag
+  char buf[kHeaderSize];
+  buf[4] = static_cast&lt;char&gt;(n &amp; 0xff);
+  buf[5] = static_cast&lt;char&gt;(n &gt;&gt; 8);
+  buf[6] = static_cast&lt;char&gt;(t);
+
+  // Compute the crc of the record type and the payload.
+  uint32_t crc = crc32c::Extend(type_crc_[t], ptr, n);  //用crc填充buf前四个字节
+  crc = crc32c::Mask(crc);                 // Adjust for storage
+  EncodeFixed32(buf, crc);
+
+  // Write the header and the payload
+//将记录头写入缓存
+  Status s = dest_-&gt;Append(Slice(buf, kHeaderSize));
+  if (s.ok()) {
+    s = dest_-&gt;Append(Slice(ptr, n));    //将记录内容写入缓存
+    if (s.ok()) {
+      s = dest_-&gt;Flush();                        //将缓存的数据刷进内核
+    }
+  }
+  block_offset_ += kHeaderSize + n;  //更新块内偏移量
+  return s;
+}
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-01c46c873b8c9af9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="log文件的Reader类"><a href="#log文件的Reader类" class="headerlink" title="log文件的Reader类"></a><code>log</code>文件的<code>Reader</code>类</h2><p><code>Reader</code>类的成员变量：</p>
+<pre><code class="cpp">private:
+  SequentialFile* const file_;      //读取文件的封装类
+  Reporter* const reporter_;       //报告错误类
+  bool const checksum_;            //是否进行CRC验证
+  char* const backing_store_;    
+  Slice buffer_;                                                     
+  bool eof_;   // Last Read() indicated EOF by returning &lt; kBlockSize
+
+  // Offset of the last record returned by ReadRecord.
+//上条记录的偏移量
+  uint64_t last_record_offset_;
+  // Offset of the first location past the end of buffer_.
+//当前块结尾在log文件的偏移量
+  uint64_t end_of_buffer_offset_;
+
+  // Offset at which to start looking for the first record to return
+//开始查找的起始地址
+  uint64_t const initial_offset_;
+
+  // True if we are resynchronizing after a seek (initial_offset_ &gt; 0). In
+  // particular, a run of kMiddleType and kLastType records can be silently
+  // skipped in this mode
+  bool resyncing_;
+</code></pre>
+<p><code>SkipToInitialBlock</code>函数：</p>
+<pre><code class="cpp">bool Reader::SkipToInitialBlock() {
+//计算当前块在block中的偏移量，并圆整到开始读取block的起始位置
+  const size_t offset_in_block = initial_offset_ % kBlockSize;
+  uint64_t block_start_location = initial_offset_ - offset_in_block;
+
+  // Don&#39;t search a block if we&#39;d be in the trailer
+  if (offset_in_block &gt; kBlockSize - 6) {
+    block_start_location += kBlockSize;
+  }
+
+  end_of_buffer_offset_ = block_start_location;
+
+  // Skip to start of first block that can contain the initial record
+  if (block_start_location &gt; 0) {
+    Status skip_status = file_-&gt;Skip(block_start_location);
+    if (!skip_status.ok()) {
+      ReportDrop(block_start_location, skip_status);
+      return false;
+    }
+  }
+
+  return true;
+}
+</code></pre>
+<p>读取文件函数：</p>
+<pre><code class="cpp">bool Reader::ReadRecord(Slice* record, std::string* scratch) {
+  if (last_record_offset_ &lt; initial_offset_) {
+    if (!SkipToInitialBlock()) {
+      return false;
+    }
+  }
+
+  scratch-&gt;clear();
+  record-&gt;clear();
+  bool in_fragmented_record = false;
+  // Record offset of the logical record that we&#39;re reading
+  // 0 is a dummy value to make compilers happy
+  uint64_t prospective_record_offset = 0;
+
+  Slice fragment;
+  while (true) {
+    const unsigned int record_type = ReadPhysicalRecord(&amp;fragment);
+
+    // ReadPhysicalRecord may have only had an empty trailer remaining in its
+    // internal buffer. Calculate the offset of the next physical record now
+    // that it has returned, properly accounting for its header size.
+    uint64_t physical_record_offset =
+        end_of_buffer_offset_ - buffer_.size() - kHeaderSize - fragment.size();
+
+    if (resyncing_) {
+      if (record_type == kMiddleType) {
+        continue;
+      } else if (record_type == kLastType) {
+        resyncing_ = false;
+        continue;
+      } else {
+        resyncing_ = false;
+      }
+    }
+
+    switch (record_type) {
+      case kFullType:
+        if (in_fragmented_record) {
+          // Handle bug in earlier versions of log::Writer where
+          // it could emit an empty kFirstType record at the tail end
+          // of a block followed by a kFullType or kFirstType record
+          // at the beginning of the next block.
+          if (!scratch-&gt;empty()) {
+            ReportCorruption(scratch-&gt;size(), &quot;partial record without end(1)&quot;);
+          }
+        }
+        prospective_record_offset = physical_record_offset;
+        scratch-&gt;clear();
+        *record = fragment;
+        last_record_offset_ = prospective_record_offset;
+        return true;
+
+      case kFirstType:
+        if (in_fragmented_record) {
+          // Handle bug in earlier versions of log::Writer where
+          // it could emit an empty kFirstType record at the tail end
+          // of a block followed by a kFullType or kFirstType record
+          // at the beginning of the next block.
+          if (!scratch-&gt;empty()) {
+            ReportCorruption(scratch-&gt;size(), &quot;partial record without end(2)&quot;);
+          }
+        }
+        prospective_record_offset = physical_record_offset;
+        scratch-&gt;assign(fragment.data(), fragment.size());
+        in_fragmented_record = true;
+        break;
+
+      case kMiddleType:
+        if (!in_fragmented_record) {
+          ReportCorruption(fragment.size(),
+                           &quot;missing start of fragmented record(1)&quot;);
+        } else {
+          scratch-&gt;append(fragment.data(), fragment.size());
+        }
+        break;
+
+      case kLastType:
+        if (!in_fragmented_record) {
+          ReportCorruption(fragment.size(),
+                           &quot;missing start of fragmented record(2)&quot;);
+        } else {
+          scratch-&gt;append(fragment.data(), fragment.size());
+          *record = Slice(*scratch);
+          last_record_offset_ = prospective_record_offset;
+          return true;
+        }
+        break;
+
+      case kEof:
+        if (in_fragmented_record) {
+          // This can be caused by the writer dying immediately after
+          // writing a physical record but before completing the next; don&#39;t
+          // treat it as a corruption, just ignore the entire logical record.
+          scratch-&gt;clear();
+        }
+        return false;
+
+      case kBadRecord:
+        if (in_fragmented_record) {
+          ReportCorruption(scratch-&gt;size(), &quot;error in middle of record&quot;);
+          in_fragmented_record = false;
+          scratch-&gt;clear();
+        }
+        break;
+
+      default: {
+        char buf[40];
+        snprintf(buf, sizeof(buf), &quot;unknown record type %u&quot;, record_type);
+        ReportCorruption(
+            (fragment.size() + (in_fragmented_record ? scratch-&gt;size() : 0)),
+            buf);
+        in_fragmented_record = false;
+        scratch-&gt;clear();
+        break;
+      }
+    }
+  }
+  return false;
+}
+
+</code></pre>
+<p>## </p>
+<h2 id="Skiplist"><a href="#Skiplist" class="headerlink" title="Skiplist"></a>Skiplist</h2><p>LevelDB在内存中存储数据的区域称为<code>memtable</code>，它的底层是通过跳跃表skiplist实现的。</p>
+<p><strong>跳跃表的性质：</strong></p>
+<ul>
+<li>由多层结构组成</li>
+<li>每一层都是一个有序链表，排列顺序为由高层到低层，都至少包含两个链表结点，分别是最前面的head结点和后面的nil结点</li>
+<li>最底层的链表包含了所有的元素</li>
+<li>如果一个元素出现在某一层链表之中，那么在该层之下的链表也全都会出现（即上一层元素是当前层元素的子集）</li>
+<li>链表中的每个结点都包含两个指针，一个指向同一层的下一个链表结点，另一个指向下一层的同一个链表结点</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-3de4b15599425806.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>由上图可以看出，该skiplist一共有4层，最上面的一层就是最高层（level 3），最下面的一层就是最底层（level 0），然后每一列中的链表结点中的值都是相同的，它们之间用指针进行连接。此外，跳跃表的层数与结构中最高结点的高度是相同的。在理想情况下，跳跃表结构中的第一层存在所有结点，第二层只有一半的结点，而且是均匀间隔，第三层存在<code>1/4</code>的结点且均匀分布…由此类推，可得知理想的层数就是<code>logN</code>。</p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>基本原理：<strong>从最高层的链表结点开始，如果比当前结点大，但比当前层（cur）的下一个结点（next）小，那么就往下一层（down）寻找，即和当前层的下一层（down）结点的下一个（next）结点进行比较，以此类推，一直找到最底层的一个结点（即<code>p-&gt;down==nil</code>）。如果找到，就返回，否则返回空。</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-fb77f38874e0d32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>伪代码实现：</p>
+<pre><code class="cpp">Search(x) {
+  p=top;
+  while(true) {
+    while(x &gt; p-&gt;next-&gt;key)
+      p = p-&gt;next;
+    if(p-&gt;down == nil)
+      return p-&gt;next;
+    p = p-&gt;down;
+  }
+}
+</code></pre>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p>在插入之前，需要确定插入的层数。一般有两种方法：</p>
+<ul>
+<li>抛硬币。只要得到的是正面就累加，直到遇到反面才停止，最后记录正面的次数，并将其作为要添加的新元素的层。</li>
+<li>进行概率统计。先给定一个概率<code>p</code>，产生一个<code>0</code>到<code>1</code>之间的随机数，如果这个随机数小于<code>p</code>，则将高度加<code>1</code>，直到产生的随机数大于概率<code>p</code>才停止。根据结论，可知当概率为<code>1/2</code>或者<code>1/4</code>的时候，整体的性能会比较好（当<code>p=1/2</code>时，也就是抛硬币的方法）。</li>
+</ul>
+<p>当确定好要插入元素的层数之后，只需要将元素都插入到从最底层到第k层即可。</p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>在各层中找到包含指定值的结点，然后将结点从链表中删除即可。如果删除以后只剩下头、尾两个结点，则直接删除这一层。</p>
+<h3 id="内存屏障（memory-barrier）"><a href="#内存屏障（memory-barrier）" class="headerlink" title="内存屏障（memory barrier）"></a>内存屏障（memory barrier）</h3><p>内存屏障类<code>AtomPointer</code>（即原子操作）的实现为：</p>
+<pre><code class="cpp">class AtomicPointer {
+ private:
+  void* rep_;            //原子指针
+ public:
+  AtomicPointer() { }
+  explicit AtomicPointer(void* p) : rep_(p) {}
+  inline void* NoBarrier_Load() const { return rep_; }
+  inline void NoBarrier_Store(void* v) { rep_ = v; }
+  inline void* Acquire_Load() const {
+    void* result = rep_;
+    MemoryBarrier();
+    return result;
+  }
+  inline void Release_Store(void* v) {
+    MemoryBarrier();
+    rep_ = v;
+  }
+};
+</code></pre>
+<p><strong>内存屏障主要用处就是保证内存数据和处理器寄存器和缓存数据一致性。</strong>因为当某个处理器上改变某个变量<code>x</code>时，那么其他处理器上的<code>x</code>的副本都必须失效，否则将会读取错误值。</p>
+<h3 id="skiplist结点"><a href="#skiplist结点" class="headerlink" title="skiplist结点"></a>skiplist结点</h3><pre><code class="cpp">template&lt;typename Key, class Comparator&gt;
+struct SkipList&lt;Key,Comparator&gt;::Node {
+  explicit Node(const Key&amp; k) : key(k) { }
+
+  Key const key;
+
+  // Accessors/mutators for links.  Wrapped in methods so we can
+  // add the appropriate barriers as necessary.
+  Node* Next(int n) {
+    assert(n &gt;= 0);
+    // Use an &#39;acquire load&#39; so that we observe a fully initialized
+    // version of the returned Node.
+    return reinterpret_cast&lt;Node*&gt;(next_[n].Acquire_Load());
+  }
+  void SetNext(int n, Node* x) {
+    assert(n &gt;= 0);
+    // Use a &#39;release store&#39; so that anybody who reads through this
+    // pointer observes a fully initialized version of the inserted node.
+    next_[n].Release_Store(x);
+  }
+
+  // No-barrier variants that can be safely used in a few locations.
+  Node* NoBarrier_Next(int n) {
+    assert(n &gt;= 0);
+    return reinterpret_cast&lt;Node*&gt;(next_[n].NoBarrier_Load());
+  }
+  void NoBarrier_SetNext(int n, Node* x) {
+    assert(n &gt;= 0);
+    next_[n].NoBarrier_Store(x);
+  }
+
+ private:
+  // Array of length equal to the node height.  next_[0] is lowest level link.
+//用于表示结点的层数
+  port::AtomicPointer next_[1];
+};
+</code></pre>
+<h3 id="skiplist具体实现"><a href="#skiplist具体实现" class="headerlink" title="skiplist具体实现"></a>skiplist具体实现</h3><p>skiplist成员变量的如下：</p>
+<pre><code class="cpp"> private:
+ //定义skiplist链表结点的最大的高度
+  enum { kMaxHeight = 12 };
+
+  // Immutable after construction
+  Comparator const compare_;
+//内存池，从memtable传来，用于构造skiplist结点
+  Arena* const arena_;    // Arena used for allocations of nodes
+
+//skiplist头结点
+  Node* const head_;
+
+  // Modified only by Insert().  Read racily by readers, but stale
+  // values are ok.
+  port::AtomicPointer max_height_;   // Height of the entire list
+
+  // Read/written only by Insert().
+//在插入结点时，随机化处该结点的插入层
+  Random rnd_;
+</code></pre>
+<p>其构造函数为：</p>
+<pre><code class="cpp">//其中，cmp和arena_都由调用者传入，head_头结点的key初始化为0，高度初始化为链表的高度上限12。max_height初始化为1，并将每一层头结点下一个结点设置为NULL（即设置尾结点，初始化之后每一层就头、尾两个结点）
+template&lt;typename Key, class Comparator&gt;
+SkipList&lt;Key,Comparator&gt;::SkipList(Comparator cmp, Arena* arena)
+    : compare_(cmp),
+      arena_(arena),
+      head_(NewNode(0 /* any key will do */, kMaxHeight)),
+      max_height_(reinterpret_cast&lt;void*&gt;(1)),
+      rnd_(0xdeadbeef) {
+  for (int i = 0; i &lt; kMaxHeight; i++) {
+    head_-&gt;SetNext(i, nullptr);
+  }
+}
+</code></pre>
+<p>skiplist用于分配一个新结点的<code>NewNode</code>：</p>
+<pre><code class="cpp">template&lt;typename Key, class Comparator&gt;
+typename SkipList&lt;Key,Comparator&gt;::Node*
+SkipList&lt;Key,Comparator&gt;::NewNode(const Key&amp; key, int height) {
+//直接从内存池中进行分配。
+//sizeof(port::AtomicPointer) * (height - 1)是为了兼容性变长数组声明为 port::AtomicPointer next_[1]（也可以用next[0]，但是有些编译器不支持）  
+//由于Node自身已经占用了一个，所以只需要在添加（height-1）个即可。如果是next[0]的话，就不能减1了
+  char* mem = arena_-&gt;AllocateAligned(
+      sizeof(Node) + sizeof(port::AtomicPointer) * (height - 1));
+  return new (mem) Node(key);
+}
+</code></pre>
+<p>在进行插入结点时，需要先随机化处一个插入高度<code>height</code>，接着 再找到此结点的前<code>height</code>个结点，然后进行插入：</p>
+<pre><code class="cpp">template&lt;typename Key, class Comparator&gt;
+void SkipList&lt;Key,Comparator&gt;::Insert(const Key&amp; key) {
+  // TODO(opt): We can use a barrier-free variant of FindGreaterOrEqual()
+  // here since Insert() is externally synchronized
+//kMaxHeight个前结点，因为还不知道插入结点的高度，所以先设置为最大值12
+  Node* prev[kMaxHeight];
+//查找键值为key的结点的前GetMaxHeight()个结点
+  Node* x = FindGreaterOrEqual(key, prev);
+
+ //不允许重复插入
+  assert(x == nullptr || !Equal(key, x-&gt;key));
+
+//随机化一个结点高度
+  int height = RandomHeight();
+//如果需要插入结点的高度大于最高结点的的高度，则高出部分的前结点都将成为头结点
+  if (height &gt; GetMaxHeight()) {
+    for (int i = GetMaxHeight(); i &lt; height; i++) {
+      prev[i] = head_;
+    }
+    //fprintf(stderr, &quot;Change height from %d to %d\n&quot;, max_height_, height);
+
+    // It is ok to mutate max_height_ without any synchronization
+    // with concurrent readers.  A concurrent reader that observes
+    // the new value of max_height_ will see either the old value of
+    // new level pointers from head_ (nullptr), or a new value set in
+    // the loop below.  In the former case the reader will
+    // immediately drop to the next level since nullptr sorts after all
+    // keys.  In the latter case the reader will use the new node.
+    max_height_.NoBarrier_Store(reinterpret_cast&lt;void*&gt;(height));
+  }
+
+  x = NewNode(key, height);
+  for (int i = 0; i &lt; height; i++) {
+    // NoBarrier_SetNext() suffices since we will add a barrier when
+    // we publish a pointer to &quot;x&quot; in prev[i].
+    x-&gt;NoBarrier_SetNext(i, prev[i]-&gt;NoBarrier_Next(i));
+    prev[i]-&gt;SetNext(i, x);
+  }
+}
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/libjpeg学习/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/KCF/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

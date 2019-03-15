@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            C++点点滴滴（中） | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",C++">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="C++点点滴滴（中） | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="C++"> 
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Nov 15 2018 11:24:33 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="C++点点滴滴（中） | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html",
+    "headline": "C++点点滴滴（中）",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Thu Nov 15 2018 11:24:33 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",C++",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-bind"><span class="post-toc-number">1.</span> <span class="post-toc-text">std::bind</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#std-ref-or-std-cref"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">std::ref or std::cref</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind的基本原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">bind的基本原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存可调用对象及其形参"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">保存可调用对象及其形参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现调用"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">实现调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bind实现的关键技术"><span class="post-toc-number">3.</span> <span class="post-toc-text">bind实现的关键技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将tuple展开为变参"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">将tuple展开为变参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据占位符来选择合适的实参"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">根据占位符来选择合适的实参</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-is-member-function-pointer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">std::is_member_function_pointer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pointer-reference"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">pointer reference</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#智能指针"><span class="post-toc-number">4.</span> <span class="post-toc-text">智能指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">C++17之前，shared_ptr不支持动态数组，而unique_ptr支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-17中，可以使用std-shared-ptr管理动态数组。"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">C++ 17中，可以使用std::shared_ptr管理动态数组。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shared-ptr和unique-ptr指定删除器方式不同"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">shared_ptr和unique_ptr指定删除器方式不同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#std-default-delete"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">std::default_delete</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过std-tuple来实现函数调用"><span class="post-toc-number">5.</span> <span class="post-toc-text">通过std::tuple来实现函数调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型擦除（type-erasure）"><span class="post-toc-number">6.</span> <span class="post-toc-text">类型擦除（type erasure）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-通过多态来擦除类型"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. 通过多态来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-通过模板来擦除类型"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2. 通过模板来擦除类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-通过某种通用类型来擦除类型"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4. 通过某种通用类型来擦除类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现any"><span class="post-toc-number">7.</span> <span class="post-toc-text">实现any</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strtod"><span class="post-toc-number">8.</span> <span class="post-toc-text">strtod</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Imcomplete-types（非完整类型）"><span class="post-toc-number">9.</span> <span class="post-toc-text">Imcomplete types（非完整类型）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fprintf"><span class="post-toc-number">10.</span> <span class="post-toc-text">fprintf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Standard-Predefined-Macros"><span class="post-toc-number">11.</span> <span class="post-toc-text">Standard Predefined Macros</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FILE"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">__FILE__</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LINE"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">__LINE__</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DATE-amp-TIME"><span class="post-toc-number">12.</span> <span class="post-toc-text">__DATE__ &amp; __TIME__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC"><span class="post-toc-number">13.</span> <span class="post-toc-text">__STDC__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#STDC-VERSION"><span class="post-toc-number">14.</span> <span class="post-toc-text">__STDC_VERSION__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cplusplus"><span class="post-toc-number">15.</span> <span class="post-toc-text">__cplusplus</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ASSEMBLER"><span class="post-toc-number">16.</span> <span class="post-toc-text">__ASSEMBLER__</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#macro的技巧"><span class="post-toc-number">17.</span> <span class="post-toc-text">macro的技巧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#std-isalnum"><span class="post-toc-number">18.</span> <span class="post-toc-text">std::isalnum</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Placement-new"><span class="post-toc-number">19.</span> <span class="post-toc-text">Placement new</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#template-disambiguator"><span class="post-toc-number">20.</span> <span class="post-toc-text">template disambiguator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认构造函数（default-ctor）"><span class="post-toc-number">21.</span> <span class="post-toc-text">默认构造函数（default ctor）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-什么是default-ctor"><span class="post-toc-number">21.1.</span> <span class="post-toc-text">1. 什么是default ctor</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#lambda表达式"><span class="post-toc-number">22.</span> <span class="post-toc-text">lambda表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#捕获外部变量"><span class="post-toc-number">22.1.</span> <span class="post-toc-text">捕获外部变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C-11-lambda表达式的实现"><span class="post-toc-number">23.</span> <span class="post-toc-text">C++11 lambda表达式的实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板的相关问题"><span class="post-toc-number">24.</span> <span class="post-toc-text">模板的相关问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板类error-LNK2019：无法解析的外部符号"><span class="post-toc-number">25.</span> <span class="post-toc-text">模板类error LNK2019：无法解析的外部符号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#error的使用"><span class="post-toc-number">26.</span> <span class="post-toc-text">#error的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载-lt-lt-和-gt-gt-操作符"><span class="post-toc-number">27.</span> <span class="post-toc-text">重载&lt;&lt;和&gt;&gt;操作符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#setjmp和longjmp用法"><span class="post-toc-number">28.</span> <span class="post-toc-text">setjmp和longjmp用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载operator-gt"><span class="post-toc-number">29.</span> <span class="post-toc-text">重载operator-&gt;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Debug与Release的区别"><span class="post-toc-number">30.</span> <span class="post-toc-text">Debug与Release的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VC中的“烫烫烫”与“屯屯屯”"><span class="post-toc-number">31.</span> <span class="post-toc-text">VC中的“烫烫烫”与“屯屯屯”</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Memory-Debug-Codes"><span class="post-toc-number">31.1.</span> <span class="post-toc-text">Memory Debug Codes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编译器初始化"><span class="post-toc-number">31.2.</span> <span class="post-toc-text">编译器初始化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Callable-objects"><span class="post-toc-number">32.</span> <span class="post-toc-text">Callable objects</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#std-clock"><span class="post-toc-number"></span> <span class="post-toc-text">std::clock</span></a>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                C++点点滴滴（中）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC30lEQVR42u3aSW7cQBAEwPn/p+WrAXmozGrK4HQHTwLEpaLnUKjl9XXk9cLGxsbGxsbGxsZ+JPsVXz+89K97vt+fvOH6/u/vb2PGxsbG3ps9C+L62XeBzhg3xIyNjY19APvdx5Jw2yCuv5gnyCRmbGxsbOyc+u7Z/GiSg8DGxsbGviuBtUXL9aGsNLCwsbGxsWefWW/3J4eYkH69l4aNjY39eHbeoH/O3/91vo2NjY39YHZ75U2lvGBI1n3alPmP2LCxsbE3ZeeJYX1Au5KW8qSLjY2NfRq7bSettH5mbf3262/vxMbGxt6anbfp8+BmY+O8jMl/AGxsbOy92fkaZTv0zUuOleO+eWUHGxsb+wPZ7eg0ByTDgPZAk3RY521sbGzsD2fnZUYb0OzZPKHW7SdsbGzsA9iz5cv2yGaDh9kbsLGxsU9gtynkq7yu21LtgKE9aGxsbOxz2CvD2usQZ29eSZ9FLw0bGxt7C3bSDFoPfVaczFpIw14aNjY29sey2wZTW06sDyFWUiM2Njb2Cew8/SSfb9tVsyWeHI+NjY19AnvWmr9r0SdPQm08dSmCjY2NvTW7DSUB1839eH0HGxsb+zR20l5fGQnMjiMpZtpUio2Njb0rezg0jWHrg4dkGBwdHzY2NvbW7DyUlRWfqIn/CytE2NjY2HuzV5pEK4eV/7dte9VNJWxsbOzt2C1v1nhaKTauD2WYwLCxsbG3YCcPtwlmlibbRZ96ZQcbGxt7U3ZbVKyksVkrqi1+sLGxsU9gt1c+lM0TUoLJy496ZQcbGxv7w9mv+Mrx7ZHNkugNpQg2Njb2RuzZWsxsyaZNb/lI4Ic7sbGxsQ9grySPvOV012JQXoRgY2NjY987QmiLk5WfBBsbGxs7X7hpxwYro4K2WMLGxsY+h50v0CSpZdYqSkqd2QFhY2Nj783OmzV5clpZ92lbV8MEho2Njb0F+5wLGxsbGxsbGxsb+zHXH1o14pVLXqyrAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/C/">C++</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=C++点点滴滴（中）&url=http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=C++点点滴滴（中）&url=http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=C++点点滴滴（中）&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/C++点点滴滴（中）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="std-bind"><a href="#std-bind" class="headerlink" title="std::bind"></a><code>std::bind</code></h2><p>定义在<code>&lt;functional&gt;</code>，其原型为：</p>
+<pre><code class="cpp">template&lt; class F, class... Args &gt;
+/*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+
+template&lt; class R, class F, class... Args &gt;
+/*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+</code></pre>
+<p>为<code>f</code>生成的forwarding call wrapper。调用这个wrapper就如同调用<code>f</code>，其中一些参数绑定到<code>args</code>上。</p>
+<p>其中，<code>f</code>是callable object（function object, pointer to function, reference to function, pointer to member function, or pointer to data member），一些参数将会与之进行绑定。<code>args</code>则是需要进行绑定的参数列表。未进行绑定的参数则由占位符<code>_1, _2, _3...</code>代替。</p>
+<p>例子：</p>
+<pre><code class="cpp">void f(int n1, int n2, int n3, const int&amp; n4, int n5) {
+    std::cout&lt;&lt; n1 &lt;&lt; &#39; &#39;&lt;&lt; n2 &lt;&lt; &#39; &#39; &lt;&lt; n3 &lt;&lt; &#39; &#39; &lt;&lt; n4 &lt;&lt; &#39; &#39; &lt;&lt; n5 &lt;&lt; std::endl;
+}
+
+int g(int n1) { return n1; }
+
+struct Foo {
+    void print_sum(int n1, int n2) {
+        std::cout&lt;&lt; n1+n2 &lt;&lt;std::endl;
+    }
+    int data = 10;
+};
+
+int main() {
+    int n = 7;
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+    n = 10;
+    f1(1, 2, 1001);
+    /// 2 1 42 10 7
+
+    // 相当于调用f(12, g(12), 12, 4, 5)
+    auto f2 = std::bind(f, std::placeholders::_3, std::bind(g, std::placeholders::_3), 
+                std::placeholders::_3, 4, 5);
+    f2(10, 11, 12);
+    /// 12 12 12 4 5
+
+    // bind to a pointer to member function
+    Foo foo;
+    auto f3 = std::bind(&amp;Foo::print_sum, &amp;foo, 95, std::placeholders::_1);
+    f3(5);
+    /// 100
+
+    // bind to a pointer to data member
+    auto f4 = std::bind(&amp;Foo::data, std::placeholders::_1);
+    std::cout &lt;&lt; f4(foo) &lt;&lt; std::endl;
+    // 10
+
+    // smart pointer可以用来调用members of the referenced objects
+    std::cout &lt;&lt; f4(std::make_shared&lt;Foo&gt;(foo)) &lt;&lt;&#39;\n&#39;
+                &lt;&lt; f4(std::make_shared&lt;Foo&gt;(foo)) &lt;&lt;std::endl;
+    // 10
+    // 10
+}    
+</code></pre>
+<h4 id="std-ref-or-std-cref"><a href="#std-ref-or-std-cref" class="headerlink" title="std::ref or std::cref"></a><code>std::ref</code> or <code>std::cref</code></h4><p>定义在<code>&lt;functional&gt;</code>，两者是用于生成<code>std::reference_wrapper</code>的helper function。</p>
+<h2 id="bind的基本原理"><a href="#bind的基本原理" class="headerlink" title="bind的基本原理"></a><code>bind</code>的基本原理</h2><p><code>bind</code>实际上采用的是延迟计算（lazy evalution）的思想，即<strong>将可调用对象保存起来，然后在需要的时候再调用</strong>。</p>
+<p>要实现一个<code>bind</code>需要解决两个问题：</p>
+<ul>
+<li>保存可调用对象及其形参</li>
+<li>如何实现调用</li>
+</ul>
+<h3 id="保存可调用对象及其形参"><a href="#保存可调用对象及其形参" class="headerlink" title="保存可调用对象及其形参"></a>保存可调用对象及其形参</h3><p>首先要解决的问题是：如何将可调用对象保存起来，以便在后面调用。<strong>要保存可调用对象，需要保存两个东西，一个是可调用对象的实例，另一个是可调用对象的形参。</strong></p>
+<p>保存可调用对象的实例比较简单，因为在进行<code>bind</code>时，需要直接传入这个可调用对象，所以可以将其作为一个成员变量（member variable）即可。而保存可调用对象的形参相对麻烦一点，因为形参是变参，不能直接将变参作为成员变量。如果要保存变参的话，需要使用<code>tuple</code>。</p>
+<h3 id="实现调用"><a href="#实现调用" class="headerlink" title="实现调用"></a>实现调用</h3><p><code>bind</code>的形参是变参，可以是<code>0</code>个，也可能是多个（大部分情况下是占位符，还有可能占位符和实参都有）。正是由于<code>bind</code>绑定的灵活性，导致在调用的时候需要找出哪些是占位符，哪些是实参。如果某个一参数是实参便不处理，如果是占位符，就需要将这个占位符替换为对应的实参。</p>
+<p>比如我们绑定了一个三元函数：<code>auto f = bind(&amp;func, _1, 2, _2);</code>。调用为：<code>f(1,3);</code>。一共三个参数，一个实参，两个占位符，调用时传入了两个实参，这时就需要将占位符<code>_1</code>替换为实参<code>1</code>，占位符<code>_2</code>替换为实参<code>3</code>。<strong>占位符的替换需要按照调用实参的顺序来替换，如果调用时的实参个数比占位符要多，则忽略多余的实参</strong>。<br>　　<br>调用的实参会先被转换为<code>tuple</code>，以便接下来替换占位符时，可以选取合适的实参。</p>
+<h2 id="bind实现的关键技术"><a href="#bind实现的关键技术" class="headerlink" title="bind实现的关键技术"></a><code>bind</code>实现的关键技术</h2><h3 id="将tuple展开为变参"><a href="#将tuple展开为变参" class="headerlink" title="将tuple展开为变参"></a>将<code>tuple</code>展开为变参</h3><p>在绑定可调用对象时，将可调用对象的形参（可能含占位符）保存起来（保存到<code>tuple</code>中）。到了调用阶段，需要反过来将<code>tuple</code>展开为可变参数，因为这个可变参数才是可调用对象的形参，否则就无法实现调用了。</p>
+<p>需要借助于一个整形序列（integer sequence）来将<code>tuple</code>变为可变参数。在展开<code>tuple</code>的过程中，还需要根据占位符来选择合适实参，即占位符要替换为调用实参。</p>
+<h3 id="根据占位符来选择合适的实参"><a href="#根据占位符来选择合适的实参" class="headerlink" title="根据占位符来选择合适的实参"></a>根据占位符来选择合适的实参</h3><p>此处比较关键，因为<code>tuple</code>中可能含有占位符。在展开<code>tuple</code>时，如果发现某个元素类型为占位符，则从由调用实参生成的<code>tuple</code>中取出一个实参，用来作为变参的一个参数；当某个类型不为占位符时，则直接从绑定时生成的形参<code>tuple</code>中取出参数，用来作为变参的一个参数。最终<code>tuple</code>被展开为一个变参列表，列表中没有占位符，全是实参，就可以实现调用。</p>
+<p><strong>【注意】：</strong>在替换占位符时，需要通过占位符的模板参数<code>I</code>来从<code>tuple</code>中选择合适的参数，因为占位符<code>place_holder&lt;I&gt;</code>的实例<code>_1</code>实际上<code>place_holder&lt;1&gt;</code>， 占位符实例<code>_2</code>实际上是<code>place_holder&lt;2&gt;</code>，所以可以根据占位符的模板参数来获取其顺序。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><pre><code class="cpp">/// 借助整形序列来将tuple变为可变参数
+/// 定义一个整形序列index_sequence
+template&lt;int...&gt;
+struct index_sequence {};
+
+/// 通过继承的方式，将参数包展开
+template&lt;int N, int...Indices&gt;
+struct make_index : make_index&lt;N-1, N-1, Indices...&gt; {};
+
+/*
+make_index&lt;1,2,3&gt;::type的展开过程：
+
+    make_index&lt;3&gt; : make_index&lt;2, 2&gt;{ }
+    make_index&lt;2, 2&gt; : make_index&lt;1, 1, 2&gt;{ }
+    make_index&lt;1, 1, 2&gt; : make_index&lt;0, 0, 1, 2&gt; {
+        typedef index_sequence&lt;0, 1, 2&gt; type;
+    }
+*/
+template&lt;int...Indices&gt;
+struct make_index&lt;0, Indices...&gt; {
+    typedef index_sequence&lt;Indices...&gt; type;
+};
+
+template&lt;int I&gt;
+struct place_holder {};
+
+place_holder&lt;1&gt; _1;    
+place_holder&lt;2&gt; _2;    
+place_holder&lt;3&gt; _3;    
+place_holder&lt;4&gt; _4;    
+place_holder&lt;5&gt; _5;    
+place_holder&lt;6&gt; _6;    
+place_holder&lt;7&gt; _7;    
+place_holder&lt;8&gt; _8;    
+place_holder&lt;9&gt; _9;    
+place_holder&lt;10&gt; _10;        
+
+/// template&lt; class F, class... Args &gt;
+/// /*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+
+/// template&lt; class R, class F, class... Args &gt;
+/// /*unspecified*/ bind( F&amp;&amp; f, Args&amp;&amp;... args );
+
+///成员类型result_type
+// 1) 若F是指向函数或指向成员函数的指针，则result_type为F。
+//    若F是具有嵌套typedef result_type的class type，则result_type为F::result_type 。
+//      否则不定义result_type。
+// 2) result_type直接为R 。
+
+/// result type traits
+template&lt;typename T&gt;
+struct result_traits : result_traits&lt;decltype(&amp;T::operator())&gt; {};
+
+template&lt;typename T&gt;
+struct result_traits&lt;T*&gt; : result_traits&lt;T&gt; {};
+
+// 1）function pointer  
+template&lt;typename Ret, typename...Args&gt;
+struct result_traits&lt;Ret(*)(Args...)&gt; { typedef Ret type; };
+
+// 1）member function
+template&lt;typename Ret, typename Cls, typename...Args&gt;
+struct result_traits&lt;Ret(Cls::*)(Args...)&gt; { typedef Ret type; };
+
+/// 如果类型不是占位符，则直接从tuple中取出（实际上是直接将此类型forwarding）
+template&lt;typename T, typename Tuple&gt;
+inline auto select(T&amp;&amp; val, Tuple&amp;) -&gt; 
+    typename std::add_rvalue_reference&lt;decltype(std::declval&lt;T&gt;())&gt;::type {
+        return std::forward&lt;T&gt;(val);
+}
+
+/// 如果类型是占位符，则需要根据占位符选择实参（实参一开始就被放入tuple中，直接根据index选取即可）
+/// _1实际上为place_holder&lt;1&gt;。根据place_holder的模板参数I，从tuple中选择参数
+/// 在tuple中，index从0开始，所以要获取place_holder&lt;I&gt;占位符的参数，则应在tuple中使用std::get&lt;I-1&gt;(tp)
+template&lt;int I, typename Tuple&gt;
+inline auto select(place_holder&lt;I&gt;&amp;, Tuple&amp; tp) -&gt; 
+                decltype(std::get&lt;I-1&gt;(tp)) {
+    return std::get&lt;I-1&gt;(tp);
+}
+
+// 判断T是否为一个pointer，但不能检测是否为成员指针或者成员函数指针
+template&lt;typename T&gt;
+struct is_pointer_noref : 
+    std::is_pointer&lt;
+        typename std::remove_reference&lt;T&gt;::type
+    &gt; {};
+
+// 判断T是否为一个non-static member function pointer（且不是*&amp;这种类型）
+template&lt;typename T&gt;
+struct is_member_function_noref :
+    std::is_member_function_pointer&lt;    
+        typename std::remove_reference&lt;T&gt;::type
+    &gt; {};
+
+/// 根据不同callable object，将调用不同的invoke函数
+//callable object：
+//  1. function object
+//  2. pointer to function
+//  3. reference to function
+//  4. pointer to member function
+//  5. pointer to data member(先不考虑)
+
+/// 2. pointer to function（函数指针）
+/// ===&gt; Func是一个指向对象或者函数的pointer
+template&lt;typename Ret, typename Func, typename...Args&gt;
+inline typename std::enable_if&lt;
+    is_pointer_noref&lt;Func&gt;::value, 
+    Ret&gt;::type invoke(Func&amp;&amp; f, Args&amp;&amp;...args) {
+        return (*std::forward&lt;Func&gt;(f))(std::forward&lt;Args&gt;(args)...);
+        //    (*f)(args...)
+}
+
+/// pointer to function（）
+/// ===&gt; Func是一个指向函数或者对象的pointer，
+///         第一个实参是一个member function pointer
+template&lt;typename Ret, typename Func, typename Arg1, typename...Args&gt;
+inline typename std::enable_if&lt;
+    is_member_function_noref&lt;Func&gt;::value &amp;&amp; 
+        is_pointer_noref&lt;Arg1&gt;::value,
+    Ret&gt;::type  invoke(Func&amp;&amp; f, Arg1&amp;&amp; ptr, Args...args) {
+        return (std::forward&lt;Arg1&gt;(ptr)-&gt; 
+            *std::forward&lt;Func&gt;(f))(std::forward&lt;Args&gt;(args)...);
+        /// (ptr-&gt;*f)(args...)
+}     
+
+/// 4. pointer to member function
+/// ===&gt; 不是一个指向对象或者函数的pointer，而是一个member function pointer
+template&lt;typename Ret, typename Func, typename Arg1, typename...Args&gt;
+inline typename std::enable_if&lt;
+    is_member_function_noref&lt;Func&gt;::value &amp;&amp; 
+        !is_pointer_noref&lt;Arg1&gt;::value,
+    Ret&gt;::type invoke(Func&amp;&amp; f, Arg1 obj, Args...args) {
+        return (std::forward&lt;Arg&gt;(obj).
+            *std::forward&lt;Func&gt;(f))(std::forward&lt;Args&gt;(args)...);
+        // (obj.*f)(args...)
+}
+
+/// 既不是pointer，也不是member function，则只能是
+template&lt;typename Ret, typename Func, typename...Args&gt;
+inline typename std::enable_if&lt;
+    !is_pointer_noref&lt;Func&gt;::value &amp;&amp; 
+        !is_member_function_noref&lt;Func&gt;::value,
+    Ret&gt;::type invoke(Func&amp;&amp; f, Args...args) {
+        return std::forward&lt;Func&gt;(f)(std::forward&lt;Args&gt;(args)...);
+        // f(args...)
+}
+
+template&lt;typename Func, typename...Args&gt;
+struct bind_t {
+    // 获取callable object的type
+    typedef typename std::decay&lt;Func&gt;::type callable_type;
+    // 将所有的参数类型都压入tuple中
+    typedef std::tuple&lt;typename std::decay&lt;Args&gt;::type...&gt; argument_type;
+    typedef typename result_traits&lt;callable_type&gt;::type result_type;
+public:
+    template&lt;typename T, typename...BindArgs&gt;
+    bind_t(Func&amp; f, BindArgs&amp;...args) : m_func(f) , m_args(args...) {}
+
+    // move ctor
+    template&lt;typename Func, typename...BindArgs&gt;
+    bind_t(Func&amp;&amp; f, BindArgs&amp;&amp;...args) : 
+        m_func(std::move(f)) , m_args(std::move(args)...) {}
+
+    /// call：根据传入的每一个实参，去一一对应相应的形参
+    // std::tuple_size：获取传入的实参的数量
+    // make_index：对传入的实参进行编号
+    // forward_as_tuple：将callable object中的形参压入tuple中    
+    template&lt;typename...CallableArgs&gt;
+    result_type operator()(CallableArgs&amp;&amp;...cal_args) {
+        return call(typename make_index&lt;std::tuple_size&lt;
+                        argument_type&gt;::value
+                    &gt;::type(),
+                    std::forward_as_tuple(std::forward&lt;CallableArgs&gt;(cal_args)...));
+        // template &lt;typename... Types&gt; 
+        // tuple&lt;Types&amp;&amp;...&gt; forward_as_tuple(Types&amp;&amp;... elements) {
+        //         return tuple&lt;Types&amp;&amp;...&gt;(std::forward&lt;Types&gt;(elements)...);
+        // }
+    }
+
+    template&lt;int...Indices, typename ArgumentTuple&gt;
+    result_type call(index_sequence&lt;Indices...&gt; in, ArgumentTuple arg_tp) {
+        return invoke&lt;result_type&gt;(m_func, 
+            select(std::get&lt;Indices&gt;(m_args), arg_tp)...);
+        // select函数根据获取得到的index，从tuple中获取得到对应的参数
+    }
+
+private:
+    callable_type m_func;
+    argument_type m_args;
+};
+
+template&lt;typename Func, typename...Args&gt;
+inline bind_t&lt;Func, Args...&gt; bind(Func&amp;&amp; f, Args&amp;&amp;...args) {
+    return bind_t&lt;Func, Args...&gt;(std::forward&lt;Func&gt;(f), 
+            std::forward&lt;Args&gt;(args)...);
+}
+
+template&lt;typename Func, typename...Args&gt;
+inline bind_t&lt;Func, Args...&gt; bind(Func&amp; f, Args&amp;...args) {
+    return bind_t&lt;Func, Args...&gt;(f, args...);
+}
+</code></pre>
+<h3 id="std-is-member-function-pointer"><a href="#std-is-member-function-pointer" class="headerlink" title="std::is_member_function_pointer"></a><code>std::is_member_function_pointer</code></h3><p>用于检查<code>T</code>是否是一个non-static member function pointer。如果是，则返回一个member constant value：<code>true</code>。</p>
+<p>可能实现：</p>
+<pre><code class="cpp">template&lt;typename T&gt;
+struct is_member_function_pointer_helper : std::false_type {};
+
+template&lt;typename T, typename Cls&gt;
+struct is_member_function_pointer_helper&lt;T Cls::*&gt; : std::is_function&lt;T&gt; {};
+
+template&lt;typename T&gt;
+struct is_member_function_pointer : is_member_function_pointer_helper&lt;
+                    typename std::remove_cv&lt;T&gt;::type&gt;&gt; {};
+</code></pre>
+<p>例子：</p>
+<pre><code class="cpp">public:
+    void member() {}
+};
+
+int main() {
+    static_assert(std::is_member_function_pointer&lt;
+                        decltype(&amp;A::member)&gt;::value,
+                  &quot;A::member is not a memeber function.&quot;);
+}    
+</code></pre>
+<h3 id="pointer-reference"><a href="#pointer-reference" class="headerlink" title="pointer reference"></a>pointer reference</h3><pre><code class="cpp">int* m = new int(5);
+    int* ptr = m;
+    //ptr=new int(6);
+    int*&amp; ptr_ref = ptr;
+    ptr_ref=new int(6);
+
+    std::cout&lt;&lt; &quot;m=&quot; &lt;&lt; *m &lt;&lt;std::endl;
+    std::cout&lt;&lt; &quot;ptr=&quot;&lt;&lt; *ptr &lt;&lt;std::endl;
+    std::cout&lt;&lt; &quot;ptr_ref=&quot; &lt;&lt; *(&amp;(*ptr_ref)) &lt;&lt; std::endl;
+</code></pre>
+<p>改变<code>ptr</code>的值，将改变<code>ptr_ref</code>的值，而<code>m</code>的值不会发生改变（改变<code>ptr_ref</code>的值的效果一样）。</p>
+<p><a href="https://stackoverflow.com/a/37722942/5383517" target="_blank" rel="noopener">Pointer to reference</a></p>
+<h2 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2><h3 id="C-17之前，shared-ptr不支持动态数组，而unique-ptr支持"><a href="#C-17之前，shared-ptr不支持动态数组，而unique-ptr支持" class="headerlink" title="C++17之前，shared_ptr不支持动态数组，而unique_ptr支持"></a>C++17之前，<code>shared_ptr</code>不支持动态数组，而<code>unique_ptr</code>支持</h3><pre><code class="cpp">std::unique_ptr&lt;int[]&gt; uptr(new int[10]);    //ok
+std::shared_ptr&lt;int[]&gt; sptr(new int[10]);    //error
+</code></pre>
+<p>如果试图通过<code>std::shared_ptr</code>来创建动态数组，则需要显式指定删除器（deleter）。例如：</p>
+<pre><code class="cpp">std::shared_ptr&lt;int&gt; p(new int[10], [](int* p){delete[] p;}); //指定delete[]
+</code></pre>
+<p>此外，可以用<code>std::default_delete</code>作为删除器：</p>
+<pre><code class="cpp">std::shared_ptr&lt;int&gt; p(new int[10], std::default_delete&lt;int[]&gt;);
+</code></pre>
+<p>对此，可以封装一个<code>make_shared_array</code>方法让<code>shared_ptr</code>支持动态数组：</p>
+<pre><code class="cpp">template&lt;typename T&gt;
+std::shared_ptr&lt;T&gt; make_shared_array(size_t size) {
+    return std::shared_ptr&lt;T&gt;(new T[size], std::default_delete&lt;T[]&gt;());
+}
+int main() {
+    std::shared_ptr&lt;int&gt; ptr = make_shared_array&lt;int&gt;(10);
+}
+</code></pre>
+<p><code>std::unique_ptr</code>缺少一个类似于<code>make_shared</code>的<code>make_unique</code>方法（c++14已经加入了<code>make_unique</code>）。其实要实现一个make_unique方法是比较简单的：</p>
+<pre><code class="cpp">namespace impl {
+// 支持普通指针
+template&lt;typename T, typename...Args&gt;
+inline typename std::enable_if&lt;!std::is_array&lt;T&gt;::value,
+            std::unique_ptr&lt;T&gt;&gt;::type make_unique(Args&amp;&amp;...args) {
+    return std::unique_ptr&lt;T&gt;(new T(std::forward&lt;Args&gt;(args)...));
+} 
+
+// 支持动态数组。对于动态数组，std::extent的值将为0
+template&lt;typename T&gt;
+typename std::enable_if&lt;std::is_array&lt;T&gt;::value &amp;&amp;
+                            std::extent&lt;T&gt;::value == 0,
+            std::unique_ptr&lt;T&gt;&gt;::type make_unique(size_t size) {
+    typedef typename std::remove_extent&lt;T&gt;::type U;
+    return std::unique_ptr&lt;T&gt;(new U[size]);
+}
+
+// 排除定长数组的情况
+template&lt;typename T, typename...Args&gt;
+typename std::enable_if&lt;std::extent&lt;T&gt;::value != 0,
+            void&gt;::type make_unique(Args&amp;&amp;...) = delete;
+}
+</code></pre>
+<p>测试：</p>
+<pre><code class="cpp">int main() {
+    // Use the default constructor.
+    std::unique_ptr&lt;Vec3&gt; v1 = impl::make_unique&lt;Vec3&gt;();
+    // Use the constructor that matches these arguments
+    std::unique_ptr&lt;Vec3&gt; v2 = impl::make_unique&lt;Vec3&gt;(0, 1, 2);
+    // Create a unique_ptr to an array of 5 elements
+    std::unique_ptr&lt;Vec3[]&gt; v3 = impl::make_unique&lt;Vec3[]&gt;(5);
+
+    std::cout &lt;&lt; &quot;make_unique&lt;Vec3&gt;():      &quot; &lt;&lt; *v1 &lt;&lt; &#39;\n&#39;
+              &lt;&lt; &quot;make_unique&lt;Vec3&gt;(0,1,2): &quot; &lt;&lt; *v2 &lt;&lt; &#39;\n&#39;
+              &lt;&lt; &quot;make_unique&lt;Vec3[]&gt;(5):   &quot; &lt;&lt; &#39;\n&#39;;
+    for (int i = 0; i &lt; 5; i++) {
+        std::cout &lt;&lt; &quot;     &quot; &lt;&lt; v3[i] &lt;&lt; &#39;\n&#39;;
+    }
+}
+// make_unique&lt;Vec3&gt;():      {x:0 y:0 z:0}
+// make_unique&lt;Vec3&gt;(0,1,2): {x:0 y:1 z:2}
+// make_unique&lt;Vec3[]&gt;(5):
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+//      {x:0 y:0 z:0}
+</code></pre>
+<p>实现思路：如果不是数组，则直接创建<code>unique_ptr</code>；如果是数组的话，先判断是否为定长数组，如果为定长数组，则编译不通过；如果是非定长数组，则获取数组中的元素类型，再根据传入的参数<code>size</code>创建动态数组的<code>unique_ptr</code>（<code>extent&lt;T&gt;::value</code>用来获取数组的长度，如果获取值为<code>0</code>，则说明不是定长数组）。</p>
+<h3 id="C-17中，可以使用std-shared-ptr管理动态数组。"><a href="#C-17中，可以使用std-shared-ptr管理动态数组。" class="headerlink" title="C++ 17中，可以使用std::shared_ptr管理动态数组。"></a>C++ 17中，可以使用<code>std::shared_ptr</code>管理动态数组。</h3><p>其中，<code>std::shared_ptr</code>的template parameter需要使用<code>T[N]</code>或者<code>T[]</code>。使用烦那个是：</p>
+<pre><code class="cpp">std::shared_ptr&lt;int[]&gt; ptr(new int[10]);
+</code></pre>
+<blockquote>
+<p><code>template&lt;class Y&gt; explicit shared_ptr(Y* p);</code><br>Requires: <code>Y</code> shall be a complete type. The expression <code>delete[] p</code>, when T is an array type, or <code>delete p</code>, when <code>T</code> is not an array type, shall have well-defined behavior, and shall not throw exceptions.<br>…<br>Remarks: When <code>T</code> is an array type, this constructor shall not participate in overload resolution unless the expression <code>delete[] p</code> is well-formed and either <code>T</code> is <code>U[N]</code> and <code>Y(*)[N]</code> is convertible to <code>T*</code>, or <code>T</code> is  <code>U[]</code> and <code>Y(*)[]</code> is convertible to <code>T*</code>. …</p>
+</blockquote>
+<p>为了支持上述操作，成员类型<code>element_type</code>将被定义为：</p>
+<pre><code class="cpp">using element_type = remove_extent&lt;T&gt;;
+</code></pre>
+<p>此外，还可以通过使用<code>operator[]</code>来访问数组中的元素：</p>
+<pre><code class="cpp">element_type&amp; operator[](ptrdiff_t i) const;
+</code></pre>
+<h3 id="shared-ptr和unique-ptr指定删除器方式不同"><a href="#shared-ptr和unique-ptr指定删除器方式不同" class="headerlink" title="shared_ptr和unique_ptr指定删除器方式不同"></a><code>shared_ptr</code>和<code>unique_ptr</code>指定删除器方式不同</h3><pre><code class="cpp">std:: shared_ptr&lt;int&gt; ptr(new int(1), [](int*p){delete p;}); //ok
+std::unique_ptr&lt;int&gt; ptr(new int(1), [](int*p){delete p;});  //error
+</code></pre>
+<p><code>std::unique_ptr</code>指定删除器的时候，需要确定删除器的类型，所以不能直接像<code>shared_ptr</code>那样指定删除器，可以这样写：</p>
+<pre><code class="cpp">std::unique_ptr&lt;int, void(*)(int*)&gt; ptr(new int(1), [](int*p){delete p;});
+</code></pre>
+<p>这种写法在lambda没有捕获变量的情况下是正确的，如果捕获了变量则会编译报错：</p>
+<pre><code class="cpp">std::unique_ptr&lt;int, void(*)(int*)&gt; ptr(new int(1), [&amp;](int*p){delete p;}); //错误，因为捕获了变量
+</code></pre>
+<p>lambda捕获变量后，<code>unique_ptr</code>报错的原因：<strong>lambda在没有捕获变量的情况下，是可以直接转换为函数指针的，捕获了就不能转换为函数指针</strong>。</p>
+<p>如果希望<code>unique_ptr</code>的删除器支持lambda，可以这样写：</p>
+<pre><code class="cpp">std::unique_ptr&lt;int, std::function&lt;void(int*)&gt;&gt; ptr(new int(1), [&amp;](int*p){delete p;});
+</code></pre>
+<p>此外，还可以自定义<code>unique_ptr</code>的删除器。例如：</p>
+<pre><code class="cpp">struct deleter {
+    void operator()(int* p) {
+        std::cout&lt;&lt; &quot;delete&quot; &lt;&lt;std::endl;
+        delete p;
+    }
+};
+
+int main() {
+    std::unique_ptr&lt;int, deleter&gt; p(new int(1));
+}
+</code></pre>
+<p>智能指针可以很方便的管理当前程序库动态分配的内存，还可以用来管理第三方库分配的内存。<strong>第三方库分配的内存一般需要通过第三方库提供的释放接口才能释放，由于第三方库返回出来的指针一般都是原始指针，如果用完之后没有调用第三方库的释放接口，就很容易造成内存泄露</strong>。比如下面的代码：</p>
+<pre><code class="cpp">void* p = GetHandle()-&gt;Create();
+//do something…
+GetHandle()-&gt;Release(p);
+</code></pre>
+<p>这段代码可能存在风险，在使用第三方库分配的内存过程中，可能忘记调用<code>Release</code>接口，可能中间不小心返回了，还有可能中间发生了异常，导致无法调用<code>Release</code>接口。这时可以用智能指针去管理第三方库的内存，只要出了作用域内存就会自动释放，不用显式地去调用释放接口，不用担心中途返回或者发生异常导致无法调用释放接口的问题。</p>
+<pre><code class="cpp">void* p = GetHandle()-&gt;Create();
+std::shared_ptr&lt;void&gt; sp(p, [this](void*p){ GetHandle()-&gt;Release(p);});
+</code></pre>
+<p>上面这段代码就可以保证，在任何时候都能正确释放第三方库分配的内存。虽然能解决问题，但还是有些繁琐，因为每个第三方库分配内存的地方都要调用这段代码。所以可以将这段代码提炼出来，作为一个公共函数，简化调用。</p>
+<pre><code class="cpp">std::shared_ptr&lt;void&gt;  Guard(void* p) {
+    return std::shared_ptr&lt;void&gt; sp(p, [this](void*p){ GetHandle()-&gt;Release(p);});
+}
+void* p = GetHandle()-&gt;Create();
+auto sp = Guard(p);
+//do something…
+</code></pre>
+<p>上面的代码通过<code>Guard</code>函数做了简化，用起来比较方便，但仍然不够安全，因为有可能使用者可能会这样写：</p>
+<pre><code class="cpp">void* p = GetHandle()-&gt;Create();
+Guard(p); //危险，这句结束之后p就被释放了
+//do something…
+</code></pre>
+<p>这样写是有问题的，会导致访问野指针，因为<code>Guard(p);</code>是一个rvalue，如果不赋值给它一个指针的话，<code>Guard(p);</code>这句结束之后，就会释放，从而导致<code>p</code>提前释放了，后面就会访问野指针的内容。</p>
+<p><code>auto sp = Guard(p);</code>需要一个赋值操作，忘记赋值则会导致指针提前释放，所以这种写法仍然不够安全。可以定义一个宏来解决这个问题：</p>
+<pre><code class="cpp">#define GUARD(P) std::shared_ptr&lt;void&gt; p##p(p, [](void*p){ GetHandle()-&gt;Release(p);});
+
+void* p = GetHandle()-&gt;Create();
+GUARD(p); //安全
+</code></pre>
+<p>或者使用<code>std::unique_ptr</code>：</p>
+<pre><code class="cpp">#define GUARD(P) std::unique_ptr&lt;void, void(*)(int*)&gt; p##p(p, [](void*p){ GetHandle()-&gt;Release(p);});
+</code></pre>
+<p><strong>【注意】：</strong><code>#</code>与<code>##</code>运算符</p>
+<ul>
+<li><code>#</code>将后面的宏参数进行字符串操作（即将后面的参数用双引号引起来）</li>
+<li><code>##</code>用于连接。</li>
+</ul>
+<p>例子：</p>
+<pre><code class="cpp">#define PRINT(NAME) printf(&quot;token&quot;#NAME&quot;=%d\n&quot;, token##NAME)
+
+PRINT(9);
+</code></pre>
+<p>宏展开为：<code>printf(&quot;token&quot;#9&quot;=%d\n&quot;,token##9);</code>。<code>#9</code>即为<code>&quot;9&quot;</code>，<code>token##9</code>即为：<code>token9</code>。整个为：<code>printf(&quot;token&quot;&quot;9&quot;&quot;=%d\n&quot;,token9);</code><br>所以输出：<code>token9=9;</code></p>
+<h3 id="std-default-delete"><a href="#std-default-delete" class="headerlink" title="std::default_delete"></a><code>std::default_delete</code></h3><p>定义在<code>&lt;memory&gt;</code>，其原型为：</p>
+<pre><code class="cpp">template&lt; class T &gt; struct default_delete; //使用delete删除分配的单个对象的内存
+template&lt; class T &gt; struct default_delete&lt;T[]&gt;; //此特化版本用delete[]来删除数组
+</code></pre>
+<p><code>std::default_delete</code>是在用户没有指定删除器的情况下，<code>std::unique_ptr</code>（对<code>std::shared_ptr</code>也适用）所采用的的默认删除策略。</p>
+<h2 id="通过std-tuple来实现函数调用"><a href="#通过std-tuple来实现函数调用" class="headerlink" title="通过std::tuple来实现函数调用"></a>通过<code>std::tuple</code>来实现函数调用</h2><pre><code class="cpp">template&lt;int...&gt;
+struct index_tuple {};
+
+template&lt;int N, int... Indices&gt;
+struct make_index : make_index&lt;N-1, N-1, Indices...&gt; {};
+
+template&lt;int... Indices&gt;
+struct make_index&lt;0, Indices...&gt; {
+    typedef index_tuple&lt;Indices...&gt; type;
+};
+
+template&lt;typename Func, int... Indices, typename... Args&gt;
+void call_helper(Func func, index_tuple&lt;Indices...&gt;, 
+            const std::tuple&lt;Args...&gt;&amp; tup) {
+    func(std::get&lt;Indices&gt;(tup)...);
+}
+
+template&lt;typename Func, typename... Args&gt;
+void call(Func func, const std::tuple&lt;Args...&gt;&amp; tup) {
+    call_helper(func, typename make_index&lt;sizeof...(Args)&gt;::type(), tup);
+}
+
+int func(int a, int b) {
+    std::cout&lt;&lt; a+b &lt;&lt;std::endl;        
+}
+
+int main() {
+    std::tuple&lt;int, int&gt; tup = std::make_tuple(1,2);
+
+    call&lt;int(int,int), int&gt;(func, tup);
+}
+</code></pre>
+<h2 id="类型擦除（type-erasure）"><a href="#类型擦除（type-erasure）" class="headerlink" title="类型擦除（type erasure）"></a>类型擦除（type erasure）</h2><p><strong>类型擦除就是将原有类型消除或者隐藏</strong>。需要擦除类型的原因：很多时候并不关心具体类型是什么或者根本就不需要这个类型。</p>
+<p>C++中类型擦除方式主要有：</p>
+<ol>
+<li>通过多态来擦除类型</li>
+<li>通过模板来擦除类型</li>
+<li>通过某种容器来擦除类型</li>
+<li>通过某种通用类型来擦除类型</li>
+</ol>
+<h3 id="1-通过多态来擦除类型"><a href="#1-通过多态来擦除类型" class="headerlink" title="1. 通过多态来擦除类型"></a>1. 通过多态来擦除类型</h3><p>这种方式比较常见，通过将派生类型（derived type）隐式转换成基类型（base type），再通过基类去多态地调用行为。</p>
+<p>在这种情况下，不用关心派生类的具体类型，而只需要以一种统一的方式去做不同的事情即可。所以把派生类型转成基类型隐藏起来，这样不仅仅可以多态调用，还使程序具有良好的可扩展性。</p>
+<p>然而这种方式仅仅是部分的类型擦除，因为基类型仍然存在。此外，这种类型擦除的方式还必须得以继承的方式方式进行，而且继承使得两个对象强烈地耦合在一起。所以，通过多态来擦除类型的方式有较多局限性。</p>
+<h3 id="2-通过模板来擦除类型"><a href="#2-通过模板来擦除类型" class="headerlink" title="2. 通过模板来擦除类型"></a>2. 通过模板来擦除类型</h3><p>通过模板来擦除类型，本质上是把不同类型的共同行为进行抽象。这时，不同类型彼此之间不再需要通过继承（强耦合的方式）去获得共同的行为，而仅仅是通过模板就能获取共同行为，降低了不同类型之间的耦合，是一种很好的类型擦除方式。</p>
+<p>然而，第二种方式虽然降低了对象间的耦合，但是还有一个问题没解决：<strong>基本类型始终需要指定，并没有消除基本类型</strong>。例如，不可能把一个<code>T</code>本身作为容器元素，而必须在容器初始化时就要到<code>T</code>的具体类型。而C++并没有像C#和Java中的<code>object</code>类型，是所有类型的基类。但可以用<code>boost.variant</code>类型来把各种不同的类型包起来，从而可以获得一种统一的类型，而且不同类型的对象间没有耦合关系，它仅仅是一个类型的容器。</p>
+<pre><code class="cpp">struct blob {
+    std::string pBuf;
+    int size;
+};
+
+    typedef boost::variant&lt;double, int, std::string, blob&gt; Value;
+    std::vector&lt;Value&gt; ivec;
+    ivec.push_back(10);
+    ivec.push_back(&quot;c++&quot;);
+    ivec.push_back(1.1);
+    ivec.push_back({&quot;java&quot;, 4});
+</code></pre>
+<p>上面的代码擦除了不同类型，使得不同的类型都可以放到一个容器中。通过<code>get&lt;T&gt;(Value)</code>便可以获取对应类型的值。</p>
+<p>这种方式是通过某种容器把类型包起来，从而达到类型擦除的目的。它的缺点是这个通用的类型必须事先定义好，只能容纳声明的那些类型，增加一种新类型就不行了。</p>
+<h3 id="4-通过某种通用类型来擦除类型"><a href="#4-通过某种通用类型来擦除类型" class="headerlink" title="4. 通过某种通用类型来擦除类型"></a>4. 通过某种通用类型来擦除类型</h3><p>通过这种方式可以消除之前的缺点，其类似于C#和Java中的<code>object</code>类型。这种通用类型是通过<code>boost.any</code>实现的，它不需要预先定义类型，不同类型都可以转成<code>any</code>。</p>
+<h2 id="实现any"><a href="#实现any" class="headerlink" title="实现any"></a>实现<code>any</code></h2><p><code>any</code>能容纳所有类型的数据。因此，当赋值给<code>any</code>时，需要将值的类型擦除才行，即以一种通用的方式保存所有类型的数据。</p>
+<p>基本思路：<strong>可以通过继承去擦除类型（type erasure），基类中不含模板参数，派生类中才有模板参数。这个模板参数类型正是赋值的类型，在赋值时，将创建的派生类对象赋值给基类指针，基类的派生类中携带了数据类型，基类只是原始数据的一个占位符，通过多态，它擦除了原始数据类型</strong>。因此，任何数据类型都可以赋值给它，从而实现了能存放所有类型数据的目标。当取数据时，需要向下转换成派生类型来获取原始数据；当转换失败时，打印详情，并抛出异常。由于<code>any</code>赋值时需要创建一个派生类对象，所以还需要管理该对象的生命周期，用<code>unique_ptr</code>去管理对象的生命周期。</p>
+<pre><code class="cpp">struct any {
+    any(void) : m_index(std::type_index(typeid(void))) {}
+    any(const any&amp; other) : 
+        m_ptr(other.clone()), m_index(other.m_index) {}
+    any(any&amp;&amp; other) :
+        m_ptr(std::move(other.m_ptr)), m_index(other.m_index) {}
+
+    //在创建智能指针时，对于一般的类型，需要通过std::decay来移除引用和cv 
+    //qualifier，从而得到原始类型
+
+    //当使用普通类型T（即当T不是已知的的any类型时）创建any时，
+    //便使用Perfect forwarding of T
+    template&lt;typename T,
+            typename = typename std::enable_if&lt;
+                !std::is_same&lt;
+                    typename std::decay&lt;T&gt;::type,
+                    any&gt;::value,
+            T&gt;::type
+        &gt; any(T&amp;&amp; value) : 
+            m_ptr(new derived(value)),
+            m_index(std::type_index(
+                typeid(typename std::decay&lt;T&gt;::type))) {}
+
+    bool is_null() const {
+        return !bool(m_ptr);
+    }
+
+    template&lt;typename T&gt;
+    bool is_type() const {
+        return m_index == std::type_index(typeid(T));
+    }
+
+    template&lt;typename T&gt;
+    T&amp; any_cast() {
+        if(!is_type&lt;T&gt;()) {
+            std::cout&lt;&lt; &quot;cannot casting &quot;&lt;&lt; typeid(T).name()
+                &lt;&lt; &quot; to &quot; &lt;&lt;m_index.name() &lt;&lt;std::endl;
+            throw bad_cast();
+        }
+        auto derived_type = dynamic_cast&lt;derived&lt;T*&gt;*&gt;(m_ptr.get());
+        return derived_type-&gt;m_value;
+    }
+
+    any&amp; operator=(const any&amp; other) {
+        if(m_ptr == other.m_ptr) {
+            return *this;
+        }
+        m_ptr = other.clone();
+        m_index = other.m_index;
+        return *this;
+    }
+private:
+    struct base;
+    typedef std::unique_ptr&lt;base&gt; base_ptr;
+
+    struct base {
+        virtual ~base() {}
+        virtual base_ptr clone() const = 0;
+    };
+
+    template&lt;typename T&gt;
+    struct derived : base {
+        template&lt;typename U&gt;
+        derived(U&amp;&amp; value) : m_value(std::forward&lt;U&gt;(value)) {}
+
+        base_ptr clone() const {
+            return base_ptr(new derived&lt;T&gt;(m_value));
+        }
+
+        T m_value;
+    };
+
+    base_ptr clone() const {
+        if(m_ptr != nullptr) {
+            return m_ptr -&gt; clone();
+        }
+        return nullptr;
+    } 
+
+    base_ptr m_ptr;
+    std::type_index m_index;
+}; 
+</code></pre>
+<p>扩展：<a href="https://github.com/thelink2012/any/blob/master/any.hpp" target="_blank" rel="noopener">any implementation</a></p>
+<h2 id="strtod"><a href="#strtod" class="headerlink" title="strtod"></a><code>strtod</code></h2><p>函数原型为：</p>
+<pre><code class="cpp">double strtod( const char* str, const** str_end);
+</code></pre>
+<p>把参数<code>str</code>所指向的字符串转换为一个浮点数（类型为<code>double</code>型）。如果<code>str_end</code>不为空，则指向转换中最后一个字符后的字符的指针会存储在<code>str_end</code>引用的位置。</p>
+<h2 id="Imcomplete-types（非完整类型）"><a href="#Imcomplete-types（非完整类型）" class="headerlink" title="Imcomplete types（非完整类型）"></a>Imcomplete types（非完整类型）</h2><p>这是一种缺乏足够信息来判断object大小的object type，一个imcomplete type在translation union的某些阶段可能是completed。</p>
+<p>满足以下条件之一的类型是imcomplete：</p>
+<ul>
+<li>void</li>
+<li>未知大小的array type（但在之后的declaration中指定其大小之后便是completed）</li>
+<li>未知具体content的struct或union（但在相同作用域之后的declaration中，以相同的struc或者union来定义其content时，便是completed）</li>
+</ul>
+<h2 id="fprintf"><a href="#fprintf" class="headerlink" title="fprintf()"></a><code>fprintf()</code></h2><pre><code class="cpp">int fprintf( FILE *stream, const char *format, [ argument ]...);
+</code></pre>
+<p>其中，<code>stream</code>为<code>stdin</code>、<code>stdout</code>或<code>stderr</code>。<br><code>fprintf()</code>函数根据指定的<code>format</code>发送信息(参数)到由<code>stream</code>指定的文件（即，传送格式化输出到一个文件中）。</p>
+<p><code>fprintf()</code>只能和<code>printf()</code>一样工作。<code>fprintf()</code>的返回值是输出的字符数，发生错误时返回一个负值。</p>
+<h2 id="Standard-Predefined-Macros"><a href="#Standard-Predefined-Macros" class="headerlink" title="Standard Predefined Macros"></a>Standard Predefined Macros</h2><h3 id="FILE"><a href="#FILE" class="headerlink" title="__FILE__"></a><code>__FILE__</code></h3><p>此宏<strong>以C字符串常量的形式扩展为当前输入文件的名称</strong>。 这是preprocessor所打开文件的路径，而不是<code>#include</code>中指定的short name或input file name argument。 例如，<code>/usr/local/include /myheader.h</code>是此宏的一种possible expansion。</p>
+<h3 id="LINE"><a href="#LINE" class="headerlink" title="__LINE__"></a><code>__LINE__</code></h3><p>此宏<strong>以十进制整数常量（decimal integer constant）的形式扩展为当前输入行号</strong>。 虽然称之为预定义的宏，但它是一个非常奇怪的宏，因为它的“定义”随着每一行新的源代码行的变化而变化。</p>
+<p><strong>【注】</strong>：<code>__FILE__</code>和<code>__LINE__</code>可用于报告程序检测到inconsistency时，或者当检测到source line的inconsistency时，生成错误信息。例如：</p>
+<pre><code class="cpp">fprintf(stderr, &quot;Internal error:  &quot;
+                      &quot;negative string length &quot;
+                      &quot;%d at %s, line %d. &quot;,
+            length, __FILE__, __LINE__);
+</code></pre>
+<h2 id="DATE-amp-TIME"><a href="#DATE-amp-TIME" class="headerlink" title="__DATE__ &amp; __TIME__"></a><code>__DATE__</code> &amp; <code>__TIME__</code></h2><pre><code class="cpp">printf(&quot;%s&quot;,__DATE__);    
+</code></pre>
+<h2 id="STDC"><a href="#STDC" class="headerlink" title="__STDC__"></a><code>__STDC__</code></h2><p>一般情况下，此宏扩展为常量<code>1</code>，表示此编译器符合ISO Standard C。如果GNU CPP同GCC以外的编译器一起使用，则结果就一定是这样。但是，除非使用<code>-traditional-cpp</code>选项，否则预处理器将始终conforms to the standard。</p>
+<p>如果使用<code>-traditional-cpp</code>选项，则不定义此宏。</p>
+<p>在某些主机上，系统编译器使用不同的convention，其中<code>__STDC__</code>通常为<code>0</code>，但如果用户自行指定其严格符合C标准，则为<code>1</code>。 处理系统头文件时，CPP遵循host convention（主机约定），但在处理用户文件时，<code>__STDC__</code>始终为<code>1</code>。</p>
+<h2 id="STDC-VERSION"><a href="#STDC-VERSION" class="headerlink" title="__STDC_VERSION__"></a><code>__STDC_VERSION__</code></h2><p>此宏是C标准的version number，它是一个long integer constant，形式为<code>yyyymmL</code>。其中，<code>yyyy</code>和<code>mm</code>代表Standard的年份和月份。它表明了编译器所遵循的C Standard。同<code>__STDC__</code>一样，除非连同GNU CPP和GCC一起使用，否则this is not necessarily accurate for the entire implementation。</p>
+<blockquote>
+<p>The value <code>199409L</code> signifies the <code>1989</code> C standard as amended in <code>1994</code>, which is the current default; the value <code>199901L</code> signifies the <code>1999</code> revision of the C standard; the value <code>201112L</code> signifies the <code>2011</code> revision of the C standard; the value <code>201710L</code> signifies the <code>2017</code> revision of the C standard (which is otherwise identical to the <code>2011</code> version apart from correction of defects).This macro is not defined if the <code>-traditional-cpp</code> option is used</p>
+</blockquote>
+<h2 id="cplusplus"><a href="#cplusplus" class="headerlink" title="__cplusplus"></a><code>__cplusplus</code></h2><p>此宏用于C++编译器，可以使用<code>__cplusplus</code>来检测一个header是否能够被当前所使用的C/C++编译器编译。它和<code>__STDC_VERSION__</code>类似。</p>
+<blockquote>
+<p>Depending on the language standard selected, the value of the macro is <code>199711L</code> for the <code>1998</code> C++ standard, <code>201103L</code> for the <code>2011</code> C++ standard, <code>201402L</code> for the <code>2014</code> C++ standard, <code>201703L</code> for the <code>2017</code> C++ standard, or an unspecified value strictly larger than <code>201703L</code> for the experimental languages enabled by <code>-std=c++2a</code>and <code>-std=gnu++2a</code>.</p>
+</blockquote>
+<h2 id="ASSEMBLER"><a href="#ASSEMBLER" class="headerlink" title="__ASSEMBLER__"></a><code>__ASSEMBLER__</code></h2><blockquote>
+<p>This macro is defined with value <code>1</code> when preprocessing assembly language.</p>
+</blockquote>
+<h2 id="macro的技巧"><a href="#macro的技巧" class="headerlink" title="macro的技巧"></a>macro的技巧</h2><p>如果宏里有多过一个语句（statement），就需要用<code>do { /*...*/ } while(0)</code>包裹成单个语句，否则就会出现问题：</p>
+<pre><code class="cpp">#define M() a(); b()
+if (cond)
+    M();
+else
+    c();
+
+/* 预处理后 */
+
+if (cond)
+    a(); b(); /* b(); 在 if 之外     */
+else          /* &lt;- else 缺乏对应 if */
+    c();
+</code></pre>
+<p>只用 <code>{ }</code>也不行：</p>
+<pre><code class="cpp">#define M() { a(); b(); }
+
+/* 预处理后 */
+
+if (cond)
+    { a(); b(); }; /* 最后的分号代表 if 语句结束 */
+else               /* else 缺乏对应 if */
+    c();
+</code></pre>
+<p>用<code>do while</code>就行了：</p>
+<pre><code class="cpp">#define M() do { a(); b(); } while(0)
+
+/* 预处理后 */
+
+if (cond)
+    do { a(); b(); } while(0);
+else
+    c();
+</code></pre>
+<h2 id="std-isalnum"><a href="#std-isalnum" class="headerlink" title="std::isalnum"></a><code>std::isalnum</code></h2><p>定义在<code>&lt;cctype&gt;</code>中，主要用于检查给定字符是否为当前 C 本地环境分类为字母数字字符。</p>
+<h2 id="Placement-new"><a href="#Placement-new" class="headerlink" title="Placement new"></a>Placement new</h2><p>简而言之，placement new并不分配内存，而是由使用者给与内存空间来进行构建对象。其形式为：</p>
+<pre><code class="cpp">new (T*) T(...);
+</code></pre>
+<p>第一个括号中的是所给定的指针，其指向足够放下<code>T</code>类型的内存空间。而<code>T(...)</code>则是构造函数的一个调用。</p>
+<p>例如，</p>
+<pre><code class="cpp">bool StartArray(){
+    new (stack_.template Push&lt;ValueType&gt;()) ValueType(kArrayType);
+    return true;
+}
+</code></pre>
+<p>可以改写为：</p>
+<pre><code class="cpp">bool StartArry(){
+    ValueType* v=stack_.template Push&lt;ValueType&gt;();    //（1）
+    new (v) ValueType(kArrayType);
+    return true;
+}
+</code></pre>
+<p><strong>【注】：</strong>在通常情景下，<code>new</code>与<code>delete</code>都是成对出现的，但此例中使用的placement new就通常不需要使用<code>delete</code>，这是因为<code>delete</code>会条用析构函数并释放空间。在这个例子中，<code>stack_</code>提供了内存空间，所以只需要调用<code>ValueType</code>的析构函数即可。</p>
+<p>例如：</p>
+<pre><code class="cpp">while(!stack_.Empty())
+    (stack_.template Pop&lt;ValueType&gt;(1))-&gt;~ValueType();
+</code></pre>
+<h2 id="template-disambiguator"><a href="#template-disambiguator" class="headerlink" title="template disambiguator"></a>template disambiguator</h2><p>对于上述代码中的<code>(1)</code>，可得知它只是调用<code>Stack</code>类的模板成员函数<code>Push</code>。如果删掉这个<code>template</code>关键字，就变得令人熟悉：</p>
+<pre><code class="cpp">ValueType* v=stack_.Push&lt;ValueType&gt;();
+</code></pre>
+<p>此处，<code>Push&lt;ValueType&gt;</code>是一个<strong>dependent name</strong>，它依赖于<code>ValueType</code>的实际类型。于是编译器还不能确定<code>&lt;</code>这个运算符的性质：是小于运算符<code>&lt;</code>还是模板的<code>&lt;</code>。为了避免歧义的产生，需要加入<code>template</code>关键字。这是C++标准规定的，缺少<code>template</code>关键字会导致GCC和Clang报错，而VC会通过。</p>
+<h2 id="默认构造函数（default-ctor）"><a href="#默认构造函数（default-ctor）" class="headerlink" title="默认构造函数（default ctor）"></a>默认构造函数（default ctor）</h2><h3 id="1-什么是default-ctor"><a href="#1-什么是default-ctor" class="headerlink" title="1. 什么是default ctor"></a>1. 什么是default ctor</h3><p>一般认为，默认构造函数就是编译器自动生成的那个构造函数，但这种理解过于片面。</p>
+<p>准确的说，<strong>默认构造函数就是在调用时不需要显示地传入实参的构造函数。</strong></p>
+<p>根据此原则，下面两种构造函数都是默认构造函数：</p>
+<pre><code class="cpp">class Sample {
+public:
+    // 默认构造函数。
+    Sample() {
+        // do something
+    }
+
+    // 默认构造函数。虽然有形参，但有默认值，调用的时候可以不显示的传入实参。
+    Sample(int m = 10) {
+        // do something
+    }
+
+    //注：这两种default ctor不应该同时出现，这样会使得编译器产生二义性
+};
+</code></pre>
+<p><strong>【注】：</strong>default ctor的调用情形：如果<strong>如果定义一个对象时没有进行初始化，编译器就会使用default ctor</strong>。例如，<code>Sample s;</code></p>
+<p><strong>编译器需要生成default ctor的情形：</strong></p>
+<ul>
+<li>当该类的类对象数据成员有默认构造函数时</li>
+<li>当该类的基类有默认构造函数时</li>
+<li>当该类的基类为虚基类时</li>
+<li>当该类有虚函数时</li>
+</ul>
+<h2 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h2><p>lambda表达式的声明格式为：</p>
+<pre><code class="cpp">[capture list] (params list) mutable exception-&gt; return type { function body}
+</code></pre>
+<p>上述各个参数的含义：</p>
+<ol>
+<li><code>capture list</code>：捕获外部变量</li>
+<li><code>params list</code>：形参列表</li>
+<li><code>mutable</code>：用于说明是否可以modify捕获的变量</li>
+<li><code>exception</code>：异常设定</li>
+<li><code>return type</code>：返回类型</li>
+<li><code>function body</code>：函数体</li>
+</ol>
+<p>其实，对于上面完整的lambda表达式，可以省略其中某些参数，从而获得不完整的lambda表达式。常见的几种形式有：</p>
+<ol>
+<li><code>[capture list] (params list)-&gt; return type { function body }</code>。这种形式声明了<code>const</code>类型的表达式，它不能修改<code>capture list</code>中的值</li>
+<li><code>[capture list] (params list) { function body }</code>。这种形式省略了<code>return type</code>，但compiler可以根据以下规则deduce出lambda表达式的<code>return type</code>：<ol>
+<li>如果<code>function body</code>中存在<code>return</code>语句，则该lambda表达式的<code>return type</code>就由<code>return</code>语句的返回值类型决定</li>
+<li>如果<code>function type</code>中没有<code>return</code>语句，则lambda表达式的<code>return type</code>就是<code>void</code>类型</li>
+</ol>
+</li>
+<li><code>[capture list] { function body }</code>。这种形式省略了<code>param list</code>，类似于普通的无参函数</li>
+</ol>
+<h3 id="捕获外部变量"><a href="#捕获外部变量" class="headerlink" title="捕获外部变量"></a>捕获外部变量</h3><p>lambda表达式可以使用其可见范围内的外部变量，但必须声明哪些外部变量可以被该lambda表达式使用。lambda表达式通过在最前面的<code>[]</code>中来明确指明其内部可以访问的外部变量，这一过程也称为lambda表达式捕获了外部变量。</p>
+<p>类似于参数的传递方式（包括<strong>值传递</strong>、<strong>引用传递</strong>以及<strong>指针传递</strong>），在lambda表达式中，外部变量的捕获方式有：</p>
+<ol>
+<li><strong>值捕获</strong>。被捕获的变量的值在lambda表达式创建时，通过值拷贝的方式传入，因此随后对该变量的修改不会影响lambda表达式中的值。<strong>【注】：</strong>如果以这种方式捕获外部变量，则在lambda表达式的<code>fucntion body</code>中，不能修改该外部变量的值（read-only）。如果要改变其值，需要加上<code>mutable</code>关键字，使得表达式体内的代码可以更改通过值捕获获得变量。</li>
+<li><strong>引用捕获</strong>。只需要在捕获列表变量前面加上一个引用说明符<code>&amp;</code>,引用捕获的变量使用的实际上就是该引用所绑定的对象。</li>
+<li><strong>隐式捕获</strong>。隐式捕获有两种方式，分别是<code>[=]</code>和<code>[&amp;]</code>。<code>[=]</code>表示以值捕获的方式捕获外部变量，<code>[&amp;]</code>表示以引用捕获的方式捕获外部变量。</li>
+</ol>
+<p>例子：</p>
+<pre><code class="cpp">    int a=1;
+    auto f=[&amp;a]{std::cout&lt;&lt;a&lt;&lt;std::endl;};
+    a=3;
+    f();   //3
+
+    int a=1;
+    auto f=[&amp;a]{a=2;std::cout&lt;&lt;a&lt;&lt;std::endl;};
+    a=3;
+    f();   //2
+</code></pre>
+<p>C++11中的lambda表达式捕获外部变量的主要形式有：</p>
+<table>
+<thead>
+<tr>
+<th>捕获方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[]</code></td>
+<td>不捕获任何外部变量</td>
+</tr>
+<tr>
+<td><code>[variable,...]</code></td>
+<td>默认以值捕获来捕获的多个外部变量（用<code>,</code>分隔），如果引用捕获，需要显示声明（使用<code>&amp;</code>)</td>
+</tr>
+<tr>
+<td><code>[this]</code></td>
+<td>以值捕获来捕获<code>this</code>指针</td>
+</tr>
+<tr>
+<td><code>[=]</code></td>
+<td>以值捕获来捕获所有外部变量</td>
+</tr>
+<tr>
+<td><code>[&amp;]</code></td>
+<td>以引用捕获来捕获所有外部变量</td>
+</tr>
+<tr>
+<td><code>[=，&amp;x]</code></td>
+<td>变量<code>x</code>使用引用捕获，其余变量使用值捕获</td>
+</tr>
+<tr>
+<td><code>[&amp;,x]</code></td>
+<td>变量<code>x</code>使用值捕获，其余变量使用引用捕获</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【注】：</strong>lambda表达式的参数的一些限制：</p>
+<ol>
+<li>参数列表不能有默认参数</li>
+<li>不支持可变参数</li>
+<li>所有参数必须有参数名</li>
+</ol>
+<pre><code class="cpp">int m=[](int x) {return [](int y) {return y*2;}(x)+6;}(5);      //m=16
+
+[](int x, int y) { return x + y; }(5, 4);  //9
+
+auto Func=[](int x)-&gt; std::function&lt;int(int)&gt;{return [=](int y){return x+y;};};
+    auto f=Func(4);
+    std::cout&lt;&lt;f(5)&lt;&lt;std::endl; // 9
+
+auto Func1=[](int x)-&gt; std::function&lt;int(int)&gt;{return [=](int y){return x*y;};};
+auto Func2=[](const std::function&lt;int(int)&gt;&amp; f,int z){return f(z)+1;};
+auto a=Func2(Func1(7),8);  //57
+
+int a=1,b=2;
+auto func=[=,&amp;b] () mutable {a=3;b=4;std::cout&lt;&lt;a&lt;&lt;b&lt;&lt;std::endl;};  //3 4
+func();
+std::cout&lt;&lt;a&lt;&lt;b&lt;&lt;std::endl;  //1 4
+
+std::function&lt;void(int)&gt; f=[](int x){std::cout&lt;&lt;x&lt;&lt;std::endl;};
+f(1);
+</code></pre>
+<h2 id="C-11-lambda表达式的实现"><a href="#C-11-lambda表达式的实现" class="headerlink" title="C++11 lambda表达式的实现"></a>C++11 lambda表达式的实现</h2><p>其实是编译器为我们创建了一个class，这个class重载了<code>operator()</code>。从本质上讲，lambda只不过是syntatic sugar，可以简化代码。用户书写的lambda表达式与真正的实现为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6a2a0aa0f1d37b62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对于捕获变量的lambda表达式而言，编译器在创建class的时候，通过成员函数的形式保存了捕获的变量。其形式为：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0971c3865204b534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>一个lambda表达式是一个object（这就是为什么说lambda是一个functor，而不是function的原因），所以其拥有一个能够被strore的type。但是，lambda的type只有compiler知道（因为这个type是compiler-generated），所以必须使用<code>auto</code>作为lambda的声明实例的返回类型。</p>
+<h2 id="模板的相关问题"><a href="#模板的相关问题" class="headerlink" title="模板的相关问题"></a>模板的相关问题</h2><p>一个基础问题：如果在头文件中对模板类进行了声明，如在<code>Types.h</code>中有声明：</p>
+<pre><code class="cpp">template&lt;typename Type&gt;
+class Point_ {
+    ...
+    Point_&amp; operator=(const Point_&amp; pt);
+}
+</code></pre>
+<p>则在实现文件<code>Point_.cpp</code>中需要这样写（不能再出现<code>class</code>关键字）：</p>
+<pre><code class="cpp">template &lt;typename Type&gt;
+Point_&lt;Type&gt; Point_&lt;Type&gt;::operator=(const Point_&amp; pt){}
+</code></pre>
+<h2 id="模板类error-LNK2019：无法解析的外部符号"><a href="#模板类error-LNK2019：无法解析的外部符号" class="headerlink" title="模板类error LNK2019：无法解析的外部符号"></a>模板类<code>error LNK2019</code>：无法解析的外部符号</h2><p>如果<strong>将模板类的声明和实现分别写在两个独立的文件中</strong>，则在build时就会出现”<code>e“rror LNK2019</code>：无法解析的外部符号“的错误。</p>
+<p>解决办法有：</p>
+<ol>
+<li>直接将模板类的中成员函数的声明和定义都放在<code>.h</code>文件中，不要分开就好。</li>
+<li>在使用到该模板类的文件中，既包含模板类的声明文件（<code>.h</code>文件），同时也包含模板类的实现文件<code>.cpp</code>文件。</li>
+<li>在类的定义<code>.h</code>文件的最后包含模板类的实现<code>.cpp</code>文件。</li>
+</ol>
+<p>造成这种情况的原因是<strong>模板类和模板函数在只有在使用的时候才会被实例化</strong>。当模板被使用时，编译器需要函数所有的实现代码，并用合适的类型（即模板参数）来构建正确的函数。但是，如果将函数的实现放在一个单独的源文件中，这些文件就是不可见的，因而会报错。</p>
+<p>Anyway, the reason your code is failing is that, when instantiating a template, the compiler creates a new class with the given template argument. For example:</p>
+<pre><code class="cpp">template&lt;typename T&gt;
+struct Foo
+{
+    T bar;
+    void doSomething(T param) {/* do stuff using T */ }
+};
+
+// somewhere in a .cpp
+Foo&lt;int&gt; f;
+</code></pre>
+<p>When reading this line, the compiler will create a new class (let’s call it FooInt), which is equivalent to the following:</p>
+<pre><code class="cpp">struct FooInt
+{
+    int bar;
+    void doSomething(int param) {/* do stuff using int */ }
+}
+</code></pre>
+<p>Consequently, the compiler needs to have access to the implementation of the methods, to instantiate them with the template argument (in this case int). If these implementations were not in the header, they wouldn’t be accessible, and therefore the compiler wouldn’t be able to instantiate the template.</p>
+<h2 id="error的使用"><a href="#error的使用" class="headerlink" title="#error的使用"></a><code>#error</code>的使用</h2><p>编译程序时，只要遇到<code>#error</code>就会跳出一个编译错误。使用它的其目的是：<strong>保证程序是按照自己所设想的那样进行编译的</strong>。</p>
+<p><strong>【例子】：</strong><br>在程序中往往有很多的预处理指令：</p>
+<pre><code class="cpp">#ifdef XXX
+...
+#else
+#endif
+</code></pre>
+<p>当程序比较大时，往往有些宏定义是在外部指定的（如makefile），或是在系统头文件中指定的。当不太确定当前是否定义了<code>XXX</code>时，就可以改成如下这样进行编译：</p>
+<pre><code class="cpp">#ifdef XXX
+...
+#error &quot;XXX has been defined&quot;
+#else
+#endif
+</code></pre>
+<p>这样，如果编译时出现错误，就会输出<code>XXX has been defined</code>，表明宏<code>XXX</code>已经被定义了。</p>
+<h2 id="重载-lt-lt-和-gt-gt-操作符"><a href="#重载-lt-lt-和-gt-gt-操作符" class="headerlink" title="重载&lt;&lt;和&gt;&gt;操作符"></a>重载<code>&lt;&lt;</code>和<code>&gt;&gt;</code>操作符</h2><p>在开始重载这些操作符之前，必须注意：<strong>这些操作符必须重载为全局函数。如果想要让它们访问私有成员，则必须设置为友元（friend）</strong>。</p>
+<p><strong>必须将这两个操作符重载为全局函数的原因</strong>：如果操作符重载为一个成员函数，则它必须是对象的成员，且出现在操作符的左侧。由于<code>&lt;&lt;</code>的调用方式为：<code>cout &lt;&lt; obj;</code>，所以如果将它重载为一个成员函数，并且对象能够出现在操作符的右侧，则我们需要将<code>obj</code>定义为<code>ostream</code>类的成员，显然这是不现实的。因此，一般将<strong>这些操作符重载为接受两个参数的全局函数，其中一个参数为<code>cout</code>，另一个则是自定义类的对象</strong>。</p>
+<p>例子：</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+class Complex {
+private:    
+    int real, imag;
+public:    
+    Complex(int r = 0, int i =0)   {  real = r;   imag = i; }    
+    friend std::ostream &amp; operator &lt;&lt; (std::ostream &amp;out, const Complex &amp;c);    
+    friend std::istream &amp; operator &gt;&gt; (std::istream &amp;in,  Complex &amp;c);
+}; 
+ostream &amp; operator &lt;&lt; (std::ostream &amp;out, const Complex &amp;c) {    
+    out &lt;&lt; c.real;    
+    out &lt;&lt; &quot;+i&quot; &lt;&lt; c.imag &lt;&lt; endl;    
+    return out;
+} 
+
+istream &amp; operator &gt;&gt; (std::istream &amp;in,  Complex &amp;c) {    
+    std::cout &lt;&lt; &quot;Enter Real Part &quot;;    
+    in &gt;&gt; c.real;    
+    std::cout &lt;&lt; &quot;Enter Imaginary Part &quot;;    
+    in &gt;&gt; c.imag;    
+    return in;
+} 
+
+int main(){   
+    Complex c1;   
+    std::cin &gt;&gt; c1;   
+    std::cout &lt;&lt; &quot;The complex object is &quot;;   
+    std::cout &lt;&lt; c1;   
+    return 0;
+}
+</code></pre>
+<h2 id="setjmp和longjmp用法"><a href="#setjmp和longjmp用法" class="headerlink" title="setjmp和longjmp用法"></a><code>setjmp</code>和<code>longjmp</code>用法</h2><p><code>setjmp</code>和<code>longjmp</code>是C语言独有的，只有将它们结合起来使用，才能达到程序控制流有效转移的目的，按照用户的预先设计的意图，去实现对程序中可能出现的异常进行集中处理。</p>
+<p>这两个函数的原型定义在<code>&lt;setjmp.h&gt;</code>中：</p>
+<pre><code class="cpp">int setjmp(jmp_buf envbuf);
+</code></pre>
+<p><code>setjmp</code>函数用缓冲区<code>envbuf</code>保存系统堆栈的内容，以便后续的<code>longjmp</code>函数使用。<code>setjmp</code>函数初次启用时返回<code>0</code>值。</p>
+<pre><code class="cpp">void longjmp(jmp_buf envbuf, int val);
+</code></pre>
+<p><code>longjmp</code>函数中的参数<code>envbuf</code>是由<code>setjmp</code>函数所保存的堆栈环境，参数<code>val</code>设置<code>setjmp</code>函数的返回值。<code>longjmp</code>函数本身是没有返回值的，它执行后跳转到保存<code>envbuf</code>参数的<code>setjmp</code>函数调用，并由<code>setjmp</code>函数调用返回，此时<code>setjmp</code>函数的返回值就是<code>val</code>。</p>
+<p>通俗的解释是：<strong>先调用<code>setjmp</code>，用变量<code>envbuf</code>记录当前的位置，然后调用<code>longjmp</code>，返回<code>envbuf</code>所记录的位置，并使<code>setjmp</code>的返回值为<code>val</code>。当时用<code>longjmp</code>时，<code>envbuf</code>的内容被销毁了。其实这里的“位置”一词真正的含义是栈定指针</strong>。</p>
+<p>例子：</p>
+<pre><code class="cpp">#include &lt;stdio.h&gt; 
+#include &lt;setjmp.h&gt;
+
+jmp_buf buf;
+
+void banana() { 
+    printf(&quot;in banana() \n&quot;); 
+    longjmp(buf,1);
+
+    printf(&quot;you&#39;ll never see this,because i longjmp&#39;d&quot;);
+}
+
+int main() { 
+    if(setjmp(buf)) 
+        printf(&quot;back in main\n&quot;); 
+    else { 
+        printf(&quot;first time through\n&quot;); 
+        banana(); 
+    }
+}
+
+//first time through
+//in banana()
+//back in main
+</code></pre>
+<p><code>setjmp</code>/<code>longjmp</code>的最大用处是错误恢复，类似<code>try ...catch...</code>。其功能比<code>goto</code>强大很多，<code>goto</code>只能在函数体内跳来跳去，而<code>setjmp</code>/<code>longjmp</code>可以在到过的所有位置间进行跳转。</p>
+<h2 id="重载operator-gt"><a href="#重载operator-gt" class="headerlink" title="重载operator-&gt;"></a>重载<code>operator-&gt;</code></h2><p>重载<code>operator-&gt;</code>必须定义为类的成员函数。此外，不管其形式如何，<code>-&gt;</code>表达式不接受显示的形参。</p>
+<p>对于形如<code>pointer-&gt;mem</code>的表达式而言，<code>pointer</code>必须以下两种形式之一：</p>
+<ul>
+<li>指向类对象的指针</li>
+<li>重载了<code>operator-&gt;()</code>的类对象</li>
+</ul>
+<p>根据<code>pointer</code>类型的不同，有以下两条规则：</p>
+<ol>
+<li>如果<code>pointer</code>是指针，则按照内置的<code>-&gt;</code>运算符去处理。表达式等价于<code>(*pointer).mem</code>。即，先对<code>pointer</code>指针进行解引用，然后从所得的对象中获得指定的成员。如果没有所指定的成员，编译器则会报错。</li>
+<li>如果<code>pointer</code>是一个定义了<code>operator-&gt;()</code>的类对象，则<code>pointer-&gt;mem</code>等价于<code>pointer.operator-&gt;()-&gt;mem</code>。<ul>
+<li>如果<code>operator-&gt;()</code>的返回结果是一个指针，则转到1；</li>
+<li>如果<code>operator-&gt;()</code>的返回结果是一个对象，且该对象也重载了<code>operator-&gt;()</code>，则重复调用2，否则编译器报错。最终，过程要么结束在1，要么无限递归下去亦或是编译器报错。</li>
+</ul>
+</li>
+</ol>
+<p>简而言之，如果返回类型是类类型（或者这种对象的引用），则将递归引用该操作符。编译器检查返回对象所属类型是否具有成员<code>-&gt;</code>运算符。如果有，则直接应有那个操作符；否则，编译器将产生一个错误。这个过程将持续下去，直到返回一个指向带有指定成员的对象。</p>
+<p>例子，</p>
+<pre><code class="cpp">class A{
+public:
+    int i;
+    A(){i=100;}
+    void print(int a){printf(&quot;%d\n&quot;, a);}
+    A&amp; operator-&gt;(){return *this;}
+};
+
+int main(){
+    int ret;
+    A a;
+    ret=a-&gt;i;
+    a-&gt;print(200);
+}
+</code></pre>
+<p>编译器将会报错：<code>error: circular pointer delegation detected</code>。因为上面的代码将会让<code>operator-&gt;()</code>返回对象本身，从而导致无穷递归，最后报错。</p>
+<p>而如果改为如下，则能够得到正确的结果：</p>
+<pre><code class="cpp">class A{
+public:
+    int i;
+    A(){i=100;}
+    void print(int a){printf(&quot;%d\n&quot;, a);}
+    A* operator-&gt;(){return this;}
+};
+
+int main(){
+    int ret;
+    A a;
+    ret=a-&gt;i;
+    a-&gt;print(200);
+}
+</code></pre>
+<h2 id="Debug与Release的区别"><a href="#Debug与Release的区别" class="headerlink" title="Debug与Release的区别"></a>Debug与Release的区别</h2><p>Debug 和 Release 并没有本质的区别，他们只是VC预定义提供的两组编译选项的集合，编译器只是按照预定的选项行动。如果我们愿意，完全可以把Debug和Release的行为完全颠倒过来。</p>
+<p>Debug和Release，主要是针对其面向的目标不同的而进行区分的。Debug通常称为调试版本，通过一系列编译选项的配合，编译的结果通常包含调试信息，而且不做任何优化，以为开发人员提供强大的应用程序调试能力。而Release通常称为发布版本，是为用户使用的，一般客户不允许在发布版本上进行调试。所以不保存调试信息，同时，它往往进行了各种优化，以期达到代码最小和速度最优，为用户的使用提供便利。</p>
+<h2 id="VC中的“烫烫烫”与“屯屯屯”"><a href="#VC中的“烫烫烫”与“屯屯屯”" class="headerlink" title="VC中的“烫烫烫”与“屯屯屯”"></a>VC中的“烫烫烫”与“屯屯屯”</h2><p>在Debug模式下，栈区开辟的存储空间都是使用<code>0xCCCCCCCCH</code>来填充<code>4</code>字节单位的。也就是说，栈区开辟的存储局部变量的空间的每一个字节都被<code>0xCC</code>填充。为什么使用<code>0xCC</code>？这是因为它是<code>INT 3H</code>的机器码，起保护作用，也可以用作下断点），而两个<code>0xCC</code>合起来就正好输出中文“烫”字。与此同时，动态分配的空间开辟给堆，而VC的Debug模式下，用<code>0xCD</code>填充堆的空间，而两个<code>0xCD</code>合在一起就是中文“屯”字。这样做的目的是<strong>可以让用户方便地看出哪些内存没有进行初始化</strong>。</p>
+<p>简而言之，在VC总共遇到栈中或者堆中申请的空间没有被初始化就会显示“烫烫烫”或者“屯屯屯”。</p>
+<p><strong>【注】：</strong>在Release模式下，则不会有这种附加的动作，原来那块内存中是什么就是什么。</p>
+<h3 id="Memory-Debug-Codes"><a href="#Memory-Debug-Codes" class="headerlink" title="Memory Debug Codes"></a>Memory Debug Codes</h3><p>对于C runtime library提供了其debug codes：</p>
+<ul>
+<li><code>0xCD</code>、<code>0xCDCDCDCD</code>：New objects。当New objects被allocate地时候，将被填充到<code>0xCD</code>中。</li>
+<li><code>0xFD</code>、<code>0xFDFDFDFD</code>：No-man’s land memory。其属于已分配内部块的额外字节，但不是用户申请的内存区域。 它们被放置在申请内存区域之前和之后，用于数据绑定检查。</li>
+<li><code>0xDD</code>、<code>0xDDDDDDDD</code>：Freed blocks。当设置<code>_CRTDBG_DELAY_FREE_MEM_DF</code>标志时，如果已释放的内存块在调试堆（debug heap）链表中仍呈未使用状态，则用<code>0xDD</code>进行填充。 虽然在某些情况下用户不会看到<code>0xDDDDDDDD</code>值，因为它会被另一个调试函数覆盖（例如，<code>HeapFree</code>的<code>0xFEEEFEEE</code>）。</li>
+</ul>
+<p>上述这些常量定义在<code>&lt;DbgHeap.c&gt;</code>中：</p>
+<pre><code class="cpp">static unsigned char _bNoMansLandFill = 0xFD; /* fill no-man&#39;s land with this */
+static unsigned char _bDeadLandFill = 0xDD; /* fill free objects with this */
+static unsigned char _bCleanLandFill = 0xCD; /* fill new objects with this */
+</code></pre>
+<h3 id="编译器初始化"><a href="#编译器初始化" class="headerlink" title="编译器初始化"></a>编译器初始化</h3><p><code>0xCC</code>（<code>0xCCCCCCCC</code>）—VC++编译器会初始化未由程序显式初始化的所有局部变量。 它使用<code>0xCC</code>，<code>0xCCCCCCCC</code>填充这些变量使用的所有内存。</p>
+<p>例如，在栈中申请一个大小为<code>4</code>个字节的字符数组：</p>
+<pre><code class="cpp">int main() {
+    char ch[4];
+    return 0;
+}
+</code></pre>
+<p>打下断点进行查看：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-28ff2d86f27afc89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>进一步查看反汇编：</p>
+<pre><code class="x86asm">int main(void){
+00007FF78E4C16E0  push        rbp  
+00007FF78E4C16E2  push        rdi  
+00007FF78E4C16E3  sub         rsp,108h  
+00007FF78E4C16EA  lea         rbp,[rsp+20h]  
+00007FF78E4C16EF  mov         rdi,rsp  
+00007FF78E4C16F2  mov         ecx,42h      //rep的循环次数为42h
+00007FF78E4C16F7  mov         eax,0CCCCCCCCh //将栈空间的42h个双字节赋值为0CCCCCCCCh 
+00007FF78E4C16FC  rep stos    dword ptr [rdi]  
+    char x[4];
+    return 0;
+00007FF78E4C16FE  xor         eax,eax  
+}
+</code></pre>
+<h2 id="Callable-objects"><a href="#Callable-objects" class="headerlink" title="Callable objects"></a>Callable objects</h2><p>Callable object（可调用对象）是可以像函数一样被调用的任何对象的通用名称：</p>
+<ul>
+<li>A member function (pointer)</li>
+<li>A free function (pointer)</li>
+<li>A functor</li>
+<li>A lambda</li>
+</ul>
+<p>在C语言中，有指向函数的指针的概念，它允许存储任何函数的地址（提供与指针匹配的签名）。 但是，指针函数与指向成员函数的指针具有不同的签名; 它们可以作为lambda的不同签名。</p>
+<p><code>std::function</code>是一个模板类，可以保存与其签名匹配的任何可调用对象。<code>std::function</code>为存储，传递和访问这些对象提供了一致的机制。</p>
+<p>如果可调用对象与<code>std::function</code>的签名匹配，则<code>std::function</code>可以被认为是指向任何可调用对象的通用函数指针。 而且，与C语言的函数指针不同，C++编译器对可调用对象的参数（包括返回类型）提供强类型检查。<code>std::function</code>重载了<code>operator !=</code>允许它与<code>nullptr</code>进行比较（因此它可以像函数指针一样）。</p>
+<h1 id="std-clock"><a href="#std-clock" class="headerlink" title="std::clock"></a><code>std::clock</code></h1><p>定义在<code>&lt;ctime&gt;</code>中，其中，<code>clock_t</code>的定义为：</p>
+<pre><code class="cpp">#ifndef _CLOCK_T_DEFINED
+typedef long clock_t;
+#define _CLOCK_T_DEFINED
+#endif
+</code></pre>
+<p>从上面代码可以看出，<code>clock_t</code>是一个长整形数。在<code>&lt;ctime&gt;</code>文件中还定义了一个常量<code>CLOCKS_PER_SEC</code>，它用来表示每一秒钟会有多少个时钟计时单元。其定义为：</p>
+<pre><code class="cpp">#define CLOCKS_PER_SEC ((clock_t)1000)
+</code></pre>
+<p><code>clock()</code>返回的单位是毫秒，如果想要返回以秒为单位，则可以使用：</p>
+<pre><code class="cpp">duration = (finish - start) / CLOCKS_PER_SEC；
+</code></pre>
+<p>简单而言，就是该程序从启动到函数调用，这整个过程所占用CPU的时间。<code>std::clock</code>可能前进快于或慢于wall-clock，这取决于操作系统给予程序的执行资源。例如，若与其他进程共享<em>CPU</em>，则<code>std::clock</code>时间的前进可能慢于wall-clock。另一方面，若当前进程为多线程，且多于一个执行核心可用，则<code>std::clock</code>时间的前进可能快于wall-clock。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/CMake学习/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/C++点点滴滴（上）/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

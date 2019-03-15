@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            编译原理 （上） | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",compiler">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="编译原理 （上） | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="compiler"> 
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Aug 27 2018 23:27:19 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="编译原理 （上） | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/Compiler（上）/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/Compiler（上）/index.html",
+    "headline": "编译原理 （上）",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Mon Aug 27 2018 23:27:19 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",compiler",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法分析树"><span class="post-toc-number">1.</span> <span class="post-toc-text">语法分析树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#抽象语法树（AST）"><span class="post-toc-number">2.</span> <span class="post-toc-text">抽象语法树（AST）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CFG（Control-flow-graph，控制流图）"><span class="post-toc-number">3.</span> <span class="post-toc-text">CFG（Control flow graph，控制流图）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线性IR"><span class="post-toc-number">4.</span> <span class="post-toc-text">线性IR</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-堆栈机代码"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. 堆栈机代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SSA（静态单赋值）"><span class="post-toc-number">5.</span> <span class="post-toc-text">SSA（静态单赋值）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据流分析"><span class="post-toc-number">6.</span> <span class="post-toc-text">数据流分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#到达定值（reaching-definition）"><span class="post-toc-number">7.</span> <span class="post-toc-text">到达定值（reaching definition）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据流分析模式"><span class="post-toc-number">8.</span> <span class="post-toc-text">数据流分析模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传递函数"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">传递函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迭代数据流分析（ITERATIVE-DATA-FLOW-ANALYSIS）"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">迭代数据流分析（ITERATIVE DATA-FLOW ANALYSIS）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传统SSA构造算法（即从线性IR到SSA的构造）的具体步骤"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">传统SSA构造算法（即从线性IR到SSA的构造）的具体步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-遍历IR构造CFG"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">1. 遍历IR构造CFG</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#支配性（Dominance）"><span class="post-toc-number">8.3.2.</span> <span class="post-toc-text">支配性（Dominance）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#支配者树（dominator-tree）"><span class="post-toc-number">8.3.2.1.</span> <span class="post-toc-text">支配者树（dominator tree）</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-计算支配边界"><span class="post-toc-number">8.3.3.</span> <span class="post-toc-text">2.计算支配边界</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-放置φ函数（即确定φ函数的位置）"><span class="post-toc-number">8.3.4.</span> <span class="post-toc-text">3.放置φ函数（即确定φ函数的位置）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#找到全局名字集合"><span class="post-toc-number">8.3.4.1.</span> <span class="post-toc-text">找到全局名字集合</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-重命名"><span class="post-toc-number">8.3.5.</span> <span class="post-toc-text">4.重命名</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Simple-and-Direction-SSA-Constriruction-Algorithm"><span class="post-toc-number">9.</span> <span class="post-toc-text">Simple and Direction SSA Constriruction Algorithm</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-LLVM的做法"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">一.LLVM的做法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-Simple-SSA-Construction"><span class="post-toc-number">10.</span> <span class="post-toc-text">二.Simple SSA Construction</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（1）Local-Value-Numbering"><span class="post-toc-number">10.0.0.1.</span> <span class="post-toc-text">（1）Local Value Numbering</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Algorithm-1-Implementation-of-local-value-numbering"><span class="post-toc-number">10.0.1.</span> <span class="post-toc-text">Algorithm 1: Implementation of local value numbering</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（2）Global-Value-Numbering"><span class="post-toc-number">10.0.2.</span> <span class="post-toc-text">（2）Global Value Numbering</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Algorithm-2-Implementation-of-global-value-numbering"><span class="post-toc-number">10.0.3.</span> <span class="post-toc-text">Algorithm 2: Implementation of global value numbering</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Algorithm-3-Detect-and-recursively-remove-a-trivial-φ-function"><span class="post-toc-number">10.0.4.</span> <span class="post-toc-text">Algorithm 3: Detect and recursively remove a trivial φ function</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-Handling-Incomplete-CFGs"><span class="post-toc-number">10.0.5.</span> <span class="post-toc-text">3.Handling Incomplete CFGs</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Algorithm-4-Handling-incomplete-CFGs"><span class="post-toc-number">10.0.6.</span> <span class="post-toc-text">Algorithm 4: Handling incomplete CFGs</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                编译原理 （上）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaklEQVR42u3a0W7CMAwFUP7/p7fXSRVwHdchQ6dPCFibk0m2sfP4+errgYeHh4eHh4eHdxjvEV9/v399fb3n08dfPr0+ZW1teHh4eDt5b0LthfTmAQEgfydfGx4eHt5+XpIM1hZdTQmdteHh4eGdxsvL6DzE58/Fw8PD+4+8uxoKaxuEh4eHdxov/8Gfh/Vka/JNHO+14OHh4cW8/gBs7vUR8z08PDy8xpUE69cJo3/nN/fBw8PDG+bl4/zqmP+GhmzcnsDDw8M7gVdtuebvVw8KJIcV8PDw8Pbz1kJ8Ujon25Skn0KbGA8PD2+Y12ki9D8dKbvx8PDwNvLWgn4/eeT4VmLAw8PDu5VXGMwvJYxqcM83PZrv4eHh4Q3wOgOwzvH9akM5Sip4eHh4w7y8LO4XwfnWJG1fPDw8vE/x8sI6PxRVHXrl466oBMfDw8Mb5uU/9fNAX00AyYa2Tkbg4eHh3cqrJolCO7UIyw8NLLZx8fDw8IZ55ZvGBXGnpRv9LR4eHt4wLy9n8wZEEuj7ZT0eHh7eZ3lrTdjX71QPAVST0NOtwcPDwxvmdQL0vYX4baU2Hh4e3hZetbDuLK7z/ej4Ah4eHt4wrxqCk1K4M0jLS3A8PDy8T/Gq11r5W92OTlLBw8PDm+ZVg/LaYda8EZwP3p7+A/Dw8PC28PJkkA+35krnN0/Bw8PD28jrNHDzbcqPZ1WTEx4eHt6ZvLsWlC+33M7Aw8PDO5iXt3erTYq1lICHh4e3n5cPvZINWjs60B+z4eHh4e3hVYvjfLS/lk7yDR2Z7+Hh4eG95H3fhYeHh4eHh4eHd8D1C68zKybGUFqsAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/compiler/">compiler</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=编译原理 （上）&url=http://yoursite.com/2019/03/09/Compiler（上）/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=编译原理 （上）&url=http://yoursite.com/2019/03/09/Compiler（上）/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/Compiler（上）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/Compiler（上）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=编译原理 （上）&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/Compiler（上）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="语法分析树"><a href="#语法分析树" class="headerlink" title="语法分析树"></a>语法分析树</h2><p><strong>语法分析树</strong>是对输入程序的推导或语法分析的图表示。</p>
+<p>相对于源程序文本，语法分析树比较大，因为它表示了完整的推导过程，树中的每个结点分别对应于推导过程中的各个语法符号。编译器必须为每个结点和边分配内存，并必须在编译期间遍历所有的边和结点。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-84dd28401729f194.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>语法分析树主要用于语法分析的讨论中和属性语法系统中，此时语法分析树是主要的IR。</p>
+<h2 id="抽象语法树（AST）"><a href="#抽象语法树（AST）" class="headerlink" title="抽象语法树（AST）"></a>抽象语法树（AST）</h2><p>抽象语法树保留了语法分析树个基本结构，但剔除了其中非必要的结点（主要是忽略了非终结符的大部分结点）。表达式地优先级和语法保持原样，但无关的结点已经消失了。</p>
+<p><code>a×2+a×2×b</code>的AST：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d4350e8f5014bdd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>AST是一种接近源码层次的表示。因为其与语法分析树大致对应，语法分析器可以直接建立AST。</p>
+<h2 id="CFG（Control-flow-graph，控制流图）"><a href="#CFG（Control-flow-graph，控制流图）" class="headerlink" title="CFG（Control flow graph，控制流图）"></a>CFG（Control flow graph，控制流图）</h2><p>程序中最简单的控制流单位是一个basic block（基本程序块），即（最大长度的）无分支代码序列。基本程序块是一个操作序列，其中的各个操作总是按序全部执行，除非某个操作引发了异常。控制总是从第一个操作进入基本程序块，在完成最后一个操作后退出基本程序块。</p>
+<p>在CFG中，每一个结点都代表一个basic block（基本快， a straight-line piece of code without any jumps or jump targets；jump targets start a block, and jumps end a block）。CFG中的有向边用于表示控制流中的跳转。在大多数的表示中，有两种特殊指向块：</p>
+<ul>
+<li>entry block，通过它控制进入流图</li>
+<li>exit block，经由它所有控制离开流图<br>根据其构造过程，在CFG中，每一条 A→B的边拥有以下属性：<blockquote>
+<p>outdegree(A) &gt; 1 or indegree(B) &gt; 1 (or both).</p>
+</blockquote>
+</li>
+</ul>
+<p>控制流图对程序中各个基本程序块之间的控制流建立了模型。一个CFG是一个有向图。每一个结点对应于一个基本程序块，每一条边对应于一个可能的控制转移。</p>
+<p>CFG对各种可能的运行时控制流路径提供了一种图表示法。CFG不同于面向语法的IR（如AST），后者的表明了语法结构。</p>
+<p><code>while</code>循环的CFG：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-858c955009df820b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><code>if-then-else</code>的CFG：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0bc80cdb40b28a7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>编译器通常把CFG和另一种IR联用。CFG表示了块之间的关系，而块内的操作则用另一种IR表示（例如表达层次上的AST、DAG或某种线性IR，这种得到的组合是一种混合IR）。</p>
+<h2 id="线性IR"><a href="#线性IR" class="headerlink" title="线性IR"></a>线性IR</h2><p>汇编语言就是一种线性代码，其包含一个指令序列，其中的各个指令出现的按顺序执行。编译器中使用的线性IR类似于抽象机的汇编代码</p>
+<p>使用线性形式的逻辑为：充当编译器输入的源代码是一种线性形式，而编译器输出的目标机代码也是线性的。线性IR中控制流通常模拟了目标机上控制流的实现，故线性代码通常包含条件分支和跳转。控制流将线性IR中基本程序块划分下来，块结束于分支、跳转或有标号的操作之前</p>
+<h3 id="1-堆栈机代码"><a href="#1-堆栈机代码" class="headerlink" title="1. 堆栈机代码"></a>1. 堆栈机代码</h3><p>堆栈机代码是一种单地址代码，假设操作数存在于一个栈中。大多数操作从栈中获得操作数，并将其结果存入栈中。堆栈机代码比较紧凑，栈本身建立了一个隐式地命名空间，从而消除了IR中的许多名字。这缩减了IR形式下程序的大小，但使用栈意味着所有的结果和参数都是暂态的，除非代码将其显示地移入内存中</p>
+<p>Java使用了字节码（这是一种紧凑的IR，在概念上类似于堆栈机代码）。这种字节码在解释器上运行，或者先转换为目标机代码后执行。</p>
+<p><strong>字节码：</strong></p>
+<ul>
+<li>为具有紧凑的形式而特地设计的IR</li>
+<li>通常针对抽象堆栈机的代码</li>
+<li>字节码得名于其受限的大小</li>
+<li>其操作通常是一个字节或者更小<br>Java 编译器并不像 C/C++ 那样直接将高级语言转换成为机器语言（直接的 CPU 指令）；它将 Java 语言转换成为 JVM 可以理解的 Java 字节码。因为 Java 字节码没有任何依赖于平台的代码，它可以在任意安装好 JVM （准确的说是 JRE）的硬件上运行，即使当 CPU 或 OS 不同时也如此。编译好的文件的大小与源码的大小几乎一样，这让通过网络来传输和运行编译的代码变得简单。</li>
+</ul>
+<p><strong>【注】</strong> 栈IR通常包含一个swap操作，该操作魂环栈顶两个元素的值</p>
+<h2 id="SSA（静态单赋值）"><a href="#SSA（静态单赋值）" class="headerlink" title="SSA（静态单赋值）"></a>SSA（静态单赋值）</h2><ul>
+<li>在静态单赋值形式中，名字唯一地对应到代码中特定的定义位置</li>
+<li>每个名字都是通过单个操作定义的，这也是静态单赋值形式名称的来历</li>
+<li>每次在操作中使用某个名字作为参数时，这个名字都编码了对应值的来源地信息</li>
+<li>文本化的名字实际上指向了一个特定的定义位置</li>
+<li><a href="https://www.wikiwand.com/en/Static_single_assignment_form" target="_blank" rel="noopener">wikipedia</a>的解释：<blockquote>
+<p>static single assignment form (often abbreviated as SSA form or simply SSA) is a property of an intermediate representation (IR), which requires that each variable is assigned exactly once, and every variable is defined before it is used. Existing variables in the original IR are split into versions, new variables typically indicated by the original name with a subscript in textbooks, so that every definition gets its own version. In SSA form, use-def chains are explicit and each contains a single element.</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8dfe22ca73ec6cab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>该代码的SSA形式包含了新的赋值（<code>x3</code>、<code>x5</code>和<code>x6</code>），这些使得x的各个SSA形式名与<code>x</code>的各处使用（在对<code>s</code>和<code>z</code>的赋值中）协调起来。这些赋值确保了沿CFG中的每条边，<code>x</code>的当前值都分配了唯一的名字，名字的分配与控制流沿哪条代码路径转移到该边无关。这些赋值操作的右侧都包含了一个操作—<code>φ</code>函数，用于合并来自不同的边（<code>φ</code>函数获取几个名字并将其合并，以定义一个新的名字）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e8cd730c0096e401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><code>φ</code>函数的行为取决于上下文，它选择其中一个参数的值来定义其目标SSA的名字，该参数对应于CFG中控制流进入当前的边。</p>
+<p>在基本程序块的入口处，其所有φ函数都将在任何其他语句之前并发执行。</p>
+<ul>
+<li>首先，它们都会读取适当参数的值</li>
+<li>然后，定义其目标SSA名字<br>用这种方法定义φ函数地行为允许操控SSA形式的算法在处理基本程序块的顶部时可以忽略φ函数的顺序<br><strong>【注】</strong></li>
+<li><code>φ</code>函数的参数为进入进本程序块的各条边相关联的值的SSA形式名。<br>在控制流进入一个basic program block时，该程序块中的所有<code>φ</code>函数都将并行执行</li>
+<li>构造SSA形式的过程会在CFG中的每个汇合点之后插入<code>φ</code>函数。汇合点即为CFG中多条代码路径汇合的地方。在汇合点处，不同的SSA形式名必须调和为一个名字。</li>
+</ul>
+<p>在整个过程已经转换为SSA赋值形式之后，需遵守两条规则：</p>
+<ol>
+<li>过程中的每个定义都创建了一个唯一的名字<br>每个使用处都引用了一个定义</li>
+<li>引入SSA意在代码优化。SSA中<code>φ</code>函数的放置包含了值的产生和使用两方面的信息。命名空间的单赋值特性，使得编译器可以规避许多与值的生命周期有关的问题。</li>
+</ol>
+<h2 id="数据流分析"><a href="#数据流分析" class="headerlink" title="数据流分析"></a>数据流分析</h2><p><strong>数据流分析</strong>是指<strong>一组用来获取有关数据如何沿着程序的执行路径流动的相关信息的技术。</strong>【例如某一个赋值语句的结果在任何后续的执行路径中都没有被使用，则可以吧这个赋值语句当作死代码消除】</p>
+<p><strong>程序的执行可以看作是对程序状态的一系列转换</strong>。程序状态由程序中的所有变量的值的组成，同时包括运行时刻栈的栈顶之下的各个帧栈的相关值。一个中间代码语句的每次执行都会把一个输入状态转换成一个新的输入状态。这个新的输入状态和处于该语句之前的程序点相关联，而输出状态和该语句之后的程序点相关联。</p>
+<p>当在分析一个程序的行为时，必须考虑程序执行时可能采取的各种通过程序的流图的程序点序列（“路径”）。然后从各个程序点上可能的程序状态中抽取出需要的信息，用以解决特定数据流分析问题。</p>
+<p>流图会给出的可能的执行路径的信息为：</p>
+<ul>
+<li>在一个基本快内部，一个语句之后的 数据点和它的下一个语句之前的程序点相同</li>
+<li>如果有一个从基本快B1到基本快B2的边，那么B2的第一个语句之前的程序点可能紧跟在B1的最后一个语句后的程序点之后</li>
+</ul>
+<p>可以把从点<code>P1</code>到点<code>P2</code>的一个执行路径（execution path，简称路径）定义为满足下列条件的点序列<code>P1,P2,...,Pn</code>:</p>
+<ul>
+<li>要么<code>Pi</code>是紧靠在一个语句前面的点，且<code>Pi+1</code>是紧跟在该语句后的点</li>
+<li>要么<code>Pi</code>是某个基本块的结尾，且<code>Pi+1</code>是该基本块的一个后继基本块的开头</li>
+</ul>
+<h2 id="到达定值（reaching-definition）"><a href="#到达定值（reaching-definition）" class="headerlink" title="到达定值（reaching definition）"></a>到达定值（reaching definition）</h2><p><strong>到达定值</strong>是最常见和有用的数据流模式之一。编译器能够根据到达定值信息知道 <code>x</code>在点<code>p</code>上的值是否为常量，而如果<code>x</code> 在点<code>p</code>上被使用，则调试器可以指出x是否未经定值就被使用。</p>
+<blockquote>
+<p>如果存在一条从紧跟在定值<code>d</code>后面的程序点到达某一程序点<code>p</code>的路径，并且在这条路径上<code>d</code>没有被“杀死”，就说定值<code>d</code>到达程序点<code>p</code>（如果在这条路径上有对变量<code>x</code>的其他定值，就说变量<code>x</code>的这个定值被“杀死”了）。</p>
+</blockquote>
+<p>来自<a href="https://www.wikiwand.com/en/Reaching_definition" target="_blank" rel="noopener">wikipedia</a>的解释：</p>
+<blockquote>
+<p>In compiler theory, a reaching definition for a given instruction is an earlier instruction whose target variable can reach (be assigned to) the given one without an intervening assignment.<br>例如：</p>
+<pre><code class="cpp">d1 : y := 3
+d2 : x := y
+</code></pre>
+<p>对于d2而言，d1是达到i定值</p>
+<pre><code class="cpp">d1 : y := 3
+d2 : y := 4
+d3 : x := y
+</code></pre>
+<p>对于<code>d3</code>而言，<code>d1</code>不在是到达定值，因为<code>d2</code>“杀死”了它：在<code>d1</code>中定义的值再也无法到达<code>d3</code>。<br>变量<code>x</code>的一个定值是（可能）将一个值赋给<code>x</code>的语句。过程参数、数组访问和间接引用都可以有别名，因此指出一个语句是否向特定程序变量x赋值并不是一件容易的事。</p>
+</blockquote>
+<h2 id="数据流分析模式"><a href="#数据流分析模式" class="headerlink" title="数据流分析模式"></a>数据流分析模式</h2><p>在所有的数据流分析应用中，则会把每个程序点和一个数据流值（data-flow value）关联起来。这个值是在该点可能观察到的所有程序状态的集合的抽象表示。所有可能的数据流值的集合称为这个数据流应用的<strong>域（domain）</strong>。【例如，到达定值的数据流值的域是程序的定值集合的所有子集的集合】</p>
+<p>把每个语句s之前和之后的数据流值分别记为<code>IN[s]</code>和<code>OUT[s]</code>。<strong>数据流问题（data-flow problem）就是要对一组约束求解（这组约束对所有的语句<code>s</code>限定了<code>IN[s]</code>和<code>OUT[s]</code>之间的关系）。</strong></p>
+<p>约束分为两种：</p>
+<ul>
+<li>基于语句语义（传递函数）的约束</li>
+<li>基于控制流的约束</li>
+</ul>
+<h3 id="传递函数"><a href="#传递函数" class="headerlink" title="传递函数"></a>传递函数</h3><p>在一个语句之前和之后的数据流值受该语句的语义的约束。一个赋值语句之前和之后的数据流值的关系被称为<strong>传递函数（transfer function）</strong>。</p>
+<h3 id="迭代数据流分析（ITERATIVE-DATA-FLOW-ANALYSIS）"><a href="#迭代数据流分析（ITERATIVE-DATA-FLOW-ANALYSIS）" class="headerlink" title="迭代数据流分析（ITERATIVE DATA-FLOW ANALYSIS）"></a>迭代数据流分析（ITERATIVE DATA-FLOW ANALYSIS）</h3><p>编译器使用数据流分析来确定进行优化的机会，并证明特定变换的安全性。即<code>Cytron et al.’s algorithm</code>。</p>
+<h3 id="传统SSA构造算法（即从线性IR到SSA的构造）的具体步骤"><a href="#传统SSA构造算法（即从线性IR到SSA的构造）的具体步骤" class="headerlink" title="传统SSA构造算法（即从线性IR到SSA的构造）的具体步骤"></a>传统SSA构造算法（即从线性IR到SSA的构造）的具体步骤</h3><ol>
+<li>遍历IR构造CFG</li>
+<li>计算支配边界</li>
+<li>确定<code>φ</code>函数（Phi函数）的位置</li>
+<li>变量重命名</li>
+</ol>
+<h4 id="1-遍历IR构造CFG"><a href="#1-遍历IR构造CFG" class="headerlink" title="1. 遍历IR构造CFG"></a>1. 遍历IR构造CFG</h4><blockquote>
+<p>确定基本块（basic block）的算法：<br> （1）查找基本块入口源代码的首行、转移代码（有条件和无条件）、转移代码的下一行<br> （2）基本块构造：由入口点开始，将其组织成各自的基本块。<br> （3）如果有语句不在任一基本块中，则称之为“死代码”，删除</p>
+</blockquote>
+<p>当确定基本块之后，接着构造CFG</p>
+<blockquote>
+<p>CFG构造如果在一个有序代码中，基本块<code>B2</code>跟在<code>B1</code>后，那么产生一个B1到B2的有向边<br>（1）有跳转点。这个点从<code>B1</code>的结束点跳转到<code>B2</code>的开始点<br>（2）无跳转点（有序代码中），<code>B2</code>跟在<code>B1</code>后，且<code>B1</code>的结束点不是无条件跳转语句</p>
+</blockquote>
+<h4 id="支配性（Dominance）"><a href="#支配性（Dominance）" class="headerlink" title="支配性（Dominance）"></a>支配性（Dominance）</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-097ce901b9937224.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7c1e591288c03c1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>例如，从<code>B0</code>到<code>B6</code>的每条代码路径都包含了结点<code>B0</code>、<code>B1</code>、<code>B5</code>和<code>B6</code>。因此，<code>Dom(B6)</code>为<code>{B0，B1，B5，B6}</code>。</p>
+<p>集合<code>Dom(Bi)</code>中包含了支配<code>Bi</code>的所有结点。</p>
+<p><strong>支配性：</strong>在入口结点<code>B0</code>的流图中，当且仅当<code>Bi</code>位于从<code>B0</code>到<code>Bj</code>的每条路径上时，结点<code>Bi</code>才支配结点<code>Bj</code>。</p>
+<p>求解数据流问题的方程：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c0e2d4750f525a28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>为使用上述方程，需要使用三个步骤：<br>（1） 构建一个CFG<br>（2） 收集各个程序块的初始信息<br>（3） 求解方程，生成各个程序块的<code>Dom</code>集合</p>
+<p>考虑CFG的结点<code>n</code>中的一个定义。该值到达某个结点<code>m</code>时，如果<code>n∈Dom(m)</code>，则该值不需要<code>φ</code>函数，因为到达<code>m</code>的每条代码路径都必然经由<code>n</code>。该值无法到达<code>m</code>的唯一可能就是有一个同名定义的干扰，即在<code>n</code>和<code>m</code>之间的某个结点<code>p</code>中，出现了与该值同名的另一个定义。在这种情况下，在<code>n</code>中的定义无需<code>φ</code>函数，而<code>p</code>中的重新定义则需要。</p>
+<p>结点<code>n</code>中的定义，仅在满足下列条件的汇合点才需要插入对应的<code>φ</code>函数：<br>（1）<code>n</code>支配<code>m</code>的一个前驱<br>（2）<code>n</code>并不严格支配<code>m</code></p>
+<p><strong>严格支配性：</strong>当且仅当<code>a∈Dom(b)-{b}</code>时，<code>a</code>严格支配<code>b</code>。</p>
+<p><strong>【注】：</strong><code>DF(n)</code>表示：在离开<code>n</code>的每条CFG路径上，从结点<code>n</code>可达但不支配的第一个结点。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-898e08a01120c813.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>此例中，<code>B5</code>支配<code>B6</code>、<code>B7</code>和<code>B8</code>，但不支配<code>B3</code>。在每条离开<code>B5</code>的路径上，<code>B3</code>都是<code>B5</code>不支配的第一个结点，因而，<code>DF(B5)={B3}</code>。</p>
+<h5 id="支配者树（dominator-tree）"><a href="#支配者树（dominator-tree）" class="headerlink" title="支配者树（dominator tree）"></a>支配者树（dominator tree）</h5><p>给出流图中的一个结点<code>n</code>，严格支配<code>n</code>的结点集是<code>Dom(n)-{n}</code>。该集合中与<code>n</code>最接近的结点称为<code>n</code>的直接支配结点，记为<code>IDom(n)</code>。流图的入口没有直接支配结点。</p>
+<p>流图的支配者树包含流图中的每个结点。如果<code>m</code>为<code>IDom(n)</code>，那么支配者树中有一条边从<code>m</code>指向<code>n</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9900fe58ad2d8c81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-af78fa0ff1ba266b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-22b3a2259413fc5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>伪代码实现：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6805511815d77ef4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="2-计算支配边界"><a href="#2-计算支配边界" class="headerlink" title="2.计算支配边界"></a>2.计算支配边界</h4><p>放置<code>φ</code>函数的关键在于判断何处真正需要<code>φ</code>函数，以及哪个变量需要<code>φ</code>函数。</p>
+<p>由于CFG中只有汇合点才是支配边界的成员，故首先识别出图中的所有汇合点。对于一个汇合点<code>j</code>，我们考察其在CFG中的每个前驱结点。</p>
+<p>计算支配边界的算法：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-347e6a5fd7b1c332.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7b50701e313a9b95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-09e78c391cdb6c6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="3-放置φ函数（即确定φ函数的位置）"><a href="#3-放置φ函数（即确定φ函数的位置）" class="headerlink" title="3.放置φ函数（即确定φ函数的位置）"></a>3.放置<code>φ</code>函数（即确定<code>φ</code>函数的位置）</h4><p>常规算法会在每个汇合点起始处，为每个变量放置一个<code>φ</code>函数。有了支配边界之后，编译器便可以更加准确地判断在何处可能需要<code>φ</code>函数。</p>
+<p>基本思想是：基本块<code>b</code>中对<code>x</code>的定义，要求在<code>DF(b)</code>集合包含的每个结点起始处都放置一个对应的<code>φ</code>函数。因为<code>φ</code>函数是对x的一个新的定义，此处插入<code>φ</code>函数，进而可能导致额外的<code>φ</code>函数。</p>
+<p>编译器可以进一步缩小插入的<code>φ</code>函数集合。只在单个基本块中活动的变量，绝不会出现与之相应的活动<code>φ</code>函数。为了实现这一规则，编译器可以计算跨多个程序块的活动变量名的集合，该集合称为全局名字（global name）。它可以对该集合中的名字插入<code>φ</code>函数，而忽略不在该集合中的名字。</p>
+<h5 id="找到全局名字集合"><a href="#找到全局名字集合" class="headerlink" title="找到全局名字集合"></a>找到全局名字集合</h5><p><img src="https://upload-images.jianshu.io/upload_images/1351548-d191490d10bc7a23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>插入<code>φ</code>函数的算法：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4078b47cb4110657.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>对于每个全乎名字<code>x</code>，算法将<code>WorkList</code>初始化为<code>Blocks(x)</code>。对于<code>WorkList</code>中的每个基本块<code>b</code>，算法在<code>b</code>的支配边界中每个程序块<code>d</code>的起始位置插入<code>φ</code>函数。在向<code>d</code>添加对应于<code>x</code>的<code>φ</code>函数之后，算法将<code>d</code>添加到<code>WorkList</code>，以反映<code>d</code>中对<code>x</code>的新赋值操作。</p>
+<p><code>φ</code>函数插入算法中的第一步是找到全局名字集合并为每个名字计算<code>Blocks</code>集合。</p>
+<ul>
+<li>图(a)中代码，全局名字集合为<code>{a，b，c，d，i}</code>。</li>
+<li>图(d)给出了<code>Blocks</code>集合。</li>
+</ul>
+<p><strong>【注意】：</strong>算法为<code>y</code>和<code>z</code>创建了<code>Blocks</code>集合，虽然二者不属于<code>Globals</code>中。将<code>Globals</code>和<code>Blocks</code>集合的计算分离开来，可以避免实例化这些额外的集合，但代价是需要增加一趟对代码的处理。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-527410f514c62002.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e9704489496d620f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7bb26003eba4de1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-2840120a73e0a45c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="4-重命名"><a href="#4-重命名" class="headerlink" title="4.重命名"></a>4.重命名</h4><p>在最终的静态单赋值形式中，每个全局名字都变为一个基本名，而对该基本名的各个定义则通过添加数字下标来区分。对于对应到源语言变量的名字，比如说<code>x</code>，算法使用<code>x</code>作为基本名。因而，重命名算法遇到对<code>x</code>的第一个定义将被命名为<code>x0</code>，第二个将被命名为<code>x1</code>。对于编译器产生的临时值，算法必须产生一个不同的基本名。</p>
+<p>算法（插入<code>φ</code>函数之后的重命名）实现为：</p>
+<pre><code class="cpp">for each global name i
+    counter[i] ← 0
+    stack[i] ← ∅
+Rename(n0)
+
+
+NewName(n)
+    i ← counter[n]
+    counter[n] ← counter[n] + 1
+    push i onto stack[n]
+    return &quot;ni&quot;
+
+Rename(b)
+    for each φ-function in b, &quot;x ← φ(...)&quot;
+        rewrite x as NewName(x)
+    for each operation &quot;x ← y op z&quot; in b
+        rewrite y with subscript top(stack[y])
+        rewrite z with subscript top(stack[z])
+        rewrite x as NewName(x)
+    for each successor of b in the cfg
+        fill in φ-function parameters
+    for each successor s of b in the dominator tree
+        Rename(s)
+    for each operation &quot;x ← y op z&quot; in b and each φ-function &quot;x ← φ(...)&quot;
+        pop(stack[x])
+</code></pre>
+<p>该算法对过程的支配者树进行先序遍历，其中对定义和使用都进行可重命名。在每个基本块中，算法首先重命名由程序块顶部的<code>φ</code>函数定义的值，然后按序访问程序块中的各个操作。算法会用当前的静态单赋值形式重写各个操作数，接下来为操作的结果创建一个新的静态单赋值形式名。算法的后一步使得新名字成为当前的名字。在程序块中所有的操作都已经重写之后，算法将使用当前的静态单赋值形式名，重写程序块在CFG中各后继结点中的适当<code>φ</code>函数参数。最后，算法对当前程序块在支配者树中的子结点进行递归处理。当算法从这些递归调用返回时，它会将当前静态单赋值形式名的集合恢复到访问当前程序块之前的状态。</p>
+<p>为了管理这一处理过程，算法对每个全局名字使用一个计数器和一个栈。全局名字的栈包含了该名字当前静态单赋值形式的下标。在每个定义处，算法通过将目标名字的当前计数器压栈来产生新的下标，并将计数器加1。因而，名字<code>n</code>栈顶的值总是<code>n</code>当前静态单赋值形式名的下标。作为处理程序块的最后一步，算法会将该程序块中产生的所有名字从栈中弹出，以恢复在该程序块的直接支配结点末尾处的的当前静态单赋值形式名字集合。处理当前程序块在支配者树中余下的兄弟结点，可能需要这些名字。</p>
+<p>当算法中的控制流在支配者树中上下移动时，栈模拟了当前程序块中最新定义的生命周期。而在这一方面，计数器则是单调递增的，以确保各个连续的定义都能分配一个唯一的静态单赋值形式名</p>
+<p>该算法初始化了栈和计数器，然后对支配者树的根结点（即CFG的入口结点）调用<code>Rename</code>。<code>Rename</code>会重写该程序块，并下降到其在支配者树的各个后继结点上递归处理。为完成对该程序块的处理，<code>Rename</code>会弹出处理该程序块期间压栈的任何名字，而<code>NewName</code>会操作计数器和栈，以按需创建新的静态单赋值形式名。</p>
+<h2 id="Simple-and-Direction-SSA-Constriruction-Algorithm"><a href="#Simple-and-Direction-SSA-Constriruction-Algorithm" class="headerlink" title="Simple and Direction SSA Constriruction Algorithm"></a>Simple and Direction SSA Constriruction Algorithm</h2><p>传统的SSA构造算法（如之前的<code>Cytron et al.’s algorithm</code>），是直接从线性IR构造SSA。而<code>Simple and Efficient Construction of Static Single Assignment Form</code>这一论文则是允许从AST、Bytecode甚至源码直接构造SSA。</p>
+<h3 id="一-LLVM的做法"><a href="#一-LLVM的做法" class="headerlink" title="一.LLVM的做法"></a>一.LLVM的做法</h3><p>LLVM IR虽然为为SSA形式，但如果所有生成的LLVM IR都要前端自己计算好如何生成SSA形式，对于前端而言将十分棘手。故LLVM IR借助“memory不是SSA value”的特点，给用户留了一个后门：前端在生成LLVM IR时，可以选择不生成真正的SSA形式，而是把局部变量生成<code>alloca/load/store</code>形式：</p>
+<ul>
+<li>用<code>alloca</code>来“声明”变量，得到一个指向该变量的指针；</li>
+<li>用<code>store</code>来把值存进变量里；</li>
+<li>用<code>load</code>来把值读出为SSA value。</li>
+</ul>
+<p>此时，对局部变量的读写就变得跟普通内存的读写一样，不需要SSA形式。接着，LLVM利用<code>mem2reg pass</code>，识别出这种模式的<code>alloca</code>，并将它提升为<code>SSA value</code>（并消除掉<code>store</code>与<code>load</code>，改为普通的SSA层面的<code>def-use</code>/<code>use-def</code>关系，并且在合适的位置安插<code>φ</code>函数和变量重命名）。</p>
+<p>Clang就是讲生成SSA形式的任务交给LLVM处理：Clang的前端只会把某些临时值生成SSA value；对于显示的局部变量，Clang前端都只是生成<code>alloca/load/store</code>形式的LLVM IR；交给LLVM IR之后，经过<code>mem2reg pass</code>，IR才真正进入了普通的SSA形式。</p>
+<p>LLVM的<code>mem2reg pass</code>本质上就是识别“局部变量”的模式，并对它们构建SSA形式。</p>
+<p>LLVM <code>mem2reg pass</code>的实现：</p>
+<pre><code class="cpp">// 遍历指令序列找到 alloca
+for (Instruction instr : instructions)
+{
+    if (isa&lt;Alloca&gt;(instr))
+        allocas.push_back(instr);
+}
+
+// 一个一个的提升 alloca 指令
+for (Alloca alloca : allocas)
+{
+    // 判断是否可以提升
+    if (!alloca.isAllocaPromoteable())
+        continue;
+
+    // 跳过无使用者的alloca指令
+    if (alloca.user_begin() == alloca.user_end())
+        continue;
+
+    // 收集alloca指令的使用，定义信息
+    info.analyzeAlloca(alloca);
+
+    // 下面的函数，对只有一次定义（即只有一条 store 指令）的 alloca 进行优化
+    // 把所有的 load 指令全部用定义时保存的 value 替换
+    if (info.definingBlocks.size() == 1)
+        rewriteSingleStoreAlloca(alloca, info);
+
+    // 下面的代码仅仅对只在一个基本块中使用和定义的alloca指令进行优化
+    if (info.onlyUsedOneBlock)
+        promoteSingleBlockAlloca(alloca, info);
+
+    // 插入无参数的Phi函数，使用标准的基于支配边界的算法，其中使用DJ图的方式进行了优化
+    determineInsertionPoint(alloca, allocaNum, info);
+
+    // 使用 IDF 和标准 ssa 构造算法提升 alloca ，决定那些需要插入 Phi 函数
+    DefBlocks.insert(Info.DefiningBlocks.begin(), Info.DefiningBlocks.end());
+    ComputeLiveInBlocks(AI, Info, DefBlocks, LiveInBlocks);
+    IDF.setLiveInBlocks(LiveInBlocks);
+    IDF.setDefiningBlocks(DefBlocks);
+    IDF.calculate(PHIBlocks);
+
+    // 执行 SSA 重命名算法，并插入 Phi 节点
+    RenamePassWorkList.emplace_back(&amp;F.front(), nullptr, std::move(Values));
+    do {
+        // RenamePass may add new worklist entries.
+        RenamePass(RPD.BB, RPD.Pred, RPD.Values, RenamePassWorkList);
+    } while (!RenamePassWorkList.empty());
+
+    // 移除 allocas
+    for (unsigned i = 0, e = Allocas.size(); i != e; ++i) 
+    {
+        Instruction *A = Allocas[i];
+        A-&gt;replaceAllUsesWith(UndefValue::get(A-&gt;getType()));
+        A-&gt;eraseFromParent();
+    }
+
+  // 最后执行一趟消除平凡Phi函数的操作，
+    while (eliminatedAPHI)
+    {
+        // if the phi merges one value and/or undefs, get the value
+        if ((V = simplifyInstruction(phi, DT)) != null)
+        {
+            phi.replaceAllUsesWith(V);
+            phi.eraseFromBasicBlock();
+            newPhiNodes.remove(entity);
+            eliminatedAPHI = true;
+            continue;
+        }
+    }
+}
+</code></pre>
+<h2 id="二-Simple-SSA-Construction"><a href="#二-Simple-SSA-Construction" class="headerlink" title="二.Simple SSA Construction"></a>二.Simple SSA Construction</h2><p>来自论文</p>
+<blockquote>
+<p>Simple and Eﬃcient Construction of Static Single Assignment Form<br>Matthias Braun1, Sebastian Buchwald1, Sebastian Hack2, Roland Leißa2, Christoph Mallon2, and Andreas Zwinkau1</p>
+</blockquote>
+<p><code>Cytron et al.’s algorithm</code>的缺点：</p>
+<ul>
+<li>其输入程序必须表示为CFG的非SSA形式</li>
+<li>为保证放置φ函数的代价最小，此算法依赖以下几点：<ul>
+<li>为了计算<code>φ</code>函数的放置位置，需要计算支配树和迭代支配边界</li>
+<li>为避免死亡<code>φ</code>函数，需要执行活性分析或者死代码消除</li>
+</ul>
+</li>
+</ul>
+<h5 id="（1）Local-Value-Numbering"><a href="#（1）Local-Value-Numbering" class="headerlink" title="（1）Local Value Numbering"></a>（1）Local Value Numbering</h5><p>在translate源程序的时候，需要注意：一组statements的IR通常会出现在一个basic block中。因此，此方法按照程序的执行顺序（execution order）处理所有表达式，并且在每个基本块中的变量和其当前的定义表达式（ defining expression）之间建立映射。当遇到对变量赋值情况，需要将赋值号右侧的IR作为当前变量的定义。当一个变量被访问时，就寻找其当前定义（current definition，通过algo 1实现），这一过程就称为<strong>local value numbering</strong>。当一个basic block完成了local value numbering，就称这个基本块为<strong>filled</strong>。只有当一个basic block完成了local value numbering，才能够继续添加后继基本块（这一性质在处理incomplete CFG时会用到）。</p>
+<h4 id="Algorithm-1-Implementation-of-local-value-numbering"><a href="#Algorithm-1-Implementation-of-local-value-numbering" class="headerlink" title="Algorithm 1: Implementation of local value numbering"></a>Algorithm 1: Implementation of local value numbering</h4><pre><code class="cpp">writeVariable(variable, block, value):
+    currentDef[variable][block] ← value
+readVariable(variable, block):
+    if currentDef[variable] contains block:
+        # local value numbering
+        return currentDef[variable][block]
+    # global value numbering
+    return readVariableRecursive(variable, block)
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-beab30622478d997.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注意】:</strong><br>如果在对一个基本块进行赋值之前，对其进行访问则会出现问题。例如上例中的变量<code>d</code>与之对应的值<code>v？</code>，<code>d</code>的定义不能从CFG的root到当前basic block的路径上查找到。此外，程序中的多个定义也许会reach到相同的<code>use</code>。</p>
+<h4 id="（2）Global-Value-Numbering"><a href="#（2）Global-Value-Numbering" class="headerlink" title="（2）Global Value Numbering"></a>（2）Global Value Numbering</h4><p>如果当前块没有变量的定义，便递归地在其前驱（predecessors）基本块中查找定义。</p>
+<p>**递归查找算法为：</p>
+<ul>
+<li>如果基本块只有一个前驱，就只在其前驱中递归地查询定义</li>
+<li>否则，从其所有predecessors中collect它的definitions，并构造一个<code>φ</code>函数，将<code>φ</code>函数加入其所有前驱中定义中，并将该<code>φ</code>函数作为该basic block中variable的当前定义。**</li>
+</ul>
+<p>在前驱中查找的方式可能导致循环查找（recursive look-ups），比如在循环中进行查找（Due to loops in the program, those might lead to endless recursion）。为了避免程序出现死循环，在查找前先创建一个没有operands的<code>φ</code>函数，并将其记录为basic block中变量的当前定义。然后，我们确定<code>φ</code>函数的operands。如果递归查找arrive back到该基本块，则此<code>φ</code>函数将提供一个定义，并且递归将结束。</p>
+<p>为了更轻易的展示global value numbering，值<code>vi</code>的index按照算法在插入它们的顺序进行assigning。我们假设在读取<code>x</code>之前已经构造好了loop，也就是说，已经通过local value numbering将<code>v0</code>和<code>v1</code>作为为<code>x</code>的definition，而利用loop之后的statement来查找<code>x</code>。由于在loop之后的block中没有<code>x</code>的定义，因此执行递归查找。 该block只有一个predecessor，所以在这里不需要<code>φ</code>函数。 这个predecessor只是一个loop header，它也没有<code>x</code>的定义，但有两个predecessors。因此，我们放置一个没有任何操作的（operandless） <code>φ</code>函数<code>v2</code>。 它的第一个operand是流入loop的值<code>v0</code>，第二个operand需要进一步递归。<code>φ</code>函数<code>v3</code>被创建并从其direct predecessors处获得其operands。 此外，之前放置的<code>v2</code>终止了递归。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-be6b472c6e38d383.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="Algorithm-2-Implementation-of-global-value-numbering"><a href="#Algorithm-2-Implementation-of-global-value-numbering" class="headerlink" title="Algorithm 2: Implementation of global value numbering"></a>Algorithm 2: Implementation of global value numbering</h4><pre><code class="cpp">readVariableRecursive(variable, block): 
+    if block not in sealedBlocks: 
+        # Incomplete CFG 
+        val ← new Phi(block) 
+        incompletePhis[block][variable] ← val
+    else if |block.preds| = 1:
+        # Optimize the common case of one predecessor: No phi needed 
+        val ← readVariable(variable, block.preds[0])
+    else : 
+        # Break potential cycles with operandless phi 
+        val ← new Phi(block) 
+        writeVariable(variable, block, val) 
+        val ← addPhiOperands(variable, val) 
+    writeVariable(variable, block, val) 
+    return val
+
+addPhiOperands(variable, phi): 
+    # Determine operands from predecessors 
+    for pred in phi.block.preds: 
+        phi.appendOperand(readVariable(variable, pred)) 
+    return tryRemoveTrivialPhi(phi)
+</code></pre>
+<p>这种递归查找方法可能会导致冗余的<code>φ</code>函数，称之为<strong>trivial</strong>。如果一个<code>φ</code>函数references itself and one other value <code>v</code> any number of times，则称此<code>φ</code>函数为<strong>trivial <code>φ</code>函数</strong>。比如有 <code>a.1 = φ(a.1, a.0)</code>。这个 <code>φ</code> 函数完全可以被另一个定义给替换。还有一种特殊的情况，<code>φ</code>函数仅仅引用了自身，这种情况仅仅发生在不可达或者开始基本块，这时用一个 <code>Undef</code> 值（未定义值）代替。</p>
+<p><strong>【注意】:</strong><br>如果一个<code>trivial φ</code> 函数被替换，这可能导致引用了此<code>φ</code>函数的值也变为<code>trivial φ</code> 函数，所以需要递归地进行替换操作。</p>
+<h4 id="Algorithm-3-Detect-and-recursively-remove-a-trivial-φ-function"><a href="#Algorithm-3-Detect-and-recursively-remove-a-trivial-φ-function" class="headerlink" title="Algorithm 3: Detect and recursively remove a trivial φ function"></a>Algorithm 3: Detect and recursively remove a trivial φ function</h4><pre><code class="cpp">tryRemoveTrivialPhi(phi): 
+    same ← None for op in phi.operands: 
+        if op = same || op = phi: 
+            # Unique value or self−reference
+            continue 
+        if same = None: 
+            # The phi merges at least two values: not trivial 
+            return phi 
+        same ← op
+        if same = None: 
+            # The phi is unreachable or in the start block
+            same ← new Undef() 
+
+        # Remember all users except the phi itself
+        users ← phi.users.remove(phi) 
+        # Reroute all uses of phi to same and remove phi
+        phi .replaceBy(same)
+
+        # Try to recursively remove all phi users, 
+        # which might have become trivial 
+        for use in users: 
+            if use is a Phi: 
+                tryRemoveTrivialPhi(use) 
+        return same
+</code></pre>
+<h4 id="3-Handling-Incomplete-CFGs"><a href="#3-Handling-Incomplete-CFGs" class="headerlink" title="3.Handling Incomplete CFGs"></a>3.Handling Incomplete CFGs</h4><p>如果再也没有predes被加入到当前basic block时，就称此basic block 为<strong>sealed</strong>。只要filled blocks还有successors，则其predecessors一定会被filled。注意，一个sealed block不一定会被filled。一个filled block包含其自身所有的instructions，并且可以为其successors提供变量定义（variable definitions）。 相反，一个sealed block可以从其predecessors中查找变量定义，因为其所有predecessors都是已知的。</p>
+<p>即，如果一个基本块不会再加入任何前驱结点，那么就可以称为<code>sealed</code>基本块。因为只有<code>filled</code>基本块拥有后继，所以前驱基本块必须是<code>filled</code>。</p>
+<h4 id="Algorithm-4-Handling-incomplete-CFGs"><a href="#Algorithm-4-Handling-incomplete-CFGs" class="headerlink" title="Algorithm 4: Handling incomplete CFGs"></a>Algorithm 4: Handling incomplete CFGs</h4><pre><code class="cpp">sealBlock(block):
+    for variable in incompletePhis[block]:
+        addPhiOperands(variable, incompletePhis[block][variable])
+    sealedBlocks.add(block)
+</code></pre>
+<p><code>seal</code>操作会对该基本块的所有<code>incompletePhis</code>进行处理，完成处理后将该基本块加入<code>sealed</code>集合。</p>
+<p>如何在一个unsealed block中处理变量（该变量没有当前定义）的查找问题呢？ 在这种情况下，我们将一个operandless的<code>φ</code>函数放入block中，并将其记录为proxy definition（参见algo 2中的第一种情况）。 此外，我们为每个block维护一组proxies：<code>incomplete_phis</code>。 当block随后成为sealed时，我们将operands添加到这些<code>φ</code>函数中（参见algo 4）。 此外，当<code>φ</code>函数is complete时，无论它是为trivial，我们都需要进行check。</p>
+<p>在IR构造期间，sealing a block是一种explicit action。我们通过下图所示的<code>while</code>循环来说明如何incorporate此步骤。 首先，我们构造一个<code>while header</code> block，并以<code>while entry</code> block为起始，添加一条control flow edge（控制流边）。 由于随后需要添加一个<code>body exit</code>的jump，所以还不能seal <code>while header</code>。 接下来，我们创建<code>body entry</code>和<code>while exit</code> blocks，并且以<code>while header</code>起始，分别为这两个blocks添加conditional control flow（条件控制流）。由于再也没有predecessors会被添加到<code>body entry</code> block中，所以此时便可以seal它。 由于循环体中的break instructions（中断指令），<code>while exit</code> block可能会get further predecessors。 现在开始fill循环体。 这可能会包括更多的inner<br>control structures（内部控制结构），如下图（b）所示的<code>if</code> statement。最后，它们会converge（聚集）在<code>body exit</code> block处。 此时形成body的所有blocks都将被seal。 现在我们将edge添加回<code>while header</code>，并seal <code>while header</code>，至此循环完成。 在最后一步中，我们seal the <code>while exit</code>，然后在while循环后继续使用source statement进行IR的construction。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-892680f8f881049b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注】：</strong>图中，附属在basic block旁边的数字代表了sealing（上面的数字）和filling（下面的数字）的顺序。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/Compiler（中）/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/CNN/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

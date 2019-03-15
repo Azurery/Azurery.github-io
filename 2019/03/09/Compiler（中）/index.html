@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            编译原理 （中） | 
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content=",compiler">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="编译原理 （中） | Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    <meta property="og:article:tag" content="compiler"> 
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:29:38 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Sep 16 2018 22:58:03 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="编译原理 （中） | Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/Compiler（中）/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/Compiler（中）/index.html",
+    "headline": "编译原理 （中）",
+    "datePublished": "Sat Mar 09 2019 21:29:38 GMT+0800",
+    "dateModified": "Sun Sep 16 2018 22:58:03 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",compiler",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LLVM中的Value"><span class="post-toc-number">1.</span> <span class="post-toc-text">LLVM中的Value</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LLVM中的User"><span class="post-toc-number">2.</span> <span class="post-toc-text">LLVM中的User</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LLVM中的Use"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">LLVM中的Use</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在穿件SSA形式的LLVM-IR时，SSA-value之间的def-use信息是如何建立的？"><span class="post-toc-number">3.</span> <span class="post-toc-text">在穿件SSA形式的LLVM IR时，SSA value之间的def-use信息是如何建立的？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#User与拥有的Use类的memory-layout"><span class="post-toc-number">4.</span> <span class="post-toc-text">User与拥有的Use类的memory layout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#User与Use-objects之间的关系"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">User与Use objects之间的关系</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#The-waymarking-algorithm（标记算法）"><span class="post-toc-number">5.</span> <span class="post-toc-text">The waymarking algorithm（标记算法）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LLVM-IR最新形式的def-use链的构造"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">LLVM IR最新形式的def-use链的构造</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#早期LLVM-IR中的def-use的构造"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">早期LLVM IR中的def-use的构造</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-LLVM-1-3中def-use的构造"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">1. LLVM 1.3中def-use的构造</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-LLVM-3-6中def-use的构造"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">2. LLVM 3.6中def-use的构造</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#alloca-load-store形式的局部变量是如何进入SSA形式的？"><span class="post-toc-number">6.</span> <span class="post-toc-text">alloca/load/store形式的局部变量是如何进入SSA形式的？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么需要visitor-pattern"><span class="post-toc-number">7.</span> <span class="post-toc-text">为什么需要visitor pattern</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                编译原理 （中）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACVklEQVR42u3aQY6DMAwF0N7/0jPbkTqNvu2Q0uqxqhANfixwsP34+erjgYeHh4eHh4eHdzPeIz6er/975vn3q+tfXflPoMXY8PDw8E7yktvk5yfrrB9WsiYeHh7eSd46GSQhJqvlKaQaGx4eHt49eUkoCb76CPDw8PA+ndcLLk8neHh4eJ/CSz74J5vmXto4WmvBw8PDi3nVBtjJ32/o7+Hh4eEtebuOPGH0mmeFSPDw8PAu5vVKBr2RgjV4XTLOY8bDw8O7mpe83PMgJkXY6oYeDw8P7128hJEP/e/aZCejBnh4eHjv4vU20LtCTFpo1YeLh4eHd4aXY9Y32LXO5io1Hh4e3mUNsF6g1YZW4RW/vLKc9/Dw8PA28fKGU+98eWSquKHHw8PDO8/rtfDzEu2kDZYXQfDw8PBO8qqF1ElA1WJEb+AVDw8P7yRv70DA3pRQOIOHh4d3kNcrpObDB/M22GimDA8PD28rL/nUzxtR80CTsm+5AYaHh4d3AW/yiu/9N2fk6+Ph4eFdzeuNC/QGCKrn8wSDh4eHd5LXG41KqNUSRr7mqNaCh4eHN+ZVi6TJfycjU5uLEXh4eHgX8HpDV9Vtd07dUKTAw8PDu5hXPa5obs1Lxnh4eHgnedVixDoNzNv/vYeCh4eHd56XJIPq5riaNiYlYzw8PLx38aqf/dXCa37f6gABHh4e3mfx5gXZJNnkiQQPDw/vbrwkiJxRXRMPDw/vbrzqq3/XC71Kam6p8fDw8Lbyqg2wfBt95kHg4eHhneR934GHh4eHh4eHh3eD4xdqmN5y4vktNQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/compiler/">compiler</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=编译原理 （中）&url=http://yoursite.com/2019/03/09/Compiler（中）/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=编译原理 （中）&url=http://yoursite.com/2019/03/09/Compiler（中）/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/Compiler（中）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/Compiler（中）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=编译原理 （中）&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/Compiler（中）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="LLVM中的Value"><a href="#LLVM中的Value" class="headerlink" title="LLVM中的Value"></a>LLVM中的<code>Value</code></h2><blockquote>
+<p>This is a very important LLVM class. It is the base class of all values<br>computed by a program that may be used as operands to other values. <code>Value</code> is<br>the super class of other important classes such as <code>Instruction</code> and <code>Function</code>.<br>All Values have a <code>Type</code>. <code>Type</code> is not a subclass of <code>Value</code>. Some values can<br>have a name and they belong to some Module.  Setting the name on the <code>Value</code><br>automatically updates the module’s symbol table.Every value has a “use list” that keeps<br>track of which other Values are using this <code>Value</code>.  </p>
+</blockquote>
+<h2 id="LLVM中的User"><a href="#LLVM中的User" class="headerlink" title="LLVM中的User"></a>LLVM中的<code>User</code></h2><blockquote>
+<p>This class defines the interface that one who uses a <code>Value</code> must implement.<br>Each instance of the <code>Value</code> class keeps track of what <code>User&#39;s</code> have handles to it.</p>
+<ul>
+<li><code>Instructions</code> are the largest class of <code>Users</code>.</li>
+<li><code>Constants</code> may be users of other constants (think arrays and stuff)</li>
+</ul>
+</blockquote>
+<h3 id="LLVM中的Use"><a href="#LLVM中的Use" class="headerlink" title="LLVM中的Use"></a>LLVM中的<code>Use</code></h3><p>A <code>Use</code> represents the edge between a <code>Value</code> definition and its <code>users</code>.</p>
+<p>This is notionally a two-dimensional linked list. It supports traversing all of the <code>uses</code> for a particular value definition. It also supports jumping directly to the used value when we arrive from the <code>User&#39;s</code> operands, and jumping directly to the <code>User</code> when we arrive from the <code>Value&#39;s</code> uses.</p>
+<p>The pointer to the used <code>Value</code> is explicit, and the pointer to the <code>User</code> is implicit. The implicit pointer is found via a waymarking algorithm described in the programmer’s manual. This is essentially the single most memory intensive object in LLVM because of the number of uses in the system. At the same time, the constant time operations it allows are essential to many optimizations having reasonable time complexity.</p>
+<blockquote>
+<p>The <code>Use</code> class represents the operand of an instruction or some other <code>User</code> instance<br>which refers to a <code>Value</code>.  The <code>Use</code>class keeps the “use list” of the referenced value up<br>to date.<br>///<br>Pointer tagging is used to efficiently find the <code>User</code> corresponding to a <code>Use</code><br>without having to store a <code>User</code> pointer in every <code>Use</code>. A <code>User</code> is preceded in<br>memory by all the <code>Uses</code> corresponding to its operands, and the low bits of<br>one of the fields (<code>Prev</code>) of the <code>Use</code> class are used to encode offsets to be<br>able to find that <code>User</code> given a pointer to any <code>Use</code>. </p>
+</blockquote>
+<h2 id="在穿件SSA形式的LLVM-IR时，SSA-value之间的def-use信息是如何建立的？"><a href="#在穿件SSA形式的LLVM-IR时，SSA-value之间的def-use信息是如何建立的？" class="headerlink" title="在穿件SSA形式的LLVM IR时，SSA value之间的def-use信息是如何建立的？"></a>在穿件SSA形式的LLVM IR时，SSA value之间的def-use信息是如何建立的？</h2><p>假设现在的IR已经是SSA形式，则只需要建立SSA value之间的def-use/use-def关系即可。</p>
+<p>LLVM IR的SSA value的def-use和use-def信息其实是<strong>用一套双向引用来维护的</strong>。即只要<code>A</code> use了<code>B</code>，<code>A</code>与<code>B</code>之间的use-def和def-use关系就同时建立好了。这个维护双向引用的数据结构叫做“<code>Use</code>”。</p>
+<h2 id="User与拥有的Use类的memory-layout"><a href="#User与拥有的Use类的memory-layout" class="headerlink" title="User与拥有的Use类的memory layout"></a>User与拥有的Use类的memory layout</h2><p><code>User</code>类为其他<code>Value</code>实例提供了表示<code>User</code>的ownership的功能。使用<code>Use</code>这个辅助类进行record，并有利于addition和removal（时间复杂度为<code>O(1)</code>）。</p>
+<h3 id="User与Use-objects之间的关系"><a href="#User与Use-objects之间的关系" class="headerlink" title="User与Use objects之间的关系"></a><code>User</code>与<code>Use objects</code>之间的关系</h3><p><code>User</code>的子类可以通过选择合并（incorporate）其<code>Use</code>对象或者通过指针引用它们。</p>
+<p>现在对于<code>User</code>（子）类有两种不同的layouts：</p>
+<ol>
+<li><code>Use</code>对象位于<code>User</code>对象的内部（相应于fixed offset），并且有固定数量的对象。</li>
+<li><code>Use</code>对象由<code>User</code>对象中指向数组的指针进行引用，并且可能有可变数量的对象。</li>
+</ol>
+<p>对于LLVM 2.4，每个layout仍然拥有一个指向<code>Uses</code>数组起始位置的指针。虽然layout 1）不是强制性的，但为了简便期间，可以忍受这种redundancy。<code>User</code>对象还存储其所拥有的<code>Use</code>对象的数量。</p>
+<p>特殊形式的allocation operators（<code>operator new</code>）强制执行以下的内存布局：</p>
+<ul>
+<li>layout 1）通过<code>Use[]</code>数组前置<code>User</code>对象来进行modeling（即将<code>User</code>放置在<code>Use[]</code>数组的起始位置）<ul>
+<li><img src="https://upload-images.jianshu.io/upload_images/1351548-983babdf36cb8904.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+<li>layout 2）通过指向<code>Use[]</code>数组来进行modeling<ul>
+<li><img src="https://upload-images.jianshu.io/upload_images/1351548-8350bc08f08782ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+</li>
+</ul>
+<p><strong>【注】：</strong>上图中的<code>P</code>代表<code>Use**</code>，存储在<code>Use</code>对象的成员<code>Use::Prev</code>之中。</p>
+<h2 id="The-waymarking-algorithm（标记算法）"><a href="#The-waymarking-algorithm（标记算法）" class="headerlink" title="The waymarking algorithm（标记算法）"></a>The waymarking algorithm（标记算法）</h2><p>由于<code>Use</code>对象被剥夺了指向<code>User</code>对象的direct(back) pointer，因此必须有一种快速而准确的方法去recover它。</p>
+<p><code>Use::Prev</code>的2个LSBits（least significant bits，最低有效位）中的bit-encoding允许查找<code>User</code>对象的起始位置：</p>
+<ul>
+<li>00 — binary digit 0</li>
+<li>01 — binary digit 1</li>
+<li>10 — stop and calculate (s)</li>
+<li>11 — full stop (S)</li>
+</ul>
+<p>给定一个<code>Use*</code>，所要做的就是walk till get a stop。此外，我们要么立即有一个<code>User</code>，要么必须walk to the next stop，然后pick up数字并计算offset。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-eb15c8c1558755b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>【注】：</strong>在stops之间只需要存储大量的bits，因此当一个<code>User</code>与1000个<code>Use</code>对象关联时，最坏的情况也只需要进行20次memory accesses。</p>
+<h3 id="LLVM-IR最新形式的def-use链的构造"><a href="#LLVM-IR最新形式的def-use链的构造" class="headerlink" title="LLVM IR最新形式的def-use链的构造"></a>LLVM IR最新形式的def-use链的构造</h3><p>举例言之，假设需要创建一个<code>Add</code>指令：<code>BinaryOperator::CreateAdd(Value* V1, Value* V2, const Twine&amp; Name)</code>，这条新创建的<code>Add(BinaryOperator)</code>指令是跟它的两个输入<code>(V1, V2)</code>建立起def-use/use-def联系的方式如下所示：</p>
+<pre><code class="cpp">class Vaule {
+    void addUse(Use&amp; u) { u.addToList(&amp;UseList); }
+    //...
+};
+
+class Use {
+    Value* val;
+    Use* next;
+    PointerIntPair&lt;Use**, 2, PrePtrTag&gt; prev;
+
+    //...
+};
+
+void Use::set(Value* v) {
+    if(val) removeFromList();
+    val=v;
+    if(v) v-&gt;addUse(*this);
+}
+
+
+Value* Use::operator=(Value* rhs) {
+    ser(rhs);
+    return rhs;
+}
+
+class User : public Value {
+    template&lt;int index, typename U&gt;
+    static Use&amp; OpFrom(const U* that) {
+        return index &lt; 0 
+            ? OperandTraits&lt;U&gt;::op_end(const_cast&lt;U*&gt;(that))[index]
+            : OperandTraits&lt;U&gt;::op_begin(const_cast&lt;U*&gt;(that))[index];
+    }
+
+    template&lt;int index&gt;
+    Use&amp; Op() {
+        return OpFrom&lt;index&gt;(this);
+    }
+
+    template&lt;int index&gt;
+    Use&amp; Op() const {
+        return OpFrom&lt;index&gt;(this);
+    }
+
+    //...
+};
+
+class Instruction : public User, 
+                             public ilist_node_with_parent&lt;Instruction, BasicBlock&gt; {
+    //...
+};
+
+class BinaryOperator : public Instruction {
+/// Construct a binary instruction, given the opcode and the two
+  /// operands.  Optionally (if InstBefore is specified) insert the instruction
+  /// into a BasicBlock right before the specified instruction.  The specified
+  /// Instruction is allowed to be a dereferenced end iterator.
+  ///
+    static BinaryOperator *Create(BinaryOps Op, Value *S1, Value *S2,
+                                const Twine &amp;Name = Twine(),
+                                Instruction *InsertBefore = nullptr);
+
+  // ...
+};
+
+BinaryOperator::BinaryOperator(BinaryOps iType, Value *S1, Value *S2,
+                               Type *Ty, const Twine &amp;Name,
+                               Instruction *InsertBefore)
+  : Instruction(Ty, iType,
+                OperandTraits&lt;BinaryOperator&gt;::op_begin(this),
+                OperandTraits&lt;BinaryOperator&gt;::operands(this),
+                InsertBefore) {
+  Op&lt;0&gt;() = S1;
+  Op&lt;1&gt;() = S2;
+  init(iType);
+  setName(Name);
+}
+
+BinaryOperator *BinaryOperator::Create(BinaryOps Op, Value *S1, Value *S2,
+                                       const Twine &amp;Name,
+                                       Instruction *InsertBefore) {
+  assert(S1-&gt;getType() == S2-&gt;getType() &amp;&amp;
+         &quot;Cannot create binary operator with two operands of differing type!&quot;);
+  return new BinaryOperator(Op, S1, S2, S1-&gt;getType(), Name, InsertBefore);
+}
+</code></pre>
+<h3 id="早期LLVM-IR中的def-use的构造"><a href="#早期LLVM-IR中的def-use的构造" class="headerlink" title="早期LLVM IR中的def-use的构造"></a>早期LLVM IR中的def-use的构造</h3><h4 id="1-LLVM-1-3中def-use的构造"><a href="#1-LLVM-1-3中def-use的构造" class="headerlink" title="1. LLVM 1.3中def-use的构造"></a>1. LLVM 1.3中def-use的构造</h4><p>以<code>BinaryOperator</code>为例，下面是LLVM 1.3中<code>class Value</code>的源码：</p>
+<pre><code class="cpp">class Value;
+class User;
+class Use {
+  Value *Val;
+  User *U;
+  Use *Prev, *Next;
+public:
+  Value *get() const { return Val; }
+  User *getUser() const { return U; }
+};
+// 每次创建一个新的Use对象时，就会将Use对象挂载到Value的Uses链表上
+// 由于每次Use对象的创建都是在User端进行的，所以User端创建Use对象时，就会将该对象挂载到
+// Value的User链表上。
+Use::Use(Value *v, User *user) : Val(v), U(user) {
+  if (Val) Val-&gt;addUse(*this);
+}
+
+~Use::~Use() {
+  if (Val) Val-&gt;killUse(*this);
+}
+</code></pre>
+<p>从上述代码中可以看出，<code>Use</code>对象一头连接着 <code>User</code>(所有<code>Instruction</code>都继承自<code>User</code>)，一头连接着<code>Value</code>，然后这些<code>Use</code>对象以链表的形式组织起来。每次创建一个新的<code>Use</code>对象时，就会调用构造函数将当前的<code>Use</code>对象挂在到<code>Val</code>的<code>Uses</code>链表上。如图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4e6e84a0454fe492.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>指令<code>%add = add nsw i32 %tmp, 10</code>用到了值 <code>%tmp</code>，所以两者可以使用<code>Use</code>对象连接起来。下面是<code>Use</code>对象在<code>User</code>和<code>Value</code>中的存在形式。</p>
+<pre><code class="cpp">struct Value {
+private:
+  PATypeHolder Ty;
+  // 每个Value都有可能被其他User用到，使用iplist来组织Use Object
+  iplist&lt;Use&gt; Uses;
+  std::string Name;
+public:
+  // addUse/killUse - These two methods should only used by the Use class.
+  void addUse(Use &amp;U) { Uses.push_back(&amp;U); }
+  void killUse(Use &amp;U) { Uses.remove(&amp;U); }
+  User *use_back() { return Uses.back().getUser(); }
+  // ...
+};
+
+struct User : public Value {
+  // 相对应的，User使用vector来组织Use Object
+  std::vector&lt;Use&gt; Operands;
+public:
+  typedef std::vector&lt;Use&gt;::iterator op_iterator;
+  unsigned getNumOperands() const { return Operands.size(); }
+  void op_reserve(unsigned NumElements) { Operands.reserve(NumElements); }
+  op_iterator op_begin() { return Operands.begin(); }
+  // ...
+};
+
+class Instruction : public User {
+  BasicBlock *Parent;
+  Instruction *Prev, *Next;
+  // ...
+};
+
+class BinaryOperator : public Instruction {
+protected:
+  void init(BinaryOps iTyps, Value *S1, Value* S2);
+
+  BinaryOperator(BinaryOperator(BinaryOps iType, Value *S1, Value *S2, 
+             const Type *Ty, const std::string &amp;Name, Instruction *InsertBefore)
+    : Instruction(Ty, iType, Name, InsertBefore) {
+    init(iType, S1, S2);
+  }
+  BinaryOperator(BinaryOps iType, Value *S1, Value *S2, const Type *Ty,
+                 const std::string &amp;Name, BasicBlock *InsertAtEnd)
+    : Instruction(Ty, iType, Name, InsertAtEnd) {
+    init(iType, S1, S2);
+  }
+};
+
+//===-----------------------------------------------------------------===//
+//                        BinaryOperator class
+//===-----------------------------------------------------------------===//
+void BinaryOperator::int(BinaryOps iType, Value *S1, Value *S2)
+{
+  Operands.reserve(2);
+  Operands.push_back(Use(S1, this));
+  Operands.push_back(Use(S2, this));
+  // ...
+}
+</code></pre>
+<p>下图是LLVM 1.3中<code>BinaryOperator</code>对象的内存布局：<br><img src="https://upload-images.jianshu.io/upload_images/1351548-d4f62984bb7051bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><code>BinaryOperator</code>既有可能被别的<code>User</code>用到，也会用到别的<code>Value</code>。<code>BinaryOperator</code>通过使用 <code>Uses</code>链表来维护有可能会被哪些<code>User</code>用到，通过<code>vector&lt;Use&gt; Operands</code>来维护用到的<code>Value</code>值。</p>
+<p>需要注意是，<code>BinaryOperator</code>会被哪些<code>User</code>用到是未知不确定的，所以用节点数量灵活的链表来组织比较合适。相对应的，<code>BianaryOperator</code>需要用到的<code>Value</code>对象数量是确定的，所以使用可以手动设定<code>size</code>值的<code>vector</code>实现。注意这一点在代码中也有体现，例如：<code>BinaryOperator</code>中的<code>init</code>函数中调用了<code>Operands.reserve(2)</code>来设置<code>Operands</code>的<code>capacity</code>为<code>2</code>。</p>
+<p>关于如何在IR build时建立起这种def-use关系，是在<code>BinaryOperator</code>初始化函数中实现的。通过以下方式进行实现：</p>
+<pre><code class="cpp">Operands.push_back(Use(S1, this));
+Operands.push_back(Use(S1, this));
+</code></pre>
+<p>在创建一个新的<code>BinaryOperator</code>指令的时候，<code>Create() -&gt; BinaryOperator() -&gt; init()</code>，在<code>init()</code>函数中构造一个新的<code>Use</code>对象来维护<code>def-use</code>关系。前面曾经提到过，每次创建一个新的<code>Use</code>对象时，就通过<code>Use</code>的构造函数将<code>Use</code>对象挂载到<code>Value</code>的<code>Uses</code>链表上。</p>
+<p>如下示例代码：</p>
+<pre><code class="cpp">int add()
+{
+  int start = 10;
+  int end = 10;
+  return start + end;
+}
+</code></pre>
+<p><code>%start</code>会被用到两次，一次是赋值<code>int start = 10;</code>，一次是加法操作<code>return start + end;</code>。产生的LLVM IR为：</p>
+<pre><code class="llvm">  %start = alloca i32, align 4            ; &lt;i32*&gt;[#uses=2]
+  %end = alloca i32, align 4            ; &lt;i32*&gt;[#uses=2]
+  store i32 10, i32* %start, align 4    ; use %start
+  store i32 10, i32* %end, align 4        ; use %end
+  %1 = load i32, i32* %start, align 4    ; use %start
+  %2 = load i32, i32* %end, align 4        ; use %end
+  %add = add nsw i32 %1, %2                
+  ret i32 %add
+</code></pre>
+<p>在遍历到<code>int start = 10;</code>时，首先会创建一个<code>alloca</code>指令，然后判断是否有<code>init expression</code>。如果有<code>init expression</code>，则<code>EmitExpr(InitE)</code>得到一个<code>Value</code>，最后创建一个<code>Store</code>指令，将<code>Value</code>值存储到<code>alloca</code>指令指定的位置。在创建<code>store</code>指令的时候，会创建一个新的<code>Use</code>对象（在创建的同时，将该<code>Use</code>对象挂载到<code>Alloca</code>指令的<code>Uses</code>链表中），然后将该<code>Use</code>对象<code>push</code>到自己的<code>Operands vector</code>中。如图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-51e6617bd36d0712.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><code>Use</code>对象中的<code>Prev</code>、<code>Next</code>是以<code>Val</code>为主线来索引的。例如我们从 <code>%start = alloca i32, allign 4</code>的<code>Uses</code>数据成员，就可以索引到所有的使用<code>%start = alloca i32, align 4</code>。而<code>Operands</code>直接遍历<code>vector</code>就可获得<code>use</code>的<code>Value</code>。</p>
+<p>LLVM 1.3中的def-use很简单，但是现在的LLVM 3.7的实现已经很复杂了，主要区别在于<code>Use</code>对象是否包括<code>User *U</code>数据成员以及在<code>User</code>中的放置方式。</p>
+<h4 id="2-LLVM-3-6中def-use的构造"><a href="#2-LLVM-3-6中def-use的构造" class="headerlink" title="2. LLVM 3.6中def-use的构造"></a>2. LLVM 3.6中def-use的构造</h4><p><img src="https://upload-images.jianshu.io/upload_images/1351548-513b519a94772071.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>第一种：The Use object(s) are inside (resp. at fixed offset) of the User object and there are a fixed number of them.</p>
+<p>也就是说，<code>User</code>中的<code>Operands</code>不像LLVM 1.3中那样，将<code>Operands</code>作为数据成员放在<code>User</code>对象中，而是直接放在<code>User</code>对象的前面，是固定长度的（fixed）。为了实现这样的形式，就需要重载<code>new</code>运算符，来手动修改内存分配的方式。</p>
+<pre><code class="cpp">class User : public Value {
+protected:
+  Use *OperandList;
+  // 以User首地址为基准，来获取下标Idx的操作数
+  template &lt;int Idx, typename U&gt; static Use &amp;OpFrom(const U *that) {
+    return Idx &lt; 0 ? OperandTraits&lt;U&gt;::op_end(const_cast&lt;U*&gt;(that))[Idx] :
+                     OperandTraits&lt;U&gt;::op_begin(const_cast&lt;U*&gt;(that))[Idx];
+  }
+  // Op&lt;&gt;()是Instruction获取Operand的通用接口
+  template &lt;int Idx&gt; Use &amp;Op(){
+    return OpFrom&lt;Idx&gt;(this);
+  }
+}
+void *User::operator new(size_t s, unsigned Us) {
+  // 除了分配User大小的内存空间以外，还分配了固定个数Use大小的内存空间
+  void *Storage = ::operator new(s + sizeof(Use) * Us);
+  // Operands 头部
+  Use *Start = static_cast&lt;Use*&gt;(Storage);
+  // Operands 尾部
+  Use *End = Start + Us;
+  // Operands 尾部作为User首地址（this）
+  User *Obj = reinterpret_cast&lt;User*&gt;(End);
+  Obj-&gt;OperandList = Start;
+  Obj-&gt;NumOperands = Us;
+  Use::initTags(Start, End);
+  return Obj;
+}
+</code></pre>
+<p>在创建一个新的<code>User</code>对象的时候，会调用重载的<code>new()</code>函数，来分配内存空间。以<code>BinaryOperator</code>为例：</p>
+<pre><code class="cpp">class BinaryOperator : public Instruction {
+// ...
+public:
+  void *operator new(size_t s) {
+    return User::operator new(s, 2);
+  }
+};
+
+BinaryOperator::BinaryOperator(BinaryOps iType, Value *S1, Value *S2, Type *Ty,
+        const Twine &amp;Name, Instruction *InsertBefore)
+    : Instruction (Ty, iType, OperandTraits&lt;BinaryOperator&gt;::op_begin(this),
+                   OperandTraits&lt;BinaryOperator&gt;::operands(this), InsertBefore) {
+  Op&lt;0&gt;() = S1;
+  Op&lt;1&gt;() = S2;
+  // ...
+}
+</code></pre>
+<p><code>BinaryOperator</code>中的<code>operator new()</code>调用<code>User::new(s, 2)</code>，分配内存时，分配<code>BinaryOperator</code>对象的大小加上<code>2</code>个<code>Use</code>对象大小的内存。后面在<code>BinaryOperator</code>的构造函数中，使用了<code>Op&lt;0&gt;() = S1;</code>以及<code>Op&lt;1&gt;() = S2;</code>来将<code>Value</code>存放到<code>Operands</code>中。</p>
+<p><code>BinaryOperator</code>中<code>Use</code>对象存放方式如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1ecf6631d84dd256.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>下面分析<code>Op&lt;0&gt;</code>以及<code>Op&lt;1&gt;</code>，先给出<code>OperandTraits</code>的定义：</p>
+<pre><code class="cpp">template &lt;typename SubClass, unsigned ARITY&gt;
+struct FixedNumOperandTraits {
+  //上面的User::OpFrom()就是通过op_begin()获取Operands的首地址，然后通过
+  //下标运算符[Idx]，来获取操作数，而固定长度Operands的首地址就是 SubClass首地址
+  //减去 ARITY 个Use对象长度的地址（例如BinaryOperator中ARITY就是2）。
+  static Use *op_begin(SubClass* U) {
+    return reinterpret_cast&lt;Use*&gt;(U) - ARITY;
+  }
+
+  static Use *op_end(SubClass* U) {
+    return reinterpret_cast&lt;Use*&gt;(U);
+  }
+}
+
+template&lt;&gt;
+struct OperandTraits&lt;BinaryOperator&gt; :
+  public FixedNumOperandTraits&lt;BinaryOperator, 2&gt; {
+};
+</code></pre>
+<p>可以看到<code>OperandTraits&lt;BinaryOperator&gt;</code>继承的是<code>FixedNumOperandTraits</code>，就是第一种固定长度的形式，<code>Operand begin</code>就是<code>BinaryOperator</code>首地址减去<code>2</code>个<code>Use</code>对象大小的位置。</p>
+<p>在创建<code>BinaryOperator</code>时，会首先调用<code>new()</code>分配一块内存空间，然后调用<code>BinaryOperator</code>构造函数。在函数中通过<code>Op&lt;0&gt;() = S1;</code>以及<code>Op&lt;1&gt; = S2;</code>来将<code>Value</code>放置在<code>BinaryOperator</code>对象的头部。如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9c9c1d0cfdb1a450.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>在执行<code>Op&lt;0&gt; = S1</code>时，会调用<code>Use::operator=()</code>函数：</p>
+<pre><code class="cpp">class Use {  
+  Value *operator=(Value *RHS) {
+    set(RHS);
+    return RHS;
+  }
+  // 类似于LLVM1.3，set()函数也会把该Use对象挂载到Value的Uses链表上
+  set(Value *V)
+  {
+    if (Val) removeFromList();
+    Val = V;
+    if (V) V-&gt;addUse(*this);
+  }
+  private:
+  Value *Val;
+  Use *Next;
+  PointerIntPair&lt;Use **, 2, PrevPtrTag&gt; Prev;
+};
+</code></pre>
+<p>也就是每次初始化一个新的<code>Use</code>对象时（也就是调用<code>operator=()</code>时），都会将该<code>Use</code>对象挂载在<code>Value</code>的链表上。同样，<code>Use</code>中的<code>Next</code>和<code>Prev</code>是以<code>Value</code>为主线来进行连接的，也就是说如果两个<code>Use</code>对象使用了同一个<code>Value</code>值，那么这两个<code>Use</code>对象肯定都在同一条链表上。如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a7a24d8d5625f507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><code>Use</code>对象放在<code>User</code>对象的头部，<code>Value</code>可以通过<code>UseList</code>来索引所有的<code>Use</code>对象，也可以通过<code>Use</code>对象来索引到<code>User</code>对象。由于<code>Use</code>对象没有存放指向<code>User</code>的数据成员，不能直接获得，但是由于<code>Use</code>对象存放在<code>User</code>对象的头部，因此还是可以获取到<code>User</code>地址的。</p>
+<p>关于第二种方式，就是变长<code>Operands</code>方式，这种方式通过在调用<code>User::new()</code>时，传递不同的参数，来分配出不同的内存，内存分配函数和第一种方式相同，<code>Use</code>对象也是分配在<code>User</code>对象的头部。只是在通过<code>Op&lt;Idx&gt;()</code>来获取<code>Use</code>对象的时候是通过<code>Use Array[]</code>的尾部来获取的，例如：<code>Op&lt;-1&gt;()</code>或者<code>Op&lt;-3&gt;()</code>等。</p>
+<h2 id="alloca-load-store形式的局部变量是如何进入SSA形式的？"><a href="#alloca-load-store形式的局部变量是如何进入SSA形式的？" class="headerlink" title="alloca/load/store形式的局部变量是如何进入SSA形式的？"></a><code>alloca</code>/<code>load</code>/<code>store</code>形式的局部变量是如何进入SSA形式的？</h2><p>其实主要是依靠<code>mem2reg</code> pass来完成的，它的本质是：<strong>假定我们的IR还不是SSA形式的，如何将它转换为SSA形式的IR</strong>。这包括计算<code>Phi</code>节点的安插位置（PHi insertion），以及计算变量版本和变量重命名（variable renaming）。</p>
+<p>LLVM IR虽然是SSA形式的，但如果所有生成LLVM IR的前端都要自己计算好如何生成SSA形式，对前端来说也是件麻烦事。所以LLVM IR借助<strong>memory不是SSA value</strong>的特点开了个后门来妥协：<strong>前端在生成LLVM IR时，可以选择不生成真正的SSA形式，而是把局部变量生成为<code>alloca</code>/<code>load</code>/<code>store</code>形式</strong>：</p>
+<ul>
+<li>用<code>alloca</code>来“声明”变量，得到一个指向该变量的指针</li>
+<li>用<code>store</code>来把值存进变量里</li>
+<li>用<code>load</code>来把值读出为SSA value</li>
+</ul>
+<p>这样，对局部变量的读写就跟对普通内存的读写一样，不需要是SSA形式的。然后，LLVM在<code>mem2reg</code> pass中，会识别出这种模式的<code>alloca</code>，并把它提升为SSA value（并消除掉<code>store</code>与<code>load</code>，改为普通的SSA层面的def-use/use-def关系，并且在合适的位置安插<code>Phi</code>和变量重命名）。</p>
+<p>Clang（LLVM的前端）生成的LLVM IR是：</p>
+<pre><code class="llvm">; Function Attrs: nounwind
+define i32 @_Z3fooib(i32 %x, i1 zeroext %cond) #0 {
+  %x.addr = alloca i32, align 4
+  %cond.addr = alloca i8, align 1
+  %inc = alloca i32, align 4
+  store i32 %x, i32* %x.addr, align 4
+  %frombool = zext i1 %cond to i8
+  store i8 %frombool, i8* %cond.addr, align 1
+  %1 = load i8, i8* %cond.addr, align 1
+  %tobool = trunc i8 %1 to i1
+  br i1 %tobool, label %2, label %3
+
+; &lt;label&gt;:2:                                      ; preds = %0
+  store i32 1, i32* %inc, align 4
+  br label %4
+
+; &lt;label&gt;:3:                                      ; preds = %0
+  store i32 -1, i32* %inc, align 4
+  br label %4
+
+; &lt;label&gt;:4:                                      ; preds = %3, %2
+  %5 = load i32, i32* %x.addr, align 4
+  %6 = load i32, i32* %inc, align 4
+  %add = add nsw i32 %5, %6
+  ret i32 %add
+}
+</code></pre>
+<p>可以看到局部变量都在函数的最开头（entry block）有对应的<code>alloca</code>来“声明”它们——申请栈上空间。后面赋值的地方用<code>store</code>、取值的地方用<code>load</code>指令，就跟操作普通内存一样。</p>
+<p>而经过<code>mem2reg</code>之后它才真正进入了SSA形式：</p>
+<pre><code class="llvm">; Function Attrs: nounwind uwtable
+define i32 @_Z3fooib(i32 %x, i1 zeroext %cond) #0 {
+entry:
+  %frombool = zext i1 %cond to i8
+  %tobool = trunc i8 %frombool to i1
+  br i1 %tobool, label %if.then, label %if.else
+
+if.then:                                          ; preds = %entry
+  br label %if.end
+
+if.else:                                          ; preds = %entry
+  br label %if.end
+
+if.end:                                           ; preds = %if.else, %if.then
+  %inc.0 = phi i32 [ 1, %if.then ], [ -1, %if.else ]
+  %add = add nsw i32 %x, %inc.0
+  ret i32 %add
+}
+</code></pre>
+<p>可以看到进入SSA形式后的LLVM IR里，那些局部变量就变成了普通的SSA value，而不再需要<code>alloca</code>/<code>load</code>/<code>store</code>了。</p>
+<h2 id="为什么需要visitor-pattern"><a href="#为什么需要visitor-pattern" class="headerlink" title="为什么需要visitor pattern"></a>为什么需要visitor pattern</h2><p>在静态分析阶段，需要将源程序表示为一个AST，编译器需要在AST的基础上进行操作，从而完成静态语义分析。整个过程需要定义许多操作来进行类型检查、代码优化、流程分析以及检查变量是否在使用前被赋值等等。</p>
+<p>对于上述的需求，要求对不同的node进行不同的处理。常规的处理方法是：<strong>不同的node封装不同的操作</strong>。但这样做的缺点很明显：会导致节点的类型过多，  将操作分散在各个节点类中会导致整个系统难以理解、维护和修改。增加新的操作要修改和重新编译所有的类。</p>
+<p><strong>改进：</strong>节点类独立于作用于其上的操作。</p>
+<ol>
+<li>将相关操作封装在一个独立的对象（Visitor）中，并在遍历抽象语法树时将此对象传递给当前访问的元素。</li>
+<li>当一个节点接受一个访问者时，该元素向访问者发送一个包含自身类信息的请求。该请求同时也将该元素本身作为一个参数。</li>
+<li>访问者将对该元素执行该操作。</li>
+</ol>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/09/Database/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/Compiler（上）/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

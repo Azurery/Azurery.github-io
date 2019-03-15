@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+        Azurery
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Magicmanoooo">
+    <meta name="description" itemprop="description" content="蒟蒻一枚">
+    <meta name="keywords" content="">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azurery">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Azurery">
+    <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
+    <meta property="og:description" content="蒟蒻一枚">
+    
+
+    
+        <meta property="article:published_time" content="Sat Mar 09 2019 21:59:15 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Mar 11 2019 08:51:38 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Azurery">
+    <meta name="twitter:description" content="蒟蒻一枚">
+    <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2019/03/09/目标检测/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2019/03/09/目标检测/index.html",
+    "headline": "",
+    "datePublished": "Sat Mar 09 2019 21:59:15 GMT+0800",
+    "dateModified": "Mon Mar 11 2019 08:51:38 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Magicmanoooo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "秘境，探寻你的足迹"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Azurery",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "蒟蒻一枚",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Faster-RCNN"><span class="post-toc-number">1.</span> <span class="post-toc-text">Faster RCNN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Conv-layers"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Conv layers</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Region-Proposal-Networks（RPN）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.  Region Proposal Networks（RPN）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-多通道图像卷积"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 多通道图像卷积</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-anchors"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2  anchors</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-softmax-判定-foreground-与-background"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2.3  softmax 判定 foreground 与 background</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-bounding-box-regression-原理"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">2.4  bounding box regression 原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#YOLO-v1"><span class="post-toc-number">2.</span> <span class="post-toc-text">YOLO v1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-滑动窗口与-CNN"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 滑动窗口与 CNN</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-设计理念"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.  设计理念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-网络设计"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.  网络设计</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-网络训练"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. 网络训练</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-网络预测"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5. 网络预测</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-算法性能分析"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">6. 算法性能分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-TensorFlow-实现"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">7. TensorFlow 实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#YOLO-v2（YOLO9000）"><span class="post-toc-number">3.</span> <span class="post-toc-text">YOLO v2（YOLO9000）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-YOLOv2-的改进策略"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. YOLOv2 的改进策略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Batch-Normalization"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">1. Batch Normalization</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-High-Resolution-Classifier"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">2. High Resolution Classifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-Convolutional-With-Anchor-Boxes"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">3. Convolutional With Anchor Boxes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-Dimension-Clusters"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">4. Dimension Clusters</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-Direct-location-prediction"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">5. Direct location prediction</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-Fine-Grained-Features"><span class="post-toc-number">3.1.6.</span> <span class="post-toc-text">6. Fine-Grained Features</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-Multi-Scale-Training"><span class="post-toc-number">3.1.7.</span> <span class="post-toc-text">7. Multi-Scale Training</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-New-Network-Darknet-19"><span class="post-toc-number">3.1.8.</span> <span class="post-toc-text">8. New Network: Darknet-19</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-Training"><span class="post-toc-number">3.1.9.</span> <span class="post-toc-text">9. Training</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-YOLO9000"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. YOLO9000</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-YOLOv2-TensorFlow-实现"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. YOLOv2 TensorFlow 实现</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Magicmanoooo</strong>
+        <span>3月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWUlEQVR42u3aQW7DMAwEwPz/0+21QFtjSUqyE4xPQWBbHh1EYanX10dfLzw8PDw8PDw8vIfxXvH1x4t+/J/ck/w//zY8PDy8M7xkmN9DXn/QgiW++G14eHh453n/LbjX9yRP5ZOVj4uHh4f3vrzeEv/fKHh4eHifx0vCgoSU34+Hh4f3ZN5kWc+DjB1RLx4eHt55Xi9iOPP7aH8PDw8PL+D1mlI5Oy8Sy9pmeHh4eJt586MD1+B5Uy2ZXDw8PLyTvGqLa/K5OSZ/Gx4eHt5dvHyJT9r8SdSbbMGT+wthBB4eHt4iXm/bWo1feyVnWUqNh4eHd5yXHIeqRhW9gDg6cICHh4d3hFctA9db52rByLfg11OJh4eHd4Y3eXXybF6E8lJRKAx4eHh423iT1ld1sqpb+SoSDw8P7wm8PCYYHZZqFR48PDy8e3m96CEPc6uxbHOa8PDw8Dbzqi3/vFU2KQCjAoOHh4e3mZcv98minzerJtvxwqErPDw8vA28fHPcC1jzKatiRmfK8PDw8Ma8vDGfbI6r2+6kYBRaa3h4eHhHePPCMI8nJmw8PDy8u3jzYrD2SFbz8BYeHh7eEV5SHvKGWV5yqnFtNAoeHh7eZl716k1EPh29Awd4eHh4J3nz5bjX+qq2uAoFCQ8PD+8Ib1UxqD47KQzNlBoPDw9vKS9vXCWD7SgY0bh4eHh4b8urHgKobuLx8PDw3pFXbXol4F5jDA8PD+8uXh4oVDfEyft7h1O3ZC14eHh4Aa8XAfT+7wW7oxgXDw8Pbynv8y48PDw8PDw8PLwHXN832BEkbbo0/AAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2019/03/09/目标检测/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2019/03/09/目标检测/index.html&via=Magicmanoooo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/09/目标检测/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/09/目标检测/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Azurery&title=&summary=蒟蒻一枚&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2019/03/09/目标检测/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Faster-RCNN"><a href="#Faster-RCNN" class="headerlink" title="Faster RCNN"></a>Faster RCNN</h1><p>经过 R-CNN 和 Fast RCNN 的积淀，<em>Ross B. Girshick</em> 在 2016 年提出了新的 Faster RCNN，在结构上，Faster RCNN 已经将特征抽（feature extraction），proposal 提取，bounding box regression（rect refine），classification 都整合在了一个网络中，使得综合性能有较大提高，在检测速度方面尤为明显。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c45c2eab6eac9222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>依作者看来，如上图，Faster RCNN 其实可以分为 4 个主要内容：</p>
+<ol>
+<li>Conv layers。作为一种 CNN 网络目标检测方法，Faster RCNN 首先使用一组基础的 <code>conv + relu + pooling</code> 层提取 image 的 feature map，将用于之后的 RPN 层和全连接层。</li>
+<li>Region Proposal Networks。RPN 网络用于生成 region proposals。该层通过 softmax 判断 anchors 属于 foreground 或者 background，再利用 bounding box regression 修正 anchors 获得精确的 proposals。</li>
+<li>Roi Pooling。该层收集输入的 feature maps 和 proposals，综合这些信息后提取 proposal feature maps，送入后续全连接层判定目标类别。</li>
+<li>Classification。利用 proposal feature maps 计算 proposal 的类别，同时再次 bounding box regression 获得检测框最终的精确位置。</li>
+</ol>
+<p>所以本文以上述 4 个内容作为切入点介绍 Faster R-CNN 网络。下图展示了Python 版本中的 VGG16 模型中的 <code>faster_rcnn_test.py</code> 的网络结构，可以清晰的看到该网络对于一副任意大小 <code>PxQ</code> 的图像：</p>
+<ul>
+<li>首先缩放至固定大小 <code>MxN</code>，然后将 <code>MxN</code> 图像送入网络</li>
+<li>而 Conv layers 中包含了 <code>13</code> 个 <code>conv</code> 层 + <code>13</code> 个 <code>relu</code> 层 + <code>4</code> 个 <code>pooling</code> 层</li>
+<li>RPN 网络首先经过 <code>3x3</code> 卷积，再分别生成 foreground anchors 与 bounding box regression 偏移量，然后计算出 proposals</li>
+<li>而 Roi Pooling 层则利用 proposals 从 feature maps 中提取 proposal feature 送入后续全连接和 softmax 网络作 classification（即分类 proposal 到底是什么 object）</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-75b0a13a4a6a8baf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="1-Conv-layers"><a href="#1-Conv-layers" class="headerlink" title="1. Conv layers"></a>1. Conv layers</h2><p>Conv layers 包含了 <code>conv</code>，<code>pooling</code>，<code>relu</code> 三种层。以 Python版本中的 VGG16 模型中的 <code>faster_rcnn_test.py</code> 的网络结构为例，如上图。Conv layers 部分共有 <code>13</code> 个 <code>conv</code> 层，<code>13</code> 个 <code>relu</code> 层，<code>4</code> 个 <code>pooling</code> 层。在 Conv layers 中：</p>
+<ul>
+<li>所有的 <code>conv</code> 层为：<ul>
+<li><code>kernel_size = 3</code></li>
+<li><code>padding = 1</code></li>
+<li><code>stride = 1</code></li>
+</ul>
+</li>
+<li>所有的 <code>pooling</code> 层为：<ul>
+<li><code>kernel_size = 2</code></li>
+<li><code>padding = 0</code></li>
+<li><code>stride = 2</code></li>
+</ul>
+</li>
+</ul>
+<p>在Conv layers 中对所有的卷积都做了扩边处理（ <code>padding=1</code>，即填充一圈 <code>0</code>），导致原图变为 <code>(M+2)x(N+2)</code> 大小，再做 <code>3x3</code> 卷积后输出 <code>MxN</code>。正是这种设置，导致 Conv layers 中的 <code>conv</code> 层不改变输入和输出矩阵大小。如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-49a933372f94f832.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>类似的是，Conv layers 中的 <code>pooling</code> 层 <code>kernel_size=2</code>，<code>stride=2</code>。这样，每个经过 <code>pooling</code> 层的 <code>MxN</code> 矩阵，都会变为 <code>(M/2)x(N/2)</code> 大小。综上所述，在整个 Conv layers 中，<code>conv</code> 和 <code>relu</code> 层不改变输入输出大小，只有 <code>pooling</code> 层使输出长宽都变为输入的 <code>1/2</code>。</p>
+<p>那么，一个 <code>MxN</code> 大小的矩阵经过 Conv layers 固定变为 <code>(M/16)x(N/16)</code>。这样 Conv layers 生成的 feature map 中都可以和原图对应起来。</p>
+<h2 id="2-Region-Proposal-Networks（RPN）"><a href="#2-Region-Proposal-Networks（RPN）" class="headerlink" title="2.  Region Proposal Networks（RPN）"></a>2.  Region Proposal Networks（RPN）</h2><p>经典的检测方法生成检测框都非常耗时，如 OpenCV adaboost 使用滑动窗口 + 图像金字塔生成检测框；或如 R-CNN 使用 SS（Selective Search）方法生成检测框。而 Faster RCNN 则抛弃了传统的滑动窗口和 SS 方法，直接使用 RPN 生成检测框，这也是 Faster R-CNN 的巨大优势，能极大提升检测框的生成速度。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ac14a124c3d47e62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图展示了 RPN 网络的具体结构。可以看到 RPN 网络实际分为两条线：</p>
+<ul>
+<li>上面一条通过 softmax 分类 anchors 获得 foreground 和 background（检测目标是 foreground）</li>
+<li>下面一条用于计算对于 anchors 的 bounding box regression 偏移量，以获得精确的 proposal。</li>
+</ul>
+<p>最后的 Proposal 层则负责综合 foreground anchors 和 bounding box regression 偏移量获取 proposals，同时剔除太小和超出边界的 proposals。其实整个网络到了 Proposal Layer 这里，就完成了相当于目标定位的功能。</p>
+<h3 id="2-1-多通道图像卷积"><a href="#2-1-多通道图像卷积" class="headerlink" title="2.1 多通道图像卷积"></a>2.1 多通道图像卷积</h3><p>对于多通道图像+多卷积核做卷积，计算方式如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-946967852bd6cbe9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如上图，输入有 <code>3</code> 个通道，同时有 <code>2</code> 个卷积核。对于每个卷积核，先在输入 <code>3</code> 个通道分别作卷积，再将 <code>3</code> 个通道结果加起来得到卷积输出。所以对于某个卷积层，无论输入图像有多少个通道，输出图像通道数总是等于卷积核数量。对多通道图像做 <code>1x1</code> 卷积，其实就是将输入图像于每个通道乘以卷积系数后加在一起，即相当于把原图像中本来各个独立的通道“联通”在了一起。</p>
+<h3 id="2-2-anchors"><a href="#2-2-anchors" class="headerlink" title="2.2  anchors"></a>2.2  anchors</h3><p>与 RPN 网络密切相关的是 anchors，anchor的本质是SPP（spatial pyramid pooling）思想的逆向。而 SPP 本身就是将不同尺寸的输入 resize 成为相同尺寸的输出。所以 SPP 的逆向就是，由相同尺寸的输出，倒推得到不同尺寸的输入。  </p>
+<p>anchors，实际上就是一组由<code>rpn/generate_anchors.py</code> 生成的矩形。直接运行作者 demo 中的 <code>generate_anchors.py</code> 可以得到以下输出：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4ca50a18887a966a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">                                                                                     </p>
+<p>其中每行的 <code>4</code> 个值 <img src="https://upload-images.jianshu.io/upload_images/1351548-ad6b1deee1003558.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""> 表矩形左上和右下角点坐标。<code>9</code> 个矩形共有 <code>3</code> 种形状，长宽比为大约为： <img src="https://upload-images.jianshu.io/upload_images/1351548-e131eef7c6a62439.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">三种，如下图。实际上通过 anchors 就引入了检测中常用到的多尺度方法。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e5aebe2f28f70a06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>注：关于上面的 anchors size，其实是根据检测图像设置的。在 Python demo 中，会把任意大小的输入图像 reshape 成 <code>800x600</code>（即之前图中的 <code>M=800</code>，<code>N=600</code>）。再回头来看 anchors 的大小，anchors 中长宽 <code>1:2</code> 中最大为 <code>352x704</code>，长宽 <code>2:1</code> 中最大 <code>736x384</code>，基本是 cover 了 <code>800x600</code> 的各个尺度和形状。</p>
+<p>那么这 <code>9</code> 个 anchors 是做什么的呢？借用 Faster RCNN 论文中的原图，如下图，遍历 Conv layers 计算获得的 feature maps，为每一个点都配备这 <code>9</code> 种 anchors 作为初始的检测框。这样做获得检测框很不准确，不过不用担心，后面还有 <code>2</code> 次 bounding box regression 可以修正检测框位置。</p>
+<p>整个faster RCNN结构的示意图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e9bc556c1e218471.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>利用 anchor 是从第二列这个位置开始进行处理，这个时候，原始图片已经经过一系列卷积层和池化层以及 relu，得到了这里的 feature：<code>51x39x256</code>。</p>
+<p>在这个特征参数的基础上，通过一个 <code>3x3</code> 的滑动窗口，在这个 <code>51x39</code> 的区域上进行滑动，<code>stride=1</code>，<code>padding=2</code>，这样一来，滑动得到的就是 <code>51x39</code> 个 <code>3x3</code> 的窗口。</p>
+<p>对于每个 <code>3x3</code> 的窗口，作者就计算这个滑动窗口的中心点所对应的原始图片的中心点。然后作者假定，这个 <code>3x3</code> 窗口，是从原始图片上通过 SPP 池化得到的，而这个池化的区域的面积以及比例，就是一个个的 anchor。换句话说，对于每个 <code>3x3</code> 窗口，作者假定它来自 <code>9</code> 种不同原始区域的池化，但是这些池化在原始图片中的中心点，都完全一样。这个中心点，就是刚才提到的，<code>3x3</code> 窗口中心点所对应的原始图片中的中心点。<strong>如此一来，在每个窗口位置，我们都可以根据 <code>9</code> 个不同长宽比例、不同面积的 anchor，逆向推导出它所对应的原始图片中的一个区域，这个区域的尺寸以及坐标，都是已知的。而这个区域，就是我们想要的 proposal</strong>。</p>
+<p>所以通过滑动窗口和 anchor，成功得到了 <code>51x39x9</code> 个原始图片的 proposal。接下来，每个 proposal 只输出 <code>6</code> 个参数：</p>
+<ul>
+<li>每个 proposal 和 ground truth 进行比较得到的前景概率和背景概率（<code>2</code>个参数）（对应图上的 <code>cls_score</code>）</li>
+<li>由于每个 proposal 和 ground truth 位置及尺寸上的差异，从 proposal 通过平移放缩得到 ground truth 需要的 <code>4</code> 个平移放缩参数（对应图上的 <code>bbox_pred</code>）。</li>
+</ul>
+<p>根据刚才的计算，一共可以得到 <code>51 x 39 x 9 = 17900</code>，约等于 <code>20 k</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-54211e7aaa9c8818.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>解释一下上面这张图的数字：</p>
+<ol>
+<li>在原文中使用的是 ZF model 中，其 Conv Layers 中最后的 <code>conv5</code> 层 <code>num_output=256</code>，对应生成 <code>256</code> 张特征图，所以相当于 feature map 每个点都是 <code>256-dimensions</code></li>
+<li>在 <code>conv5</code> 之后，做了 <code>rpn_conv/3x3</code>卷积且 <code>num_output=256</code>，相当于每个点又融合了周围 <code>3x3</code> 的空间信息，同时 <code>256-d</code> 不变</li>
+<li>假设在 <code>conv5</code> feature map 中每个点上有 <code>k</code> 个 anchor（默认 <code>k=9</code>），而每个 anchor 要分 foreground 和 background，所以每个点由 <code>256d</code> feature 转化为 <code>cls=2k scores</code>；而每个 anchor 都有 <code>(x, y, w, h)</code> 对应 <code>4</code> 个偏移量，所以 <code>reg=4k coordinates</code></li>
+<li>补充一点，全部 anchors 拿去训练太多了，训练程序会在合适的 anchors 中<strong>随机</strong>选取 <code>128</code> 个 positive anchors + <code>128</code> 个negative anchors 进行训练</li>
+</ol>
+<p>注意，在本文使用的 VGG <code>conv5</code> <code>num_output=512</code>，所以是 <code>512d</code>，其他类似。</p>
+<p><strong>其实 RPN 最终就是在原图尺度上，设置了密密麻麻的候选 anchor。然后用 CNN 去判断哪些 anchor 中是有 object 的 foreground anchor，哪些是没有 object 的 background。所以，仅仅是个二分类而已。</strong></p>
+<p>那么 anchor 一共有多少个？原图 <code>800x600</code>，VGG 下采样 <code>16</code> 倍，feature map 每个点设置 <code>9</code> 个 anchor，所以：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-efc5e871341345bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中 <code>ceil()</code> 表示向上取整，是因为 VGG 输出的 feature map <code>size= 50*38</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-8aa64e78296c35c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="2-3-softmax-判定-foreground-与-background"><a href="#2-3-softmax-判定-foreground-与-background" class="headerlink" title="2.3  softmax 判定 foreground 与 background"></a>2.3  softmax 判定 foreground 与 background</h3><p>一副 <code>MxN</code> 大小的矩阵送入 Faster RCNN 网络后，到 RPN 网络变为 <code>(M/16)x(N/16)</code>，不妨设 <code>W=M/16</code>，<code>H=N/16</code>。在进入 reshape 与 softmax 之前，先做了 <code>1x1</code> 卷积，如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-7838873912a5f891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>该 <code>1x1</code> 卷积的 caffe prototxt 定义如下：</p>
+<pre><code class="python">layer {
+  name: &quot;rpn_cls_score&quot;
+  type: &quot;Convolution&quot;
+  bottom: &quot;rpn/output&quot;
+  top: &quot;rpn_cls_score&quot;
+  convolution_param {
+    num_output: 18   # 2(bg/fg) * 9(anchors)
+    kernel_size: 1 pad: 0 stride: 1
+  }
+}
+</code></pre>
+<p>可以看到其 <code>num_output=18</code>，也就是经过该卷积的输出图像为 <code>WxHx18</code> 大小。这也就刚好对应了 feature maps 每一个点都有 <code>9</code> 个 anchors，同时每个 anchors 又有可能是 foreground 和 background，所有这些信息都保存 <code>WxHx(9*2)</code> 大小的矩阵。</p>
+<p>为何这样做？后面接 softmax 分类获得 foreground anchors，也就相当于初步提取了检测目标候选区域 box（一般认为目标在 foreground anchors 中）。</p>
+<p>那么为何要在 softmax 前后都接一个 reshape layer？其实只是为了便于 softmax 分类，至于具体原因这就要从 caffe 的实现形式说起了。在 caffe 基本数据结构 blob 中以如下形式保存数据：</p>
+<pre><code class="python">blob=[batch_size, channel，height，width]
+</code></pre>
+<p>对应至上面的保存 <code>bg/fg</code> anchors 的矩阵，其在 caffe <code>blob</code> 中的存储形式为 <code>[1, 2x9, H, W]</code>。而在 softmax 分类时需要进行 <code>fg/bg</code> 二分类，所以 reshape layer 会将其变为 <code>[1, 2, 9xH, W]</code> 大小，即单独“腾空”出来一个维度以便 softmax 分类，之后再 reshape 回复原状。贴一段 caffe <code>softmax_loss_layer.cpp</code> 的 <code>reshape</code> 函数的解释，非常精辟：</p>
+<pre><code class="python">&quot;Number of labels must match number of predictions; &quot;
+&quot;e.g., if softmax axis == 1 and prediction shape is (N, C, H, W), &quot;
+&quot;label count (number of labels) must be N*H*W, &quot;
+&quot;with integer values in {0, 1, ..., C-1}.&quot;;
+</code></pre>
+<p>综上所述，RPN 网络中利用 anchors 和 softmax 初步提取出 foreground anchors 作为候选区域。</p>
+<h3 id="2-4-bounding-box-regression-原理"><a href="#2-4-bounding-box-regression-原理" class="headerlink" title="2.4  bounding box regression 原理"></a>2.4  bounding box regression 原理</h3><p>下图所示绿色框为飞机的 ground truth，红色为提取的 foreground anchors，即便红色的框被分类器识别为飞机，但是由于红色的框定位不准，这张图相当于没有正确的检测出飞机。所以我们希望采用一种方法对红色的框进行微调，使得 foreground anchors和 ground truth 更加接近。</p>
+<p><img src="https://pic4.zhimg.com/v2-93021a3c03d66456150efa1da95416d3_b.jpg" alt="img"></p>
+<p>对于窗口一般使用四维向量 <img src="https://www.zhihu.com/equation?tex=+%28x%2C+y%2C+w%2C+h%29" alt=" (x, y, w, h)"> 表示，分别表示窗口的中心点坐标和宽高。对于下图，红色的框 <code>A</code> 代表原始的 foreground anchors，绿色的框G代表目标的GT，我们的目标是寻找一种关系，使得输入原始的anchor A经过映射得到一个跟真实窗口G更接近的回归窗口G’，即：</p>
+<ul>
+<li>给定：anchor <img src="https://www.zhihu.com/equation?tex=A%3D%28A_%7Bx%7D%2C+A_%7By%7D%2C+A_%7Bw%7D%2C+A_%7Bh%7D%29" alt="A=(A_{x}, A_{y}, A_{w}, A_{h})"> 和 <img src="https://www.zhihu.com/equation?tex=GT%3D%5BG_%7Bx%7D%2C+G_%7By%7D%2C+G_%7Bw%7D%2C+G_%7Bh%7D%5D" alt="GT=[G_{x}, G_{y}, G_{w}, G_{h}]"> </li>
+<li>寻找一种变换<strong>F，</strong>使得：<img src="https://www.zhihu.com/equation?tex=F%28A_%7Bx%7D%2C+A_%7By%7D%2C+A_%7Bw%7D%2C+A_%7Bh%7D%29%3D%28G_%7Bx%7D%5E%7B%27%7D%2C+G_%7By%7D%5E%7B%27%7D%2C+G_%7Bw%7D%5E%7B%27%7D%2C+G_%7Bh%7D%5E%7B%27%7D%29" alt="F(A_{x}, A_{y}, A_{w}, A_{h})=(G_{x}^{&#39;}, G_{y}^{&#39;}, G_{w}^{&#39;}, G_{h}^{&#39;})">，其中<img src="https://www.zhihu.com/equation?tex=%28G_%7Bx%7D%5E%7B%27%7D%2C+G_%7By%7D%5E%7B%27%7D%2C+G_%7Bw%7D%5E%7B%27%7D%2C+G_%7Bh%7D%5E%7B%27%7D%29%E2%89%88%28G_%7Bx%7D%2C+G_%7By%7D%2C+G_%7Bw%7D%2C+G_%7Bh%7D%29" alt="(G_{x}^{&#39;}, G_{y}^{&#39;}, G_{w}^{&#39;}, G_{h}^{&#39;})≈(G_{x}, G_{y}, G_{w}, G_{h})"> </li>
+</ul>
+<p><img src="https://pic2.zhimg.com/v2-ea7e6e48662bfa68ec73bdf32f36bb85_b.jpg" alt="img"></p>
+<p>那么经过何种变换<strong>F</strong>才能从图10中的anchor A变为G’呢？ 比较简单的思路就是:</p>
+<ul>
+<li>先做平移</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=G_x%27%3DA_w%5Ccdot+d_x%28A%29+%2BA_x%5C%5C" alt="G_x&#39;=A_w\cdot d_x(A) +A_x\\"> </p>
+<p><img src="https://www.zhihu.com/equation?tex=G_y%27%3DA_h%5Ccdot+d_y%28A%29+%2BA_y%5C%5C" alt="G_y&#39;=A_h\cdot d_y(A) +A_y\\"> </p>
+<ul>
+<li>再做缩放</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=G_w%27%3DA_w%5Ccdot+%5Cexp%28d_w%28A%29%29%5C%5C" alt="G_w&#39;=A_w\cdot \exp(d_w(A))\\"> </p>
+<p><img src="https://www.zhihu.com/equation?tex=G_h%27%3DA_h%5Ccdot+%5Cexp%28d_h%28A%29%29%5C%5C" alt="G_h&#39;=A_h\cdot \exp(d_h(A))\\"> </p>
+<p>观察上面4个公式发现，需要学习的是 <img src="https://www.zhihu.com/equation?tex=d_%7Bx%7D%28A%29%2Cd_%7By%7D%28A%29%2Cd_%7Bw%7D%28A%29%2Cd_%7Bh%7D%28A%29" alt="d_{x}(A),d_{y}(A),d_{w}(A),d_{h}(A)"> 这四个变换。当输入的anchor A与GT相差较小时，可以认为这种变换是一种线性变换， 那么就可以用线性回归来建模对窗口进行微调（注意，只有当anchors A和GT比较接近时，才能使用线性回归模型，否则就是复杂的非线性问题了）。<br>接下来的问题就是如何通过线性回归获得 <img src="https://www.zhihu.com/equation?tex=d_%7Bx%7D%28A%29%2Cd_%7By%7D%28A%29%2Cd_%7Bw%7D%28A%29%2Cd_%7Bh%7D%28A%29" alt="d_{x}(A),d_{y}(A),d_{w}(A),d_{h}(A)"> 了。线性回归就是给定输入的特征向量X, 学习一组参数W, 使得经过线性回归后的值跟真实值Y非常接近，即<img src="https://www.zhihu.com/equation?tex=Y%3DWX" alt="Y=WX">。对于该问题，输入X是cnn feature map，定义为Φ；同时还有训练传入A与GT之间的变换量，即<img src="https://www.zhihu.com/equation?tex=%28t_%7Bx%7D%2C+t_%7By%7D%2C+t_%7Bw%7D%2C+t_%7Bh%7D%29" alt="(t_{x}, t_{y}, t_{w}, t_{h})">。输出是<img src="https://www.zhihu.com/equation?tex=d_%7Bx%7D%28A%29%2Cd_%7By%7D%28A%29%2Cd_%7Bw%7D%28A%29%2Cd_%7Bh%7D%28A%29" alt="d_{x}(A),d_{y}(A),d_{w}(A),d_{h}(A)">四个变换。那么目标函数可以表示为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=d_%2A%28A%29%3DW_%2A%5ET%5Ccdot+%5Cphi%28A%29%5C%5C" alt="d_*(A)=W_*^T\cdot \phi(A)\\"> </p>
+<p>其中 <img src="https://www.zhihu.com/equation?tex=%5Cphi%28A%29" alt="\phi(A)"> 是对应anchor的feature map组成的特征向量， <img src="https://www.zhihu.com/equation?tex=W_%2A" alt="W_*"> 是需要学习的参数， <img src="https://www.zhihu.com/equation?tex=d_%2A%28A%29" alt="d_*(A)"> 是得到的预测值（<em>表示 x，y，w，h，也就是每一个变换对应一个上述目标函数）。为了让预测值 ![d_</em>(A)](<a href="https://www.zhihu.com/equation?tex=d_%2A%28A%29" target="_blank" rel="noopener">https://www.zhihu.com/equation?tex=d_%2A%28A%29</a>) 与真实值 <img src="https://www.zhihu.com/equation?tex=t_%2A" alt="t_*"> 差距最小，设计损失函数：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Ctext%7BLoss%7D%3D%5Csum_%7Bi%7D%5E%7BN%7D%7B%28t_%2A%5Ei-W_%2A%5ET%5Ccdot+%5Cphi%28A%5Ei%29%29%5E2%7D%5C%5C" alt="\text{Loss}=\sum_{i}^{N}{(t_*^i-W_*^T\cdot \phi(A^i))^2}\\"> </p>
+<p>函数优化目标为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Chat%7BW%7D_%2A%3D%5Ctext%7Bargmin%7D_%7BW_%2A%7D%5Csum_%7Bi%7D%5E%7Bn%7D%28t_%2A%5Ei-+W_%2A%5ET%5Ccdot+%5Cphi%28A%5Ei%29%29%5E2%2B%5Clambda%7C%7CW_%2A%7C%7C%5E2%5C%5C" alt="\hat{W}_*=\text{argmin}_{W_*}\sum_{i}^{n}(t_*^i- W_*^T\cdot \phi(A^i))^2+\lambda||W_*||^2\\"> </p>
+<p>需要说明，只有在GT与需要回归框位置比较接近时，才可近似认为上述线性变换成立。<br>说完原理，对应于Faster RCNN原文，foreground anchor与ground truth之间的平移量 <img src="https://www.zhihu.com/equation?tex=%28t_x%2C+t_y%29" alt="(t_x, t_y)"> 与尺度因子 <img src="https://www.zhihu.com/equation?tex=%28t_w%2C+t_h%29" alt="(t_w, t_h)"> 如下：</p>
+<p><img src="https://www.zhihu.com/equation?tex=t_x%3D%28x-x_a%29%2Fw_a%5C+%5C+%5C+%5C++t_y%3D%28x-y_a%29%2Fh_a%5C%5C" alt="t_x=(x-x_a)/w_a\ \ \ \  t_y=(x-y_a)/h_a\\"> </p>
+<p><img src="https://www.zhihu.com/equation?tex=t_w%3D%5Clog%28w%2Fw_a%29%5C+%5C+%5C+%5C+t_h%3D%5Clog%28h%2Fh_a%29%5C%5C" alt="t_w=\log(w/w_a)\ \ \ \ t_h=\log(h/h_a)\\"> </p>
+<p>对于训练bouding box regression网络回归分支，输入是cnn feature Φ，监督信号是Anchor与GT的差距 <img src="https://www.zhihu.com/equation?tex=%28t_x%2C+t_y%2C+t_w%2C+t_h%29" alt="(t_x, t_y, t_w, t_h)">，即训练目标是：输入 Φ的情况下使网络输出与监督信号尽可能接近。<br>那么当bouding box regression工作时，再输入Φ时，回归网络分支的输出就是每个Anchor的平移量和变换尺度 <img src="https://www.zhihu.com/equation?tex=%28t_x%2C+t_y%2C+t_w%2C+t_h%29" alt="(t_x, t_y, t_w, t_h)">，显然即可用来修正Anchor位置了。</p>
+<h1 id="YOLO-v1"><a href="#YOLO-v1" class="headerlink" title="YOLO v1"></a>YOLO v1</h1><p>近几年来比较流行的目标检测算法可以分为两类：</p>
+<ul>
+<li><p>一类是基于 Region Proposal 的 RCNN 系算法（RCNN，Fast RCNN，Faster RCNN），它们是 two-stage 的，需要先使用启发式方法（selective search）或者 CNN 网络（RPN）产生 Region Proposal，然后再在 Region Proposal 上做分类与回归。</p>
+</li>
+<li><p>另一类是 YOLO，SSD 这类 one-stage 算法，其仅仅使用一个 CNN 网络直接预测不同目标的类别与位置。</p>
+</li>
+</ul>
+<p>第一类方法是准确度高一些，但是速度慢，但是第二类算法是速度快，但是准确性要低一些。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9e53d3c99cb9f789.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="1-滑动窗口与-CNN"><a href="#1-滑动窗口与-CNN" class="headerlink" title="1. 滑动窗口与 CNN"></a>1. 滑动窗口与 CNN</h2><p><strong>采用滑动窗口的目标检测算法思路非常简单，它将检测问题转化为了图像分类问题。</strong>其基本原理就是采用不同大小和比例（宽高比）的窗口在整张图片上以一定的步长进行滑动，然后对这些窗口对应的区域做图像分类，这样就可以实现对整张图片的检测了，如下图所示，如 DPM 就是采用这种思路。但是这个方法有致命的缺点，就是你并不知道要检测的目标大小是什么规模，所以你要设置不同大小和比例的窗口去滑动，而且还要选取合适的步长。但是这样会产生很多的子区域，并且都要经过分类器去做预测，这需要很大的计算量，所以你的分类器不能太复杂，因为要保证速度。解决思路之一就是减少要分类的子区域，这就是 RCNN 的一个改进策略，其采用了 selective search 方法来找到最有可能包含目标的子区域（Region Proposal），其实可以看成采用启发式方法过滤掉很多子区域，这会提升效率。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-057bedc91673a5a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如果你使用 CNN 分类器，那么滑动窗口是非常耗时的。但是结合卷积运算的特点，我们可以使用 CNN 实现更高效的滑动窗口方法。这里要介绍的是一种全卷积的方法，简单来说就是网络中用卷积层代替了全连接层，如下图所示。输入图片大小是 <code>16x16</code>，经过一系列卷积操作，提取了 <code>2x2</code> 的特征图，但是这个 <code>2x2</code> 的图上每个元素都是和原图是一一对应的，如图中蓝色的格子对应蓝色的区域，这不就是相当于在原图上做大小为 <code>14x14</code> 的窗口滑动，且步长为 <code>2</code>，共产生 <code>4</code> 个字区域。最终输出的通道数为 <code>4</code>，可以看成 <code>4</code> 个类别的预测概率值，这样一次 CNN 计算就可以实现窗口滑动的所有子区域的分类预测。这其实是 Overfeat 算法的思路。之所可以 CNN 可以实现这样的效果是因为卷积操作的特性，就是图片的空间位置信息的不变性，尽管卷积过程中图片大小减少，但是位置对应关系还是保存的。说点题外话，这个思路也被 RCNN 借鉴，从而诞生了 Fast RCNN 算法。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a2e6c2ab8f7d6eeb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面尽管可以减少滑动窗口的计算量，但是只是针对一个固定大小与步长的窗口，这是远远不够的。YOLO 算法很好的解决了这个问题，它不再是窗口滑动了，而是直接将原始图片分割成互不重合的小方块，然后通过卷积最后生产这样大小的特征图，基于上面的分析，可以认为特征图的每个元素也是对应原始图片的一个小方块，然后用每个元素来可以预测那些中心点在该小方格内的目标，这就是 YOLO 算法的朴素思想。</p>
+<h2 id="2-设计理念"><a href="#2-设计理念" class="headerlink" title="2.  设计理念"></a>2.  设计理念</h2><p>整体来看，YOLO 算法采用一个单独的 CNN 模型实现 end-to-end 的目标检测，整个系统如下图所示：首先将输入图片 resize 到 <code>448x448</code>，然后送入 CNN 网络，最后处理网络预测结果得到检测的目标。相比 RCNN 算法，其是一个统一的框架，其速度更快，而且 YOLO 的训练过程也是 end-to-end 的。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-1e8dc5ecca8eaca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>具体来说，YOLO 的 CNN 网络将输入的图片分割成 <img src="https://www.zhihu.com/equation?tex=S%5Ctimes+S" alt="S\times S"> 网格，然后<strong>每个单元格负责去检测那些中心点落在该格子内的目标</strong>，如下图所示，可以看到狗这个目标的中心落在左下角一个单元格内，那么该单元格负责预测这个狗。每个单元格会预测 <img src="https://www.zhihu.com/equation?tex=B" alt="B"> 个边界框（bounding box）以及边界框的置信度（confidence score）。                      </p>
+<p>所谓置信度其实包含两个方面：</p>
+<ul>
+<li><p>一是这个边界框（BBox）含有目标的可能性大小，记为 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29" alt="Pr(object)"> 。当该边界框是背景时（即不包含目标），此时 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%3D0" alt="Pr(object)=0"> ；而当该边界框包含目标时， <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%3D1" alt="Pr(object)=1"> 。</p>
+</li>
+<li><p>二是这个边界框的准确度。边界框的准确度可以用预测框与实际框（ground truth）的 IoU 来表征，记为 <img src="https://www.zhihu.com/equation?tex=%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="\text{IOU}^{truth}_{pred}"> 。</p>
+</li>
+</ul>
+<p>因此，置信度可以定义为 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%2A%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="Pr(object)*\text{IOU}^{truth}_{pred}"> 。</p>
+<p>很多人可能将 YOLO 的置信度看成边界框是否含有目标的概率，但是其实它是两个因子的乘积，预测框的准确度也反映在里面。边界框的大小与位置可以用 <code>4</code> 个值来表征： <img src="https://www.zhihu.com/equation?tex=%28x%2C+y%2Cw%2Ch%29" alt="(x, y,w,h)"> ，其中 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)"> 是边界框的中心坐标，而 <img src="https://www.zhihu.com/equation?tex=w" alt="w"> 和 <img src="https://www.zhihu.com/equation?tex=h" alt="h"> 是边界框的宽与高。</p>
+<p>还有一点要注意，中心坐标的预测值 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)"> 是相对于每个单元格左上角坐标点的偏移值，并且单位是相对于单元格大小的。单元格的坐标定义如下图所示，而边界框的 <img src="https://www.zhihu.com/equation?tex=w" alt="w"> 和 <img src="https://www.zhihu.com/equation?tex=h" alt="h"> 预测值是相对于整个图片的宽与高的比例，这样理论上 <code>4</code> 个元素的大小应该在 <img src="https://www.zhihu.com/equation?tex=%5B0%2C1%5D" alt="[0,1]"> 范围（需要进行归一化）。这样，每个边界框的预测值实际上包含 <code>5</code> 个元素： <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%2Cw%2Ch%2Cc%29" alt="(x,y,w,h,c)"> ，其中前 <code>4</code> 个表征边界框的大小与位置，而最后一个值是置信度。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e4b1c735185f8ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>还有分类问题，对于每一个单元格（grid cell）其还要预测出 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 个类别概率值，其表征的是由该单元格负责预测的边界框所框选的目标属于各个类别的概率。但这些概率值其实是在各个边界框置信度下的条件概率，即 <img src="https://www.zhihu.com/equation?tex=Pr%28class_%7Bi%7D%7Cobject%29" alt="Pr(class_{i}|object)"> 。</p>
+<p>值得注意的是，不管一个单元格预测出多少个边界框，但其只能预测一组 class probabilities，这是 YOLO 算法的一个缺点，在后来的改进版本中，YOLO9000 是把类别概率预测值与边界框是绑定在一起的。同时，可以计算出各个边界框类别置信度（class-specific confidence scores）：</p>
+<p> <img src="https://www.zhihu.com/equation?tex=Pr%28class_%7Bi%7D%7Cobject%29%2APr%28object%29%2A%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D%3DPr%28class_%7Bi%7D%29%2A%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="Pr(class_{i}|object)*Pr(object)*\text{IOU}^{truth}_{pred}=Pr(class_{i})*\text{IOU}^{truth}_{pred}"> </p>
+<p><strong>边界框类别置信度表示的是该边界框中目标属于各个类别的可能性大小以及边界框匹配目标的好坏。一般会根据类别置信度来过滤网络的预测框。</strong></p>
+<p>总结一下，每个单元格需要预测 <img src="https://www.zhihu.com/equation?tex=%28B%2A5%2BC%29" alt="(B*5+C)"> （每个单元格会预测 <img src="https://www.zhihu.com/equation?tex=B" alt="B"> 个边界框（bounding box）；对于每一个单元格其还要给出预测出 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 个类别概率值，其表示的是由该单元格负责预测的边界框框选出来的目标属于各个类别的概率）个值。</p>
+<p>如果将输入图片划分为 <img src="https://www.zhihu.com/equation?tex=S%5Ctimes+S" alt="S\times S"> 网格，那么最终预测值为 <img src="https://www.zhihu.com/equation?tex=S%5Ctimes+S%5Ctimes+%28B%2A5%2BC%29" alt="S\times S\times (B*5+C)"> 大小的张量。整个模型的预测值结构如下图所示。对于 PASCAL VOC 数据，其共有 <code>20</code> 个类别，如果使用 <img src="https://www.zhihu.com/equation?tex=S%3D7%2CB%3D2" alt="S=7,B=2"> ，那么最终的预测结果就是 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes+7%5Ctimes+30" alt="7\times 7\times 30"> 大小的张量。在下面的网络结构中我们会详细讲述每个单元格的预测值的分布位置。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-9b46d719c61170d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="3-网络设计"><a href="#3-网络设计" class="headerlink" title="3.  网络设计"></a>3.  网络设计</h2><p>YOLO 采用卷积网络来提取特征，然后使用全连接层来得到预测值。网络结构参考 GooLeNet 模型，包含 <code>24</code> 个卷积层和 <code>2</code> 个全连接层，如下图所示。对于卷积层，主要使用 <code>1x1</code> 卷积来做 channel reduction，然后紧跟 <code>3x3</code> 卷积。对于卷积层和全连接层，采用 Leaky ReLU 激活函数： <img src="https://www.zhihu.com/equation?tex=max%28x%2C+0.1x%29" alt="max(x, 0.1x)"> ，但是最后一层却采用线性激活函数。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-6834afa6247f6ccd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可以看到网络的最后输出为 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes+7%5Ctimes+30" alt="7\times 7\times 30"> 大小的张量。对于每一个单元格，前 <code>20</code> 个元素是类别概率值，然后 <code>2</code> 个元素是边界框置信度，两者相乘可以得到类别置信度，最后 <code>8</code> 个元素是边界框的 <img src="https://www.zhihu.com/equation?tex=%28x%2C+y%2Cw%2Ch%29" alt="(x, y,w,h)"> 。</p>
+<p>对于边界框为什么把置信度 <img src="https://www.zhihu.com/equation?tex=c" alt="c"> 和 <img src="https://www.zhihu.com/equation?tex=%28x%2C+y%2Cw%2Ch%29" alt="(x, y,w,h)"> 都分开排列，而不是按照 <img src="https://www.zhihu.com/equation?tex=%28x%2C+y%2Cw%2Ch%2Cc%29" alt="(x, y,w,h,c)"> 这样排列？其实纯粹是为了计算方便，因为实际上这 <code>30</code> 个元素都是对应一个单元格，其排列是可以任意的。但是分离排布，可以方便地提取每一个部分。这里来解释一下，首先网络的预测值是一个二维张量 <img src="https://www.zhihu.com/equation?tex=P" alt="P"> ，其 shape 为 <img src="https://www.zhihu.com/equation?tex=%5Bbatch%2C+7%5Ctimes+7%5Ctimes+30%5D" alt="[batch, 7\times 7\times 30]"> 。采用切片，那么 <img src="https://www.zhihu.com/equation?tex=P_%7B%5B%3A%2C0%3A7%2A7%2A20%5D%7D" alt="P_{[:,0:7*7*20]}"> 就是类别概率部分，而 <img src="https://www.zhihu.com/equation?tex=P_%7B%5B%3A%2C7%2A7%2A20%3A7%2A7%2A%2820%2B2%29%5D%7D" alt="P_{[:,7*7*20:7*7*(20+2)]}"> 是置信度部分，最后剩余部分 <img src="https://www.zhihu.com/equation?tex=P_%7B%5B%3A%2C7%2A7%2A%2820%2B2%29%3A%5D%7D" alt="P_{[:,7*7*(20+2):]}"> 是边界框的预测结果。这样，提取每个部分是非常方便的，这会方面后面的训练及预测时的计算。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-516b86d8f21b8ed4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="4-网络训练"><a href="#4-网络训练" class="headerlink" title="4. 网络训练"></a>4. 网络训练</h2><p>在训练之前，先在 ImageNet 上进行了预训练，其预训练的分类模型采用 <code>20</code> 个卷积层，然后添加一个 average-pool 层和全连接层。预训练之后，在预训练得到的 <code>20</code> 层卷积层之上加上随机初始化的 <code>4</code> 个卷积层和 <code>2</code> 个全连接层。由于检测任务一般需要更高清的图片，所以将网络的输入从 <code>224x224</code> 增加到了 <code>448x448</code>。整个网络的流程如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-575d7964c80cdc86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>训练损失函数的分析</strong></p>
+<p>YOLO 算法将目标检测看成回归问题，所以采用的是均方差损失函数。但是对不同的部分采用了不同的权重值。首先区分定位误差和分类误差。</p>
+<ul>
+<li><strong>对于定位误差，即边界框（Bbox）坐标预测误差</strong>，采用较大的权重 <img src="https://www.zhihu.com/equation?tex=%5Clambda+_%7Bcoord%7D%3D5" alt="\lambda _{coord}=5"> 。</li>
+<li>对于分类误差，区分不包含目标的边界框与含有目标的边界框的置信度，对于前者，采用较小的权重值 <img src="https://www.zhihu.com/equation?tex=%5Clambda+_%7Bnoobj%7D%3D0.5" alt="\lambda _{noobj}=0.5"> ，其它权重值均设为 <code>1</code>。采用均方误差，其同等对待大小不同的边界框，但是实际上较小的边界框的坐标误差应该要比较大的边界框要更敏感。为了保证这一点，将网络的边界框的宽与高预测改为对其平方根的预测，即预测值变为 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%2C%5Csqrt%7Bw%7D%2C+%5Csqrt%7Bh%7D%29" alt="(x,y,\sqrt{w}, \sqrt{h})"> 。</li>
+</ul>
+<p>由于每个单元格（grid cell）预测多个边界框（BBox），但是其对应类别（class）只有一个。<strong>在训练时，如果该单元格内确实存在目标，那么只选择与 ground truth 的 IOU 最大的那个边界框来负责预测该目标，而其它边界框认为不存在目标。</strong>这样设置的一个结果将会使一个单元格对应的边界框更加专业化，其可以分别适用不同大小，不同高宽比的目标，从而提升模型性能。</p>
+<p>如果一个单元格内存在多个目标怎么办，其实这时候 YOLO 算法就只能选择其中一个来训练，这也是 YOLO 算法的缺点之一。要注意的一点是，对于不存在对应目标的边界框，其误差项就是只有置信度，坐标项误差是没法计算的。而只有当一个单元格内确实存在目标时，才计算分类误差项，否则该项也是无法计算的。</p>
+<p>综上讨论，最终的损失函数计算如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e36aad5ae477630d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中：</p>
+<ul>
+<li>第一项是边界框中心坐标的误差项， <img src="https://www.zhihu.com/equation?tex=1%5E%7Bobj%7D_%7Bij%7D" alt="1^{obj}_{ij}"> 指的是第 <img src="https://www.zhihu.com/equation?tex=i" alt="i"> 个单元格存在目标，且该单元格中的第 <img src="https://www.zhihu.com/equation?tex=j" alt="j"> 个边界框负责预测该目标。</li>
+<li>第二项是边界框的高与宽的误差项。</li>
+<li>第三项是包含目标的边界框的置信度误差项。</li>
+<li>第四项是不包含目标的边界框的置信度误差项。</li>
+<li>最后一项是包含目标的单元格的分类误差项， <img src="https://www.zhihu.com/equation?tex=1%5E%7Bobj%7D_%7Bi%7D" alt="1^{obj}_{i}"> 指的是第 <img src="https://www.zhihu.com/equation?tex=i" alt="i"> 个单元格存在目标。</li>
+</ul>
+<p>注意：置信度的 target 值 <img src="https://www.zhihu.com/equation?tex=C_i" alt="C_i"> ，如果是不存在目标，此时由于 <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%3D0" alt="Pr(object)=0">，那么 <img src="https://www.zhihu.com/equation?tex=C_i%3D0" alt="C_i=0"> 。如果存在目标， <img src="https://www.zhihu.com/equation?tex=Pr%28object%29%3D1" alt="Pr(object)=1"> ，此时需要确定 <img src="https://www.zhihu.com/equation?tex=%5Ctext%7BIOU%7D%5E%7Btruth%7D_%7Bpred%7D" alt="\text{IOU}^{truth}_{pred}"> 。当然希望最好的的情况是，可以将 IoU 取 <code>1</code>，这样 <img src="https://www.zhihu.com/equation?tex=C_i%3D1" alt="C_i=1"> ，但是在 YOLO 实现中，使用了一个控制参数 <code>rescore</code>（默认为 <code>1</code>），当其为 <code>1</code> 时，IoU 不是设置为 <code>1</code>，而就是计算 truth 和 pred 之间的真实 IoU。不过很多复现 YOLO 的项目还是取 <img src="https://www.zhihu.com/equation?tex=C_i%3D1" alt="C_i=1"> ，这个差异应该不会太影响结果吧。</p>
+<h2 id="5-网络预测"><a href="#5-网络预测" class="headerlink" title="5. 网络预测"></a>5. 网络预测</h2><p>在说明 YOLO 算法的预测过程之前，先介绍一下非极大值抑制算法（non maximum suppression，NMS），这个算法不单单是针对 YOLO 算法的，而是所有的检测算法中都会用到。NMS 算法主要解决的是一个目标被多次检测的问题，如下图中的人脸检测，可以看到人脸被多次检测，但是其实只希望最后仅仅输出其中一个最好的预测框，比如对于美女，只想要红色那个检测结果。那么可以采用 NMS 算法来实现这样的效果：首先从所有的检测框中找到置信度最大的那个框，然后挨个计算其与剩余框的 IoU，如果其值大于一定阈值（重合度过高），那么就将该框剔除；然后对剩余的检测框重复上述过程，直到处理完所有的检测框。YOLO 预测过程也需要用到 NMS 算法。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-389a984789e84e63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>下面分析 YOLO 的预测过程，这里不考虑 batch，认为只是预测一张输入图片。根据前面的分析，最终的网络输出是 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes+7+%5Ctimes+30" alt="7\times 7 \times 30"> ，但是可以将其分割成三个部分：</p>
+<ul>
+<li>类别概率部分为 <img src="https://www.zhihu.com/equation?tex=%5B7%2C+7%2C+20%5D" alt="[7, 7, 20]"> </li>
+<li>置信度部分为 <img src="https://www.zhihu.com/equation?tex=%5B7%2C7%2C2%5D" alt="[7,7,2]"> </li>
+<li>边界框部分为 <img src="https://www.zhihu.com/equation?tex=%5B7%2C7%2C2%2C4%5D" alt="[7,7,2,4]"> （对于这部分不要忘记根据原始图片计算出其真实值）。</li>
+</ul>
+<p>然后将前两项相乘（矩阵 <img src="https://www.zhihu.com/equation?tex=%5B7%2C+7%2C+20%5D" alt="[7, 7, 20]"> 乘以 <img src="https://www.zhihu.com/equation?tex=%5B7%2C7%2C2%5D" alt="[7,7,2]"> 可以各补一个维度来完成 <img src="https://www.zhihu.com/equation?tex=%5B7%2C7%2C1%2C20%5D%5Ctimes+%5B7%2C7%2C2%2C1%5D" alt="[7,7,1,20]\times [7,7,2,1]"> ），可以得到类别置信度值为 <img src="https://www.zhihu.com/equation?tex=%5B7%2C+7%2C2%2C20%5D" alt="[7, 7,2,20]"> ，这里总共预测了 <img src="https://www.zhihu.com/equation?tex=7%2A7%2A2%3D98" alt="7*7*2=98"> 个边界框。</p>
+<p>所有的准备数据已经得到了，那么我们先说第一种策略来得到检测框的结果（这是最正常与自然的处理）。首先，对于每个预测框根据类别置信度选取置信度最大的那个类别作为其预测标签，经过这层处理我们得到各个预测框的预测类别及对应的置信度值，其大小都是 <img src="https://www.zhihu.com/equation?tex=%5B7%2C7%2C2%5D" alt="[7,7,2]"> 。一般情况下，会设置置信度阈值，就是将置信度小于该阈值的box过滤掉，所以经过这层处理，剩余的是置信度比较高的预测框。最后再对这些预测框使用 NMS 算法，最后留下来的就是检测结果。一个值得注意的点是 NMS 是对所有预测框一视同仁，还是区分每个类别，分别使用 NMS。Ng 在deeplearning.ai 中讲应该区分每个类别分别使用 NMS，但是看了很多实现，其实还是同等对待所有的框，我觉得可能是不同类别的目标出现在相同位置这种概率很低吧。</p>
+<p>上面的预测方法应该非常简单明了，但是对于 YOLO 算法，其却采用了另外一个不同的处理思路（至少从 C 源码看是这样的），其区别就是先使用 NMS，然后再确定各个 box 的类别。其基本过程如下图所示。对于 <code>98</code> 个 boxes，首先将小于置信度阈值的值归 <code>0</code>，然后分类别地对置信度值采用 NMS，这里 NMS 处理结果不是剔除，而是将其置信度值归为 <code>0</code>。最后才是确定各个 box 的类别，当其置信度值不为 <code>0</code> 时才做出检测结果输出。这个策略不是很直接，但是貌似 YOLO 源码就是这样做的。YOLO 论文里面说 NMS 算法对 YOLO 的性能是影响很大的，所以可能这种策略对 YOLO 更好。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-e67249140455e230.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="6-算法性能分析"><a href="#6-算法性能分析" class="headerlink" title="6. 算法性能分析"></a>6. 算法性能分析</h2><p> 这里看一下 YOLO 算法在 PASCAL VOC 2007 数据集上的性能，这里 YOLO 与其它检测算法做了对比，包括 DPM，R-CNN，Fast R-CNN 以及 Faster R-CNN。其对比结果如下表所示。与实时性检测方法 DPM 对比，可以看到 YOLO 算法可以在较高的 mAP 上达到较快的检测速度，其中 Fast YOLO 算法比快速 DPM 还快，而且 mAP 是远高于DPM。但是相比 Faster R-CNN，YOLO 的 mAP 稍低，但是速度更快。所以。YOLO 算法算是在速度与准确度上做了折中。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-256df3de12b9d27a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>为了进一步分析 YOLO 算法，文章还做了误差分析，将预测结果按照分类与定位准确性分成以下5类：</p>
+<ul>
+<li>Correct：类别正确，<code>IoU &gt; 0.5</code>（准确度）</li>
+<li>Localization：类别正确，<code>0.1 &lt; IoU &lt; 0.5</code>（定位不准）</li>
+<li>Similar：类别相似，<code>IoU &gt; 0.1</code></li>
+<li>Other：类别错误，<code>IoU &gt; 0.1</code></li>
+<li>Background：对任何目标其 <code>IoU &lt; 0.1</code>（误把背景当物体）</li>
+</ul>
+<p>YOLO 与 Fast R-CNN 的误差对比分析如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-a61d948310c47faa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可以看到，YOLO 的 Correct 的是低于 Fast R-CNN。另外 YOLO 的 Localization 误差偏高，即定位不是很准确。但是 YOLO 的 Background 误差很低，说明其对背景的误判率较低。</p>
+<p>现在来总结一下 YOLO 的优缺点。首先是优点，YOLO 采用一个 CNN 网络来实现检测，是单管道策略，其训练与预测都是 end-to-end，所以 YOLO 算法比较简洁且速度快。第二点由于 YOLO 是对整张图片做卷积，所以其在检测目标有更大的视野，它不容易对背景误判。其实我觉得全连接层也是对这个有贡献的，因为全连接起到了 attention 的作用。另外，YOLO 的泛化能力强，在做迁移时，模型鲁棒性高。</p>
+<p>最后不得不谈一下 YOLO 的缺点，首先 YOLO 各个单元格仅仅预测两个边界框，而且属于一个类别。对于小物体，YOLO 的表现会不如人意。这方面的改进可以看 SSD，其采用多尺度单元格。也可以看 Faster R-CNN，其采用了 anchor boxes。YOLO 对于在物体的宽高比方面泛化率低，就是无法定位不寻常比例的物体。当然 YOLO 的定位不准确也是很大的问题。</p>
+<h2 id="7-TensorFlow-实现"><a href="#7-TensorFlow-实现" class="headerlink" title="7. TensorFlow 实现"></a>7. TensorFlow 实现</h2><p>参考 gliese581gg 的 <a href="http://link.zhihu.com/?target=https%3A//github.com/gliese581gg/YOLO_tensorflow" target="_blank" rel="noopener">YOLO_tensorflow</a> 的实现来分析Yolo的Inference实现细节。我们的代码将构建一个 end-to-end 的 Yolo 的预测模型，利用的已经训练好的权重文件，将可以用自然的图片去测试检测效果。</p>
+<h1 id="YOLO-v2（YOLO9000）"><a href="#YOLO-v2（YOLO9000）" class="headerlink" title="YOLO v2（YOLO9000）"></a>YOLO v2（YOLO9000）</h1><p>YOLOv2的论文全名为 《<em>YOLO9000: Better, Faster, Stronger</em>》，它斩获了 CVPR 2017 Best Paper Honorable Mention。在这篇文章中，作者首先在 YOLOv1 的基础上提出了改进的 YOLOv2，然后提出了一种检测与分类联合训练方法，使用这种联合训练方法在 COCO 检测数据集和 ImageNet分类数据集上训练出了 YOLO9000 模型，其可以检测超过 9000 多类物体。所以，这篇文章其实包含两个模型：YOLOv2 和 YOLO9000，不过后者是在前者基础上提出的，两者模型主体结构是一致的。YOLOv2 相比 YOLOv1 做了很多方面的改进，这也使得 YOLOv2 的 mAP 有显著的提升，并且 YOLOv2 的速度依然很快，保持着自己作为 one-stage 方法的优势，YOLOv2 和 Faster R-CNN，SSD 等模型的对比如下图所示。</p>
+<p>YOLOv2 与其它模型在 VOC 2007 数据集上的效果对比：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-4d9c0e839ed7b57b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="1-YOLOv2-的改进策略"><a href="#1-YOLOv2-的改进策略" class="headerlink" title="1. YOLOv2 的改进策略"></a>1. YOLOv2 的改进策略</h2><p>YOLOv1 虽然检测速度很快，但是在检测精度上却不如 R-CNN 系检测方法，YOLOv1 在物体定位方面（localization）不够准确，并且召回率（recall）较低。YOLOv2 共提出了几种改进策略来提升 YOLO 模型的定位准确度和召回率，从而提高 mAP，YOLOv2 在改进中遵循一个原则：保持检测速度，这也是 YOLO 模型的一大优势。YOLOv2 的改进策略如下图所示，可以看出，大部分的改进方法都可以比较显著提升模型的 mAP。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-b9d78a01cc67abdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-Batch-Normalization"><a href="#1-Batch-Normalization" class="headerlink" title="1. Batch Normalization"></a>1. Batch Normalization</h3><p>Batch Normalization 可以提升模型收敛速度，而且可以起到一定正则化效果，降低模型的过拟合。在 YOLOv2 中，每个卷积层后面都添加了 Batch Normalization 层，并且不再使用 droput。使用 Batch Normalization 后，YOLOv2 的 mAP 提升了 <code>2.4%</code>。</p>
+<h3 id="2-High-Resolution-Classifier"><a href="#2-High-Resolution-Classifier" class="headerlink" title="2. High Resolution Classifier"></a>2. High Resolution Classifier</h3><p>目前大部分的检测模型都会在先在 ImageNet 分类数据集上预训练模型的主体部分（CNN特征提取器），由于历史原因，ImageNet 分类模型基本采用大小为 <img src="https://www.zhihu.com/equation?tex=224%5Ctimes224" alt="224\times224"> 的图片作为输入，分辨率相对较低，不利于检测模型。所以，YOLOv1 在采用 <img src="https://www.zhihu.com/equation?tex=224%5Ctimes224" alt="224\times224"> 分类模型预训练后，将分辨率增加至 <img src="https://www.zhihu.com/equation?tex=448%5Ctimes448" alt="448\times448"> ，并使用这个高分辨率在检测数据集上 finetune。但是直接切换分辨率，检测模型可能难以快速适应高分辨率。所以 YOLOv2 增加了在 ImageNet 数据集上使用 <img src="https://www.zhihu.com/equation?tex=448%5Ctimes448" alt="448\times448">输入来 finetune 分类网络这一中间过程（<code>10</code> epochs），这可以使得模型在检测数据集上 finetune 之前已经适用高分辨率输入。使用高分辨率分类器后，YOLOv2 的 mAP 提升了约 <code>4%</code>。</p>
+<h3 id="3-Convolutional-With-Anchor-Boxes"><a href="#3-Convolutional-With-Anchor-Boxes" class="headerlink" title="3. Convolutional With Anchor Boxes"></a>3. Convolutional With Anchor Boxes</h3><p>在 YOLOv1 中，输入图片最终被划分为 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes7" alt="7\times7"> 网格，每个单元格预测 <code>2</code> 个边界框。YOLOv1 最后采用的是全连接层直接对边界框进行预测，其中边界框的宽与高是相对整张图片大小的，而由于各个图片中存在不同尺度和长宽比（scales and ratios）的物体，YOLOv1 在训练过程中学习适应不同物体的形状是比较困难的，这也导致 YOLOv1 在精确定位方面表现较差。</p>
+<p>YOLOv2 借鉴了 Faster R-CNN 中 RPN 网络的先验框（anchor boxes、prior boxes，SSD 也采用了先验框）策略。RPN 对 CNN 特征提取器得到的特征图（feature map）进行卷积来预测每个位置的边界框以及置信度（是否含有物体），并且各个位置设置不同尺度和比例的先验框，所以 RPN 预测的是边界框相对于先验框的 offsets 值（其实是 transform 值），采用先验框使得模型更容易学习。所以 YOLOv2 移除了 YOLOv1 中的全连接层而采用了卷积和 anchor boxes 来预测边界框。为了使检测所用的特征图分辨率更高，移除其中的一个 <code>pool</code> 层。</p>
+<p>在检测模型中，YOLOv2 不是采用 <img src="https://www.zhihu.com/equation?tex=448%5Ctimes448" alt="448\times448"> 图片作为输入，而是采用 <img src="https://www.zhihu.com/equation?tex=416%5Ctimes416" alt="416\times416"> 大小。因为 YOLOv2 模型下采样的总步长为 <img src="https://www.zhihu.com/equation?tex=32" alt="32"> 。对于 <img src="https://www.zhihu.com/equation?tex=416%5Ctimes416" alt="416\times416"> 大小的图片，最终得到的特征图大小为 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13" alt="13\times13"> ，维度是奇数，这样特征图恰好只有一个中心位置。对于一些大物体，它们中心点往往落入图片中心位置，此时使用特征图的一个中心点去预测这些物体的边界框相对容易些。所以在 YOLOv2 设计中要保证最终的特征图有奇数个位置。对于 YOLOv1，每个 cell 都预测 <code>2</code> 个 boxes，每个 boxes 包含 <code>5</code> 个值： <img src="https://www.zhihu.com/equation?tex=%28x%2C+y%2C+w%2C+h%2C+c%29" alt="(x, y, w, h, c)"> ，前 <code>4</code> 个值是边界框位置与大小，最后一个值是置信度（confidence scores，包含两部分：含有物体的概率以及预测框与 ground truth 的 IoU）。但是每个 cell 只预测一套分类概率值（class predictions，其实是置信度下的条件概率值），供 <code>2</code> 个 boxes 共享。YOLOv2 使用了 anchor boxes 之后，每个位置的各个 anchor box 都单独预测一套分类概率值，这和 SSD 比较类似（但 SSD 没有预测置信度，而是把 background 作为一个类别来处理）。</p>
+<p>使用 anchor boxes 之后，YOLOv2 的 mAP 有稍微下降（这里下降的原因猜想是 YOLOv2 虽然使用了 anchor boxes，但是依然采用 YOLOv1 的训练方法）。YOLOv1 只能预测 <code>98</code> 个边界框（ <img src="https://www.zhihu.com/equation?tex=7%5Ctimes7%5Ctimes2" alt="7\times7\times2"> ），而 YOLOv2 使用 anchor boxes 之后可以预测上千个边界框（ <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes%5Ctext%7Bnum_anchors%7D" alt="13\times13\times\text{num_anchors}"> ）。所以使用 anchor boxes 之后，YOLOv2 的召回率大大提升，由原来的 <code>81%</code> 升至 <code>88%</code>。</p>
+<h3 id="4-Dimension-Clusters"><a href="#4-Dimension-Clusters" class="headerlink" title="4. Dimension Clusters"></a>4. Dimension Clusters</h3><p>在 Faster R-CNN 和 SSD 中，先验框的维度（长和宽）都是手动设定的，带有一定的主观性。如果选取的先验框维度比较合适，那么模型更容易学习，从而做出更好的预测。因此，YOLOv2 采用 k-means 聚类方法对训练集中的边界框做了聚类分析。<strong>因为设置先验框（prior）的主要目的是为了使得预测框与 ground truth 的 IoU 更好，所以聚类分析时选用 bbox 与聚类中心 bbox 之间的 IoU 值作为距离指标</strong>：</p>
+<p><img src="https://www.zhihu.com/equation?tex=d%28box%2C+centroid%29+%3D+1+-+IOU%28box%2C+centroid%29" alt="d(box, centroid) = 1 - IOU(box, centroid)"></p>
+<p>Dimension Cluster 的目的就是寻找出 anchor 的先验（即先验框）。什么是先验框呢？简单来说，在 YOLOv1 中，作者遇到了一个问题，虽然通过实验知道要选两个 boxes 是最优的，但是这两个 boxes 的尺寸应该如何决定呢？虽然网络自身可以学着不断调节 box 的大小，但是我们能够提前给定一个或多个尺寸作为备选不是更好吗？所以作者就决定利用 k-means 聚类方法在 training set bounding boxes上来寻找先验框（框的尺寸）。</p>
+<p>标准的 k-means 方法用的是欧氏距离，但是这样会导致 larger boxes generate more error than smaller boxes. 我们想要得到的先验框，是能够让我们得到更高的 IoU。如果用欧氏距离来衡量，可能会导致“大框优势”。所以作者使用了上述公式来作为 k-means 中“距离”的判定。由于期待距离越小越好（即 IoU 越大越好），所以距离判定时候用 <code>1 - IoU</code>。</p>
+<p>下图为在 VOC 和 COCO 数据集上的聚类分析结果，随着聚类中心数目的增加，平均 IoU 值（各个边界框与聚类中心的 IoU 的平均值）是增加的，但是综合考虑模型复杂度和召回率，作者最终选取 <code>5</code> 个聚类中心作为先验框，其相对于图片的大小如右边图所示。对于两个数据集，<code>5</code> 个先验框的 <code>width</code> 和 <code>height</code> 如下所示（来源：YOLO源码的<a href="https://github.com/pjreddie/darknet/tree/master/cfg" target="_blank" rel="noopener">cfg文件</a>）：</p>
+<blockquote>
+<p>COCO: (0.57273, 0.677385), (1.87446, 2.06253), (3.33843, 5.47434), (7.88282, 3.52778), (9.77052, 9.16828)<br>VOC: (1.3221, 1.73145), (3.19275, 4.00944), (5.05587, 8.09892), (9.47112, 4.84053), (11.2364, 10.0071)</p>
+</blockquote>
+<p>但是这里先验框的大小具体指什么作者并没有说明，但肯定不是像素点，从代码实现上看，应该是相对于预测的特征图大小（ <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13" alt="13\times13"> ）。对比两个数据集，也可以看到 COCO 数据集上的物体相对小点。这个策略作者并没有单独做实验，但是作者对比了采用聚类分析得到的先验框与手动设置的先验框在平均 IoU 上的差异，发现前者的平均 IoU 值更高，因此模型更容易训练学习。</p>
+<p>数据集 VOC 和 COCO 上的边界框聚类分析结果：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-c0e9680ec2707ebb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="5-Direct-location-prediction"><a href="#5-Direct-location-prediction" class="headerlink" title="5. Direct location prediction"></a>5. Direct location prediction</h3><p>YOLOv2 借鉴 RPN 网络使用 anchor boxes 来预测边界框相对先验框的 offsets。边界框的实际中心位置 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)"> ，需要根据预测的坐标偏移值 <img src="https://www.zhihu.com/equation?tex=%28t_x%2C+t_y%29" alt="(t_x, t_y)"> ，先验框的尺度 <img src="https://www.zhihu.com/equation?tex=%28w_a%2C+h_a%29" alt="(w_a, h_a)"> 以及中心坐标 <img src="https://www.zhihu.com/equation?tex=%28x_a%2C+y_a%29" alt="(x_a, y_a)"> （特征图每个位置的中心点）来计算：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%5Cx+%3D+%28t_x%5Ctimes+w_a%29-x_a" alt="\\x = (t_x\times w_a)-x_a"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%5Cy%3D%28t_y%5Ctimes+h_a%29+-+y_a" alt="\\y=(t_y\times h_a) - y_a"></p>
+<p>但是上面的公式是无约束的，预测的边界框很容易向任何方向偏移，如当 <img src="https://www.zhihu.com/equation?tex=t_x%3D1" alt="t_x=1"> 时边界框将向右偏移先验框的一个宽度大小，而当 <img src="https://www.zhihu.com/equation?tex=t_x%3D-1" alt="t_x=-1"> 时边界框将向左偏移先验框的一个宽度大小，因此每个位置预测的边界框可以落在图片任何位置，这导致模型的不稳定性，在训练时需要很长时间来预测出正确的 offsets。所以，YOLOv2 弃用了这种预测方式，而是沿用 YOLOv1 的方法，就是预测边界框中心点相对于对应 cell 左上角位置的相对偏移值，为了将边界框中心点约束在当前 cell 中，使用 sigmoid 函数处理偏移值，这样预测的偏移值在 <code>(0, 1)</code> 范围内（每个 cell 的尺度看做 <code>1</code>）。总结来看，根据边界框预测的 <code>4</code> 个 offsets：<img src="https://www.zhihu.com/equation?tex=t_x%2C+t_y%2C+t_w%2C+t_h" alt="t_x, t_y, t_w, t_h"> ，可以按如下公式计算出边界框实际位置和大小：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%5Cb_x+%3D+%5Csigma+%28t_x%29%2Bc_x" alt="\\b_x = \sigma (t_x)+c_x"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%5Cb_y+%3D+%5Csigma+%28t_y%29+%2B+c_y" alt="\\b_y = \sigma (t_y) + c_y"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%5Cb_w+%3D+p_we%5E%7Bt_w%7D" alt="\\b_w = p_we^{t_w}"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%5Cb_h+%3D+p_he%5E%7Bt_h%7D" alt="\\b_h = p_he^{t_h}"></p>
+<p>其中 <img src="https://www.zhihu.com/equation?tex=%28c_x%2C+x_y%29" alt="(c_x, x_y)"> 为 cell 的左上角坐标，下图所示，在计算时每个 cell 的尺度为1，所以当前cell的左上角坐标为 <img src="https://www.zhihu.com/equation?tex=%281%2C1%29" alt="(1,1)"> 。由于sigmoid函数的处理，边界框的中心位置会约束在当前 cell 内部，防止偏移过多。而 <img src="https://www.zhihu.com/equation?tex=p_w" alt="p_w"> 和 <img src="https://www.zhihu.com/equation?tex=p_h" alt="p_h"> 是先验框的宽度与长度，前面说过它们的值也是相对于特征图大小的，在特征图中每个 cell 的长和宽均为 <code>1</code>。记特征图的大小为 <img src="https://www.zhihu.com/equation?tex=%28W%2C+H%29" alt="(W, H)"> （在文中是 <img src="https://www.zhihu.com/equation?tex=%2813%2C+13%29" alt="(13, 13)"> )，这样可以将边界框相对于整张图片的位置和大小计算出来（<code>4</code> 个值均在 <code>0</code> 和 <code>1</code> 之间）：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-5ff4022de8e30be4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如果再将上面的 <code>4</code> 个值分别乘以图片的宽度和长度（像素点值）就可以得到边界框的最终位置和大小了。这就是 YOLOv2 边界框的整个解码过程。约束了边界框的位置预测值使得模型更容易稳定训练，结合聚类分析得到先验框与这种预测方法，YOLOv2 的 mAP 值提升了约 <code>5%</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-89e5aa3740a26e7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="6-Fine-Grained-Features"><a href="#6-Fine-Grained-Features" class="headerlink" title="6. Fine-Grained Features"></a>6. Fine-Grained Features</h3><p>YOLOv2 的输入图片大小为 <img src="https://www.zhihu.com/equation?tex=416%5Ctimes416" alt="416\times416"> ，经过 <code>5</code> 次 max pooling 之后得到 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13" alt="13\times13"> 大小的特征图，并以此特征图采用卷积做预测。 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13" alt="13\times13"> 大小的特征图对检测大物体是足够了，但是对于小物体还需要更精细的特征图（Fine-Grained Features）。因此 SSD 使用了多尺度的特征图来分别检测不同大小的物体，前面更精细的特征图可以用来预测小物体。YOLOv2 提出了一种 passthrough 层来利用更精细的特征图。YOLOv2 所利用的 Fine-Grained Features 是 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26" alt="26\times26">大小的特征图（最后一个 max pooling 层的输入），对于 Darknet-19 模型来说就是大小为 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="26\times26\times512"> 的特征图。passthrough 层与 ResNet 网络的 shortcut 类似，以前面更高分辨率的特征图为输入，然后将其连接到后面的低分辨率特征图上。前面的特征图维度是后面的特征图的 <code>2</code> 倍，passthrough 层抽取前面层的每个 <img src="https://www.zhihu.com/equation?tex=2%5Ctimes2" alt="2\times2"> 的局部区域，然后将其转化为 channel 维度，对于 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="26\times26\times512"> 的特征图，经 passthrough 层处理之后就变成了 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes2048" alt="13\times13\times2048"> 的新特征图（特征图大小降低 <code>4</code> 倍，而 channles 增加 <code>4</code> 倍，下图为一个实例），这样就可以与后面的 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes1024" alt="13\times13\times1024"> 特征图连接在一起形成 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes3072" alt="13\times13\times3072"> 大小的特征图，然后在此特征图基础上卷积做预测。在 YOLO 的 C 源码中，passthrough 层称为 <a href="https://github.com/pjreddie/darknet/blob/master/src/reorg_layer.c" target="_blank" rel="noopener">reorg layer</a>。在 TensorFlow 中，可以使用 <code>tf.extract_image_patches</code> 或者 <code>tf.space_to_depth</code> 来实现 passthrough 层：</p>
+<pre><code class="python">out = tf.extract_image_patches(in, [1, stride, stride, 1], [1, stride, stride, 1], [1,1,1,1], padding=&quot;VALID&quot;)
+# or use tf.space_to_depth
+out = tf.space_to_depth(in, 2)
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-19a125d42e01d0e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>另外，作者在后期的实现中借鉴了 ResNet 网络，不是直接对高分辨特征图处理，而是增加了一个中间卷积层，先采用 <code>64</code> 个 <img src="https://www.zhihu.com/equation?tex=1%5Ctimes1" alt="1\times1"> 卷积核进行卷积，然后再进行 passthrough 处理，这样 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="26\times26\times512"> 的特征图得到 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes256" alt="13\times13\times256"> 的特征图。这算是实现上的一个小细节。使用 Fine-Grained Features 之后 YOLOv2 的性能有 <code>1%</code> 的提升。</p>
+<h3 id="7-Multi-Scale-Training"><a href="#7-Multi-Scale-Training" class="headerlink" title="7. Multi-Scale Training"></a>7. Multi-Scale Training</h3><p>由于 YOLOv2 模型中只有卷积层和池化层，所以 YOLOv2 的输入可以不限于 <img src="https://www.zhihu.com/equation?tex=416%5Ctimes416" alt="416\times416"> 大小的图片。为了增强模型的鲁棒性，YOLOv2 采用了多尺度输入训练策略，具体来说就是在训练过程中每间隔一定的 iterations （<code>10</code> batches）之后改变模型的输入图片大小。由于 YOLOv2 的下采样总步长为 <code>32</code>，输入图片大小选择一系列为 <code>32</code> 倍数的值： <img src="https://www.zhihu.com/equation?tex=%5C%7B320%2C+352%2C...%2C+608%5C%7D" alt="\{320, 352,..., 608\}"> ，输入图片最小为 <img src="https://www.zhihu.com/equation?tex=320%5Ctimes320" alt="320\times320">，此时对应的特征图大小为 <img src="https://www.zhihu.com/equation?tex=10%5Ctimes10" alt="10\times10"> （不是奇数了），而输入图片最大为 <img src="https://www.zhihu.com/equation?tex=608%5Ctimes608" alt="608\times608"> ，对应的特征图大小为 <img src="https://www.zhihu.com/equation?tex=19%5Ctimes19" alt="19\times19"> 。在训练过程，每隔 <code>10</code> 个 iterations 随机选择一种输入图片大小，然后只需要修改对最后检测层的处理就可以重新训练。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-5ad30c30f15ec3ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>采用 Multi-Scale Training 策略，YOLOv2 可以适应不同大小的图片，并且预测出很好的结果。在测试时，YOLOv2 可以采用不同大小的图片作为输入，在 VOC 2007 数据集上的效果如下图所示。可以看到采用较小分辨率时，YOLOv2 的 mAP 值略低，但是速度更快，而采用高分辨输入时，mAP 值更高，但是速度略有下降，对于 <img src="https://www.zhihu.com/equation?tex=544%5Ctimes544" alt="544\times544"> ，mAP 高达 <code>78.6%</code>。注意，这只是测试时输入图片大小不同，而实际上用的是同一个模型（采用 Multi-Scale Training 训练）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-0f4414769c00fe28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>总结来看，虽然 YOLOv2 做了很多改进，但是大部分都是借鉴其它论文的一些技巧，如 Faster R-CNN 的 anchor boxes，YOLOv2 采用 anchor boxes 和卷积做预测，这基本上与 SSD 模型（单尺度特征图的 SSD）非常类似了，而且 SSD也是借鉴了 Faster R-CNN 的 RPN 网络。从某种意义上来说，YOLOv2 和 SSD 这两个 one-stage 模型与 RPN 网络本质上无异，只不过 RPN 不做类别的预测，只是简单地区分物体与背景。在 two-stage 方法中，RPN 起到的作用是给出 region proposals，其实就是作出粗糙的检测，所以另外增加了一个 stage，即采用 R-CNN 网络来进一步提升检测的准确度（包括给出类别预测）。而对于 one-stage 方法，它们想要一步到位，直接采用 “RPN” 网络作出精确的预测，要因此要在网络设计上做很多的 tricks。YOLOv2 的一大创新是采用 Multi-Scale Training 策略，这样同一个模型其实就可以适应多种大小的图片了。</p>
+<h3 id="8-New-Network-Darknet-19"><a href="#8-New-Network-Darknet-19" class="headerlink" title="8. New Network: Darknet-19"></a>8. New Network: Darknet-19</h3><p> YOLOv2 采用了一个新的基础模型（特征提取器），称为 Darknet-19，包括<code>19</code> 个卷积层和 <code>5</code> 个 max pooling 层，如下图所示。Darknet-19 与 VGG16 模型设计原则是一致的，主要采用 <img src="https://www.zhihu.com/equation?tex=3%5Ctimes3" alt="3\times3"> 卷积，采用 <img src="https://www.zhihu.com/equation?tex=2%5Ctimes2" alt="2\times2"> 的 max pooling 层之后，特征图维度降低 <code>2</code> 倍，而同时将特征图的 channles 增加 <code>2</code> 倍。与 NIN 类似，Darknet-19 最终采用 global avgpooling 做预测，并且在 <img src="https://www.zhihu.com/equation?tex=3%5Ctimes3" alt="3\times3"> 卷积之间使用 <img src="https://www.zhihu.com/equation?tex=1%5Ctimes1" alt="1\times1"> 卷积来压缩特征图的 channles 以降低模型计算量和参数。Darknet-19 每个卷积层后面同样使用了 batch norm 层以加快收敛速度，降低模型过拟合。在 ImageNet 分类数据集上，Darknet-19 的 top-1 准确度为 <code>72.9%</code>，top-5 准确度为 <code>91.2%</code>，但是模型参数相对小一些。使用 Darknet-19 之后，YOLOv2 的 mAP 值没有显著提升，但是计算量却可以减少约 <code>33%</code>。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-67e5079617c63f32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="9-Training"><a href="#9-Training" class="headerlink" title="9. Training"></a>9. Training</h3><p>YOLOv2 的训练主要包括三个阶段：</p>
+<ul>
+<li>第一阶段就是先在 ImageNet 分类数据集上预训练 Darknet-19，此时模型输入为 <img src="https://www.zhihu.com/equation?tex=224%5Ctimes224" alt="224\times224"> ，共训练 <code>160</code> 个 epochs。</li>
+<li>第二阶段将网络的输入调整为 <img src="https://www.zhihu.com/equation?tex=448%5Ctimes448" alt="448\times448"> ，继续在 ImageNet 数据集上 finetune 分类模型，训练 <code>10</code> 个 epochs，此时分类模型的 top-1 准确度为 <code>76.5%</code>，而 top-5 准确度为 <code>93.3%</code>。</li>
+<li>第三阶段就是修改 Darknet-19 分类模型为检测模型，并在检测数据集上继续 finetune 网络。网络修改包括：移除最后一个卷积层、global avgpooling 层以及 softmax 层，并且新增了三个 <img src="C:\Users\Magicmanoooo\AppData\Roaming\Typora\typora-user-images\1552205250358.png" alt="1552205250358"> 卷积层，同时增加了一个 passthrough 层，最后使用 <img src="https://www.zhihu.com/equation?tex=1%5Ctimes1" alt="1\times1"> 卷积层输出预测结果，输出的 channels 数为： <img src="https://www.zhihu.com/equation?tex=%5Ctext%7Bnum_anchors%7D%5Ctimes%285%2B%5Ctext%7Bnum_classes%7D%29" alt="\text{num_anchors}\times(5+\text{num_classes})"> ，和训练采用的数据集有关系。由于 anchors 数为 <code>5</code>，对于 VOC 数据集输出的 channels 数就是 <code>125</code>，而对于 COCO 数据集则为 <code>425</code>。这里以 VOC 数据集为例，最终的预测矩阵为 <img src="https://www.zhihu.com/equation?tex=T" alt="T"> （shape 为 <img src="https://www.zhihu.com/equation?tex=%28%5Ctext%7Bbatch_size%7D%2C+13%2C+13%2C+125%29" alt="(\text{batch_size}, 13, 13, 125)"> ），可以先将其 reshape 为 <img src="https://www.zhihu.com/equation?tex=%28%5Ctext%7Bbatch_size%7D%2C+13%2C+13%2C+5%2C+25%29" alt="(\text{batch_size}, 13, 13, 5, 25)"> ，其中 <img src="https://www.zhihu.com/equation?tex=T%5B%3A%2C+%3A%2C+%3A%2C+%3A%2C+0%3A4%5D" alt="T[:, :, :, :, 0:4]"> 为边界框的位置和大小 <img src="https://www.zhihu.com/equation?tex=%28t_x%2C+t_y%2C+t_w%2C+t_h%29" alt="(t_x, t_y, t_w, t_h)"> ， <img src="https://www.zhihu.com/equation?tex=T%5B%3A%2C+%3A%2C+%3A%2C+%3A%2C+4%5D" alt="T[:, :, :, :, 4]"> 为边界框的置信度，而 <img src="https://www.zhihu.com/equation?tex=T%5B%3A%2C+%3A%2C+%3A%2C+%3A%2C+5%3A%5D" alt="T[:, :, :, :, 5:]"> 为类别预测值。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-f4da30f94f158e7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-dd9b876650170e42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>YOLOv2 的网络结构以及训练参数都已知道了，但是貌似少了点东西。仔细一想，原来作者并没有给出 YOLOv2 的训练过程的两个最重要方面：</p>
+<ul>
+<li>先验框匹配（样本选择）</li>
+<li>训练的损失函数</li>
+</ul>
+<p>没有这两方面的说明，我们将无法知道 YOLOv2 到底是怎么训练起来的。不过默认按照 YOLOv1 的处理方式也是可以处理，参照 YOLO 在 TensorFlow 上的实现 <a href="https://github.com/thtrieu/darkflow" target="_blank" rel="noopener">darkflow</a>（见<a href="https://github.com/thtrieu/darkflow/blob/master/darkflow/net/yolov2/train.py" target="_blank" rel="noopener">yolov2/train.py</a>），发现它就是如此处理的：和 YOLOv1 一样，对于训练图片中的 ground truth，若其中心点落在某个 cell 内，那么该 cell 内的 <code>5</code> 个先验框所对应的边界框负责预测它，具体是哪个边界框预测它，需要在训练中确定，即由那个与 ground truth 的 IoU 最大的边界框预测它，而剩余的 <code>4</code> 个边界框不与该 ground truth 匹配。YOLOv2 同样需要假定每个 cell 至多含有一个 grounth truth，而在实际上基本不会出现多于 <code>1</code> 个的情况。与 ground truth 匹配的先验框计算坐标误差、置信度误差（此时 target 为 <code>1</code>）以及分类误差，而其它的边界框只计算置信度误差（此时 target 为 <code>0</code>）。YOLOv2 和 YOLOv1 的损失函数一样，为均方差函数。</p>
+<p>YOLOv2 的源码（训练样本处理与 loss 计算都包含在文件<a href="https://github.com/pjreddie/darknet/blob/master/src/region_layer.c" target="_blank" rel="noopener">region_layer.c</a>中），并且参考国外的<a href="http://link.zhihu.com/?target=https%3A//towardsdatascience.com/training-object-detection-yolov2-from-scratch-using-cyclic-learning-rates-b3364f7e4755" target="_blank" rel="noopener">blog</a>以及<a href="https://github.com/allanzelener/YAD2K" target="_blank" rel="noopener">allanzelener/YAD2K</a>（Ng 深度学习教程所参考的那个 Keras 实现）上的实现，发现 YOLOv2 的处理比原来的 v1 版本更加复杂。先给出 loss 计算公式：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-d5028972b606a71d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>首先 <img src="https://www.zhihu.com/equation?tex=W%2C+H" alt="W, H"> 分别指的是特征图（ <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13" alt="13\times13"> ）的宽与高，而 <img src="https://www.zhihu.com/equation?tex=A" alt="A"> 指的是先验框数目（这里是 <code>5</code>），各个 <img src="https://www.zhihu.com/equation?tex=%5Clambda" alt="\lambda"> 值是各个 loss 部分的权重系数。</p>
+<ul>
+<li>第一项 loss 是计算 background 的置信度误差，但是哪些预测框来预测背景呢，需要先计算各个预测框和所有 ground truth 的 IoU 值，并且取最大值 <code>Max_IoU</code>，如果该值小于一定的阈值（YOLOv2 使用的是 <code>0.6</code>），那么这个预测框就标记为 background，需要计算 <code>noobj</code> 的置信度误差。</li>
+<li>第二项是计算先验框与预测宽的坐标误差，但是只在前 <code>12800</code> 个 iterations 间计算，这项应该是在训练前期使预测框快速学习到先验框的形状。</li>
+<li>第三大项计算与某个 ground truth 匹配的预测框各部分 loss 值，包括坐标误差、置信度误差以及分类误差。先说一下匹配原则，对于某个 ground truth，首先要确定其中心点要落在哪个 cell 上，然后计算这个 cell 的 <code>5</code> 个先验框与 ground truth 的 IoU 值（YOLOv2 中 <code>bias_match=1</code>），计算 IoU 值时不考虑坐标，只考虑形状，所以先将先验框与 ground truth 的中心点都偏移到同一位置（原点），然后计算出对应的 IoU 值，IoU 值最大的那个先验框与 ground truth 匹配，对应的预测框用来预测这个 ground truth。在计算 <code>obj</code> 置信度时，<code>target=1</code>，但与 YOLOv1 一样而增加了一个控制参数 <code>rescore</code>，当其为 <code>1</code> 时，<code>target</code> 取预测框与 ground truth 的真实 IoU 值（cf g文件中默认采用这种方式）。对于那些没有与 ground truth 匹配的先验框（与预测框对应），除去那些 <code>Max_IoU</code> 低于阈值的，其它的就全部忽略，不计算任何误差。这点在 YOLOv3 论文中也有相关说明：YOLO 中一个 ground truth 只会与一个先验框匹配（IoU 值最好的），对于那些 IoU 值超过一定阈值的先验框，其预测结果就忽略了。这和 SSD 与 RPN 网络的处理方式有很大不同，因为它们可以将一个 ground truth 分配给多个先验框。尽管 YOLOv2 和 YOLOv1 计算 loss 处理上有不同，但都是采用均方差来计算 loss。另外需要注意的一点是，在计算 boxes 的 <img src="https://www.zhihu.com/equation?tex=w" alt="w"> 和 <img src="https://www.zhihu.com/equation?tex=h" alt="h">误差时，YOLOv1 中采用的是平方根以降低 boxes 的大小对误差的影响，而 YOLOv2 是直接计算，但是根据 ground truth 的大小对权重系数进行修正：<code>l.coord_scale * (2 - truth.w*truth.h)</code>（这里 <code>w</code> 和 <code>h</code> 都归一化到 <code>(0,1)</code>)，这样对于尺度较小的 boxes 其权重系数会更大一些，可以放大误差，起到和 YOLOv1 计算平方根相似的效果（参考<a href="http://www.cnblogs.com/YiXiaoZhou/p/7429481.html" target="_blank" rel="noopener">YOLO v2 损失函数源码分析</a>）。</li>
+</ul>
+<pre><code class="python">// box误差函数，计算梯度
+float delta_region_box(box truth, float *x, float *biases, int n, int index, int i, int j, int w, int h, float *delta, float scale, int stride)
+{
+    box pred = get_region_box(x, biases, n, index, i, j, w, h, stride);
+    float iou = box_iou(pred, truth);
+
+    // 计算ground truth的offsets值
+    float tx = (truth.x*w - i);  
+    float ty = (truth.y*h - j);
+    float tw = log(truth.w*w / biases[2*n]);
+    float th = log(truth.h*h / biases[2*n + 1]);
+
+    delta[index + 0*stride] = scale * (tx - x[index + 0*stride]);
+    delta[index + 1*stride] = scale * (ty - x[index + 1*stride]);
+    delta[index + 2*stride] = scale * (tw - x[index + 2*stride]);
+    delta[index + 3*stride] = scale * (th - x[index + 3*stride]);
+    return iou;
+}
+</code></pre>
+<p>最终的 YOLOv2 模型在速度上比 YOLOv1 还快（采用了计算量更少的 Darknet-19 模型），而且模型的准确度比 YOLOv1 有显著提升。</p>
+<h2 id="2-YOLO9000"><a href="#2-YOLO9000" class="headerlink" title="2. YOLO9000"></a>2. YOLO9000</h2><p>YOLO9000 是在 YOLOv2 的基础上提出的一种可以检测超过 <code>9000</code> 个类别的模型，其主要贡献点在于提出了一种分类和检测的联合训练策略。</p>
+<p>众多周知，检测数据集的标注要比分类数据集打标签繁琐的多，所以 ImageNet 分类数据集比 VOC 等检测数据集高出几个数量级。在 YOLO 中，边界框的预测其实并不依赖于物体的标签，所以 YOLO 可以实现在分类和检测数据集上的联合训练。对于检测数据集，可以用来学习预测物体的边界框、置信度以及为物体分类，而对于分类数据集可以仅用来学习分类，但是其可以大大扩充模型所能检测的物体种类。</p>
+<p>作者选择在 COCO 和 ImageNet 数据集上进行联合训练，但是遇到的第一问题是两者的类别并不是完全互斥的，比如 “Norfolk terrier” 明显属于 “dog”，所以作者提出了一种层级分类方法（Hierarchical classification），主要思路是根据各个类别之间的从属关系（根据 WordNet）建立一种树结构 WordTree，结合 COCO 和 ImageNet 建立的 WordTree 如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-db1d6ad2540b95f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>WordTree 中的根节点为 “physical object”，每个节点的子节点都属于同一子类，可以对它们进行 softmax 处理。在给出某个类别的预测概率时，需要找到其所在的位置，遍历这个 path，然后计算 path 上各个节点的概率之积。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1351548-ad7e7cfd9fb64a96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在训练时，如果是检测样本，按照 YOLOv2 的 loss 计算误差，而对于分类样本，只计算分类误差。在预测时，YOLOv2 给出的置信度就是 <img src="https://www.zhihu.com/equation?tex=Pr%28physical+%5Cspace+object%29" alt="Pr(physical \space object)"> ，同时会给出边界框位置以及一个树状概率图。在这个概率图中找到概率最高的路径，当达到某一个阈值时停止，就用当前节点表示预测的类别。</p>
+<p>通过联合训练策略，YOLO9000 可以快速检测出超过 9000 个类别的物体，总体 mAP 值为 <code>19.7%</code>。个人觉得这是作者在这篇论文作出的最大的贡献，因为 YOLOv2 的改进策略亮点并不是很突出，但是 YOLO9000 算是开创之举。</p>
+<h2 id="3-YOLOv2-TensorFlow-实现"><a href="#3-YOLOv2-TensorFlow-实现" class="headerlink" title="3. YOLOv2 TensorFlow 实现"></a>3. YOLOv2 TensorFlow 实现</h2>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/09/计算机视觉/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Magicmanoooo's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        838713968@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 838713968@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">21</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">21</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+    <a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.help
+        <span class="mdl-button__ripple-container">
+          <span class="mdl-ripple"></span>
+        </span>
+      </div>
+    </a>
+
+-->
+
+<!-- Feedback -->
+<!--
+
+    <a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        sidebar.feedback
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+<!-- About Theme -->
+<!--
+
+    <a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+             sidebar.about_theme
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+    </a>
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/5345088988/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Azurery" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/zhang-tao-60-41/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/94222521/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Azurery
+            
+                <br>
+                
+                    只有永不遏止的奋斗，才能使青春之花，即使是凋谢，也是壮丽地凋谢
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
